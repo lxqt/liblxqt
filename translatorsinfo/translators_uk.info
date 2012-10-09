@@ -1,17 +1,17 @@
 # _help = Don't translate this text, it is only help. I want to thank you in the "About" dialog. So, please fill the following information about yourself. The number does not matter, all the names will be displayed in alphabetical order.
 
 
-translator_1_nameEnglish = Efstathios Iosifidis
-translator_1_nameNative  = Ευστάθιος Ιωσηφίδης
-translator_1_contact     = iosifidis@opensuse.org
+translator_1_nameEnglish = Kuzma Shapran
+translator_1_nameNative  = Кузьма Шапран
+translator_1_contact     = Kuzma.Shapran@gmail.com
 
-translator_2_nameEnglish = Antonis Geralis
-translator_2_nameNative  = Αντώνης Γέραλης
-translator_2_contact     = capoiosct@gmail.com
+translator_2_nameEnglish = Rax Garfield
+translator_2_nameNative  = Рекс Ґарфілд
+translator_2_contact     = admin@dvizho.ks.ua
 
-# translator_3_nameEnglish = Translator 3. Your name in English. 
-# translator_3_nameNative  = Translator 3. Your name in the native language.
-# translator_3_contact     = Translator 3. Contact information, email or web site address.
+translator_3_nameEnglish = Vlad Golovko
+translator_3_nameNative  = Владислав Головко
+translator_3_contact     = golovko.vlad@gmail.com
 
 # translator_4_nameEnglish = Translator 4. Your name in English. 
 # translator_4_nameNative  = Translator 4. Your name in the native language.
