@@ -31,10 +31,11 @@
 #include "ui_razoraboutdlg.h"
 #include "razoraboutdlg_p.h"
 #include "libtranslate.h"
-#include <qtxdg/xdgdirs.h>
+#include "technicalinfo.h"
 #include "translatorsinfo/translatorsinfo.h"
 #include <QDebug>
 #include <QtCore/QDate>
+#include <QtGui/QClipboard>
 
 RazorAboutDLGPrivate::RazorAboutDLGPrivate()
 {
@@ -42,7 +43,7 @@ RazorAboutDLGPrivate::RazorAboutDLGPrivate()
     setupUi(this);
 
     QString css="<style TYPE='text/css'> "
-                    "body { font-family: Arial, Helvetica, sans-serif;} "
+                    "body { font-family: sans-serif;} "
                     ".name { font-size: 16pt; } "
                     "a { white-space: nowrap ;} "
                     "h2 { font-size: 10pt;} "
@@ -69,11 +70,14 @@ RazorAboutDLGPrivate::RazorAboutDLGPrivate()
     translationsBrowser->setHtml(css + translationsText());
     translationsBrowser->viewport()->setAutoFillBackground(false);
 
-    techBrowser->setHtml(css + technicalText());
+    TechnicalInfo info;
+    techBrowser->setHtml(info.html());
     techBrowser->viewport()->setAutoFillBackground(false);
 
+    connect(techCopyToClipboardButton, SIGNAL(clicked()), this, SLOT(copyToCliboardTechInfo()));
     this->setAttribute(Qt::WA_DeleteOnClose);
     show();
+
 }
 
 QString RazorAboutDLGPrivate::titleText() const
@@ -100,17 +104,19 @@ QString RazorAboutDLGPrivate::aboutText() const
 
 QString RazorAboutDLGPrivate::authorsText() const
 {
-    return  "We use <a href='https://github.com/Razor-qt/razor-qt'>Github</a> to development and serve our project."
-            "<p>"
-            "If you're interested in working with our development <a href='https://github.com/Razor-qt/razor-qt/graphs/contributors'>team</a>, "
-            "join us.";
+    return QString("%1<p>%2").arg(
+                tr("Razor-qt is developed by the <a %1>Razor-qt Team and contributors</a> on Github.")
+                    .arg(" href='https://github.com/Razor-qt/razor-qt/graphs/contributors'"),
+                tr("If you are interested in working with our development team, <a %1>join us</a>.")
+                    .arg(" href='https://github.com/Razor-qt/razor-qt'")
+                );
 }
 
 
 QString RazorAboutDLGPrivate::thanksText() const
 {
-    return  QString::fromUtf8(
-                "Special thanks to"
+    return QString(
+                "%1"
                 "<ul>"
                 "<li>Andy Fitzsimon (logo/icon)</li>"
                 "<li>Eugene Pivnev (QtDesktop)</li>"
@@ -119,7 +125,7 @@ QString RazorAboutDLGPrivate::thanksText() const
                 "<li>Alexander Zakher (for the name)</li>"
                 "<li>Alexey Nosov (for the A-MeGo theme)</li>"
                 "<li>and KDE (http://www.kde.org)</li>"
-                );
+                ).arg(tr("Special thanks to:"));
 }
 
 QString RazorAboutDLGPrivate::translationsText() const
@@ -131,49 +137,16 @@ QString RazorAboutDLGPrivate::translationsText() const
                 );
 }
 
-#define TechnicalTextRow QString("<tr><td width='1%'><div class=techInfoKey>%1</div></td><td>%2</td></tr>")
-
-QString RazorAboutDLGPrivate::technicalText() const
-{
-    // technical info
-#ifdef DEBUG
-   QString debug(tr("Yes"));
-#else
-   QString debug(tr("No"));
-#endif
-   XdgDirs xdgDirs;
-   QString tech;
-
-   tech += tr("<b>Razor Desktop Toolbox - Technical Info</b>");
-   tech += "<table width='100%'>";
-   tech += TechnicalTextRow.arg(tr("Version"),              RAZOR_VERSION);
-   tech += TechnicalTextRow.arg(tr("Qt"),                   qVersion());
-   tech += TechnicalTextRow.arg(tr("Debug Build"),          debug);
-   tech += TechnicalTextRow.arg(tr("System Configuration"), RAZOR_ETC_XDG_DIRECTORY);
-   tech += TechnicalTextRow.arg(tr("Share Directory"),      SHARE_DIR);
-   tech += TechnicalTextRow.arg(tr("Translations"),         TRANSLATIONS_DIR);
-   tech += "</table>";
-
-   tech += "<p>";
-
-   tech += tr("<b>User Directories</b>");
-   tech += "<table width='100%'>";
-   tech += TechnicalTextRow.arg(tr("Xdg Data Home"),        xdgDirs.dataHome(false));
-   tech += TechnicalTextRow.arg(tr("Xdg Config Home"),      xdgDirs.configHome(false));
-   tech += TechnicalTextRow.arg(tr("Xdg Data Dirs"),        xdgDirs.dataDirs().join(":"));
-   tech += TechnicalTextRow.arg(tr("Xdg Cache Home"),       xdgDirs.cacheHome(false));
-   tech += TechnicalTextRow.arg(tr("Xdg Runtime Home"),     xdgDirs.runtimeDir());
-   tech += TechnicalTextRow.arg(tr("Xdg Autostart Dirs"),   xdgDirs.autostartDirs().join(":"));
-   tech += TechnicalTextRow.arg(tr("Xdg Autostart Home"),   xdgDirs.autostartHome(false));
-   tech += "</table>";
-
-   return tech;
-}
-
-
 RazorAboutDLG::RazorAboutDLG()
 {
     d_ptr = new RazorAboutDLGPrivate();
+}
+
+void RazorAboutDLGPrivate::copyToCliboardTechInfo()
+{
+    TechnicalInfo info;
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(info.text());
 }
 
 

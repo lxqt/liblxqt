@@ -4,9 +4,9 @@
  * Razor - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
- * Copyright: 2011 Razor team
+ * Copyright: 2010-2011 Razor team
  * Authors:
- *   Alexander Sokoloff <sokoloff.a@gmail.com>
+ *   Petr Vanek <petr@scribus.info>
  *
  * This program or library is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General Public
@@ -25,29 +25,29 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef LIBTRANSLATE_H
-#define LIBTRANSLATE_H
+#ifndef RAZORABOUTDLG_P_H
+#define RAZORABOUTDLG_P_H
 
-#include <QtCore/QTranslator>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QLocale>
-#include <QtCore/QSet>
+#include <QtGui/QDialog>
+#include "ui_razoraboutdlg.h"
 
-inline void libTranslate(const QString &name)
+/**
+ * @brief prepares the data to show and fills the form, then shows.
+ */
+class RazorAboutDLGPrivate: public QDialog, public Ui_about
 {
-    static QSet<QString> loadedLibs;
+    Q_OBJECT
 
-    if (loadedLibs.contains(name))
-        return;
+public:
+    RazorAboutDLGPrivate();
+    QString titleText() const;
+    QString aboutText() const;
+    QString authorsText() const;
+    QString thanksText() const;
+    QString translationsText() const;
 
-    loadedLibs.insert(name);
+public slots:
+    void copyToCliboardTechInfo();
+};
 
-    QString locale = QLocale::system().name();
-    QTranslator *translator = new QTranslator(qApp);
-    translator->load(QString("%1/%2_%3.qm").arg(TRANSLATIONS_DIR, name, locale));
-
-    QCoreApplication::installTranslator(translator);
-}
-
-
-#endif // LIBTRANSLATE_H
+#endif // RAZORABOUTDLG_P_H
