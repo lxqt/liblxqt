@@ -159,11 +159,11 @@ TechnicalInfo::TechnicalInfo()
     QString buildType("Release");
 #endif
 
-    table->add("Version",              RAZOR_VERSION);
+    table->add("Version",              LXQT_VERSION);
     table->add("Qt",                   qVersion());
     table->add("Build type",           buildType);
-    table->add("System Configuration", RAZOR_ETC_XDG_DIRECTORY);
-    table->add("Share Directory",      SHARE_DIR);
+    table->add("System Configuration", LXQT_ETC_XDG_DIR);
+    table->add("Share Directory",      LXQT_SHARE_DIR);
     table->add("Translations",         TRANSLATIONS_DIR);
 
 

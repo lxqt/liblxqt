@@ -54,7 +54,7 @@ RazorAboutDLGPrivate::RazorAboutDLGPrivate()
 
     iconLabel->setFixedSize(48, 48);
     iconLabel->setScaledContents(true);
-    iconLabel->setPixmap(QPixmap(QString(SHARE_DIR) + "/graphics/razor_logo.png"));
+    iconLabel->setPixmap(QPixmap(QString(LXQT_SHARE_DIR) + "/graphics/razor_logo.png"));
 
     nameLabel->setText(css + titleText());
 

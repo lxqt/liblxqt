@@ -1,23 +1,80 @@
-#  funtion razor_translate_ts(qm_files 
-#                           SOURCES sources ... 
-#                           [TRANSLATION_DIR] translation_directory
-#                           [INSTALLATION_DIR] qm_install_directory
-#                          )
-#     out: qm_files 
-#     generates commands to create .ts.src and .qm files from sources. 
+# - Find the LXQt include and library dirs and define a some macros
+#
+# The module defines the following functions
+#
+# razor_translate_ts(qm_files
+#                    SOURCES sources ...
+#                    [TRANSLATION_DIR] translation_directory
+#                    [INSTALLATION_DIR] qm_install_directory
+#                   )
+#     out: qm_files
+#     generates commands to create .ts.src and .qm files from sources.
 #     The generated filenames can be found in qm_files.
 #
-#     in: sources 
+#     in: sources
 #     List of the h, cpp and ui files
 #
 #     in: translation_directory
-#     A relative path to the directory with .ts files, it is relative 
+#     A relative path to the directory with .ts files, it is relative
 #     to the CMakeList.txt. By default is "translations"
 #
 #     in: qm_install_directory
 #     A full path to the directory n which will be installed .qm files.
-#     By default is "${CMAKE_INSTALL_PREFIX}/share/razor/${PROJECT_NAME}" 
+#     By default is "${CMAKE_INSTALL_PREFIX}/share/razor/${PROJECT_NAME}"
+#
+# razor_translate_desktop(desktop_files
+#                         SOURCES sources ...
+#                         [TRANSLATION_DIR] translation_directory
+#                        )
+#     out: desktop_files
+#     generates commands to create .desktop files from sources.
+#     The generated filenames can be found in desktop_files.
+#
+#     in: sources
+#     List of the desktop.in files
+#
+#     in: translation_directory
+#     A relative path to the directory with translations files, it is
+#     relative to the CMakeList.txt. By default is "translations"
+#
+#
+# lxqt_set_default_value(VAR_NAME VAR_VALUE)
+#
+#
+#
+# The module defines the following definitions
+#
+#  -DLXQT_SHARE_DIR      - This allows to install and read the configs from non-standard locations
+#
+#  -DLXQT_ETC_XDG_DIR    - XDG standards expects system-wide configuration files in the
+#                          /etc/xdg/razor location. Unfortunately QSettings we are using internally
+#                          can be overriden in the Qt compilation time to use different path for
+#                          system-wide configs. (for example configure ... -sysconfdir /etc/settings ...)
+#                          This path can be found calling Qt4's qmake:
+#                             qmake -query QT_INSTALL_CONFIGURATION
+#
+#
+#
 
+include_directories(${LXQT_INCLUDE_DIRS})
+
+#cmake_policy(SET CMP0005 NEW)
+add_definitions(-DLXQT_SHARE_DIR=\"${LXQT_SHARE_DIR}\")
+add_definitions(-DLXQT_ETC_XDG_DIR=\"${LXQT_ETC_XDG_DIR}\")
+add_definitions(-DLXQT_VERSION=\"${LXQT_VERSION}\")
+
+# for backward compatability ----->
+add_definitions(-DRAZOR_SHARE_DIR=\"${LXQT_SHARE_DIR}\")
+add_definitions(-DRAZOR_ETC_XDG_DIR=\"${LXQT_ETC_XDG_DIR}\")
+add_definitions(-DRAZOR_VERSION=\"${LXQT_VERSION}\")
+# for backward compatability <-----
+
+find_package(Qt4 REQUIRED QUIET)
+include(${QT_USE_FILE})
+
+if(NOT TARGET UpdateTsFiles)
+  add_custom_target(UpdateTsFiles DEPENDS)
+endif()
 
 MACRO(QT4_ADD_TRANSLATION_FIXED _qm_files)
   FOREACH (_current_FILE ${ARGN})
@@ -35,38 +92,18 @@ MACRO(QT4_ADD_TRANSLATION_FIXED _qm_files)
 
     ADD_CUSTOM_COMMAND(OUTPUT ${qm}
        COMMAND ${QT_LRELEASE_EXECUTABLE}
-       ARGS -silent -removeidentical ${_abs_FILE} -qm ${qm}
+       ARGS ${_abs_FILE} -qm ${qm}
        DEPENDS ${_abs_FILE}
     )
     SET(${_qm_files} ${${_qm_files}} ${qm})
   ENDFOREACH (_current_FILE)
 ENDMACRO(QT4_ADD_TRANSLATION_FIXED)
 
-if(NOT TARGET UpdateTsFiles)
-  add_custom_target(UpdateTsFiles DEPENDS)
-endif()
-
-if(NOT TARGET UpdateTxFile)
-  file(WRITE ${CMAKE_BINARY_DIR}/tx/_updateTxFile.sh
-        "echo '[main]'\n"
-        "echo 'host = https://www.transifex.com'\n"
-        "echo 'minimum_perc = 1'\n"
-        "echo ''\n"
-        "for f in `ls ${CMAKE_BINARY_DIR}/tx/*.tx.sh`; do\n"
-        " sh $f;\n"
-        "done\n"
-      )
-
-  add_custom_target(UpdateTxFile  
-    COMMAND sh ${CMAKE_BINARY_DIR}/tx/_updateTxFile.sh > ${CMAKE_SOURCE_DIR}/.tx/config
-  )
-endif()
-
 
 function(razor_translate_ts _qmFiles)
     set(_translationDir "translations")
     set(_installDir "${CMAKE_INSTALL_PREFIX}/share/razor/${PROJECT_NAME}")
-    
+
     # Parse arguments ***************************************
     set(_state "")
     foreach (_arg ${ARGN})
@@ -74,47 +111,47 @@ function(razor_translate_ts _qmFiles)
             ("${_arg}_I_HATE_CMAKE" STREQUAL "SOURCES_I_HATE_CMAKE") OR
             ("${_arg}_I_HATE_CMAKE" STREQUAL "TRANSLATION_DIR_I_HATE_CMAKE") OR
             ("${_arg}_I_HATE_CMAKE" STREQUAL "INSTALLATION_DIR_I_HATE_CMAKE") OR
-            ("${_arg}_I_HATE_CMAKE" STREQUAL "TS_SRC_FILE_I_HATE_CMAKE")        
-           )        
+            ("${_arg}_I_HATE_CMAKE" STREQUAL "TS_SRC_FILE_I_HATE_CMAKE")
+           )
             set(_state ${_arg})
-      
+
         else()
             if("${_state}" STREQUAL "SOURCES")
                 get_filename_component (__file ${_arg} ABSOLUTE)
                 set(_sources  ${_sources} ${__file})
                 set(_sourcesSpace  "${_sourcesSpace} ${__file}")
- 
+
             elseif("${_state}" STREQUAL "TRANSLATION_DIR")
-                set(_translationDir ${_arg})       
+                set(_translationDir ${_arg})
                 set(_state "")
 
             elseif("${_state}" STREQUAL "INSTALLATION_DIR")
-                set(_installDir ${_arg})       
+                set(_installDir ${_arg})
                 set(_state "")
 
             elseif("${_state}" STREQUAL "TS_SRC_FILE")
-                set(_tsSrcFile ${_arg})       
+                set(_tsSrcFile ${_arg})
                 set(_state "")
-        
-            else()  
-                MESSAGE(FATAL_ERROR 
+
+            else()
+                MESSAGE(FATAL_ERROR
                   "Unknown argument '${_arg}'.\n"
                   "See ${CMAKE_CURRENT_LIST_FILE} for more information.\n"
                 )
-            endif()  
+            endif()
         endif()
     endforeach(_arg)
 
     get_filename_component (_translationDir ${_translationDir} ABSOLUTE)
-    if ("${_tsSrcFile}" STREQUAL "") 
+    if ("${_tsSrcFile}" STREQUAL "")
         set(_tsSrcFile  "${_translationDir}/${PROJECT_NAME}.ts.src")
     endif()
-    
+
     get_filename_component (_tsSrcFile  ${_tsSrcFile} ABSOLUTE)
     get_filename_component (_tsSrcFileName  ${_tsSrcFile} NAME)
     get_filename_component (_tsSrcFileNameWE  ${_tsSrcFile} NAME_WE)
-      
-    # TS.SRC file *******************************************    
+
+    # TS.SRC file *******************************************
     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/updateTsFile.sh
         "#/bin/sh\n"
         "\n"
@@ -130,14 +167,14 @@ function(razor_translate_ts _qmFiles)
         DEPENDS ${_sources}
         VERBATIM
     )
-  
+
     add_dependencies(UpdateTsFiles Update_${_tsSrcFileName})
-    
+
     # TX file ***********************************************
     set(_txFile "${CMAKE_BINARY_DIR}/tx/${_tsSrcFileName}.tx.sh")
     string(REPLACE "${CMAKE_SOURCE_DIR}/" "" _tx_translationDir ${_translationDir})
     string(REPLACE "${CMAKE_SOURCE_DIR}/" "" _tx_tsSrcFile ${_tsSrcFile})
-    
+
     file(WRITE ${_txFile}
         "[ -f ${_tsSrcFile} ] || exit 0\n"
         "echo '[razor-qt.${_tsSrcFileNameWE}]'\n"
@@ -174,11 +211,11 @@ function(razor_translate_ts _qmFiles)
         "#endif // RAZOR_TRANSLATE_H\n"
     )
 
-    # QM files **********************************************    
-    file(GLOB _tsFiles ${_translationDir}/${_tsSrcFileNameWE}_*.ts)    
+    # QM files **********************************************
+    file(GLOB _tsFiles ${_translationDir}/${_tsSrcFileNameWE}_*.ts)
     QT4_ADD_TRANSLATION_FIXED(_qmFilesLocal ${_tsFiles})
     install(FILES ${_qmFilesLocal} DESTINATION ${_installDir})
-    
+
     set(${_qmFiles} ${_qmFilesLocal} PARENT_SCOPE)
 endfunction(razor_translate_ts)
 
@@ -189,38 +226,38 @@ endfunction(razor_translate_ts)
 
 function(razor_translate_desktop _RESULT)
     set(_translationDir "translations")
-    
+
     # Parse arguments ***************************************
     set(_state "")
-    foreach (_arg ${ARGN})  
+    foreach (_arg ${ARGN})
         if (
             ("${_arg}_I_HATE_CMAKE" STREQUAL "SOURCES_I_HATE_CMAKE") OR
             ("${_arg}_I_HATE_CMAKE" STREQUAL "TRANSLATION_DIR_I_HATE_CMAKE")
-           )        
+           )
 
             set(_state ${_arg})
-      
+
         else()
             if("${_state}" STREQUAL "SOURCES")
                 get_filename_component (__file ${_arg} ABSOLUTE)
                 set(_sources  ${_sources} ${__file})
                 #set(_sources  ${_sources} ${_arg})
- 
+
             elseif("${_state}" STREQUAL "TRANSLATION_DIR")
-                set(_translationDir ${_arg})       
+                set(_translationDir ${_arg})
                 set(_state "")
 
-            else()  
-                MESSAGE(FATAL_ERROR 
+            else()
+                MESSAGE(FATAL_ERROR
                   "Unknown argument '${_arg}'.\n"
                   "See ${CMAKE_CURRENT_LIST_FILE} for more information.\n"
                 )
-            endif()  
+            endif()
         endif()
-    endforeach(_arg)    
+    endforeach(_arg)
 
-    get_filename_component (_translationDir ${_translationDir} ABSOLUTE)    
-    
+    get_filename_component (_translationDir ${_translationDir} ABSOLUTE)
+
     foreach (_inFile ${_sources})
         get_filename_component(_inFile   ${_inFile} ABSOLUTE)
         get_filename_component(_fileName ${_inFile} NAME_WE)
@@ -233,8 +270,8 @@ function(razor_translate_desktop _RESULT)
         file(GLOB _translations
             ${_translationDir}/${_fileName}_*${_fileExt}
             ${_translationDir}/local/${_fileName}_*${_fileExt}
-        )    
-  
+        )
+
         set(_pattern "'\\[.*]\\s*='")
         if (_translations)
             add_custom_command(OUTPUT ${_outFile}
@@ -249,7 +286,7 @@ function(razor_translate_desktop _RESULT)
             )
         endif()
 
-        set(__result ${__result} ${_outFile}) 
+        set(__result ${__result} ${_outFile})
 
 
         # TX file ***********************************************
@@ -257,7 +294,7 @@ function(razor_translate_desktop _RESULT)
         string(REPLACE "${CMAKE_SOURCE_DIR}/" "" _tx_translationDir ${_translationDir})
         string(REPLACE "${CMAKE_SOURCE_DIR}/" "" _tx_inFile ${_inFile})
         string(REPLACE "." "" _fileType ${_fileExt})
-    
+
         file(WRITE ${_txFile}
             "[ -f ${_inFile} ] || exit 0\n"
             "echo '[razor-qt.${_fileName}_${_fileType}]'\n"
@@ -270,6 +307,23 @@ function(razor_translate_desktop _RESULT)
 
     endforeach()
 
-    set(${_RESULT} ${__result} PARENT_SCOPE)    
+    set(${_RESULT} ${__result} PARENT_SCOPE)
 endfunction(razor_translate_desktop)
 
+
+macro(razor_summary_line _RESULT _MODULE _DESCRIPTION)
+    set(_str "  ${_MODULE} ")
+    string(LENGTH ${_str} _len)
+    while(_len LESS 30)
+        set(_str "${_str} ")
+        string(LENGTH ${_str} _len)
+    endwhile()
+    set(${_RESULT} "${_str} ${_DESCRIPTION}")
+endmacro()
+
+
+macro(lxqt_set_default_value VAR_NAME VAR_VALUE)
+    if (NOT DEFINED ${VAR_NAME})
+        set (${VAR_NAME} ${VAR_VALUE})
+    endif ()
+endmacro()

@@ -100,7 +100,7 @@ RazorApplication::RazorApplication(int &argc, char** argv)
 #endif
 
     XdgIcon::setThemeName(RazorSettings::globalSettings()->value("icon_theme").toString());
-    setWindowIcon(QIcon(QString(SHARE_DIR) + "/graphics/razor_logo.png"));
+    setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/razor_logo.png"));
     connect(RazorSettings::globalSettings(), SIGNAL(razorThemeChanged()), this, SLOT(updateTheme()));
     updateTheme();
 }
