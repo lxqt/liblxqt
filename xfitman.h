@@ -46,6 +46,9 @@
  * @brief handles all of our xlib-calls.
  */
 
+namespace LxQt
+{
+
 typedef QList<Atom> AtomList;
 typedef QList<Window> WindowList;
 
@@ -236,5 +239,5 @@ private:
 
 const XfitMan& xfitMan();
 
-
+} //namespace LxQt
 #endif

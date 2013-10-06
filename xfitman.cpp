@@ -67,6 +67,7 @@
 #define _NET_WM_STATE_ADD       1    // add/set property
 #define _NET_WM_STATE_TOGGLE    2    // toggle property
 
+using namespace LxQt;
 
 const XfitMan&  xfitMan()
 {
