@@ -26,12 +26,14 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "razorpower.h"
-#include "razorpowerproviders.h"
+#include "lxqtpower.h"
+#include "lxqtpowerproviders.h"
 #include <QtCore/QtAlgorithms>
 #include <QtCore/QDebug>
 
-RazorPower::RazorPower(QObject *parent) :
+using namespace LxQt;
+\
+Power::Power(QObject *parent) :
     QObject(parent)
 {
     mProviders.append(new CustomProvider(this));
@@ -42,14 +44,14 @@ RazorPower::RazorPower(QObject *parent) :
 }
 
 
-RazorPower::~RazorPower()
+Power::~Power()
 {
 }
 
 
-bool RazorPower::canAction(RazorPower::Action action) const
+bool Power::canAction(Power::Action action) const
 {
-    foreach(RazorPowerProvider* provider, mProviders)
+    foreach(PowerProvider* provider, mProviders)
     {
         if (provider->canAction(action))
             return true;
@@ -59,9 +61,9 @@ bool RazorPower::canAction(RazorPower::Action action) const
 }
 
 
-bool RazorPower::doAction(RazorPower::Action action)
+bool Power::doAction(Power::Action action)
 {
-    foreach(RazorPowerProvider* provider, mProviders)
+    foreach(PowerProvider* provider, mProviders)
     {
         if (provider->canAction(action) &&
             provider->doAction(action)
@@ -74,14 +76,14 @@ bool RazorPower::doAction(RazorPower::Action action)
 }
 
 
-bool RazorPower::canLogout()    const { return canAction(PowerLogout);    }
-bool RazorPower::canHibernate() const { return canAction(PowerHibernate); }
-bool RazorPower::canReboot()    const { return canAction(PowerReboot);    }
-bool RazorPower::canShutdown()  const { return canAction(PowerShutdown);  }
-bool RazorPower::canSuspend()   const { return canAction(PowerSuspend);   }
+bool Power::canLogout()    const { return canAction(PowerLogout);    }
+bool Power::canHibernate() const { return canAction(PowerHibernate); }
+bool Power::canReboot()    const { return canAction(PowerReboot);    }
+bool Power::canShutdown()  const { return canAction(PowerShutdown);  }
+bool Power::canSuspend()   const { return canAction(PowerSuspend);   }
 
-bool RazorPower::logout()       { return doAction(PowerLogout);    }
-bool RazorPower::hibernate()    { return doAction(PowerHibernate); }
-bool RazorPower::reboot()       { return doAction(PowerReboot);    }
-bool RazorPower::shutdown()     { return doAction(PowerShutdown);  }
-bool RazorPower::suspend()      { return doAction(PowerSuspend);   }
+bool Power::logout()       { return doAction(PowerLogout);    }
+bool Power::hibernate()    { return doAction(PowerHibernate); }
+bool Power::reboot()       { return doAction(PowerReboot);    }
+bool Power::shutdown()     { return doAction(PowerShutdown);  }
+bool Power::suspend()      { return doAction(PowerSuspend);   }

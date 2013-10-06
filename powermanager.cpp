@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "powermanager.h"
-#include "razorpower/razorpower.h"
+#include "lxqtpower/lxqtpower.h"
 #include <qtxdg/xdgicon.h>
 #include <QDBusInterface>
 #include <QMessageBox>
@@ -34,6 +34,8 @@
 #include <QDesktopWidget>
 #include <QtDebug>
 #include "libtranslate.h"
+
+using namespace LxQt;
 
 class MessageBox: public QMessageBox
 {
@@ -82,7 +84,7 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
         m_skipWarning(skipWarning)
 {
     libTranslate("librazorqt");
-    m_power = new RazorPower(this);
+    m_power = new Power(this);
 //    connect(m_power, SIGNAL(suspendFail()), this, SLOT(suspendFailed()));
 //    connect(m_power, SIGNAL(hibernateFail()), this, SLOT(hibernateFailed()));
 //    connect(m_power, SIGNAL(monitoring(const QString &)),

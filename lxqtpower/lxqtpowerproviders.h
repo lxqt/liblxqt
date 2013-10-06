@@ -26,14 +26,18 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef RAZORPOWER_PROVIDERS_H
-#define RAZORPOWER_PROVIDERS_H
+#ifndef LXQTPOWER_PROVIDERS_H
+#define LXQTPOWER_PROVIDERS_H
 
 #include <QtCore/QObject>
 #include <razorsettings.h>
-#include "razorpower.h"
+#include "lxqtpower.h"
 
-class RazorPowerProvider: public QObject
+namespace LxQt
+{
+
+
+class PowerProvider: public QObject
 {
     Q_OBJECT
 public:
@@ -43,98 +47,99 @@ public:
         DontCheckDBUS
     };
     
-    explicit RazorPowerProvider(QObject *parent = 0);
-    virtual ~RazorPowerProvider();
+    explicit PowerProvider(QObject *parent = 0);
+    virtual ~PowerProvider();
 
-    /*! Returns true if the RazorPower can perform action.
+    /*! Returns true if the Power can perform action.
         This is a pure virtual function, and must be reimplemented in subclasses. */
-    virtual bool canAction(RazorPower::Action action) const = 0 ;
+    virtual bool canAction(Power::Action action) const = 0 ;
 
 public slots:
     /*! Performs the requested action.
         This is a pure virtual function, and must be reimplemented in subclasses. */
-    virtual bool doAction(RazorPower::Action action) = 0;
+    virtual bool doAction(Power::Action action) = 0;
 };
 
 
-class UPowerProvider: public RazorPowerProvider
+class UPowerProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     UPowerProvider(QObject *parent = 0);
     ~UPowerProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 };
 
 
-class ConsoleKitProvider: public RazorPowerProvider
+class ConsoleKitProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     ConsoleKitProvider(QObject *parent = 0);
     ~ConsoleKitProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 };
 
 
-class SystemdProvider: public RazorPowerProvider
+class SystemdProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     SystemdProvider(QObject *parent = 0);
     ~SystemdProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 };
 
 
-class RazorProvider: public RazorPowerProvider
+class RazorProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     RazorProvider(QObject *parent = 0);
     ~RazorProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 };
 
 
-class HalProvider: public RazorPowerProvider
+class HalProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     HalProvider(QObject *parent = 0);
     ~HalProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 };
 
 
-class CustomProvider: public RazorPowerProvider
+class CustomProvider: public PowerProvider
 {
     Q_OBJECT
 public:
     CustomProvider(QObject *parent = 0);
     ~CustomProvider();
-    bool canAction(RazorPower::Action action) const;
+    bool canAction(Power::Action action) const;
 
 public slots:
-    bool doAction(RazorPower::Action action);
+    bool doAction(Power::Action action);
 
 private:
     RazorSettings mSettings;
 };
 
-#endif // RAZORPOWER_PROVIDERS_H
+}
+#endif // LXQTPOWER_PROVIDERS_H

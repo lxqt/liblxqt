@@ -31,8 +31,10 @@
 #include <QObject>
 #include <QAction>
 
-class RazorPower;
-
+namespace LxQt
+{
+class Power;
+}
 /*! QAction centric menu aware wrapper around razorpower
 */
 class PowerManager : public QObject
@@ -57,7 +59,7 @@ public:
     bool skipWarning() const { return m_skipWarning; }
 
 private:
-    RazorPower * m_power;
+    LxQt::Power * m_power;
     bool m_skipWarning;
 
 private slots:

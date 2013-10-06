@@ -27,7 +27,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "razorpowerproviders.h"
+#include "lxqtpowerproviders.h"
 #include <QtDBus/QDBusInterface>
 #include <QtCore/QProcess>
 #include <QtCore/QDebug>
@@ -52,6 +52,7 @@
 
 #define PROPERTIES_INTERFACE    "org.freedesktop.DBus.Properties"
 
+using namespace LxQt;
 
 /************************************************
  Helper func
@@ -73,14 +74,14 @@ bool dbusCall(const QString &service,
               const QString &interface,
               const QDBusConnection &connection,
               const QString & method,
-              RazorPowerProvider::DbusErrorCheck errorCheck = RazorPowerProvider::CheckDBUS
+              PowerProvider::DbusErrorCheck errorCheck = PowerProvider::CheckDBUS
               )
 {
     QDBusInterface dbus(service, path, interface, connection);
     if (!dbus.isValid())
     {
         qWarning() << "dbusCall: QDBusInterface is invalid" << service << path << interface << method;
-        if (errorCheck == RazorPowerProvider::CheckDBUS)
+        if (errorCheck == PowerProvider::CheckDBUS)
         {
             RazorNotification::notify(
                                     QObject::tr("Power Manager Error"),
@@ -95,7 +96,7 @@ bool dbusCall(const QString &service,
     if (!msg.errorName().isEmpty())
     {
         printDBusMsg(msg);
-        if (errorCheck == RazorPowerProvider::CheckDBUS)
+        if (errorCheck == PowerProvider::CheckDBUS)
         {
             RazorNotification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
@@ -122,14 +123,14 @@ bool dbusCallSystemd(const QString &service,
                      const QString &interface,
                      const QDBusConnection &connection,
                      const QString &method,
-                     RazorPowerProvider::DbusErrorCheck errorCheck = RazorPowerProvider::CheckDBUS
+                     PowerProvider::DbusErrorCheck errorCheck = PowerProvider::CheckDBUS
                      )
 {
     QDBusInterface dbus(service, path, interface, connection);
     if (!dbus.isValid())
     {
         qWarning() << "dbusCall: QDBusInterface is invalid" << service << path << interface << method;
-        if (errorCheck == RazorPowerProvider::CheckDBUS)
+        if (errorCheck == PowerProvider::CheckDBUS)
         {
             RazorNotification::notify(
                                     QObject::tr("Power Manager Error"),
@@ -144,7 +145,7 @@ bool dbusCallSystemd(const QString &service,
     if (!msg.errorName().isEmpty())
     {
         printDBusMsg(msg);
-        if (errorCheck == RazorPowerProvider::CheckDBUS)
+        if (errorCheck == PowerProvider::CheckDBUS)
         {
             RazorNotification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
@@ -204,15 +205,15 @@ bool dbusGetProperty(const QString &service,
 
 
 /************************************************
- RazorPowerProvider
+ PowerProvider
  ************************************************/
-RazorPowerProvider::RazorPowerProvider(QObject *parent):
+PowerProvider::PowerProvider(QObject *parent):
     QObject(parent)
 {
 }
 
 
-RazorPowerProvider::~RazorPowerProvider()
+PowerProvider::~PowerProvider()
 {
 }
 
@@ -222,7 +223,7 @@ RazorPowerProvider::~RazorPowerProvider()
  UPowerProvider
  ************************************************/
 UPowerProvider::UPowerProvider(QObject *parent):
-    RazorPowerProvider(parent)
+    PowerProvider(parent)
 {
 }
 
@@ -232,18 +233,18 @@ UPowerProvider::~UPowerProvider()
 }
 
 
-bool UPowerProvider::canAction(RazorPower::Action action) const
+bool UPowerProvider::canAction(Power::Action action) const
 {
     QString command;
     QString property;
     switch (action)
     {
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         property = "CanHibernate";
         command  = "HibernateAllowed";
         break;
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         property = "CanSuspend";
         command  = "SuspendAllowed";
         break;
@@ -269,22 +270,22 @@ bool UPowerProvider::canAction(RazorPower::Action action) const
                 // canAction should be always silent because it can freeze
                 // g_main_context_iteration Qt event loop in QMessageBox
                 // on panel startup if there is no DBUS running.
-                RazorPowerProvider::DontCheckDBUS
+                PowerProvider::DontCheckDBUS
             );
 }
 
 
-bool UPowerProvider::doAction(RazorPower::Action action)
+bool UPowerProvider::doAction(Power::Action action)
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         command = "Hibernate";
         break;
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         command = "Suspend";
         break;
 
@@ -306,7 +307,7 @@ bool UPowerProvider::doAction(RazorPower::Action action)
  ConsoleKitProvider
  ************************************************/
 ConsoleKitProvider::ConsoleKitProvider(QObject *parent):
-    RazorPowerProvider(parent)
+    PowerProvider(parent)
 {
 }
 
@@ -316,17 +317,17 @@ ConsoleKitProvider::~ConsoleKitProvider()
 }
 
 
-bool ConsoleKitProvider::canAction(RazorPower::Action action) const
+bool ConsoleKitProvider::canAction(Power::Action action) const
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         command = "CanRestart";
         break;
 
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         command = "CanStop";
         break;
 
@@ -342,22 +343,22 @@ bool ConsoleKitProvider::canAction(RazorPower::Action action) const
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
-                    RazorPowerProvider::DontCheckDBUS
+                    PowerProvider::DontCheckDBUS
                    );
 }
 
 
-bool ConsoleKitProvider::doAction(RazorPower::Action action)
+bool ConsoleKitProvider::doAction(Power::Action action)
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         command = "Restart";
         break;
 
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         command = "Stop";
         break;
 
@@ -380,7 +381,7 @@ bool ConsoleKitProvider::doAction(RazorPower::Action action)
  ************************************************/
 
 SystemdProvider::SystemdProvider(QObject *parent):
-    RazorPowerProvider(parent)
+    PowerProvider(parent)
 {
 }
 
@@ -390,25 +391,25 @@ SystemdProvider::~SystemdProvider()
 }
 
 
-bool SystemdProvider::canAction(RazorPower::Action action) const
+bool SystemdProvider::canAction(Power::Action action) const
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         command = "CanReboot";
         break;
 
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         command = "CanPowerOff";
         break;
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         command = "CanSuspend";
         break;
 
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         command = "CanHibernate";
         break;
 
@@ -424,30 +425,30 @@ bool SystemdProvider::canAction(RazorPower::Action action) const
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
-                    RazorPowerProvider::DontCheckDBUS
+                    PowerProvider::DontCheckDBUS
                    );
 }
 
 
-bool SystemdProvider::doAction(RazorPower::Action action)
+bool SystemdProvider::doAction(Power::Action action)
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         command = "Reboot";
         break;
 
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         command = "PowerOff";
         break;
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         command = "Suspend";
         break;
 
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         command = "Hibernate";
         break;
 
@@ -468,7 +469,7 @@ bool SystemdProvider::doAction(RazorPower::Action action)
   RazorProvider
  ************************************************/
 RazorProvider::RazorProvider(QObject *parent):
-    RazorPowerProvider(parent)
+    PowerProvider(parent)
 {
 }
 
@@ -478,28 +479,28 @@ RazorProvider::~RazorProvider()
 }
 
 
-bool RazorProvider::canAction(RazorPower::Action action) const
+bool RazorProvider::canAction(Power::Action action) const
 {
     switch (action)
     {
-        case RazorPower::PowerLogout:
+        case Power::PowerLogout:
             // there can be case when razo-session does not run
             return dbusCall(RAZOR_SERVICE, RAZOR_PATH, RAZOR_SERVICE,
                             QDBusConnection::sessionBus(), "canLogout",
-                            RazorPowerProvider::DontCheckDBUS);
+                            PowerProvider::DontCheckDBUS);
         default:
             return false;
     }
 }
 
 
-bool RazorProvider::doAction(RazorPower::Action action)
+bool RazorProvider::doAction(Power::Action action)
 {
     QString command;
 
     switch (action)
     {
-    case RazorPower::PowerLogout:
+    case Power::PowerLogout:
         command = "logout";
         break;
 
@@ -521,7 +522,7 @@ bool RazorProvider::doAction(RazorPower::Action action)
   HalProvider
  ************************************************/
 HalProvider::HalProvider(QObject *parent):
-    RazorPowerProvider(parent)
+    PowerProvider(parent)
 {
 }
 
@@ -531,13 +532,13 @@ HalProvider::~HalProvider()
 }
 
 
-bool HalProvider::canAction(RazorPower::Action action) const
+bool HalProvider::canAction(Power::Action action) const
 {
     return false;
 }
 
 
-bool HalProvider::doAction(RazorPower::Action action)
+bool HalProvider::doAction(Power::Action action)
 {
     return false;
 }
@@ -547,7 +548,7 @@ bool HalProvider::doAction(RazorPower::Action action)
   CustomProvider
  ************************************************/
 CustomProvider::CustomProvider(QObject *parent):
-    RazorPowerProvider(parent),
+    PowerProvider(parent),
     mSettings("power")
 {
 }
@@ -556,23 +557,23 @@ CustomProvider::~CustomProvider()
 {
 }
 
-bool CustomProvider::canAction(RazorPower::Action action) const
+bool CustomProvider::canAction(Power::Action action) const
 {
     switch (action)
     {
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         return mSettings.contains("shutdownCommand");
 
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         return mSettings.contains("rebootCommand");
 
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         return mSettings.contains("hibernateCommand");
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         return mSettings.contains("suspendCommand");
 
-    case RazorPower::PowerLogout:
+    case Power::PowerLogout:
         return mSettings.contains("logoutCommand");
 
     default:
@@ -580,29 +581,29 @@ bool CustomProvider::canAction(RazorPower::Action action) const
     }
 }
 
-bool CustomProvider::doAction(RazorPower::Action action)
+bool CustomProvider::doAction(Power::Action action)
 {
     QString command;
 
     switch(action)
     {
-    case RazorPower::PowerShutdown:
+    case Power::PowerShutdown:
         command = mSettings.value("shutdownCommand").toString();
         break;
 
-    case RazorPower::PowerReboot:
+    case Power::PowerReboot:
         command = mSettings.value("rebootCommand").toString();
         break;
 
-    case RazorPower::PowerHibernate:
+    case Power::PowerHibernate:
         command = mSettings.value("hibernateCommand").toString();
         break;
 
-    case RazorPower::PowerSuspend:
+    case Power::PowerSuspend:
         command = mSettings.value("suspendCommand").toString();
         break;
 
-    case RazorPower::PowerLogout:
+    case Power::PowerLogout:
         command = mSettings.value("logoutCommand").toString();
         break;
 

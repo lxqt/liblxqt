@@ -26,23 +26,27 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef RAZORPOWER_H
-#define RAZORPOWER_H
+#ifndef LXQTPOWER_H
+#define LXQTPOWER_H
 
 #include <QtCore/QObject>
 #include <QtCore/QList>
 
-class RazorPowerProvider;
+namespace LxQt
+{
 
-/*! RazorPower class provides an interface to control system-wide power and session management.
+
+class PowerProvider;
+
+/*! Power class provides an interface to control system-wide power and session management.
     It allows logout from the user session, hibernate, reboot, shutdown and suspend computer.
-    This is a wrapper class. All the real work is done in the RazorPowerWorker classes.
+    This is a wrapper class. All the real work is done in the PowerWorker classes.
 */
-class RazorPower : public QObject
+class Power : public QObject
 {
     Q_OBJECT
 public:
-    /// RazorPower can perform next actions:
+    /// Power can perform next actions:
     enum Action{
         PowerLogout,    /// Close the current user session.
         PowerHibernate, /// Hibernate the comupter
@@ -51,13 +55,13 @@ public:
         PowerSuspend    /// Suspend the computer
     };
 
-    /// Constructs a RazorPower with parent.
-    explicit RazorPower(QObject *parent = 0);
+    /// Constructs a Power with parent.
+    explicit Power(QObject *parent = 0);
 
     /// Destroys the object.
-    virtual ~RazorPower();
+    virtual ~Power();
 
-    /// Returns true if the RazorPower can perform action.
+    /// Returns true if the Power can perform action.
     bool canAction(Action action) const;
 
     //! This function is provided for convenience. It's equivalent to calling canAction(PowerLogout).
@@ -95,7 +99,8 @@ public slots:
     bool suspend();
 
 private:
-    QList<RazorPowerProvider*> mProviders;
+    QList<PowerProvider*> mProviders;
 };
 
-#endif // RAZORPOWER_H
+} // namespace
+#endif // LXQTPOWER_H
