@@ -22,23 +22,26 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORNOTIFICATION_P_H
-#define RAZORNOTIFICATION_P_H
+#ifndef LXQTNOTIFICATION_P_H
+#define LXQTNOTIFICATION_P_H
 
-#include "razornotification.h"
+#include "lxqtnotification.h"
 #include "notifications_interface.h"
 
-class RazorNotificationPrivate : public QObject
+namespace LxQt
+{
+
+class NotificationPrivate : public QObject
 {
     Q_OBJECT
 public:
-    RazorNotificationPrivate(const QString& summary, RazorNotification* parent);
-    ~RazorNotificationPrivate();
+    NotificationPrivate(const QString& summary, Notification* parent);
+    ~NotificationPrivate();
 
     void update();
     void close();
     void setActions(QStringList actions, int defaultAction);
-    const RazorNotification::ServerInfo serverInfo();
+    const Notification::ServerInfo serverInfo();
 
 public slots:
     void handleAction(uint id, QString key);
@@ -56,8 +59,9 @@ private:
     int mDefaultAction;
     int mTimeout;
 
-    RazorNotification* const q_ptr;
-    Q_DECLARE_PUBLIC(RazorNotification)
+    Notification* const q_ptr;
+    Q_DECLARE_PUBLIC(Notification)
 };
 
-#endif // RAZORNOTIFICATION_P_H
+} // namespace LxQt
+#endif // LXQTNOTIFICATION_P_H

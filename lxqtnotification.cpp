@@ -22,104 +22,106 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "razornotification.h"
-#include "razornotification_p.h"
+#include "lxqtnotification.h"
+#include "lxqtnotification_p.h"
 #include <QtGui/QMessageBox>
 #include <QDebug>
 
-RazorNotification::RazorNotification(const QString& summary, QObject* parent) :
+using namespace LxQt;
+
+Notification::Notification(const QString& summary, QObject* parent) :
     QObject(parent),
-    d_ptr(new RazorNotificationPrivate(summary, this))
+    d_ptr(new NotificationPrivate(summary, this))
 {
 }
 
-RazorNotification::~RazorNotification()
+Notification::~Notification()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     delete d;
 }
 
-void RazorNotification::update()
+void Notification::update()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->update();
 }
 
-void RazorNotification::close()
+void Notification::close()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->close();
 }
 
-void RazorNotification::setSummary(const QString& summary)
+void Notification::setSummary(const QString& summary)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mSummary = summary;
 }
 
-void RazorNotification::setBody(const QString& body)
+void Notification::setBody(const QString& body)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mBody = body;
 }
 
-void RazorNotification::setIcon(const QString& iconName)
+void Notification::setIcon(const QString& iconName)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mIconName = iconName;
 }
 
-void RazorNotification::setActions(const QStringList& actions, int defaultAction)
+void Notification::setActions(const QStringList& actions, int defaultAction)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->setActions(actions, defaultAction);
 }
 
-void RazorNotification::setTimeout(int timeout)
+void Notification::setTimeout(int timeout)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mTimeout = timeout;
 }
 
-void RazorNotification::setHint(const QString& hintName, const QVariant& value)
+void Notification::setHint(const QString& hintName, const QVariant& value)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mHints.insert(hintName, value);
 }
 
-void RazorNotification::setUrgencyHint(Urgency urgency)
+void Notification::setUrgencyHint(Urgency urgency)
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mHints.insert("urgency", qvariant_cast<uchar>(urgency));
 }
 
-void RazorNotification::clearHints()
+void Notification::clearHints()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     d->mHints.clear();
 }
 
-QStringList RazorNotification::getCapabilities()
+QStringList Notification::getCapabilities()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     return d->mInterface->GetCapabilities().value();
 }
 
-const RazorNotification::ServerInfo RazorNotification::serverInfo()
+const Notification::ServerInfo Notification::serverInfo()
 {
-    Q_D(RazorNotification);
+    Q_D(Notification);
     return d->serverInfo();
 }
 
-void RazorNotification::notify(const QString& summary, const QString& body, const QString& iconName)
+void Notification::notify(const QString& summary, const QString& body, const QString& iconName)
 {
-    RazorNotification notification(summary);
+    Notification notification(summary);
     notification.setBody(body);
     notification.setIcon(iconName);
     notification.update();
 }
 
-RazorNotificationPrivate::RazorNotificationPrivate(const QString& summary, RazorNotification* parent) :
+NotificationPrivate::NotificationPrivate(const QString& summary, Notification* parent) :
     mId(0),
     mSummary(summary),
     mTimeout(-1),
@@ -132,11 +134,11 @@ RazorNotificationPrivate::RazorNotificationPrivate(const QString& summary, Razor
     connect(mInterface, SIGNAL(ActionInvoked(uint,QString)), this, SLOT(handleAction(uint,QString)));
 }
 
-RazorNotificationPrivate::~RazorNotificationPrivate()
+NotificationPrivate::~NotificationPrivate()
 {
 }
 
-void RazorNotificationPrivate::update()
+void NotificationPrivate::update()
 {
     QDBusPendingReply<uint> reply = mInterface->Notify(qAppName(), mId, mIconName, mSummary, mBody, mActions, mHints, mTimeout);
     reply.waitForFinished();
@@ -146,13 +148,13 @@ void RazorNotificationPrivate::update()
     }
     else
     {
-        if (mHints.contains("urgency") && mHints.value("urgency").toInt() != RazorNotification::UrgencyLow)
+        if (mHints.contains("urgency") && mHints.value("urgency").toInt() != Notification::UrgencyLow)
             QMessageBox::information(0, tr("Notifications Fallback"), mSummary + " \n\n " + mBody);
     }
 }
 
 
-void RazorNotificationPrivate::setActions(QStringList actions, int defaultAction)
+void NotificationPrivate::setActions(QStringList actions, int defaultAction)
 {
     mActions.clear();
     mDefaultAction = defaultAction;
@@ -166,19 +168,19 @@ void RazorNotificationPrivate::setActions(QStringList actions, int defaultAction
     }
 }
 
-const RazorNotification::ServerInfo RazorNotificationPrivate::serverInfo()
+const Notification::ServerInfo NotificationPrivate::serverInfo()
 {
-    RazorNotification::ServerInfo info;
+    Notification::ServerInfo info;
     info.name = mInterface->GetServerInformation(info.vendor, info.version, info.specVersion);
     return info;
 }
 
-void RazorNotificationPrivate::handleAction(uint id, QString key)
+void NotificationPrivate::handleAction(uint id, QString key)
 {
     if (id != mId)
         return;
 
-    Q_Q(RazorNotification);
+    Q_Q(Notification);
     qDebug() << "action invoked:" << key;
     bool ok = true;
     int keyId;
@@ -191,18 +193,18 @@ void RazorNotificationPrivate::handleAction(uint id, QString key)
         emit q->actionActivated(keyId);
 }
 
-void RazorNotificationPrivate::close()
+void NotificationPrivate::close()
 {
     mInterface->CloseNotification(mId);
     mId = 0;
 }
 
-void RazorNotificationPrivate::notificationClosed(uint id, uint reason)
+void NotificationPrivate::notificationClosed(uint id, uint reason)
 {
-    Q_Q(RazorNotification);
+    Q_Q(Notification);
     if (id != 0 && id == mId)
     {
         mId = 0;
     }
-    emit q->notificationClosed(RazorNotification::CloseReason(reason));
+    emit q->notificationClosed(Notification::CloseReason(reason));
 }

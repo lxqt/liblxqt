@@ -22,28 +22,31 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORNOTIFICATION_H
-#define RAZORNOTIFICATION_H
+#ifndef LXQTNOTIFICATION_H
+#define LXQTNOTIFICATION_H
 
 #include <QtCore/QStringList>
 
-class RazorNotificationPrivate;
+namespace LxQt
+{
+
+class NotificationPrivate;
 
 /**
  * \brief Libnotify-style desktop notifications
  *
  * Spec: http://developer.gnome.org/notification-spec
  */
-class RazorNotification : public QObject
+class Notification : public QObject
 {
     Q_OBJECT
 public:
     /*!
-     * \brief RazorNotification is an object that represents a single notification.
+     * \brief Notification is an object that represents a single notification.
      * \param summary Summary text briefly describing the notification (required by the spec)
      */
-    RazorNotification(const QString& summary = QString(), QObject* parent = 0);
-    ~RazorNotification();
+    Notification(const QString& summary = QString(), QObject* parent = 0);
+    ~Notification();
 
     enum CloseReason
     {
@@ -143,9 +146,9 @@ public:
 
     /*!
      * \brief Convenience function to create and display a notification for the most common
-     *        cases. For anything more complex, create a RazorNotification object, set the
+     *        cases. For anything more complex, create a Notification object, set the
      *        desired properties and call update(). (That's what this does internally.)
-     * \sa RazorNotification()
+     * \sa Notification()
      */
     static void notify(const QString& summary,
                 const QString& body = QString(),
@@ -180,8 +183,9 @@ signals:
     void actionActivated(int actionNumber);
 
 private:
-    Q_DECLARE_PRIVATE(RazorNotification)
-    RazorNotificationPrivate* const d_ptr;
+    Q_DECLARE_PRIVATE(Notification)
+    NotificationPrivate* const d_ptr;
 };
 
-#endif // RAZORNOTIFICATION_H
+} // namespace LxQt
+#endif // LXQTNOTIFICATION_H

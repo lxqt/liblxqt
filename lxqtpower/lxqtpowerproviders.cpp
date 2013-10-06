@@ -31,7 +31,7 @@
 #include <QtDBus/QDBusInterface>
 #include <QtCore/QProcess>
 #include <QtCore/QDebug>
-#include "razornotification.h"
+#include "lxqtnotification.h"
 
 #define UPOWER_SERVICE          "org.freedesktop.UPower"
 #define UPOWER_PATH             "/org/freedesktop/UPower"
@@ -83,7 +83,7 @@ bool dbusCall(const QString &service,
         qWarning() << "dbusCall: QDBusInterface is invalid" << service << path << interface << method;
         if (errorCheck == PowerProvider::CheckDBUS)
         {
-            RazorNotification::notify(
+            Notification::notify(
                                     QObject::tr("Power Manager Error"),
                                     QObject::tr("QDBusInterface is invalid")+ "\n\n" + service + " " + path + " " + interface + " " + method,
                                     "razor-logo.png");
@@ -98,7 +98,7 @@ bool dbusCall(const QString &service,
         printDBusMsg(msg);
         if (errorCheck == PowerProvider::CheckDBUS)
         {
-            RazorNotification::notify(
+            Notification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
                                     msg.errorName() + "\n\n" + msg.errorMessage(),
                                     "razor-logo.png");
@@ -132,7 +132,7 @@ bool dbusCallSystemd(const QString &service,
         qWarning() << "dbusCall: QDBusInterface is invalid" << service << path << interface << method;
         if (errorCheck == PowerProvider::CheckDBUS)
         {
-            RazorNotification::notify(
+            Notification::notify(
                                     QObject::tr("Power Manager Error"),
                                     QObject::tr("QDBusInterface is invalid")+ "\n\n" + service + " " + path + " " + interface + " " + method,
                                     "razor-logo.png");
@@ -147,7 +147,7 @@ bool dbusCallSystemd(const QString &service,
         printDBusMsg(msg);
         if (errorCheck == PowerProvider::CheckDBUS)
         {
-            RazorNotification::notify(
+            Notification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
                                     msg.errorName() + "\n\n" + msg.errorMessage(),
                                     "razor-logo.png");
@@ -178,7 +178,7 @@ bool dbusGetProperty(const QString &service,
     if (!dbus.isValid())
     {
         qWarning() << "dbusGetProperty: QDBusInterface is invalid" << service << path << interface << property;
-//        RazorNotification::notify(QObject::tr("Razor Power Manager"),
+//        Notification::notify(QObject::tr("Razor Power Manager"),
 //                                  "razor-logo.png",
 //                                  QObject::tr("Power Manager Error"),
 //                                  QObject::tr("QDBusInterface is invalid")+ "\n\n" + service +" " + path +" " + interface +" " + property);
@@ -191,7 +191,7 @@ bool dbusGetProperty(const QString &service,
     if (!msg.errorName().isEmpty())
     {
         printDBusMsg(msg);
-//        RazorNotification::notify(QObject::tr("Razor Power Manager"),
+//        Notification::notify(QObject::tr("Razor Power Manager"),
 //                                  "razor-logo.png",
 //                                  QObject::tr("Power Manager Error (Get Property)"),
 //                                  msg.errorName() + "\n\n" + msg.errorMessage());
