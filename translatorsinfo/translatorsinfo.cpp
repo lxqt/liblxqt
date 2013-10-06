@@ -32,6 +32,8 @@
 #include <QtCore/QTextCodec>
 #include <QtGui/QTextDocument>
 
+using namespace LxQt;
+
 void fillLangguages(QMap<QString, QString> *languages)
 {
     languages->insert("ach"   ,"Acoli");
