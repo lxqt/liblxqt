@@ -34,10 +34,13 @@
 
 #define SEARCH_DELAY 125
 
-
 namespace Ui {
     class AddPluginDialog;
 }
+
+
+namespace LxQt
+{
 
 /*! The AddPluginDialog class provides a dialog that allow users to add plugins.
  */
@@ -78,5 +81,7 @@ private slots:
     void searchEditTexChanged(const QString& text);
     void toggleAddButtonState();
 };
+
+} // namecpase LxQt
 
 #endif // ADDPLUGINDIALOG_H

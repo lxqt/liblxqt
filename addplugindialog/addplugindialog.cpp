@@ -42,6 +42,8 @@
 #include <QLineEdit>
 #include "libtranslate.h"
 
+using namespace LxQt;
+
 #define SEARCH_ROLE  Qt::UserRole
 #define INDEX_ROLE   SEARCH_ROLE+1
 
