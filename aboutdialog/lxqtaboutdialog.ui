@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string> About Razor</string>
+   <string> About LXDE-Qt</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -50,7 +50,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string notr="true">&lt;h1&gt;Razor-qt&lt;/h1&gt;&lt;p&gt;Version: %1&lt;/p&gt;</string>
+        <string notr="true">&lt;h1&gt;LXDE-Qt&lt;/h1&gt;&lt;p&gt;Version: %1&lt;/p&gt;</string>
        </property>
       </widget>
      </item>

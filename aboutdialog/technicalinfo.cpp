@@ -154,7 +154,7 @@ TechnicalInfo::TechnicalInfo()
     TechInfoTable *table;
 
     // ******************************************
-    table = newTable("Razor Desktop Toolbox - Technical Info");
+    table = newTable("LXDE-Qt Desktop Toolbox - Technical Info");
 #ifdef DEBUG
     QString buildType("Debug");
 #else

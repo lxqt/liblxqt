@@ -39,7 +39,7 @@ using namespace LxQt;
 
 AboutDialogPrivate::AboutDialogPrivate()
 {
-    libTranslate("librazorqt");
+    libTranslate("liblxqt");
     setupUi(this);
 
     QString css="<style TYPE='text/css'> "
@@ -83,8 +83,8 @@ AboutDialogPrivate::AboutDialogPrivate()
 QString AboutDialogPrivate::titleText() const
 {
     return QString("<div class=name>%1</div><div class=ver>%2</div>").arg(
-                "Razor-qt",
-                tr("Version: %1").arg(RAZOR_VERSION));
+                "LXDE-Qt",
+                tr("Version: %1").arg(LXQT_VERSION));
 
 }
 
@@ -92,9 +92,9 @@ QString AboutDialogPrivate::aboutText() const
 {
     return  QString("<br>%1<br><br><br>%2<hr>%3<p>%4").arg(
                 tr("Advanced, easy-to-use, and fast desktop environment based on Qt technologies."),
-                tr("Copyright: %1-%2 %3").arg("2010", QDate::currentDate().toString("yyyy"), "Razor team"),
+                tr("Copyright: %1-%2 %3").arg("2010", QDate::currentDate().toString("yyyy"), "LXDE-Qt team"),
 
-                tr("Homepage: %1").arg("<a href='http://www.razor-qt.org'>www.razor-qt.org</a>"),
+                tr("Homepage: %1").arg("<a href='https://github.com/lxde'>github.com/lxde</a>"),
                 tr("License: %1").arg("<a href='http://www.gnu.org/licenses/lgpl-2.1.html'>GNU Lesser General Public License version 2.1 or later</a> "
                                       "and partly under the "
                                       "<a href='http://www.gnu.org/licenses/gpl-2.0.html'>GNU General Public License version 2</a>"
@@ -105,10 +105,10 @@ QString AboutDialogPrivate::aboutText() const
 QString AboutDialogPrivate::authorsText() const
 {
     return QString("%1<p>%2").arg(
-                tr("Razor-qt is developed by the <a %1>Razor-qt Team and contributors</a> on Github.")
-                    .arg(" href='https://github.com/Razor-qt/razor-qt/graphs/contributors'"),
+                tr("LXDE-Qt is developed by the <a %1>LXDE-Qt Team and contributors</a> on Github.")
+                    .arg(" href='https://github.com/lxde'>github.com/lxde'"),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.")
-                    .arg(" href='https://github.com/Razor-qt/razor-qt'")
+                    .arg(" href='https://github.com/lxde'>github.com/lxde'")
                 );
 }
 
@@ -132,7 +132,7 @@ QString AboutDialogPrivate::translationsText() const
 {
     TranslatorsInfo translatorsInfo;
     return QString("%1<p><ul>%2</ul>").arg(
-                tr("Razor-qt is translated into many languages thanks to the work of the translation teams all over the world."),
+                tr("LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world."),
                 translatorsInfo.asHtml()
                 );
 }
