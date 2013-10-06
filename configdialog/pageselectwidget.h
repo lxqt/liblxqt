@@ -30,6 +30,8 @@
 #define PAGESELECTWIDGET_H
 
 #include <QtGui/QListWidget>
+namespace LxQt
+{
 
 class PageSelectWidget : public QListWidget
 {
@@ -42,4 +44,5 @@ protected:
     QSize sizeHint() const;
 };
 
+} // namespace LxQt
 #endif // PAGESELECTWIDGET_H

@@ -22,17 +22,19 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "razorconfigdialog.h"
-#include "ui_razorconfigdialog.h"
+#include "configdialog.h"
+#include "ui_configdialog.h"
 
 #include <qtxdg/xdgicon.h>
 #include <QtGui/QPushButton>
 
-RazorConfigDialog::RazorConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent) :
+using namespace LxQt;
+
+ConfigDialog::ConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent) :
     QDialog(parent),
     mSettings(settings),
     mCache(new RazorSettingsCache(settings)),
-    ui(new Ui::RazorConfigDialog)
+    ui(new Ui::ConfigDialog)
 {
     ui->setupUi(this);
     setWindowTitle(title);
@@ -43,12 +45,12 @@ RazorConfigDialog::RazorConfigDialog(const QString& title, RazorSettings* settin
         button->setAutoDefault(false);
 }
 
-void RazorConfigDialog::addPage(QWidget* page, const QString& name, const QString& iconName)
+void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& iconName)
 {
     addPage(page, name, QStringList() << iconName);
 }
 
-void RazorConfigDialog::addPage(QWidget* page, const QString& name, const QStringList& iconNames)
+void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList& iconNames)
 {
     QStringList icons = QStringList(iconNames) << "application-x-executable";
     new QListWidgetItem(XdgIcon::fromTheme(icons), name, ui->moduleList);
@@ -68,13 +70,13 @@ void RazorConfigDialog::addPage(QWidget* page, const QString& name, const QStrin
     resize(mMaxSize);
 }
 
-void RazorConfigDialog::closeEvent(QCloseEvent* event)
+void ConfigDialog::closeEvent(QCloseEvent* event)
 {
     emit save();
     mSettings->sync();
 }
 
-void RazorConfigDialog::dialogButtonsAction(QAbstractButton* button)
+void ConfigDialog::dialogButtonsAction(QAbstractButton* button)
 {
     QDialogButtonBox::ButtonRole role = ui->buttons->buttonRole(button);
     if (role == QDialogButtonBox::ResetRole)
@@ -88,14 +90,14 @@ void RazorConfigDialog::dialogButtonsAction(QAbstractButton* button)
     }
 }
 
-void RazorConfigDialog::updateIcons()
+void ConfigDialog::updateIcons()
 {
     for (int ix = 0; ix < mIcons.size(); ix++)
         ui->moduleList->item(ix)->setIcon(XdgIcon::fromTheme(mIcons.at(ix)));
     update();
 }
 
-RazorConfigDialog::~RazorConfigDialog()
+ConfigDialog::~ConfigDialog()
 {
     delete ui;
     delete mCache;

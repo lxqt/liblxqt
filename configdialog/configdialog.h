@@ -31,16 +31,19 @@
 #include <QtGui/QAbstractButton>
 
 namespace Ui {
-class RazorConfigDialog;
+class ConfigDialog;
 }
 
-class RazorConfigDialog : public QDialog
+namespace LxQt
+{
+
+class ConfigDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit RazorConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent = 0);
-    ~RazorConfigDialog();
+    explicit ConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent = 0);
+    ~ConfigDialog();
 
     /*!
      * Add a page to the configure dialog
@@ -73,7 +76,7 @@ private:
     RazorSettingsCache* mCache;
     QList<QStringList> mIcons;
     QSize mMaxSize;
-    Ui::RazorConfigDialog* ui;
+    Ui::ConfigDialog* ui;
 
 private slots:
     void dialogButtonsAction(QAbstractButton* button);
@@ -81,4 +84,5 @@ private slots:
 
 };
 
+} // namespace LxQt
 #endif // RAZORCONFIGDIALOG_H
