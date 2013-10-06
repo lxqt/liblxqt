@@ -25,7 +25,7 @@
 #ifndef RAZORCONFIGDIALOG_H
 #define RAZORCONFIGDIALOG_H
 
-#include <razorsettings.h>
+#include <lxqtsettings.h>
 
 #include <QtGui/QDialog>
 #include <QtGui/QAbstractButton>
@@ -42,7 +42,7 @@ class ConfigDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent = 0);
+    explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = 0);
     ~ConfigDialog();
 
     /*!
@@ -58,22 +58,22 @@ public:
 signals:
     /*!
      * This signal is emitted when the user pressed the "Reset" button.
-     * RazorSettings should be re-read and the widgets should be set accordingly.
+     * Settings should be re-read and the widgets should be set accordingly.
      */
     void reset();
 
     /*!
      * This is emitted whenever the window is closed and settings need to be saved.
-     * It is only necessary if additional actions need to be performed - RazorSettings are handled automatically.
+     * It is only necessary if additional actions need to be performed - Settings are handled automatically.
      */
     void save();
 
 protected:
-    RazorSettings* mSettings;
+    Settings* mSettings;
     virtual void closeEvent(QCloseEvent* event);
 
 private:
-    RazorSettingsCache* mCache;
+    SettingsCache* mCache;
     QList<QStringList> mIcons;
     QSize mMaxSize;
     Ui::ConfigDialog* ui;

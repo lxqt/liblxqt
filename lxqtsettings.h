@@ -26,8 +26,8 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef RAZORSETTINGS_H
-#define RAZORSETTINGS_H
+#ifndef LXQTSETTINGS_H
+#define LXQTSETTINGS_H
 
 #include <QtCore/QObject>
 #include <QtCore/QSettings>
@@ -35,33 +35,36 @@
 
 class QEvent;
     
-class RazorSettingsPrivate;
-class GlobalRazorSettings;
+namespace LxQt
+{
+
+class SettingsPrivate;
+class GlobalSettings;
 
 /*! \brief User settings handling */
-class RazorSettings : public QSettings
+class Settings : public QSettings
 {
     Q_OBJECT
 public:
 
-    /*! \brief Constructs a RazorSettings object for accessing settings of the module called module, and with parent parent.
-    RazorSettings can be accessed using the standard interface provided by QSettings, but it also provides some convenience functions and signals.
+    /*! \brief Constructs a Settings object for accessing settings of the module called module, and with parent parent.
+    Settings can be accessed using the standard interface provided by QSettings, but it also provides some convenience functions and signals.
 
     \param module a base name of the config file. It's a name without
             the extension. For example: if you want to open settings for
-            panel create it as RazorSettings("panel").
+            panel create it as Settings("panel").
             The function will create all parent directories necessary to create
             the file.
     \param parent It's no need to delete this class manually if it's set.
     */
-    explicit RazorSettings(const QString& module, QObject* parent = 0);
-    //explicit RazorSettings(QObject* parent=0);
-    explicit RazorSettings(const QSettings* parentSettings, const QString& subGroup, QObject* parent=0);
-    explicit RazorSettings(const QSettings& parentSettings, const QString& subGroup, QObject* parent=0);
-    RazorSettings(const QString &fileName, QSettings::Format format, QObject *parent = 0);
-    ~RazorSettings();
+    explicit Settings(const QString& module, QObject* parent = 0);
+    //explicit Settings(QObject* parent=0);
+    explicit Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent=0);
+    explicit Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent=0);
+    Settings(const QString &fileName, QSettings::Format format, QObject *parent = 0);
+    ~Settings();
 
-    static const GlobalRazorSettings *globalSettings();
+    static const GlobalSettings *globalSettings();
 
 
     /*! Returns the localized value for key. In the desktop file keys may be postfixed by [LOCALE]. If the
@@ -85,10 +88,10 @@ protected slots:
     virtual void fileChanged();
 
 private:
-    Q_DISABLE_COPY(RazorSettings)
+    Q_DISABLE_COPY(Settings)
 
-    RazorSettingsPrivate* const d_ptr;
-    Q_DECLARE_PRIVATE(RazorSettings)
+    SettingsPrivate* const d_ptr;
+    Q_DECLARE_PRIVATE(Settings)
 };
 
 
@@ -155,12 +158,12 @@ Only one theme object can be created. !*/
 #define razorTheme RazorTheme::currentTheme()
 
 
-class RazorSettingsCache
+class SettingsCache
 {
 public:
-    explicit RazorSettingsCache(QSettings &settings);
-    explicit RazorSettingsCache(QSettings *settings);
-    virtual ~RazorSettingsCache() {}
+    explicit SettingsCache(QSettings &settings);
+    explicit SettingsCache(QSettings *settings);
+    virtual ~SettingsCache() {}
 
     void loadFromSettings();
     void loadToSettings();
@@ -170,14 +173,14 @@ private:
     QHash<QString, QVariant> mCache;
 };
 
-class GlobalRazorSettingsPrivate;
+class GlobalSettingsPrivate;
 
-class GlobalRazorSettings: public RazorSettings
+class GlobalSettings: public Settings
 {
     Q_OBJECT
 public:
-    GlobalRazorSettings();
-    ~GlobalRazorSettings();
+    GlobalSettings();
+    ~GlobalSettings();
 
 signals:
     /// Signal emitted when the icon theme has changed.
@@ -190,8 +193,9 @@ protected slots:
     void fileChanged();
 
 private:
-    GlobalRazorSettingsPrivate* const d_ptr;
-    Q_DECLARE_PRIVATE(GlobalRazorSettings)
+    GlobalSettingsPrivate* const d_ptr;
+    Q_DECLARE_PRIVATE(GlobalSettings)
 };
 
-#endif // RAZORSETTINGS_H
+} // namespace LxQt
+#endif // LXQTSETTINGS_H

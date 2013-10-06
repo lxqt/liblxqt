@@ -30,17 +30,17 @@
 
 using namespace LxQt;
 
-ConfigDialog::ConfigDialog(const QString& title, RazorSettings* settings, QWidget* parent) :
+ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* parent) :
     QDialog(parent),
     mSettings(settings),
-    mCache(new RazorSettingsCache(settings)),
+    mCache(new SettingsCache(settings)),
     ui(new Ui::ConfigDialog)
 {
     ui->setupUi(this);
     setWindowTitle(title);
     connect(ui->buttons, SIGNAL(clicked(QAbstractButton*)), SLOT(dialogButtonsAction(QAbstractButton*)));
     ui->moduleList->setVisible(false);
-    connect(RazorSettings::globalSettings(), SIGNAL(settingsChanged()), this, SLOT(updateIcons()));
+    connect(Settings::globalSettings(), SIGNAL(settingsChanged()), this, SLOT(updateIcons()));
     foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
         button->setAutoDefault(false);
 }

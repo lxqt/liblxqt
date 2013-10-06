@@ -26,7 +26,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "razorsettings.h"
+#include "lxqtsettings.h"
 #include <qtxdg/xdgicon.h>
 #include <qtxdg/xdgdirs.h>
 #include <QtCore/QDebug>
@@ -37,10 +37,12 @@
 #include <QtCore/QFileSystemWatcher>
 #include <QtCore/QSharedData>
 
-class RazorSettingsPrivate
+using namespace LxQt;
+
+class LxQt::SettingsPrivate
 {
 public:
-    RazorSettingsPrivate(RazorSettings* parent):
+    SettingsPrivate(Settings* parent):
         mParent(parent)
     {
     }
@@ -50,13 +52,13 @@ public:
     QFileSystemWatcher mWatcher;
 
 private:
-    RazorSettings* mParent;
+    Settings* mParent;
 };
 
 
 RazorTheme* RazorTheme::mInstance = 0;
 
-class RazorThemeData: public QSharedData {
+class LxQt::RazorThemeData: public QSharedData {
 public:
     RazorThemeData(): mValid(false) {}
     QString loadQss(const QString& qssFile) const;
@@ -70,17 +72,17 @@ public:
 };
 
 
-class GlobalRazorSettingsPrivate
+class LxQt::GlobalSettingsPrivate
 {
 public:
-    GlobalRazorSettingsPrivate(GlobalRazorSettings *parent):
+    GlobalSettingsPrivate(GlobalSettings *parent):
         mParent(parent),
         mThemeUpdated(0ull)
     {
 
     }
 
-    GlobalRazorSettings *mParent;
+    GlobalSettings *mParent;
     QString mIconTheme;
     QString mRazorTheme;
     qlonglong mThemeUpdated;
@@ -91,9 +93,9 @@ public:
 /************************************************
 
  ************************************************/
-RazorSettings::RazorSettings(const QString& module, QObject* parent) :
+Settings::Settings(const QString& module, QObject* parent) :
     QSettings("razor", module, parent),
-    d_ptr(new RazorSettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this))
 {
     // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
     //       exists to have functional mWatcher
@@ -110,9 +112,9 @@ RazorSettings::RazorSettings(const QString& module, QObject* parent) :
 /************************************************
 
  ************************************************/
-RazorSettings::RazorSettings(const QString &fileName, QSettings::Format format, QObject *parent):
+Settings::Settings(const QString &fileName, QSettings::Format format, QObject *parent):
     QSettings(fileName, format, parent),
-    d_ptr(new RazorSettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this))
 {
     // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
     //       exists to have functional mWatcher
@@ -129,9 +131,9 @@ RazorSettings::RazorSettings(const QString &fileName, QSettings::Format format, 
 /************************************************
 
  ************************************************/
-RazorSettings::RazorSettings(const QSettings* parentSettings, const QString& subGroup, QObject* parent):
+Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings->organizationName(), parentSettings->applicationName(), parent),
-    d_ptr(new RazorSettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this))
 {
     beginGroup(subGroup);
 }
@@ -140,9 +142,9 @@ RazorSettings::RazorSettings(const QSettings* parentSettings, const QString& sub
 /************************************************
 
  ************************************************/
-RazorSettings::RazorSettings(const QSettings& parentSettings, const QString& subGroup, QObject* parent):
+Settings::Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings.organizationName(), parentSettings.applicationName(), parent),
-    d_ptr(new RazorSettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this))
 {
     beginGroup(subGroup);
 }
@@ -151,9 +153,9 @@ RazorSettings::RazorSettings(const QSettings& parentSettings, const QString& sub
 /************************************************
 
  ************************************************/
-RazorSettings::~RazorSettings()
+Settings::~Settings()
 {
-    // because in the RazorSettings::RazorSettings(const QString& module, QObject* parent)
+    // because in the Settings::Settings(const QString& module, QObject* parent)
     // constructor there is no beginGroup() called...
     if (!group().isEmpty())
         endGroup();
@@ -161,7 +163,7 @@ RazorSettings::~RazorSettings()
     delete d_ptr;
 }
 
-bool RazorSettings::event(QEvent *event)
+bool Settings::event(QEvent *event)
 {
     if (event->type() == QEvent::UpdateRequest)
     {
@@ -171,9 +173,9 @@ bool RazorSettings::event(QEvent *event)
     return QSettings::event(event);
 }
 
-void RazorSettings::fileChanged()
+void Settings::fileChanged()
 {
-//    Q_D(RazorSettings);
+//    Q_D(Settings);
     sync();
     emit settingsChanged();
 }
@@ -182,16 +184,16 @@ void RazorSettings::fileChanged()
 /************************************************
 
  ************************************************/
-const GlobalRazorSettings *RazorSettings::globalSettings()
+const GlobalSettings *Settings::globalSettings()
 {
     static QMutex mutex;
-    static GlobalRazorSettings *instance = 0;
+    static GlobalSettings *instance = 0;
     if (!instance)
     {
         mutex.lock();
 
         if (!instance)
-            instance = new GlobalRazorSettings();
+            instance = new GlobalSettings();
 
         mutex.unlock();
     }
@@ -208,7 +210,7 @@ const GlobalRazorSettings *RazorSettings::globalSettings()
  lang@MODIFIER	        lang@MODIFIER, lang, default value
  lang	                lang, default value
  ************************************************/
-QString RazorSettingsPrivate::localizedKey(const QString& key) const
+QString SettingsPrivate::localizedKey(const QString& key) const
 {
 
     QString lang = getenv("LC_MESSAGES");
@@ -279,9 +281,9 @@ QString RazorSettingsPrivate::localizedKey(const QString& key) const
 /************************************************
 
  ************************************************/
-QVariant RazorSettings::localizedValue(const QString& key, const QVariant& defaultValue) const
+QVariant Settings::localizedValue(const QString& key, const QVariant& defaultValue) const
 {
-    Q_D(const RazorSettings);
+    Q_D(const Settings);
     return value(d->localizedKey(key), defaultValue);
 }
 
@@ -289,9 +291,9 @@ QVariant RazorSettings::localizedValue(const QString& key, const QVariant& defau
 /************************************************
 
  ************************************************/
-void RazorSettings::setLocalizedValue(const QString &key, const QVariant &value)
+void Settings::setLocalizedValue(const QString &key, const QVariant &value)
 {
-    Q_D(const RazorSettings);
+    Q_D(const Settings);
     setValue(d->localizedKey(key), value);
 }
 
@@ -432,7 +434,7 @@ QString RazorTheme::qss(const QString& module) const
         qWarning() << QString("QSS file %1 cannot be found").arg(path);
 
     // Single/double click ...........................
-    RazorSettings s("desktop");
+    Settings s("desktop");
     bool singleClick = s.value("icon-launch-mode", "singleclick").toString() == "singleclick";
     styleSheet += QString("QAbstractItemView {activate-on-singleclick : %1; }").arg(singleClick ? 1 : 0);
 
@@ -500,7 +502,7 @@ QString RazorTheme::desktopBackground(int screen) const
 const RazorTheme &RazorTheme::currentTheme()
 {
     static RazorTheme theme;
-    QString name = RazorSettings::globalSettings()->value("theme").toString();
+    QString name = Settings::globalSettings()->value("theme").toString();
     if (theme.name() != name)
     {
         theme = RazorTheme(name);
@@ -545,7 +547,7 @@ QList<RazorTheme> RazorTheme::allThemes()
 /************************************************
 
  ************************************************/
-RazorSettingsCache::RazorSettingsCache(QSettings &settings) :
+SettingsCache::SettingsCache(QSettings &settings) :
     mSettings(settings)
 {
     loadFromSettings();
@@ -555,7 +557,7 @@ RazorSettingsCache::RazorSettingsCache(QSettings &settings) :
 /************************************************
 
  ************************************************/
-RazorSettingsCache::RazorSettingsCache(QSettings *settings) :
+SettingsCache::SettingsCache(QSettings *settings) :
     mSettings(*settings)
 {
     loadFromSettings();
@@ -565,7 +567,7 @@ RazorSettingsCache::RazorSettingsCache(QSettings *settings) :
 /************************************************
 
  ************************************************/
-void RazorSettingsCache::loadFromSettings()
+void SettingsCache::loadFromSettings()
 {
    foreach (QString key, mSettings.allKeys())
    {
@@ -577,7 +579,7 @@ void RazorSettingsCache::loadFromSettings()
 /************************************************
 
  ************************************************/
-void RazorSettingsCache::loadToSettings()
+void SettingsCache::loadToSettings()
 {
     QHash<QString, QVariant>::const_iterator i = mCache.constBegin();
 
@@ -594,9 +596,9 @@ void RazorSettingsCache::loadToSettings()
 /************************************************
 
  ************************************************/
-GlobalRazorSettings::GlobalRazorSettings():
-    RazorSettings("razor"),
-    d_ptr(new GlobalRazorSettingsPrivate(this))
+GlobalSettings::GlobalSettings():
+    Settings("razor"),
+    d_ptr(new GlobalSettingsPrivate(this))
 {
     if (value("icon_theme").toString().isEmpty())
     {
@@ -624,7 +626,7 @@ GlobalRazorSettings::GlobalRazorSettings():
     fileChanged();
 }
 
-GlobalRazorSettings::~GlobalRazorSettings()
+GlobalSettings::~GlobalSettings()
 {
     delete d_ptr;
 }
@@ -633,9 +635,9 @@ GlobalRazorSettings::~GlobalRazorSettings()
 /************************************************
 
  ************************************************/
-void GlobalRazorSettings::fileChanged()
+void GlobalSettings::fileChanged()
 {
-    Q_D(GlobalRazorSettings);
+    Q_D(GlobalSettings);
     sync();
 
 

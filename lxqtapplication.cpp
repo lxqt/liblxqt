@@ -31,7 +31,7 @@
 #include <qtxdg/xdgdirs.h>
 
 #include "lxqtapplication.h"
-#include "razorsettings.h"
+#include "lxqtsettings.h"
 
 using namespace LxQt;
 
@@ -100,9 +100,9 @@ Application::Application(int &argc, char** argv)
         qInstallMsgHandler(dbgMessageOutput);
 #endif
 
-    XdgIcon::setThemeName(RazorSettings::globalSettings()->value("icon_theme").toString());
+    XdgIcon::setThemeName(Settings::globalSettings()->value("icon_theme").toString());
     setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/razor_logo.png"));
-    connect(RazorSettings::globalSettings(), SIGNAL(razorThemeChanged()), this, SLOT(updateTheme()));
+    connect(Settings::globalSettings(), SIGNAL(razorThemeChanged()), this, SLOT(updateTheme()));
     updateTheme();
 }
 

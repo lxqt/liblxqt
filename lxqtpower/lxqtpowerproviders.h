@@ -30,7 +30,7 @@
 #define LXQTPOWER_PROVIDERS_H
 
 #include <QtCore/QObject>
-#include <razorsettings.h>
+#include <lxqtsettings.h>
 #include "lxqtpower.h"
 
 namespace LxQt
@@ -138,7 +138,7 @@ public slots:
     bool doAction(Power::Action action);
 
 private:
-    RazorSettings mSettings;
+    Settings mSettings;
 };
 
 } // namespace LxQt
