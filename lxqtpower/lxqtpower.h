@@ -102,5 +102,5 @@ private:
     QList<PowerProvider*> mProviders;
 };
 
-} // namespace
+} // namespace LxQt
 #endif // LXQTPOWER_H

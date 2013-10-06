@@ -141,5 +141,5 @@ private:
     RazorSettings mSettings;
 };
 
-}
+} // namespace LxQt
 #endif // LXQTPOWER_PROVIDERS_H
