@@ -29,8 +29,8 @@
 #include <QtGui/QMessageBox>
 
 #include <qtxdg/xdgicon.h>
-#include "screensaver.h"
-#include "libtranslate.h"
+#include "lxqtscreensaver.h"
+#include "lxqtlibtranslate.h"
 
 using namespace LxQt;
 

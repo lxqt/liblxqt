@@ -52,7 +52,7 @@
   <customwidget>
    <class>LxQt::PageSelectWidget</class>
    <extends>QListWidget</extends>
-   <header location="global">configdialog/pageselectwidget.h</header>
+   <header location="global">configdialog/lxqtpageselectwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

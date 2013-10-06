@@ -28,7 +28,7 @@
 #include "lxqtaboutdialog.h"
 #include "ui_lxqtaboutdialog.h"
 #include "lxqtaboutdialog_p.h"
-#include "libtranslate.h"
+#include "lxqtlibtranslate.h"
 #include "technicalinfo.h"
 #include "translatorsinfo/translatorsinfo.h"
 #include <QDebug>

@@ -22,8 +22,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORCONFIGDIALOG_H
-#define RAZORCONFIGDIALOG_H
+#ifndef LXQTCONFIGDIALOG_H
+#define LXQTCONFIGDIALOG_H
 
 #include <lxqtsettings.h>
 
@@ -85,4 +85,4 @@ private slots:
 };
 
 } // namespace LxQt
-#endif // RAZORCONFIGDIALOG_H
+#endif // LXQTCONFIGDIALOG_H

@@ -26,8 +26,8 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef ADDPLUGINDIALOG_H
-#define ADDPLUGINDIALOG_H
+#ifndef LXQTADDPLUGINDIALOG_H
+#define LXQTADDPLUGINDIALOG_H
 
 #include <QDialog>
 #include <lxqtplugininfo.h>
@@ -84,4 +84,4 @@ private slots:
 
 } // namecpase LxQt
 
-#endif // ADDPLUGINDIALOG_H
+#endif // LXQTADDPLUGINDIALOG_H

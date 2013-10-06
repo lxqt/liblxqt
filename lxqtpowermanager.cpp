@@ -25,7 +25,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "powermanager.h"
+#include "lxqtpowermanager.h"
 #include "lxqtpower/lxqtpower.h"
 #include <qtxdg/xdgicon.h>
 #include <QDBusInterface>
@@ -33,7 +33,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QtDebug>
-#include "libtranslate.h"
+#include "lxqtlibtranslate.h"
 
 using namespace LxQt;
 

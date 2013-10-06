@@ -22,7 +22,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "programfinder.h"
+#include "lxqtprogramfinder.h"
 #include <wordexp.h>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>

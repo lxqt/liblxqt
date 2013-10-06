@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "pageselectwidget.h"
+#include "lxqtpageselectwidget.h"
 #include <QtGui/QStyledItemDelegate>
 #include <QtCore/QDebug>
 #include <QtGui/QScrollBar>

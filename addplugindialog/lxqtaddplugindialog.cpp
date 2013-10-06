@@ -26,8 +26,8 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "addplugindialog.h"
-#include "ui_addplugindialog.h"
+#include "lxqtaddplugindialog.h"
+#include "ui_lxqtaddplugindialog.h"
 #include <qtxdg/xdgicon.h>
 #include <QtGui/QListWidgetItem>
 #include <QtGui/QItemDelegate>
@@ -40,7 +40,7 @@
 #include <QAbstractTextDocumentLayout>
 
 #include <QLineEdit>
-#include "libtranslate.h"
+#include "lxqtlibtranslate.h"
 
 using namespace LxQt;
 

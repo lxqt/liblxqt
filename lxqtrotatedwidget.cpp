@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "rotatedwidget.h"
+#include "lxqtrotatedwidget.h"
 
 #include <QPainter>
 #include <QImage>

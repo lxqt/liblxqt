@@ -35,7 +35,7 @@
 #include <QtGui/QDesktopWidget>
 
 #include <stdint.h>
-#include "xfitman.h"
+#include "lxqtxfitman.h"
 
 #include <stdio.h>
 #include <stdlib.h>

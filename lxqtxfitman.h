@@ -26,8 +26,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef XFITMAN_H
-#define XFITMAN_H
+#ifndef LXQTXFITMAN_H
+#define LXQTXFITMAN_H
 
 #include <QtCore/QList>
 #include <QtGui/QPixmap>
@@ -240,4 +240,4 @@ private:
 const XfitMan& xfitMan();
 
 } //namespace LxQt
-#endif
+#endif LXQTXFITMAN_H

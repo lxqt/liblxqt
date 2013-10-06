@@ -6,7 +6,7 @@
  *
  * Copyright: 2010-2011 Razor team
  * Authors:
- *   Petr Vanek <petr@scribus.info>
+ *   Alexander Sokoloff <sokoloff.a@gmail.com>
  *
  * This program or library is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General Public
@@ -25,46 +25,24 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef POWERMANAGER_H
-#define POWERMANAGER_H
 
-#include <QObject>
-#include <QAction>
+#ifndef LXQTPAGESELECTWIDGET_H
+#define LXQTPAGESELECTWIDGET_H
 
+#include <QtGui/QListWidget>
 namespace LxQt
 {
-class Power;
-}
-/*! QAction centric menu aware wrapper around razorpower
-*/
-class PowerManager : public QObject
+
+class PageSelectWidget : public QListWidget
 {
     Q_OBJECT
-
 public:
-    PowerManager(QObject * parent, bool skipWarning = false);
-    ~PowerManager();
-    QList<QAction*> availableActions();
+    explicit PageSelectWidget(QWidget *parent = 0);
+    virtual ~PageSelectWidget();
 
-public slots:
-    // power management
-    void suspend();
-    void hibernate();
-    void reboot();
-    void shutdown();
-    // razor session
-    void logout();
-
-public:
-    bool skipWarning() const { return m_skipWarning; }
-
-private:
-    LxQt::Power * m_power;
-    bool m_skipWarning;
-
-private slots:
-    void hibernateFailed();
-    void suspendFailed();
+protected:
+    QSize sizeHint() const;
 };
 
-#endif
+} // namespace LxQt
+#endif // PAGESELECTWIDGET_H

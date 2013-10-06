@@ -22,8 +22,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "configdialog.h"
-#include "ui_configdialog.h"
+#include "lxqtconfigdialog.h"
+#include "ui_lxqtconfigdialog.h"
 
 #include <qtxdg/xdgicon.h>
 #include <QtGui/QPushButton>

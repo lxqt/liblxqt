@@ -22,8 +22,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef PROGRAMFINDER_H
-#define PROGRAMFINDER_H
+#ifndef LXQTPROGRAMFINDER_H
+#define LXQTPROGRAMFINDER_H
 
 #include <QtCore/QStringList>
 namespace LxQt
@@ -56,4 +56,4 @@ namespace ProgramFinder
 }
 
 } // namespace LxQt
-#endif // PROGRAMFINDER_H
+#endif // LXQTPROGRAMFINDER_H

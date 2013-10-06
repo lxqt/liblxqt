@@ -25,8 +25,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef ROTATED_WIDGET_H
-#define ROTATED_WIDGET_H
+#ifndef LXQTROTATED_WIDGET_H
+#define LXQTROTATED_WIDGET_H
 
 #include <QWidget>
 
@@ -122,4 +122,4 @@ private:
 };
 
 } // namespace LxQt
-#endif
+#endif // LXQTROTATEDWIDGET_H
