@@ -131,7 +131,7 @@ QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelInd
 /************************************************
 
  ************************************************/
-bool pluginDescriptionLessThan(const RazorPluginInfo &p1, const RazorPluginInfo &p2)
+bool pluginDescriptionLessThan(const PluginInfo &p1, const PluginInfo &p2)
 {
     int cmp = QString::compare(p1.name(), p2.name());
     if (cmp != 0)
@@ -155,7 +155,7 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
     libTranslate("librazorqt");
     ui->setupUi(this);
 
-    mPlugins = RazorPluginInfo::search(desktopFilesDirs, serviceType, nameFilter);
+    mPlugins = PluginInfo::search(desktopFilesDirs, serviceType, nameFilter);
     qSort(mPlugins.begin(), mPlugins.end(), pluginDescriptionLessThan);
     
     ui->pluginList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->pluginList));
@@ -168,7 +168,7 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
     connect(ui->addButton, SIGNAL(clicked(bool)), this, SLOT(emitPluginSelected()));
 }
 
-void AddPluginDialog::setPluginsInUse(const RazorPluginInfoList pluginsInUse)
+void AddPluginDialog::setPluginsInUse(const PluginInfoList pluginsInUse)
 {
     mPluginsInUse = pluginsInUse;
     init();
@@ -189,7 +189,7 @@ void AddPluginDialog::init()
         if (count)
             countStr = tr("(%1 active)").arg(count);
 
-        const RazorPluginInfo &plugin = mPlugins.at(i);
+        const PluginInfo &plugin = mPlugins.at(i);
         QListWidgetItem* item = new QListWidgetItem(ui->pluginList);
         item->setText(QString("<b>%1 %2</b><br>\n%3\n").arg(plugin.name(), countStr, plugin.comment()));
         item->setIcon(plugin.icon(fallIco));
@@ -256,8 +256,7 @@ void AddPluginDialog::emitPluginSelected()
     QListWidget* pluginList = ui->pluginList;
     if (pluginList->currentItem() && pluginList->currentItem()->isSelected())
     {
-        RazorPluginInfo plugin = mPlugins.at(pluginList->currentItem()->data(INDEX_ROLE).toInt());
-        qDebug() << "emitPluginSelected emitted";
+        PluginInfo plugin = mPlugins.at(pluginList->currentItem()->data(INDEX_ROLE).toInt());
         emit pluginSelected(plugin);
     }
 }

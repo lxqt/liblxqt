@@ -26,19 +26,21 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef RAZORPLUGININFO_H
-#define RAZORPLUGININFO_H
+#ifndef LXQTPLUGININFO_H
+#define LXQTPLUGININFO_H
 
 #include <qtxdg/xdgdesktopfile.h>
 #include <QtCore/QString>
 #include <QtCore/QList>
 
 #include <QtCore/QFileInfo>
-//#include <QtCore/QDir>
 #include <QtCore/QtAlgorithms>
 #include <QtCore/QDebug>
 
 class QLibrary;
+
+namespace LxQt
+{
 
 /*!
 Every plugin needs a .desktop file that describes it. The basename of this file must
@@ -52,21 +54,21 @@ razorpanel_clock2.desktop file
   Name=Clock
   Comment=Clock and calendar
 
-RazorPluginInfo class gives the interface for reading the values from the plugin .desktop file.
+PluginInfo class gives the interface for reading the values from the plugin .desktop file.
 This is a pure virtual class, you must implement libraryDir(), translationDir(), and instance() methods.
 */
-class RazorPluginInfo: public XdgDesktopFile
+class PluginInfo: public XdgDesktopFile
 {
 public:
-    /// Constructs a RazorPluginInfo object for accessing the info stored in the .desktop file.
-    explicit RazorPluginInfo();
+    /// Constructs a PluginInfo object for accessing the info stored in the .desktop file.
+    explicit PluginInfo();
 
     //! Reimplemented from XdgDesktopFile.
     virtual bool load(const QString& fileName);
 
 
     //! Reimplemented from XdgDesktopFile.
-    //RazorPluginInfo& operator=(const RazorPluginInfo& other);
+    //PluginInfo& operator=(const PluginInfo& other);
 
 
     //! Returns identification string of this plugin, identified plugin type. Now id is part of the filename.
@@ -83,29 +85,30 @@ public:
     QLibrary* loadLibrary(const QString& libDir) const;
 
 
-    /*! Returns a list of RazorPluginInfo objects for the matched files in the directories.
+    /*! Returns a list of PluginInfo objects for the matched files in the directories.
       @param desktopFilesDirs - scanned directories names.
       @param serviceType - type of the plugin, for example "RazorPanel/Plugin".
       @param nameFilter  - wildcard filter that understands * and ? wildcards.
 
       If the same filename is located under multiple directories only the first file should be used.
     */
-    static QList<RazorPluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter="*");
+    static QList<PluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter="*");
 
     /// This function is provided for convenience. It's equivalent to new calling search(QString(desktopFilesDir), serviceType, nameFilter)
-    static QList<RazorPluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter="*");
+    static QList<PluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter="*");
 
 private:
     QString mId;
 };
 
-typedef QList<RazorPluginInfo> RazorPluginInfoList;
+typedef QList<PluginInfo> PluginInfoList;
 
+} // namespace LxQt
 
-QDebug operator<<(QDebug dbg, const RazorPluginInfo& pi);
-QDebug operator<<(QDebug dbg, const RazorPluginInfo* const pi);
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfo& pi);
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfo* const pi);
 
-QDebug operator<<(QDebug dbg, const RazorPluginInfoList& list);
-QDebug operator<<(QDebug dbg, const RazorPluginInfoList* const pluginInfoList);
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfoList& list);
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfoList* const pluginInfoList);
 
-#endif // RAZORPLUGININFO_H
+#endif // LXQTPLUGININFO_H

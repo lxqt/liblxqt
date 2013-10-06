@@ -30,7 +30,7 @@
 #define ADDPLUGINDIALOG_H
 
 #include <QDialog>
-#include <razorplugininfo.h>
+#include <lxqtplugininfo.h>
 
 #define SEARCH_DELAY 125
 
@@ -50,7 +50,7 @@ class AddPluginDialog : public QDialog
 
 public:
     /*! Constructs a dialog with the given parent that initially displays
-       RazorPluginInfo objects for the matched files in the directories
+       PluginInfo objects for the matched files in the directories
       @param desktopFilesDirs - list of the scanned directories names.
       @param serviceType - type of the plugin, for example "RazorPanel/Plugin".
       @param nameFilter  - wildcard filter that understands * and ? wildcards. */
@@ -61,10 +61,10 @@ public:
 
     ~AddPluginDialog();
 
-    void setPluginsInUse(const RazorPluginInfoList pluginsInUse);
+    void setPluginsInUse(const PluginInfoList pluginsInUse);
 
 signals:
-    void pluginSelected(const RazorPluginInfo &plugin);
+    void pluginSelected(const PluginInfo &plugin);
 
 protected:
     void timerEvent(QTimerEvent* event);
@@ -72,8 +72,8 @@ protected:
 private:
     void init();
     Ui::AddPluginDialog *ui;
-    RazorPluginInfoList mPlugins;
-    RazorPluginInfoList mPluginsInUse;
+    PluginInfoList mPlugins;
+    PluginInfoList mPluginsInUse;
     int mTimerId;
 
 private slots:

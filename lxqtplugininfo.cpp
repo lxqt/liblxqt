@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "razorplugininfo.h"
+#include "lxqtplugininfo.h"
 #include <QtCore/QObject>
 #include <QtCore/QFileInfo>
 #include <QtCore/QDir>
@@ -35,11 +35,12 @@
 #include <QLibrary>
 #include <QDebug>
 
+using namespace LxQt;
 
 /************************************************
 
  ************************************************/
-RazorPluginInfo::RazorPluginInfo():
+PluginInfo::PluginInfo():
     XdgDesktopFile()
 {
 
@@ -49,7 +50,7 @@ RazorPluginInfo::RazorPluginInfo():
 /************************************************
 
  ************************************************/
-bool RazorPluginInfo::load(const QString& fileName)
+bool PluginInfo::load(const QString& fileName)
 {
     XdgDesktopFile::load(fileName);
     mId = QFileInfo(fileName).completeBaseName();
@@ -60,7 +61,7 @@ bool RazorPluginInfo::load(const QString& fileName)
 /************************************************
 
  ************************************************/
-bool RazorPluginInfo::isValid() const
+bool PluginInfo::isValid() const
 {
     return XdgDesktopFile::isValid();
 }
@@ -69,7 +70,7 @@ bool RazorPluginInfo::isValid() const
 /************************************************
 
  ************************************************/
-QLibrary* RazorPluginInfo::loadLibrary(const QString& libDir) const
+QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
 {
     QString baseName, path;
     QFileInfo fi = QFileInfo(fileName());
@@ -99,9 +100,9 @@ QLibrary* RazorPluginInfo::loadLibrary(const QString& libDir) const
 /************************************************
 
  ************************************************/
-RazorPluginInfoList RazorPluginInfo::search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter)
+PluginInfoList PluginInfo::search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter)
 {
-    QList<RazorPluginInfo> res;
+    QList<PluginInfo> res;
     QSet<QString> processed;
 
     foreach (QString desktopFilesDir, desktopFilesDirs)
@@ -115,7 +116,7 @@ RazorPluginInfoList RazorPluginInfo::search(const QStringList& desktopFilesDirs,
 
             processed << file.fileName();
 
-            RazorPluginInfo item;
+            PluginInfo item;
             item.load(file.canonicalFilePath());
 
             if (item.isValid() && item.serviceType() == serviceType)
@@ -129,7 +130,7 @@ RazorPluginInfoList RazorPluginInfo::search(const QStringList& desktopFilesDirs,
 /************************************************
 
  ************************************************/
-RazorPluginInfoList RazorPluginInfo::search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter)
+PluginInfoList PluginInfo::search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter)
 {
     return search(QStringList(desktopFilesDir), serviceType, nameFilter);
 }
@@ -138,7 +139,7 @@ RazorPluginInfoList RazorPluginInfo::search(const QString& desktopFilesDir, cons
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const RazorPluginInfo &pluginInfo)
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfo &pluginInfo)
 {
     dbg.nospace() << QString("%1").arg(pluginInfo.id());
     return dbg.space();
@@ -148,7 +149,7 @@ QDebug operator<<(QDebug dbg, const RazorPluginInfo &pluginInfo)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const RazorPluginInfo * const pluginInfo)
+QDebug operator<<(QDebug dbg, const LxQt::PluginInfo * const pluginInfo)
 {
     return operator<<(dbg, *pluginInfo);
 }
@@ -157,7 +158,7 @@ QDebug operator<<(QDebug dbg, const RazorPluginInfo * const pluginInfo)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const RazorPluginInfoList& list)
+QDebug operator<<(QDebug dbg, const PluginInfoList& list)
 {
     dbg.nospace() << '(';
     for (int i=0; i<list.size(); ++i)
@@ -173,7 +174,7 @@ QDebug operator<<(QDebug dbg, const RazorPluginInfoList& list)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const RazorPluginInfoList* const pluginInfoList)
+QDebug operator<<(QDebug dbg, const PluginInfoList* const pluginInfoList)
 {
     return operator<<(dbg, *pluginInfoList);
 }
