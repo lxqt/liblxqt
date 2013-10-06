@@ -31,7 +31,7 @@
 #include <QtDBus/QDBusInterface>
 #include <QtCore/QProcess>
 #include <QtCore/QDebug>
-#include "razorqt/razornotification.h"
+#include "razornotification.h"
 
 #define UPOWER_SERVICE          "org.freedesktop.UPower"
 #define UPOWER_PATH             "/org/freedesktop/UPower"

@@ -52,7 +52,7 @@
   <customwidget>
    <class>PageSelectWidget</class>
    <extends>QListWidget</extends>
-   <header location="global">razorqt/pageselectwidget.h</header>
+   <header location="global">pageselectwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

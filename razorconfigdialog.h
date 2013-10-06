@@ -25,7 +25,7 @@
 #ifndef RAZORCONFIGDIALOG_H
 #define RAZORCONFIGDIALOG_H
 
-#include <razorqt/razorsettings.h>
+#include <razorsettings.h>
 
 #include <QtGui/QDialog>
 #include <QtGui/QAbstractButton>

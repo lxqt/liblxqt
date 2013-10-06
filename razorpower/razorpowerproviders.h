@@ -30,7 +30,7 @@
 #define RAZORPOWER_PROVIDERS_H
 
 #include <QtCore/QObject>
-#include <razorqt/razorsettings.h>
+#include <razorsettings.h>
 #include "razorpower.h"
 
 class RazorPowerProvider: public QObject

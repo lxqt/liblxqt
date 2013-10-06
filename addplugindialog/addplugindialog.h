@@ -30,7 +30,7 @@
 #define ADDPLUGINDIALOG_H
 
 #include <QDialog>
-#include <razorqt/razorplugininfo.h>
+#include <razorplugininfo.h>
 
 #define SEARCH_DELAY 125
 
