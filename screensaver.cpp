@@ -35,7 +35,7 @@
 ScreenSaver::ScreenSaver(QObject * parent)
     : QObject(parent)
 {
-    libTranslate("librazorqt");
+    LxQt::libTranslate("librazorqt");
     m_xdgProcess = new QProcess(this);
     connect(m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(xdgProcess_finished(int,QProcess::ExitStatus)));

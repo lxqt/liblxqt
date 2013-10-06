@@ -32,6 +32,8 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QLocale>
 #include <QtCore/QSet>
+namespace LxQt
+{
 
 inline void libTranslate(const QString &name)
 {
@@ -49,5 +51,5 @@ inline void libTranslate(const QString &name)
     QCoreApplication::installTranslator(translator);
 }
 
-
+} // namecpase LxQt
 #endif // LIBTRANSLATE_H
