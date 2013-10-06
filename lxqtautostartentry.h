@@ -22,10 +22,13 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORAUTOSTARTENTRY_H
-#define RAZORAUTOSTARTENTRY_H
+#ifndef LXQTAUTOSTARTENTRY_H
+#define LXQTAUTOSTARTENTRY_H
 
 #include <qtxdg/xdgdesktopfile.h>
+
+namespace LxQt
+{
 
 /*! \brief The AutostartEntry class provides an interface for staging configuration of individual
 autostart items. All changes are made in memory until commit() is called.
@@ -36,19 +39,19 @@ autostart items. All changes are made in memory until commit() is called.
 When a "local" file has the same name as the "system" file, the local one overrides it. This class
 tries to ensure that the "local" file is deleted if it's identical to the "system" file.
 */
-class RazorAutostartEntry
+class AutostartEntry
 {
 public:
     /*! Constructs an AutostartEntry object for a specific entry.
      * \param name The name of the autostart desktop file (e.g. "razor-panel.desktop")
      */
-    RazorAutostartEntry(const QString& name);
+    AutostartEntry(const QString& name);
 
     //! \brief Default constructor
-    RazorAutostartEntry();
+    AutostartEntry();
 
     //! Destructor
-    virtual ~RazorAutostartEntry() { }
+    virtual ~AutostartEntry() { }
 
     //! Returns the "active" desktop file
     const XdgDesktopFile& file() const;
@@ -106,4 +109,5 @@ protected:
     bool mSystem;       //! true if the "system" file exists
 };
 
-#endif // RAZORAUTOSTARTENTRY_H
+} // namespace LxQt
+#endif // LXQTAUTOSTARTENTRY_H

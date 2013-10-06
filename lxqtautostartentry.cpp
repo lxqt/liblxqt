@@ -22,17 +22,19 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include "razorautostartentry.h"
+#include "lxqtautostartentry.h"
 #include <qtxdg/xdgautostart.h>
 #include <qtxdg/xdgdirs.h>
 #include <QtCore/QFileInfo>
 
-RazorAutostartEntry::RazorAutostartEntry() :
+using namespace LxQt;
+
+AutostartEntry::AutostartEntry() :
     mLocalState(StateNone), mSystem(false)
 {
 }
 
-RazorAutostartEntry::RazorAutostartEntry(const QString& name):
+AutostartEntry::AutostartEntry(const QString& name):
     mLocalState(StateNone), mSystem(false)
 {
     foreach (const QString& dir, XdgDirs::autostartDirs())
@@ -54,7 +56,7 @@ RazorAutostartEntry::RazorAutostartEntry(const QString& name):
     }
 }
 
-void RazorAutostartEntry::setFile(const XdgDesktopFile& file)
+void AutostartEntry::setFile(const XdgDesktopFile& file)
 {
     bool local = isLocal();
     if (mSystem && local && file == mSystemFile)
@@ -71,7 +73,7 @@ void RazorAutostartEntry::setFile(const XdgDesktopFile& file)
     }
 }
 
-bool RazorAutostartEntry::removeLocal()
+bool AutostartEntry::removeLocal()
 {
     if (!isLocal())
         return false;
@@ -84,17 +86,17 @@ bool RazorAutostartEntry::removeLocal()
     return !mSystem;
 }
 
-const XdgDesktopFile& RazorAutostartEntry::file() const
+const XdgDesktopFile& AutostartEntry::file() const
 {
     return isLocal() ? mLocalFile : mSystemFile;
 }
 
-QString RazorAutostartEntry::name() const
+QString AutostartEntry::name() const
 {
     return QFileInfo(file().fileName()).fileName();
 }
 
-void RazorAutostartEntry::setEnabled(bool enable)
+void AutostartEntry::setEnabled(bool enable)
 {
     XdgDesktopFile f = file();
     if (enable)
@@ -105,12 +107,12 @@ void RazorAutostartEntry::setEnabled(bool enable)
     setFile(f);
 }
 
-bool RazorAutostartEntry::isEnabled() const
+bool AutostartEntry::isEnabled() const
 {
     return !isEmpty() && !file().value("Hidden", false).toBool();
 }
 
-bool RazorAutostartEntry::commit()
+bool AutostartEntry::commit()
 {
     if (mLocalState == StateDeleted)
     {
