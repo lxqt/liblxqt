@@ -27,6 +27,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 
+using namespace LxQt;
+
 bool ProgramFinder::programExists(const QString& command)
 {
     QString program = programName(command);

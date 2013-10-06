@@ -26,6 +26,8 @@
 #define PROGRAMFINDER_H
 
 #include <QtCore/QStringList>
+namespace LxQt
+{
 
 namespace ProgramFinder
 {
@@ -53,4 +55,5 @@ namespace ProgramFinder
     QString programName(const QString& command);
 }
 
+} // namespace LxQt
 #endif // PROGRAMFINDER_H
