@@ -240,4 +240,4 @@ private:
 const XfitMan& xfitMan();
 
 } //namespace LxQt
-#endif LXQTXFITMAN_H
+#endif // LXQTXFITMAN_H

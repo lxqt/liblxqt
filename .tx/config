@@ -1,0 +1,15 @@
+[main]
+host = https://www.transifex.com
+
+[lxde-qt.liblxqt]
+file_filter = translations/liblxqt_<lang>.ts
+source_file = translations/source.ts
+source_lang = en
+type = QT
+
+#[flacon.About_Translators]
+#source_file = translations/src.translators.info
+#source_lang = en
+#file_filter = translations/translators_<lang>.info
+#type = MOZILLAPROPERTIES
+

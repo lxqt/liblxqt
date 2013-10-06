@@ -39,6 +39,7 @@ using namespace LxQt;
 
 class MessageBox: public QMessageBox
 {
+    Q_OBJECT
 public:
     explicit MessageBox(QWidget *parent = 0): QMessageBox(parent) {}
 
