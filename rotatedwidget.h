@@ -30,6 +30,9 @@
 
 #include <QWidget>
 
+namespace LxQt
+{
+
 class RotatedWidget: public QWidget
 {
     Q_OBJECT
@@ -118,4 +121,5 @@ private:
     bool mTransferLeaveEvent;
 };
 
+} // namespace LxQt
 #endif

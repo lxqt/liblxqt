@@ -41,6 +41,7 @@
 
 #include <QResizeEvent>
 
+using namespace LxQt;
 
 RotatedWidget::RotatedWidget(QWidget &content, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
