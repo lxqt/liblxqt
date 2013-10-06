@@ -32,6 +32,8 @@
 #include "screensaver.h"
 #include "libtranslate.h"
 
+using namespace LxQt;
+
 ScreenSaver::ScreenSaver(QObject * parent)
     : QObject(parent)
 {

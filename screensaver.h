@@ -35,6 +35,8 @@
 
 class QProcess;
 
+namespace LxQt
+{
 
 class ScreenSaver : public QObject
 {
@@ -59,5 +61,6 @@ private slots:
 
 };
 
+} // namespace LxQt
 #endif
 
