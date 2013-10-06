@@ -25,11 +25,9 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORABOUTDLG_CPP
-#define RAZORABOUTDLG_CPP
-#include "razoraboutdlg.h"
-#include "ui_razoraboutdlg.h"
-#include "razoraboutdlg_p.h"
+#include "lxqtaboutdialog.h"
+#include "ui_lxqtaboutdialog.h"
+#include "lxqtaboutdialog_p.h"
 #include "libtranslate.h"
 #include "technicalinfo.h"
 #include "translatorsinfo/translatorsinfo.h"
@@ -37,7 +35,9 @@
 #include <QtCore/QDate>
 #include <QtGui/QClipboard>
 
-RazorAboutDLGPrivate::RazorAboutDLGPrivate()
+using namespace LxQt;
+
+AboutDialogPrivate::AboutDialogPrivate()
 {
     libTranslate("librazorqt");
     setupUi(this);
@@ -80,7 +80,7 @@ RazorAboutDLGPrivate::RazorAboutDLGPrivate()
 
 }
 
-QString RazorAboutDLGPrivate::titleText() const
+QString AboutDialogPrivate::titleText() const
 {
     return QString("<div class=name>%1</div><div class=ver>%2</div>").arg(
                 "Razor-qt",
@@ -88,7 +88,7 @@ QString RazorAboutDLGPrivate::titleText() const
 
 }
 
-QString RazorAboutDLGPrivate::aboutText() const
+QString AboutDialogPrivate::aboutText() const
 {
     return  QString("<br>%1<br><br><br>%2<hr>%3<p>%4").arg(
                 tr("Advanced, easy-to-use, and fast desktop environment based on Qt technologies."),
@@ -102,7 +102,7 @@ QString RazorAboutDLGPrivate::aboutText() const
                 );
 }
 
-QString RazorAboutDLGPrivate::authorsText() const
+QString AboutDialogPrivate::authorsText() const
 {
     return QString("%1<p>%2").arg(
                 tr("Razor-qt is developed by the <a %1>Razor-qt Team and contributors</a> on Github.")
@@ -113,7 +113,7 @@ QString RazorAboutDLGPrivate::authorsText() const
 }
 
 
-QString RazorAboutDLGPrivate::thanksText() const
+QString AboutDialogPrivate::thanksText() const
 {
     return QString(
                 "%1"
@@ -128,7 +128,7 @@ QString RazorAboutDLGPrivate::thanksText() const
                 ).arg(tr("Special thanks to:"));
 }
 
-QString RazorAboutDLGPrivate::translationsText() const
+QString AboutDialogPrivate::translationsText() const
 {
     TranslatorsInfo translatorsInfo;
     return QString("%1<p><ul>%2</ul>").arg(
@@ -137,17 +137,14 @@ QString RazorAboutDLGPrivate::translationsText() const
                 );
 }
 
-RazorAboutDLG::RazorAboutDLG()
+AboutDialog::AboutDialog()
 {
-    d_ptr = new RazorAboutDLGPrivate();
+    d_ptr = new AboutDialogPrivate();
 }
 
-void RazorAboutDLGPrivate::copyToCliboardTechInfo()
+void AboutDialogPrivate::copyToCliboardTechInfo()
 {
     TechnicalInfo info;
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(info.text());
 }
-
-
-#endif

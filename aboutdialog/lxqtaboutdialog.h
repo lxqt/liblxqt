@@ -25,29 +25,28 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORABOUTDLG_P_H
-#define RAZORABOUTDLG_P_H
+#ifndef LXQTRABOUTDIALOG_H
+#define LXQTRABOUTDIALOG_H
 
-#include <QtGui/QDialog>
-#include "ui_razoraboutdlg.h"
+#include <QDialog>
+
+namespace LxQt
+{
+
+class AboutDialogPrivate;
 
 /**
- * @brief prepares the data to show and fills the form, then shows.
+ * @brief displays a simple about dialog
  */
-class RazorAboutDLGPrivate: public QDialog, public Ui_about
+class AboutDialog: public QDialog
 {
     Q_OBJECT
-
 public:
-    RazorAboutDLGPrivate();
-    QString titleText() const;
-    QString aboutText() const;
-    QString authorsText() const;
-    QString thanksText() const;
-    QString translationsText() const;
-
-public slots:
-    void copyToCliboardTechInfo();
+    AboutDialog();
+private:
+    AboutDialogPrivate * d_ptr;
 };
 
-#endif // RAZORABOUTDLG_P_H
+} // namespace LxQt
+
+#endif // LXQTRABOUTDIALOG_H

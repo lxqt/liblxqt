@@ -29,7 +29,9 @@
 #include "technicalinfo.h"
 #include <qtxdg/xdgdirs.h>
 
-class TechInfoTable
+using namespace LxQt;
+
+class LxQt::TechInfoTable
 {
 public:
     TechInfoTable(const QString &title);
