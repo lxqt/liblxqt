@@ -25,11 +25,14 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#ifndef RAZORAPPLICATION_H
-#define RAZORAPPLICATION_H
+#ifndef LXQTAPPLICATION_H
+#define LXQTAPPLICATION_H
 
 #include <QtGui/QApplication>
 #include <QtGui/QProxyStyle>
+
+namespace LxQt
+{
 
 /*! \brief Razor-qt wrapper around QApplication.
  * It loads various Razor-qt related stuff by default (window icon, icon theme...)
@@ -39,7 +42,7 @@
  *       Razor-qt libraries.
  *
  */
-class RazorApplication : public QApplication
+class Application : public QApplication
 {
     Q_OBJECT
 
@@ -48,8 +51,8 @@ public:
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
      */
-    RazorApplication(int &argc, char **argv);
-    virtual ~RazorApplication() {}
+    Application(int &argc, char **argv);
+    virtual ~Application() {}
 
 private slots:
     void updateTheme();
@@ -58,9 +61,10 @@ signals:
     void themeChanged();
 };
 
-#if defined(razorApp)
-#undef razorApp
+#if defined(lxqtApp)
+#undef lxqtApp
 #endif
-#define razorApp (static_cast<RazorApplication *>(qApp))
+#define lxqtApp (static_cast<LxQt::Application *>(qApp))
 
-#endif
+} // namespace LxQt
+#endif // LXQTAPPLICATION_H

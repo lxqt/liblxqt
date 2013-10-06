@@ -30,9 +30,10 @@
 #include <qtxdg/xdgicon.h>
 #include <qtxdg/xdgdirs.h>
 
-#include "razorapplication.h"
+#include "lxqtapplication.h"
 #include "razorsettings.h"
 
+using namespace LxQt;
 
 #define COLOR_DEBUG "\033[32;2m"
 #define COLOR_WARN "\033[33;2m"
@@ -89,7 +90,7 @@ void dbgMessageOutput(QtMsgType type, const char *msg)
         abort();
 }
 
-RazorApplication::RazorApplication(int &argc, char** argv)
+Application::Application(int &argc, char** argv)
     : QApplication(argc, argv)
 {
 #ifdef DEBUG
@@ -106,7 +107,7 @@ RazorApplication::RazorApplication(int &argc, char** argv)
 }
 
 
-void RazorApplication::updateTheme()
+void Application::updateTheme()
 {
     QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
     setStyleSheet(razorTheme.qss(styleSheetKey));
