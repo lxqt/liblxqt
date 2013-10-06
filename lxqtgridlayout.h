@@ -26,18 +26,21 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#ifndef RAZORGRIDLAYOUT_H
-#define RAZORGRIDLAYOUT_H
+#ifndef LXQTGRIDLAYOUT_H
+#define LXQTGRIDLAYOUT_H
 
 #include <QtGui/QLayout>
 #include <QtCore/QList>
 
-class RazorGridLayoutPrivate;
+namespace LxQt
+{
+
+class GridLayoutPrivate;
 
 /**
- The RazorGridLayout class lays out widgets in a grid.
+ The GridLayout class lays out widgets in a grid.
  **/
-class RazorGridLayout: public QLayout
+class GridLayout: public QLayout
 {
     Q_OBJECT
 public:
@@ -65,16 +68,16 @@ public:
 
 
     /**
-    Constructs a new RazorGridLayout with parent widget, parent.
+    Constructs a new GridLayout with parent widget, parent.
     The layout has one row and zero column initially, and will
     expand to left when new items are inserted.
     **/
-    explicit RazorGridLayout(QWidget *parent = 0);
+    explicit GridLayout(QWidget *parent = 0);
 
     /**
     Destroys the grid layout. The layout's widgets aren't destroyed.
      **/
-    ~RazorGridLayout();
+    ~GridLayout();
 
     void addItem(QLayoutItem *item);
     QLayoutItem *itemAt(int index) const;
@@ -98,7 +101,7 @@ public:
      In the most cases you should to set fixed number for one thing,
      or for rows, or for columns.
 
-     \sa RazorGridLayout::setColumnCount
+     \sa GridLayout::setColumnCount
      **/
     void setRowCount(int value);
 
@@ -115,7 +118,7 @@ public:
      In the most cases you should to set fixed number for one thing,
      or for rows, or for columns.
 
-     \sa RazorGridLayout::setRowCount
+     \sa GridLayout::setRowCount
      **/
     void setColumnCount(int value);
 
@@ -123,28 +126,28 @@ public:
     /**
     Returns the alignment of this grid.
 
-    \sa  RazorGridLayout::Direction
+    \sa  GridLayout::Direction
     **/
     Direction direction() const;
 
     /**
      Sets the direction for this grid.
 
-    \sa  RazorGridLayout::Direction
+    \sa  GridLayout::Direction
     **/
     void setDirection(Direction value);
 
     /**
     Returns the stretch flags of this grid.
 
-    \sa  RazorGridLayout::StretchFlag
+    \sa  GridLayout::StretchFlag
     **/
     Stretch stretch() const;
 
     /**
      Sets the stretch flags for this grid.
 
-     \sa  RazorGridLayout::StretchFlag
+     \sa  GridLayout::StretchFlag
      **/
     void setStretch(Stretch value);
 
@@ -222,11 +225,11 @@ public:
     void setCellFixedWidth(int value);
 
 private:
-    RazorGridLayoutPrivate* const d_ptr;
-    Q_DECLARE_PRIVATE(RazorGridLayout)
+    GridLayoutPrivate* const d_ptr;
+    Q_DECLARE_PRIVATE(GridLayout)
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(RazorGridLayout::Stretch)
+Q_DECLARE_OPERATORS_FOR_FLAGS(GridLayout::Stretch)
 
-
-#endif // RAZORGRIDLAYOUT_H
+} // namespace LxQt
+#endif // LXQTGRIDLAYOUT_H

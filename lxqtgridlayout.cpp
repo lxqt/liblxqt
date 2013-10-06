@@ -26,26 +26,28 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include "razorgridlayout.h"
+#include "lxqtgridlayout.h"
 #include <QtGui/QWidget>
 #include <QtCore/QDebug>
 #include <math.h>
 
-class RazorGridLayoutPrivate
+using namespace LxQt;
+
+class LxQt::GridLayoutPrivate
 {
 public:
-    RazorGridLayoutPrivate();
+    GridLayoutPrivate();
 
     QList<QLayoutItem*> mItems;
     int mRowCount;
     int mColumnCount;
-    RazorGridLayout::Direction mDirection;
+    GridLayout::Direction mDirection;
 
     bool mIsValid;
     QSize mCellSizeHint;
     QSize mCellMaxSize;
     int mVisibleCount;
-    RazorGridLayout::Stretch mStretch;
+    GridLayout::Stretch mStretch;
 
 
     void updateCache();
@@ -59,14 +61,14 @@ public:
 /************************************************
 
  ************************************************/
-RazorGridLayoutPrivate::RazorGridLayoutPrivate()
+GridLayoutPrivate::GridLayoutPrivate()
 {
     mColumnCount = 0;
     mRowCount = 0;
-    mDirection = RazorGridLayout::LeftToRight;
+    mDirection = GridLayout::LeftToRight;
     mIsValid = false;
     mVisibleCount = 0;
-    mStretch = RazorGridLayout::StretchHorizontal | RazorGridLayout::StretchVertical;
+    mStretch = GridLayout::StretchHorizontal | GridLayout::StretchVertical;
     mPrefCellMinSize = QSize(0,0);
     mPrefCellMaxSize = QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 }
@@ -75,7 +77,7 @@ RazorGridLayoutPrivate::RazorGridLayoutPrivate()
 /************************************************
 
  ************************************************/
-void RazorGridLayoutPrivate::updateCache()
+void GridLayoutPrivate::updateCache()
 {
     mCellSizeHint = QSize(0, 0);
     mCellMaxSize = QSize(0, 0);
@@ -124,7 +126,7 @@ void RazorGridLayoutPrivate::updateCache()
 /************************************************
 
  ************************************************/
-int RazorGridLayoutPrivate::rows() const
+int GridLayoutPrivate::rows() const
 {
     if (mRowCount)
         return mRowCount;
@@ -139,7 +141,7 @@ int RazorGridLayoutPrivate::rows() const
 /************************************************
 
  ************************************************/
-int RazorGridLayoutPrivate::cols() const
+int GridLayoutPrivate::cols() const
 {
     if (mColumnCount)
         return mColumnCount;
@@ -156,9 +158,9 @@ int RazorGridLayoutPrivate::cols() const
 /************************************************
 
  ************************************************/
-RazorGridLayout::RazorGridLayout(QWidget *parent):
+GridLayout::GridLayout(QWidget *parent):
     QLayout(parent),
-    d_ptr(new RazorGridLayoutPrivate())
+    d_ptr(new GridLayoutPrivate())
 {
 }
 
@@ -166,7 +168,7 @@ RazorGridLayout::RazorGridLayout(QWidget *parent):
 /************************************************
 
  ************************************************/
-RazorGridLayout::~RazorGridLayout()
+GridLayout::~GridLayout()
 {
     delete d_ptr;
 }
@@ -175,7 +177,7 @@ RazorGridLayout::~RazorGridLayout()
 /************************************************
 
  ************************************************/
-void RazorGridLayout::addItem(QLayoutItem *item)
+void GridLayout::addItem(QLayoutItem *item)
 {
     d_ptr->mItems.append(item);
 }
@@ -184,9 +186,9 @@ void RazorGridLayout::addItem(QLayoutItem *item)
 /************************************************
 
  ************************************************/
-QLayoutItem *RazorGridLayout::itemAt(int index) const
+QLayoutItem *GridLayout::itemAt(int index) const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     if (index < 0 || index >= d->mItems.count())
         return 0;
 
@@ -197,9 +199,9 @@ QLayoutItem *RazorGridLayout::itemAt(int index) const
 /************************************************
 
  ************************************************/
-QLayoutItem *RazorGridLayout::takeAt(int index)
+QLayoutItem *GridLayout::takeAt(int index)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (index < 0 || index >= d->mItems.count())
         return 0;
 
@@ -211,9 +213,9 @@ QLayoutItem *RazorGridLayout::takeAt(int index)
 /************************************************
 
  ************************************************/
-int RazorGridLayout::count() const
+int GridLayout::count() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mItems.count();
 }
 
@@ -221,9 +223,9 @@ int RazorGridLayout::count() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::invalidate()
+void GridLayout::invalidate()
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     d->mIsValid = false;
     QLayout::invalidate();
 }
@@ -232,9 +234,9 @@ void RazorGridLayout::invalidate()
 /************************************************
 
  ************************************************/
-int RazorGridLayout::rowCount() const
+int GridLayout::rowCount() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mRowCount;
 }
 
@@ -242,9 +244,9 @@ int RazorGridLayout::rowCount() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setRowCount(int value)
+void GridLayout::setRowCount(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mRowCount != value)
     {
         d->mRowCount = value;
@@ -256,9 +258,9 @@ void RazorGridLayout::setRowCount(int value)
 /************************************************
 
  ************************************************/
-int RazorGridLayout::columnCount() const
+int GridLayout::columnCount() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mColumnCount;
 }
 
@@ -266,9 +268,9 @@ int RazorGridLayout::columnCount() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setColumnCount(int value)
+void GridLayout::setColumnCount(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mColumnCount != value)
     {
         d->mColumnCount = value;
@@ -280,9 +282,9 @@ void RazorGridLayout::setColumnCount(int value)
 /************************************************
 
  ************************************************/
-RazorGridLayout::Direction RazorGridLayout::direction() const
+GridLayout::Direction GridLayout::direction() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mDirection;
 }
 
@@ -290,9 +292,9 @@ RazorGridLayout::Direction RazorGridLayout::direction() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setDirection(RazorGridLayout::Direction value)
+void GridLayout::setDirection(GridLayout::Direction value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mDirection != value)
     {
         d->mDirection = value;
@@ -303,18 +305,18 @@ void RazorGridLayout::setDirection(RazorGridLayout::Direction value)
 /************************************************
 
  ************************************************/
-RazorGridLayout::Stretch RazorGridLayout::stretch() const
+GridLayout::Stretch GridLayout::stretch() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mStretch;
 }
 
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setStretch(Stretch value)
+void GridLayout::setStretch(Stretch value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mStretch != value)
     {
         d->mStretch = value;
@@ -326,9 +328,9 @@ void RazorGridLayout::setStretch(Stretch value)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::moveItem(int from, int to)
+void GridLayout::moveItem(int from, int to)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     d->mItems.move(from, to);
     invalidate();
 }
@@ -337,9 +339,9 @@ void RazorGridLayout::moveItem(int from, int to)
 /************************************************
 
  ************************************************/
-QSize RazorGridLayout::cellMinimumSize() const
+QSize GridLayout::cellMinimumSize() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mPrefCellMinSize;
 }
 
@@ -347,9 +349,9 @@ QSize RazorGridLayout::cellMinimumSize() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMinimumSize(QSize minSize)
+void GridLayout::setCellMinimumSize(QSize minSize)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize != minSize)
     {
         d->mPrefCellMinSize = minSize;
@@ -361,9 +363,9 @@ void RazorGridLayout::setCellMinimumSize(QSize minSize)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMinimumHeight(int value)
+void GridLayout::setCellMinimumHeight(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize.height() != value)
     {
         d->mPrefCellMinSize.setHeight(value);
@@ -375,9 +377,9 @@ void RazorGridLayout::setCellMinimumHeight(int value)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMinimumWidth(int value)
+void GridLayout::setCellMinimumWidth(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize.width() != value)
     {
         d->mPrefCellMinSize.setWidth(value);
@@ -389,9 +391,9 @@ void RazorGridLayout::setCellMinimumWidth(int value)
 /************************************************
 
  ************************************************/
-QSize RazorGridLayout::cellMaximumSize() const
+QSize GridLayout::cellMaximumSize() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
     return d->mPrefCellMaxSize;
 }
 
@@ -399,9 +401,9 @@ QSize RazorGridLayout::cellMaximumSize() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMaximumSize(QSize maxSize)
+void GridLayout::setCellMaximumSize(QSize maxSize)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMaxSize != maxSize)
     {
         d->mPrefCellMaxSize = maxSize;
@@ -413,9 +415,9 @@ void RazorGridLayout::setCellMaximumSize(QSize maxSize)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMaximumHeight(int value)
+void GridLayout::setCellMaximumHeight(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMaxSize.height() != value)
     {
         d->mPrefCellMaxSize.setHeight(value);
@@ -427,9 +429,9 @@ void RazorGridLayout::setCellMaximumHeight(int value)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellMaximumWidth(int value)
+void GridLayout::setCellMaximumWidth(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMaxSize.width() != value)
     {
         d->mPrefCellMaxSize.setWidth(value);
@@ -441,9 +443,9 @@ void RazorGridLayout::setCellMaximumWidth(int value)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellFixedSize(QSize size)
+void GridLayout::setCellFixedSize(QSize size)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize != size ||
         d->mPrefCellMaxSize != size)
     {
@@ -457,9 +459,9 @@ void RazorGridLayout::setCellFixedSize(QSize size)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellFixedHeight(int value)
+void GridLayout::setCellFixedHeight(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize.height() != value ||
         d->mPrefCellMaxSize.height() != value)
     {
@@ -473,9 +475,9 @@ void RazorGridLayout::setCellFixedHeight(int value)
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setCellFixedWidth(int value)
+void GridLayout::setCellFixedWidth(int value)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
     if (d->mPrefCellMinSize.width() != value ||
         d->mPrefCellMaxSize.width() != value)
     {
@@ -489,12 +491,12 @@ void RazorGridLayout::setCellFixedWidth(int value)
 /************************************************
 
  ************************************************/
-QSize RazorGridLayout::sizeHint() const
+QSize GridLayout::sizeHint() const
 {
-    Q_D(const RazorGridLayout);
+    Q_D(const GridLayout);
 
     if (!d->mIsValid)
-        const_cast<RazorGridLayoutPrivate*>(d)->updateCache();
+        const_cast<GridLayoutPrivate*>(d)->updateCache();
 
     return QSize(d->cols() * d->mCellSizeHint.width(),
                  d->rows() * d->mCellSizeHint.height());
@@ -504,9 +506,9 @@ QSize RazorGridLayout::sizeHint() const
 /************************************************
 
  ************************************************/
-void RazorGridLayout::setGeometry(const QRect &geometry)
+void GridLayout::setGeometry(const QRect &geometry)
 {
-    Q_D(RazorGridLayout);
+    Q_D(GridLayout);
 
     if (!d->mIsValid)
         d->updateCache();
@@ -551,7 +553,7 @@ void RazorGridLayout::setGeometry(const QRect &geometry)
 
 
 #if 0
-    qDebug() << "** RazorGridLayout::setGeometry *******************************";
+    qDebug() << "** GridLayout::setGeometry *******************************";
     qDebug() << "Geometry:" << geometry;
     qDebug() << "CellSize:" << d->mCellSizeHint;
     qDebug() << "Constraints:" << "min" << d->mPrefCellMinSize << "max" << d->mPrefCellMaxSize;
