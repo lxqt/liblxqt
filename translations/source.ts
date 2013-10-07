@@ -31,34 +31,42 @@
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
+        <comment>About dialog, &apos;About&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
+        <comment>About dialog, &apos;About&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Homepage: %1</source>
+        <comment>About dialog, &apos;About&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>License: %1</source>
+        <comment>About dialog, &apos;About&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor-qt is developed by the &lt;a %1&gt;Razor-qt Team and contributors&lt;/a&gt; on Github.</source>
+        <source>LXDE-Qt is developed by the &lt;a %1&gt;LXDE-Qt Team and contributors&lt;/a&gt; on Github.</source>
+        <comment>About dialog, &apos;Authors&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>If you are interested in working with our development team, &lt;a %1&gt;join us&lt;/a&gt;.</source>
+        <comment>About dialog, &apos;Authors&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Special thanks to:</source>
+        <comment>About dialog, &apos;Thanks&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <comment>About dialog, &apos;Translations&apos; tab text</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -219,10 +227,6 @@
 <context>
     <name>about</name>
     <message>
-        <source> About Razor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -244,6 +248,35 @@
     </message>
     <message>
         <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> About LXDE-Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <comment>About dialog, Tab title </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authors</source>
+        <comment>About dialog, Tab title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thanks</source>
+        <comment>About dialog, Tab title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <comment>About dialog, Tab title</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Technical Info</source>
+        <comment>About dialog, Tab title</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

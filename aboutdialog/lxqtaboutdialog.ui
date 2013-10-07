@@ -63,7 +63,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>About</string>
+       <string comment="About dialog, Tab title ">About</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -80,7 +80,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Authors</string>
+       <string comment="About dialog, Tab title">Authors</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -97,7 +97,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Thanks</string>
+       <string comment="About dialog, Tab title">Thanks</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
@@ -114,7 +114,7 @@
      </widget>
      <widget class="QWidget" name="translationsTab">
       <attribute name="title">
-       <string>Translations</string>
+       <string comment="About dialog, Tab title">Translations</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -131,7 +131,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Technical Info</string>
+       <string comment="About dialog, Tab title">Technical Info</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>

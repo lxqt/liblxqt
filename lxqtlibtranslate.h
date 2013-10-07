@@ -28,10 +28,12 @@
 #ifndef LIBTRANSLATE_H
 #define LIBTRANSLATE_H
 
-#include <QtCore/QTranslator>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QLocale>
-#include <QtCore/QSet>
+#include <QTranslator>
+#include <QCoreApplication>
+#include <QLocale>
+#include <QSet>
+#include <QDebug>
+
 namespace LxQt
 {
 
