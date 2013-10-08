@@ -28,6 +28,7 @@
 
 #include "technicalinfo.h"
 #include <qtxdg/xdgdirs.h>
+#include "lxqttranslator.h"
 
 using namespace LxQt;
 
@@ -154,7 +155,7 @@ TechnicalInfo::TechnicalInfo()
     TechInfoTable *table;
 
     // ******************************************
-    table = newTable("LXDE-Qt Desktop Toolbox - Technical Info");
+    table = newTable("LXDE-Qt Desktop Toolbox - Technical Info<p>");
 #ifdef DEBUG
     QString buildType("Debug");
 #else
@@ -166,7 +167,7 @@ TechnicalInfo::TechnicalInfo()
     table->add("Build type",           buildType);
     table->add("System Configuration", LXQT_ETC_XDG_DIR);
     table->add("Share Directory",      LXQT_SHARE_DIR);
-    table->add("Translations",         TRANSLATIONS_DIR);
+    table->add("Translations",         Translator::translationSearchPaths().join("<br>\n"));
 
 
     // ******************************************
@@ -178,7 +179,7 @@ TechnicalInfo::TechnicalInfo()
     table->add("Xdg Data Dirs",        xdgDirs.dataDirs().join(":"));
     table->add("Xdg Cache Home",       xdgDirs.cacheHome(false));
     table->add("Xdg Runtime Home",     xdgDirs.runtimeDir());
-    table->add("Xdg Autostart Dirs",   xdgDirs.autostartDirs().join(":"));
+    table->add("Xdg Autostart Dirs",   xdgDirs.autostartDirs().join("<br>\n"));
     table->add("Xdg Autostart Home",   xdgDirs.autostartHome(false));
 
 }

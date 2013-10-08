@@ -28,7 +28,7 @@
 #include "lxqtaboutdialog.h"
 #include "ui_lxqtaboutdialog.h"
 #include "lxqtaboutdialog_p.h"
-#include "lxqtlibtranslate.h"
+#include "lxqttranslator.h"
 #include "technicalinfo.h"
 #include "translatorsinfo/translatorsinfo.h"
 #include <QDebug>
@@ -39,7 +39,7 @@ using namespace LxQt;
 
 AboutDialogPrivate::AboutDialogPrivate()
 {
-    libTranslate("liblxqt");
+    Translator::translateLibrary("liblxqt");
     setupUi(this);
 
     QString css="<style TYPE='text/css'> "

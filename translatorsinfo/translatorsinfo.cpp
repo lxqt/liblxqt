@@ -370,7 +370,7 @@ TranslatorsInfo::~TranslatorsInfo()
 QString TranslatorsInfo::asHtml() const
 {
     QString ret;
-    foreach(Translator *translator, mItems)
+    foreach(TranslatorPerson *translator, mItems)
     {
         ret += "<li>" + translator->asHtml() + "</li>";
     }
@@ -383,11 +383,11 @@ QString TranslatorsInfo::asHtml() const
 void TranslatorsInfo::process(const QString &lang, const QString &englishName, const QString &nativeName, const QString &contact)
 {
     QString key = QString("%1:%2:%3").arg(englishName, nativeName, contact);
-    Translator *translator = mItems.value(key);
+    TranslatorPerson *translator = mItems.value(key);
 
     if (!translator)
     {
-        translator = new Translator(englishName, nativeName, contact);
+        translator = new TranslatorPerson(englishName, nativeName, contact);
         mItems.insert(key, translator);
     }
 
@@ -395,7 +395,7 @@ void TranslatorsInfo::process(const QString &lang, const QString &englishName, c
 }
 
 
-Translator::Translator(const QString &englishName, const QString &nativeName, const QString &contact)
+TranslatorPerson::TranslatorPerson(const QString &englishName, const QString &nativeName, const QString &contact)
 {
     mEnglishName = englishName;
 
@@ -421,7 +421,7 @@ Translator::Translator(const QString &englishName, const QString &nativeName, co
 }
 
 
-void Translator::addLanguage(QString langId)
+void TranslatorPerson::addLanguage(QString langId)
 {
     static QMap<QString, QString> mLanguagesList;
     if (mLanguagesList.isEmpty())
@@ -436,7 +436,7 @@ void Translator::addLanguage(QString langId)
 }
 
 
-QString Translator::asHtml()
+QString TranslatorPerson::asHtml()
 {
     QString ret(mInfo);
     ret += " - " + mLanguages.join(", ");

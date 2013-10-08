@@ -33,7 +33,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QtDebug>
-#include "lxqtlibtranslate.h"
+#include "lxqttranslator.h"
 
 using namespace LxQt;
 
@@ -83,7 +83,7 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
     : QObject(parent),
         m_skipWarning(skipWarning)
 {
-    libTranslate("librazorqt");
+    Translator::translateLibrary("liblxqt");
     m_power = new Power(this);
 //    connect(m_power, SIGNAL(suspendFail()), this, SLOT(suspendFailed()));
 //    connect(m_power, SIGNAL(hibernateFail()), this, SLOT(hibernateFailed()));

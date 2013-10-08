@@ -40,7 +40,7 @@
 #include <QAbstractTextDocumentLayout>
 
 #include <QLineEdit>
-#include "lxqtlibtranslate.h"
+#include "lxqttranslator.h"
 
 using namespace LxQt;
 
@@ -152,7 +152,7 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
     ui(new Ui::AddPluginDialog),
     mTimerId(0)
 {
-    libTranslate("librazorqt");
+    Translator::translateLibrary("liblxqt");
     ui->setupUi(this);
 
     mPlugins = PluginInfo::search(desktopFilesDirs, serviceType, nameFilter);

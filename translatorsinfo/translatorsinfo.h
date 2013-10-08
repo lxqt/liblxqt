@@ -34,10 +34,10 @@
 namespace LxQt
 {
 
-class Translator
+class TranslatorPerson
 {
 public:
-    Translator(const QString &englishName, const QString &nativeName, const QString &contact);
+    TranslatorPerson(const QString &englishName, const QString &nativeName, const QString &contact);
 
     QString englishName() const { return mEnglishName; }
     QString nativeName() const { return mNativeName; }
@@ -66,7 +66,7 @@ public:
     QString asHtml() const;
 
 private:
-    QMap<QString, Translator*> mItems;
+    QMap<QString, TranslatorPerson*> mItems;
     void process(const QString &lang, const QString &englishName, const QString &nativeName, const QString &contact);
 };
 
