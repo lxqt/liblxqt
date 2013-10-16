@@ -67,7 +67,7 @@
 #define _NET_WM_STATE_ADD       1    // add/set property
 #define _NET_WM_STATE_TOGGLE    2    // toggle property
 
-using namespace LxQt;
+namespace LxQt {
 
 const XfitMan&  xfitMan()
 {
@@ -975,3 +975,5 @@ bool XfitMan::isWindowManagerActive() const
     }
     return false;
 }
+
+} // namespace LxQt
