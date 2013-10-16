@@ -34,7 +34,7 @@
 namespace LxQt
 {
 class Power;
-}
+
 /*! QAction centric menu aware wrapper around razorpower
 */
 class PowerManager : public QObject
@@ -66,5 +66,7 @@ private slots:
     void hibernateFailed();
     void suspendFailed();
 };
+
+} // namespace LxQt
 
 #endif // LXQTPOWERMANAGER_H

@@ -35,7 +35,7 @@
 #include <QtDebug>
 #include "lxqttranslator.h"
 
-using namespace LxQt;
+namespace LxQt {
 
 class MessageBox: public QMessageBox
 {
@@ -200,3 +200,5 @@ void PowerManager::suspendFailed()
 {
     MessageBox::warning(tr("Razor Power Manager Error"), tr("Suspend failed."));
 }
+
+} // namespace LxQt
