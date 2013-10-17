@@ -94,7 +94,7 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings("razor", module, parent),
+    QSettings("lxqt", module, parent),
     d_ptr(new SettingsPrivate(this))
 {
     // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
@@ -531,7 +531,7 @@ QList<RazorTheme> RazorTheme::allThemes()
         foreach(QFileInfo dir, dirs)
         {
             if (!processed.contains(dir.fileName()) &&
-                 QDir(dir.absoluteFilePath()).exists("razor-panel.qss"))
+                 QDir(dir.absoluteFilePath()).exists("lxqt-panel.qss"))
             {
                 processed << dir.fileName();
                 ret << RazorTheme(dir.absoluteFilePath());

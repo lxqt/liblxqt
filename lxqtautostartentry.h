@@ -43,7 +43,7 @@ class AutostartEntry
 {
 public:
     /*! Constructs an AutostartEntry object for a specific entry.
-     * \param name The name of the autostart desktop file (e.g. "razor-panel.desktop")
+     * \param name The name of the autostart desktop file (e.g. "lxqt-panel.desktop")
      */
     AutostartEntry(const QString& name);
 
@@ -56,7 +56,7 @@ public:
     //! Returns the "active" desktop file
     const XdgDesktopFile& file() const;
 
-    //! Returns the name of the autostart entry (e.g. "razor-panel.desktop")
+    //! Returns the name of the autostart entry (e.g. "lxqt-panel.desktop")
     QString name() const;
 
     /*! Sets to the specified desktop file. Use this to make modifications.
