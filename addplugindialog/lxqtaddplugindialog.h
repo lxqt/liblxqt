@@ -64,7 +64,7 @@ public:
     void setPluginsInUse(const PluginInfoList pluginsInUse);
 
 signals:
-    void pluginSelected(const PluginInfo &plugin);
+    void pluginSelected(const LxQt::PluginInfo &plugin);
 
 protected:
     void timerEvent(QTimerEvent* event);

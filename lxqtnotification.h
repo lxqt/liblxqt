@@ -173,7 +173,7 @@ signals:
      * \brief Emitted when the notification is closed
      * \param reason How notification was closed
      */
-    void notificationClosed(CloseReason reason);
+    void notificationClosed(LxQt::Notification::CloseReason reason);
 
     /*!
      * \brief Emitted when an action button is activated.
