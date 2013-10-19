@@ -25,7 +25,7 @@
 #ifndef LXQTCONFIGDIALOG_H
 #define LXQTCONFIGDIALOG_H
 
-#include <lxqt/lxqtsettings.h>
+#include <lxqtsettings.h>
 
 #include <QtGui/QDialog>
 #include <QtGui/QAbstractButton>
