@@ -94,7 +94,7 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings("lxqt", module, parent),
+    QSettings("razor", module, parent),
     d_ptr(new SettingsPrivate(this))
 {
     // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
@@ -346,10 +346,12 @@ QString RazorThemeData::findTheme(const QString &themeName)
     QStringList paths;
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
+    // TODO/FIXME: this is fallback path for standard CMAKE_INSTALL_PREFIX
+    paths << "/usr/local/share";
 
     foreach(QString path, paths)
     {
-        QDir dir(QString("%1/razor/themes/%2").arg(path, themeName));
+        QDir dir(QString("%1/lxqt/themes/%2").arg(path, themeName));
         if (dir.isReadable())
             return dir.absolutePath();
     }
@@ -525,7 +527,7 @@ QList<RazorTheme> RazorTheme::allThemes()
 
     foreach(QString path, paths)
     {
-        QDir dir(QString("%1/razor/themes").arg(path));
+        QDir dir(QString("%1/lxqt/themes").arg(path));
         QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);
 
         foreach(QFileInfo dir, dirs)
