@@ -67,34 +67,5 @@ set(LXQT_INCLUDE_DIRS  ${LXQT_INCLUDE_DIR} )
 set(LXQT_USE_FILE      ${CMAKE_CURRENT_LIST_DIR}/lxqt_use.cmake)
 set(LXQT_FOUND         1)
 
-# for backward compatability ----->
-#set(RAZOR_SHARE_DIR     ${})
-#set(RAZOR_ETC_XDG_DIR   ${})
-#set(RAZOR_INCLUDE_DIR   ${LXQT_INCLUDE_DIR})
-#set(RAZOR_INCLUDE_DIRS  ${LXQT_INCLUDE_DIRS})
-#set(RAZOR_LIBRARY       ${LXQT_LIBRARY})
-# for backward compatability <-----
-
 mark_as_advanced(LXQT_LIBRARY LXQT_INCLUDE_DIR)
 
-
-#************************************************
-# RAZOR_USE_MOUNT
-#
-#if (RAZOR_USE_MOUNT)
-#    include(${CMAKE_CURRENT_LIST_DIR}/razormount-config.cmake)
-#    set(RAZOR_INCLUDE_DIRS       ${RAZOR_INCLUDE_DIRS} ${RAZORMOUNT_INCLUDE_DIR})
-#    set(RAZOR_LIBRARIES          ${RAZOR_LIBRARIES}    ${RAZORMOUNT_LIBRARY})
-
-#endif(RAZOR_USE_MOUNT)
-
-
-#************************************************
-# RAZOR_USE_GLOBALKEYCLIENT
-#
-#if (RAZOR_USE_GLOBALKEYCLIENT)
-#    include(${CMAKE_CURRENT_LIST_DIR}/razorglobalkeyclient-config.cmake)
-#    set(RAZOR_INCLUDE_DIRS       ${RAZOR_INCLUDE_DIRS} ${RAZORGLOBALKEYCLIENT_INCLUDE_DIR})
-#    set(RAZOR_LIBRARIES          ${RAZOR_LIBRARIES}    ${RAZORGLOBALKEYCLIENT_LIBRARIES})
-
-#endif(RAZOR_USE_GLOBALKEYCLIENT)
