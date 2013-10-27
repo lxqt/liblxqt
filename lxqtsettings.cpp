@@ -94,10 +94,10 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings("razor", module, parent),
+    QSettings("lxqt", module, parent),
     d_ptr(new SettingsPrivate(this))
 {
-    // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
+    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
     //       exists to have functional mWatcher
     if (!contains("__userfile__"))
     {
@@ -599,7 +599,7 @@ void SettingsCache::loadToSettings()
 
  ************************************************/
 GlobalSettings::GlobalSettings():
-    Settings("razor"),
+    Settings("lxqt"),
     d_ptr(new GlobalSettingsPrivate(this))
 {
     if (value("icon_theme").toString().isEmpty())
