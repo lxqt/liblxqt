@@ -32,6 +32,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QDebug>
 #include "lxqtnotification.h"
+#include <signal.h> // for kill()
 
 #define UPOWER_SERVICE          "org.freedesktop.UPower"
 #define UPOWER_PATH             "/org/freedesktop/UPower"
@@ -49,6 +50,9 @@
 #define RAZOR_PATH         "/RazorSession"
 #define RAZOR_INTERFACE    "org.razorqt.session"
 
+#define LXSESSION_SERVICE      "org.lxde.SessionManager"
+#define LXSESSION_PATH         "/org/lxde/SessionManager"
+#define LXSESSION_INTERFACE    "org.lxde.SessionManager"
 
 #define PROPERTIES_INTERFACE    "org.freedesktop.DBus.Properties"
 
@@ -516,6 +520,46 @@ bool RazorProvider::doAction(Power::Action action)
             );
 }
 
+/************************************************
+  LxSessionProvider
+ ************************************************/
+LxSessionProvider::LxSessionProvider(QObject *parent):
+    PowerProvider(parent)
+{
+    pid = (Q_PID)qgetenv("_LXSESSION_PID").toLong();
+}
+
+
+LxSessionProvider::~LxSessionProvider()
+{
+}
+
+
+bool LxSessionProvider::canAction(Power::Action action) const
+{
+    switch (action)
+    {
+        case Power::PowerLogout:
+            return pid != 0;
+        default:
+            return false;
+    }
+}
+
+
+bool LxSessionProvider::doAction(Power::Action action)
+{
+    switch (action)
+    {
+    case Power::PowerLogout:
+        if(pid)
+            ::kill(pid, SIGTERM);
+        break;
+    default:
+        return false;
+    }
+	return true;
+}
 
 
 /************************************************

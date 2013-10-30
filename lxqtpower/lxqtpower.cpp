@@ -32,7 +32,7 @@
 #include <QtCore/QDebug>
 
 using namespace LxQt;
-\
+
 Power::Power(QObject *parent) :
     QObject(parent)
 {
@@ -40,6 +40,7 @@ Power::Power(QObject *parent) :
     mProviders.append(new UPowerProvider(this));
     mProviders.append(new ConsoleKitProvider(this));
     mProviders.append(new SystemdProvider(this));
+    mProviders.append(new LxSessionProvider(this));
     mProviders.append(new RazorProvider(this));
 }
 

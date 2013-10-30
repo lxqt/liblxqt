@@ -32,6 +32,7 @@
 #include <QtCore/QObject>
 #include <lxqtsettings.h>
 #include "lxqtpower.h"
+#include <QProcess> // for PID_T
 
 namespace LxQt
 {
@@ -112,6 +113,19 @@ public slots:
     bool doAction(Power::Action action);
 };
 
+class LxSessionProvider: public PowerProvider
+{
+    Q_OBJECT
+public:
+    LxSessionProvider(QObject *parent = 0);
+    ~LxSessionProvider();
+    bool canAction(Power::Action action) const;
+
+public slots:
+    bool doAction(Power::Action action);
+private:
+    Q_PID pid;
+};
 
 class HalProvider: public PowerProvider
 {
