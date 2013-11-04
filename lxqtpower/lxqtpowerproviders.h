@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -101,12 +101,12 @@ public slots:
 };
 
 
-class RazorProvider: public PowerProvider
+class LxQtProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    RazorProvider(QObject *parent = 0);
-    ~RazorProvider();
+    LxQtProvider(QObject *parent = 0);
+    ~LxQtProvider();
     bool canAction(Power::Action action) const;
 
 public slots:

@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -35,7 +35,7 @@ namespace LxQt
 {
 class Power;
 
-/*! QAction centric menu aware wrapper around razorpower
+/*! QAction centric menu aware wrapper around lxqtpower
 */
 class PowerManager : public QObject
 {
@@ -52,7 +52,7 @@ public slots:
     void hibernate();
     void reboot();
     void shutdown();
-    // razor session
+    // lxqt session
     void logout();
 
 public:

@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -65,7 +65,7 @@ public:
 
     static void warning(const QString& title, const QString& text)
     {
-        QMessageBox::warning(parentWidget(), tr("Razor Power Manager Error"), tr("Hibernate failed."));
+        QMessageBox::warning(parentWidget(), tr("LxQt Power Manager Error"), tr("Hibernate failed."));
     }
 
 
@@ -144,7 +144,7 @@ QList<QAction*> PowerManager::availableActions()
 void PowerManager::suspend()
 {
      if (m_skipWarning ||
-         MessageBox::question(tr("Razor Session Suspend"),
+         MessageBox::question(tr("LxQt Session Suspend"),
                               tr("Do you want to really suspend your computer?<p>Suspends the computer into a low power state. System state is not preserved if the power is lost.")))
     {
         m_power->suspend();
@@ -154,7 +154,7 @@ void PowerManager::suspend()
 void PowerManager::hibernate()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("Razor Session Hibernate"),
+        MessageBox::question(tr("LxQt Session Hibernate"),
                              tr("Do you want to really hibernate your computer?<p>Hibernates the computer into a low power state. System state is preserved if the power is lost.")))
     {
         m_power->hibernate();
@@ -164,7 +164,7 @@ void PowerManager::hibernate()
 void PowerManager::reboot()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("Razor Session Reboot"),
+        MessageBox::question(tr("LxQt Session Reboot"),
                              tr("Do you want to really restart your computer? All unsaved work will be lost...")))
     {
         m_power->reboot();
@@ -174,7 +174,7 @@ void PowerManager::reboot()
 void PowerManager::shutdown()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("Razor Session Shutdown"),
+        MessageBox::question(tr("LxQt Session Shutdown"),
                              tr("Do you want to really switch off your computer? All unsaved work will be lost...")))
     {
         m_power->shutdown();
@@ -184,7 +184,7 @@ void PowerManager::shutdown()
 void PowerManager::logout()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("Razor Session Logout"),
+        MessageBox::question(tr("LxQt Session Logout"),
                              tr("Do you want to really logout? All unsaved work will be lost...")))
     {
         m_power->logout();
@@ -193,12 +193,12 @@ void PowerManager::logout()
 
 void PowerManager::hibernateFailed()
 {
-    MessageBox::warning(tr("Razor Power Manager Error"), tr("Hibernate failed."));
+    MessageBox::warning(tr("LxQt Power Manager Error"), tr("Hibernate failed."));
 }
 
 void PowerManager::suspendFailed()
 {
-    MessageBox::warning(tr("Razor Power Manager Error"), tr("Suspend failed."));
+    MessageBox::warning(tr("LxQt Power Manager Error"), tr("Suspend failed."));
 }
 
 } // namespace LxQt

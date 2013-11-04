@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -56,11 +56,11 @@ private:
 };
 
 
-RazorTheme* RazorTheme::mInstance = 0;
+LxQtTheme* LxQtTheme::mInstance = 0;
 
-class LxQt::RazorThemeData: public QSharedData {
+class LxQt::LxQtThemeData: public QSharedData {
 public:
-    RazorThemeData(): mValid(false) {}
+    LxQtThemeData(): mValid(false) {}
     QString loadQss(const QString& qssFile) const;
     QString findTheme(const QString &themeName);
 
@@ -84,7 +84,7 @@ public:
 
     GlobalSettings *mParent;
     QString mIconTheme;
-    QString mRazorTheme;
+    QString mLxQtTheme;
     qlonglong mThemeUpdated;
 
 };
@@ -116,7 +116,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
     QSettings(fileName, format, parent),
     d_ptr(new SettingsPrivate(this))
 {
-    // HACK: we need to ensure that the user (~/.config/razor/<module>.conf)
+    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
     //       exists to have functional mWatcher
     if (!contains("__userfile__"))
     {
@@ -301,8 +301,8 @@ void Settings::setLocalizedValue(const QString &key, const QVariant &value)
 /************************************************
 
  ************************************************/
-RazorTheme::RazorTheme():
-    d(new RazorThemeData)
+LxQtTheme::LxQtTheme():
+    d(new LxQtThemeData)
 {
 }
 
@@ -310,8 +310,8 @@ RazorTheme::RazorTheme():
 /************************************************
 
  ************************************************/
-RazorTheme::RazorTheme(const QString &path):
-    d(new RazorThemeData)
+LxQtTheme::LxQtTheme(const QString &path):
+    d(new LxQtThemeData)
 {
     if (path.isEmpty())
         return;
@@ -338,7 +338,7 @@ RazorTheme::RazorTheme(const QString &path):
 /************************************************
 
  ************************************************/
-QString RazorThemeData::findTheme(const QString &themeName)
+QString LxQtThemeData::findTheme(const QString &themeName)
 {
     if (themeName.isEmpty())
         return "";
@@ -363,7 +363,7 @@ QString RazorThemeData::findTheme(const QString &themeName)
 /************************************************
 
  ************************************************/
-RazorTheme::RazorTheme(const RazorTheme &other):
+LxQtTheme::LxQtTheme(const LxQtTheme &other):
     d(other.d)
 {
 }
@@ -372,7 +372,7 @@ RazorTheme::RazorTheme(const RazorTheme &other):
 /************************************************
 
  ************************************************/
-RazorTheme::~RazorTheme()
+LxQtTheme::~LxQtTheme()
 {
 }
 
@@ -380,7 +380,7 @@ RazorTheme::~RazorTheme()
 /************************************************
 
  ************************************************/
-RazorTheme& RazorTheme::operator=(const RazorTheme &other)
+LxQtTheme& LxQtTheme::operator=(const LxQtTheme &other)
 {
     d = other.d;
     return *this;
@@ -390,7 +390,7 @@ RazorTheme& RazorTheme::operator=(const RazorTheme &other)
 /************************************************
 
  ************************************************/
-bool RazorTheme::isValid() const
+bool LxQtTheme::isValid() const
 {
     return d->mValid;
 }
@@ -399,7 +399,7 @@ bool RazorTheme::isValid() const
 /************************************************
 
  ************************************************/
-QString RazorTheme::name() const
+QString LxQtTheme::name() const
 {
     return d->mName;
 }
@@ -407,7 +407,7 @@ QString RazorTheme::name() const
 /************************************************
 
  ************************************************/
-QString RazorTheme::path() const
+QString LxQtTheme::path() const
 {
     return d->mPath;
 }
@@ -416,7 +416,7 @@ QString RazorTheme::path() const
 /************************************************
 
  ************************************************/
-QString RazorTheme::previewImage() const
+QString LxQtTheme::previewImage() const
 {
     return d->mPreviewImg;
 }
@@ -425,7 +425,7 @@ QString RazorTheme::previewImage() const
 /************************************************
 
  ************************************************/
-QString RazorTheme::qss(const QString& module) const
+QString LxQtTheme::qss(const QString& module) const
 {
     QString path = QString("%1/%2.qss").arg(d->mPath, module);
 
@@ -447,7 +447,7 @@ QString RazorTheme::qss(const QString& module) const
 /************************************************
 
  ************************************************/
-QString RazorThemeData::loadQss(const QString& qssFile) const
+QString LxQtThemeData::loadQss(const QString& qssFile) const
 {
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -473,7 +473,7 @@ QString RazorThemeData::loadQss(const QString& qssFile) const
 /************************************************
 
  ************************************************/
-QString RazorTheme::desktopBackground(int screen) const
+QString LxQtTheme::desktopBackground(int screen) const
 {
     QString wallpaperCfgFileName = QString("%1/wallpaper.cfg").arg(d->mPath);
 
@@ -501,13 +501,13 @@ QString RazorTheme::desktopBackground(int screen) const
 /************************************************
 
  ************************************************/
-const RazorTheme &RazorTheme::currentTheme()
+const LxQtTheme &LxQtTheme::currentTheme()
 {
-    static RazorTheme theme;
+    static LxQtTheme theme;
     QString name = Settings::globalSettings()->value("theme").toString();
     if (theme.name() != name)
     {
-        theme = RazorTheme(name);
+        theme = LxQtTheme(name);
     }
     return theme;
 }
@@ -516,9 +516,9 @@ const RazorTheme &RazorTheme::currentTheme()
 /************************************************
 
  ************************************************/
-QList<RazorTheme> RazorTheme::allThemes()
+QList<LxQtTheme> LxQtTheme::allThemes()
 {
-    QList<RazorTheme> ret;
+    QList<LxQtTheme> ret;
     QSet<QString> processed;
 
     QStringList paths;
@@ -536,7 +536,7 @@ QList<RazorTheme> RazorTheme::allThemes()
                  QDir(dir.absoluteFilePath()).exists("lxqt-panel.qss"))
             {
                 processed << dir.fileName();
-                ret << RazorTheme(dir.absoluteFilePath());
+                ret << LxQtTheme(dir.absoluteFilePath());
             }
 
         }
@@ -653,10 +653,10 @@ void GlobalSettings::fileChanged()
 
     QString rt = value("theme").toString();
     qlonglong themeUpdated = value("__theme_updated__").toLongLong();
-    if ((d->mRazorTheme != rt) || (d->mThemeUpdated != themeUpdated))
+    if ((d->mLxQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
     {
-        d->mRazorTheme = rt;
-        emit razorThemeChanged();
+        d->mLxQtTheme = rt;
+        emit lxqtThemeChanged();
     }
 
     emit settingsChanged();

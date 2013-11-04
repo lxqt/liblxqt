@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -46,11 +46,11 @@ namespace LxQt
 Every plugin needs a .desktop file that describes it. The basename of this file must
 be same as the basename of the plugin library.
 
-razorpanel_clock2.desktop file
+lxqtpanel_clock2.desktop file
 
 [Desktop Entry]
   Type=Service
-  ServiceTypes=RazorPanel/Plugin
+  ServiceTypes=LxQtPanel/Plugin
   Name=Clock
   Comment=Clock and calendar
 
@@ -87,7 +87,7 @@ public:
 
     /*! Returns a list of PluginInfo objects for the matched files in the directories.
       @param desktopFilesDirs - scanned directories names.
-      @param serviceType - type of the plugin, for example "RazorPanel/Plugin".
+      @param serviceType - type of the plugin, for example "LxQtPanel/Plugin".
       @param nameFilter  - wildcard filter that understands * and ? wildcards.
 
       If the same filename is located under multiple directories only the first file should be used.

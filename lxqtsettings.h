@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -95,25 +95,25 @@ private:
 };
 
 
-class RazorThemeData;
+class LxQtThemeData;
 
 /*! \brief QSS theme handling */
-class RazorTheme
+class LxQtTheme
 {
 public:
     /// Constructs a null theme.
-    RazorTheme();
+    LxQtTheme();
 
     /*! Constructs an theme from the dir with the given path. If path not absolute
         (i.e. the theme name only) the relevant dir must be found relative to the
         $XDG_DATA_HOME + $XDG_DATA_DIRS directories. */
-    RazorTheme(const QString &path);
+    LxQtTheme(const QString &path);
 
     /// Constructs a copy of other. This is very fast.
-    RazorTheme(const RazorTheme &other);
+    LxQtTheme(const LxQtTheme &other);
 
-    RazorTheme& operator=(const RazorTheme &other);
-    ~RazorTheme();
+    LxQtTheme& operator=(const LxQtTheme &other);
+    ~LxQtTheme();
 
     /// Returns the name of the theme.
     QString name() const;
@@ -139,23 +139,23 @@ public:
     */
     QString desktopBackground(int screen=-1) const;
 
-    /// Returns the current razor theme.
-    static const RazorTheme &currentTheme();
+    /// Returns the current lxqt theme.
+    static const LxQtTheme &currentTheme();
 
     /// Returns the all themes found in the system.
-    static QList<RazorTheme> allThemes();
+    static QList<LxQtTheme> allThemes();
 
 private:
-    static RazorTheme* mInstance;
-    QSharedDataPointer<RazorThemeData> d;
+    static LxQtTheme* mInstance;
+    QSharedDataPointer<LxQtThemeData> d;
 };
 
 /*!
-A global pointer referring to the unique RazorTheme object.
-It is equivalent to the pointer returned by the RazorTheme::instance() function.
+A global pointer referring to the unique LxQtTheme object.
+It is equivalent to the pointer returned by the LxQtTheme::instance() function.
 Only one theme object can be created. !*/
 
-#define razorTheme RazorTheme::currentTheme()
+#define lxqtTheme LxQtTheme::currentTheme()
 
 
 class SettingsCache
@@ -186,8 +186,8 @@ signals:
     /// Signal emitted when the icon theme has changed.
     void iconThemeChanged();
 
-    /// Signal emitted when the razor theme has changed.
-    void razorThemeChanged();
+    /// Signal emitted when the lxqt theme has changed.
+    void lxqtThemeChanged();
 
 protected slots:
     void fileChanged();

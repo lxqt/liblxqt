@@ -44,7 +44,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Razor-qt is developed by the &lt;a %1&gt;Razor-qt Team and contributors&lt;/a&gt; on Github.</source>
+        <source>LxQt-qt is developed by the &lt;a %1&gt;LxQt-qt Team and contributors&lt;/a&gt; on Github.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -56,7 +56,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Razor-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -116,7 +116,7 @@
 <context>
     <name>MessageBox</name>
     <message>
-        <source>Razor Power Manager Error</source>
+        <source>LxQt Power Manager Error</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -147,7 +147,7 @@
         <translation>Завершить сеанс</translation>
     </message>
     <message>
-        <source>Razor Session Suspend</source>
+        <source>LxQt Session Suspend</source>
         <translation>Paзор Ждущий режим</translation>
     </message>
     <message>
@@ -155,7 +155,7 @@
         <translation>Перевести компьютер в ждущий режим?&lt;p&gt;Состояние системы будет потеряно при отключении питания.</translation>
     </message>
     <message>
-        <source>Razor Session Hibernate</source>
+        <source>LxQt Session Hibernate</source>
         <translation>Paзор Спящий режим</translation>
     </message>
     <message>
@@ -163,7 +163,7 @@
         <translation>Перевести компьютер в спящий режим?&lt;p&gt;Состояние системы будет сохранено при отключении питания.</translation>
     </message>
     <message>
-        <source>Razor Session Reboot</source>
+        <source>LxQt Session Reboot</source>
         <translation>Paзор Перезагрузка</translation>
     </message>
     <message>
@@ -171,7 +171,7 @@
         <translation>Перезагрузить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Session Shutdown</source>
+        <source>LxQt Session Shutdown</source>
         <translation>Paзор Выключение</translation>
     </message>
     <message>
@@ -179,7 +179,7 @@
         <translation>Выключить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Session Logout</source>
+        <source>LxQt Session Logout</source>
         <translation>Paзор Завершение сеанса</translation>
     </message>
     <message>
@@ -187,7 +187,7 @@
         <translation>Завершить сеанс?&lt;p&gt;Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Power Manager Error</source>
+        <source>LxQt Power Manager Error</source>
         <translation>Ошибка Paзор менеджер  электроэнергии  </translation>
     </message>
     <message>
@@ -217,7 +217,7 @@
 <context>
     <name>about</name>
     <message>
-        <source> About Razor</source>
+        <source> About LxQt</source>
         <translation>О программе</translation>
     </message>
     <message>

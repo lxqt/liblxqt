@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -52,7 +52,7 @@ public:
     /*! Constructs a dialog with the given parent that initially displays
        PluginInfo objects for the matched files in the directories
       @param desktopFilesDirs - list of the scanned directories names.
-      @param serviceType - type of the plugin, for example "RazorPanel/Plugin".
+      @param serviceType - type of the plugin, for example "LxQtPanel/Plugin".
       @param nameFilter  - wildcard filter that understands * and ? wildcards. */
     AddPluginDialog(const QStringList& desktopFilesDirs,
                     const QString& serviceType,

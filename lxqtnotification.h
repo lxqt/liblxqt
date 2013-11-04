@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright (C) 2012  Alec Moskvin <alecm@gmx.com>
@@ -71,7 +71,7 @@ public:
     {
         //! The product name of the server.
         QString name;
-        //! The vendor name. For example, "razor-qt.org"
+        //! The vendor name. For example, "lxqt-qt.org"
         QString vendor;
         //! The server's version number.
         QString version;

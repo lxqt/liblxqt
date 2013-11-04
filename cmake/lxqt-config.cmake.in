@@ -15,7 +15,7 @@
 #  LXQT_TRANSLATIONS_DIR - The default translations directory
 #
 #  LXQT_ETC_XDG_DIR   - XDG standards expects system-wide configuration files in the
-#                        /etc/xdg/razor location. Unfortunately QSettings we are using internally
+#                        /etc/xdg/lxqt location. Unfortunately QSettings we are using internally
 #                        can be overriden in the Qt compilation time to use different path for
 #                        system-wide configs. (for example configure ... -sysconfdir /etc/settings ...)
 #                        This path can be found calling Qt4's qmake:
@@ -37,13 +37,13 @@
 #   find_package(LXQT REQUIRED)
 #   include(${LXQT_USE_FILE})
 #
-#   razor_translate_ts(QM_FILES
+#   lxqt_translate_ts(QM_FILES
 #     SOURCES
 #        ${H_FILES}
 #        ${CPP_FILES}
 #        ${UI_FILES}
 #   )
-#   razor_translate_desktop(DESKTOP_FILES
+#   lxqt_translate_desktop(DESKTOP_FILES
 #     SOURCES
 #        ${DESKTOP_FILES_IN}
 #  )
@@ -68,33 +68,33 @@ set(LXQT_USE_FILE      ${CMAKE_CURRENT_LIST_DIR}/lxqt_use.cmake)
 set(LXQT_FOUND         1)
 
 # for backward compatability ----->
-#set(RAZOR_SHARE_DIR     ${})
-#set(RAZOR_ETC_XDG_DIR   ${})
-#set(RAZOR_INCLUDE_DIR   ${LXQT_INCLUDE_DIR})
-#set(RAZOR_INCLUDE_DIRS  ${LXQT_INCLUDE_DIRS})
-#set(RAZOR_LIBRARY       ${LXQT_LIBRARY})
+#set(LXQT_SHARE_DIR     ${})
+#set(LXQT_ETC_XDG_DIR   ${})
+#set(LXQT_INCLUDE_DIR   ${LXQT_INCLUDE_DIR})
+#set(LXQT_INCLUDE_DIRS  ${LXQT_INCLUDE_DIRS})
+#set(LXQT_LIBRARY       ${LXQT_LIBRARY})
 # for backward compatability <-----
 
 mark_as_advanced(LXQT_LIBRARY LXQT_INCLUDE_DIR)
 
 
 #************************************************
-# RAZOR_USE_MOUNT
+# LXQT_USE_MOUNT
 #
-#if (RAZOR_USE_MOUNT)
-#    include(${CMAKE_CURRENT_LIST_DIR}/razormount-config.cmake)
-#    set(RAZOR_INCLUDE_DIRS       ${RAZOR_INCLUDE_DIRS} ${RAZORMOUNT_INCLUDE_DIR})
-#    set(RAZOR_LIBRARIES          ${RAZOR_LIBRARIES}    ${RAZORMOUNT_LIBRARY})
+#if (LXQT_USE_MOUNT)
+#    include(${CMAKE_CURRENT_LIST_DIR}/lxqtmount-config.cmake)
+#    set(LXQT_INCLUDE_DIRS       ${LXQT_INCLUDE_DIRS} ${LXQTMOUNT_INCLUDE_DIR})
+#    set(LXQT_LIBRARIES          ${LXQT_LIBRARIES}    ${LXQTMOUNT_LIBRARY})
 
-#endif(RAZOR_USE_MOUNT)
+#endif(LXQT_USE_MOUNT)
 
 
 #************************************************
-# RAZOR_USE_GLOBALKEYCLIENT
+# LXQT_USE_GLOBALKEYCLIENT
 #
-#if (RAZOR_USE_GLOBALKEYCLIENT)
-#    include(${CMAKE_CURRENT_LIST_DIR}/razorglobalkeyclient-config.cmake)
-#    set(RAZOR_INCLUDE_DIRS       ${RAZOR_INCLUDE_DIRS} ${RAZORGLOBALKEYCLIENT_INCLUDE_DIR})
-#    set(RAZOR_LIBRARIES          ${RAZOR_LIBRARIES}    ${RAZORGLOBALKEYCLIENT_LIBRARIES})
+#if (LXQT_USE_GLOBALKEYCLIENT)
+#    include(${CMAKE_CURRENT_LIST_DIR}/lxqtglobalkeyclient-config.cmake)
+#    set(LXQT_INCLUDE_DIRS       ${LXQT_INCLUDE_DIRS} ${LXQTGLOBALKEYCLIENT_INCLUDE_DIR})
+#    set(LXQT_LIBRARIES          ${LXQT_LIBRARIES}    ${LXQTGLOBALKEYCLIENT_LIBRARIES})
 
-#endif(RAZOR_USE_GLOBALKEYCLIENT)
+#endif(LXQT_USE_GLOBALKEYCLIENT)

@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -46,9 +46,9 @@
 #define SYSTEMD_PATH            "/org/freedesktop/login1"
 #define SYSTEMD_INTERFACE       "org.freedesktop.login1.Manager"
 
-#define RAZOR_SERVICE      "org.razorqt.session"
-#define RAZOR_PATH         "/RazorSession"
-#define RAZOR_INTERFACE    "org.razorqt.session"
+#define LXQT_SERVICE      "org.lxqt.session"
+#define LXQT_PATH         "/LxQtSession"
+#define LXQT_INTERFACE    "org.lxqt.session"
 
 #define LXSESSION_SERVICE      "org.lxde.SessionManager"
 #define LXSESSION_PATH         "/org/lxde/SessionManager"
@@ -90,7 +90,7 @@ bool dbusCall(const QString &service,
             Notification::notify(
                                     QObject::tr("Power Manager Error"),
                                     QObject::tr("QDBusInterface is invalid")+ "\n\n" + service + " " + path + " " + interface + " " + method,
-                                    "razor-logo.png");
+                                    "lxqt-logo.png");
         }
         return false;
     }
@@ -105,7 +105,7 @@ bool dbusCall(const QString &service,
             Notification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
                                     msg.errorName() + "\n\n" + msg.errorMessage(),
-                                    "razor-logo.png");
+                                    "lxqt-logo.png");
         }
     }
 
@@ -139,7 +139,7 @@ bool dbusCallSystemd(const QString &service,
             Notification::notify(
                                     QObject::tr("Power Manager Error"),
                                     QObject::tr("QDBusInterface is invalid")+ "\n\n" + service + " " + path + " " + interface + " " + method,
-                                    "razor-logo.png");
+                                    "lxqt-logo.png");
         }
         return false;
     }
@@ -154,7 +154,7 @@ bool dbusCallSystemd(const QString &service,
             Notification::notify(
                                     QObject::tr("Power Manager Error (D-BUS call)"),
                                     msg.errorName() + "\n\n" + msg.errorMessage(),
-                                    "razor-logo.png");
+                                    "lxqt-logo.png");
         }
     }
 
@@ -182,8 +182,8 @@ bool dbusGetProperty(const QString &service,
     if (!dbus.isValid())
     {
         qWarning() << "dbusGetProperty: QDBusInterface is invalid" << service << path << interface << property;
-//        Notification::notify(QObject::tr("Razor Power Manager"),
-//                                  "razor-logo.png",
+//        Notification::notify(QObject::tr("LxQt Power Manager"),
+//                                  "lxqt-logo.png",
 //                                  QObject::tr("Power Manager Error"),
 //                                  QObject::tr("QDBusInterface is invalid")+ "\n\n" + service +" " + path +" " + interface +" " + property);
 
@@ -195,8 +195,8 @@ bool dbusGetProperty(const QString &service,
     if (!msg.errorName().isEmpty())
     {
         printDBusMsg(msg);
-//        Notification::notify(QObject::tr("Razor Power Manager"),
-//                                  "razor-logo.png",
+//        Notification::notify(QObject::tr("LxQt Power Manager"),
+//                                  "lxqt-logo.png",
 //                                  QObject::tr("Power Manager Error (Get Property)"),
 //                                  msg.errorName() + "\n\n" + msg.errorMessage());
     }
@@ -470,26 +470,26 @@ bool SystemdProvider::doAction(Power::Action action)
 
 
 /************************************************
-  RazorProvider
+  LxQtProvider
  ************************************************/
-RazorProvider::RazorProvider(QObject *parent):
+LxQtProvider::LxQtProvider(QObject *parent):
     PowerProvider(parent)
 {
 }
 
 
-RazorProvider::~RazorProvider()
+LxQtProvider::~LxQtProvider()
 {
 }
 
 
-bool RazorProvider::canAction(Power::Action action) const
+bool LxQtProvider::canAction(Power::Action action) const
 {
     switch (action)
     {
         case Power::PowerLogout:
             // there can be case when razo-session does not run
-            return dbusCall(RAZOR_SERVICE, RAZOR_PATH, RAZOR_SERVICE,
+            return dbusCall(LXQT_SERVICE, LXQT_PATH, LXQT_SERVICE,
                             QDBusConnection::sessionBus(), "canLogout",
                             PowerProvider::DontCheckDBUS);
         default:
@@ -498,7 +498,7 @@ bool RazorProvider::canAction(Power::Action action) const
 }
 
 
-bool RazorProvider::doAction(Power::Action action)
+bool LxQtProvider::doAction(Power::Action action)
 {
     QString command;
 
@@ -512,9 +512,9 @@ bool RazorProvider::doAction(Power::Action action)
         return false;
     }
 
-    return dbusCall(RAZOR_SERVICE,
-             RAZOR_PATH,
-             RAZOR_INTERFACE,
+    return dbusCall(LXQT_SERVICE,
+             LXQT_PATH,
+             LXQT_INTERFACE,
              QDBusConnection::sessionBus(),
              command
             );

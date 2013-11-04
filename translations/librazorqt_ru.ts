@@ -41,7 +41,7 @@
         <translation>Завершить сеанс</translation>
     </message>
     <message>
-        <source>Razor Session Suspend</source>
+        <source>LxQt Session Suspend</source>
         <translation>Paзор Ждущий режим</translation>
     </message>
     <message>
@@ -49,7 +49,7 @@
         <translation>Перевести компьютер в ждущий режим?&lt;p&gt;Состояние системы будет потеряно при отключении питания.</translation>
     </message>
     <message>
-        <source>Razor Session Hibernate</source>
+        <source>LxQt Session Hibernate</source>
         <translation>Paзор Спящий режим</translation>
     </message>
     <message>
@@ -57,7 +57,7 @@
         <translation>Перевести компьютер в спящий режим?&lt;p&gt;Состояние системы будет сохранено при отключении питания.</translation>
     </message>
     <message>
-        <source>Razor Session Reboot</source>
+        <source>LxQt Session Reboot</source>
         <translation>Paзор Перезагрузка</translation>
     </message>
     <message>
@@ -65,7 +65,7 @@
         <translation>Перезагрузить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Session Shutdown</source>
+        <source>LxQt Session Shutdown</source>
         <translation>Paзор Выключение</translation>
     </message>
     <message>
@@ -73,7 +73,7 @@
         <translation>Выключить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Session Logout</source>
+        <source>LxQt Session Logout</source>
         <translation>Paзор Завершение сеанса</translation>
     </message>
     <message>
@@ -81,7 +81,7 @@
         <translation>Завершить сеанс?&lt;p&gt;Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>Razor Power Manager Error</source>
+        <source>LxQt Power Manager Error</source>
         <translation>Ошибка Paзор менеджер  электроэнергии  </translation>
     </message>
     <message>
@@ -109,7 +109,7 @@
     </message>
 </context>
 <context>
-    <name>RazorAboutDLGPrivate</name>
+    <name>LxQtAboutDLGPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation>Версия: %1</translation>
@@ -131,8 +131,8 @@
         <translation>Лицензия: %1</translation>
     </message>
     <message>
-        <source>Razor-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>Razor-Qt переведена на множество языков благодаря работе команд переводчиков по всему миру.</translation>
+        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LxQt-Qt переведена на множество языков благодаря работе команд переводчиков по всему миру.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -143,8 +143,8 @@
         <translation>Hет</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Razor Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Инструментарий рабочего стола Razor - Техническая Информация&lt;/b&gt;</translation>
+        <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Инструментарий рабочего стола LXDE-Qt - Техническая Информация&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Version</source>
@@ -204,21 +204,21 @@
     </message>
 </context>
 <context>
-    <name>RazorConfigDialog</name>
+    <name>LxQtConfigDialog</name>
     <message>
         <source>Dialog</source>
         <translation>Диалог</translation>
     </message>
 </context>
 <context>
-    <name>RazorNotificationPrivate</name>
+    <name>LxQtNotificationPrivate</name>
     <message>
         <source>Notifications Fallback</source>
         <translation>Уведомления отступление</translation>
     </message>
 </context>
 <context>
-    <name>RazorShortcutButton</name>
+    <name>LxQtShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation>Очистить</translation>
@@ -270,7 +270,7 @@
 <context>
     <name>about</name>
     <message>
-        <source> About Razor</source>
+        <source> About LxQt</source>
         <translation>О программе</translation>
     </message>
     <message>

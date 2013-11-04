@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2012-2013 Razor team
@@ -49,11 +49,11 @@ using namespace LxQt;
 #include <QDateTime>
 /*! \brief Log qDebug input to file
 Used only in pure Debug builds or when is the system environment
-variable RAZOR_DEBUG set
+variable LXQT_DEBUG set
 */
 void dbgMessageOutput(QtMsgType type, const char *msg)
 {
-    QDir dir(XdgDirs::configHome().toUtf8() + "/razor");
+    QDir dir(XdgDirs::configHome().toUtf8() + "/lxqt");
     dir.mkpath(".");
 
     const char* typestr;
@@ -96,13 +96,13 @@ Application::Application(int &argc, char** argv)
 #ifdef DEBUG
     qInstallMsgHandler(dbgMessageOutput);
 #else
-    if (!qgetenv("RAZOR_DEBUG").isNull())
+    if (!qgetenv("LXQT_DEBUG").isNull())
         qInstallMsgHandler(dbgMessageOutput);
 #endif
 
     XdgIcon::setThemeName(Settings::globalSettings()->value("icon_theme").toString());
-    setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/razor_logo.png"));
-    connect(Settings::globalSettings(), SIGNAL(razorThemeChanged()), this, SLOT(updateTheme()));
+    setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/lxqt_logo.png"));
+    connect(Settings::globalSettings(), SIGNAL(lxqtThemeChanged()), this, SLOT(updateTheme()));
     updateTheme();
 }
 
@@ -110,6 +110,6 @@ Application::Application(int &argc, char** argv)
 void Application::updateTheme()
 {
     QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
-    setStyleSheet(razorTheme.qss(styleSheetKey));
+    setStyleSheet(lxqtTheme.qss(styleSheetKey));
     emit themeChanged();
 }

@@ -23,7 +23,7 @@ function(get_translatorsinfo_qrc _qrcFile)
 
     file(WRITE "${CMAKE_BINARY_DIR}/tx/translatorsinfo.tx.sh"
         "[ -f ${srcDir}/translators.info.src ] || exit 0\n"    
-        "echo '[razor-qt.translatorsinfo]'\n"
+        "echo '[lxqt-qt.translatorsinfo]'\n"
         "echo 'type = MOZILLAPROPERTIES'\n"
         "echo 'source_lang = en'\n"
         "echo 'source_file = ${txSrcDir}/translators.info.src'\n"

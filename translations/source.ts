@@ -126,7 +126,7 @@
 <context>
     <name>MessageBox</name>
     <message>
-        <source>Razor Power Manager Error</source>
+        <source>LxQt Power Manager Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -157,7 +157,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Session Suspend</source>
+        <source>LxQt Session Suspend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -165,7 +165,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Session Hibernate</source>
+        <source>LxQt Session Hibernate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -173,7 +173,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Session Reboot</source>
+        <source>LxQt Session Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -181,7 +181,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Session Shutdown</source>
+        <source>LxQt Session Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -189,7 +189,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Session Logout</source>
+        <source>LxQt Session Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -197,7 +197,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Razor Power Manager Error</source>
+        <source>LxQt Power Manager Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
