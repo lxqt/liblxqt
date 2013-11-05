@@ -44,7 +44,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>LxQt-qt is developed by the &lt;a %1&gt;LxQt-qt Team and contributors&lt;/a&gt; on Github.</source>
+        <source>LXDE-Qt is developed by the &lt;a %1&gt;LXDE-Qt Team and contributors&lt;/a&gt; on Github.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -56,7 +56,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <translation type="unfinished"/>
     </message>
 </context>

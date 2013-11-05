@@ -131,8 +131,8 @@
         <translation>Licencia: %1</translation>
     </message>
     <message>
-        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LxQt-qt es traducido en muchos lenguajes gracias al trabajo de traductores en todo el mundo.</translation>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXDE-Qt es traducido en muchos lenguajes gracias al trabajo de traductores en todo el mundo.</translation>
     </message>
     <message>
         <source>Yes</source>

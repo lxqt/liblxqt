@@ -34,12 +34,12 @@
 namespace LxQt
 {
 
-/*! \brief LxQt-qt wrapper around QApplication.
- * It loads various LxQt-qt related stuff by default (window icon, icon theme...)
+/*! \brief LXDE-Qt wrapper around QApplication.
+ * It loads various LXDE-Qt related stuff by default (window icon, icon theme...)
  *
- * \note This wrapper is intended to be used only inside LxQt-qt project. Using it
+ * \note This wrapper is intended to be used only inside LXDE-Qt project. Using it
  *       in external application will automatically require linking to various
- *       LxQt-qt libraries.
+ *       LXDE-Qt libraries.
  *
  */
 class Application : public QApplication
@@ -47,7 +47,7 @@ class Application : public QApplication
     Q_OBJECT
 
 public:
-    /*! Construct a LxQt-qt application object.
+    /*! Construct a LXDE-Qt application object.
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
      */

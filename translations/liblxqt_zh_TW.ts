@@ -131,8 +131,8 @@
         <translation>憑證 :%1</translation>
     </message>
     <message>
-        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LxQt-qt已經有由世界各地的翻譯團隊所提供多種語言的翻譯。</translation>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXDE-Qt已經有由世界各地的翻譯團隊所提供多種語言的翻譯。</translation>
     </message>
     <message>
         <source>Yes</source>

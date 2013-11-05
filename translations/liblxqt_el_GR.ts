@@ -131,8 +131,8 @@
         <translation>Άδεια χρήσης: %1</translation>
     </message>
     <message>
-        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LxQt-qt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων σε όλο τον κόσμο.</translation>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXDE-Qt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων σε όλο τον κόσμο.</translation>
     </message>
     <message>
         <source>Yes</source>

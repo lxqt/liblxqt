@@ -132,7 +132,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>LxQt-qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <translation type="unfinished"/>
     </message>
     <message>
