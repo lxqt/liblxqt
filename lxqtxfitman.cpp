@@ -634,15 +634,7 @@ int XfitMan::getWindowDesktop(Window _wid) const
 
 void XfitMan::moveWindowToDesktop(Window _wid, int _display) const
 {
-    WMState state = getWMState(_wid);
-    if(state != WMStateWithdrawn)
-        clientMessage(_wid, atom("_NET_WM_DESKTOP"), (unsigned long) _display,0,0,0,0);
-    else
-    {
-        long desktop = _display;
-        XChangeProperty(QX11Info::display(), _wid, XfitMan::atom("_NET_WM_DESKTOP"), XA_CARDINAL, 32,
-                        PropModeReplace, (unsigned char*)&desktop, 1);
-    }
+    clientMessage(_wid, atom("_NET_WM_DESKTOP"), (unsigned long) _display,0,0,0,0);
 }
 
 
