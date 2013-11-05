@@ -29,10 +29,11 @@
 #ifndef LXQTXFITMAN_H
 #define LXQTXFITMAN_H
 
-#include <QtCore/QList>
-#include <QtGui/QPixmap>
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QList>
+#include <QPixmap>
+#include <QString>
+#include <QMap>
+#include <QIcon>
 #include <X11/Xlib.h>
 
 //some net_wm state-operations we need here
@@ -112,6 +113,13 @@ public:
         MaximizeBoth
     };
 
+    enum WMState
+    {
+        WMStateWithdrawn = 0,
+        WMStateNormal = 1,
+        WMStateIconic = 3
+    };
+
     ~XfitMan();
     XfitMan();
     void moveWindow(Window _win, int _x, int _y) const;
@@ -149,6 +157,16 @@ public:
     Window getActiveAppWindow() const;
     Window getActiveWindow() const;
     int getNumDesktop() const;
+
+    bool getShowingDesktop() const;
+    void setShowingDesktop(bool show) const;
+
+    void setIconGeometry(Window _wid, QRect* rect = 0) const;
+
+    /*!
+     * Returns ICCCM WM_STATE
+    */
+    WMState getWMState(Window _wid) const;
 
     /*!
      * Returns the names of all virtual desktops. This is a list of UTF-8 encoding strings.
