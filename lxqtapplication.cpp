@@ -27,8 +27,8 @@
 
 #include <QtCore/QDir>
 
-#include <qtxdg/xdgicon.h>
-#include <qtxdg/xdgdirs.h>
+#include <xdgqt/XdgIcon>
+#include <xdgqt/XdgDirs>
 
 #include "lxqtapplication.h"
 #include "lxqtsettings.h"

@@ -51,7 +51,6 @@
  * @brief implements class Xfitman
  * @author Christopher "VdoP" Regali
  */
-
 /*
  Some requests from Clients include type of the Client, for example the _NET_ACTIVE_WINDOW
  message. Currently the types can be 1 for normal applications, and 2 for pagers.
@@ -394,7 +393,7 @@ int XfitMan::clientMessage(Window _wid, Atom _msg,
     msg.data.l[2] = data2;
     msg.data.l[3] = data3;
     msg.data.l[4] = data4;
-    if (XSendEvent(QX11Info::display(), root, FALSE, (SubstructureRedirectMask | SubstructureNotifyMask) , (XEvent *) &msg) == Success)
+    if (XSendEvent(QX11Info::display(), root, false, (SubstructureRedirectMask | SubstructureNotifyMask) , (XEvent *) &msg) == Success)
         return EXIT_SUCCESS;
     else
         return EXIT_FAILURE;

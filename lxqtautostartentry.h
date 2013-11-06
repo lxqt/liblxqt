@@ -25,7 +25,7 @@
 #ifndef LXQTAUTOSTARTENTRY_H
 #define LXQTAUTOSTARTENTRY_H
 
-#include <qtxdg/xdgdesktopfile.h>
+#include <xdgqt/XdgDesktopFile>
 
 namespace LxQt
 {
