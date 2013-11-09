@@ -34,10 +34,11 @@
 #include <QDesktopWidget>
 #include <QtDebug>
 #include "lxqttranslator.h"
+#include "lxqtglobals.h"
 
 namespace LxQt {
 
-class MessageBox: public QMessageBox
+class LXQT_API MessageBox: public QMessageBox
 {
 public:
     explicit MessageBox(QWidget *parent = 0): QMessageBox(parent) {}

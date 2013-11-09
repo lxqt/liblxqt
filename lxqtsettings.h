@@ -32,6 +32,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QSettings>
 #include <QtCore/QSharedDataPointer>
+#include "lxqtglobals.h"
 
 class QEvent;
     
@@ -42,7 +43,7 @@ class SettingsPrivate;
 class GlobalSettings;
 
 /*! \brief User settings handling */
-class Settings : public QSettings
+class LXQT_API Settings : public QSettings
 {
     Q_OBJECT
 public:
@@ -98,7 +99,7 @@ private:
 class LxQtThemeData;
 
 /*! \brief QSS theme handling */
-class LxQtTheme
+class LXQT_API LxQtTheme
 {
 public:
     /// Constructs a null theme.
@@ -158,7 +159,7 @@ Only one theme object can be created. !*/
 #define lxqtTheme LxQtTheme::currentTheme()
 
 
-class SettingsCache
+class LXQT_API SettingsCache
 {
 public:
     explicit SettingsCache(QSettings &settings);

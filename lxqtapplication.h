@@ -30,6 +30,7 @@
 
 #include <QtGui/QApplication>
 #include <QtGui/QProxyStyle>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -42,7 +43,7 @@ namespace LxQt
  *       LXDE-Qt libraries.
  *
  */
-class Application : public QApplication
+class LXQT_API Application : public QApplication
 {
     Q_OBJECT
 

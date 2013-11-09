@@ -36,6 +36,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QtAlgorithms>
 #include <QtCore/QDebug>
+#include "lxqtglobals.h"
 
 class QLibrary;
 
@@ -57,7 +58,7 @@ lxqtpanel_clock2.desktop file
 PluginInfo class gives the interface for reading the values from the plugin .desktop file.
 This is a pure virtual class, you must implement libraryDir(), translationDir(), and instance() methods.
 */
-class PluginInfo: public XdgDesktopFile
+class LXQT_API PluginInfo: public XdgDesktopFile
 {
 public:
     /// Constructs a PluginInfo object for accessing the info stored in the .desktop file.

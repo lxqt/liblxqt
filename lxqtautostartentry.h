@@ -26,6 +26,7 @@
 #define LXQTAUTOSTARTENTRY_H
 
 #include <qtxdg/xdgdesktopfile.h>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -39,7 +40,7 @@ autostart items. All changes are made in memory until commit() is called.
 When a "local" file has the same name as the "system" file, the local one overrides it. This class
 tries to ensure that the "local" file is deleted if it's identical to the "system" file.
 */
-class AutostartEntry
+class LXQT_API AutostartEntry
 {
 public:
     /*! Constructs an AutostartEntry object for a specific entry.

@@ -31,6 +31,7 @@
 
 #include <QtGui/QLayout>
 #include <QtCore/QList>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -40,7 +41,7 @@ class GridLayoutPrivate;
 /**
  The GridLayout class lays out widgets in a grid.
  **/
-class GridLayout: public QLayout
+class LXQT_API GridLayout: public QLayout
 {
     Q_OBJECT
 public:

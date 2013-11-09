@@ -30,10 +30,12 @@
 #define LXQTPAGESELECTWIDGET_H
 
 #include <QtGui/QListWidget>
+#include "lxqtglobals.h"
+
 namespace LxQt
 {
 
-class PageSelectWidget : public QListWidget
+class LXQT_API PageSelectWidget : public QListWidget
 {
     Q_OBJECT
 public:

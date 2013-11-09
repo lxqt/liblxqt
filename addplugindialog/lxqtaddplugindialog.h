@@ -31,6 +31,7 @@
 
 #include <QDialog>
 #include <lxqtplugininfo.h>
+#include "lxqtglobals.h"
 
 #define SEARCH_DELAY 125
 
@@ -44,7 +45,7 @@ namespace LxQt
 
 /*! The AddPluginDialog class provides a dialog that allow users to add plugins.
  */
-class AddPluginDialog : public QDialog
+class LXQT_API AddPluginDialog : public QDialog
 {
     Q_OBJECT
 

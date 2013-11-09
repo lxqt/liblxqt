@@ -29,7 +29,7 @@
 
 using namespace LxQt;
 
-bool ProgramFinder::programExists(const QString& command)
+LXQT_API bool ProgramFinder::programExists(const QString& command)
 {
     QString program = programName(command);
     if (program[0] == QChar('/'))
@@ -48,16 +48,16 @@ bool ProgramFinder::programExists(const QString& command)
     return false;
 }
 
-QStringList ProgramFinder::findPrograms(const QStringList& programs)
+LXQT_API QStringList ProgramFinder::findPrograms(const QStringList& commands)
 {
     QStringList availPrograms;
-    foreach (const QString& program, programs)
+    foreach (const QString& program, commands)
         if (programExists(program))
             availPrograms.append(program);
     return availPrograms;
 }
 
-QString ProgramFinder::programName(const QString& command)
+LXQT_API QString ProgramFinder::programName(const QString& command)
 {
     wordexp_t we;
     if (wordexp(command.toLocal8Bit().constData(), &we, WRDE_NOCMD) == 0)

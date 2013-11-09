@@ -31,14 +31,14 @@
 #include <QtCore/QProcess>
 #include <QtCore/QObject>
 #include <QtGui/QAction>
-
+#include "lxqtglobals.h"
 
 class QProcess;
 
 namespace LxQt
 {
 
-class ScreenSaver : public QObject
+class LXQT_API ScreenSaver : public QObject
 {
     Q_OBJECT
 

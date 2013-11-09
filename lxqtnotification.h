@@ -26,6 +26,7 @@
 #define LXQTNOTIFICATION_H
 
 #include <QtCore/QStringList>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -37,7 +38,7 @@ class NotificationPrivate;
  *
  * Spec: http://developer.gnome.org/notification-spec
  */
-class Notification : public QObject
+class LXQT_API Notification : public QObject
 {
     Q_OBJECT
 public:

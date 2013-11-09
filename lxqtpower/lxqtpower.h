@@ -31,6 +31,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QList>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -42,7 +43,7 @@ class PowerProvider;
     It allows logout from the user session, hibernate, reboot, shutdown and suspend computer.
     This is a wrapper class. All the real work is done in the PowerWorker classes.
 */
-class Power : public QObject
+class LXQT_API Power : public QObject
 {
     Q_OBJECT
 public:

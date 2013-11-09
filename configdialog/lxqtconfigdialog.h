@@ -29,6 +29,7 @@
 
 #include <QtGui/QDialog>
 #include <QtGui/QAbstractButton>
+#include "lxqtglobals.h"
 
 namespace Ui {
 class ConfigDialog;
@@ -37,7 +38,7 @@ class ConfigDialog;
 namespace LxQt
 {
 
-class ConfigDialog : public QDialog
+class LXQT_API ConfigDialog : public QDialog
 {
     Q_OBJECT
 

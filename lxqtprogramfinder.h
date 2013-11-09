@@ -26,6 +26,8 @@
 #define LXQTPROGRAMFINDER_H
 
 #include <QtCore/QStringList>
+#include "lxqtglobals.h"
+
 namespace LxQt
 {
 
@@ -37,7 +39,7 @@ namespace ProgramFinder
      * \param command
      * \return True if the program exists
      */
-    bool programExists(const QString& command);
+    LXQT_API bool programExists(const QString& command);
 
     /*!
      * \brief findPrograms Filters a list of commands (with arguments) based on
@@ -45,14 +47,14 @@ namespace ProgramFinder
      * \param commands Commands to check
      * \return List of commands which are installed
      */
-    QStringList findPrograms(const QStringList& commands);
+    LXQT_API QStringList findPrograms(const QStringList& commands);
 
     /*!
      * \brief programName Returns the program name given a command
      * \param command
      * \return
      */
-    QString programName(const QString& command);
+    LXQT_API QString programName(const QString& command);
 }
 
 } // namespace LxQt

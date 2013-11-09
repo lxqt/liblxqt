@@ -29,6 +29,7 @@
 #ifndef LXQTXFITMAN_H
 #define LXQTXFITMAN_H
 
+#include "lxqtglobals.h"
 #include <QList>
 #include <QPixmap>
 #include <QString>
@@ -95,7 +96,7 @@ struct WindowState
 /**
  * @brief manages the Xlib apicalls
  */
-class XfitMan
+class LXQT_API XfitMan
 {
 public:
 
@@ -255,7 +256,7 @@ private:
 };
 
 
-const XfitMan& xfitMan();
+LXQT_API const XfitMan& xfitMan();
 
 } //namespace LxQt
 #endif // LXQTXFITMAN_H

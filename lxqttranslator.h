@@ -29,13 +29,14 @@
 #define LXQTTRANSLATOR_H
 
 #include <QStringList>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
 /**
   The Translator class provides internationalization support for application and librarioes.
  **/
-class Translator
+class LXQT_API Translator
 {
 public:
     /**

@@ -30,6 +30,7 @@
 
 #include <QObject>
 #include <QAction>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -37,7 +38,7 @@ class Power;
 
 /*! QAction centric menu aware wrapper around lxqtpower
 */
-class PowerManager : public QObject
+class LXQT_API PowerManager : public QObject
 {
     Q_OBJECT
 

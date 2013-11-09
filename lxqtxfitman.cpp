@@ -69,7 +69,7 @@
 
 namespace LxQt {
 
-const XfitMan&  xfitMan()
+const XfitMan& xfitMan()
 {
     static XfitMan instance;
     return instance;

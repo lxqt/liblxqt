@@ -29,11 +29,12 @@
 #define LXQTROTATED_WIDGET_H
 
 #include <QWidget>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
 
-class RotatedWidget: public QWidget
+class LXQT_API RotatedWidget: public QWidget
 {
     Q_OBJECT
 

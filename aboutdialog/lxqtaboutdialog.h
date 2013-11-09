@@ -29,6 +29,7 @@
 #define LXQTRABOUTDIALOG_H
 
 #include <QDialog>
+#include "lxqtglobals.h"
 
 namespace LxQt
 {
@@ -38,7 +39,7 @@ class AboutDialogPrivate;
 /**
  * @brief displays a simple about dialog
  */
-class AboutDialog: public QDialog
+class LXQT_API AboutDialog: public QDialog
 {
     Q_OBJECT
 public:
