@@ -19,9 +19,9 @@ endfunction(create_translatorsinfo_file)
 
 function(get_translatorsinfo_qrc _qrcFile)
     get_filename_component (srcDir translatorsinfo/ ABSOLUTE)
-    string(REPLACE "${CMAKE_SOURCE_DIR}/" "" txSrcDir ${srcDir})
+    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" txSrcDir ${srcDir})
 
-    file(WRITE "${CMAKE_BINARY_DIR}/tx/translatorsinfo.tx.sh"
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/tx/translatorsinfo.tx.sh"
         "[ -f ${srcDir}/translators.info.src ] || exit 0\n"    
         "echo '[lxde-qt.translatorsinfo]'\n"
         "echo 'type = MOZILLAPROPERTIES'\n"
