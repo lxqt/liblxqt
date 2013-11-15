@@ -51,6 +51,7 @@
 #   add_executable(myexe main.cpp)
 #   target_link_libraries(myexe $LXQT_LIBRARIES})
 
+set(LXQT_USEQT@LXQT_QT_VERSION@             ON)
 set(LXQT_QT_VERSION         @LXQT_QT_VERSION@)
 set(LXQT_MAJOR_VERSION      @LXQT_MAJOR_VERSION@)
 set(LXQT_MINOR_VERSION      @LXQT_MINOR_VERSION@)
@@ -60,14 +61,19 @@ set(LXQT_VERSION            @LXQT_VERSION@)
 set(LXQT_SHARE_DIR          @LXQT_SHARE_DIR@)
 set(LXQT_TRANSLATIONS_DIR   @LXQT_TRANSLATIONS_DIR@)
 set(LXQT_ETC_XDG_DIR        @LXQT_ETC_XDG_DIR@)
-set(LXQT_INCLUDE_DIR        @LXQT_INCLUDE_DIR@)
-set(LXQT_LIBRARY            lxqt@LXQT_QT_VERSION@)
 
-set(LXQT_LIBRARIES          ${LXQT_LIBRARY} )
-set(LXQT_INCLUDE_DIRS       ${LXQT_INCLUDE_DIR} )
-set(LXQT_USE_FILE           ${CMAKE_CURRENT_LIST_DIR}/lxqt@LXQT_QT_VERSION@_use.cmake)
+set(LXQT_INCLUDE_DIR        @CFG_LXQT_INCLUDE_DIR@)
+set(LXQT_INCLUDE_DIRS       @CFG_LXQT_INCLUDE_DIR@)
+
+set(LXQT_LIBRARY            @CFG_LXQT_LIBRARY@)
+set(LXQT_LIBRARIES          @CFG_LXQT_LIBRARY@)
+
+set(LXQT_USE_FILE           @CFG_LXQT_USE_FILE@)
 set(LXQT_FOUND              1)
 set(LXQT@LXQT_QT_VERSION@_FOUND             1)
+
+
+include(@CFG_LXQT_TRAGETS_FILE@)
 
 mark_as_advanced(LXQT_LIBRARY LXQT_INCLUDE_DIR)
 
