@@ -108,9 +108,9 @@ QString AboutDialogPrivate::authorsText() const
 {
     return QString("%1<p>%2").arg(
                 tr("LXDE-Qt is developed by the <a %1>LXDE-Qt Team and contributors</a> on Github.", "About dialog, 'Authors' tab text")
-                    .arg(" href='https://github.com/lxde'>github.com/lxde'"),
+                    .arg(" href='https://github.com/lxde'"),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.", "About dialog, 'Authors' tab text")
-                    .arg(" href='https://github.com/lxde'>github.com/lxde'")
+                    .arg(" href='https://github.com/lxde'")
                 );
 }
 
