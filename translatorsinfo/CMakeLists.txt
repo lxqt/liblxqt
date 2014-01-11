@@ -32,6 +32,10 @@ function(get_translatorsinfo_qrc _qrcFile)
     )
    
     create_translatorsinfo_file(TRANSLATORS_INFO_FILE)
-    configure_file(translatorsinfo/translatorsinfo.qrc.in ${CMAKE_CURRENT_BINARY_DIR}/translatorsinfo.qrc)
-    set(${_qrcFile} ${CMAKE_CURRENT_BINARY_DIR}/translatorsinfo.qrc PARENT_SCOPE)
+    configure_file(
+        translatorsinfo/translatorsinfo.qrc.in
+        ${CMAKE_CURRENT_BINARY_DIR}/translatorsinfo.qrc
+    )
+    set(${_qrcFile}
+        ${CMAKE_CURRENT_BINARY_DIR}/translatorsinfo.qrc PARENT_SCOPE)
 endfunction(get_translatorsinfo_qrc)
