@@ -27,8 +27,8 @@
 
 #include <QtCore/QDir>
 
-#include <qtxdg/xdgicon.h>
-#include <qtxdg/xdgdirs.h>
+#include <qtxdg/XdgIcon>
+#include <qtxdg/XdgDirs>
 
 #include "lxqtapplication.h"
 #include "lxqtsettings.h"
@@ -51,8 +51,15 @@ using namespace LxQt;
 Used only in pure Debug builds or when is the system environment
 variable LXQT_DEBUG set
 */
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QString & msgStr)
+{
+    QByteArray msgBuf = msgStr.toUtf8();
+    const char* msg = msgBuf.constData();
+#else
 void dbgMessageOutput(QtMsgType type, const char *msg)
 {
+#endif
     QDir dir(XdgDirs::configHome().toUtf8() + "/lxqt");
     dir.mkpath(".");
 
@@ -94,11 +101,22 @@ Application::Application(int &argc, char** argv)
     : QApplication(argc, argv)
 {
 #ifdef DEBUG
-    qInstallMsgHandler(dbgMessageOutput);
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    qInstallMessageHandler(dbgMessageOutput);
 #else
+    qInstallMsgHandler(dbgMessageOutput);
+#endif
+
+#else //  DEBUG
     if (!qgetenv("LXQT_DEBUG").isNull())
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        qInstallMessageHandler(dbgMessageOutput);
+#else
         qInstallMsgHandler(dbgMessageOutput);
 #endif
+
+#endif // DEBUG
 
     XdgIcon::setThemeName(Settings::globalSettings()->value("icon_theme").toString());
     setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/lxqt_logo.png"));

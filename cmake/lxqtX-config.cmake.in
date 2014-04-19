@@ -15,7 +15,7 @@
 #  LXQT_TRANSLATIONS_DIR - The default translations directory
 #
 #  LXQT_ETC_XDG_DIR   - XDG standards expects system-wide configuration files in the
-#                        /etc/xdg/lxqt location. Unfortunately QSettings we are using internally
+#                        /etc/xdg/razor location. Unfortunately QSettings we are using internally
 #                        can be overriden in the Qt compilation time to use different path for
 #                        system-wide configs. (for example configure ... -sysconfdir /etc/settings ...)
 #                        This path can be found calling Qt4's qmake:
@@ -37,13 +37,13 @@
 #   find_package(LXQT REQUIRED)
 #   include(${LXQT_USE_FILE})
 #
-#   lxqt_translate_ts(QM_FILES
+#   razor_translate_ts(QM_FILES
 #     SOURCES
 #        ${H_FILES}
 #        ${CPP_FILES}
 #        ${UI_FILES}
 #   )
-#   lxqt_translate_desktop(DESKTOP_FILES
+#   razor_translate_desktop(DESKTOP_FILES
 #     SOURCES
 #        ${DESKTOP_FILES_IN}
 #  )
@@ -51,32 +51,29 @@
 #   add_executable(myexe main.cpp)
 #   target_link_libraries(myexe $LXQT_LIBRARIES})
 
-option(USE_QT5 "Force use the Qt5." $ENV{USE_QT5})
-option(USE_QT4 "Force use the Qt4." $ENV{USE_QT4})
+set(LXQT_USEQT@LXQT_QT_VERSION@             ON)
+set(LXQT_QT_VERSION         @LXQT_QT_VERSION@)
+set(LXQT_MAJOR_VERSION      @LXQT_MAJOR_VERSION@)
+set(LXQT_MINOR_VERSION      @LXQT_MINOR_VERSION@)
+set(LXQT_PATCH_VERSION      @LXQT_PATCH_VERSION@)
+set(LXQT_VERSION            @LXQT_VERSION@)
 
-if((USE_QT4 AND USE_QT5) OR
-   (NOT USE_QT4 AND NOT USE_QT5))
-    # Autodetect Qt version
-    find_package(LxQt4 QUIET)
-    if (LXQT4_FOUND)
-        set(USE_QT4 ON)
-        set(USE_QT5 OFF)
-    else()
-        set(USE_QT4 OFF)
-        set(USE_QT5 ON)
-    endif()
-endif()
+set(LXQT_SHARE_DIR          @LXQT_SHARE_DIR@)
+set(LXQT_TRANSLATIONS_DIR   @LXQT_TRANSLATIONS_DIR@)
+set(LXQT_ETC_XDG_DIR        @LXQT_ETC_XDG_DIR@)
 
-if(LXQT_FIND_REQUIRED)
-  set(REQUIRED_OPT "REQUIRED")
-endif()
+set(LXQT_INCLUDE_DIR        @CFG_LXQT_INCLUDE_DIR@)
+set(LXQT_INCLUDE_DIRS       @CFG_LXQT_INCLUDE_DIR@)
 
-if(LXQT_FIND_QUIETLY)
-  set(QUIET_OPT "QUIET")
-endif()
+set(LXQT_LIBRARY            @CFG_LXQT_LIBRARY@)
+set(LXQT_LIBRARIES          @CFG_LXQT_LIBRARY@)
 
-if(USE_QT5)
-  find_package(LxQt5 ${REQUIRED_OPT} ${QUIET_OPT})
-else()
-  find_package(LxQt4 ${REQUIRED_OPT} ${QUIET_OPT})
-endif()
+set(LXQT_USE_FILE           @CFG_LXQT_USE_FILE@)
+set(LXQT_FOUND              1)
+set(LXQT@LXQT_QT_VERSION@_FOUND             1)
+
+
+include(@CFG_LXQT_TRAGETS_FILE@)
+
+mark_as_advanced(LXQT_LIBRARY LXQT_INCLUDE_DIR)
+

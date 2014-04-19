@@ -29,7 +29,7 @@
 #ifndef LXQTPLUGININFO_H
 #define LXQTPLUGININFO_H
 
-#include <qtxdg/xdgdesktopfile.h>
+#include <qtxdg/XdgDesktopFile>
 #include <QtCore/QString>
 #include <QtCore/QList>
 

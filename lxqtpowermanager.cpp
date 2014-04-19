@@ -27,7 +27,7 @@
 
 #include "lxqtpowermanager.h"
 #include "lxqtpower/lxqtpower.h"
-#include <qtxdg/xdgicon.h>
+#include <qtxdg/XdgIcon>
 #include <QDBusInterface>
 #include <QMessageBox>
 #include <QApplication>

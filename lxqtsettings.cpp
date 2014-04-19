@@ -27,8 +27,8 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "lxqtsettings.h"
-#include <qtxdg/xdgicon.h>
-#include <qtxdg/xdgdirs.h>
+#include <qtxdg/XdgIcon>
+#include <qtxdg/XdgDirs>
 #include <QtCore/QDebug>
 #include <QtCore/QEvent>
 #include <QtCore/QDir>

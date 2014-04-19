@@ -28,7 +28,7 @@
 
 #include "lxqtaddplugindialog.h"
 #include "ui_lxqtaddplugindialog.h"
-#include <qtxdg/xdgicon.h>
+#include <qtxdg/XdgIcon>
 #include <QtGui/QListWidgetItem>
 #include <QtGui/QItemDelegate>
 #include <QtGui/QTextDocument>

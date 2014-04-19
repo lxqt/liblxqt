@@ -25,7 +25,7 @@
 #ifndef LXQTNOTIFICATION_H
 #define LXQTNOTIFICATION_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include "lxqtglobals.h"
 
 namespace LxQt
