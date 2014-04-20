@@ -73,7 +73,7 @@ void printDBusMsg(const QDBusMessage &msg)
 /************************************************
  Helper func
  ************************************************/
-bool dbusCall(const QString &service,
+static bool dbusCall(const QString &service,
               const QString &path,
               const QString &interface,
               const QDBusConnection &connection,
@@ -122,11 +122,12 @@ bool dbusCall(const QString &service,
  returns a string instead of a bool, and it takes
  an "interactivity boolean" as an argument.
  ************************************************/
-bool dbusCallSystemd(const QString &service,
+static bool dbusCallSystemd(const QString &service,
                      const QString &path,
                      const QString &interface,
                      const QDBusConnection &connection,
                      const QString &method,
+                     bool needBoolArg,
                      PowerProvider::DbusErrorCheck errorCheck = PowerProvider::CheckDBUS
                      )
 {
@@ -144,7 +145,7 @@ bool dbusCallSystemd(const QString &service,
         return false;
     }
 
-    QDBusMessage msg = dbus.call(method, true);
+    QDBusMessage msg = dbus.call(method, needBoolArg ? QVariant(true) : QVariant());
 
     if (!msg.errorName().isEmpty())
     {
@@ -426,6 +427,7 @@ bool SystemdProvider::canAction(Power::Action action) const
                     SYSTEMD_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
+		    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -464,7 +466,8 @@ bool SystemdProvider::doAction(Power::Action action)
              SYSTEMD_PATH,
              SYSTEMD_INTERFACE,
              QDBusConnection::systemBus(),
-             command
+             command,
+	     true
             );
 }
 
