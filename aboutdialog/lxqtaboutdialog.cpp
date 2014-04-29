@@ -1,8 +1,8 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * LXDE-Qt - a lightweight, Qt based, desktop toolset
- * http://razor-qt.org
+ * LXQt - The Lightweight Desktop Environment
+ * http://lxqt.org
  *
  * Copyright: 2010-2011 Razor team
  * Authors:
@@ -82,35 +82,42 @@ AboutDialogPrivate::AboutDialogPrivate()
 
 QString AboutDialogPrivate::titleText() const
 {
-    return QString("<div class=name>%1</div><div class=ver>%2</div>").arg(
-                "LXDE-Qt",
+    return QString("<div class=name>%1</div><div class=ver>%2</div>").arg("LXQt",
                 tr("Version: %1").arg(LXQT_VERSION));
 
 }
 
 QString AboutDialogPrivate::aboutText() const
 {
-    return  QString("<br>%1<br><br><br>%2<hr>%3<p>%4").arg(
-                tr("Advanced, easy-to-use, and fast desktop environment based on Qt technologies.", "About dialog, 'About' tab text"),
-                tr("Copyright: %1-%2 %3", "About dialog, 'About' tab text")
-                    .arg("2010", QDate::currentDate().toString("yyyy"), "LXDE-Qt team"),
-
-                tr("Homepage: %1", "About dialog, 'About' tab text").arg("<a href='https://github.com/lxde'>github.com/lxde</a>"),
-                tr("License: %1", "About dialog, 'About' tab text")
-                    .arg("<a href='http://www.gnu.org/licenses/lgpl-2.1.html'>GNU Lesser General Public License version 2.1 or later</a> "
-                         "and partly under the "
-                         "<a href='http://www.gnu.org/licenses/gpl-2.0.html'>GNU General Public License version 2</a>"
-                        )
-                );
+    return QString(
+        "<p>%1</p>"
+        "<p>%2</p>"
+        "<p>%3</p>"
+        "<p>%4</p>"
+        "<p>%5</p>")
+        .arg(
+            tr("Advanced, easy-to-use, and fast desktop environment based on Qt technologies.",
+               "About dialog, 'About' tab text"),
+            tr("LXQt would not have been possible without the <a %1>Razor-qt</a> project and its many contributors.",
+               "About dialog, 'About' tab text").arg("href=\"http://razor-qt.org\""),
+            tr("Copyright: %1-%2 %3", "About dialog, 'About' tab text")
+                .arg("2010", QDate::currentDate().toString("yyyy"), "LXQt team"),
+            tr("Homepage: %1", "About dialog, 'About' tab text")
+                .arg("<a href=\"http://lxqt.org\">http://lxqt.org</a>"),
+            tr("License: %1", "About dialog, 'About' tab text")
+                .arg("<a href=\"http://www.gnu.org/licenses/lgpl-2.1.html\">GNU Lesser General Public License version 2.1 or later</a>"
+                     " and partly under the "
+                     "<a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License version 2</a>")
+            );
 }
 
 QString AboutDialogPrivate::authorsText() const
 {
-    return QString("%1<p>%2").arg(
-                tr("LXDE-Qt is developed by the <a %1>LXDE-Qt Team and contributors</a> on Github.", "About dialog, 'Authors' tab text")
-                    .arg(" href='https://github.com/lxde'"),
+    return QString("<p>%1</p><p>%2</p>").arg(
+                tr("LXQt is developed by the <a %1>LXQt Team and contributors</a>.", "About dialog, 'Authors' tab text")
+                    .arg(" href=\"https://github.com/lxde/lxde-qt\""),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.", "About dialog, 'Authors' tab text")
-                    .arg(" href='https://github.com/lxde'")
+                    .arg("href=\"http://lxqt.org\"")
                 );
 }
 
@@ -120,13 +127,13 @@ QString AboutDialogPrivate::thanksText() const
     return QString(
                 "%1"
                 "<ul>"
+                "<li>Alexey Nosov (for the A-MeGo theme)</li>"
+                "<li>Alexander Zakher (the Razor-qt name)</li>"
                 "<li>Andy Fitzsimon (logo/icon)</li>"
                 "<li>Eugene Pivnev (QtDesktop)</li>"
-                "<li>Paul Gnther (for desktop backgrounds)</li>"
+                "<li>Paul Gnther (desktop backgrounds)</li>"
                 "<li>Manuel Meier (for ideas)</li>"
-                "<li>Alexander Zakher (for the name)</li>"
-                "<li>Alexey Nosov (for the A-MeGo theme)</li>"
-                "<li>and KDE (http://www.kde.org)</li>"
+                "<li>KDE &lt;<a href=\"http://kde.org/\">http://kde.org/</a>&gt;</li>"
                 ).arg(tr("Special thanks to:", "About dialog, 'Thanks' tab text"));
 }
 
@@ -134,7 +141,7 @@ QString AboutDialogPrivate::translationsText() const
 {
     TranslatorsInfo translatorsInfo;
     return QString("%1<p><ul>%2</ul>").arg(
-                tr("LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.", "About dialog, 'Translations' tab text"),
+                tr("LXQt is translated into many languages thanks to the work of the translation teams all over the world.", "About dialog, 'Translations' tab text"),
                 translatorsInfo.asHtml()
                 );
 }
