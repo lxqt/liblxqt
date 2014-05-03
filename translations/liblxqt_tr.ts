@@ -112,95 +112,95 @@
     <name>LxQtAboutDLGPrivate</name>
     <message>
         <source>Version: %1</source>
-        <translation type="unfinished"/>
+        <translation>Versiyon: %1</translation>
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
-        <translation type="unfinished"/>
+        <translation>Qt teknolojilerini temel alan gelişmiş, kullanımı kolay ve hızlı masaüstü ortamı.</translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
-        <translation type="unfinished"/>
+        <translation>Telif Hakkı: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
-        <translation type="unfinished"/>
+        <translation>Anasayfa: %1</translation>
     </message>
     <message>
         <source>License: %1</source>
-        <translation type="unfinished"/>
+        <translation>Lisans: %1</translation>
     </message>
     <message>
         <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation type="unfinished"/>
+        <translation>LXQt tüm dünyadaki çeviri ekiplerinin çalışmalarına sayesinde birçok dil çevrilir.</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"/>
+        <translation>Evet</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"/>
+        <translation>Hayır</translation>
     </message>
     <message>
         <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;LxQt Masaüstü araç kutusu - Teknik bilgi&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"/>
+        <translation>Versiyon</translation>
     </message>
     <message>
         <source>Qt</source>
-        <translation type="unfinished"/>
+        <translation>Qt</translation>
     </message>
     <message>
         <source>Debug Build</source>
-        <translation type="unfinished"/>
+        <translation>Hata Ayıklama Oluştur</translation>
     </message>
     <message>
         <source>System Configuration</source>
-        <translation type="unfinished"/>
+        <translation>Sistem Yapılandırması</translation>
     </message>
     <message>
         <source>Share Directory</source>
-        <translation type="unfinished"/>
+        <translation>Paylaşılan Dizin</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"/>
+        <translation>Çeviriler</translation>
     </message>
     <message>
         <source>&lt;b&gt;User Directories&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;Kullanıcı Dizinleri&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Xdg Data Home</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Ev Verisi Dizini</translation>
     </message>
     <message>
         <source>Xdg Config Home</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Ev Yapılandırması Dizini</translation>
     </message>
     <message>
         <source>Xdg Data Dirs</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Veri Dizinleri</translation>
     </message>
     <message>
         <source>Xdg Cache Home</source>
-        <translation type="unfinished"/>
+       <translation>Xdg Ev Önbelleği Dizini</translation>
     </message>
     <message>
         <source>Xdg Runtime Home</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Ev Çalışma Zamanı Dizini</translation>
     </message>
     <message>
         <source>Xdg Autostart Dirs</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Otomatik Başlatma Dizinleri</translation>
     </message>
     <message>
         <source>Xdg Autostart Home</source>
-        <translation type="unfinished"/>
+        <translation>Xdg Ev Otomatik Başlatma Dizini</translation>
     </message>
 </context>
 <context>
@@ -214,7 +214,7 @@
     <name>LxQtNotificationPrivate</name>
     <message>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"/>
+        <translation>Bildirimleri geriye al</translation>
     </message>
 </context>
 <context>
@@ -264,7 +264,7 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="unfinished"/>
+        <translation>Ekran Koruyucu başlarken bir hata oluştur. Bilinmeyen hata - xdg-screensaver=%1 den okunamayan geri dönüş değeri.</translation>
     </message>
 </context>
 <context>
@@ -275,23 +275,23 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Hakkında</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation type="unfinished"/>
+        <translation>Yazarlar</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation type="unfinished"/>
+        <translation>Teşekkürler</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished"/>
+        <translation>Çeviriler</translation>
     </message>
     <message>
         <source>Technical Info</source>
-        <translation type="unfinished"/>
+        <translation>Teknik Bilgi</translation>
     </message>
 </context>
 </TS>
