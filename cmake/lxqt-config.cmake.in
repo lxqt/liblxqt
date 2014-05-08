@@ -8,6 +8,8 @@
 #
 #  LXQT_INCLUDE_DIRS  - The lxqt and the Qt include directory, for use with INCLUDE_DIRECTORIES()
 #
+#  LXQT_LIBRARY_DIRS  - The lxqt and the Qt library directories
+#
 #  LXQT_LIBRARIES     - The libraries needed to use lxqt
 #
 #  LXQT_SHARE_DIR     - This allows to install and read the configs from non-standard locations
@@ -61,6 +63,8 @@ set(LXQT_TRANSLATIONS_DIR @LXQT_TRANSLATIONS_DIR@)
 set(LXQT_ETC_XDG_DIR   @LXQT_ETC_XDG_DIR@)
 set(LXQT_INCLUDE_DIR   @LXQT_INCLUDE_DIR@)
 set(LXQT_LIBRARY       lxqt)
+
+set(LXQT_LIBRARY_DIRS  @CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@)
 
 set(LXQT_LIBRARIES     ${LXQT_LIBRARY} )
 set(LXQT_INCLUDE_DIRS  ${LXQT_INCLUDE_DIR} )
