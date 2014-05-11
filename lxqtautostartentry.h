@@ -25,8 +25,13 @@
 #ifndef LXQTAUTOSTARTENTRY_H
 #define LXQTAUTOSTARTENTRY_H
 
-#include <qtxdg/XdgDesktopFile>
 #include "lxqtglobals.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <qt5xdg/XdgDesktopFile>
+#else
+#include <qtxdg/XdgDesktopFile>
+#endif
 
 namespace LxQt
 {

@@ -27,9 +27,16 @@
 
 
 #include "lxqtpageselectwidget.h"
-#include <QtGui/QStyledItemDelegate>
 #include <QtCore/QDebug>
+
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QStyledItemDelegate>
+#include <QtWidgets>
+#else
+#include <QtGui/QStyledItemDelegate>
 #include <QtGui/QScrollBar>
+#endif
 
 using namespace LxQt;
 

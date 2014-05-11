@@ -29,8 +29,13 @@
 #ifndef LXQTPAGESELECTWIDGET_H
 #define LXQTPAGESELECTWIDGET_H
 
-#include <QtGui/QListWidget>
 #include "lxqtglobals.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtWidgets>
+#else
+#include <QtGui/QListWidget>
+#endif
 
 namespace LxQt
 {

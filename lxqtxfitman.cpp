@@ -26,26 +26,32 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-
-
-#include <QtGui/QX11Info>
 #include <QtCore/QList>
-#include <QtGui/QApplication>
 #include <QtCore/QDebug>
-#include <QtGui/QDesktopWidget>
 
 #include <stdint.h>
-#include "lxqtxfitman.h"
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <X11/Xutil.h>
 #include <assert.h>
-#include <X11/Xatom.h>
-#include <X11/Xlib.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtX11Extras/QX11Info>
+#include <QtWidgets>
+#include <QDesktopWidget>
+#include <QApplication>
+#else
+#include <QtGui/QX11Info>
+#include <QtGui/QApplication>
+#include <QtGui/QDesktopWidget>
 #include <QtGui/QWidget>
 #include <QtGui/QIcon>
+#endif
+
+#include "lxqtxfitman.h"
+#include <X11/Xatom.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
 /**
  * @file xfitman.cpp
  * @brief implements class Xfitman

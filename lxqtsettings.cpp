@@ -27,8 +27,6 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "lxqtsettings.h"
-#include <qtxdg/XdgIcon>
-#include <qtxdg/XdgDirs>
 #include <QtCore/QDebug>
 #include <QtCore/QEvent>
 #include <QtCore/QDir>
@@ -36,6 +34,14 @@
 #include <QtCore/QMutex>
 #include <QtCore/QFileSystemWatcher>
 #include <QtCore/QSharedData>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <qt5xdg/XdgIcon>
+#include <qt5xdg/XdgDirs>
+#else
+#include <qtxdg/XdgIcon>
+#include <qtxdg/XdgDirs>
+#endif
 
 using namespace LxQt;
 

@@ -28,8 +28,13 @@
 #ifndef LXQT_ABOUTDIALOG_P_H
 #define LXQT_ABOUTDIALOG_P_H
 
-#include <QtGui/QDialog>
 #include "ui_lxqtaboutdialog.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtWidgets>
+#else
+#include <QtGui/QDialog>
+#endif
 
 namespace LxQt
 {

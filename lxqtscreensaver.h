@@ -30,8 +30,13 @@
 
 #include <QtCore/QProcess>
 #include <QtCore/QObject>
-#include <QtGui/QAction>
 #include "lxqtglobals.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtWidgets>
+#else
+#include <QtGui/QAction>
+#endif
 
 class QProcess;
 

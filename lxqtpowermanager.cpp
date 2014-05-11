@@ -27,7 +27,6 @@
 
 #include "lxqtpowermanager.h"
 #include "lxqtpower/lxqtpower.h"
-#include <qtxdg/XdgIcon>
 #include <QDBusInterface>
 #include <QMessageBox>
 #include <QApplication>
@@ -35,6 +34,12 @@
 #include <QtDebug>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <qt5xdg/XdgIcon>
+#else
+#include <qtxdg/XdgIcon>
+#endif
 
 namespace LxQt {
 

@@ -29,7 +29,6 @@
 #ifndef LXQTPLUGININFO_H
 #define LXQTPLUGININFO_H
 
-#include <qtxdg/XdgDesktopFile>
 #include <QtCore/QString>
 #include <QtCore/QList>
 
@@ -37,6 +36,12 @@
 #include <QtCore/QtAlgorithms>
 #include <QtCore/QDebug>
 #include "lxqtglobals.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <qt5xdg/XdgDesktopFile>
+#else
+#include <qtxdg/XdgDesktopFile>
+#endif
 
 class QLibrary;
 
