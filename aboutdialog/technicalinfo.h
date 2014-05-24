@@ -29,8 +29,8 @@
 #ifndef TECHNICALINFO_H
 #define TECHNICALINFO_H
 
-#include <QtCore/QList>
-#include <QtCore/QPair>
+#include <QList>
+#include <QPair>
 #include <QDateTime>
 #include <QVariant>
 

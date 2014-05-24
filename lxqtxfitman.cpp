@@ -26,26 +26,19 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QtCore/QList>
-#include <QtCore/QDebug>
+#include <QList>
+#include <QDebug>
 
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <QtX11Extras/QX11Info>
-#include <QtWidgets>
-#include <QDesktopWidget>
+#include <QX11Info>
 #include <QApplication>
-#else
-#include <QtGui/QX11Info>
-#include <QtGui/QApplication>
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QWidget>
-#include <QtGui/QIcon>
-#endif
+#include <QDesktopWidget>
+#include <QWidget>
+#include <QIcon>
 
 #include "lxqtxfitman.h"
 #include <X11/Xatom.h>

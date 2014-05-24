@@ -27,8 +27,8 @@
 
 #ifndef TRANSLATORSINFO_H
 #define TRANSLATORSINFO_H
-#include <QtCore/QString>
-#include <QtCore/QMap>
+#include <QString>
+#include <QMap>
 #include <QStringList>
 
 namespace LxQt

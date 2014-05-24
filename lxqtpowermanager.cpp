@@ -34,12 +34,7 @@
 #include <QtDebug>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <qt5xdg/XdgIcon>
-#else
-#include <qtxdg/XdgIcon>
-#endif
+#include <XdgIcon>
 
 namespace LxQt {
 

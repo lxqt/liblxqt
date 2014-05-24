@@ -34,16 +34,11 @@
 #include <QAbstractTextDocumentLayout>
 #include <QLineEdit>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <qt5xdg/XdgIcon>
-#include <QtWidgets>
-#else
-#include <qtxdg/XdgIcon>
-#include <QtGui/QListWidgetItem>
-#include <QtGui/QItemDelegate>
-#include <QtGui/QTextDocument>
-#include <QtGui/QIcon>
-#endif
+#include <XdgIcon>
+#include <QListWidgetItem>
+#include <QItemDelegate>
+#include <QTextDocument>
+#include <QIcon>
 
 #include "lxqttranslator.h"
 

@@ -29,14 +29,9 @@
 #ifndef LXQTGRIDLAYOUT_H
 #define LXQTGRIDLAYOUT_H
 
-#include <QtCore/QList>
+#include <QList>
 #include "lxqtglobals.h"
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QLayout>
-#else
-#include <QtGui/QLayout>
-#endif
 
 
 namespace LxQt

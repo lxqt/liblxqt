@@ -32,8 +32,8 @@
 #include "technicalinfo.h"
 #include "translatorsinfo/translatorsinfo.h"
 #include <QDebug>
-#include <QtCore/QDate>
-#include <QtGui/QClipboard>
+#include <QDate>
+#include <QClipboard>
 
 using namespace LxQt;
 

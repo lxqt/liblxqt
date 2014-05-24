@@ -25,7 +25,7 @@
 #ifndef LXQTPROGRAMFINDER_H
 #define LXQTPROGRAMFINDER_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include "lxqtglobals.h"
 
 namespace LxQt

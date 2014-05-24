@@ -7,11 +7,7 @@
 #include <QStringList>
 #include <QFileInfo>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#include <qt5xdg/XdgDirs>
-#else
-#include <qtxdg/XdgDirs>
-#endif
+#include <XdgDirs>
 
 using namespace LxQt;
 

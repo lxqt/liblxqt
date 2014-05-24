@@ -26,15 +26,8 @@
 #define LXQTCONFIGDIALOG_H
 
 #include "lxqtsettings.h"
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QDialog>
 #include <QAbstractButton>
-#else
-#include <QtGui/QDialog>
-#include <QtGui/QAbstractButton>
-#endif
-
 #include "lxqtglobals.h"
 
 namespace Ui {

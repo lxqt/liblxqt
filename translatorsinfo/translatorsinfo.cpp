@@ -27,10 +27,10 @@
 
 #include "translatorsinfo.h"
 #include <QDebug>
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
-#include <QtGui/QTextDocument>
+#include <QSettings>
+#include <QStringList>
+#include <QTextCodec>
+#include <QTextDocument>
 
 using namespace LxQt;
 

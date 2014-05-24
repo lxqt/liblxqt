@@ -28,8 +28,8 @@
 
 #include "lxqtpower.h"
 #include "lxqtpowerproviders.h"
-#include <QtCore/QtAlgorithms>
-#include <QtCore/QDebug>
+#include <QtAlgorithms>
+#include <QDebug>
 
 using namespace LxQt;
 

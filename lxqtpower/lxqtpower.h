@@ -29,8 +29,8 @@
 #ifndef LXQTPOWER_H
 #define LXQTPOWER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QList>
+#include <QObject>
+#include <QList>
 #include "lxqtglobals.h"
 
 namespace LxQt
