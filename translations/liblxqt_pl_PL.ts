@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>Add plugin</source>
-        <translation>Dodaj plugin</translation>
+        <translation>Dodaj wtyczkę</translation>
     </message>
     <message>
         <source>Close</source>
@@ -42,7 +42,7 @@
     </message>
     <message>
         <source>LxQt Session Suspend</source>
-        <translation>Uśpij</translation>
+        <translation>Uśpij sesję</translation>
     </message>
     <message>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
@@ -50,7 +50,7 @@
     </message>
     <message>
         <source>LxQt Session Hibernate</source>
-        <translation>Hibernuj</translation>
+        <translation>Hibernuj sesję</translation>
     </message>
     <message>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
@@ -97,7 +97,7 @@
     <name>QObject</name>
     <message>
         <source>Power Manager Error</source>
-        <translation>Błąd Menadżera Zasilania</translation>
+        <translation>Błąd menedżera zasilania</translation>
     </message>
     <message>
         <source>QDBusInterface is invalid</source>
@@ -105,7 +105,7 @@
     </message>
     <message>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Błąd menadżera zasilania (D-BUS call)</translation>
+        <translation>Błąd menedżera zasilania (D-BUS call)</translation>
     </message>
 </context>
 <context>
@@ -120,7 +120,7 @@
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
-        <translation>Copyright: %1-%2 %3</translation>
+        <translation>Prawa autorskie: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
@@ -132,7 +132,7 @@
     </message>
     <message>
         <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXDE-Qt jest dostępny w wielu jeżykach dzięki wspanialej pracy ekip tłumaczy z całego świata.</translation>
+        <translation>LXDE-Qt jest dostępny w wielu językach dzięki wspanialej pracy ekip tłumaczy z całego świata.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;Skrzynka narzędziowa pulpitu LxQt - Informacje techniczne&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Version</source>
@@ -156,15 +156,15 @@
     </message>
     <message>
         <source>Debug Build</source>
-        <translation>Debug Build</translation>
+        <translation>Wersja debugowa</translation>
     </message>
     <message>
         <source>System Configuration</source>
-        <translation>Konfiguracja Systemu</translation>
+        <translation>Konfiguracja systemu</translation>
     </message>
     <message>
         <source>Share Directory</source>
-        <translation>Udostępniany folder</translation>
+        <translation>Udostępniany katalog</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -172,35 +172,35 @@
     </message>
     <message>
         <source>&lt;b&gt;User Directories&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Katalog Użytkownika&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Katalogi użytkownika&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Xdg Data Home</source>
-        <translation>Xdg Ścieżka Dostępu Plików</translation>
+        <translation>Ścieżka dostępu plików Xdg</translation>
     </message>
     <message>
         <source>Xdg Config Home</source>
-        <translation>Xdg Ścieżka Dostępu Konfiguracji</translation>
+        <translation>Ścieżka dostępu konfiguracji Xdg</translation>
     </message>
     <message>
         <source>Xdg Data Dirs</source>
-        <translation>Xdg Katalogi Plików</translation>
+        <translation>Katalogi plików Xdg</translation>
     </message>
     <message>
         <source>Xdg Cache Home</source>
-        <translation>Xdg Ścieżka Dostępu Cache</translation>
+        <translation>Ścieżka dostępu pamięci podręcznej Xdg</translation>
     </message>
     <message>
         <source>Xdg Runtime Home</source>
-        <translation type="unfinished"/>
+        <translation>Ścieżka dostępu środowiska uruchomieniowego Xdg</translation>
     </message>
     <message>
         <source>Xdg Autostart Dirs</source>
-        <translation>Xdg Katalogi Autostart</translation>
+        <translation>Katalogi autostartu Xdg</translation>
     </message>
     <message>
         <source>Xdg Autostart Home</source>
-        <translation>Xdg Ścieżka Dostępu Autostart</translation>
+        <translation>Ścieżka dostępu autostart Xdg</translation>
     </message>
 </context>
 <context>
@@ -283,7 +283,7 @@
     </message>
     <message>
         <source>Thanks</source>
-        <translation>Dzięki</translation>
+        <translation>Podziękowania</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -291,7 +291,7 @@
     </message>
     <message>
         <source>Technical Info</source>
-        <translation>Informacje Techniczne</translation>
+        <translation>Informacje techniczne</translation>
     </message>
 </context>
 </TS>
