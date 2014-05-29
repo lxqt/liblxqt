@@ -73,7 +73,7 @@ set(LXQT_FOUND              1)
 set(LXQT@LXQT_QT_VERSION@_FOUND             1)
 
 
-include(@CFG_LXQT_TRAGETS_FILE@)
+include(@CFG_LXQT_TARGETS_FILE@)
 
 mark_as_advanced(LXQT_LIBRARY LXQT_INCLUDE_DIR)
 
