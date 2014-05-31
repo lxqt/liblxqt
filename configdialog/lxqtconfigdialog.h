@@ -25,10 +25,9 @@
 #ifndef LXQTCONFIGDIALOG_H
 #define LXQTCONFIGDIALOG_H
 
-#include <lxqtsettings.h>
-
-#include <QtGui/QDialog>
-#include <QtGui/QAbstractButton>
+#include "lxqtsettings.h"
+#include <QDialog>
+#include <QAbstractButton>
 #include "lxqtglobals.h"
 
 namespace Ui {

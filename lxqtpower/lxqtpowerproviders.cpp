@@ -28,9 +28,9 @@
 
 
 #include "lxqtpowerproviders.h"
-#include <QtDBus/QDBusInterface>
-#include <QtCore/QProcess>
-#include <QtCore/QDebug>
+#include <QDBusInterface>
+#include <QProcess>
+#include <QDebug>
 #include "lxqtnotification.h"
 #include <signal.h> // for kill()
 

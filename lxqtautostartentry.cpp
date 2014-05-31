@@ -23,9 +23,10 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "lxqtautostartentry.h"
-#include <qtxdg/xdgautostart.h>
-#include <qtxdg/xdgdirs.h>
-#include <QtCore/QFileInfo>
+#include <QFileInfo>
+
+#include <XdgAutoStart>
+#include <XdgDirs>
 
 using namespace LxQt;
 

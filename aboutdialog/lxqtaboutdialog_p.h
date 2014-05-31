@@ -28,8 +28,8 @@
 #ifndef LXQT_ABOUTDIALOG_P_H
 #define LXQT_ABOUTDIALOG_P_H
 
-#include <QtGui/QDialog>
 #include "ui_lxqtaboutdialog.h"
+#include <QDialog>
 
 namespace LxQt
 {

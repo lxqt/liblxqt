@@ -24,7 +24,7 @@
 
 #include "lxqtnotification.h"
 #include "lxqtnotification_p.h"
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 #include <QDebug>
 
 using namespace LxQt;

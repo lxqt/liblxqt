@@ -29,14 +29,15 @@
 #ifndef LXQTPLUGININFO_H
 #define LXQTPLUGININFO_H
 
-#include <qtxdg/xdgdesktopfile.h>
-#include <QtCore/QString>
-#include <QtCore/QList>
+#include <QString>
+#include <QList>
 
-#include <QtCore/QFileInfo>
-#include <QtCore/QtAlgorithms>
-#include <QtCore/QDebug>
+#include <QFileInfo>
+#include <QtAlgorithms>
+#include <QDebug>
 #include "lxqtglobals.h"
+
+#include <XdgDesktopFile>
 
 class QLibrary;
 

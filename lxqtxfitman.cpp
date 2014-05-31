@@ -26,32 +26,30 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-
-
-#include <QtGui/QX11Info>
-#include <QtCore/QList>
-#include <QtGui/QApplication>
-#include <QtCore/QDebug>
-#include <QtGui/QDesktopWidget>
+#include <QList>
+#include <QDebug>
 
 #include <stdint.h>
-#include "lxqtxfitman.h"
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <X11/Xutil.h>
 #include <assert.h>
+
+#include <QX11Info>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QWidget>
+#include <QIcon>
+
+#include "lxqtxfitman.h"
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
-#include <QtGui/QWidget>
-#include <QtGui/QIcon>
 /**
  * @file xfitman.cpp
  * @brief implements class Xfitman
  * @author Christopher "VdoP" Regali
  */
-
 /*
  Some requests from Clients include type of the Client, for example the _NET_ACTIVE_WINDOW
  message. Currently the types can be 1 for normal applications, and 2 for pagers.
@@ -80,7 +78,7 @@ const XfitMan& xfitMan()
  */
 XfitMan::XfitMan()
 {
-    root = QX11Info::appRootWindow();
+    root = (Window)QX11Info::appRootWindow();
 }
 
 /**
@@ -394,7 +392,7 @@ int XfitMan::clientMessage(Window _wid, Atom _msg,
     msg.data.l[2] = data2;
     msg.data.l[3] = data3;
     msg.data.l[4] = data4;
-    if (XSendEvent(QX11Info::display(), root, FALSE, (SubstructureRedirectMask | SubstructureNotifyMask) , (XEvent *) &msg) == Success)
+    if (XSendEvent(QX11Info::display(), root, false, (SubstructureRedirectMask | SubstructureNotifyMask) , (XEvent *) &msg) == Success)
         return EXIT_SUCCESS;
     else
         return EXIT_FAILURE;
@@ -860,7 +858,7 @@ const QRect XfitMan::availableGeometry(int screen) const
     uchar* data = 0;
     ulong nitems, after;
 
-    status = XGetWindowProperty(display, QX11Info::appRootWindow(x11Screen),
+    status = XGetWindowProperty(display, (Window)QX11Info::appRootWindow(x11Screen),
                                 atom("_NET_CLIENT_LIST"), 0L, ~0L, False, XA_WINDOW,
                                 &ret, &format, &nitems, &after, &data);
 
@@ -992,7 +990,7 @@ bool XfitMan::getShowingDesktop() const
 
 void XfitMan::setShowingDesktop(bool show) const
 {
-    clientMessage(QX11Info::appRootWindow(), atom("_NET_SHOWING_DESKTOP"), show ? 1 : 0);
+    clientMessage((Window)QX11Info::appRootWindow(), atom("_NET_SHOWING_DESKTOP"), show ? 1 : 0);
 }
 
 void XfitMan::setIconGeometry(Window _wid, QRect* rect) const

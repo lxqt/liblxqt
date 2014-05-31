@@ -28,8 +28,8 @@
 #ifndef LXQTAPPLICATION_H
 #define LXQTAPPLICATION_H
 
-#include <QtGui/QApplication>
-#include <QtGui/QProxyStyle>
+#include <QApplication>
+#include <QProxyStyle>
 #include "lxqtglobals.h"
 
 namespace LxQt

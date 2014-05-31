@@ -24,8 +24,8 @@
 
 #include "lxqtprogramfinder.h"
 #include <wordexp.h>
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
+#include <QDir>
+#include <QFileInfo>
 
 using namespace LxQt;
 

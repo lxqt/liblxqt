@@ -29,7 +29,7 @@
 #ifndef LXQTPOWER_PROVIDERS_H
 #define LXQTPOWER_PROVIDERS_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <lxqtsettings.h>
 #include "lxqtpower.h"
 #include <QProcess> // for PID_T

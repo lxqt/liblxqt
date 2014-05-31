@@ -27,10 +27,10 @@
 
 #include "translatorsinfo.h"
 #include <QDebug>
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
-#include <QtGui/QTextDocument>
+#include <QSettings>
+#include <QStringList>
+#include <QTextCodec>
+#include <QTextDocument>
 
 using namespace LxQt;
 
@@ -411,12 +411,22 @@ TranslatorPerson::TranslatorPerson(const QString &englishName, const QString &na
 
     if (!mContact.isEmpty())
     {
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
         if (mContact.contains(QRegExp("^(https?|mailto):")))
             mInfo = QString(" <a href='%1'>%2</a>").arg(contact, Qt::escape(mInfo));
         else if (contact.contains("@") || contact.contains("<"))
             mInfo = QString(" <a href='mailto:%1'>%2</a>").arg(contact, Qt::escape(mInfo));
         else
             mInfo = QString(" <a href='http://%1'>%2</a>").arg(contact, Qt::escape(mInfo));
+#else
+        if (mContact.contains(QRegExp("^(https?|mailto):")))
+            mInfo = QString(" <a href='%1'>%2</a>").arg(contact, mInfo.toHtmlEscaped());
+        else if (contact.contains("@") || contact.contains("<"))
+            mInfo = QString(" <a href='mailto:%1'>%2</a>").arg(contact, mInfo.toHtmlEscaped());
+        else
+            mInfo = QString(" <a href='http://%1'>%2</a>").arg(contact, mInfo.toHtmlEscaped());
+#endif
     }
 }
 

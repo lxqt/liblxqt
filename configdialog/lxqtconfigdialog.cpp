@@ -25,8 +25,8 @@
 #include "lxqtconfigdialog.h"
 #include "ui_lxqtconfigdialog.h"
 
-#include <qtxdg/xdgicon.h>
-#include <QtGui/QPushButton>
+#include <XdgIcon>
+#include <QPushButton>
 
 using namespace LxQt;
 

@@ -5,8 +5,9 @@
 #include <QCoreApplication>
 #include <QLibraryInfo>
 #include <QStringList>
-#include <qtxdg/XdgDirs>
 #include <QFileInfo>
+
+#include <XdgDirs>
 
 using namespace LxQt;
 

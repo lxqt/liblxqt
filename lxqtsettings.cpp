@@ -27,15 +27,16 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "lxqtsettings.h"
-#include <qtxdg/xdgicon.h>
-#include <qtxdg/xdgdirs.h>
-#include <QtCore/QDebug>
-#include <QtCore/QEvent>
-#include <QtCore/QDir>
-#include <QtCore/QStringList>
-#include <QtCore/QMutex>
-#include <QtCore/QFileSystemWatcher>
-#include <QtCore/QSharedData>
+#include <QDebug>
+#include <QEvent>
+#include <QDir>
+#include <QStringList>
+#include <QMutex>
+#include <QFileSystemWatcher>
+#include <QSharedData>
+
+#include <XdgIcon>
+#include <XdgDirs>
 
 using namespace LxQt;
 

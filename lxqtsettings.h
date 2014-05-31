@@ -29,9 +29,9 @@
 #ifndef LXQTSETTINGS_H
 #define LXQTSETTINGS_H
 
-#include <QtCore/QObject>
-#include <QtCore/QSettings>
-#include <QtCore/QSharedDataPointer>
+#include <QObject>
+#include <QSettings>
+#include <QSharedDataPointer>
 #include "lxqtglobals.h"
 
 class QEvent;

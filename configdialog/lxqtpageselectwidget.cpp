@@ -27,9 +27,9 @@
 
 
 #include "lxqtpageselectwidget.h"
-#include <QtGui/QStyledItemDelegate>
-#include <QtCore/QDebug>
-#include <QtGui/QScrollBar>
+#include <QDebug>
+#include <QStyledItemDelegate>
+#include <QScrollBar>
 
 using namespace LxQt;
 

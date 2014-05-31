@@ -25,12 +25,13 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QtCore/QProcess>
-#include <QtGui/QMessageBox>
-
-#include <qtxdg/xdgicon.h>
+#include <QProcess>
 #include "lxqtscreensaver.h"
 #include "lxqttranslator.h"
+
+#include <XdgIcon>
+#include <QMessageBox>
+#include <QAction>
 
 using namespace LxQt;
 

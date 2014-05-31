@@ -25,21 +25,21 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-
 #include "lxqtaddplugindialog.h"
 #include "ui_lxqtaddplugindialog.h"
-#include <qtxdg/xdgicon.h>
-#include <QtGui/QListWidgetItem>
-#include <QtGui/QItemDelegate>
-#include <QtGui/QTextDocument>
 #include <QStyledItemDelegate>
-#include <QtGui/QIcon>
 #include <QPainter>
 #include <QDebug>
 #include <QTextBrowser>
 #include <QAbstractTextDocumentLayout>
-
 #include <QLineEdit>
+
+#include <XdgIcon>
+#include <QListWidgetItem>
+#include <QItemDelegate>
+#include <QTextDocument>
+#include <QIcon>
+
 #include "lxqttranslator.h"
 
 using namespace LxQt;

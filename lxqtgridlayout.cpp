@@ -27,9 +27,9 @@
 
 
 #include "lxqtgridlayout.h"
-#include <QtGui/QWidget>
-#include <QtCore/QDebug>
+#include <QDebug>
 #include <math.h>
+#include <QWidget>
 
 using namespace LxQt;
 

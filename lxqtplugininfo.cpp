@@ -27,11 +27,11 @@
 
 
 #include "lxqtplugininfo.h"
-#include <QtCore/QObject>
-#include <QtCore/QFileInfo>
-#include <QtCore/QDir>
-#include <QtCore/QTranslator>
-#include <QtCore/QCoreApplication>
+#include <QObject>
+#include <QFileInfo>
+#include <QDir>
+#include <QTranslator>
+#include <QCoreApplication>
 #include <QLibrary>
 #include <QDebug>
 
