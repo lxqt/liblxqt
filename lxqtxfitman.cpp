@@ -179,7 +179,7 @@ int XfitMan::getNumDesktop() const
 }
 
 QStringList XfitMan::getDesktopNames() const
-{  
+{
     QStringList ret;
     unsigned long length;
     unsigned char *data = 0;
@@ -1025,6 +1025,21 @@ XfitMan::WMState XfitMan::getWMState(Window _wid) const
         }
     }
     return state;
+}
+
+
+/************************************************
+
+ ************************************************/
+WMHintsFlags XfitMan::getWMHintsFlags(Window _wid) const
+{
+    XWMHints *hints = XGetWMHints(QX11Info::display(), _wid);
+    if (!hints)
+        return (WMHintsFlags) 0;
+    
+    WMHintsFlags flags = hints->flags;
+    XFree(hints);
+    return flags;
 }
 
 } // namespace LxQt
