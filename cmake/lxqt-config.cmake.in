@@ -53,22 +53,7 @@
 #   add_executable(myexe main.cpp)
 #   target_link_libraries(myexe $LXQT_LIBRARIES})
 
-option(USE_QT5 "Force use the Qt5." $ENV{USE_QT5})
-option(USE_QT4 "Force use the Qt4." $ENV{USE_QT4})
-
-if((USE_QT4 AND USE_QT5) OR
-   (NOT USE_QT4 AND NOT USE_QT5))
-    # Autodetect Qt version
-    find_package(LxQt4 QUIET)
-    if (LXQT4_FOUND)
-        set(USE_QT4 ON)
-        set(USE_QT5 OFF)
-    else()
-        set(USE_QT4 OFF)
-        set(USE_QT5 ON)
-    endif()
-endif()
-
+option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
 
 if(LXQT_FIND_REQUIRED)
   set(REQUIRED_OPT "REQUIRED")
