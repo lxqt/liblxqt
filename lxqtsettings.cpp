@@ -34,6 +34,7 @@
 #include <QMutex>
 #include <QFileSystemWatcher>
 #include <QSharedData>
+#include <QTimer>
 
 #include <XdgIcon>
 #include <XdgDirs>
@@ -44,16 +45,29 @@ class LxQt::SettingsPrivate
 {
 public:
     SettingsPrivate(Settings* parent):
-        mParent(parent)
+        mParent(parent),
+        mWatcher(NULL)
     {
+    }
+    
+    ~SettingsPrivate()
+    {
+        if(mWatcher)
+            delete mWatcher;
     }
 
     QString localizedKey(const QString& key) const;
 
-    QFileSystemWatcher mWatcher;
+    QFileSystemWatcher* watcher()
+    {
+        if(!mWatcher)
+            mWatcher = new QFileSystemWatcher();
+        return mWatcher;
+    }
 
 private:
     Settings* mParent;
+    QFileSystemWatcher* mWatcher;
 };
 
 
@@ -105,8 +119,7 @@ Settings::Settings(const QString& module, QObject* parent) :
         setValue("__userfile__", true);
         sync();
     }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), SIGNAL(fileChanged(QString)), this, SLOT(fileChanged()));
+    QTimer::singleShot(0, this, SLOT(initWatch()));
 }
 
 
@@ -124,8 +137,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
         setValue("__userfile__", true);
         sync();
     }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), SIGNAL(fileChanged(QString)), this, SLOT(fileChanged()));
+    QTimer::singleShot(0, this, SLOT(initWatch()));
 }
 
 
@@ -162,6 +174,12 @@ Settings::~Settings()
         endGroup();
 
     delete d_ptr;
+}
+
+void Settings::initWatch()
+{
+    d_ptr->watcher()->addPath(this->fileName());
+    connect(d_ptr->watcher(), SIGNAL(fileChanged(QString)), this, SLOT(fileChanged()));
 }
 
 bool Settings::event(QEvent *event)

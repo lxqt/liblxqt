@@ -86,6 +86,7 @@ protected:
     bool event(QEvent *event);
 
 protected slots:
+    void initWatch();
     virtual void fileChanged();
 
 private:
