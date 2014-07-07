@@ -34,6 +34,7 @@
 #include <QtDebug>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
+#include "lxqtsettings.h"
 #include <XdgIcon>
 
 namespace LxQt {
@@ -90,6 +91,10 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
 //    connect(m_power, SIGNAL(hibernateFail()), this, SLOT(hibernateFailed()));
 //    connect(m_power, SIGNAL(monitoring(const QString &)),
 //            this, SLOT(monitoring(const QString&)));
+
+    QString sessionConfig(getenv("LXQT_SESSION_CONFIG"));
+    Settings settings(sessionConfig.isEmpty() ? "session" : sessionConfig);
+    m_skipWarning = settings.value("leave_confirmation").toBool() ? false : true;
 }
 
 PowerManager::~PowerManager()
@@ -140,7 +145,7 @@ QList<QAction*> PowerManager::availableActions()
 
     return ret;
 }
-    
+
 
 void PowerManager::suspend()
 {
