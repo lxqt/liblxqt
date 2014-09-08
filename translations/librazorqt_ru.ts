@@ -270,7 +270,7 @@
 <context>
     <name>about</name>
     <message>
-        <source> About LxQt</source>
+        <source> About LXQt</source>
         <translation>О программе</translation>
     </message>
     <message>

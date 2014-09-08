@@ -283,7 +283,7 @@
 <context>
     <name>about</name>
     <message>
-        <source> About LxQt</source>
+        <source> About LXQt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
