@@ -117,7 +117,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ConfigDialog</name>
+    <name>ConfigDialog</name>
     <message>
         <location filename="../lxqtconfigdialog.ui" line="6"/>
         <source>Dialog</source>

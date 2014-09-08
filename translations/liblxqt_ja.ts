@@ -205,7 +205,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ConfigDialog</name>
+    <name>ConfigDialog</name>
     <message>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
