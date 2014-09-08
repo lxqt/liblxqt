@@ -75,7 +75,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LxQt::LxQt::ScreenSaver</name>
     <message>
         <source>Lock Screen</source>
         <translation type="unfinished"/>
@@ -125,7 +125,7 @@
     </message>
 </context>
 <context>
-    <name>PowerManager</name>
+    <name>LxQt::PowerManager</name>
     <message>
         <source>Hibernate</source>
         <translation>Спящий режим</translation>

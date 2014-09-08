@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>PowerManager</name>
+    <name>LxQt::PowerManager</name>
     <message>
         <source>Hibernate</source>
         <translation>Hibernar</translation>
@@ -109,7 +109,7 @@
     </message>
 </context>
 <context>
-    <name>LxQtAboutDLGPrivate</name>
+    <name>LxQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation>Version: %1</translation>
@@ -204,21 +204,21 @@
     </message>
 </context>
 <context>
-    <name>LxQtConfigDialog</name>
+    <name>LxQt::ConfigDialog</name>
     <message>
         <source>Dialog</source>
         <translation>Dialogo</translation>
     </message>
 </context>
 <context>
-    <name>LxQtNotificationPrivate</name>
+    <name>LxQt::NotificationPrivate</name>
     <message>
         <source>Notifications Fallback</source>
         <translation>Delegacion de notificaciones</translation>
     </message>
 </context>
 <context>
-    <name>LxQtShortcutButton</name>
+    <name>LxQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation>Limpiar</translation>
@@ -229,7 +229,7 @@
     </message>
 </context>
 <context>
-    <name>ScreenSaver</name>
+    <name>LxQt::ScreenSaver</name>
     <message>
         <source>Lock Screen</source>
         <translation>Bloquear Pantalla</translation>

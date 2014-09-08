@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>PowerManager</name>
+    <name>LxQt::PowerManager</name>
     <message>
         <source>Hibernate</source>
         <translation>V mirovanje</translation>
@@ -109,7 +109,7 @@
     </message>
 </context>
 <context>
-    <name>LxQtAboutDLGPrivate</name>
+    <name>LxQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation type="unfinished"/>
@@ -204,21 +204,21 @@
     </message>
 </context>
 <context>
-    <name>LxQtConfigDialog</name>
+    <name>LxQt::ConfigDialog</name>
     <message>
         <source>Dialog</source>
         <translation>Pogovorno okno</translation>
     </message>
 </context>
 <context>
-    <name>LxQtNotificationPrivate</name>
+    <name>LxQt::NotificationPrivate</name>
     <message>
         <source>Notifications Fallback</source>
         <translation>Zasilna obvestila</translation>
     </message>
 </context>
 <context>
-    <name>LxQtShortcutButton</name>
+    <name>LxQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation>Počisti</translation>
@@ -229,7 +229,7 @@
     </message>
 </context>
 <context>
-    <name>ScreenSaver</name>
+    <name>LxQt::ScreenSaver</name>
     <message>
         <source>Lock Screen</source>
         <translation>Zakleni zaslon</translation>
@@ -256,11 +256,11 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Prišlo je do napake pri zagonu ohranjevalnika zaslona. Preverite, ali imate nameščen in zagnan XScreenSaver.</translation>
+        <translation>Prišlo je do napake pri zagonu ohranjevalnika zaslona. Preverite, ali imate nameščen in zagnan XLxQt::ScreenSaver.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Prišlo je do napake pri zagonu ohranjevalnika zaslona. Dejanje »activate« ni uspelo. Preverite, ali imate nameščen in zagnan XScreenSaver.</translation>
+        <translation>Prišlo je do napake pri zagonu ohranjevalnika zaslona. Dejanje »activate« ni uspelo. Preverite, ali imate nameščen in zagnan XLxQt::ScreenSaver.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>

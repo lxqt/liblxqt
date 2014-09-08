@@ -23,7 +23,7 @@
     </message>
 </context>
 <context>
-    <name>PowerManager</name>
+    <name>LxQt::PowerManager</name>
     <message>
         <location filename="../powermanager.cpp" line="96"/>
         <source>Hibernate</source>
@@ -117,7 +117,7 @@
     </message>
 </context>
 <context>
-    <name>LxQtConfigDialog</name>
+    <name>LxQt::ConfigDialog</name>
     <message>
         <location filename="../lxqtconfigdialog.ui" line="6"/>
         <source>Dialog</source>
@@ -125,7 +125,7 @@
     </message>
 </context>
 <context>
-    <name>LxQtShortcutButton</name>
+    <name>LxQt::ShortcutButton</name>
     <message>
         <location filename="../lxqtshortcutbutton.cpp" line="49"/>
         <source>Clear</source>
@@ -138,7 +138,7 @@
     </message>
 </context>
 <context>
-    <name>ScreenSaver</name>
+    <name>LxQt::ScreenSaver</name>
     <message>
         <location filename="../screensaver.cpp" line="49"/>
         <source>Lock Screen</source>
