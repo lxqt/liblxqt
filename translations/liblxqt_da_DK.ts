@@ -131,8 +131,8 @@
         <translation>Licens: %1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXDE-Qt er oversat til mange sprog takket være oversættere fra hele verden.</translation>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXQt er oversat til mange sprog takket være oversættere fra hele verden.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -271,7 +271,7 @@
     <name>about</name>
     <message>
         <source> About LxQt</source>
-        <translation> Om LXDE-Qt</translation>
+        <translation> Om LXQt</translation>
     </message>
     <message>
         <source>About</source>

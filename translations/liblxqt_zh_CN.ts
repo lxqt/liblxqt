@@ -131,8 +131,8 @@
         <translation>协议：%1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXDE-Qt 已被翻译成多种语言，特别感谢来自世界各地的翻译团队的努力。</translation>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXQt 已被翻译成多种语言，特别感谢来自世界各地的翻译团队的努力。</translation>
     </message>
     <message>
         <source>Yes</source>

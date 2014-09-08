@@ -131,8 +131,8 @@
         <translation>Licença: %1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>O LXDE-Qt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução em todo o mundo.</translation>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>O LXQt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução em todo o mundo.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Ambiente de trabalho LXDE-Qt - Informações técnicas&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Ambiente de trabalho LXQt - Informações técnicas&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Version</source>

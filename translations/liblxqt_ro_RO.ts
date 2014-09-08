@@ -42,7 +42,7 @@
     </message>
     <message>
         <source>LxQt Session Suspend</source>
-        <translation>Sesiune LXDE-Qt - suspendare</translation>
+        <translation>Sesiune LXQt - suspendare</translation>
     </message>
     <message>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
@@ -50,7 +50,7 @@
     </message>
     <message>
         <source>LxQt Session Hibernate</source>
-        <translation>Sesiune LXDE-Qt - hibernare</translation>
+        <translation>Sesiune LXQt - hibernare</translation>
     </message>
     <message>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
@@ -58,7 +58,7 @@
     </message>
     <message>
         <source>LxQt Session Reboot</source>
-        <translation>Sesiune LXDE-Qt - repornire</translation>
+        <translation>Sesiune LXQt - repornire</translation>
     </message>
     <message>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>LxQt Session Shutdown</source>
-        <translation>Sesiune LXDE-Qt - oprire</translation>
+        <translation>Sesiune LXQt - oprire</translation>
     </message>
     <message>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>LxQt Session Logout</source>
-        <translation>Sesiune LXDE-Qt - ieșire</translation>
+        <translation>Sesiune LXQt - ieșire</translation>
     </message>
     <message>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
@@ -131,7 +131,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <translation type="unfinished"/>
     </message>
     <message>

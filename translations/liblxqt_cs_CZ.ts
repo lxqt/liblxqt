@@ -131,8 +131,8 @@
         <translation>Licence: %1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXDE-Qt je přeložen do mnoha jazyků díky práci překladatelských týmů z celého světa.</translation>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXQt je přeložen do mnoha jazyků díky práci překladatelských týmů z celého světa.</translation>
     </message>
     <message>
         <source>Yes</source>

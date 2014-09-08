@@ -131,7 +131,7 @@
         <translation>Lisans: %1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <translation>LXQt tüm dünyadaki çeviri ekiplerinin çalışmalarına sayesinde birçok dil çevrilir.</translation>
     </message>
     <message>

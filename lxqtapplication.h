@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * LXDE-Qt - a lightweight, Qt based, desktop toolset
+ * LXQt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2012-2013 Razor team
@@ -35,12 +35,12 @@
 namespace LxQt
 {
 
-/*! \brief LXDE-Qt wrapper around QApplication.
- * It loads various LXDE-Qt related stuff by default (window icon, icon theme...)
+/*! \brief LXQt wrapper around QApplication.
+ * It loads various LXQt related stuff by default (window icon, icon theme...)
  *
- * \note This wrapper is intended to be used only inside LXDE-Qt project. Using it
+ * \note This wrapper is intended to be used only inside LXQt project. Using it
  *       in external application will automatically require linking to various
- *       LXDE-Qt libraries.
+ *       LXQt libraries.
  *
  */
 class LXQT_API Application : public QApplication
@@ -48,7 +48,7 @@ class LXQT_API Application : public QApplication
     Q_OBJECT
 
 public:
-    /*! Construct a LXDE-Qt application object.
+    /*! Construct a LXQt application object.
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
      */

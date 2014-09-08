@@ -131,8 +131,8 @@
         <translation>Άδεια χρήσης: %1</translation>
     </message>
     <message>
-        <source>LXDE-Qt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXDE-Qt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων σε όλο τον κόσμο.</translation>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation>LXQt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων σε όλο τον κόσμο.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Επιφάνεια εργασίας LXDE-Qt - Τεχνικές πληροφορίες&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Επιφάνεια εργασίας LXQt - Τεχνικές πληροφορίες&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Version</source>
