@@ -596,7 +596,7 @@ void GridLayout::setGeometry(const QRect &geometry)
             {
                 y = geometry.top();
                 if (d->mStretch.testFlag(StretchHorizontal))
-                    x += geometry.width() / d->rows();
+                    x += geometry.width() / d->cols();
                 else
                     x += itemWidth;
 
