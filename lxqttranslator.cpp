@@ -57,11 +57,11 @@ void Translator::setTranslationSearchPaths(const QStringList &paths)
 bool translate(const QString &name)
 {
     QString locale = QLocale::system().name();
+    QTranslator *appTranslator = new QTranslator(qApp);
 
     QStringList *paths = getSearchPaths();
     foreach(QString path, *paths)
     {
-        QTranslator *appTranslator = new QTranslator(qApp);
         bool ok = appTranslator->load(name + "_" + locale, path);
         if (ok)
         {
