@@ -69,6 +69,9 @@ bool translate(const QString &name)
             return ok;
         }
     }
+
+    // If we got here, no translation was loaded. appTranslator has no use.
+    delete appTranslator;
     return false;
 }
 
