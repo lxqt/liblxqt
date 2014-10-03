@@ -62,11 +62,10 @@ bool translate(const QString &name)
     QStringList *paths = getSearchPaths();
     foreach(QString path, *paths)
     {
-        bool ok = appTranslator->load(name + "_" + locale, path);
-        if (ok)
+        if (appTranslator->load(name + "_" + locale, path))
         {
             QCoreApplication::installTranslator(appTranslator);
-            return ok;
+            return true;
         }
     }
 
