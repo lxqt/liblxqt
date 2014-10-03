@@ -82,9 +82,16 @@ bool Translator::translateApplication(const QString &applicationName)
 {
     QString locale = QLocale::system().name();
     QTranslator *qtTranslator = new QTranslator(qApp);
-    qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    qApp->installTranslator(qtTranslator);
 
+    if (qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    {
+        qApp->installTranslator(qtTranslator);
+    }
+    else
+    {
+        delete qtTranslator;
+        qWarning("LxQt::Translator: Qt translations not found");
+    }
 
     if (!applicationName.isEmpty())
         return translate(applicationName);
