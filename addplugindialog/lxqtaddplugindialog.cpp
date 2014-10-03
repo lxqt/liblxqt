@@ -39,6 +39,7 @@
 #include <QItemDelegate>
 #include <QTextDocument>
 #include <QIcon>
+#include <QDebug>
 
 #include "lxqttranslator.h"
 
@@ -157,39 +158,46 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
 
     mPlugins = PluginInfo::search(desktopFilesDirs, serviceType, nameFilter);
     qSort(mPlugins.begin(), mPlugins.end(), pluginDescriptionLessThan);
-    
+
     ui->pluginList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->pluginList));
 
     init();
-    
+
     connect(ui->pluginList, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(emitPluginSelected()));
     connect(ui->pluginList, SIGNAL(itemSelectionChanged()), this, SLOT(toggleAddButtonState()));
     connect(ui->searchEdit, SIGNAL(textEdited(QString)), this, SLOT(searchEditTexChanged(QString)));
     connect(ui->addButton, SIGNAL(clicked(bool)), this, SLOT(emitPluginSelected()));
 }
 
-void AddPluginDialog::setPluginsInUse(const PluginInfoList pluginsInUse)
+void AddPluginDialog::setPluginsInUse(const QStringList pluginsInUseIDs)
 {
-    mPluginsInUse = pluginsInUse;
+    Q_FOREACH (QString id, pluginsInUseIDs)
+    {
+        if (!mPluginsInUseAmount.contains(id))
+            mPluginsInUseAmount[id] = 0;
+        mPluginsInUseAmount[id]++;
+    }
+
     init();
 }
 
 void AddPluginDialog::init()
 {
     QListWidget* pluginList = ui->pluginList;
-    
+
     pluginList->clear();
 
     QIcon fallIco = XdgIcon::fromTheme("preferences-plugin");
 
     for (int i=0; i< mPlugins.length(); ++i)
     {
-        bool count = mPluginsInUse.count(mPlugins.at(i));
-        QString countStr;
-        if (count)
-            countStr = tr("(%1 active)").arg(count);
-
         const PluginInfo &plugin = mPlugins.at(i);
+
+        QString countStr;
+        int amount = mPluginsInUseAmount[plugin.id()];
+            if (amount)
+                countStr = tr("(%1 active)").arg(amount);
+
         QListWidgetItem* item = new QListWidgetItem(ui->pluginList);
         item->setText(QString("<b>%1 %2</b><br>\n%3\n").arg(plugin.name(), countStr, plugin.comment()));
         item->setIcon(plugin.icon(fallIco));
@@ -204,6 +212,26 @@ void AddPluginDialog::init()
     }
 
     ui->addButton->setEnabled(false);
+}
+
+/************************************************
+
+ ************************************************/
+void AddPluginDialog::pluginAdded(const QString &id)
+{
+    if (!mPluginsInUseAmount.contains(id))
+        mPluginsInUseAmount[id] = 0;
+    mPluginsInUseAmount[id]++;
+    init();
+}
+
+/************************************************
+
+ ************************************************/
+void AddPluginDialog::pluginRemoved(const QString &id)
+{
+    mPluginsInUseAmount[id]--;
+    init();
 }
 
 /************************************************

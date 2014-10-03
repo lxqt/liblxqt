@@ -62,7 +62,7 @@ public:
 
     ~AddPluginDialog();
 
-    void setPluginsInUse(const PluginInfoList pluginsInUse);
+    void setPluginsInUse(const QStringList pluginsInUseIDs);
 
 signals:
     void pluginSelected(const LxQt::PluginInfo &plugin);
@@ -74,8 +74,14 @@ private:
     void init();
     Ui::AddPluginDialog *ui;
     PluginInfoList mPlugins;
-    PluginInfoList mPluginsInUse;
     int mTimerId;
+
+    // store the amount of instances of the plugins using their ids
+    QHash<QString, int> mPluginsInUseAmount;
+
+public slots:
+    void pluginAdded(const QString &id);
+    void pluginRemoved(const QString &id);
 
 private slots:
     void emitPluginSelected();
