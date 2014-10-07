@@ -67,6 +67,14 @@ bool translate(const QString &name)
             QCoreApplication::installTranslator(appTranslator);
             return true;
         }
+        else if (locale == QLatin1String("C") ||
+                    locale.startsWith(QLatin1String("en")))
+        {
+            // English is the default. Even if there isn't an translation file,
+            // we return true. It's translated anyway.
+            delete appTranslator;
+            return true;
+        }
     }
 
     // If we got here, no translation was loaded. appTranslator has no use.
