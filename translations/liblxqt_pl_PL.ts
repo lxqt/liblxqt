@@ -9,13 +9,11 @@
     </message>
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
-        <location filename="../build/ui_lxqtaddplugindialog.h" line="102"/>
         <source>Search:</source>
         <translation>Szukaj:</translation>
     </message>
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="52"/>
-        <location filename="../build/ui_lxqtaddplugindialog.h" line="103"/>
         <source>Add Widget</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25,7 +23,6 @@
     </message>
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="59"/>
-        <location filename="../build/ui_lxqtaddplugindialog.h" line="104"/>
         <source>Close</source>
         <translation>Zamknij</translation>
     </message>
@@ -34,7 +31,6 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
-        <location filename="../build/ui_lxqtconfigdialog.h" line="84"/>
         <source>Dialog</source>
         <translation>Okno dialogowe</translation>
     </message>
@@ -173,7 +169,7 @@
 <context>
     <name>LxQt::AddPluginDialog</name>
     <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="190"/>
+        <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="199"/>
         <source>(%1 active)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -383,48 +379,41 @@
     <name>about</name>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="14"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="192"/>
         <source> About LXQt</source>
         <translation>O LxQt</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="66"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="193"/>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
         <translation>O</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="83"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="194"/>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
         <translation>Autorzy</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="100"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="195"/>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
         <translation>Podziękowania</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="117"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="196"/>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
         <translation>Tłumaczenia</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="134"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="198"/>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
         <translation>Informacje techniczne</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="165"/>
-        <location filename="../build/ui_lxqtaboutdialog.h" line="197"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
