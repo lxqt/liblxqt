@@ -5,6 +5,7 @@
 #include <QCoreApplication>
 #include <QLibraryInfo>
 #include <QStringList>
+#include <QStringBuilder>
 #include <QFileInfo>
 
 #include <XdgDirs>
@@ -21,10 +22,9 @@ QStringList *getSearchPaths()
     if (searchPath == 0)
     {
         searchPath = new QStringList();
-        *searchPath << XdgDirs::dataHome(false) + "/lxqt/translations";
-        *searchPath << XdgDirs::dataDirs("/lxqt/translations");
-        *searchPath << "/usr/local/share/lxqt/translations";
-        *searchPath << "/usr/share/lxqt/translations";
+        *searchPath << QString(LXQT_SHARE_TRANSLATIONS_DIR);
+        *searchPath << XdgDirs::dataDirs(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR);
+        searchPath->removeDuplicates();
     }
 
     return searchPath;
@@ -62,18 +62,25 @@ bool translate(const QString &name)
     QStringList *paths = getSearchPaths();
     foreach(QString path, *paths)
     {
-        if (appTranslator->load(name + "_" + locale, path))
+        QStringList subPaths;
+        subPaths << path % QChar('/') % name;
+        subPaths << path;
+
+        foreach(QString p, subPaths)
         {
-            QCoreApplication::installTranslator(appTranslator);
-            return true;
-        }
-        else if (locale == QLatin1String("C") ||
-                    locale.startsWith(QLatin1String("en")))
-        {
-            // English is the default. Even if there isn't an translation file,
-            // we return true. It's translated anyway.
-            delete appTranslator;
-            return true;
+            if (appTranslator->load(name + "_" + locale, p))
+            {
+                QCoreApplication::installTranslator(appTranslator);
+                return true;
+            }
+            else if (locale == QLatin1String("C") ||
+                        locale.startsWith(QLatin1String("en")))
+            {
+                // English is the default. Even if there isn't an translation
+                // file, we return true. It's translated anyway.
+                delete appTranslator;
+                return true;
+            }
         }
     }
 
