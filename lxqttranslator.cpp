@@ -12,6 +12,7 @@
 
 using namespace LxQt;
 
+bool translate(const QString &name, const QString &owner = QString());
 /************************************************
 
  ************************************************/
@@ -54,7 +55,7 @@ void Translator::setTranslationSearchPaths(const QStringList &paths)
 /************************************************
 
  ************************************************/
-bool translate(const QString &name)
+bool translate(const QString &name, const QString &owner)
 {
     QString locale = QLocale::system().name();
     QTranslator *appTranslator = new QTranslator(qApp);
@@ -63,8 +64,16 @@ bool translate(const QString &name)
     foreach(QString path, *paths)
     {
         QStringList subPaths;
-        subPaths << path % QChar('/') % name;
-        subPaths << path;
+
+        if (!owner.isEmpty())
+        {
+            subPaths << path % QChar('/') % owner % QChar('/') % name;
+        }
+        else
+        {
+            subPaths << path % QChar('/') % name;
+            subPaths << path;
+        }
 
         foreach(QString p, subPaths)
         {
@@ -128,6 +137,18 @@ bool Translator::translateLibrary(const QString &libraryName)
     loadedLibs.insert(libraryName);
 
     return translate(libraryName);
+}
+
+bool Translator::translatePlugin(const QString &pluginName, const QString& type)
+{
+    static QSet<QString> loadedPlugins;
+
+    QString fullName = type % QChar('/') % pluginName;
+    if (loadedPlugins.contains(fullName))
+        return true;
+
+    loadedPlugins.insert(pluginName);
+    return translate(pluginName, type);
 }
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))

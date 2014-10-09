@@ -64,6 +64,7 @@ public:
     **/
     static bool translateLibrary(const QString &libraryName = "");
 
+    static bool translatePlugin(const QString &pluginName, const QString& type);
 };
 
 } // namespace LxQt
