@@ -129,3 +129,12 @@ bool Translator::translateLibrary(const QString &libraryName)
 
     return translate(libraryName);
 }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
+static void loadSelfTranslation()
+{
+    Translator::translateLibrary(QLatin1String("liblxqt"));
+}
+
+Q_COREAPP_STARTUP_FUNCTION(loadSelfTranslation)
+#endif

@@ -38,7 +38,9 @@ using namespace LxQt;
 ScreenSaver::ScreenSaver(QObject * parent)
     : QObject(parent)
 {
-    Translator::translateLibrary("liblxqt");
+#if (QT_VERSION <= QT_VERSION_CHECK(5, 1, 0))
+    Translator::translateLibrary(QLatin1String("liblxqt"));
+#endif
     m_xdgProcess = new QProcess(this);
     connect(m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(xdgProcess_finished(int,QProcess::ExitStatus)));
