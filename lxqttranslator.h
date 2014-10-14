@@ -55,14 +55,14 @@ public:
       then basename of QCoreApplication::applicationFilePath() is used.
       Returns true if the translation is successfully loaded; otherwise returns false.
     **/
-    static bool translateApplication(const QString &applicationName = "");
+    static bool translateApplication(const QString &applicationName = QString());
 
     /**
       Loads translations for application. If applicationName is not specified,
       then basename of QCoreApplication::applicationFilePath() is used.
       Returns true if the translation is successfully loaded; otherwise returns false.
     **/
-    static bool translateLibrary(const QString &libraryName = "");
+    static bool translateLibrary(const QString &libraryName = QString());
 
     static bool translatePlugin(const QString &pluginName, const QString& type);
 };
