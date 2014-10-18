@@ -85,9 +85,6 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
     : QObject(parent),
         m_skipWarning(skipWarning)
 {
-#if (QT_VERSION <= QT_VERSION_CHECK(5, 1, 0))
-    Translator::translateLibrary(QLatin1String("liblxqt"));
-#endif
     m_power = new Power(this);
 //    connect(m_power, SIGNAL(suspendFail()), this, SLOT(suspendFailed()));
 //    connect(m_power, SIGNAL(hibernateFail()), this, SLOT(hibernateFailed()));

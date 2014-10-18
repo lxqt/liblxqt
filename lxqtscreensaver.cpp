@@ -38,9 +38,6 @@ using namespace LxQt;
 ScreenSaver::ScreenSaver(QObject * parent)
     : QObject(parent)
 {
-#if (QT_VERSION <= QT_VERSION_CHECK(5, 1, 0))
-    Translator::translateLibrary(QLatin1String("liblxqt"));
-#endif
     m_xdgProcess = new QProcess(this);
     connect(m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(xdgProcess_finished(int,QProcess::ExitStatus)));
@@ -77,11 +74,11 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
     }
     else if (err == -2)
     {
-        QMessageBox::warning(p,  
+        QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
                                 "xdg-screensaver is not installed correctly.")
-                            );  
+                            );
     }
     else if (err == -1)
     {
@@ -97,7 +94,7 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
     }
     else if (err == 1)
     {
-        QMessageBox::warning(p,  
+        QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
                                 "Syntax error in xdg-screensaver arguments.")
@@ -105,7 +102,7 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
     }
     else if (err == 3)
     {
-        QMessageBox::warning(p,  
+        QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
                                 "Ensure you have xscreensaver installed and running.")
@@ -113,7 +110,7 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
     }
     else if (err == 4)
     {
-        QMessageBox::warning(p,  
+        QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
                                 "Action 'activate' failed. "
@@ -122,7 +119,7 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
     }
     else
     {
-        QMessageBox::warning(p,  
+        QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
                                 "Unknown error - undocumented return value from xdg-screensaver=%1.").arg(err)
