@@ -49,6 +49,7 @@ QList<QAction*> ScreenSaver::availableActions()
     QAction * act;
 
     act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
+    act->setData(QVariant("LxQt_ScreenSaver_Lock_Screen"));
     connect(act, SIGNAL(triggered()), this, SLOT(lockScreen()));
     ret.append(act);
 
