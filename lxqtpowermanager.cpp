@@ -37,6 +37,13 @@
 #include "lxqtsettings.h"
 #include <XdgIcon>
 
+// Strings to identify actions in QuickLaunch plugin
+#define LXQT_POWERMANAGER_HIBERNATE "LXQt_PowerManager_Hibernate"
+#define LXQT_POWERMANAGER_SUSPEND   "LXQt_PowerManager_Suspend"
+#define LXQT_POWERMANAGER_REBOOT    "LXQt_PowerManager_Reboot"
+#define LXQT_POWERMANAGER_SHUTDOWN  "LXQt_PowerManager_Shutdown"
+#define LXQT_POWERMANAGER_LOGOUT    "LXQt_PowerManager_Logout"
+
 namespace LxQt {
 
 class LXQT_API MessageBox: public QMessageBox
@@ -110,7 +117,7 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canHibernate())
     {
         act = new QAction(XdgIcon::fromTheme("system-suspend-hibernate"), tr("Hibernate"), this);
-        act->setData(QVariant("LxQt_PowerManager_Hibernate"));
+        act->setData(QVariant(LXQT_POWERMANAGER_HIBERNATE));
         connect(act, SIGNAL(triggered()), this, SLOT(hibernate()));
         ret.append(act);
     }
@@ -118,7 +125,7 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canSuspend())
     {
         act = new QAction(XdgIcon::fromTheme("system-suspend"), tr("Suspend"), this);
-        act->setData(QVariant("LxQt_PowerManager_Suspend"));
+        act->setData(QVariant(LXQT_POWERMANAGER_SUSPEND));
         connect(act, SIGNAL(triggered()), this, SLOT(suspend()));
         ret.append(act);
     }
@@ -126,7 +133,7 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canReboot())
     {
         act = new QAction(XdgIcon::fromTheme("system-reboot"), tr("Reboot"), this);
-        act->setData(QVariant("LxQt_PowerManager_Reboot"));
+        act->setData(QVariant(LXQT_POWERMANAGER_REBOOT));
         connect(act, SIGNAL(triggered()), this, SLOT(reboot()));
         ret.append(act);
     }
@@ -134,7 +141,7 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canShutdown())
     {
         act = new QAction(XdgIcon::fromTheme("system-shutdown"), tr("Shutdown"), this);
-        act->setData(QVariant("LxQt_PowerManager_Shutdown"));
+        act->setData(QVariant(LXQT_POWERMANAGER_SHUTDOWN));
         connect(act, SIGNAL(triggered()), this, SLOT(shutdown()));
         ret.append(act);
     }
@@ -142,7 +149,7 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canLogout())
     {
         act = new QAction(XdgIcon::fromTheme("system-log-out"), tr("Logout"), this);
-        act->setData(QVariant("LxQt_PowerManager_Logout"));
+        act->setData(QVariant(LXQT_POWERMANAGER_LOGOUT));
         connect(act, SIGNAL(triggered()), this, SLOT(logout()));
         ret.append(act);
     }

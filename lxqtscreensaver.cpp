@@ -33,6 +33,9 @@
 #include <QMessageBox>
 #include <QAction>
 
+// Strings to identify actions in QuickLaunch plugin
+#define LXQT_SCREENSAVER_LOCK_SCREEN  "LXQt_ScreenSaver_Lock_Screen"
+
 using namespace LxQt;
 
 ScreenSaver::ScreenSaver(QObject * parent)
@@ -49,7 +52,7 @@ QList<QAction*> ScreenSaver::availableActions()
     QAction * act;
 
     act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
-    act->setData(QVariant("LxQt_ScreenSaver_Lock_Screen"));
+    act->setData(QVariant(LXQT_SCREENSAVER_LOCK_SCREEN));
     connect(act, SIGNAL(triggered()), this, SLOT(lockScreen()));
     ret.append(act);
 
