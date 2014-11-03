@@ -27,19 +27,12 @@
 
 #include "lxqtaddplugindialog.h"
 #include "ui_lxqtaddplugindialog.h"
-#include <QStyledItemDelegate>
-#include <QPainter>
+#include "lxqthtmldelegate.h"
 #include <QDebug>
-#include <QTextBrowser>
-#include <QAbstractTextDocumentLayout>
 #include <QLineEdit>
-
 #include <XdgIcon>
 #include <QListWidgetItem>
-#include <QItemDelegate>
-#include <QTextDocument>
 #include <QIcon>
-#include <QDebug>
 
 #include "lxqttranslator.h"
 
@@ -47,87 +40,6 @@ using namespace LxQt;
 
 #define SEARCH_ROLE  Qt::UserRole
 #define INDEX_ROLE   SEARCH_ROLE+1
-
-class HtmlDelegate : public QStyledItemDelegate
-{
-public:
-    HtmlDelegate(const QSize iconSize, QObject* parent = 0):
-        QStyledItemDelegate(parent),
-        mIconSize(iconSize)
-    {}
-    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
-private:
-    QSize mIconSize;
-};
-
-
-/************************************************
-
- ************************************************/
-void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
-{
-    if (!index.isValid())
-        return;
-
-    QStyleOptionViewItemV4 options = option;
-    initStyleOption(&options, index);
-
-    painter->save();
-
-    QTextDocument doc;
-    doc.setHtml(options.text);
-    QIcon icon = options.icon;
-
-    options.text = "";
-    options.icon = QIcon();
-    options.widget->style()->drawControl(QStyle::CE_ItemViewItem, &options, painter);
-
-    // Draw icon ................................
-    QSize iconSize = icon.actualSize(mIconSize);
-    painter->translate(options.rect.left(), options.rect.top());
-    QRect iconRect = QRect(4, 4, iconSize.width(), iconSize.height());
-
-    icon.paint(painter, iconRect);
-
-    doc.setTextWidth(options.rect.width() - iconRect.right() - 10);
-
-    // shift text right to make icon visible
-    painter->translate(iconRect.right() + 8, 0);
-    QRect clip(0, 0, options.rect.width()-iconRect.right()- 10, options.rect.height());
-
-
-    painter->setClipRect(clip);
-    QAbstractTextDocumentLayout::PaintContext ctx;
-    // set text color to red for selected item
-    if (option.state & QStyle::State_Selected)
-    {
-        ctx.palette.setColor(QPalette::Text, option.palette.color(QPalette::HighlightedText));
-    }
-    ctx.clip = clip;
-    doc.documentLayout()->draw(painter, ctx);
-
-    painter->restore();
-}
-
-
-/************************************************
-
- ************************************************/
-QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
-{
-    QStyleOptionViewItemV4 options = option;
-    initStyleOption(&options, index);
-
-    QSize iconSize = QIcon().actualSize(mIconSize);
-    QRect iconRect = QRect(4, 4, iconSize.width(), iconSize.height());
-
-    QTextDocument doc;
-    doc.setHtml(options.text);
-    doc.setTextWidth(options.rect.width()-iconRect.right()- 10);
-    return QSize(doc.idealWidth(), doc.size().height() + 8);
-}
-
 
 /************************************************
 
