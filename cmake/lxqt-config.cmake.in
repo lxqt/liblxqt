@@ -53,8 +53,6 @@
 #   add_executable(myexe main.cpp)
 #   target_link_libraries(myexe $LXQT_LIBRARIES})
 
-option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
-
 if(LXQT_FIND_REQUIRED)
   set(REQUIRED_OPT "REQUIRED")
 endif()
@@ -67,11 +65,7 @@ set(LXQT_CMAKE_MODULES_DIR @CFG_LXQT_CMAKE_MODULES_DIR@)
 set(LXQT_FOUND         1)
 
 if(LXQT_FIND_QUIETLY)
-  set(QUIET_OPT "QUIET")
+    set(QUIET_OPT "QUIET")
 endif()
 
-if(USE_QT5)
-  find_package(LxQt5 ${REQUIRED_OPT} ${QUIET_OPT})
-else()
-  find_package(LxQt4 ${REQUIRED_OPT} ${QUIET_OPT})
-endif()
+find_package(LxQt5 ${REQUIRED_OPT} ${QUIET_OPT})
