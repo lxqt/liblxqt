@@ -125,5 +125,6 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
                                 "Unknown error - undocumented return value from xdg-screensaver=%1.").arg(err)
                             );
     }
+    emit done();
 }
 
