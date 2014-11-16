@@ -28,10 +28,13 @@
 #include "../lxqtapplication.h"
 #include "../lxqtpowermanager.h"
 #include "../lxqtscreensaver.h"
+#include "../lxqttranslator.h"
 
 int main(int argc, char *argv[])
 {
     LxQt::Application a(argc,argv);
+    LxQt::Translator::translateApplication();
+
     LxQt::PowerManager powermanager(&a);
     LxQt::ScreenSaver screensaver(&a);
     for (int i=1; i < argc; ++i)
