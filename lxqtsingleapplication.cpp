@@ -35,7 +35,7 @@
 
 using namespace LxQt;
 
-SingleApplication::SingleApplication(int &argc, char **argv)
+SingleApplication::SingleApplication(int &argc, char **argv, StartOptions options)
     : Application(argc, argv),
     mActivationWindow(0)
 {
@@ -48,8 +48,17 @@ SingleApplication::SingleApplication(int &argc, char **argv)
     if (!bus.isConnected()) {
         QLatin1String errorMessage("Can't connect to the D-Bus session bus\n"
                                    "Make sure the D-Bus daemon is running");
-        qCritical() << errorMessage;
-        ::exit(1);
+
+        /* ExitOnDBusFailure is the default. Any value other than
+           NoExitOnDBusFailure will be taken as ExitOnDBusFailure (the default).
+         */
+        if (options == NoExitOnDBusFailure) {
+            qDebug() << Q_FUNC_INFO << errorMessage;
+            return;
+        } else {
+            qCritical() << Q_FUNC_INFO << errorMessage;
+            ::exit(1);
+        }
     }
 
     bool registered = (bus.registerService(service) ==

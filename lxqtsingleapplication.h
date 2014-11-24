@@ -77,14 +77,40 @@ namespace LxQt {
 
 class LXQT_API SingleApplication : public Application {
     Q_OBJECT
+    Q_ENUMS(StartOptions)
 
 public:
+    /*!
+     * \brief Options to control the D-Bus failure related application behaviour
+     *
+     * By default (ExitOnDBusFailure) if an instance can't connect to the D-Bus
+     * session bus, that instance calls ::exit(1). Not even the first instance
+     * will run. Connecting to the D-Bus session bus is an condition to
+     * guarantee that only one instance will run.
+     *
+     * If an user wants to allow an application to run without D-Bus, it must
+     * use the NoExitOnDBusFailure option.
+     *
+     * ExitOnDBusFailure is the default.
+     */
+    enum StartOptions {
+        /** Exit if the connection to the D-Bus session bus fails.
+          * It's the default
+          */
+        ExitOnDBusFailure,
+        /** Don't exit if the connection to the D-Bus session bud fails.*/
+        NoExitOnDBusFailure
+    };
+
     /*!
      * \brief Construct a LxQt SingleApplication object.
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
+     * \param options Control the on D-Bus failure application behaviour
+     *
+     * \sa StartOptions.
      */
-    SingleApplication(int &argc, char **argv);
+    SingleApplication(int &argc, char **argv, StartOptions options = ExitOnDBusFailure);
     virtual ~SingleApplication();
 
     /*!
