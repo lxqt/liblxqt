@@ -68,7 +68,9 @@ int main(int argc, char *argv[])
         }
         if (arg == "--lockscreen")
         {
+            a.connect(&screensaver,SIGNAL(done()),&a,SLOT(quit()));
             screensaver.lockScreen();
+            a.exec();
             return 0;
         }
     }

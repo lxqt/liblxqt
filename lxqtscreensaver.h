@@ -49,7 +49,7 @@ public:
 
 signals:
     void activated();
-
+    void done();
 public slots:
     void lockScreen();
 
