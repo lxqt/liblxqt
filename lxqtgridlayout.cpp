@@ -565,7 +565,7 @@ void GridLayout::setGeometry(const QRect &geometry)
 #endif
 
     if (d->mDirection == LeftToRight)
-    {       
+    {
         foreach(QLayoutItem *item, d->mItems)
         {
             if (!item->widget() || item->widget()->isHidden())

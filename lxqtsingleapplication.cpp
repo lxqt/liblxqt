@@ -102,7 +102,7 @@ void SingleApplication::activateWindow()
 
         if (windowDesktop != KWindowSystem::currentDesktop())
             KWindowSystem::setCurrentDesktop(windowDesktop);
-        KWindowSystem::activateWindow(window); 
+        KWindowSystem::activateWindow(window);
     } else {
         qDebug() << Q_FUNC_INFO << "activationWindow not set or null";
     }
