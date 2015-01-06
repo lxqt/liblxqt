@@ -15,7 +15,7 @@
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="52"/>
         <source>Add Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar widget</translation>
     </message>
     <message>
         <source>Add plugin</source>
@@ -52,7 +52,7 @@
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="101"/>
         <source>LXQt would not have been possible without the &lt;a %1&gt;Razor-qt&lt;/a&gt; project and its many contributors.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="unfinished"></translation>
+        <translation>O LxQt não seria possível sem a ajuda dos colaboradores do projeto &lt;a %1&gt;Razor-qt&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="103"/>
@@ -76,25 +76,25 @@
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="117"/>
         <source>LXQt is developed by the &lt;a %1&gt;LXQt Team and contributors&lt;/a&gt;.</source>
         <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation type="unfinished"></translation>
+        <translation>O LxQt é desenvolvido pelos &lt;a %1&gt;colaboradores da equipa LXQt&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="119"/>
         <source>If you are interested in working with our development team, &lt;a %1&gt;join us&lt;/a&gt;.</source>
         <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Se quiser ajudar no desenvolvimento, &lt;a %1&gt;pode integrar a nossa equipa&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="137"/>
         <source>Special thanks to:</source>
         <comment>About dialog, &apos;Thanks&apos; tab text</comment>
-        <translation type="unfinished"></translation>
+        <translation>Um especial obrigado a:</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="144"/>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation>O LXQt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução em todo o mundo.</translation>
+        <translation>O LXQt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução de  todo o mundo.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="199"/>
         <source>(%1 active)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1 ativo)</translation>
     </message>
 </context>
 <context>
@@ -179,12 +179,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">Erro do gestor de energia do LxQt</translation>
+        <translation>Erro do gestor de energia do LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Falha ao hibernar.</translation>
+        <translation>Falha ao hibernar.</translation>
     </message>
 </context>
 <context>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="174"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo reiniciar o computador? Os trabalhos não gravados serão perdidos.</translation>
+        <translation>Pretende mesmo reiniciar o computador? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
@@ -260,7 +260,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="184"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo desligar o computador? Os trabalhos não gravados serão perdidos.</translation>
+        <translation>Pretende mesmo desligar o computador? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="194"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo terminar a sessão? Os trabalhos não gravados serão perdidos.</translation>
+        <translation>Pretende mesmo terminar a sessão? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
@@ -366,7 +366,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="92"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="142"/>
         <source>QDBusInterface is invalid</source>
-        <translation>A interface QDBus não é válida.</translation>
+        <translation>A interface QDBus não é válida</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="106"/>
@@ -415,7 +415,7 @@
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.ui" line="165"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
 </context>
 </TS>
