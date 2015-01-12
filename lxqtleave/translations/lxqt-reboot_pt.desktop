@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot
+GenericName=Reboot
+Comment=reboot the machine
+Exec=lxqt-leave --reboot
+Icon=system-reboot
+Categories=LXQt;X-Leave
+OnlyShowIn=LXQt;
+
+#TRANSLATIONS_DIR=../translations
+
+# Translations
+Name[pt]=Reiniciar
+Comment[pt]=Reiniciar o computador
