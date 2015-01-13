@@ -4,10 +4,6 @@
 <context>
     <name>AddPluginDialog</name>
     <message>
-        <source>Add plugins</source>
-        <translation type="obsolete">プラグインを追加</translation>
-    </message>
-    <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
         <source>Search:</source>
         <translation>検索:</translation>
@@ -16,10 +12,6 @@
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="52"/>
         <source>Add Widget</source>
         <translation>ウィジェットを追加</translation>
-    </message>
-    <message>
-        <source>Add plugin</source>
-        <translation type="obsolete">プラグインを追加</translation>
     </message>
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="59"/>
@@ -52,7 +44,7 @@
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="101"/>
         <source>LXQt would not have been possible without the &lt;a %1&gt;Razor-qt&lt;/a&gt; project and its many contributors.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>LxQtは、Razor-qtプロジェクトとそのたくさんの貢献者たちなしにはありえませんでした。</translation>
+        <translation>LxQtは、&lt;a %1&gt;Razor-qt&lt;/a&gt;プロジェクトとそのたくさんの貢献者たちなしにはありえませんでした。</translation>
     </message>
     <message>
         <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="103"/>
@@ -110,12 +102,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">LxQt電源管理エラー</translation>
+        <translation>LxQt電源管理エラー</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">休止の失敗</translation>
+        <translation>休止の失敗</translation>
     </message>
 </context>
 <context>
@@ -273,17 +265,6 @@
         <location filename="../lxqtscreensaver.cpp" line="125"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
         <translation>スクリーンセーバーを開始する際にエラーが発生しました。不明なエラー - 文書化されていない返り値 xdg-screensaver=%1</translation>
-    </message>
-</context>
-<context>
-    <name>LxQt::ShortcutButton</name>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">消去</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="obsolete">なし</translation>
     </message>
 </context>
 <context>
