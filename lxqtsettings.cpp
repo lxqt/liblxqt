@@ -34,6 +34,7 @@
 #include <QMutex>
 #include <QFileSystemWatcher>
 #include <QSharedData>
+#include <QTimerEvent>
 
 #include <XdgIcon>
 #include <XdgDirs>
@@ -44,6 +45,7 @@ class LxQt::SettingsPrivate
 {
 public:
     SettingsPrivate(Settings* parent):
+        mChangeTimer(0),
         mParent(parent)
     {
     }
@@ -51,6 +53,7 @@ public:
     QString localizedKey(const QString& key) const;
 
     QFileSystemWatcher mWatcher;
+    int mChangeTimer;
 
 private:
     Settings* mParent;
@@ -106,7 +109,7 @@ Settings::Settings(const QString& module, QObject* parent) :
         sync();
     }
     d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), SIGNAL(fileChanged(QString)), this, SLOT(fileChanged()));
+    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
@@ -125,7 +128,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
         sync();
     }
     d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), SIGNAL(fileChanged(QString)), this, SLOT(fileChanged()));
+    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
@@ -170,15 +173,48 @@ bool Settings::event(QEvent *event)
     {
         emit settingsChanged();
     }
+    else if (event->type() == QEvent::Timer)
+    {
+        if(static_cast<QTimerEvent*>(event)->timerId() == d_ptr->mChangeTimer)
+        {
+            fileChanged(); // invoke the real fileChanged() handler.
+            killTimer(d_ptr->mChangeTimer);
+            d_ptr->mChangeTimer = 0;
+        }
+    }
 
     return QSettings::event(event);
 }
 
 void Settings::fileChanged()
 {
-//    Q_D(Settings);
     sync();
     emit settingsChanged();
+}
+
+void Settings::_fileChanged(QString path)
+{
+    // delay the change notification for 100 ms to avoid
+    // unnecessary repeated loading of the same config file if
+    // the file is changed for several times rapidly.
+    if(d_ptr->mChangeTimer)
+        killTimer(d_ptr->mChangeTimer);
+    d_ptr->mChangeTimer = startTimer(100);
+
+    // D*mn! yet another Qt 5.4 regression!!!
+    // See the bug report: https://github.com/lxde/lxqt/issues/441
+    // Since Qt 5.4, QSettings uses QSaveFile to save the config files.
+    // https://github.com/qtproject/qtbase/commit/8d15068911d7c0ba05732e2796aaa7a90e34a6a1#diff-e691c0405f02f3478f4f50a27bdaecde
+    // QSaveFile will save the content to a new temp file, and replace the old file later.
+    // Hence the existing config file is not changed. Instead, it's deleted and then replaced.
+    // This new behaviour unfortunately breaks QFileSystemWatcher.
+    // After file deletion, we can no longer receive any new change notifications.
+    // The most ridiculous thing is, QFileSystemWatcher does not provide a
+    // way for us to know if a file is deleted. WT*?
+    // Luckily, I found a workaround: If the file path no longer exists
+    // in the watcher's files(), this file is deleted.
+    if(!d_ptr->mWatcher.files().contains(path))
+        d_ptr->mWatcher.addPath(path);
 }
 
 
@@ -277,7 +313,6 @@ QString SettingsPrivate::localizedKey(const QString& key) const
     //qDebug() << "\t try " << key  << mParent->contains(key);
     return key;
 }
-
 
 /************************************************
 

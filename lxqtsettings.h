@@ -86,7 +86,11 @@ protected:
     bool event(QEvent *event);
 
 protected slots:
+    /*! Called when the config file is changed */
     virtual void fileChanged();
+
+private slots:
+    void _fileChanged(QString path);
 
 private:
     Q_DISABLE_COPY(Settings)
