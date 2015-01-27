@@ -101,7 +101,8 @@ void AddPluginDialog::init()
 
     QIcon fallIco = XdgIcon::fromTheme("preferences-plugin");
 
-    for (int i=0; i< mPlugins.length(); ++i)
+    int pluginCount = mPlugins.length();
+    for (int i = 0; i < pluginCount; ++i)
     {
         const PluginInfo &plugin = mPlugins.at(i);
 
@@ -123,7 +124,8 @@ void AddPluginDialog::init()
                      );
     }
 
-    ui->addButton->setEnabled(false);
+    if (pluginCount > 0)
+        ui->pluginList->setCurrentRow(0);
 }
 
 /************************************************
