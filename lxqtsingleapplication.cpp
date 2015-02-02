@@ -27,8 +27,8 @@
 
 #include "lxqtsingleapplication.h"
 #include "singleapplicationadaptor.h"
-#include <KF5/KWindowSystem/KWindowSystem>
-#include <KF5/KWindowSystem/NETWM>
+#include <KWindowSystem/KWindowSystem>
+#include <KWindowSystem/NETWM>
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
