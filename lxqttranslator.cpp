@@ -114,7 +114,6 @@ bool Translator::translateApplication(const QString &applicationName)
     else
     {
         delete qtTranslator;
-        qWarning("LxQt::Translator: Qt translations not found");
     }
 
     if (!applicationName.isEmpty())
