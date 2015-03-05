@@ -4,10 +4,6 @@
 <context>
     <name>AddPluginDialog</name>
     <message>
-        <source>Add plugins</source>
-        <translation type="obsolete">Plugins hinzufügen</translation>
-    </message>
-    <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
         <source>Search:</source>
         <translation>Suchen:</translation>
@@ -16,10 +12,6 @@
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="95"/>
         <source>Add Widget</source>
         <translation>Element hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add plugin</source>
-        <translation type="obsolete">Plugin hinzufügen</translation>
     </message>
     <message>
         <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="102"/>
@@ -95,14 +87,6 @@
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
         <translation>LXQt wird dank der Arbeit unseres über die ganze Welt verteilten Übersetzungsteams in viele Sprachen übersetzt.</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation type="obsolete">Ja</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation type="obsolete">Nein</translation>
     </message>
 </context>
 <context>
