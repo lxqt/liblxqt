@@ -97,6 +97,7 @@ void AddPluginDialog::init()
 {
     QListWidget* pluginList = ui->pluginList;
 
+    const int curr_item = 0 < pluginList->count() ? pluginList->currentRow() : 0;
     pluginList->clear();
 
     QIcon fallIco = XdgIcon::fromTheme("preferences-plugin");
@@ -125,7 +126,7 @@ void AddPluginDialog::init()
     }
 
     if (pluginCount > 0)
-        ui->pluginList->setCurrentRow(0);
+        ui->pluginList->setCurrentRow(curr_item < pluginCount ? curr_item : pluginCount - 1);
 }
 
 /************************************************
