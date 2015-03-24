@@ -33,6 +33,7 @@
 #include <XdgIcon>
 #include <QListWidgetItem>
 #include <QIcon>
+#include <QMenu>
 
 #include "lxqttranslator.h"
 
@@ -72,25 +73,38 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
     qSort(mPlugins.begin(), mPlugins.end(), pluginDescriptionLessThan);
 
     ui->pluginList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->pluginList));
+    ui->pluginList->setContextMenuPolicy(Qt::CustomContextMenu);
 
     init();
 
     connect(ui->pluginList, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(emitPluginSelected()));
     connect(ui->pluginList, SIGNAL(itemSelectionChanged()), this, SLOT(toggleAddButtonState()));
+    connect(ui->pluginList, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showContextMenu(const QPoint&)));
     connect(ui->searchEdit, SIGNAL(textEdited(QString)), this, SLOT(searchEditTexChanged(QString)));
     connect(ui->addButton, SIGNAL(clicked(bool)), this, SLOT(emitPluginSelected()));
 }
 
-void AddPluginDialog::setPluginsInUse(const QStringList pluginsInUseIDs)
+void AddPluginDialog::setPluginsInUse(QList<PluginData> const & pluginsInUse)
 {
-    Q_FOREACH (QString id, pluginsInUseIDs)
+    mPluginsInfo = pluginsInUse;
+    Q_FOREACH (PluginData const & data, mPluginsInfo)
     {
-        if (!mPluginsInUseAmount.contains(id))
-            mPluginsInUseAmount[id] = 0;
-        mPluginsInUseAmount[id]++;
+        if (!mPluginsInUseAmount.contains(data.typeId))
+            mPluginsInUseAmount[data.typeId] = 0;
+        mPluginsInUseAmount[data.typeId]++;
     }
 
     init();
+}
+
+void AddPluginDialog::setPluginsInUse(const QStringList pluginsInUseIDs)
+{
+    QList<PluginData> plugins;
+    Q_FOREACH (QString const & id, pluginsInUseIDs)
+    {
+        plugins << PluginData(id, 0, 0);
+    }
+    setPluginsInUse(plugins);
 }
 
 void AddPluginDialog::init()
@@ -132,19 +146,47 @@ void AddPluginDialog::init()
 /************************************************
 
  ************************************************/
+void AddPluginDialog::pluginAdded(PluginData const & plugin)
+{
+    mPluginsInfo << plugin;
+    if (!mPluginsInUseAmount.contains(plugin.typeId))
+        mPluginsInUseAmount[plugin.typeId] = 0;
+    mPluginsInUseAmount[plugin.typeId]++;
+    init();
+}
+
 void AddPluginDialog::pluginAdded(const QString &id)
 {
-    if (!mPluginsInUseAmount.contains(id))
-        mPluginsInUseAmount[id] = 0;
-    mPluginsInUseAmount[id]++;
-    init();
+    pluginAdded(PluginData(id, 0, 0));
 }
 
 /************************************************
 
  ************************************************/
+void AddPluginDialog::pluginRemoved(PluginData const & plugin)
+{
+    for (QList<PluginData>::iterator i = mPluginsInfo.begin(), i_e = mPluginsInfo.end(); i_e != i; ++i)
+    {
+        if (plugin.plugin == i->plugin)
+        {
+            mPluginsInfo.erase(i);
+            break;
+        }
+    }
+    mPluginsInUseAmount[plugin.typeId]--;
+    init();
+}
+
 void AddPluginDialog::pluginRemoved(const QString &id)
 {
+    for (QList<PluginData>::iterator i = mPluginsInfo.begin(), i_e = mPluginsInfo.end(); i_e != i; ++i)
+    {
+        if (id == i->typeId)
+        {
+            mPluginsInfo.erase(i);
+            break;
+        }
+    }
     mPluginsInUseAmount[id]--;
     init();
 }
@@ -210,4 +252,39 @@ void AddPluginDialog::emitPluginSelected()
 void AddPluginDialog::toggleAddButtonState()
 {
     ui->addButton->setEnabled(ui->pluginList->currentItem() && ui->pluginList->currentItem()->isSelected());
+}
+
+/************************************************
+
+ ************************************************/
+void AddPluginDialog::showContextMenu(const QPoint& pos)
+{
+    QListWidgetItem * item = ui->pluginList->currentItem();
+    QMenu menu;
+    menu.addAction(XdgIcon::fromTheme(QLatin1String("list-add")), tr("Add widget")
+            , this, SLOT(emitPluginSelected()));
+    int count = 0;
+    if (item)
+    {
+        PluginInfo plugin = mPlugins.at(item->data(INDEX_ROLE).toInt());
+        for (QList<PluginData>::const_iterator i = mPluginsInfo.begin(), i_e = mPluginsInfo.end(); i_e != i; ++i)
+        {
+            if (plugin.id() == i->typeId && !i->pluginMenu.isNull())
+            {
+                ++count;
+                menu.addSeparator();
+                QAction* heading = new QAction(tr("Plugin #%1").arg(count), &menu);
+                menu.addSeparator();
+                heading->setEnabled(false);
+                menu.addAction(heading);
+                Q_FOREACH(QAction * a, i->pluginMenu->actions())
+                {
+                    if (!a->isSeparator())
+                        menu.addAction(a);
+                }
+            }
+        }
+
+    }
+    menu.exec(ui->pluginList->mapToGlobal(pos));
 }
