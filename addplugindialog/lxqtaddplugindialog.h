@@ -112,7 +112,7 @@ public slots:
 private slots:
     void emitPluginSelected();
     void searchEditTexChanged(const QString& text);
-    void toggleAddButtonState();
+    void toggleButtonsState();
     void showContextMenu(const QPoint& pos);
 };
 

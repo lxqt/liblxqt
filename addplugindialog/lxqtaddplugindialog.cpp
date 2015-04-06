@@ -78,10 +78,11 @@ AddPluginDialog::AddPluginDialog(const QStringList& desktopFilesDirs,
     init();
 
     connect(ui->pluginList, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(emitPluginSelected()));
-    connect(ui->pluginList, SIGNAL(itemSelectionChanged()), this, SLOT(toggleAddButtonState()));
+    connect(ui->pluginList, SIGNAL(itemSelectionChanged()), this, SLOT(toggleButtonsState()));
     connect(ui->pluginList, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(showContextMenu(const QPoint&)));
     connect(ui->searchEdit, SIGNAL(textEdited(QString)), this, SLOT(searchEditTexChanged(QString)));
     connect(ui->addButton, SIGNAL(clicked(bool)), this, SLOT(emitPluginSelected()));
+    connect(ui->manageButton, &QPushButton::clicked, [this] (bool) { showContextMenu(ui->pluginList->visualRect(ui->pluginList->currentIndex()).center()); });
 }
 
 void AddPluginDialog::setPluginsInUse(QList<PluginData> const & pluginsInUse)
@@ -227,6 +228,8 @@ void AddPluginDialog::timerEvent(QTimerEvent* event)
         {
             QListWidgetItem* item = pluginList->item(i);
             item->setHidden(! item->data(SEARCH_ROLE).toString().contains(s, Qt::CaseInsensitive));
+            if (item->isSelected() && item->isHidden())
+                pluginList->setCurrentRow(-1);
         }
     }
 }
@@ -249,9 +252,17 @@ void AddPluginDialog::emitPluginSelected()
 /************************************************
 
  ************************************************/
-void AddPluginDialog::toggleAddButtonState()
+void AddPluginDialog::toggleButtonsState()
 {
-    ui->addButton->setEnabled(ui->pluginList->currentItem() && ui->pluginList->currentItem()->isSelected());
+    QListWidgetItem * item = ui->pluginList->currentItem();
+    ui->addButton->setEnabled(item && item->isSelected());
+
+    ui->manageButton->setEnabled(nullptr != item && mPluginsInfo.end()
+            != std::find_if(mPluginsInfo.begin(), mPluginsInfo.end(), [this, item] (PluginData const & d) -> bool
+                {
+                    return mPlugins.at(item->data(INDEX_ROLE).toInt()).id() == d.typeId;
+                })
+            );
 }
 
 /************************************************
