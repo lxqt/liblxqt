@@ -60,14 +60,26 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
     {
         ui->moduleList->setVisible(true);
         ui->moduleList->setCurrentRow(0);
-        mMaxSize = QSize(qMax(page->geometry().width() + ui->moduleList->geometry().width(), mMaxSize.width()),
-                         qMax(page->geometry().height() + ui->buttons->geometry().height(), mMaxSize.height()));
+        mMaxSize = QSize(qMax(page->geometry().width() + ui->moduleList->geometry().width(),
+                              mMaxSize.width()),
+                         qMax(page->geometry().height() + ui->buttons->geometry().height(),
+                              mMaxSize.height()));
     }
     else
     {
         mMaxSize = page->geometry().size();
     }
     resize(mMaxSize);
+}
+
+void ConfigDialog::showPage(QWidget* page)
+{
+    int index = ui->stackedWidget->indexOf(page);
+    if (index < 0)
+        return;
+
+    ui->stackedWidget->setCurrentIndex(index);
+    ui->moduleList->setCurrentRow(index);
 }
 
 void ConfigDialog::closeEvent(QCloseEvent* event)

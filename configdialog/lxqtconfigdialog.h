@@ -55,6 +55,11 @@ public:
      */
     void addPage(QWidget* page, const QString& name, const QStringList& iconNames);
 
+    /*!
+     * Show page containing the widget in parameter
+     */
+    void showPage(QWidget *page);
+
 signals:
     /*!
      * This signal is emitted when the user pressed the "Reset" button.
