@@ -542,7 +542,7 @@ void GridLayout::setGeometry(const QRect &geometry)
             itemWidth = d->mCellSizeHint.width();
         }
 
-        itemWidth = qBound(d->mPrefCellMinSize.width(), itemWidth, d->mPrefCellMaxSize.width());
+        itemWidth = qBound(qMin(d->mPrefCellMinSize.width(), maxX), itemWidth, d->mPrefCellMaxSize.width());
         int width_remainder = stretch_h && 0 < itemWidth ? geometry.width() % itemWidth : 0;
         for (auto & w : itemWidths)
         {
@@ -564,7 +564,7 @@ void GridLayout::setGeometry(const QRect &geometry)
             itemHeight = d->mCellSizeHint.height();
         }
 
-        itemHeight = qBound(d->mPrefCellMinSize.height(), itemHeight, d->mPrefCellMaxSize.height());
+        itemHeight = qBound(qMin(d->mPrefCellMinSize.height(), maxY), itemHeight, d->mPrefCellMaxSize.height());
         int height_remainder = stretch_v && 0 < itemHeight ? geometry.height() % itemHeight : 0;
         for (auto & h : itemHeights)
         {
