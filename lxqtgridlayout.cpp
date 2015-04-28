@@ -529,50 +529,22 @@ void GridLayout::setGeometry(const QRect &geometry)
     const bool stretch_v = d->mStretch.testFlag(StretchVertical);
 
     const int cols = d->cols();
-    QVector<int> itemWidths(cols);
-    {
-        int itemWidth = 0;
-        if (stretch_h && 0 < cols)
-        {
-            itemWidth = geometry.width() / cols;
-            itemWidth = qMin(itemWidth, d->mCellMaxSize.width());
-        }
-        else
-        {
-            itemWidth = d->mCellSizeHint.width();
-        }
-
-        itemWidth = qBound(qMin(d->mPrefCellMinSize.width(), maxX), itemWidth, d->mPrefCellMaxSize.width());
-        int width_remainder = stretch_h && 0 < itemWidth ? geometry.width() % itemWidth : 0;
-        for (auto & w : itemWidths)
-        {
-            w = itemWidth + (0 < width_remainder-- ? 1 : 0);
-        }
-    }
+    int itemWidth = 0;
+    if (stretch_h && 0 < cols)
+        itemWidth = qMin(geometry.width() / cols, d->mCellMaxSize.width());
+    else
+        itemWidth = d->mCellSizeHint.width();
+    itemWidth = qBound(qMin(d->mPrefCellMinSize.width(), maxX), itemWidth, d->mPrefCellMaxSize.width());
+    const int widthRemain = stretch_h && 0 < itemWidth ? geometry.width() % itemWidth : 0;
 
     const int rows = d->rows();
-    QVector<int> itemHeights(rows);
-    {
-        int itemHeight = 0;
-        if (stretch_v && 0 < rows)
-        {
-            itemHeight = geometry.height() / rows;
-            itemHeight = qMin(itemHeight, d->mCellMaxSize.height());
-        }
-        else
-        {
-            itemHeight = d->mCellSizeHint.height();
-        }
-
-        itemHeight = qBound(qMin(d->mPrefCellMinSize.height(), maxY), itemHeight, d->mPrefCellMaxSize.height());
-        int height_remainder = stretch_v && 0 < itemHeight ? geometry.height() % itemHeight : 0;
-        for (auto & h : itemHeights)
-        {
-            h = itemHeight + (0 < height_remainder-- ? 1 : 0);
-        }
-    }
-
-
+    int itemHeight = 0;
+    if (stretch_v && 0 < rows)
+        itemHeight = qMin(geometry.height() / rows, d->mCellMaxSize.height());
+    else
+        itemHeight = d->mCellSizeHint.height();
+    itemHeight = qBound(qMin(d->mPrefCellMinSize.height(), maxY), itemHeight, d->mPrefCellMaxSize.height());
+    const int heightRemain = stretch_v && 0 < itemHeight ? geometry.height() % itemHeight : 0;
 
 #if 0
     qDebug() << "** GridLayout::setGeometry *******************************";
@@ -586,48 +558,49 @@ void GridLayout::setGeometry(const QRect &geometry)
     qDebug() << "Item:" << "h:" << itemHeight << " w:" << itemWidth;
 #endif
 
-    int col, row;
+    int remain_height = heightRemain;
+    int remain_width = widthRemain;
     if (d->mDirection == LeftToRight)
     {
-        col = row = 0;
+        int height = itemHeight + (0 < remain_height-- ? 1 : 0);
         foreach(QLayoutItem *item, d->mItems)
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
+            int width = itemWidth + (0 < remain_width-- ? 1 : 0);
 
-            if (cols <= col || x + itemWidths[col] > maxX)
+            if (x + width > maxX)
             {
                 x = geometry.left();
-                y += itemHeights[row];
+                y += height;
 
-                col = 0;
-                ++row;
+                height = itemHeight + (0 < remain_height-- ? 1 : 0);
+                remain_width = widthRemain;
             }
 
-            item->setGeometry(QRect(x, y, itemWidths[col], itemHeights[row]));
-            x += itemWidths[col];
-            ++col;
+            item->setGeometry(QRect(x, y, width, height));
+            x += width;
         }
     }
     else
     {
-        col = row = 0;
+        int width = itemWidth + (0 < remain_width-- ? 1 : 0);
         foreach(QLayoutItem *item, d->mItems)
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
+            int height = itemHeight + (0 < remain_height-- ? 1 : 0);
 
-            if (rows <= row || y + itemHeights[row] > maxY)
+            if (y + height > maxY)
             {
                 y = geometry.top();
-                x += itemWidths[col];
+                x += width;
 
-                row = 0;
-                ++col;
+                width = itemWidth + (0 < remain_width-- ? 1 : 0);
+                remain_height = heightRemain;
             }
-            item->setGeometry(QRect(x, y, itemWidths[col], itemHeights[row]));
-            y += itemHeights[row];
-            ++row;
+            item->setGeometry(QRect(x, y, width, height));
+            y += height;
         }
     }
 }
