@@ -45,7 +45,7 @@ namespace LxQt {
  *  doesn't the second instance will quietly exit without activating the first
  *  instance window. In any case only one instance is allowed.
  *
- *  This classes depends uses D-Bus and KF5::WindowSystem
+ *  These classes depend on D-Bus and KF5::WindowSystem
  *
  *  \code
  *
@@ -60,7 +60,8 @@ namespace LxQt {
  *      return app.exec();
  *  }
  *
- *  // SingleApplication code
+ *  // Singleore utility library for all LXQt components
+
  *  int main(int argc, char **argv)
  *  {
  *      LxQt::SingleApplication app(argc, argv);
@@ -98,7 +99,7 @@ public:
           * It's the default
           */
         ExitOnDBusFailure,
-        /** Don't exit if the connection to the D-Bus session bud fails.*/
+        /** Don't exit if the connection to the D-Bus session bus fails.*/
         NoExitOnDBusFailure
     };
 
