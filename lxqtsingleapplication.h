@@ -61,7 +61,6 @@ namespace LxQt {
  *  }
  *
  *  // Singleore utility library for all LXQt components
-
  *  int main(int argc, char **argv)
  *  {
  *      LxQt::SingleApplication app(argc, argv);
