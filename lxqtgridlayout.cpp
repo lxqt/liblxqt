@@ -522,35 +522,29 @@ void GridLayout::setGeometry(const QRect &geometry)
     //
     // http://qt-project.org/doc/qt-4.8/qrect.html
 
-    int maxX = geometry.left() + geometry.width();
-    int maxY = geometry.top() + geometry.height();
+    const int maxX = geometry.left() + geometry.width();
+    const int maxY = geometry.top() + geometry.height();
 
-    int itemWidth;
-    if (d->mStretch.testFlag(StretchHorizontal))
-    {
-        itemWidth = geometry.width() * 1.0 / d->cols();
-        itemWidth = qMin(itemWidth, d->mCellMaxSize.width());
-    }
+    const bool stretch_h = d->mStretch.testFlag(StretchHorizontal);
+    const bool stretch_v = d->mStretch.testFlag(StretchVertical);
+
+    const int cols = d->cols();
+    int itemWidth = 0;
+    if (stretch_h && 0 < cols)
+        itemWidth = qMin(geometry.width() / cols, d->mCellMaxSize.width());
     else
-    {
         itemWidth = d->mCellSizeHint.width();
-    }
+    itemWidth = qBound(qMin(d->mPrefCellMinSize.width(), maxX), itemWidth, d->mPrefCellMaxSize.width());
+    const int widthRemain = stretch_h && 0 < itemWidth ? geometry.width() % itemWidth : 0;
 
-    itemWidth = qBound(d->mPrefCellMinSize.width(), itemWidth, d->mPrefCellMaxSize.width());
-
-    int itemHeight;
-    if (d->mStretch.testFlag(StretchVertical))
-    {
-        itemHeight = geometry.height() * 1.0 / d->rows();
-        itemHeight = qMin(itemHeight, d->mCellMaxSize.height());
-    }
+    const int rows = d->rows();
+    int itemHeight = 0;
+    if (stretch_v && 0 < rows)
+        itemHeight = qMin(geometry.height() / rows, d->mCellMaxSize.height());
     else
-    {
         itemHeight = d->mCellSizeHint.height();
-    }
-
-    itemHeight = qBound(d->mPrefCellMinSize.height(), itemHeight, d->mPrefCellMaxSize.height());
-
+    itemHeight = qBound(qMin(d->mPrefCellMinSize.height(), maxY), itemHeight, d->mPrefCellMaxSize.height());
+    const int heightRemain = stretch_v && 0 < itemHeight ? geometry.height() % itemHeight : 0;
 
 #if 0
     qDebug() << "** GridLayout::setGeometry *******************************";
@@ -564,45 +558,49 @@ void GridLayout::setGeometry(const QRect &geometry)
     qDebug() << "Item:" << "h:" << itemHeight << " w:" << itemWidth;
 #endif
 
+    int remain_height = heightRemain;
+    int remain_width = widthRemain;
     if (d->mDirection == LeftToRight)
     {
+        int height = itemHeight + (0 < remain_height-- ? 1 : 0);
         foreach(QLayoutItem *item, d->mItems)
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
+            int width = itemWidth + (0 < remain_width-- ? 1 : 0);
 
-            if (x + itemWidth > maxX)
+            if (x + width > maxX)
             {
                 x = geometry.left();
-                if (d->mStretch.testFlag(StretchVertical))
-                    y += geometry.height() / d->rows();
-                else
-                    y += itemHeight;
+                y += height;
 
+                height = itemHeight + (0 < remain_height-- ? 1 : 0);
+                remain_width = widthRemain;
             }
 
-            item->setGeometry(QRect(x, y, itemWidth, itemHeight));
-            x += itemWidth;
+            item->setGeometry(QRect(x, y, width, height));
+            x += width;
         }
     }
     else
     {
+        int width = itemWidth + (0 < remain_width-- ? 1 : 0);
         foreach(QLayoutItem *item, d->mItems)
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
+            int height = itemHeight + (0 < remain_height-- ? 1 : 0);
 
-            if (y + itemHeight > maxY)
+            if (y + height > maxY)
             {
                 y = geometry.top();
-                if (d->mStretch.testFlag(StretchHorizontal))
-                    x += geometry.width() / d->cols();
-                else
-                    x += itemWidth;
+                x += width;
 
+                width = itemWidth + (0 < remain_width-- ? 1 : 0);
+                remain_height = heightRemain;
             }
-            item->setGeometry(QRect(x, y, itemWidth, itemHeight));
-            y += itemHeight;
+            item->setGeometry(QRect(x, y, width, height));
+            y += height;
         }
     }
 }

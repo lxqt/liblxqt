@@ -90,6 +90,16 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="manageButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Mange widget(s)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="addButton">
        <property name="text">
         <string>Add Widget</string>
