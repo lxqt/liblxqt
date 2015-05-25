@@ -34,13 +34,20 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
     QDialog(parent),
     mSettings(settings),
     mCache(new SettingsCache(settings)),
-    ui(new Ui::ConfigDialog)
+    ui(new Ui::ConfigDialog) 
 {
     ui->setupUi(this);
     setWindowTitle(title);
     connect(ui->buttons, SIGNAL(clicked(QAbstractButton*)), SLOT(dialogButtonsAction(QAbstractButton*)));
     ui->moduleList->setVisible(false);
     connect(Settings::globalSettings(), SIGNAL(settingsChanged()), this, SLOT(updateIcons()));
+    foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
+        button->setAutoDefault(false);
+}
+
+void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons) 
+{
+    ui->buttons->setStandardButtons(buttons);
     foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
         button->setAutoDefault(false);
 }
@@ -90,13 +97,14 @@ void ConfigDialog::closeEvent(QCloseEvent* event)
 
 void ConfigDialog::dialogButtonsAction(QAbstractButton* button)
 {
-    QDialogButtonBox::ButtonRole role = ui->buttons->buttonRole(button);
-    if (role == QDialogButtonBox::ResetRole)
+    QDialogButtonBox::StandardButton standardButton = ui->buttons->standardButton(button);
+    emit clicked(standardButton);
+    if (standardButton == QDialogButtonBox::Reset)
     {
         mCache->loadToSettings();
         emit reset();
     }
-    else
+    else if(standardButton == QDialogButtonBox::Close)
     {
         close();
     }

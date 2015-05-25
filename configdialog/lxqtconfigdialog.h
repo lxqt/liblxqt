@@ -28,6 +28,7 @@
 #include "lxqtsettings.h"
 #include <QDialog>
 #include <QAbstractButton>
+#include <QDialogButtonBox>
 #include "lxqtglobals.h"
 
 namespace Ui {
@@ -43,7 +44,13 @@ class LXQT_API ConfigDialog : public QDialog
 
 public:
     explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = 0);
+
     ~ConfigDialog();
+
+    /*!
+     * Sets buttons in button bar
+     */
+    void setButtons(QDialogButtonBox::StandardButtons buttons);
 
     /*!
      * Add a page to the configure dialog
@@ -60,6 +67,8 @@ public:
      */
     void showPage(QWidget *page);
 
+   
+
 signals:
     /*!
      * This signal is emitted when the user pressed the "Reset" button.
@@ -72,6 +81,11 @@ signals:
      * It is only necessary if additional actions need to be performed - Settings are handled automatically.
      */
     void save();
+
+    /*!
+     * This is emitted when some button in the buttonbar is clicked.
+     */
+    void clicked(QDialogButtonBox::StandardButton);
 
 protected:
     Settings* mSettings;
