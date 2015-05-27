@@ -2,24 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
-    <name>AddPluginDialog</name>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
-        <source>Search:</source>
-        <translation>Suchen:</translation>
-    </message>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="95"/>
-        <source>Add Widget</source>
-        <translation>Element hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="102"/>
-        <source>Close</source>
-        <translation>Schließen</translation>
-    </message>
-</context>
-<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
@@ -87,14 +69,6 @@
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
         <translation>LXQt wird dank der Arbeit unseres über die ganze Welt verteilten Übersetzungsteams in viele Sprachen übersetzt.</translation>
-    </message>
-</context>
-<context>
-    <name>LxQt::AddPluginDialog</name>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="112"/>
-        <source>(%1 active)</source>
-        <translation>(%1 aktiv)</translation>
     </message>
 </context>
 <context>

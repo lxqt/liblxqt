@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
-<context>
-    <name>AddPluginDialog</name>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
-        <source>Search:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="52"/>
-        <source>Add Widget</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="59"/>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
+<TS version="2.1">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -90,14 +72,6 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AddPluginDialog</name>
-    <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="199"/>
-        <source>(%1 active)</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>LxQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -121,93 +95,93 @@
 <context>
     <name>LxQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="113"/>
+        <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="120"/>
+        <location filename="../lxqtpowermanager.cpp" line="119"/>
         <source>Suspend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="127"/>
+        <location filename="../lxqtpowermanager.cpp" line="126"/>
         <source>Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="134"/>
+        <location filename="../lxqtpowermanager.cpp" line="133"/>
         <source>Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="141"/>
+        <location filename="../lxqtpowermanager.cpp" line="140"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="153"/>
+        <location filename="../lxqtpowermanager.cpp" line="152"/>
         <source>LxQt Session Suspend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="154"/>
+        <location filename="../lxqtpowermanager.cpp" line="153"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="163"/>
+        <location filename="../lxqtpowermanager.cpp" line="162"/>
         <source>LxQt Session Hibernate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="164"/>
+        <location filename="../lxqtpowermanager.cpp" line="163"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="173"/>
+        <location filename="../lxqtpowermanager.cpp" line="172"/>
         <source>LxQt Session Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="174"/>
+        <location filename="../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="183"/>
+        <location filename="../lxqtpowermanager.cpp" line="182"/>
         <source>LxQt Session Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="184"/>
+        <location filename="../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="193"/>
+        <location filename="../lxqtpowermanager.cpp" line="192"/>
         <source>LxQt Session Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="194"/>
+        <location filename="../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="202"/>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="201"/>
+        <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>LxQt Power Manager Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="202"/>
+        <location filename="../lxqtpowermanager.cpp" line="201"/>
         <source>Hibernate failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Suspend failed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -215,53 +189,53 @@
 <context>
     <name>LxQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="52"/>
+        <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
+        <location filename="../lxqtscreensaver.cpp" line="70"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
+        <location filename="../lxqtscreensaver.cpp" line="86"/>
+        <location filename="../lxqtscreensaver.cpp" line="98"/>
+        <location filename="../lxqtscreensaver.cpp" line="106"/>
+        <location filename="../lxqtscreensaver.cpp" line="114"/>
+        <location filename="../lxqtscreensaver.cpp" line="123"/>
         <source>Screen Saver Activation Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="72"/>
+        <location filename="../lxqtscreensaver.cpp" line="71"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="80"/>
+        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="88"/>
+        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="100"/>
+        <location filename="../lxqtscreensaver.cpp" line="99"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="108"/>
+        <location filename="../lxqtscreensaver.cpp" line="107"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="116"/>
+        <location filename="../lxqtscreensaver.cpp" line="115"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="125"/>
+        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
         <translation type="unfinished"></translation>
     </message>
