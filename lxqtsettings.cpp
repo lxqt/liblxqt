@@ -463,13 +463,7 @@ QString LxQtTheme::previewImage() const
  ************************************************/
 QString LxQtTheme::qss(const QString& module) const
 {
-    QString path = QString("%1/%2.qss").arg(d->mPath, module);
-
-    QString styleSheet;
-    if (!path.isEmpty())
-        styleSheet = d->loadQss(path);
-    else
-        qWarning() << QString("QSS file %1 cannot be found").arg(path);
+    QString styleSheet = d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
 
     // Single/double click ...........................
     Settings s("desktop");
