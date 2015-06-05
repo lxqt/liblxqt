@@ -325,6 +325,7 @@ ConsoleKitProvider::~ConsoleKitProvider()
 bool ConsoleKitProvider::canAction(Power::Action action) const
 {
     QString command;
+    bool needsBoolFlag = false;
 
     switch (action)
     {
@@ -336,9 +337,28 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
         command = "CanStop";
         break;
 
+    case Power::PowerHibernate:
+        command  = "CanHibernate";
+        needsBoolFlag = true;
+        break;
+
+    case Power::PowerSuspend:
+        command  = "CanSuspend";
+        needsBoolFlag = true;
+        break;
+
     default:
         return false;
     }
+
+    if (needsBoolFlag)
+        return dbusCallSystemd(CONSOLEKIT_SERVICE,
+                CONSOLEKIT_PATH,
+                CONSOLEKIT_INTERFACE,
+                QDBusConnection::systemBus(),
+                command,
+                false,
+                PowerProvider::DontCheckDBUS);
 
     return dbusCall(CONSOLEKIT_SERVICE,
                     CONSOLEKIT_PATH,
@@ -356,6 +376,7 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
 bool ConsoleKitProvider::doAction(Power::Action action)
 {
     QString command;
+    bool needsBoolFlag = false;
 
     switch (action)
     {
@@ -367,9 +388,27 @@ bool ConsoleKitProvider::doAction(Power::Action action)
         command = "Stop";
         break;
 
+    case Power::PowerHibernate:
+        command = "Hibernate";
+        needsBoolFlag = true;
+        break;
+
+    case Power::PowerSuspend:
+        command = "Suspend";
+        needsBoolFlag = true;
+        break;
+
     default:
         return false;
     }
+
+    if (needsBoolFlag)
+        return dbusCallSystemd(CONSOLEKIT_SERVICE,
+                CONSOLEKIT_PATH,
+                CONSOLEKIT_INTERFACE,
+                QDBusConnection::systemBus(),
+                command,
+                true);
 
     return dbusCall(CONSOLEKIT_SERVICE,
              CONSOLEKIT_PATH,
