@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt">
+<TS version="2.1" language="pt">
 <context>
     <name>AddPluginDialog</name>
     <message>
@@ -8,23 +8,20 @@
         <translation type="obsolete">Adicionar extras</translation>
     </message>
     <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="22"/>
         <source>Search:</source>
-        <translation>Procurar:</translation>
+        <translation type="vanished">Procurar:</translation>
     </message>
     <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="52"/>
         <source>Add Widget</source>
-        <translation>Adicionar widget</translation>
+        <translation type="vanished">Adicionar widget</translation>
     </message>
     <message>
         <source>Add plugin</source>
         <translation type="obsolete">Adicionar extra</translation>
     </message>
     <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.ui" line="59"/>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation type="vanished">Fechar</translation>
     </message>
 </context>
 <context>
@@ -38,63 +35,53 @@
 <context>
     <name>LxQt::AboutDialogPrivate</name>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="86"/>
         <source>Version: %1</source>
-        <translation>Versão: %1</translation>
+        <translation type="vanished">Versão: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="99"/>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Ambiente de trabalho rápido, simples e fácil de utilizar baseado na tecnologia Qt.</translation>
+        <translation type="vanished">Ambiente de trabalho rápido, simples e fácil de utilizar baseado na tecnologia Qt.</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="101"/>
         <source>LXQt would not have been possible without the &lt;a %1&gt;Razor-qt&lt;/a&gt; project and its many contributors.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>O LxQt não seria possível sem a ajuda dos colaboradores do projeto &lt;a %1&gt;Razor-qt&lt;/a&gt;.</translation>
+        <translation type="vanished">O LxQt não seria possível sem a ajuda dos colaboradores do projeto &lt;a %1&gt;Razor-qt&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="103"/>
         <source>Copyright: %1-%2 %3</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Direitos de autor: %1-%2 %3</translation>
+        <translation type="vanished">Direitos de autor: %1-%2 %3</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="105"/>
         <source>Homepage: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Página web: %1</translation>
+        <translation type="vanished">Página web: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="107"/>
         <source>License: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Licença: %1</translation>
+        <translation type="vanished">Licença: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="117"/>
         <source>LXQt is developed by the &lt;a %1&gt;LXQt Team and contributors&lt;/a&gt;.</source>
         <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation>O LxQt é desenvolvido pelos &lt;a %1&gt;colaboradores da equipa LxQt&lt;/a&gt;.</translation>
+        <translation type="vanished">O LxQt é desenvolvido pelos &lt;a %1&gt;colaboradores da equipa LxQt&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="119"/>
         <source>If you are interested in working with our development team, &lt;a %1&gt;join us&lt;/a&gt;.</source>
         <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation>Se quiser ajudar no desenvolvimento, &lt;a %1&gt;pode integrar a nossa equipa&lt;/a&gt;.</translation>
+        <translation type="vanished">Se quiser ajudar no desenvolvimento, &lt;a %1&gt;pode integrar a nossa equipa&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="137"/>
         <source>Special thanks to:</source>
         <comment>About dialog, &apos;Thanks&apos; tab text</comment>
-        <translation>Um especial obrigado:</translation>
+        <translation type="vanished">Um especial obrigado:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.cpp" line="144"/>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation>O LxQt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução de todo o mundo.</translation>
+        <translation type="vanished">O LxQt está traduzido em diversos idiomas graças ao trabalho desenvolvido pelas equipas de tradução de todo o mundo.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -169,9 +156,8 @@
 <context>
     <name>LxQt::AddPluginDialog</name>
     <message>
-        <location filename="../addplugindialog/lxqtaddplugindialog.cpp" line="199"/>
         <source>(%1 active)</source>
-        <translation>(%1 ativo)</translation>
+        <translation type="vanished">(%1 ativo)</translation>
     </message>
 </context>
 <context>
@@ -198,93 +184,93 @@
 <context>
     <name>LxQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="113"/>
+        <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
         <translation>Hibernar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="120"/>
+        <location filename="../lxqtpowermanager.cpp" line="119"/>
         <source>Suspend</source>
         <translation>Suspender</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="127"/>
+        <location filename="../lxqtpowermanager.cpp" line="126"/>
         <source>Reboot</source>
         <translation>Reiniciar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="134"/>
+        <location filename="../lxqtpowermanager.cpp" line="133"/>
         <source>Shutdown</source>
         <translation>Desligar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="141"/>
+        <location filename="../lxqtpowermanager.cpp" line="140"/>
         <source>Logout</source>
         <translation>Terminar sessão</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="153"/>
+        <location filename="../lxqtpowermanager.cpp" line="152"/>
         <source>LxQt Session Suspend</source>
         <translation>Suspender</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="154"/>
+        <location filename="../lxqtpowermanager.cpp" line="153"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>Pretende mesmo suspender o computador?&lt;p&gt;A suspensão deixa o computador num estado de energia baixa. O estado do sistema não é guardado se faltar a energia.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="163"/>
+        <location filename="../lxqtpowermanager.cpp" line="162"/>
         <source>LxQt Session Hibernate</source>
         <translation>Hibernar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="164"/>
+        <location filename="../lxqtpowermanager.cpp" line="163"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>Pretende mesmo hibernar o computador?&lt;p&gt;A hibernação deixa o computador num estado de energia baixa. O estado do sistema é guardado se faltar a energia.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="173"/>
+        <location filename="../lxqtpowermanager.cpp" line="172"/>
         <source>LxQt Session Reboot</source>
         <translation>Reiniciar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="174"/>
+        <location filename="../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>Pretende mesmo reiniciar o computador? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="183"/>
+        <location filename="../lxqtpowermanager.cpp" line="182"/>
         <source>LxQt Session Shutdown</source>
         <translation>Desligar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="184"/>
+        <location filename="../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>Pretende mesmo desligar o computador? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="193"/>
+        <location filename="../lxqtpowermanager.cpp" line="192"/>
         <source>LxQt Session Logout</source>
         <translation>Terminar sessão</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="194"/>
+        <location filename="../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>Pretende mesmo terminar a sessão? Os trabalhos não gravados serão perdidos...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="202"/>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="201"/>
+        <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>LxQt Power Manager Error</source>
         <translation>Erro do gestor de energia do LxQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="202"/>
+        <location filename="../lxqtpowermanager.cpp" line="201"/>
         <source>Hibernate failed.</source>
         <translation>Falha ao hibernar.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Suspend failed.</source>
         <translation>Falha ao suspender.</translation>
     </message>
@@ -292,53 +278,53 @@
 <context>
     <name>LxQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="52"/>
+        <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
         <translation>Bloquear ecrã</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
+        <location filename="../lxqtscreensaver.cpp" line="70"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
+        <location filename="../lxqtscreensaver.cpp" line="86"/>
+        <location filename="../lxqtscreensaver.cpp" line="98"/>
+        <location filename="../lxqtscreensaver.cpp" line="106"/>
+        <location filename="../lxqtscreensaver.cpp" line="114"/>
+        <location filename="../lxqtscreensaver.cpp" line="123"/>
         <source>Screen Saver Activation Error</source>
         <translation>Erro ao ativar a proteção de ecrã</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="72"/>
+        <location filename="../lxqtscreensaver.cpp" line="71"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. O xdg-screensaver terminou abruptamente.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="80"/>
+        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. O xdg-screensaver não está instalado corretamente.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="88"/>
+        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. O xdg-screensaver não foi iniciado.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="100"/>
+        <location filename="../lxqtscreensaver.cpp" line="99"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Existem erros na sintaxe nos argumentos xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="108"/>
+        <location filename="../lxqtscreensaver.cpp" line="107"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Certifique-se que o xdg-screensaver está instalado e em execução.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="116"/>
+        <location filename="../lxqtscreensaver.cpp" line="115"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Erro na ação &apos;activate&apos;. Certifique-se que o xdg-screensaver está instalado e em execução.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="125"/>
+        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
         <translation>Ocorreu um erro ao iniciar a proteção de ecrã. O erro xdg-screensaver=%1 não é conhecido ou documentado.</translation>
     </message>
@@ -378,44 +364,37 @@
 <context>
     <name>about</name>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="14"/>
         <source> About LXQt</source>
-        <translation> Sobre o LxQt</translation>
+        <translation type="vanished"> Sobre o LxQt</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="66"/>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
-        <translation>Sobre</translation>
+        <translation type="vanished">Sobre</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="83"/>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Autores</translation>
+        <translation type="vanished">Autores</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="100"/>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Agradecimentos</translation>
+        <translation type="vanished">Agradecimentos</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="117"/>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Traduções</translation>
+        <translation type="vanished">Traduções</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="134"/>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Informações técnicas</translation>
+        <translation type="vanished">Informações técnicas</translation>
     </message>
     <message>
-        <location filename="../aboutdialog/lxqtaboutdialog.ui" line="165"/>
         <source>Copy to clipboard</source>
-        <translation>Copiar para a área de transferência</translation>
+        <translation type="vanished">Copiar para a área de transferência</translation>
     </message>
 </context>
 </TS>
