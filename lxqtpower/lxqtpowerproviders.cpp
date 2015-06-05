@@ -330,21 +330,49 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
     {
     case Power::PowerReboot:
         command = "CanRestart";
+        return dbusCall(CONSOLEKIT_SERVICE,
+                    CONSOLEKIT_PATH,
+                    CONSOLEKIT_INTERFACE,
+                    QDBusConnection::systemBus(),
+                    command,
+                    // canAction should be always silent because it can freeze
+                    // g_main_context_iteration Qt event loop in QMessageBox
+                    // on panel startup if there is no DBUS running.
+                    PowerProvider::DontCheckDBUS
+                   );
         break;
 
     case Power::PowerShutdown:
         command = "CanStop";
+        return dbusCall(CONSOLEKIT_SERVICE,
+                    CONSOLEKIT_PATH,
+                    CONSOLEKIT_INTERFACE,
+                    QDBusConnection::systemBus(),
+                    command,
+                    // canAction should be always silent because it can freeze
+                    // g_main_context_iteration Qt event loop in QMessageBox
+                    // on panel startup if there is no DBUS running.
+                    PowerProvider::DontCheckDBUS
+                   );
+        break;
+    case Power::PowerHibernate:
+        command  = "CanHibernate";
+        break;
+
+    case Power::PowerSuspend:
+        command  = "CanSuspend";
         break;
 
     default:
         return false;
     }
 
-    return dbusCall(CONSOLEKIT_SERVICE,
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
                     CONSOLEKIT_PATH,
                     CONSOLEKIT_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
+                    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -361,22 +389,47 @@ bool ConsoleKitProvider::doAction(Power::Action action)
     {
     case Power::PowerReboot:
         command = "Restart";
+        return dbusCall(CONSOLEKIT_SERVICE,
+             CONSOLEKIT_PATH,
+             CONSOLEKIT_INTERFACE,
+             QDBusConnection::systemBus(),
+             command
+            );
         break;
 
     case Power::PowerShutdown:
         command = "Stop";
+        return dbusCall(CONSOLEKIT_SERVICE,
+             CONSOLEKIT_PATH,
+             CONSOLEKIT_INTERFACE,
+             QDBusConnection::systemBus(),
+             command
+            );
+        break;
+
+    case Power::PowerHibernate:
+        command = "Hibernate";
+        break;
+
+    case Power::PowerSuspend:
+        command = "Suspend";
         break;
 
     default:
         return false;
     }
 
-    return dbusCall(CONSOLEKIT_SERVICE,
-             CONSOLEKIT_PATH,
-             CONSOLEKIT_INTERFACE,
-             QDBusConnection::systemBus(),
-             command
-            );
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
+                    CONSOLEKIT_PATH,
+                    CONSOLEKIT_INTERFACE,
+                    QDBusConnection::systemBus(),
+                    command,
+                    true,
+                    // canAction should be always silent because it can freeze
+                    // g_main_context_iteration Qt event loop in QMessageBox
+                    // on panel startup if there is no DBUS running.
+                    PowerProvider::DontCheckDBUS
+                   );
 }
 
 /************************************************
