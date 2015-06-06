@@ -340,7 +340,6 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
                     // on panel startup if there is no DBUS running.
                     PowerProvider::DontCheckDBUS
                    );
-        break;
 
     case Power::PowerShutdown:
         command = "CanStop";
@@ -354,7 +353,7 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
                     // on panel startup if there is no DBUS running.
                     PowerProvider::DontCheckDBUS
                    );
-        break;
+
     case Power::PowerHibernate:
         command  = "CanHibernate";
         break;
@@ -395,7 +394,6 @@ bool ConsoleKitProvider::doAction(Power::Action action)
              QDBusConnection::systemBus(),
              command
             );
-        break;
 
     case Power::PowerShutdown:
         command = "Stop";
@@ -405,7 +403,6 @@ bool ConsoleKitProvider::doAction(Power::Action action)
              QDBusConnection::systemBus(),
              command
             );
-        break;
 
     case Power::PowerHibernate:
         command = "Hibernate";
