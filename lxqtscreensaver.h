@@ -28,12 +28,10 @@
 #ifndef SCREENSAVER_H
 #define SCREENSAVER_H
 
-#include <QProcess>
-#include <QObject>
 #include "lxqtglobals.h"
+#include <QObject>
+#include <QProcess>
 #include <QAction>
-
-class QProcess;
 
 namespace LxQt
 {

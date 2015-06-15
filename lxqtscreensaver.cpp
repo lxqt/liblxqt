@@ -64,38 +64,16 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
 {
     QWidget *p = qobject_cast<QWidget*>(parent());
 
-    if (status == QProcess::CrashExit)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "xdg-screensaver cannot be started due its crash.")
-                            );
-    }
-    else if (err == -2)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "xdg-screensaver is not installed correctly.")
-                            );
-    }
-    else if (err == -1)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "xdg-screensaver cannot be started.")
-                            );
-    }
-    else if (err == 0)
+    // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
+
+    if (err == QProcess::NormalExit) // QProcess::NormalExit = 0
     {
         emit activated();
     }
     else if (err == 1)
     {
         QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
+                             tr("Screen Saver Error"),
                              tr("An error occurred starting screensaver. "
                                 "Syntax error in xdg-screensaver arguments.")
                             );
@@ -122,7 +100,7 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
         QMessageBox::warning(p,
                              tr("Screen Saver Activation Error"),
                              tr("An error occurred starting screensaver. "
-                                "Unknown error - undocumented return value from xdg-screensaver=%1.").arg(err)
+                                "Unknown error - undocumented return value from xdg-screensaver: %1.").arg(err)
                             );
     }
     emit done();
