@@ -67,7 +67,7 @@ public:
      */
     void showPage(QWidget *page);
 
-   
+
 
 signals:
     /*!

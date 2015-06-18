@@ -35,7 +35,7 @@
 #include "lxqtglobals.h"
 
 class QEvent;
-    
+
 namespace LxQt
 {
 

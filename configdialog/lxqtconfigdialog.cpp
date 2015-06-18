@@ -34,7 +34,7 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
     QDialog(parent),
     mSettings(settings),
     mCache(new SettingsCache(settings)),
-    ui(new Ui::ConfigDialog) 
+    ui(new Ui::ConfigDialog)
 {
     ui->setupUi(this);
     setWindowTitle(title);
@@ -45,7 +45,7 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
         button->setAutoDefault(false);
 }
 
-void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons) 
+void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons)
 {
     ui->buttons->setStandardButtons(buttons);
     foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())

@@ -42,12 +42,12 @@ class PowerProvider: public QObject
 {
     Q_OBJECT
 public:
-    
+
     enum DbusErrorCheck {
         CheckDBUS,
         DontCheckDBUS
     };
-    
+
     explicit PowerProvider(QObject *parent = 0);
     virtual ~PowerProvider();
 
