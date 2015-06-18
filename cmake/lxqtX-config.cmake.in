@@ -21,6 +21,10 @@
 #                        This path can be found calling Qt4's qmake:
 #                             qmake -query QT_INSTALL_CONFIGURATION
 #
+#  LXQT_DATA_DIR      - LXQt base directory relative to which data files should
+#                       be searched.Defaults to CMAKE_INSTALL_FULL_DATADIR. It's
+#                       added to XDG_DATA_DIRS by the startlxqt script.
+#
 # LXQT_USE_FILE       - The variable LXQT_USE_FILE is set which is the path to a CMake file that
 #                        can be included to compile lxqt applications and libraries. It sets up
 #                        the compilation environment for include directories and populates a
@@ -63,6 +67,7 @@ set(LXQT_SHARE_DIR          @LXQT_SHARE_DIR@)
 set(LXQT_RELATIVE_TRANSLATIONS_DIR   @LXQT_RELATIVE_TRANSLATIONS_DIR@)
 set(LXQT_TRANSLATIONS_DIR   @LXQT_TRANSLATIONS_DIR@)
 set(LXQT_ETC_XDG_DIR        @LXQT_ETC_XDG_DIR@)
+set(LXQT_DATA_DIR           @LXQT_DATA_DIR@)
 set(LXQT_CMAKE_MODULES_DIR  @CFG_LXQT_CMAKE_MODULES_DIR@)
 
 set(LXQT_INCLUDE_DIR        @CFG_LXQT_INCLUDE_DIR@)
