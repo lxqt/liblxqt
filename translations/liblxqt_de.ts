@@ -2,85 +2,11 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
-    <name>AddPluginDialog</name>
-    <message>
-        <source>Search:</source>
-        <translation type="vanished">Suchen:</translation>
-    </message>
-    <message>
-        <source>Add Widget</source>
-        <translation type="vanished">Element hinzufügen</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Schließen</translation>
-    </message>
-</context>
-<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
-    </message>
-</context>
-<context>
-    <name>LxQt::AboutDialogPrivate</name>
-    <message>
-        <source>Version: %1</source>
-        <translation type="vanished">Version: %1</translation>
-    </message>
-    <message>
-        <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
-        <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Fortgeschrittene, leicht zu bedienende und schnelle Arbeitsumgebung, basierend auf Qt-Technologien.</translation>
-    </message>
-    <message>
-        <source>LXQt would not have been possible without the &lt;a %1&gt;Razor-qt&lt;/a&gt; project and its many contributors.</source>
-        <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">LXQt wäre nicht ohne das &lt;a %1&gt;Razor-qt&lt;/a&gt;-Projekt und seine vielen Mitwirkenden möglich gewesen.</translation>
-    </message>
-    <message>
-        <source>Copyright: %1-%2 %3</source>
-        <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Urheberrecht: %1-%2 %3</translation>
-    </message>
-    <message>
-        <source>Homepage: %1</source>
-        <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Internetseite: %1</translation>
-    </message>
-    <message>
-        <source>License: %1</source>
-        <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Lizenz: %1</translation>
-    </message>
-    <message>
-        <source>LXQt is developed by the &lt;a %1&gt;LXQt Team and contributors&lt;/a&gt;.</source>
-        <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation type="vanished">LXQt wird vom &lt;a %1&gt;LXQt Team und Mitwirkenden&lt;/a&gt; entwickelt.</translation>
-    </message>
-    <message>
-        <source>If you are interested in working with our development team, &lt;a %1&gt;join us&lt;/a&gt;.</source>
-        <comment>About dialog, &apos;Authors&apos; tab text</comment>
-        <translation type="vanished">Wenn Sie an der Mitarbeit in unserem Entwicklungsteam interessiert sind, &lt;a %1&gt;treten Sie uns bei&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>Special thanks to:</source>
-        <comment>About dialog, &apos;Thanks&apos; tab text</comment>
-        <translation type="vanished">Besonderen Dank an:</translation>
-    </message>
-    <message>
-        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation type="vanished">LXQt wird dank der Arbeit unseres über die ganze Welt verteilten Übersetzungsteams in viele Sprachen übersetzt.</translation>
-    </message>
-</context>
-<context>
-    <name>LxQt::AddPluginDialog</name>
-    <message>
-        <source>(%1 active)</source>
-        <translation type="vanished">(%1 aktiv)</translation>
     </message>
 </context>
 <context>
@@ -206,50 +132,36 @@
         <translation>Bildschirm sperren</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
-        <source>Screen Saver Activation Error</source>
-        <translation>Fehler beim Aktivieren des Bildschirmschoners</translation>
+        <location filename="../lxqtscreensaver.cpp" line="76"/>
+        <source>Screen Saver Error</source>
+        <translation>Bildschirmschoner-Fehler</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
-        <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. xdg-screensaver kann wegen seines Absturzes nicht gestartet werden.</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
-        <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. xdg-screensaver ist nicht korrekt installiert.</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
-        <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. xdg-screensaver kann nicht gestartet werden.</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. Syntaxfehler in den Parametern für xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
+        <location filename="../lxqtscreensaver.cpp" line="92"/>
+        <location filename="../lxqtscreensaver.cpp" line="101"/>
+        <source>Screen Saver Activation Error</source>
+        <translation>Fehler beim Aktivieren des Bildschirmschoners</translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="85"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. Bitte stellen Sie sicher, dass xscreensaver installiert ist und funktioniert.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="93"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. Aktion &apos;aktivieren&apos; fehlgeschlagen. Bitte stellen Sie sicher, dass xscreensaver installiert ist und funktioniert.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. Unbekannter Fehler - ein undokumentierter Rückgabewert wurde von xdg-screensaver ausgegeben=%1.</translation>
+        <location filename="../lxqtscreensaver.cpp" line="102"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation>Beim Starten des Bildschirmschoners ist ein Fehler aufgetreten. Unbekannter Fehler - ein undokumentierter Rückgabewert wurde von xdg-screensaver ausgegeben: %1.</translation>
     </message>
 </context>
 <context>
@@ -271,42 +183,6 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="156"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>Fehler der Energieverwaltung (D-BUS-Aufruf)</translation>
-    </message>
-</context>
-<context>
-    <name>about</name>
-    <message>
-        <source> About LXQt</source>
-        <translation type="vanished">Über LxQt</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <comment>About dialog, Tab title </comment>
-        <translation type="vanished">Über</translation>
-    </message>
-    <message>
-        <source>Authors</source>
-        <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Programmierer</translation>
-    </message>
-    <message>
-        <source>Thanks</source>
-        <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Danksagungen</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Übersetzungen</translation>
-    </message>
-    <message>
-        <source>Technical Info</source>
-        <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Technische Hinweise</translation>
-    </message>
-    <message>
-        <source>Copy to clipboard</source>
-        <translation type="vanished">In Zwischenablage kopieren</translation>
     </message>
 </context>
 </TS>
