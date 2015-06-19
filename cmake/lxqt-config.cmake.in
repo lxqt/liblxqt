@@ -1,16 +1,8 @@
-# - Find the lxqt include and library dirs and define a some macros
+# - Finds the lxqt package
 #
 # The module defines the following variables
 #
 #  LXQT_FOUND         - Set to TRUE if all of the above has been found
-#
-#  LXQT_INCLUDE_DIR   - The lxqt include directory
-#
-#  LXQT_INCLUDE_DIRS  - The lxqt and the Qt include directory, for use with INCLUDE_DIRECTORIES()
-#
-#  LXQT_LIBRARY_DIRS  - The lxqt and the Qt library directories
-#
-#  LXQT_LIBRARIES     - The libraries needed to use lxqt
 #
 #  LXQT_SHARE_DIR     - This allows to install and read the configs from non-standard locations
 #
@@ -20,42 +12,13 @@
 #                        /etc/xdg/lxqt location. Unfortunately QSettings we are using internally
 #                        can be overriden in the Qt compilation time to use different path for
 #                        system-wide configs. (for example configure ... -sysconfdir /etc/settings ...)
-#                        This path can be found calling Qt4's qmake:
+#                        This path can be found calling Qt's qmake:
 #                             qmake -query QT_INSTALL_CONFIGURATION
 #
 #  LXQT_DATA_DIR      - LXQt base directory relative to which data files should
 #                       be searched.Defaults to CMAKE_INSTALL_FULL_DATADIR. It's
 #                       added to XDG_DATA_DIRS by the startlxqt script.
 #
-# LXQT_USE_FILE       - The variable LXQT_USE_FILE is set which is the path to a CMake file that
-#                        can be included to compile lxqt applications and libraries. It sets up
-#                        the compilation environment for include directories and populates a
-#                        LXQT_LIBRARIES variable.
-#
-# When using the components argument, LXQT_USE_* variables are automatically set
-# for the LXQT_USE_FILE to pick up.  If one wishes to manually set them, the
-# available ones to set include:
-#               LXQT_USE_MOUNT
-#               LXQT_USE_GLOBAL_KEY_CLIENT
-#
-# Typical usage could be something like:
-#   set(LXQT_USE_MOUNT 1)
-#   find_package(LXQT REQUIRED)
-#   include(${LXQT_USE_FILE})
-#
-#   lxqt_translate_ts(QM_FILES
-#     SOURCES
-#        ${H_FILES}
-#        ${CPP_FILES}
-#        ${UI_FILES}
-#   )
-#   lxqt_translate_desktop(DESKTOP_FILES
-#     SOURCES
-#        ${DESKTOP_FILES_IN}
-#  )
-#
-#   add_executable(myexe main.cpp)
-#   target_link_libraries(myexe $LXQT_LIBRARIES})
 
 @PACKAGE_INIT@
 
