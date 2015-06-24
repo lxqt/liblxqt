@@ -44,9 +44,13 @@ using namespace LxQt;
 #define QAPP_NAME qApp ? qApp->objectName().toUtf8().constData() : ""
 
 #include <cstdio>
-#include <cstdlib>
 #include <unistd.h>
+#include <cstring>
+#include <csignal>
+#include <sys/socket.h>
 #include <QDateTime>
+#include <QDebug>
+#include <QSocketNotifier>
 /*! \brief Log qDebug input to file
 Used only in pure Debug builds or when is the system environment
 variable LXQT_DEBUG set
@@ -108,10 +112,67 @@ Application::Application(int &argc, char** argv)
     updateTheme();
 }
 
+Application::Application(int &argc, char** argv, bool handleQuitSignals)
+    : Application(argc, argv)
+{
+    if (handleQuitSignals)
+    {
+        QList<int> signo_list = {SIGINT, SIGTERM, SIGHUP};
+        connect(this, &Application::unixSignal, [this, signo_list] (int signo)
+            {
+                if (signo_list.contains(signo))
+                    quit();
+            });
+        listenToUnixSignals(signo_list);
+    }
+}
 
 void Application::updateTheme()
 {
     QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
     setStyleSheet(lxqtTheme.qss(styleSheetKey));
     emit themeChanged();
+}
+
+namespace
+{
+    int signal_sock[2];
+
+
+    void signalHandler(int signo)
+    {
+        int ret = write(signal_sock[0], &signo, sizeof (int));
+        if (sizeof (int) != ret)
+            qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
+    }
+}
+
+void Application::listenToUnixSignals(QList<int> const & signoList)
+{
+    static QSocketNotifier * signal_notifier = nullptr;
+
+    if (nullptr == signal_notifier)
+    {
+        if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, signal_sock))
+        {
+            qCritical() << QStringLiteral("unable to create socketpair for correct signal handling: %1)").arg(strerror(errno));
+            return;
+        }
+
+        signal_notifier = new QSocketNotifier(signal_sock[1], QSocketNotifier::Read, this);
+        connect(signal_notifier, &QSocketNotifier::activated, [this] {
+                int signo = 0;
+                int ret = read(signal_sock[1], &signo, sizeof (int));
+                if (sizeof (int) != ret)
+                    qCritical() << QStringLiteral("unable to read signal from socketpair, %1").arg(strerror(errno));
+                emit unixSignal(signo);
+                });
+    }
+
+    struct sigaction sa;
+    sa.sa_handler = signalHandler;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+    for (auto const & signo : signoList)
+        sigaction(signo, &sa, nullptr);
 }

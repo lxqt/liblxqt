@@ -53,13 +53,27 @@ public:
      * \param argv standard argv as in QApplication
      */
     Application(int &argc, char **argv);
+    /*! Construct a LXQt application object.
+     * \param argc standard argc as in QApplication
+     * \param argv standard argv as in QApplication
+     * \param handleQuitSignals flag if signals SIGINT, SIGTERM, SIGHUP should be handled internaly (\sa quit() application)
+     */
+    Application(int &argc, char **argv, bool handleQuitSignals);
     virtual ~Application() {}
+    /*! Install UNIX signal handler for signals defined in \param signalList
+     * Upon receiving of any of this signals the \sa unixSignal signal is emitted
+     */
+    void listenToUnixSignals(QList<int> const & signolList);
 
 private slots:
     void updateTheme();
 
 signals:
     void themeChanged();
+    /*! Signal is emitted upon receival of registered unix signal
+     * \param signo the received unix signal number
+     */
+    void unixSignal(int signo);
 };
 
 #if defined(lxqtApp)
