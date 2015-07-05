@@ -25,6 +25,7 @@
 #ifndef LXQTNOTIFICATION_H
 #define LXQTNOTIFICATION_H
 
+#include <QObject>
 #include <QStringList>
 #include "lxqtglobals.h"
 
