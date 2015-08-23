@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="el_GR">
+<TS version="2.1" language="el">
 <context>
     <name>AddPluginDialog</name>
     <message>
         <source>Add plugins</source>
-        <translation type="obsolete">Προσθήκη επεκτάσεων</translation>
+        <translation type="obsolete">Προσθήκη πρόσθετων</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="vanished">Αναζήτηση:</translation>
+        <translation>Αναζήτηση:</translation>
     </message>
     <message>
         <source>Add plugin</source>
@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -32,32 +32,32 @@
     <name>LxQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
-        <translation type="vanished">Έκδοση: %1</translation>
+        <translation>Έκδοση: %1</translation>
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Προηγμένη, εύκολη στη χρήση και γρήγορη επιφάνεια εργασίας με βάση τις τεχνολογίες Qt.</translation>
+        <translation>Προηγμένη, εύκολη στη χρήση και γρήγορη επιφάνεια εργασίας με βάση τις τεχνολογίες Qt.</translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Πνευματικά δικαιώματα: %1-%2 %3</translation>
+        <translation>Πνευματικά δικαιώματα: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Αρχική σελίδα: %1</translation>
+        <translation>Ιστοσελίδα: %1</translation>
     </message>
     <message>
         <source>License: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Άδεια χρήσης: %1</translation>
+        <translation>Άδεια χρήσης: %1</translation>
     </message>
     <message>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation type="vanished">LXQt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων σε όλο τον κόσμο.</translation>
+        <translation>Το LXQt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων ανά την υφήλιο.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">Σφάλμα διαχείρισης ενέργειας LxQt</translation>
+        <translation>Σφάλμα διαχείρισης ενέργειας LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Αποτυχία αδρανοποίησης.</translation>
+        <translation>Αποτυχία νάρκωσης.</translation>
     </message>
 </context>
 <context>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
-        <translation>Εφεδρικές ειδοποιήσεις</translation>
+        <translation>Ανακατεύθυνση ειδοποιήσεων</translation>
     </message>
 </context>
 <context>
@@ -155,7 +155,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
-        <translation>Αδρανοποίηση</translation>
+        <translation>Νάρκη</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="119"/>
@@ -180,22 +180,22 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
         <source>LxQt Session Suspend</source>
-        <translation>Αναστολή συνεδρίας LxQt</translation>
+        <translation>Αναστολή της συνεδρίας LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Θέλετε πραγματικά να γίνει αναστολή του υπολογιστή;&lt;p&gt;Θέτει τον υπολογιστή σε κατάσταση χαμηλής κατανάλωσης. Η κατάσταση του συστήματος δε διατηρείται εάν διακοπεί η παροχή ρεύματος.</translation>
+        <translation>Θέλετε πραγματικά να γίνει αναστολή του υπολογιστή;&lt;p&gt;Θέτει τον υπολογιστή σε κατάσταση χαμηλής κατανάλωσης. Η κατάσταση του συστήματος δεν διατηρείται εάν διακοπεί η παροχή ρεύματος.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
         <source>LxQt Session Hibernate</source>
-        <translation>Κατάσταση αδρανοποίησης LxQt</translation>
+        <translation>Νάρκωση της συνεδρίας LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Θέλετε πραγματικά να γίνει αδρανοποίηση του υπολογιστή;&lt;p&gt;Θέτει τον υπολογιστή σε κατάσταση χαμηλής κατανάλωσης. Η κατάσταση του συστήματος διατηρείται εάν διακοπεί η παροχή ρεύματος.</translation>
+        <translation>Θέλετε πραγματικά να τεθεί σε νάρκη ο υπολογιστής;&lt;p&gt;Θέτει τον υπολογιστή σε κατάσταση χαμηλής κατανάλωσης. Η κατάσταση του συστήματος διατηρείται εάν διακοπεί η παροχή ρεύματος.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
@@ -220,7 +220,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
         <source>LxQt Session Logout</source>
-        <translation>Αποσύνδεση συνεδρίας LxQt</translation>
+        <translation>Αποσύνδεση της συνεδρίας LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -231,12 +231,12 @@
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>LxQt Power Manager Error</source>
-        <translation>Σφάλμα διαχείρισης ενέργειας LxQt</translation>
+        <translation>Σφάλμα διαχείρισης της ενέργειας LxQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <source>Hibernate failed.</source>
-        <translation>Αποτυχία αδρανοποίησης.</translation>
+        <translation>Αποτυχία νάρκωσης.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -260,12 +260,12 @@
         <location filename="../lxqtscreensaver.cpp" line="114"/>
         <location filename="../lxqtscreensaver.cpp" line="123"/>
         <source>Screen Saver Activation Error</source>
-        <translation>Σφάλμα ενεργοποίησης προστασίας οθόνης</translation>
+        <translation>Σφάλμα ενεργοποίησης της προστασίας οθόνης</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="71"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία εκκίνησης προστασίας οθόνης xdg λόγω κατάρευσης.</translation>
+        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία εκκίνησης της προστασίας οθόνης xdg λόγω κατάρρευσης.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="79"/>
@@ -275,12 +275,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία έναρξης προστασίας οθόνης xdg.</translation>
+        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία έναρξης της προστασίας οθόνης xdg.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="99"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Σφάλμα σύνταξης παραμέτρων προστασίας οθόνης xdg.</translation>
+        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Σφάλμα σύνταξης των παραμέτρων της προστασίας οθόνης xdg.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="107"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="115"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασία οθόνης. Αποτυχία ενέργειας &quot;ενεργοποίηση&quot;. Διασφαλίστε ότι η προστασία οθόνης είναι εγκατεστημένη και ότι εκτελείται.</translation>
+        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασία οθόνης. Αποτυχία ενέργειας «ενεργοποίηση». Διασφαλίστε ότι η προστασία οθόνης είναι εγκατεστημένη και ότι εκτελείται.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="124"/>
@@ -302,7 +302,7 @@
     <name>LxQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
-        <translation type="obsolete">Εκκαθάριση</translation>
+        <translation type="obsolete">Καθαρισμός</translation>
     </message>
     <message>
         <source>None</source>
@@ -334,32 +334,32 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Σχετικά με το LxQt</translation>
+        <translation> Σχετικά με το LxQt</translation>
     </message>
     <message>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
-        <translation type="vanished">Σχετικά</translation>
+        <translation>Σχετικά</translation>
     </message>
     <message>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Δημιουργοί</translation>
+        <translation>Συγγραφείς</translation>
     </message>
     <message>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Ευχαριστίες</translation>
+        <translation>Ευχαριστίες</translation>
     </message>
     <message>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Μεταφράσεις</translation>
+        <translation>Μεταφράσεις</translation>
     </message>
     <message>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Τεχνικές πληροφορίες</translation>
+        <translation>Τεχνικές πληροφορίες</translation>
     </message>
 </context>
 </TS>
