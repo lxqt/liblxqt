@@ -28,7 +28,7 @@
 #include <QStringList>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 namespace ProgramFinder
@@ -57,5 +57,5 @@ namespace ProgramFinder
     LXQT_API QString programName(const QString& command);
 }
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTPROGRAMFINDER_H

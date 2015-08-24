@@ -28,7 +28,7 @@
 #include "lxqtglobals.h"
 #include <XdgDesktopFile>
 
-namespace LxQt
+namespace LXQt
 {
 
 /*! \brief The AutostartEntry class provides an interface for staging configuration of individual
@@ -110,5 +110,5 @@ protected:
     bool mSystem;       //! true if the "system" file exists
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTAUTOSTARTENTRY_H

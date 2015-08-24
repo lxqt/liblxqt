@@ -31,9 +31,9 @@
 #include <math.h>
 #include <QWidget>
 
-using namespace LxQt;
+using namespace LXQt;
 
-class LxQt::GridLayoutPrivate
+class LXQt::GridLayoutPrivate
 {
 public:
     GridLayoutPrivate();

@@ -34,7 +34,7 @@
 #include <QLayout>
 
 
-namespace LxQt
+namespace LXQt
 {
 
 class GridLayoutPrivate;
@@ -233,5 +233,5 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(GridLayout::Stretch)
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTGRIDLAYOUT_H

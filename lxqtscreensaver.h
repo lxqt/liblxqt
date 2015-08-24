@@ -33,7 +33,7 @@
 #include <QProcess>
 #include <QAction>
 
-namespace LxQt
+namespace LXQt
 {
 
 class LXQT_API ScreenSaver : public QObject
@@ -59,6 +59,6 @@ private slots:
 
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif
 

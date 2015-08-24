@@ -36,7 +36,7 @@
 
 class QEvent;
 
-namespace LxQt
+namespace LXQt
 {
 
 class SettingsPrivate;
@@ -100,25 +100,25 @@ private:
 };
 
 
-class LxQtThemeData;
+class LXQtThemeData;
 
 /*! \brief QSS theme handling */
-class LXQT_API LxQtTheme
+class LXQT_API LXQtTheme
 {
 public:
     /// Constructs a null theme.
-    LxQtTheme();
+    LXQtTheme();
 
     /*! Constructs an theme from the dir with the given path. If path not absolute
         (i.e. the theme name only) the relevant dir must be found relative to the
         $XDG_DATA_HOME + $XDG_DATA_DIRS directories. */
-    LxQtTheme(const QString &path);
+    LXQtTheme(const QString &path);
 
     /// Constructs a copy of other. This is very fast.
-    LxQtTheme(const LxQtTheme &other);
+    LXQtTheme(const LXQtTheme &other);
 
-    LxQtTheme& operator=(const LxQtTheme &other);
-    ~LxQtTheme();
+    LXQtTheme& operator=(const LXQtTheme &other);
+    ~LXQtTheme();
 
     /// Returns the name of the theme.
     QString name() const;
@@ -145,22 +145,22 @@ public:
     QString desktopBackground(int screen=-1) const;
 
     /// Returns the current lxqt theme.
-    static const LxQtTheme &currentTheme();
+    static const LXQtTheme &currentTheme();
 
     /// Returns the all themes found in the system.
-    static QList<LxQtTheme> allThemes();
+    static QList<LXQtTheme> allThemes();
 
 private:
-    static LxQtTheme* mInstance;
-    QSharedDataPointer<LxQtThemeData> d;
+    static LXQtTheme* mInstance;
+    QSharedDataPointer<LXQtThemeData> d;
 };
 
 /*!
-A global pointer referring to the unique LxQtTheme object.
-It is equivalent to the pointer returned by the LxQtTheme::instance() function.
+A global pointer referring to the unique LXQtTheme object.
+It is equivalent to the pointer returned by the LXQtTheme::instance() function.
 Only one theme object can be created. !*/
 
-#define lxqtTheme LxQtTheme::currentTheme()
+#define lxqtTheme LXQtTheme::currentTheme()
 
 
 class LXQT_API SettingsCache
@@ -202,5 +202,5 @@ private:
     Q_DECLARE_PRIVATE(GlobalSettings)
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTSETTINGS_H

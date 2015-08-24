@@ -32,7 +32,7 @@
 #include <QStringList>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 /**
   The Translator class provides internationalization support for application and librarioes.
@@ -68,5 +68,5 @@ public:
     static bool translatePlugin(const QString &pluginName, const QString& type);
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTTRANSLATOR_H

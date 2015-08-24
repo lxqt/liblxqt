@@ -10,7 +10,7 @@
 
 #include <XdgDirs>
 
-using namespace LxQt;
+using namespace LXQt;
 
 bool translate(const QString &name, const QString &owner = QString());
 /************************************************
@@ -35,7 +35,7 @@ QStringList *getSearchPaths()
 /************************************************
 
  ************************************************/
-QStringList LxQt::Translator::translationSearchPaths()
+QStringList LXQt::Translator::translationSearchPaths()
 {
     return *(getSearchPaths());
 }

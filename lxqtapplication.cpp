@@ -33,7 +33,7 @@
 #include <XdgIcon>
 #include <XdgDirs>
 
-using namespace LxQt;
+using namespace LXQt;
 
 #define COLOR_DEBUG "\033[32;2m"
 #define COLOR_WARN "\033[33;2m"

@@ -29,7 +29,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation type="vanished">Version: %1</translation>
@@ -68,7 +68,7 @@
         <translation type="obsolete">No</translation>
     </message>
     <message>
-        <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
+        <source>&lt;b&gt;LXQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
         <translation type="obsolete">&lt;b&gt;Utilidad de Escritorio LXQt - Informacion&lt;/b&gt;</translation>
     </message>
     <message>
@@ -130,11 +130,11 @@
     </message>
 </context>
 <context>
-    <name>LxQt::MessageBox</name>
+    <name>LXQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
-        <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">Error en Gestion de energia de LxQt</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">Error en Gestion de energia de LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -143,7 +143,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
@@ -151,7 +151,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
@@ -179,8 +179,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
-        <source>LxQt Session Suspend</source>
-        <translation>Suspension del sistema por LxQt</translation>
+        <source>LXQt Session Suspend</source>
+        <translation>Suspension del sistema por LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
@@ -189,8 +189,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
-        <source>LxQt Session Hibernate</source>
-        <translation>Hibernacion del sistema por LxQt</translation>
+        <source>LXQt Session Hibernate</source>
+        <translation>Hibernacion del sistema por LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
@@ -199,8 +199,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
-        <source>LxQt Session Reboot</source>
-        <translation>Reinicio del sistema por LxQt</translation>
+        <source>LXQt Session Reboot</source>
+        <translation>Reinicio del sistema por LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
@@ -209,8 +209,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
-        <source>LxQt Session Shutdown</source>
-        <translation>Apagado del sistema por LxQt</translation>
+        <source>LXQt Session Shutdown</source>
+        <translation>Apagado del sistema por LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
@@ -219,8 +219,8 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
-        <source>LxQt Session Logout</source>
-        <translation>Cierre de la sesion por LxQt</translation>
+        <source>LXQt Session Logout</source>
+        <translation>Cierre de la sesion por LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
@@ -230,8 +230,8 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <source>LxQt Power Manager Error</source>
-        <translation>Error en Gestion de energia de LxQt</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation>Error en Gestion de energia de LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -245,7 +245,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
@@ -299,7 +299,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation type="obsolete">Limpiar</translation>
@@ -334,7 +334,7 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Acerca de LxQt</translation>
+        <translation type="vanished">Acerca de LXQt</translation>
     </message>
     <message>
         <source>About</source>

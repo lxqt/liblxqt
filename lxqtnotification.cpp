@@ -27,7 +27,7 @@
 #include <QMessageBox>
 #include <QDebug>
 
-using namespace LxQt;
+using namespace LXQt;
 
 Notification::Notification(const QString& summary, QObject* parent) :
     QObject(parent),

@@ -41,7 +41,7 @@
 
 class QLibrary;
 
-namespace LxQt
+namespace LXQt
 {
 
 /*!
@@ -52,7 +52,7 @@ lxqtpanel_clock2.desktop file
 
 [Desktop Entry]
   Type=Service
-  ServiceTypes=LxQtPanel/Plugin
+  ServiceTypes=LXQtPanel/Plugin
   Name=Clock
   Comment=Clock and calendar
 
@@ -89,7 +89,7 @@ public:
 
     /*! Returns a list of PluginInfo objects for the matched files in the directories.
       @param desktopFilesDirs - scanned directories names.
-      @param serviceType - type of the plugin, for example "LxQtPanel/Plugin".
+      @param serviceType - type of the plugin, for example "LXQtPanel/Plugin".
       @param nameFilter  - wildcard filter that understands * and ? wildcards.
 
       If the same filename is located under multiple directories only the first file should be used.
@@ -105,12 +105,12 @@ private:
 
 typedef QList<PluginInfo> PluginInfoList;
 
-} // namespace LxQt
+} // namespace LXQt
 
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfo& pi);
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfo* const pi);
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfo& pi);
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfo* const pi);
 
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfoList& list);
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfoList* const pluginInfoList);
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList& list);
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList* const pluginInfoList);
 
 #endif // LXQTPLUGININFO_H

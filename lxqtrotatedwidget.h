@@ -31,7 +31,7 @@
 #include <QWidget>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 class LXQT_API RotatedWidget: public QWidget
@@ -122,5 +122,5 @@ private:
     bool mTransferLeaveEvent;
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTROTATEDWIDGET_H

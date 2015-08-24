@@ -33,7 +33,7 @@
 #include <QList>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 
@@ -103,5 +103,5 @@ private:
     QList<PowerProvider*> mProviders;
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTPOWER_H

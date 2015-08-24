@@ -27,7 +27,7 @@
 #include <QDir>
 #include <QFileInfo>
 
-using namespace LxQt;
+using namespace LXQt;
 
 LXQT_API bool ProgramFinder::programExists(const QString& command)
 {

@@ -29,7 +29,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Yes</source>
         <translation type="obsolete">Da</translation>
@@ -40,11 +40,11 @@
     </message>
 </context>
 <context>
-    <name>LxQt::MessageBox</name>
+    <name>LXQt::MessageBox</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
-        <source>LxQt Power Manager Error</source>
-        <translation type="unfinished">Eroare gestiune alimentare LxQt</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">Eroare gestiune alimentare LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
@@ -53,7 +53,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
@@ -61,7 +61,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="112"/>
         <source>Hibernate</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="152"/>
-        <source>LxQt Session Suspend</source>
+        <source>LXQt Session Suspend</source>
         <translation>Sesiune LXQt - suspendare</translation>
     </message>
     <message>
@@ -99,7 +99,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
-        <source>LxQt Session Hibernate</source>
+        <source>LXQt Session Hibernate</source>
         <translation>Sesiune LXQt - hibernare</translation>
     </message>
     <message>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
-        <source>LxQt Session Reboot</source>
+        <source>LXQt Session Reboot</source>
         <translation>Sesiune LXQt - repornire</translation>
     </message>
     <message>
@@ -119,7 +119,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
-        <source>LxQt Session Shutdown</source>
+        <source>LXQt Session Shutdown</source>
         <translation>Sesiune LXQt - oprire</translation>
     </message>
     <message>
@@ -129,7 +129,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
-        <source>LxQt Session Logout</source>
+        <source>LXQt Session Logout</source>
         <translation>Sesiune LXQt - ieșire</translation>
     </message>
     <message>
@@ -140,8 +140,8 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <source>LxQt Power Manager Error</source>
-        <translation>Eroare gestiune alimentare LxQt</translation>
+        <source>LXQt Power Manager Error</source>
+        <translation>Eroare gestiune alimentare LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -155,7 +155,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
@@ -209,7 +209,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation type="obsolete">Curăță</translation>
@@ -244,7 +244,7 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished"> Despre LxQt</translation>
+        <translation type="vanished"> Despre LXQt</translation>
     </message>
     <message>
         <source>About</source>

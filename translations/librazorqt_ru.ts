@@ -19,7 +19,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::PowerManager</name>
+    <name>LXQt::PowerManager</name>
     <message>
         <source>Hibernate</source>
         <translation>Спящий режим</translation>
@@ -41,7 +41,7 @@
         <translation>Завершить сеанс</translation>
     </message>
     <message>
-        <source>LxQt Session Suspend</source>
+        <source>LXQt Session Suspend</source>
         <translation>Paзор Ждущий режим</translation>
     </message>
     <message>
@@ -49,7 +49,7 @@
         <translation>Перевести компьютер в ждущий режим?&lt;p&gt;Состояние системы будет потеряно при отключении питания.</translation>
     </message>
     <message>
-        <source>LxQt Session Hibernate</source>
+        <source>LXQt Session Hibernate</source>
         <translation>Paзор Спящий режим</translation>
     </message>
     <message>
@@ -57,7 +57,7 @@
         <translation>Перевести компьютер в спящий режим?&lt;p&gt;Состояние системы будет сохранено при отключении питания.</translation>
     </message>
     <message>
-        <source>LxQt Session Reboot</source>
+        <source>LXQt Session Reboot</source>
         <translation>Paзор Перезагрузка</translation>
     </message>
     <message>
@@ -65,7 +65,7 @@
         <translation>Перезагрузить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>LxQt Session Shutdown</source>
+        <source>LXQt Session Shutdown</source>
         <translation>Paзор Выключение</translation>
     </message>
     <message>
@@ -73,7 +73,7 @@
         <translation>Выключить компьютер? Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>LxQt Session Logout</source>
+        <source>LXQt Session Logout</source>
         <translation>Paзор Завершение сеанса</translation>
     </message>
     <message>
@@ -81,7 +81,7 @@
         <translation>Завершить сеанс?&lt;p&gt;Все не сохраненные документы будут потеряны...</translation>
     </message>
     <message>
-        <source>LxQt Power Manager Error</source>
+        <source>LXQt Power Manager Error</source>
         <translation>Ошибка Paзор менеджер  электроэнергии  </translation>
     </message>
     <message>
@@ -109,7 +109,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::AboutDialogPrivate</name>
+    <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
         <translation>Версия: %1</translation>
@@ -143,7 +143,7 @@
         <translation>Hет</translation>
     </message>
     <message>
-        <source>&lt;b&gt;LxQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
+        <source>&lt;b&gt;LXQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
         <translation>&lt;b&gt;Инструментарий рабочего стола LXQt - Техническая Информация&lt;/b&gt;</translation>
     </message>
     <message>
@@ -211,14 +211,14 @@
     </message>
 </context>
 <context>
-    <name>LxQt::NotificationPrivate</name>
+    <name>LXQt::NotificationPrivate</name>
     <message>
         <source>Notifications Fallback</source>
         <translation>Уведомления отступление</translation>
     </message>
 </context>
 <context>
-    <name>LxQt::ShortcutButton</name>
+    <name>LXQt::ShortcutButton</name>
     <message>
         <source>Clear</source>
         <translation>Очистить</translation>
@@ -229,7 +229,7 @@
     </message>
 </context>
 <context>
-    <name>LxQt::ScreenSaver</name>
+    <name>LXQt::ScreenSaver</name>
     <message>
         <source>Lock Screen</source>
         <translation>Заблокировать экран</translation>

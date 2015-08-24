@@ -30,7 +30,7 @@
 #include <QAbstractTextDocumentLayout>
 #include <QTextDocument>
 
-using namespace LxQt;
+using namespace LXQt;
 
 
 HtmlDelegate::HtmlDelegate(const QSize iconSize, QObject* parent) :

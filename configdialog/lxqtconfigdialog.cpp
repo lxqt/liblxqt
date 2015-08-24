@@ -28,7 +28,7 @@
 #include <XdgIcon>
 #include <QPushButton>
 
-using namespace LxQt;
+using namespace LXQt;
 
 ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* parent) :
     QDialog(parent),

@@ -32,7 +32,7 @@
 
 class QWidget;
 
-namespace LxQt {
+namespace LXQt {
 
 /*! \class SingleApplication
  *  \brief The SingleApplication class provides an single instance Application.
@@ -52,7 +52,7 @@ namespace LxQt {
  *  // Original code
  *  int main(int argc, char **argv)
  *  {
- *      LxQt::Application app(argc, argv);
+ *      LXQt::Application app(argc, argv);
  *
  *      MainWidget w;
  *      w.show();
@@ -63,7 +63,7 @@ namespace LxQt {
  *  // SingleApplication code
  *  int main(int argc, char **argv)
  *  {
- *      LxQt::SingleApplication app(argc, argv);
+ *      LXQt::SingleApplication app(argc, argv);
  *
  *      MainWidget w;
  *      app.setActivationWindow(&w);
@@ -103,7 +103,7 @@ public:
     };
 
     /*!
-     * \brief Construct a LxQt SingleApplication object.
+     * \brief Construct a LXQt SingleApplication object.
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
      * \param options Control the on D-Bus failure application behaviour
@@ -151,8 +151,8 @@ private:
 #if defined(lxqtSingleApp)
 #undef lxqtSingleApp
 #endif
-#define lxqtSingleApp (static_cast<LxQt::SingleApplication *>(qApp))
+#define lxqtSingleApp (static_cast<LXQt::SingleApplication *>(qApp))
 
-}; // namespace LxQt
+}; // namespace LXQt
 
 #endif // LXQTSINGLEAPPLICATION_H

@@ -32,7 +32,7 @@
 #include <QProxyStyle>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 /*! \brief LXQt wrapper around QApplication.
@@ -79,7 +79,7 @@ signals:
 #if defined(lxqtApp)
 #undef lxqtApp
 #endif
-#define lxqtApp (static_cast<LxQt::Application *>(qApp))
+#define lxqtApp (static_cast<LXQt::Application *>(qApp))
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTAPPLICATION_H

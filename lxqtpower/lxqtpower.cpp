@@ -31,7 +31,7 @@
 #include <QtAlgorithms>
 #include <QDebug>
 
-using namespace LxQt;
+using namespace LXQt;
 
 Power::Power(QObject *parent) :
     QObject(parent)
@@ -41,7 +41,7 @@ Power::Power(QObject *parent) :
     mProviders.append(new UPowerProvider(this));
     mProviders.append(new ConsoleKitProvider(this));
     mProviders.append(new LxSessionProvider(this));
-    mProviders.append(new LxQtProvider(this));
+    mProviders.append(new LXQtProvider(this));
 }
 
 

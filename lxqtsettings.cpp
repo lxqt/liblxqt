@@ -39,9 +39,9 @@
 #include <XdgIcon>
 #include <XdgDirs>
 
-using namespace LxQt;
+using namespace LXQt;
 
-class LxQt::SettingsPrivate
+class LXQt::SettingsPrivate
 {
 public:
     SettingsPrivate(Settings* parent):
@@ -60,11 +60,11 @@ private:
 };
 
 
-LxQtTheme* LxQtTheme::mInstance = 0;
+LXQtTheme* LXQtTheme::mInstance = 0;
 
-class LxQt::LxQtThemeData: public QSharedData {
+class LXQt::LXQtThemeData: public QSharedData {
 public:
-    LxQtThemeData(): mValid(false) {}
+    LXQtThemeData(): mValid(false) {}
     QString loadQss(const QString& qssFile) const;
     QString findTheme(const QString &themeName);
 
@@ -76,7 +76,7 @@ public:
 };
 
 
-class LxQt::GlobalSettingsPrivate
+class LXQt::GlobalSettingsPrivate
 {
 public:
     GlobalSettingsPrivate(GlobalSettings *parent):
@@ -88,7 +88,7 @@ public:
 
     GlobalSettings *mParent;
     QString mIconTheme;
-    QString mLxQtTheme;
+    QString mLXQtTheme;
     qlonglong mThemeUpdated;
 
 };
@@ -337,8 +337,8 @@ void Settings::setLocalizedValue(const QString &key, const QVariant &value)
 /************************************************
 
  ************************************************/
-LxQtTheme::LxQtTheme():
-    d(new LxQtThemeData)
+LXQtTheme::LXQtTheme():
+    d(new LXQtThemeData)
 {
 }
 
@@ -346,8 +346,8 @@ LxQtTheme::LxQtTheme():
 /************************************************
 
  ************************************************/
-LxQtTheme::LxQtTheme(const QString &path):
-    d(new LxQtThemeData)
+LXQtTheme::LXQtTheme(const QString &path):
+    d(new LXQtThemeData)
 {
     if (path.isEmpty())
         return;
@@ -374,7 +374,7 @@ LxQtTheme::LxQtTheme(const QString &path):
 /************************************************
 
  ************************************************/
-QString LxQtThemeData::findTheme(const QString &themeName)
+QString LXQtThemeData::findTheme(const QString &themeName)
 {
     if (themeName.isEmpty())
         return "";
@@ -399,7 +399,7 @@ QString LxQtThemeData::findTheme(const QString &themeName)
 /************************************************
 
  ************************************************/
-LxQtTheme::LxQtTheme(const LxQtTheme &other):
+LXQtTheme::LXQtTheme(const LXQtTheme &other):
     d(other.d)
 {
 }
@@ -408,7 +408,7 @@ LxQtTheme::LxQtTheme(const LxQtTheme &other):
 /************************************************
 
  ************************************************/
-LxQtTheme::~LxQtTheme()
+LXQtTheme::~LXQtTheme()
 {
 }
 
@@ -416,7 +416,7 @@ LxQtTheme::~LxQtTheme()
 /************************************************
 
  ************************************************/
-LxQtTheme& LxQtTheme::operator=(const LxQtTheme &other)
+LXQtTheme& LXQtTheme::operator=(const LXQtTheme &other)
 {
     d = other.d;
     return *this;
@@ -426,7 +426,7 @@ LxQtTheme& LxQtTheme::operator=(const LxQtTheme &other)
 /************************************************
 
  ************************************************/
-bool LxQtTheme::isValid() const
+bool LXQtTheme::isValid() const
 {
     return d->mValid;
 }
@@ -435,7 +435,7 @@ bool LxQtTheme::isValid() const
 /************************************************
 
  ************************************************/
-QString LxQtTheme::name() const
+QString LXQtTheme::name() const
 {
     return d->mName;
 }
@@ -443,7 +443,7 @@ QString LxQtTheme::name() const
 /************************************************
 
  ************************************************/
-QString LxQtTheme::path() const
+QString LXQtTheme::path() const
 {
     return d->mPath;
 }
@@ -452,7 +452,7 @@ QString LxQtTheme::path() const
 /************************************************
 
  ************************************************/
-QString LxQtTheme::previewImage() const
+QString LXQtTheme::previewImage() const
 {
     return d->mPreviewImg;
 }
@@ -461,7 +461,7 @@ QString LxQtTheme::previewImage() const
 /************************************************
 
  ************************************************/
-QString LxQtTheme::qss(const QString& module) const
+QString LXQtTheme::qss(const QString& module) const
 {
     QString styleSheet = d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
 
@@ -477,7 +477,7 @@ QString LxQtTheme::qss(const QString& module) const
 /************************************************
 
  ************************************************/
-QString LxQtThemeData::loadQss(const QString& qssFile) const
+QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -502,7 +502,7 @@ QString LxQtThemeData::loadQss(const QString& qssFile) const
 /************************************************
 
  ************************************************/
-QString LxQtTheme::desktopBackground(int screen) const
+QString LXQtTheme::desktopBackground(int screen) const
 {
     QString wallpaperCfgFileName = QString("%1/wallpaper.cfg").arg(d->mPath);
 
@@ -530,13 +530,13 @@ QString LxQtTheme::desktopBackground(int screen) const
 /************************************************
 
  ************************************************/
-const LxQtTheme &LxQtTheme::currentTheme()
+const LXQtTheme &LXQtTheme::currentTheme()
 {
-    static LxQtTheme theme;
+    static LXQtTheme theme;
     QString name = Settings::globalSettings()->value("theme").toString();
     if (theme.name() != name)
     {
-        theme = LxQtTheme(name);
+        theme = LXQtTheme(name);
     }
     return theme;
 }
@@ -545,9 +545,9 @@ const LxQtTheme &LxQtTheme::currentTheme()
 /************************************************
 
  ************************************************/
-QList<LxQtTheme> LxQtTheme::allThemes()
+QList<LXQtTheme> LXQtTheme::allThemes()
 {
-    QList<LxQtTheme> ret;
+    QList<LXQtTheme> ret;
     QSet<QString> processed;
 
     QStringList paths;
@@ -565,7 +565,7 @@ QList<LxQtTheme> LxQtTheme::allThemes()
                  QDir(dir.absoluteFilePath()).exists("lxqt-panel.qss"))
             {
                 processed << dir.fileName();
-                ret << LxQtTheme(dir.absoluteFilePath());
+                ret << LXQtTheme(dir.absoluteFilePath());
             }
 
         }
@@ -682,9 +682,9 @@ void GlobalSettings::fileChanged()
 
     QString rt = value("theme").toString();
     qlonglong themeUpdated = value("__theme_updated__").toLongLong();
-    if ((d->mLxQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
+    if ((d->mLXQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
     {
-        d->mLxQtTheme = rt;
+        d->mLXQtTheme = rt;
         emit lxqtThemeChanged();
     }
 

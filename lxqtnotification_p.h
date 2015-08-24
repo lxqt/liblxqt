@@ -28,7 +28,7 @@
 #include "lxqtnotification.h"
 #include "notifications_interface.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 class NotificationPrivate : public QObject
@@ -63,5 +63,5 @@ private:
     Q_DECLARE_PUBLIC(Notification)
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTNOTIFICATION_P_H

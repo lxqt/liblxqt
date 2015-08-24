@@ -35,7 +35,7 @@
 #include <QLibrary>
 #include <QDebug>
 
-using namespace LxQt;
+using namespace LXQt;
 
 /************************************************
 
@@ -75,7 +75,7 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
     QString baseName, path;
     QFileInfo fi = QFileInfo(fileName());
     path = fi.canonicalPath();
-    baseName = value("X-LxQt-Library", fi.completeBaseName()).toString();
+    baseName = value("X-LXQt-Library", fi.completeBaseName()).toString();
 
     QString soPath = QDir(libDir).filePath(QString("lib%2.so").arg(baseName));
     QLibrary* library = new QLibrary(soPath);
@@ -139,7 +139,7 @@ PluginInfoList PluginInfo::search(const QString& desktopFilesDir, const QString&
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfo &pluginInfo)
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
 {
     dbg.nospace() << QString("%1").arg(pluginInfo.id());
     return dbg.space();
@@ -149,7 +149,7 @@ QDebug operator<<(QDebug dbg, const LxQt::PluginInfo &pluginInfo)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LxQt::PluginInfo * const pluginInfo)
+QDebug operator<<(QDebug dbg, const LXQt::PluginInfo * const pluginInfo)
 {
     return operator<<(dbg, *pluginInfo);
 }

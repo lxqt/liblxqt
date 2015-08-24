@@ -34,7 +34,7 @@
 #include "lxqtpower.h"
 #include <QProcess> // for PID_T
 
-namespace LxQt
+namespace LXQt
 {
 
 
@@ -101,12 +101,12 @@ public slots:
 };
 
 
-class LxQtProvider: public PowerProvider
+class LXQtProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    LxQtProvider(QObject *parent = 0);
-    ~LxQtProvider();
+    LXQtProvider(QObject *parent = 0);
+    ~LXQtProvider();
     bool canAction(Power::Action action) const;
 
 public slots:
@@ -155,5 +155,5 @@ private:
     Settings mSettings;
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTPOWER_PROVIDERS_H

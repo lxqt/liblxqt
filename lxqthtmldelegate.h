@@ -33,7 +33,7 @@
 #include <QPainter>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 class LXQT_API HtmlDelegate : public QStyledItemDelegate

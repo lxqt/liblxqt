@@ -33,7 +33,7 @@
 #include <QWidget>
 #include <QDebug>
 
-using namespace LxQt;
+using namespace LXQt;
 
 SingleApplication::SingleApplication(int &argc, char **argv, StartOptions options)
     : Application(argc, argv),

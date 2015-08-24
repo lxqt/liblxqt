@@ -32,7 +32,7 @@
 #include <QAction>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 class Power;
 
@@ -60,7 +60,7 @@ public:
     bool skipWarning() const { return m_skipWarning; }
 
 private:
-    LxQt::Power * m_power;
+    LXQt::Power * m_power;
     bool m_skipWarning;
 
 private slots:
@@ -68,6 +68,6 @@ private slots:
     void suspendFailed();
 };
 
-} // namespace LxQt
+} // namespace LXQt
 
 #endif // LXQTPOWERMANAGER_H

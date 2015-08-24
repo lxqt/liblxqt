@@ -28,7 +28,7 @@
 #include <XdgAutoStart>
 #include <XdgDirs>
 
-using namespace LxQt;
+using namespace LXQt;
 
 AutostartEntry::AutostartEntry() :
     mLocalState(StateNone), mSystem(false)

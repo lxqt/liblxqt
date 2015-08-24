@@ -31,7 +31,7 @@
 #include <QStyledItemDelegate>
 #include <QScrollBar>
 
-using namespace LxQt;
+using namespace LXQt;
 
 class PageSelectWidgetItemDelegate: public QStyledItemDelegate
 {

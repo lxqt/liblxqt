@@ -32,7 +32,7 @@
 #include "lxqtglobals.h"
 #include <QListWidget>
 
-namespace LxQt
+namespace LXQt
 {
 
 class LXQT_API PageSelectWidget : public QListWidget
@@ -46,5 +46,5 @@ protected:
     QSize sizeHint() const;
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // PAGESELECTWIDGET_H

@@ -35,7 +35,7 @@ namespace Ui {
 class ConfigDialog;
 }
 
-namespace LxQt
+namespace LXQt
 {
 
 class LXQT_API ConfigDialog : public QDialog
@@ -103,5 +103,5 @@ private slots:
 
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTCONFIGDIALOG_H

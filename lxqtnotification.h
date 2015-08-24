@@ -29,7 +29,7 @@
 #include <QStringList>
 #include "lxqtglobals.h"
 
-namespace LxQt
+namespace LXQt
 {
 
 class NotificationPrivate;
@@ -175,7 +175,7 @@ signals:
      * \brief Emitted when the notification is closed
      * \param reason How notification was closed
      */
-    void notificationClosed(LxQt::Notification::CloseReason reason);
+    void notificationClosed(LXQt::Notification::CloseReason reason);
 
     /*!
      * \brief Emitted when an action button is activated.
@@ -189,5 +189,5 @@ private:
     NotificationPrivate* const d_ptr;
 };
 
-} // namespace LxQt
+} // namespace LXQt
 #endif // LXQTNOTIFICATION_H

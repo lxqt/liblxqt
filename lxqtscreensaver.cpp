@@ -33,7 +33,7 @@
 #include <QMessageBox>
 #include <QAction>
 
-using namespace LxQt;
+using namespace LXQt;
 
 ScreenSaver::ScreenSaver(QObject * parent)
     : QObject(parent)
