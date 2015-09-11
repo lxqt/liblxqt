@@ -103,7 +103,7 @@ public slots:
 
 private:
     QList<PowerProvider*> mProviders;
-    LxQt::ScreenSaver mScreenSaver;
+    LXQt::ScreenSaver mScreenSaver;
     QEventLoop mLoop;
 };
 
