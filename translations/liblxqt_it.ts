@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it_IT">
+<TS version="2.1" language="it">
 <context>
     <name>AddPluginDialog</name>
     <message>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Errore del gestore energetico di LXQt</translation>
+        <translation>Errore del gestore energetico di LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">L&apos;ibernazione non è riuscita.</translation>
+        <translation>L&apos;ibernazione non è riuscita.</translation>
     </message>
 </context>
 <context>
@@ -185,7 +185,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Vuoi davvero sospendere il computer?&lt;p&gt;Sospendi il computer in uno stato a minore consumo energetico. Lo stato del sistema non viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
+        <translation>Sospendere il computer?&lt;p&gt;Sospendi il computer in uno stato a minore consumo energetico. Lo stato del sistema non viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Vuoi davvero ibernare il computer?&lt;p&gt;Iberna il computer in uno stato a minore consumo energetico. Lo stato del sistema non viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
+        <translation>Ibernare il computer?&lt;p&gt;Iberna il computer in uno stato a minore consumo energetico. Lo stato del sistema viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
@@ -205,17 +205,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Vuoi davvero riavviare il computer? Tutto il lavoro non salvato verrà perso...</translation>
+        <translation>Riavviare il computer? Tutto il lavoro non salvato verrà perso.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Spegni la sessione di LXQt</translation>
+        <translation>Uscire dalla sessione di LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Vuoi davvero spegnere il computer? Tutto il lavoro non salvato verrà perso...</translation>
+        <translation>Spegnere il computer? Tutto il lavoro non salvato verrà perso.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Vuoi davvero chiudere la sessione? Tutto il lavoro non salvato verrà perso...</translation>
+        <translation>Chiudere la sessione? Tutto il lavoro non salvato verrà perso...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -270,12 +270,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xda-screensaver non è installato correttamente.</translation>
+        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non è installato correttamente.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xda-screensaver non può essere avviato.</translation>
+        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non può essere avviato.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="99"/>
