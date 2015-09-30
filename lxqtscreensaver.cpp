@@ -62,47 +62,46 @@ void ScreenSaver::lockScreen()
 
 void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
 {
-    QWidget *p = qobject_cast<QWidget*>(parent());
-
     // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
 
-    if (err == QProcess::NormalExit) // QProcess::NormalExit = 0
-    {
+    if (err == 0)
         emit activated();
-    }
-    else if (err == 1)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Error"),
-                             tr("An error occurred starting screensaver. "
-                                "Syntax error in xdg-screensaver arguments.")
-                            );
-    }
-    else if (err == 3)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "Ensure you have xscreensaver installed and running.")
-                            );
-    }
-    else if (err == 4)
-    {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "Action 'activate' failed. "
-                                "Ensure you have xscreensaver installed and running.")
-                            );
-    }
     else
     {
-        QMessageBox::warning(p,
-                             tr("Screen Saver Activation Error"),
-                             tr("An error occurred starting screensaver. "
-                                "Unknown error - undocumented return value from xdg-screensaver: %1.").arg(err)
-                            );
+        QMessageBox *box = new QMessageBox;
+        box->setAttribute(Qt::WA_DeleteOnClose);
+        box->setIcon(QMessageBox::Warning);
+
+        if (err == 1)
+        {
+            box->setWindowTitle(tr("Screen Saver Error"));
+            box->setText(tr("An error occurred starting screensaver. "
+                           "Syntax error in xdg-screensaver arguments."));
+        }
+        else if (err == 3)
+        {
+            box->setWindowTitle(tr("Screen Saver Activation Error"));
+            box->setText(tr("An error occurred starting screensaver. "
+                           "Ensure you have xscreensaver installed and running."));
+        }
+        else if (err == 4)
+        {
+            box->setWindowTitle(tr("Screen Saver Activation Error"));
+            box->setText(tr("An error occurred starting screensaver. "
+                           "Action 'activate' failed. "
+                           "Ensure you have xscreensaver installed and running."));
+        }
+        else
+        {
+            box->setWindowTitle(tr("Screen Saver Activation Error"));
+            box->setText(tr("An error occurred starting screensaver. "
+                           "Unknown error - undocumented return value from xdg-screensaver: %1.")
+                        .arg(err));
+        }
+
+        box->exec();
     }
+
     emit done();
 }
 
