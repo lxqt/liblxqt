@@ -115,7 +115,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Voulez-vous vraiment redémarrer votre ordinateur? Tout travail non souvegardé sera perdu...</translation>
+        <translation>Voulez-vous vraiment redémarrer votre ordinateur? Tout travail non sauvegardé sera perdu...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
@@ -125,7 +125,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Voulez-vous vraiment éteindre votre ordinateur? Tout travail non souvegardé sera perdu...</translation>
+        <translation>Voulez-vous vraiment éteindre votre ordinateur? Tout travail non sauvegardé sera perdu...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
@@ -135,7 +135,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Voulez-vous vraiment vous déconnecter? Tout travail non souvegardé sera perdu...</translation>
+        <translation>Voulez-vous vraiment vous déconnecter? Tout travail non sauvegardé sera perdu...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="51"/>
         <source>Lock Screen</source>
-        <translation>Vérouiller l&apos;écran</translation>
+        <translation>Verrouiller l&apos;écran</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="70"/>
