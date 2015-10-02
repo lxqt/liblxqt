@@ -25,22 +25,25 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QProcess>
 #include "lxqtscreensaver.h"
 #include "lxqttranslator.h"
 
+#include <QDebug>
 #include <XdgIcon>
-#include <QMessageBox>
-#include <QAction>
 
 using namespace LXQt;
 
-ScreenSaver::ScreenSaver(QObject * parent)
-    : QObject(parent)
+ScreenSaver::ScreenSaver(QObject *parent)
+    : QObject(parent),
+    messageBox(QMessageBox::Warning, tr("Screen Saver Error"), QString())
 {
-    m_xdgProcess = new QProcess(this);
-    connect(m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(xdgProcess_finished(int,QProcess::ExitStatus)));
+    mProcess.setProgram("xscreensaver-command");
+    mProcess.setArguments(QStringList() << "-lock");
+
+    connect(&mProcess, SIGNAL(error(QProcess::ProcessError)),
+            this, SLOT(onError(QProcess::ProcessError)));
+    connect(&mProcess, &QProcess::readyReadStandardOutput, this, &ScreenSaver::onReadyRead);
+    connect(&mProcess, &QProcess::readyReadStandardError, this, &ScreenSaver::onReadyRead);
 }
 
 QList<QAction*> ScreenSaver::availableActions()
@@ -57,51 +60,45 @@ QList<QAction*> ScreenSaver::availableActions()
 
 void ScreenSaver::lockScreen()
 {
-    m_xdgProcess->start("xdg-screensaver", QStringList() << "lock");
+    if (mProcess.state() == QProcess::NotRunning)
+        mProcess.start();
 }
 
-void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
+void ScreenSaver::onError(QProcess::ProcessError error)
 {
-    // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
-
-    if (err == 0)
-        emit activated();
-    else
+    if (error == QProcess::FailedToStart)
     {
-        QMessageBox *box = new QMessageBox;
-        box->setAttribute(Qt::WA_DeleteOnClose);
-        box->setIcon(QMessageBox::Warning);
+        messageBox.setText(tr("An error occurred starting screensaver. "
+                              "Ensure you have xscreensaver installed and running."));
+        if (messageBox.isHidden())
+            messageBox.show();
 
-        if (err == 1)
-        {
-            box->setWindowTitle(tr("Screen Saver Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Syntax error in xdg-screensaver arguments."));
-        }
-        else if (err == 3)
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Ensure you have xscreensaver installed and running."));
-        }
-        else if (err == 4)
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Action 'activate' failed. "
-                           "Ensure you have xscreensaver installed and running."));
-        }
-        else
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Unknown error - undocumented return value from xdg-screensaver: %1.")
-                        .arg(err));
-        }
+        // only emit on FailedToStart because it will
+        // be emitted by onReadyRead otherwise
+        emit done();
+    }
+}
 
-        box->exec();
+void ScreenSaver::onReadyRead()
+{
+    QString output;
+    output = mProcess.readAllStandardOutput();
+    if (output.isEmpty())
+        output = mProcess.readAllStandardError();
+
+    if (output.contains("locking"))
+        emit activated();
+
+    else if (output.contains("already locked"))
+        qDebug() << "LXQt Screen Saver: already locked";
+
+    else if (output.contains("no screensaver is running"))
+    {
+        messageBox.setText(tr("An error occurred starting screensaver. "
+                              "Ensure you have xscreensaver running."));
+        if (messageBox.isHidden())
+            messageBox.show();
     }
 
     emit done();
 }
-
