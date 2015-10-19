@@ -32,6 +32,7 @@
 #include <QObject>
 #include <QProcess>
 #include <QAction>
+#include <QMessageBox>
 
 namespace LXQt
 {
@@ -48,14 +49,17 @@ public:
 signals:
     void activated();
     void done();
+
 public slots:
     void lockScreen();
 
 private:
-    QProcess * m_xdgProcess;
+    QProcess mProcess;
+    QMessageBox messageBox;
 
 private slots:
-    void xdgProcess_finished(int err, QProcess::ExitStatus status);
+    void onError(QProcess::ProcessError error);
+    void onReadyRead();
 
 };
 
