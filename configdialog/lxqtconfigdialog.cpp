@@ -59,6 +59,12 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& ic
 
 void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList& iconNames)
 {
+    Q_ASSERT(page);
+    if (!page)
+    {
+        return;
+    }
+
     /* We set the layout margin to 0. In the default configuration, one page
      *  only, it aligns buttons with the page. In multi-page it saves a little
      *  bit of space, without clutter.
