@@ -154,9 +154,10 @@ public:
     void setStretch(Stretch value);
 
     /**
-      Moves the item at index position from to index position to.
+      Moves the item at index position \param from to index position \param to.
+      If \param withAnimation set the reordering will be animated
      **/
-    void moveItem(int from, int to);
+    void moveItem(int from, int to, bool withAnimation = false);
 
     /**
      Returns the cells' minimum size.
