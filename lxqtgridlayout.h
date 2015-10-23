@@ -89,6 +89,7 @@ public:
 
     QSize sizeHint() const;
     void setGeometry(const QRect &geometry);
+    QRect occupiedGeometry() const;
 
 
     /**

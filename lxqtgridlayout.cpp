@@ -89,6 +89,7 @@ public:
     void setItemGeometry(QLayoutItem * item, QRect const & geometry);
     QSize mPrefCellMinSize;
     QSize mPrefCellMaxSize;
+    QRect mOccupiedGeometry;
 };
 
 
@@ -190,6 +191,7 @@ int GridLayoutPrivate::cols() const
 
 void GridLayoutPrivate::setItemGeometry(QLayoutItem * item, QRect const & geometry)
 {
+    mOccupiedGeometry |= geometry;
     if (mAnimate)
     {
         ItemMoveAnimation::animate(item, geometry);
@@ -557,6 +559,8 @@ void GridLayout::setGeometry(const QRect &geometry)
     Q_D(GridLayout);
 
     QLayout::setGeometry(geometry);
+    d->mOccupiedGeometry.setTopLeft(geometry.topLeft());
+    d->mOccupiedGeometry.setBottomRight(geometry.topLeft());
 
     if (!d->mIsValid)
         d->updateCache();
@@ -654,3 +658,10 @@ void GridLayout::setGeometry(const QRect &geometry)
     d->mAnimate = false;
 }
 
+/************************************************
+
+ ************************************************/
+QRect GridLayout::occupiedGeometry() const
+{
+    return d_func()->mOccupiedGeometry;
+}
