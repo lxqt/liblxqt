@@ -556,6 +556,8 @@ void GridLayout::setGeometry(const QRect &geometry)
 {
     Q_D(GridLayout);
 
+    QLayout::setGeometry(geometry);
+
     if (!d->mIsValid)
         d->updateCache();
 
