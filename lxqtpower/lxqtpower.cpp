@@ -34,10 +34,8 @@
 using namespace LXQt;
 
 Power::Power(QObject *parent) :
-    QObject(parent),
-    mScreenSaver(this)
+    QObject(parent)
 {
-    connect(&mScreenSaver, SIGNAL(done()), &mLoop, SLOT(quit()));
     mProviders.append(new CustomProvider(this));
     mProviders.append(new SystemdProvider(this));
     mProviders.append(new UPowerProvider(this));
@@ -68,18 +66,11 @@ bool Power::doAction(Power::Action action)
 {
     foreach(PowerProvider* provider, mProviders)
     {
-        if (provider->canAction(action))
+        if (provider->canAction(action) &&
+            provider->doAction(action)
+           )
         {
-            if (action == PowerSuspend || action == PowerHibernate)
-            {
-                mScreenSaver.lockScreen();
-                mLoop.exec();
-            }
-            if (provider->doAction(action))
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
     return false;

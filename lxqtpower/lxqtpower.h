@@ -31,8 +31,6 @@
 
 #include <QObject>
 #include <QList>
-#include <QEventLoop>
-#include "lxqtscreensaver.h"
 #include "lxqtglobals.h"
 
 namespace LXQt
@@ -103,8 +101,6 @@ public slots:
 
 private:
     QList<PowerProvider*> mProviders;
-    LXQt::ScreenSaver mScreenSaver;
-    QEventLoop mLoop;
 };
 
 } // namespace LXQt
