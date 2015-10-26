@@ -50,8 +50,7 @@ namespace
         ItemMoveAnimation(QLayoutItem *item)
             : mItem(item)
         {
-            setEasingCurve(QEasingCurve::OutBack);
-            setDuration(250);
+            setDuration(150);
         }
 
         void updateCurrentValue(const QVariant &current)
