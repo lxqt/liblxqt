@@ -427,7 +427,7 @@ bool SystemdProvider::canAction(Power::Action action) const
                     SYSTEMD_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
-		    false,
+                    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -467,7 +467,7 @@ bool SystemdProvider::doAction(Power::Action action)
              SYSTEMD_INTERFACE,
              QDBusConnection::systemBus(),
              command,
-	     true
+             true
             );
 }
 
@@ -561,7 +561,8 @@ bool LxSessionProvider::doAction(Power::Action action)
     default:
         return false;
     }
-	return true;
+
+    return true;
 }
 
 
