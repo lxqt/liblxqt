@@ -162,50 +162,48 @@
         <translation>Scherm Vergrendelen</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Schermbeveiliging Activering fout</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten, wegens een crash.</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten, wegens een crash.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging is niet correct geinstalleerd..</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging is niet correct geinstalleerd..</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten.</translation>
+        <translation type="vanished">Fout tijdens het starten van de schermbeveiliging. xdg-schermbeveiliging kan niet starten.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Regelfout in xdg-schermbeveiliging argumenten.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Controleer of xdg-schermbeveiliging is geinstalleerd en gestart.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Fout tijdens het starten van de schermbeveiliging. Actie &apos;activeren&apos; mislukt. Controleer of xdg-schermbeveiliging is geinstalleerd en gestart.</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

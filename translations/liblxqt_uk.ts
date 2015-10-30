@@ -252,50 +252,52 @@
         <translation>Заблокувати екран</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Збій запуску зберігача екрану</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Стався збій при запуску зберігача екрану. xdg-screensaver зазнав краху.</translation>
+        <translation type="vanished">Стався збій при запуску зберігача екрану. xdg-screensaver зазнав краху.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Стався збій при запуску зберігача екрану. xdg-screensaver не встановлено коректним чином.</translation>
+        <translation type="vanished">Стався збій при запуску зберігача екрану. xdg-screensaver не встановлено коректним чином.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Стався збій при запуску зберігача екрану. Не вдалося запустити xdg-screensaver.</translation>
+        <translation type="vanished">Стався збій при запуску зберігача екрану. Не вдалося запустити xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Стався збій при запуску зберігача екрану. В аргументах xdg-screensaver синтаксична помилка.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Стався збій при запуску зберігача екрану. Впевніться, що xscreensaver коректно встановлено та запущено.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Стався збій при запуску зберігача екрану. Не вдалося виконати дію &quot;activate&quot;. Впевніться, що xscreensaver коректно встановлено та запущено.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Стався збій при запуску зберігача екрану. Невідома помилка - xdg-screensaver повернув недокументоване значення = %1.</translation>
+        <translation type="vanished">Стався збій при запуску зберігача екрану. Невідома помилка - xdg-screensaver повернув недокументоване значення = %1.</translation>
     </message>
 </context>
 <context>

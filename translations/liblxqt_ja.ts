@@ -207,50 +207,52 @@
         <translation>スクリーンをロック</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>スクリーンセーバー起動エラー</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。クラッシュが原因でxdg-スクリーンセーバーを起動できません。</translation>
+        <translation type="vanished">スクリーンセーバーの起動時にエラーが発生しました。クラッシュが原因でxdg-スクリーンセーバーを起動できません。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーが正しくインストールされていません。</translation>
+        <translation type="vanished">スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーが正しくインストールされていません。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーを起動できません。</translation>
+        <translation type="vanished">スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーを起動できません。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーの引数に構文エラーがあります。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>スクリーンセーバーの起動時にエラーが発生しました。xscreensaverのインストールと実行を確認してください。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>スクリーンセーバーの起動時にエラーが発生しました。&apos;Activate&apos;アクションが失敗しました。xscreensaverのインストールと実行を確認してください。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>スクリーンセーバーを開始する際にエラーが発生しました。不明なエラー - 文書化されていない返り値 xdg-screensaver=%1</translation>
+        <translation type="vanished">スクリーンセーバーを開始する際にエラーが発生しました。不明なエラー - 文書化されていない返り値 xdg-screensaver=%1</translation>
     </message>
 </context>
 <context>

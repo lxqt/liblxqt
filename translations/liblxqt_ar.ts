@@ -162,50 +162,52 @@
         <translation>إقفال الشَّاشة</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>خطأٌ في تشغيل حافظ الشَّاشة</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! ﻻ يمكن تشغيل حافظ شاشة سطح المكتب الرُّسوميِّ نظراً لانهياره..!</translation>
+        <translation type="vanished">حدث خطأٌ في تشغيل حافظ الشَّاشة! ﻻ يمكن تشغيل حافظ شاشة سطح المكتب الرُّسوميِّ نظراً لانهياره..!</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! لم يتمُّ تثبيت حافظ شاشة سطح المكتب الرُّسوميِّ بالشَّكل الصَّحيح..!</translation>
+        <translation type="vanished">حدث خطأٌ في تشغيل حافظ الشَّاشة! لم يتمُّ تثبيت حافظ شاشة سطح المكتب الرُّسوميِّ بالشَّكل الصَّحيح..!</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! ﻻ يمكن تشغيل حافظ شاشة سطح المكتب الرُّسوميِّ..!</translation>
+        <translation type="vanished">حدث خطأٌ في تشغيل حافظ الشَّاشة! ﻻ يمكن تشغيل حافظ شاشة سطح المكتب الرُّسوميِّ..!</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! هناك خطأٌ في رموز ضبط تعريف حافظ شاشة سطح المكتب الرُّسوميِّ</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! يرجى التَّأكد من أن حافظ شاشة سطح المكتب الرُّسوميِّ مثبَّتٌ ويعمل..</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>حدث خطأٌ في تشغيل حافظ الشَّاشة! فشلٌ في أمر التَّفعيل! يرجى التَّأكد من أن حافظ شاشة سطح المكتب الرُّسوميِّ مثبَّتٌ ويعمل..</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>حصل خطأٌ عند تشغيل حافظ الضَّاضة. خطأٌ غير معروفٍ - قيمةٌ جوابيَّةٌ غير موثَّقةٍ من حافظ شاشة إكس دي جي=%1.</translation>
+        <translation type="vanished">حصل خطأٌ عند تشغيل حافظ الضَّاضة. خطأٌ غير معروفٍ - قيمةٌ جوابيَّةٌ غير موثَّقةٍ من حافظ شاشة إكس دي جي=%1.</translation>
     </message>
 </context>
 <context>

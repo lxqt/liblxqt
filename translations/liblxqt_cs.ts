@@ -252,50 +252,52 @@
         <translation>Zamknout obrazovku</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Chyba při zapínání šetřiče obrazovky</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensavernelze spustit kvůli jeho pádu.</translation>
+        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensavernelze spustit kvůli jeho pádu.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver není nainstalován správně.</translation>
+        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver není nainstalován správně.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver nelze spustit.</translation>
+        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver nelze spustit.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Chybná skladba v argumentech xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Ujistěte se, že máte xdg-screensaver nainstalován a že běží.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok &quot;zapnutí&quot; se nezdařil. Ujistěte se, že máte xdg-screensaver nainstalován a že běží.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Během spouštění spořiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver=%1.</translation>
+        <translation type="vanished">Během spouštění spořiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver=%1.</translation>
     </message>
 </context>
 <context>

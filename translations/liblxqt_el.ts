@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Search:</source>
-        <translation>Αναζήτηση:</translation>
+        <translation type="vanished">Αναζήτηση:</translation>
     </message>
     <message>
         <source>Add plugin</source>
@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation>Κλείσιμο</translation>
+        <translation type="vanished">Κλείσιμο</translation>
     </message>
 </context>
 <context>
@@ -32,32 +32,32 @@
     <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
-        <translation>Έκδοση: %1</translation>
+        <translation type="vanished">Έκδοση: %1</translation>
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Προηγμένη, εύκολη στη χρήση και γρήγορη επιφάνεια εργασίας με βάση τις τεχνολογίες Qt.</translation>
+        <translation type="vanished">Προηγμένη, εύκολη στη χρήση και γρήγορη επιφάνεια εργασίας με βάση τις τεχνολογίες Qt.</translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Πνευματικά δικαιώματα: %1-%2 %3</translation>
+        <translation type="vanished">Πνευματικά δικαιώματα: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Ιστοσελίδα: %1</translation>
+        <translation type="vanished">Ιστοσελίδα: %1</translation>
     </message>
     <message>
         <source>License: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Άδεια χρήσης: %1</translation>
+        <translation type="vanished">Άδεια χρήσης: %1</translation>
     </message>
     <message>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation>Το LXQt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων ανά την υφήλιο.</translation>
+        <translation type="vanished">Το LXQt έχει μεταφραστεί σε πολλές γλώσσες χάρη στο έργο των μεταφραστικών ομάδων ανά την υφήλιο.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -252,50 +252,52 @@
         <translation>Κλείδωμα οθόνης</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Σφάλμα ενεργοποίησης της προστασίας οθόνης</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία εκκίνησης της προστασίας οθόνης xdg λόγω κατάρρευσης.</translation>
+        <translation type="vanished">Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία εκκίνησης της προστασίας οθόνης xdg λόγω κατάρρευσης.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Η προστασία οθόνης xdg δεν είναι εγκατεστημένη σωστά.</translation>
+        <translation type="vanished">Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Η προστασία οθόνης xdg δεν είναι εγκατεστημένη σωστά.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία έναρξης της προστασίας οθόνης xdg.</translation>
+        <translation type="vanished">Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Αδυναμία έναρξης της προστασίας οθόνης xdg.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Σφάλμα σύνταξης των παραμέτρων της προστασίας οθόνης xdg.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Διασφαλίστε ότι η προστασία οθόνης είναι εγκατεστημένη και ότι εκτελείται.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασία οθόνης. Αποτυχία ενέργειας «ενεργοποίηση». Διασφαλίστε ότι η προστασία οθόνης είναι εγκατεστημένη και ότι εκτελείται.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Άγνωστο σφάλμα - μη τεκμηριωμένη τιμή επιστροφής από την προστασία οθόνης=%1.</translation>
+        <translation type="vanished">Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Άγνωστο σφάλμα - μη τεκμηριωμένη τιμή επιστροφής από την προστασία οθόνης=%1.</translation>
     </message>
 </context>
 <context>
@@ -334,32 +336,32 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation> Σχετικά με το LXQt</translation>
+        <translation type="vanished"> Σχετικά με το LXQt</translation>
     </message>
     <message>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
-        <translation>Σχετικά</translation>
+        <translation type="vanished">Σχετικά</translation>
     </message>
     <message>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Συγγραφείς</translation>
+        <translation type="vanished">Συγγραφείς</translation>
     </message>
     <message>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Ευχαριστίες</translation>
+        <translation type="vanished">Ευχαριστίες</translation>
     </message>
     <message>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Μεταφράσεις</translation>
+        <translation type="vanished">Μεταφράσεις</translation>
     </message>
     <message>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
-        <translation>Τεχνικές πληροφορίες</translation>
+        <translation type="vanished">Τεχνικές πληροφορίες</translation>
     </message>
 </context>
 </TS>

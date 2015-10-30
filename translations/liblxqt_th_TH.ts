@@ -252,50 +252,52 @@
         <translation>ล็อคหน้าจอ</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>การเริ่มงานของโปรแกรมรักษาหน้าจอขัดข้อง</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้เนื่องจากมันเสียหาย</translation>
+        <translation type="vanished">เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้เนื่องจากมันเสียหาย</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่ได้ถูกติดตั้งอย่างถูกต้อง</translation>
+        <translation type="vanished">เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่ได้ถูกติดตั้งอย่างถูกต้อง</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้</translation>
+        <translation type="vanished">เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ เกิด syntax error ใน xdg-screensaver อาร์กิวเมนต์ </translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ ตรวจดูให้แน่ใจว่าคุณได้ติดตั้งและเริ่มงาน xdg-screensaver แล้ว</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ ไม่ทราบการขัดข้อง - undocumented กลับคืนค่าจาก xdg-screensaver=%1.</translation>
+        <translation type="vanished">เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ ไม่ทราบการขัดข้อง - undocumented กลับคืนค่าจาก xdg-screensaver=%1.</translation>
     </message>
 </context>
 <context>

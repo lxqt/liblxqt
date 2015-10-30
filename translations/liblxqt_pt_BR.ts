@@ -252,50 +252,52 @@
         <translation>Bloquear tela</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="70"/>
-        <location filename="../lxqtscreensaver.cpp" line="78"/>
-        <location filename="../lxqtscreensaver.cpp" line="86"/>
-        <location filename="../lxqtscreensaver.cpp" line="98"/>
-        <location filename="../lxqtscreensaver.cpp" line="106"/>
-        <location filename="../lxqtscreensaver.cpp" line="114"/>
-        <location filename="../lxqtscreensaver.cpp" line="123"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation>Erro na ativação do protetor de tela</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="71"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não pôde ser iniciado devido a uma falha.</translation>
+        <translation type="vanished">Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não pôde ser iniciado devido a uma falha.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="79"/>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não está instalado corretamente.</translation>
+        <translation type="vanished">Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não está instalado corretamente.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="87"/>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não pôde ser iniciado.</translation>
+        <translation type="vanished">Ocorreu um erro ao iniciar o protetor de tela. O xdg-screensaver não pôde ser iniciado.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="99"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation>Ocorreu um erro ao iniciar o protetor de tela. Erro de sintaxe nos argumentos do xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="107"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation>Ocorreu um erro ao iniciar o protetor de tela. Garanta que você tenha o xscreensaver instalado e funcionado.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="115"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Ocorreu um erro ao iniciar o protetor de tela. A ação &apos;ativar&apos; falhou. Garanta que você tenha o xscreensaver instalado e funcionado.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="124"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Ocorreu um erro ao inicair o protetor de tela. Erro desconhecido - retorno não documentado de xdg-screensaver=%1</translation>
+        <translation type="vanished">Ocorreu um erro ao inicair o protetor de tela. Erro desconhecido - retorno não documentado de xdg-screensaver=%1</translation>
     </message>
 </context>
 <context>

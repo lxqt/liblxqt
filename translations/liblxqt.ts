@@ -132,34 +132,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="76"/>
+        <location filename="../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="77"/>
+        <location filename="../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="84"/>
-        <location filename="../lxqtscreensaver.cpp" line="92"/>
-        <location filename="../lxqtscreensaver.cpp" line="101"/>
+        <location filename="../lxqtscreensaver.cpp" line="83"/>
+        <location filename="../lxqtscreensaver.cpp" line="89"/>
+        <location filename="../lxqtscreensaver.cpp" line="96"/>
         <source>Screen Saver Activation Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="85"/>
+        <location filename="../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="93"/>
+        <location filename="../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="102"/>
+        <location filename="../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
         <translation type="unfinished"></translation>
     </message>
