@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it">
+<TS version="2.0" language="it">
 <context>
     <name>AddPluginDialog</name>
     <message>
@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Search:</source>
-        <translation type="vanished">Cerca:</translation>
+        <translation>Cerca:</translation>
     </message>
     <message>
         <source>Add plugin</source>
@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
 </context>
 <context>
@@ -25,39 +25,39 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Finestra di dialogo</translation>
+        <translation>Finestra</translation>
     </message>
 </context>
 <context>
     <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
-        <translation type="vanished">Versione: %1</translation>
+        <translation>Versione: %1</translation>
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Un ambiente desktop veloce, facile da usare e avanzato basato sulle tecnologie Qt.</translation>
+        <translation>Un ambiente desktop veloce, facile da usare e avanzato basato sulle tecnologie Qt.</translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Copyright: %1-%2 %3</translation>
+        <translation>Copyright: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Sito: %1</translation>
+        <translation>Pagina principale: %1</translation>
     </message>
     <message>
         <source>License: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Licenza: %1</translation>
+        <translation>Licenza: %1</translation>
     </message>
     <message>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation type="vanished">LXQt è tradotto in molte lingue grazie al lavoro dei gruppi di traduzione in giro per il mondo.</translation>
+        <translation>LXQt è tradotto in molte lingue grazie al lavoro dei gruppi di traduzione in giro per il mondo.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
-        <translation>Notifiche di riserva</translation>
+        <translation>Notifiche di ripiego</translation>
     </message>
 </context>
 <context>
@@ -185,7 +185,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="153"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Sospendere il computer?&lt;p&gt;Sospendi il computer in uno stato a minore consumo energetico. Lo stato del sistema non viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
+        <translation>Vuoi davvero sospendere il computer?&lt;p&gt;Sospende il computer in uno stato a minore consumo energetico. Lo stato del sistema non viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="162"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="163"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Ibernare il computer?&lt;p&gt;Iberna il computer in uno stato a minore consumo energetico. Lo stato del sistema viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
+        <translation>Vuoi davvero ibernare il computer?&lt;p&gt;Iberna il computer in uno stato a minore consumo energetico. Lo stato del sistema viene preservato se la batteria si esaurisce o il pc non è collegato all&apos;alimentazione.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="172"/>
@@ -205,27 +205,27 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Riavviare il computer? Tutto il lavoro non salvato verrà perso.</translation>
+        <translation>Vuoi davvero riavviare il computer? Tutto il lavoro non salvato sarà perso...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="182"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Uscire dalla sessione di LXQt</translation>
+        <translation>Spegnimento dalla sessione di LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Spegnere il computer? Tutto il lavoro non salvato verrà perso.</translation>
+        <translation>Vuoi davvero spegnere il computer? Tutto il lavoro non salvato sarà perso...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="192"/>
         <source>LXQt Session Logout</source>
-        <translation>Esci dalla sessione di LXQt</translation>
+        <translation>Uscita dalla sessione di LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Chiudere la sessione? Tutto il lavoro non salvato verrà perso...</translation>
+        <translation>Vuoi davvero chiudere la sessione? Tutto il lavoro non salvato verrà perso...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="201"/>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore salvaschermo</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="83"/>
@@ -266,19 +266,19 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si è verificato un errore durante l&apos;avvio del salvaschermo. Errore sconosciuto - valore di ritorno non documentato da xdg-screensaver: %1.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation type="vanished">È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non può essere avviato a causa di un problema dell&apos;applicazione stessa.</translation>
+        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non può essere avviato a causa di un problema dell&apos;applicazione stessa.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation type="vanished">È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non è installato correttamente.</translation>
+        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non è installato correttamente.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation type="vanished">È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non può essere avviato.</translation>
+        <translation>È avvenuto un errore durante l&apos;avvio del salvaschermo. xdg-screensaver non può essere avviato.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="78"/>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="vanished">Si è verificato un errore avviando il salvaschermo. Errore sconosciuto: valore di ritorno non documentato da xdg-screensaver=%1.</translation>
+        <translation>Si è verificato un errore avviando il salvaschermo. Errore sconosciuto: valore di ritorno non documentato da xdg-screensaver=%1.</translation>
     </message>
 </context>
 <context>
@@ -336,32 +336,32 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">Informazioni su LXQt</translation>
+        <translation>Informazioni su LXQt</translation>
     </message>
     <message>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
-        <translation type="vanished">Informazioni</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Autori</translation>
+        <translation>Autori</translation>
     </message>
     <message>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Ringraziamenti</translation>
+        <translation>Ringraziamenti</translation>
     </message>
     <message>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Traduzioni</translation>
+        <translation>Traduzioni</translation>
     </message>
     <message>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Informazioni tecniche</translation>
+        <translation>Informazioni tecniche</translation>
     </message>
 </context>
 </TS>
