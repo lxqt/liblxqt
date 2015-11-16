@@ -136,43 +136,69 @@ void Application::updateTheme()
 
 namespace
 {
-    int signal_sock[2];
-
-
-    void signalHandler(int signo)
+    class SignalHandler
     {
-        int ret = write(signal_sock[0], &signo, sizeof (int));
-        if (sizeof (int) != ret)
-            qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
-    }
+    public:
+        static void signalHandler(int signo)
+        {
+            int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
+            if (sizeof (int) != ret)
+                qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
+        } 
+
+    public:
+        template <class Lambda>
+        SignalHandler(Lambda signalEmitter)
+            : mSignalSock{-1, -1}
+        {
+            if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, mSignalSock))
+            {
+                qCritical() << QStringLiteral("unable to create socketpair for correct signal handling: %1)").arg(strerror(errno));
+                return;
+            }
+
+            mNotifier.reset(new QSocketNotifier(mSignalSock[1], QSocketNotifier::Read));
+            QObject::connect(mNotifier.data(), &QSocketNotifier::activated, [this, signalEmitter] {
+                int signo = 0;
+                int ret = read(mSignalSock[1], &signo, sizeof (int));
+                if (sizeof (int) != ret)
+                qCritical() << QStringLiteral("unable to read signal from socketpair, %1").arg(strerror(errno));
+                signalEmitter(signo);
+            });
+        }
+
+        ~SignalHandler()
+        {
+            close(mSignalSock[0]);
+            close(mSignalSock[1]);
+        }
+
+        void listenToSignals(QList<int> const & signoList)
+        {
+            struct sigaction sa;
+            sa.sa_handler = signalHandler;
+            sigemptyset(&sa.sa_mask);
+            sa.sa_flags = 0;
+            for (auto const & signo : signoList)
+                sigaction(signo, &sa, nullptr);
+        }
+
+    public:
+        static QScopedPointer<SignalHandler> instance;
+
+    private:
+        int mSignalSock[2];
+        QScopedPointer<QSocketNotifier> mNotifier;
+    };
+
+    QScopedPointer<SignalHandler> SignalHandler::instance;
 }
 
 void Application::listenToUnixSignals(QList<int> const & signoList)
 {
-    static QSocketNotifier * signal_notifier = nullptr;
+    static QScopedPointer<QSocketNotifier> signal_notifier;
 
-    if (nullptr == signal_notifier)
-    {
-        if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, signal_sock))
-        {
-            qCritical() << QStringLiteral("unable to create socketpair for correct signal handling: %1)").arg(strerror(errno));
-            return;
-        }
-
-        signal_notifier = new QSocketNotifier(signal_sock[1], QSocketNotifier::Read, this);
-        connect(signal_notifier, &QSocketNotifier::activated, [this] {
-                int signo = 0;
-                int ret = read(signal_sock[1], &signo, sizeof (int));
-                if (sizeof (int) != ret)
-                    qCritical() << QStringLiteral("unable to read signal from socketpair, %1").arg(strerror(errno));
-                emit unixSignal(signo);
-                });
-    }
-
-    struct sigaction sa;
-    sa.sa_handler = signalHandler;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
-    for (auto const & signo : signoList)
-        sigaction(signo, &sa, nullptr);
+    if (SignalHandler::instance.isNull())
+        SignalHandler::instance.reset(new SignalHandler{[this] (int signo) { emit unixSignal(signo); }});
+    SignalHandler::instance->listenToSignals(signoList);
 }
