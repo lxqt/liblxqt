@@ -107,7 +107,7 @@ Application::Application(int &argc, char** argv)
 #endif
 
     XdgIcon::setThemeName(Settings::globalSettings()->value("icon_theme").toString());
-    setWindowIcon(QIcon(QString(LXQT_SHARE_DIR) + "/graphics/lxqt_logo.png"));
+    setWindowIcon(QIcon(QString(LXQT_GRAPHICS_DIR) + "/lxqt_logo.png"));
     connect(Settings::globalSettings(), SIGNAL(lxqtThemeChanged()), this, SLOT(updateTheme()));
     updateTheme();
 }
