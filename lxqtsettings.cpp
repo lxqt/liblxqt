@@ -377,7 +377,7 @@ LXQtTheme::LXQtTheme(const QString &path):
 QString LXQtThemeData::findTheme(const QString &themeName)
 {
     if (themeName.isEmpty())
-        return "";
+        return QString();
 
     QStringList paths;
     paths << XdgDirs::dataHome(false);

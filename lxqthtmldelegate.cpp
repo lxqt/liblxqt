@@ -60,7 +60,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
     doc.setHtml(options.text);
     QIcon icon = options.icon;
 
-    options.text = "";
+    options.text = QString();
     options.icon = QIcon();
 
     // icon size
