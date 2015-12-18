@@ -95,6 +95,7 @@ QWidget *SingleApplication::activationWindow() const
 void SingleApplication::activateWindow()
 {
     if (mActivationWindow) {
+        mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
 
         KWindowInfo info(window, NET::WMDesktop);
