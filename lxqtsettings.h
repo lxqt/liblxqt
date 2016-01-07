@@ -80,7 +80,15 @@ public:
     void setLocalizedValue(const QString &key, const QVariant &value);
 
 signals:
+    /*! /brief signal for backward compatibility (emitted whenever settingsChangedFromExternal() or settingsChangedByApp() is emitted)
+     */
     void settingsChanged();
+    /*! /brief signal emitted when the settings file is changed by external application
+     */
+    void settingsChangedFromExternal();
+    /*! /brief signal emitted when any setting is changed by this object
+     */
+    void settingsChangedByApp();
 
 protected:
     bool event(QEvent *event);
@@ -91,6 +99,9 @@ protected slots:
 
 private slots:
     void _fileChanged(QString path);
+
+private:
+    void addWatchedFile(QString const & path);
 
 private:
     Q_DISABLE_COPY(Settings)

@@ -45,7 +45,9 @@ class LXQt::SettingsPrivate
 {
 public:
     SettingsPrivate(Settings* parent):
-        mChangeTimer(0),
+        mFileChangeTimer(0),
+        mAppChangeTimer(0),
+        mAddWatchTimer(0),
         mParent(parent)
     {
     }
@@ -53,7 +55,9 @@ public:
     QString localizedKey(const QString& key) const;
 
     QFileSystemWatcher mWatcher;
-    int mChangeTimer;
+    int mFileChangeTimer;
+    int mAppChangeTimer;
+    int mAddWatchTimer;
 
 private:
     Settings* mParent;
@@ -171,15 +175,32 @@ bool Settings::event(QEvent *event)
 {
     if (event->type() == QEvent::UpdateRequest)
     {
-        emit settingsChanged();
+        // delay the settingsChanged* signal emitting for:
+        //  - checking in _fileChanged
+        //  - merging emitting the signals
+        if(d_ptr->mAppChangeTimer)
+            killTimer(d_ptr->mAppChangeTimer);
+        d_ptr->mAppChangeTimer = startTimer(100);
     }
     else if (event->type() == QEvent::Timer)
     {
-        if(static_cast<QTimerEvent*>(event)->timerId() == d_ptr->mChangeTimer)
+        const int timer = static_cast<QTimerEvent*>(event)->timerId();
+        killTimer(timer);
+        if (timer == d_ptr->mFileChangeTimer)
         {
+            d_ptr->mFileChangeTimer = 0;
             fileChanged(); // invoke the real fileChanged() handler.
-            killTimer(d_ptr->mChangeTimer);
-            d_ptr->mChangeTimer = 0;
+        } else if (timer == d_ptr->mAppChangeTimer)
+        {
+            d_ptr->mAppChangeTimer = 0;
+            // do emit the signals
+            emit settingsChangedByApp();
+            emit settingsChanged();
+        } else if (timer == d_ptr->mAddWatchTimer)
+        {
+            d_ptr->mAddWatchTimer = 0;
+            //try to re-add filename for watching
+            addWatchedFile(fileName());
         }
     }
 
@@ -189,18 +210,29 @@ bool Settings::event(QEvent *event)
 void Settings::fileChanged()
 {
     sync();
+    emit settingsChangedFromExternal();
     emit settingsChanged();
 }
 
 void Settings::_fileChanged(QString path)
 {
-    // delay the change notification for 100 ms to avoid
-    // unnecessary repeated loading of the same config file if
-    // the file is changed for several times rapidly.
-    if(d_ptr->mChangeTimer)
-        killTimer(d_ptr->mChangeTimer);
-    d_ptr->mChangeTimer = startTimer(100);
+    // check if the file isn't changed by our logic
+    // FIXME: this is poor implementation; should we rather compute some hash of values if changed by external?
+    if (0 == d_ptr->mAppChangeTimer)
+    {
+        // delay the change notification for 100 ms to avoid
+        // unnecessary repeated loading of the same config file if
+        // the file is changed for several times rapidly.
+        if(d_ptr->mFileChangeTimer)
+            killTimer(d_ptr->mFileChangeTimer);
+        d_ptr->mFileChangeTimer = startTimer(1000);
+    }
 
+    addWatchedFile(path);
+}
+
+void Settings::addWatchedFile(QString const & path)
+{
     // D*mn! yet another Qt 5.4 regression!!!
     // See the bug report: https://github.com/lxde/lxqt/issues/441
     // Since Qt 5.4, QSettings uses QSaveFile to save the config files.
@@ -214,7 +246,10 @@ void Settings::_fileChanged(QString path)
     // Luckily, I found a workaround: If the file path no longer exists
     // in the watcher's files(), this file is deleted.
     if(!d_ptr->mWatcher.files().contains(path))
-        d_ptr->mWatcher.addPath(path);
+        // in some situations adding fails because of non-existing file (e.g. editting file in external program)
+        if (!d_ptr->mWatcher.addPath(path) && 0 == d_ptr->mAddWatchTimer)
+            d_ptr->mAddWatchTimer = startTimer(100);
+
 }
 
 
@@ -688,6 +723,7 @@ void GlobalSettings::fileChanged()
         emit lxqtThemeChanged();
     }
 
+    emit settingsChangedFromExternal();
     emit settingsChanged();
 }
 
