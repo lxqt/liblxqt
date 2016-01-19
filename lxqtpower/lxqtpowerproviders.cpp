@@ -325,16 +325,15 @@ ConsoleKitProvider::~ConsoleKitProvider()
 bool ConsoleKitProvider::canAction(Power::Action action) const
 {
     QString command;
-    bool needsBoolFlag = false;
-
+    
     switch (action)
     {
     case Power::PowerReboot:
-        command = "CanRestart";
+        command = "CanReboot";
         break;
 
     case Power::PowerShutdown:
-        command = "CanStop";
+        command = "CanPowerOff";
         break;
 
     case Power::PowerHibernate:
@@ -351,20 +350,12 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
         return false;
     }
 
-    if (needsBoolFlag)
-        return dbusCallSystemd(CONSOLEKIT_SERVICE,
-                CONSOLEKIT_PATH,
-                CONSOLEKIT_INTERFACE,
-                QDBusConnection::systemBus(),
-                command,
-                false,
-                PowerProvider::DontCheckDBUS);
-
-    return dbusCall(CONSOLEKIT_SERVICE,
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
                     CONSOLEKIT_PATH,
                     CONSOLEKIT_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
+                    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -376,16 +367,15 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
 bool ConsoleKitProvider::doAction(Power::Action action)
 {
     QString command;
-    bool needsBoolFlag = false;
-
+    
     switch (action)
     {
     case Power::PowerReboot:
-        command = "Restart";
+        command = "Reboot";
         break;
 
     case Power::PowerShutdown:
-        command = "Stop";
+        command = "PowerOff";
         break;
 
     case Power::PowerHibernate:
@@ -402,20 +392,13 @@ bool ConsoleKitProvider::doAction(Power::Action action)
         return false;
     }
 
-    if (needsBoolFlag)
-        return dbusCallSystemd(CONSOLEKIT_SERVICE,
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
                 CONSOLEKIT_PATH,
                 CONSOLEKIT_INTERFACE,
                 QDBusConnection::systemBus(),
                 command,
-                true);
-
-    return dbusCall(CONSOLEKIT_SERVICE,
-             CONSOLEKIT_PATH,
-             CONSOLEKIT_INTERFACE,
-             QDBusConnection::systemBus(),
-             command
-            );
+                true
+               );
 }
 
 /************************************************
