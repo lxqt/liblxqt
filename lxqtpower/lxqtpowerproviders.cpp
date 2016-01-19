@@ -338,12 +338,10 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
 
     case Power::PowerHibernate:
         command  = "CanHibernate";
-        needsBoolFlag = true;
         break;
 
     case Power::PowerSuspend:
         command  = "CanSuspend";
-        needsBoolFlag = true;
         break;
 
     default:
@@ -380,12 +378,10 @@ bool ConsoleKitProvider::doAction(Power::Action action)
 
     case Power::PowerHibernate:
         command = "Hibernate";
-        needsBoolFlag = true;
         break;
 
     case Power::PowerSuspend:
         command = "Suspend";
-        needsBoolFlag = true;
         break;
 
     default:
