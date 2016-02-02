@@ -498,14 +498,7 @@ QString LXQtTheme::previewImage() const
  ************************************************/
 QString LXQtTheme::qss(const QString& module) const
 {
-    QString styleSheet = d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
-
-    // Single/double click ...........................
-    Settings s("desktop");
-    bool singleClick = s.value("icon-launch-mode", "singleclick").toString() == "singleclick";
-    styleSheet += QString("QAbstractItemView {activate-on-singleclick : %1; }").arg(singleClick ? 1 : 0);
-
-    return styleSheet;
+    return d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
 }
 
 
