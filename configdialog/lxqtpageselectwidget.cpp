@@ -30,6 +30,7 @@
 #include <QDebug>
 #include <QStyledItemDelegate>
 #include <QScrollBar>
+#include <QApplication>
 
 using namespace LXQt;
 
@@ -102,12 +103,14 @@ QSize PageSelectWidget::sizeHint() const
     int w = 0;
     for(int i=0; i< count(); ++i)
     {
-        QRect rect = fontMetrics().boundingRect(QRect(), Qt::AlignLeft | Qt::TextWordWrap, item(i)->text());
+        QRect rect = fontMetrics().boundingRect(QRect(), Qt::AlignHCenter | Qt::TextWordWrap, item(i)->text());
         w = qMax(w, rect.width());
     }
+    // consider the icon size too
+    w = qMax(w, QApplication::style()->pixelMetric(QStyle::PM_IconViewIconSize));
 
-    if (horizontalScrollBar()->isVisible())
-        w += horizontalScrollBar()->width();
+    if (verticalScrollBar()->isVisible())
+        w += QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent);
     size.setWidth(w + frameWidth() + spacing()*2 + 10);
     return size;
 }
