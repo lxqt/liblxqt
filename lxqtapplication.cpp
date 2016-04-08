@@ -59,7 +59,7 @@ void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QStri
 {
     QByteArray msgBuf = msgStr.toUtf8();
     const char* msg = msgBuf.constData();
-    QDir dir(XdgDirs::configHome().toUtf8() + "/lxqt");
+    QDir dir(XdgDirs::configHome().toUtf8() + QLatin1String("/lxqt"));
     dir.mkpath(".");
 
     const char* typestr;
