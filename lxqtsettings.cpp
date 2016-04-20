@@ -415,10 +415,13 @@ QString LXQtThemeData::findTheme(const QString &themeName)
         return QString();
 
     QStringList paths;
+    QLatin1String fallback(LXQT_INSTALL_PREFIX);
+
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
-    // TODO/FIXME: this is fallback path for standard CMAKE_INSTALL_PREFIX
-    paths << "/usr/local/share";
+
+    if (!paths.contains(fallback))
+        paths << fallback;
 
     foreach(QString path, paths)
     {
