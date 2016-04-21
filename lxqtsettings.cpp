@@ -664,6 +664,7 @@ GlobalSettings::GlobalSettings():
 {
     if (value("icon_theme").toString().isEmpty())
     {
+        qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
         const QString fallback(QLatin1String("oxygen"));
 
         const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
@@ -671,6 +672,10 @@ GlobalSettings::GlobalSettings():
         {
             setValue("icon_theme", fallback);
             sync();
+        }
+        else
+        {
+            qWarning() << QString::fromLatin1("Fallback Icon Theme (Oxygen) not found");
         }
     }
 
