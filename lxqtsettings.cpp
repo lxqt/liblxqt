@@ -631,10 +631,12 @@ SettingsCache::SettingsCache(QSettings *settings) :
  ************************************************/
 void SettingsCache::loadFromSettings()
 {
-   foreach (QString key, mSettings.allKeys())
-   {
-       mCache.insert(key, mSettings.value(key));
-   }
+    const QStringList keys = mSettings.allKeys();
+
+    const int N = keys.size();
+    for (int i = 0; i < N; ++i) {
+        mCache.insert(keys.at(i), mSettings.value(keys.at(i)));
+    }
 }
 
 
