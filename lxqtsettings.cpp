@@ -666,7 +666,7 @@ GlobalSettings::GlobalSettings():
     {
         const QString fallback(QLatin1String("oxygen"));
 
-        QDir dir("/usr/share/icons/");
+        const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
         if (dir.exists(fallback))
         {
             setValue("icon_theme", fallback);
