@@ -664,24 +664,13 @@ GlobalSettings::GlobalSettings():
 {
     if (value("icon_theme").toString().isEmpty())
     {
-        QStringList failback;
-        failback << "oxygen";
-        failback << "Tango";
-        failback << "Prudence-icon";
-        failback << "Humanity";
-        failback << "elementary";
-        failback << "gnome";
-
+        const QString fallback(QLatin1String("oxygen"));
 
         QDir dir("/usr/share/icons/");
-        foreach (QString s, failback)
+        if (dir.exists(fallback))
         {
-            if (dir.exists(s))
-            {
-                setValue("icon_theme", s);
-                sync();
-                break;
-            }
+            setValue("icon_theme", fallback);
+            sync();
         }
     }
 
