@@ -105,11 +105,11 @@ PluginInfoList PluginInfo::search(const QStringList& desktopFilesDirs, const QSt
     QList<PluginInfo> res;
     QSet<QString> processed;
 
-    foreach (QString desktopFilesDir, desktopFilesDirs)
+    foreach (const QString &desktopFilesDir, desktopFilesDirs)
     {
         QDir dir(desktopFilesDir);
         QFileInfoList files = dir.entryInfoList(QStringList(nameFilter), QDir::Files | QDir::Readable);
-        foreach (QFileInfo file, files)
+        foreach (const QFileInfo &file, files)
         {
             if (processed.contains(file.fileName()))
                 continue;
