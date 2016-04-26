@@ -29,6 +29,7 @@
 #include "lxqtpageselectwidget.h"
 #include <QDebug>
 #include <QStyledItemDelegate>
+#include <QEvent>
 #include <QScrollBar>
 #include <QApplication>
 
@@ -61,7 +62,13 @@ PageSelectWidgetItemDelegate::PageSelectWidgetItemDelegate(PageSelectWidget *par
 QSize PageSelectWidgetItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QSize size = QStyledItemDelegate::sizeHint(option, index);
-    size.setWidth(mView->viewport()->width() - 2*mView->spacing());
+    //all items should have unified width
+    QStyle * style = option.widget ? option.widget->style() : QApplication::style();
+    //Note: this margin logic follows code in QCommonStylePrivate::viewItemLayout()
+    const int margin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, &option, option.widget) + 1;
+    //considering the icon size too
+    size.setWidth(qMax(mView->maxTextWidth(), option.decorationSize.width()));
+    size.rwidth() += 2 * margin;
     return size;
 }
 
@@ -72,6 +79,7 @@ QSize PageSelectWidgetItemDelegate::sizeHint(const QStyleOptionViewItem &option,
  ************************************************/
 PageSelectWidget::PageSelectWidget(QWidget *parent) :
     QListWidget(parent)
+    , mMaxTextWidth(0)
 {
     setSelectionRectVisible(false);
     setViewMode(IconMode);
@@ -81,8 +89,12 @@ PageSelectWidget::PageSelectWidget(QWidget *parent) :
     setDragEnabled(NoDragDrop);
     setEditTriggers(NoEditTriggers);
     setTextElideMode(Qt::ElideNone);
+    setContentsMargins(0, 0, 0, 0);
 
     setItemDelegate(new PageSelectWidgetItemDelegate(this));
+    connect(model(), &QAbstractItemModel::rowsInserted, this, &PageSelectWidget::updateMaxTextWidth);
+    connect(model(), &QAbstractItemModel::rowsRemoved, this, &PageSelectWidget::updateMaxTextWidth);
+    connect(model(), &QAbstractItemModel::dataChanged, this, &PageSelectWidget::updateMaxTextWidth);
 }
 
 
@@ -93,24 +105,53 @@ PageSelectWidget::~PageSelectWidget()
 {
 }
 
+/************************************************
+
+ ************************************************/
+int PageSelectWidget::maxTextWidth() const
+{
+    return mMaxTextWidth;
+}
 
 /************************************************
 
  ************************************************/
-QSize PageSelectWidget::sizeHint() const
+QSize PageSelectWidget::viewportSizeHint() const
 {
-    QSize size = QListWidget::sizeHint();
-    int w = 0;
-    for(int i=0; i< count(); ++i)
-    {
-        QRect rect = fontMetrics().boundingRect(QRect(), Qt::AlignHCenter | Qt::TextWordWrap, item(i)->text());
-        w = qMax(w, rect.width());
-    }
-    // consider the icon size too
-    w = qMax(w, QApplication::style()->pixelMetric(QStyle::PM_IconViewIconSize));
-
+    const int spacing2 = spacing() * 2;
+    QSize size{sizeHintForColumn(0) + spacing2, (sizeHintForRow(0) + spacing2) * count()};
     if (verticalScrollBar()->isVisible())
-        w += QApplication::style()->pixelMetric(QStyle::PM_ScrollBarExtent);
-    size.setWidth(w + frameWidth() + spacing()*2 + 10);
+        size.rwidth() += verticalScrollBar()->sizeHint().width();
     return size;
+}
+
+/************************************************
+
+ ************************************************/
+QSize PageSelectWidget::minimumSizeHint() const
+{
+    return QSize{0, 0};
+}
+
+/************************************************
+
+ ************************************************/
+void PageSelectWidget::updateMaxTextWidth()
+{
+    for(int i = count() - 1; 0 <= i; --i)
+    {
+        const QRect r = fontMetrics().boundingRect(QRect{},  Qt::AlignLeft | Qt::TextWordWrap, item(i)->text());
+        mMaxTextWidth = qMax(mMaxTextWidth, r.width());
+    }
+}
+
+/************************************************
+
+ ************************************************/
+bool PageSelectWidget::event(QEvent * event)
+{
+    if (QEvent::StyleChange == event->type())
+        updateMaxTextWidth();
+
+    return QListWidget::event(event);
 }

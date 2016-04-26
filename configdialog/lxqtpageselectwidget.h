@@ -41,9 +41,18 @@ class LXQT_API PageSelectWidget : public QListWidget
 public:
     explicit PageSelectWidget(QWidget *parent = 0);
     virtual ~PageSelectWidget();
+    int maxTextWidth() const;
+    bool event(QEvent * event) override;
 
 protected:
-    QSize sizeHint() const;
+    QSize viewportSizeHint() const override;
+    QSize minimumSizeHint() const override;
+
+protected slots:
+    void updateMaxTextWidth();
+
+private:
+    int mMaxTextWidth;
 };
 
 } // namespace LXQt
