@@ -34,6 +34,11 @@
 #                           [TRANSLATION_DIR] translation_directory
 #                           [INSTALL_DIR] install_directory
 #                           [COMPONENT] component
+#                           [PULL_TRANSLATIONS [Yes | No]]
+#                           [CLEAN_TRANSLATIONS [Yes | No]]
+#                           [REPO_SUBDIR] repository_subdirectory
+#                           [TRANSLATIONS_REPO] remote_translation_repo
+#                           [TRANSLATIONS_REFSPEC] translations_remote_branch
 #                    )
 #     Output:
 #       qmFiles The generated compiled translations (.qm) files
@@ -61,23 +66,22 @@
 #       COMPONENT Optional install component. Only effective if INSTALL_DIR
 #                   present. Defaults to "Runtime".
 #
+#       PULL_TRANSLATIONS Optional flag. If set, the translations are pulled
+#           from external repository in cmake phase (not in build/make time)
+#           into directory "${TRANSLATION_DIR}/${REPO_SUBDIR}".
+#
+#       CLEAN_TRANSLATIONS Optional flag. If set, the externally pulled
+#                          translations are removed.
+#
 #       REPO_SUBDIR Optional path in the "translations repository" to directory
-#           with translations. Only effective if LXQT_PULL_TRANSLATIONS enabled.
+#           with translations. Only effective if PULL_TRANSLATIONS enabled.
 #           Defaults to "${TEMPLATE}".
 #
-#     External variables used:
-#       LXQT_PULL_TRANSLATIONS If this flag is set, the translations are pulled
-#           from external repository in cmake phase (not in build/make time) into
-#           directory "${TRANSLATION_DIR}/${REPO_SUBDIR}".
-#
-#       LXQT_CLEAN_TRANSLATIONS If this flag is set, the externally pulled translations
-#           are removed.
-#
-#       LXQT_TRANSLATIONS_REPO External git repository with translations - only the ${TEMPLATE} directory
+#       TRANSLATIONS_REPO External git repository with translations - only the ${TEMPLATE} directory
 #           is pulled (using the "sparse checkout").
 #           Optional (defaults to "https://github.com/lxde/translations.git").
 #
-#       LXQT_TRANSLATIONS_REFSPEC Optional refspec of external repository. Used in git pull.
+#       TRANSLATIONS_REFSPEC Optional refspec of external repository. Used in git pull.
 #           Defaults to "master".
 
 # CMake v2.8.3 needed to use the CMakeParseArguments module
@@ -86,8 +90,23 @@ cmake_minimum_required(VERSION 2.8.3 FATAL_ERROR)
 # We use our patched version to round a annoying bug.
 include(Qt5PatchedLinguistToolsMacros)
 
+option(PULL_TRANSLATIONS "Pull translations" No)
+option(CLEAN_TRANSLATIONS "Clean translations" No)
+
 function(lxqt_translate_ts qmFiles)
-    set(oneValueArgs USE_QT5 UPDATE_TRANSLATIONS TEMPLATE TRANSLATION_DIR INSTALL_DIR COMPONENT REPO_SUBDIR)
+    set(oneValueArgs
+        USE_QT5
+        UPDATE_TRANSLATIONS
+        TEMPLATE
+        TRANSLATION_DIR
+        INSTALL_DIR
+        COMPONENT
+        PULL_TRANSLATIONS
+        CLEAN_TRANSLATIONS
+        REPO_SUBDIR
+        TRANSLATIONS_REPO
+        TRANSLATIONS_REFSPEC
+    )
     set(multiValueArgs SOURCES UPDATE_OPTIONS)
     cmake_parse_arguments(TR "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
@@ -112,19 +131,25 @@ function(lxqt_translate_ts qmFiles)
     endif()
     get_filename_component(TR_TRANSLATION_DIR "${TR_TRANSLATION_DIR}" ABSOLUTE)
 
+    if (NOT DEFINED TR_CLEAN_TRANSLATIONS)
+        set(TR_CLEAN_TRANSLATIONS "No")
+    endif()
+    if (NOT DEFINED TR_PULL_TRANSLATIONS)
+        set(TR_PULL_TRANSLATIONS "No")
+    endif()
     if (NOT DEFINED TR_REPO_SUBDIR)
         set(TR_REPO_SUBDIR "${TR_TEMPLATE}")
     endif()
 
-    if (NOT DEFINED LXQT_TRANSLATIONS_REPO)
-        set(LXQT_TRANSLATIONS_REPO "https://github.com/lxde/translations.git")
+    if (NOT DEFINED TR_TRANSLATIONS_REPO)
+        set(TR_TRANSLATIONS_REPO "https://github.com/lxde/translations.git")
     endif()
 
-    if (NOT DEFINED LXQT_TRANSLATIONS_REFSPEC)
-        set(LXQT_TRANSLATIONS_REFSPEC "master")
+    if (NOT DEFINED TR_TRANSLATIONS_REFSPEC)
+        set(TR_TRANSLATIONS_REFSPEC "master")
     endif()
 
-    if (LXQT_CLEAN_TRANSLATIONS)
+    if (TR_CLEAN_TRANSLATIONS)
         message(STATUS "Cleaning translations dir '${TR_TRANSLATION_DIR}' ...")
         set(DIR_TO_REMOVE "${TR_TRANSLATION_DIR}/${TR_REPO_SUBDIR}")
         get_filename_component(PARENT_DIR "${DIR_TO_REMOVE}" DIRECTORY)
@@ -136,7 +161,7 @@ function(lxqt_translate_ts qmFiles)
         file(REMOVE_RECURSE "${TR_TRANSLATION_DIR}/.git" "${DIR_TO_REMOVE}")
     endif ()
 
-    if (LXQT_PULL_TRANSLATIONS)
+    if (TR_PULL_TRANSLATIONS)
         find_package(Git REQUIRED)
         if (NOT (GIT_FOUND AND GIT_VERSION_STRING VERSION_GREATER "1.7.0"))
             message(FATAL_ERROR "Git > 1.7.0 is needed For pulling translations!")
@@ -160,7 +185,7 @@ function(lxqt_translate_ts qmFiles)
                 message(FATAL_ERROR "Initialization(init) of translations dir failed!")
             endif ()
 
-            execute_process(COMMAND "${GIT_EXECUTABLE}" remote add  origin "${LXQT_TRANSLATIONS_REPO}"
+            execute_process(COMMAND "${GIT_EXECUTABLE}" remote add  origin "${TR_TRANSLATIONS_REPO}"
                 WORKING_DIRECTORY  "${TR_TRANSLATION_DIR}"
                 RESULT_VARIABLE ex_result
                 )
@@ -180,7 +205,7 @@ function(lxqt_translate_ts qmFiles)
         endif ()
 
         message(STATUS "Pulling the translations...")
-        execute_process(COMMAND "${GIT_EXECUTABLE}" pull origin "${LXQT_TRANSLATIONS_REFSPEC}"
+        execute_process(COMMAND "${GIT_EXECUTABLE}" pull origin "${TR_TRANSLATIONS_REFSPEC}"
             WORKING_DIRECTORY  "${TR_TRANSLATION_DIR}"
             RESULT_VARIABLE ex_result
             )
