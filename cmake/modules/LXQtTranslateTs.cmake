@@ -179,6 +179,9 @@ function(lxqt_translate_ts qmFiles)
                 endif ()
             endif()
 
+            # make sure the dir exist, otherwise git init will fail
+            file(MAKE_DIRECTORY "${TR_TRANSLATION_DIR}")
+
             execute_process(COMMAND "${GIT_EXECUTABLE}" init
                 WORKING_DIRECTORY  "${TR_TRANSLATION_DIR}"
                 RESULT_VARIABLE ex_result
