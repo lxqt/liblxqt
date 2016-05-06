@@ -666,24 +666,18 @@ GlobalSettings::GlobalSettings():
 {
     if (value("icon_theme").toString().isEmpty())
     {
-        QStringList failback;
-        failback << "oxygen";
-        failback << "Tango";
-        failback << "Prudence-icon";
-        failback << "Humanity";
-        failback << "elementary";
-        failback << "gnome";
+        qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
+        const QString fallback(QLatin1String("oxygen"));
 
-
-        QDir dir("/usr/share/icons/");
-        foreach (QString s, failback)
+        const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
+        if (dir.exists(fallback))
         {
-            if (dir.exists(s))
-            {
-                setValue("icon_theme", s);
-                sync();
-                break;
-            }
+            setValue("icon_theme", fallback);
+            sync();
+        }
+        else
+        {
+            qWarning() << QString::fromLatin1("Fallback Icon Theme (Oxygen) not found");
         }
     }
 
