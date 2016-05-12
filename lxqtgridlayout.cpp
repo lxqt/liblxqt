@@ -68,6 +68,7 @@ class LXQt::GridLayoutPrivate
 {
 public:
     GridLayoutPrivate();
+    ~GridLayoutPrivate();
 
     QList<QLayoutItem*> mItems;
     int mRowCount;
@@ -106,6 +107,14 @@ GridLayoutPrivate::GridLayoutPrivate()
     mAnimate = false;
     mPrefCellMinSize = QSize(0,0);
     mPrefCellMaxSize = QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+}
+
+/************************************************
+
+ ************************************************/
+GridLayoutPrivate::~GridLayoutPrivate()
+{
+    qDeleteAll(mItems);
 }
 
 
