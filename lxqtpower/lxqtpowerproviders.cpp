@@ -325,26 +325,34 @@ ConsoleKitProvider::~ConsoleKitProvider()
 bool ConsoleKitProvider::canAction(Power::Action action) const
 {
     QString command;
-
     switch (action)
     {
     case Power::PowerReboot:
-        command = "CanRestart";
+        command = "CanReboot";
         break;
 
     case Power::PowerShutdown:
-        command = "CanStop";
+        command = "CanPowerOff";
+        break;
+
+    case Power::PowerHibernate:
+        command  = "CanHibernate";
+        break;
+
+    case Power::PowerSuspend:
+        command  = "CanSuspend";
         break;
 
     default:
         return false;
     }
 
-    return dbusCall(CONSOLEKIT_SERVICE,
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
                     CONSOLEKIT_PATH,
                     CONSOLEKIT_INTERFACE,
                     QDBusConnection::systemBus(),
                     command,
+                    false,
                     // canAction should be always silent because it can freeze
                     // g_main_context_iteration Qt event loop in QMessageBox
                     // on panel startup if there is no DBUS running.
@@ -356,27 +364,35 @@ bool ConsoleKitProvider::canAction(Power::Action action) const
 bool ConsoleKitProvider::doAction(Power::Action action)
 {
     QString command;
-
     switch (action)
     {
     case Power::PowerReboot:
-        command = "Restart";
+        command = "Reboot";
         break;
 
     case Power::PowerShutdown:
-        command = "Stop";
+        command = "PowerOff";
+        break;
+
+    case Power::PowerHibernate:
+        command = "Hibernate";
+        break;
+
+    case Power::PowerSuspend:
+        command = "Suspend";
         break;
 
     default:
         return false;
     }
 
-    return dbusCall(CONSOLEKIT_SERVICE,
-             CONSOLEKIT_PATH,
-             CONSOLEKIT_INTERFACE,
-             QDBusConnection::systemBus(),
-             command
-            );
+    return dbusCallSystemd(CONSOLEKIT_SERVICE,
+                CONSOLEKIT_PATH,
+                CONSOLEKIT_INTERFACE,
+                QDBusConnection::systemBus(),
+                command,
+                true
+               );
 }
 
 /************************************************
