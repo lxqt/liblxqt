@@ -40,7 +40,6 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
     setWindowTitle(title);
     connect(ui->buttons, SIGNAL(clicked(QAbstractButton*)), SLOT(dialogButtonsAction(QAbstractButton*)));
     ui->moduleList->setVisible(false);
-    connect(Settings::globalSettings(), SIGNAL(settingsChanged()), this, SLOT(updateIcons()));
     foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
         button->setAutoDefault(false);
 }
@@ -102,6 +101,13 @@ void ConfigDialog::showPage(QWidget* page)
 
     ui->stackedWidget->setCurrentIndex(index);
     ui->moduleList->setCurrentRow(index);
+}
+
+bool ConfigDialog::event(QEvent * event)
+{
+    if (QEvent::ThemeChange == event->type())
+        updateIcons();
+    return QDialog::event(event);
 }
 
 void ConfigDialog::closeEvent(QCloseEvent* event)

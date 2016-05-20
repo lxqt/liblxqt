@@ -89,7 +89,8 @@ signals:
 
 protected:
     Settings* mSettings;
-    virtual void closeEvent(QCloseEvent* event);
+    virtual bool event(QEvent * event) override;
+    virtual void closeEvent(QCloseEvent* event) override;
 
 private:
     SettingsCache* mCache;
