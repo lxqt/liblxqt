@@ -36,7 +36,6 @@
 #include <QSharedData>
 #include <QTimerEvent>
 
-#include <XdgIcon>
 #include <XdgDirs>
 
 using namespace LXQt;
@@ -702,8 +701,6 @@ void GlobalSettings::fileChanged()
     QString it = value("icon_theme").toString();
     if (d->mIconTheme != it)
     {
-        d->mIconTheme = it;
-        XdgIcon::setThemeName(it);
         emit iconThemeChanged();
     }
 

@@ -30,7 +30,6 @@
 #include "lxqtapplication.h"
 #include "lxqtsettings.h"
 
-#include <XdgIcon>
 #include <XdgDirs>
 
 using namespace LXQt;
@@ -106,7 +105,6 @@ Application::Application(int &argc, char** argv)
         qInstallMessageHandler(dbgMessageOutput);
 #endif
 
-    XdgIcon::setThemeName(Settings::globalSettings()->value("icon_theme").toString());
     setWindowIcon(QIcon(QString(LXQT_GRAPHICS_DIR) + "/lxqt_logo.png"));
     connect(Settings::globalSettings(), SIGNAL(lxqtThemeChanged()), this, SLOT(updateTheme()));
     updateTheme();
