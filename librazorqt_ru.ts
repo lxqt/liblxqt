@@ -1,21 +1,143 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
     <name>AddPluginDialog</name>
     <message>
         <source>Add plugins</source>
-        <translation>Добавить плагины</translation>
+        <translation type="vanished">Добавить плагины</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Поиск:</translation>
+        <translation type="vanished">Поиск:</translation>
     </message>
     <message>
         <source>Add plugin</source>
-        <translation>Добавить плагин</translation>
+        <translation type="vanished">Добавить плагин</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation type="vanished">Закрыть</translation>
+    </message>
+</context>
+<context>
+    <name>ConfigDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+</context>
+<context>
+    <name>LXQt::AboutDialogPrivate</name>
+    <message>
+        <source>Version: %1</source>
+        <translation type="vanished">Версия: %1</translation>
+    </message>
+    <message>
+        <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
+        <translation type="vanished">Передовая, простая в использовании и быстрая среда рабочего стола, базирующаяся на технологиях Qt.</translation>
+    </message>
+    <message>
+        <source>Copyright: %1-%2 %3</source>
+        <translation type="vanished">Лицензия: %1-%2 %3</translation>
+    </message>
+    <message>
+        <source>Homepage: %1</source>
+        <translation type="vanished">Домашняя страница: %1</translation>
+    </message>
+    <message>
+        <source>License: %1</source>
+        <translation type="vanished">Лицензия: %1</translation>
+    </message>
+    <message>
+        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
+        <translation type="vanished">LXQt переведена на множество языков благодаря работе команд переводчиков по всему миру.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="vanished">да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="vanished">Hет</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;LXQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Инструментарий рабочего стола LXQt - Техническая Информация&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="vanished">Версия</translation>
+    </message>
+    <message>
+        <source>Qt</source>
+        <translation type="vanished">Qt</translation>
+    </message>
+    <message>
+        <source>Debug Build</source>
+        <translation type="vanished">Отладочная версия</translation>
+    </message>
+    <message>
+        <source>System Configuration</source>
+        <translation type="vanished">Настройки системы</translation>
+    </message>
+    <message>
+        <source>Share Directory</source>
+        <translation type="vanished">Открыть общий доступ к папке</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="vanished">Переводы</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;User Directories&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Папки пользователя&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Xdg Data Home</source>
+        <translation type="vanished">Расположение данных Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Config Home</source>
+        <translation type="vanished">Расположение настроек Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Data Dirs</source>
+        <translation type="vanished">Папки данных Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Cache Home</source>
+        <translation type="vanished">Расположение кеша Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Runtime Home</source>
+        <translation type="vanished">Расположение среды времени выполнения Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Autostart Dirs</source>
+        <translation type="vanished">Папки автозапуска Xdg</translation>
+    </message>
+    <message>
+        <source>Xdg Autostart Home</source>
+        <translation type="vanished">Расположение автозапуска Xdg</translation>
+    </message>
+</context>
+<context>
+    <name>LXQt::MessageBox</name>
+    <message>
+        <source>LXQt Power Manager Error</source>
+        <translation type="unfinished">Ошибка Paзор менеджер  электроэнергии  </translation>
+    </message>
+    <message>
+        <source>Hibernate failed.</source>
+        <translation type="unfinished">Ошибка перехода в спящий режим.</translation>
+    </message>
+</context>
+<context>
+    <name>LXQt::NotificationPrivate</name>
+    <message>
+        <source>Notifications Fallback</source>
+        <translation>Уведомления отступление</translation>
     </message>
 </context>
 <context>
@@ -94,141 +216,6 @@
     </message>
 </context>
 <context>
-    <name>QObject</name>
-    <message>
-        <source>Power Manager Error</source>
-        <translation>Ошибка модуля управления питанием</translation>
-    </message>
-    <message>
-        <source>QDBusInterface is invalid</source>
-        <translation>Неправильный интерфейс доступа к шине DBus</translation>
-    </message>
-    <message>
-        <source>Power Manager Error (D-BUS call)</source>
-        <translation>Ошибка модуля управления питанием(вызов DBus)</translation>
-    </message>
-</context>
-<context>
-    <name>LXQt::AboutDialogPrivate</name>
-    <message>
-        <source>Version: %1</source>
-        <translation>Версия: %1</translation>
-    </message>
-    <message>
-        <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
-        <translation>Передовая, простая в использовании и быстрая среда рабочего стола, базирующаяся на технологиях Qt.</translation>
-    </message>
-    <message>
-        <source>Copyright: %1-%2 %3</source>
-        <translation>Лицензия: %1-%2 %3</translation>
-    </message>
-    <message>
-        <source>Homepage: %1</source>
-        <translation>Домашняя страница: %1</translation>
-    </message>
-    <message>
-        <source>License: %1</source>
-        <translation>Лицензия: %1</translation>
-    </message>
-    <message>
-        <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
-        <translation>LXQt переведена на множество языков благодаря работе команд переводчиков по всему миру.</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>да</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Hет</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;LXQt Desktop Toolbox - Technical Info&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Инструментарий рабочего стола LXQt - Техническая Информация&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation>Версия</translation>
-    </message>
-    <message>
-        <source>Qt</source>
-        <translation>Qt</translation>
-    </message>
-    <message>
-        <source>Debug Build</source>
-        <translation>Отладочная версия</translation>
-    </message>
-    <message>
-        <source>System Configuration</source>
-        <translation>Настройки системы</translation>
-    </message>
-    <message>
-        <source>Share Directory</source>
-        <translation>Открыть общий доступ к папке</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <translation>Переводы</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;User Directories&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Папки пользователя&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Xdg Data Home</source>
-        <translation>Расположение данных Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Config Home</source>
-        <translation>Расположение настроек Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Data Dirs</source>
-        <translation>Папки данных Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Cache Home</source>
-        <translation>Расположение кеша Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Runtime Home</source>
-        <translation>Расположение среды времени выполнения Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Autostart Dirs</source>
-        <translation>Папки автозапуска Xdg</translation>
-    </message>
-    <message>
-        <source>Xdg Autostart Home</source>
-        <translation>Расположение автозапуска Xdg</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialog</name>
-    <message>
-        <source>Dialog</source>
-        <translation>Диалог</translation>
-    </message>
-</context>
-<context>
-    <name>LXQt::NotificationPrivate</name>
-    <message>
-        <source>Notifications Fallback</source>
-        <translation>Уведомления отступление</translation>
-    </message>
-</context>
-<context>
-    <name>LXQt::ShortcutButton</name>
-    <message>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Не задано</translation>
-    </message>
-</context>
-<context>
     <name>LXQt::ScreenSaver</name>
     <message>
         <source>Lock Screen</source>
@@ -240,15 +227,15 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation>При запуске произошла ошибка. Не вышло запустить xdg-screensaver по причине его ошибки.</translation>
+        <translation type="vanished">При запуске произошла ошибка. Не вышло запустить xdg-screensaver по причине его ошибки.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation>При запуске произошла ошибка. Xdg-screensaver не установлен по человечески.</translation>
+        <translation type="vanished">При запуске произошла ошибка. Xdg-screensaver не установлен по человечески.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation>При запуске произошла ошибка. Xdg-screensaver не запущен.</translation>
+        <translation type="vanished">При запуске произошла ошибка. Xdg-screensaver не запущен.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
@@ -264,34 +251,68 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Ошибка при запуске хранителя экрана. Неизвестная ошибка - команда xdg-screensaver=%1 вернула недокументированное значение.</translation>
+        <translation type="vanished">Ошибка при запуске хранителя экрана. Неизвестная ошибка - команда xdg-screensaver=%1 вернула недокументированное значение.</translation>
+    </message>
+    <message>
+        <source>Screen Saver Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LXQt::ShortcutButton</name>
+    <message>
+        <source>Clear</source>
+        <translation type="vanished">Очистить</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="vanished">Не задано</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <source>Power Manager Error</source>
+        <translation>Ошибка модуля управления питанием</translation>
+    </message>
+    <message>
+        <source>QDBusInterface is invalid</source>
+        <translation>Неправильный интерфейс доступа к шине DBus</translation>
+    </message>
+    <message>
+        <source>Power Manager Error (D-BUS call)</source>
+        <translation>Ошибка модуля управления питанием(вызов DBus)</translation>
     </message>
 </context>
 <context>
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation>О программе</translation>
+        <translation type="vanished">О программе</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O программе</translation>
+        <translation type="vanished">O программе</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation>Авторы</translation>
+        <translation type="vanished">Авторы</translation>
     </message>
     <message>
         <source>Thanks</source>
-        <translation>Благодарности</translation>
+        <translation type="vanished">Благодарности</translation>
     </message>
     <message>
         <source>Translations</source>
-        <translation>Переводы</translation>
+        <translation type="vanished">Переводы</translation>
     </message>
     <message>
         <source>Technical Info</source>
-        <translation>Техническая информация</translation>
+        <translation type="vanished">Техническая информация</translation>
     </message>
 </context>
 </TS>
