@@ -189,7 +189,7 @@ void NotificationPrivate::handleAction(uint id, QString key)
     else
         keyId = key.toInt(&ok);
 
-    if (ok && key >= 0)
+    if (ok && keyId >= 0)
         emit q->actionActivated(keyId);
 }
 
