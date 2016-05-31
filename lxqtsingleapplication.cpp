@@ -43,7 +43,6 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     QString service =
         QString::fromLatin1("org.lxqt.%1").arg(QApplication::applicationName());
 
-    SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
     QDBusConnection bus = QDBusConnection::sessionBus();
 
     if (!bus.isConnected()) {
@@ -65,6 +64,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     bool registered = (bus.registerService(service) ==
                        QDBusConnectionInterface::ServiceRegistered);
     if (registered) { // We are the primary instance
+        SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
         QLatin1String objectPath("/");
         bus.registerObject(objectPath, mAdaptor,
             QDBusConnection::ExportAllSlots);
