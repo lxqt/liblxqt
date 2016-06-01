@@ -50,10 +50,6 @@
 #define LXQT_PATH         "/LXQtSession"
 #define LXQT_INTERFACE    "org.lxqt.session"
 
-#define LXSESSION_SERVICE      "org.lxde.SessionManager"
-#define LXSESSION_PATH         "/org/lxde/SessionManager"
-#define LXSESSION_INTERFACE    "org.lxde.SessionManager"
-
 #define PROPERTIES_INTERFACE    "org.freedesktop.DBus.Properties"
 
 using namespace LXQt;
