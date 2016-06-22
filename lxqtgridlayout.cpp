@@ -566,9 +566,12 @@ void GridLayout::setGeometry(const QRect &geometry)
 {
     Q_D(GridLayout);
 
+    const bool visual_h_reversed = parentWidget() && parentWidget()->isRightToLeft();
+
     QLayout::setGeometry(geometry);
-    d->mOccupiedGeometry.setTopLeft(geometry.topLeft());
-    d->mOccupiedGeometry.setBottomRight(geometry.topLeft());
+    const QPoint occupied_start = visual_h_reversed ? geometry.topRight() : geometry.topLeft();
+    d->mOccupiedGeometry.setTopLeft(occupied_start);
+    d->mOccupiedGeometry.setBottomRight(occupied_start);
 
     if (!d->mIsValid)
         d->updateCache();
@@ -638,7 +641,8 @@ void GridLayout::setGeometry(const QRect &geometry)
                 remain_width = widthRemain;
             }
 
-            d->setItemGeometry(item, QRect(x, y, width, height));
+            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
+            d->setItemGeometry(item, QRect(left, y, width, height));
             x += width;
         }
     }
@@ -659,7 +663,8 @@ void GridLayout::setGeometry(const QRect &geometry)
                 width = itemWidth + (0 < remain_width-- ? 1 : 0);
                 remain_height = heightRemain;
             }
-            d->setItemGeometry(item, QRect(x, y, width, height));
+            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
+            d->setItemGeometry(item, QRect(left, y, width, height));
             y += height;
         }
     }
