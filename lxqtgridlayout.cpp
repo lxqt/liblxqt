@@ -34,6 +34,34 @@
 
 using namespace LXQt;
 
+class LXQt::GridLayoutPrivate
+{
+public:
+    GridLayoutPrivate();
+    ~GridLayoutPrivate();
+
+    QList<QLayoutItem*> mItems;
+    int mRowCount;
+    int mColumnCount;
+    GridLayout::Direction mDirection;
+
+    bool mIsValid;
+    QSize mCellSizeHint;
+    QSize mCellMaxSize;
+    int mVisibleCount;
+    GridLayout::Stretch mStretch;
+    bool mAnimate;
+
+
+    void updateCache();
+    int rows() const;
+    int cols() const;
+    void setItemGeometry(QLayoutItem * item, QRect const & geometry);
+    QSize mPrefCellMinSize;
+    QSize mPrefCellMaxSize;
+    QRect mOccupiedGeometry;
+};
+
 namespace
 {
     class ItemMoveAnimation : public QVariantAnimation
@@ -63,34 +91,6 @@ namespace
 
     };
 }
-
-class LXQt::GridLayoutPrivate
-{
-public:
-    GridLayoutPrivate();
-    ~GridLayoutPrivate();
-
-    QList<QLayoutItem*> mItems;
-    int mRowCount;
-    int mColumnCount;
-    GridLayout::Direction mDirection;
-
-    bool mIsValid;
-    QSize mCellSizeHint;
-    QSize mCellMaxSize;
-    int mVisibleCount;
-    GridLayout::Stretch mStretch;
-    bool mAnimate;
-
-
-    void updateCache();
-    int rows() const;
-    int cols() const;
-    void setItemGeometry(QLayoutItem * item, QRect const & geometry);
-    QSize mPrefCellMinSize;
-    QSize mPrefCellMaxSize;
-    QRect mOccupiedGeometry;
-};
 
 
 /************************************************
