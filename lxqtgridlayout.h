@@ -161,6 +161,12 @@ public:
     void moveItem(int from, int to, bool withAnimation = false);
 
     /**
+      Checks if layout is currently animated after the \sa moveItem()
+      invocation.
+     **/
+    bool animatedMoveInProgress() const;
+
+    /**
      Returns the cells' minimum size.
      By default, this property contains a size with zero width and height.
      **/

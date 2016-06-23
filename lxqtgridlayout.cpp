@@ -51,6 +51,7 @@ public:
     int mVisibleCount;
     GridLayout::Stretch mStretch;
     bool mAnimate;
+    int mAnimatedItems; //!< counter of currently animated items
 
 
     void updateCache();
@@ -67,11 +68,13 @@ namespace
     class ItemMoveAnimation : public QVariantAnimation
     {
     public:
-        static void animate(QLayoutItem * item, QRect const & geometry)
+        static void animate(QLayoutItem * item, QRect const & geometry, LXQt::GridLayoutPrivate * layout)
         {
             ItemMoveAnimation* animation = new ItemMoveAnimation(item);
             animation->setStartValue(item->geometry());
             animation->setEndValue(geometry);
+            ++layout->mAnimatedItems;
+            connect(animation, &QAbstractAnimation::finished, [layout] { --layout->mAnimatedItems; Q_ASSERT(0 <= layout->mAnimatedItems); });
             animation->start(DeleteWhenStopped);
         }
 
@@ -105,6 +108,7 @@ GridLayoutPrivate::GridLayoutPrivate()
     mVisibleCount = 0;
     mStretch = GridLayout::StretchHorizontal | GridLayout::StretchVertical;
     mAnimate = false;
+    mAnimatedItems = 0;
     mPrefCellMinSize = QSize(0,0);
     mPrefCellMaxSize = QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 }
@@ -202,7 +206,7 @@ void GridLayoutPrivate::setItemGeometry(QLayoutItem * item, QRect const & geomet
     mOccupiedGeometry |= geometry;
     if (mAnimate)
     {
-        ItemMoveAnimation::animate(item, geometry);
+        ItemMoveAnimation::animate(item, geometry, this);
     } else
     {
         item->setGeometry(geometry);
@@ -389,6 +393,16 @@ void GridLayout::moveItem(int from, int to, bool withAnimation /*= false*/)
     d->mAnimate = withAnimation;
     d->mItems.move(from, to);
     invalidate();
+}
+
+
+/************************************************
+
+ ************************************************/
+bool GridLayout::animatedMoveInProgress() const
+{
+    Q_D(const GridLayout);
+    return 0 < d->mAnimatedItems;
 }
 
 
