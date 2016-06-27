@@ -53,6 +53,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
 
     QStyleOptionViewItemV4 options = option;
     initStyleOption(&options, index);
+    const bool is_right_to_left = Qt::RightToLeft == options.direction;
 
     painter->save();
 
@@ -66,9 +67,13 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
     // icon size
     QSize iconSize = icon.actualSize(mIconSize);
     QRect iconRect = QRect(8, 8, iconSize.width(), iconSize.height());
+    if (is_right_to_left)
+    {
+        iconRect.moveLeft(options.rect.left() + options.rect.right() - iconRect.x() - iconRect.width() + 1);
+    }
 
     // set doc size
-    doc.setTextWidth(options.rect.width() - iconRect.right() - 8);
+    doc.setTextWidth(options.rect.width() - iconRect.width() - 8);
 
     options.widget->style()->drawControl(QStyle::CE_ItemViewItem, &options, painter);
 
@@ -76,9 +81,12 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
     painter->translate(options.rect.left(), options.rect.top());
     icon.paint(painter, iconRect);
 
-    // shift text right to make icon visible
-    painter->translate(iconRect.right() + 8, 0);
-    QRect clip(0, 0, options.rect.width() - iconRect.right() - 8, options.rect.height());
+    if (!is_right_to_left)
+    {
+        // shift text right to make icon visible
+        painter->translate(iconRect.right() + 8, 0);
+    }
+    QRect clip(0, 0, options.rect.width() - iconRect.width() - 8, options.rect.height());
     painter->setClipRect(clip);
 
     // set text color to red for selected item
