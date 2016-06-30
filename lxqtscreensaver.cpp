@@ -32,40 +32,32 @@
 #include <XdgIcon>
 #include <QMessageBox>
 #include <QAction>
+#include <QPointer>
+#include <QProcess>
+#include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
 
-using namespace LXQt;
+namespace LXQt {
 
-ScreenSaver::ScreenSaver(QObject * parent)
-    : QObject(parent)
+class ScreenSaverPrivate
 {
-    m_xdgProcess = new QProcess(this);
-    connect(m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(xdgProcess_finished(int,QProcess::ExitStatus)));
-}
+    Q_DECLARE_TR_FUNCTIONS(LXQt::ScreenSaver);
+    Q_DECLARE_PUBLIC(ScreenSaver)
+    ScreenSaver* const q_ptr;
 
-QList<QAction*> ScreenSaver::availableActions()
-{
-    QList<QAction*> ret;
-    QAction * act;
+public:
+    ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {};
 
-    act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
-    connect(act, SIGNAL(triggered()), this, SLOT(lockScreen()));
-    ret.append(act);
+    void _l_xdgProcess_finished(int, QProcess::ExitStatus);
+    QPointer<QProcess> m_xdgProcess;
+};
 
-    return ret;
-}
-
-void ScreenSaver::lockScreen()
-{
-    m_xdgProcess->start("xdg-screensaver", QStringList() << "lock");
-}
-
-void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
+void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus status)
 {
     // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
 
+    Q_Q(ScreenSaver);
     if (err == 0)
-        emit activated();
+        emit q->activated();
     else
     {
         QMessageBox *box = new QMessageBox;
@@ -102,6 +94,43 @@ void ScreenSaver::xdgProcess_finished(int err, QProcess::ExitStatus status)
         box->exec();
     }
 
-    emit done();
+    emit q->done();
 }
 
+
+ScreenSaver::ScreenSaver(QObject * parent)
+    : QObject(parent),
+      d_ptr(new ScreenSaverPrivate(this))
+{
+    Q_D(ScreenSaver);
+    d->m_xdgProcess = new QProcess(this);
+    connect(d->m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
+            this, SLOT(_l_xdgProcess_finished(int,QProcess::ExitStatus)));
+}
+
+ScreenSaver::~ScreenSaver()
+{
+    delete d_ptr;
+}
+
+QList<QAction*> ScreenSaver::availableActions()
+{
+    QList<QAction*> ret;
+    QAction * act;
+
+    act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
+    connect(act, SIGNAL(triggered()), this, SLOT(lockScreen()));
+    ret.append(act);
+
+    return ret;
+}
+
+void ScreenSaver::lockScreen()
+{
+    Q_D(ScreenSaver);
+    d->m_xdgProcess->start("xdg-screensaver", QStringList() << "lock");
+}
+
+} // namespace LXQt
+
+#include "moc_lxqtscreensaver.cpp"
