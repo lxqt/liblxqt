@@ -51,7 +51,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
     if (!index.isValid())
         return;
 
-    QStyleOptionViewItemV4 options = option;
+    QStyleOptionViewItem options = option;
     initStyleOption(&options, index);
     const bool is_right_to_left = Qt::RightToLeft == options.direction;
 
@@ -109,7 +109,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
  ************************************************/
 QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-    QStyleOptionViewItemV4 options = option;
+    QStyleOptionViewItem options = option;
     initStyleOption(&options, index);
 
     QSize iconSize = options.icon.actualSize(mIconSize);
