@@ -42,7 +42,7 @@
       <arg name="id" type="u" direction="in"/>
     </method>
     <method name="Notify">
-      <annotation name="com.trolltech.QtDBus.QtTypeName.In6" value="QVariantMap"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In6" value="QVariantMap"/>
       <arg name="app_name" type="s" direction="in"/>
       <arg name="replaces_id" type="u" direction="in"/>
       <arg name="app_icon" type="s" direction="in"/>
