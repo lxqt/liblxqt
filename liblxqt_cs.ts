@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Search:</source>
-        <translation type="vanished">Hledat:</translation>
+        <translation>Hledat:</translation>
     </message>
     <message>
         <source>Add plugin</source>
@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="vanished">Zavřít</translation>
+        <translation>Zavřít</translation>
     </message>
 </context>
 <context>
@@ -32,32 +32,32 @@
     <name>LXQt::AboutDialogPrivate</name>
     <message>
         <source>Version: %1</source>
-        <translation type="vanished">Verze: %1</translation>
+        <translation>Verze: %1</translation>
     </message>
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Pokročilé, snadno se používající a rychlé pracovní prostředí založené na technologiích Qt.</translation>
+        <translation>Pokročilé, snadno se používající a rychlé pracovní prostředí založené na technologiích Qt.</translation>
     </message>
     <message>
         <source>Copyright: %1-%2 %3</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Autorské právo: %1-%2 %3</translation>
+        <translation>Autorské právo: %1-%2 %3</translation>
     </message>
     <message>
         <source>Homepage: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Domovská stránka: %1</translation>
+        <translation>Domovská stránka: %1</translation>
     </message>
     <message>
         <source>License: %1</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation type="vanished">Licence: %1</translation>
+        <translation>Licence: %1</translation>
     </message>
     <message>
         <source>LXQt is translated into many languages thanks to the work of the translation teams all over the world.</source>
         <comment>About dialog, &apos;Translations&apos; tab text</comment>
-        <translation type="vanished">LXQt je přeložen do mnoha jazyků díky práci překladatelských týmů z celého světa.</translation>
+        <translation>LXQt je přeložen do mnoha jazyků díky práci překladatelských týmů z celého světa.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Chyba ve správě energie</translation>
+        <translation>Chyba ve správě energie</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Hibernace se nezdařila.</translation>
+        <translation>Zazimování (hibernace) se nezdařila.</translation>
     </message>
 </context>
 <context>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba šetřiče obrazovky</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="83"/>
@@ -266,19 +266,19 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Během spouštění šetřiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver: %1.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
-        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensavernelze spustit kvůli jeho pádu.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensavernelze spustit kvůli jeho pádu.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver is not installed correctly.</source>
-        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver není nainstalován správně.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver není nainstalován správně.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started.</source>
-        <translation type="vanished">Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver nelze spustit.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. xdg-screensaver nelze spustit.</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="78"/>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation type="vanished">Během spouštění spořiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver=%1.</translation>
+        <translation>Během spouštění šetřiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver=%1.</translation>
     </message>
 </context>
 <context>
@@ -336,32 +336,32 @@
     <name>about</name>
     <message>
         <source> About LXQt</source>
-        <translation type="vanished">O prostředí LXQt</translation>
+        <translation>O prostředí LXQt</translation>
     </message>
     <message>
         <source>About</source>
         <comment>About dialog, Tab title </comment>
-        <translation type="vanished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <source>Authors</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Autoři</translation>
+        <translation>Autoři</translation>
     </message>
     <message>
         <source>Thanks</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Poděkování</translation>
+        <translation>Poděkování</translation>
     </message>
     <message>
         <source>Translations</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Překlady</translation>
+        <translation>Překlady</translation>
     </message>
     <message>
         <source>Technical Info</source>
         <comment>About dialog, Tab title</comment>
-        <translation type="vanished">Technické informace</translation>
+        <translation>Technické informace</translation>
     </message>
 </context>
 </TS>
