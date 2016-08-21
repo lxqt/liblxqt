@@ -254,7 +254,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα της προστασίας οθόνης</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="83"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προκλήθηκε ένα σφάλμα κατά την έναρξη της προστασίας οθόνης. Άγνωστο σφάλμα -μη τεκμηριωμένη επιστρεφόμενη τιμή από το xdg-screensaver: %1.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
