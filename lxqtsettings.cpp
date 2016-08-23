@@ -49,6 +49,15 @@ public:
         mAddWatchTimer(0),
         mParent(parent)
     {
+        // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
+        //       exists to have functional mWatcher
+        if (!mParent->contains("__userfile__"))
+        {
+            mParent->setValue("__userfile__", true);
+            mParent->sync();
+        }
+        mWatcher.addPath(mParent->fileName());
+        QObject::connect(&(mWatcher), &QFileSystemWatcher::fileChanged, mParent, &Settings::_fileChanged);
     }
 
     QString localizedKey(const QString& key) const;
@@ -104,15 +113,6 @@ Settings::Settings(const QString& module, QObject* parent) :
     QSettings("lxqt", module, parent),
     d_ptr(new SettingsPrivate(this))
 {
-    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
-    //       exists to have functional mWatcher
-    if (!contains("__userfile__"))
-    {
-        setValue("__userfile__", true);
-        sync();
-    }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
@@ -123,15 +123,6 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
     QSettings(fileName, format, parent),
     d_ptr(new SettingsPrivate(this))
 {
-    // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
-    //       exists to have functional mWatcher
-    if (!contains("__userfile__"))
-    {
-        setValue("__userfile__", true);
-        sync();
-    }
-    d_ptr->mWatcher.addPath(this->fileName());
-    connect(&(d_ptr->mWatcher), &QFileSystemWatcher::fileChanged, this, &Settings::_fileChanged);
 }
 
 
