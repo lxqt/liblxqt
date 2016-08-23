@@ -43,7 +43,7 @@ using namespace LXQt;
 class LXQt::SettingsPrivate
 {
 public:
-    SettingsPrivate(Settings* parent):
+    SettingsPrivate(Settings* parent, bool useXdgFallback):
         mFileChangeTimer(0),
         mAppChangeTimer(0),
         mAddWatchTimer(0),
@@ -54,6 +54,31 @@ public:
         if (!mParent->contains("__userfile__"))
         {
             mParent->setValue("__userfile__", true);
+#if defined(WITH_XDG_DIRS_FALLBACK)
+            if (useXdgFallback)
+            {
+                //Note: Qt doesn't support the xdg spec regarding the XDG_CONFIG_DIRS
+                //https://bugreports.qt.io/browse/QTBUG-34919
+                //(Partial) workaround: if the the user specific config file doesn't exist
+                //we try to find some system-wide configuration file and copy all settings into
+                //the user specific file
+                const QString org = mParent->organizationName();
+                const QString file_name = QFileInfo{mParent->fileName()}.fileName();
+                const QStringList dirs = XdgDirs::configDirs();
+                for (auto dir_i = dirs.rbegin(), dir_e = dirs.rend(); dir_i != dir_e; ++dir_i)
+                {
+                    QDir dir{*dir_i};
+                    if (dir.cd(mParent->organizationName()) && dir.exists(file_name))
+                    {
+                        QSettings system_settings{dir.absoluteFilePath(file_name), QSettings::IniFormat};
+                        for (const QString & key : system_settings.allKeys())
+                        {
+                            mParent->setValue(key, system_settings.value(key));
+                        }
+                    }
+                }
+            }
+#endif
             mParent->sync();
         }
         mWatcher.addPath(mParent->fileName());
@@ -111,7 +136,7 @@ public:
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
     QSettings("lxqt", module, parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, true))
 {
 }
 
@@ -121,7 +146,7 @@ Settings::Settings(const QString& module, QObject* parent) :
  ************************************************/
 Settings::Settings(const QString &fileName, QSettings::Format format, QObject *parent):
     QSettings(fileName, format, parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
 }
 
@@ -131,7 +156,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
  ************************************************/
 Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings->organizationName(), parentSettings->applicationName(), parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
     beginGroup(subGroup);
 }
@@ -142,7 +167,7 @@ Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QOb
  ************************************************/
 Settings::Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings.organizationName(), parentSettings.applicationName(), parent),
-    d_ptr(new SettingsPrivate(this))
+    d_ptr(new SettingsPrivate(this, false))
 {
     beginGroup(subGroup);
 }
