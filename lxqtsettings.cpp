@@ -37,6 +37,9 @@
 #include <QTimerEvent>
 
 #include <XdgDirs>
+#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
+#include <algorithm>
+#endif
 
 using namespace LXQt;
 
@@ -64,8 +67,14 @@ public:
                 //the user specific file
                 const QString org = mParent->organizationName();
                 const QString file_name = QFileInfo{mParent->fileName()}.fileName();
-                const QStringList dirs = XdgDirs::configDirs();
+                QStringList dirs = XdgDirs::configDirs();
+#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
+                std::reverse(dirs.begin(), dirs.end());
+                for (auto dir_i = dirs.begin(), dir_e = dirs.end(); dir_i != dir_e; ++dir_i)
+#else // QT_VERSION
                 for (auto dir_i = dirs.rbegin(), dir_e = dirs.rend(); dir_i != dir_e; ++dir_i)
+#endif
+
                 {
                     QDir dir{*dir_i};
                     if (dir.cd(mParent->organizationName()) && dir.exists(file_name))
