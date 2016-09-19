@@ -46,6 +46,7 @@ using namespace LXQt;
 #include <unistd.h>
 #include <cstring>
 #include <csignal>
+#include <cerrno>
 #include <sys/socket.h>
 #include <QDateTime>
 #include <QDebug>
