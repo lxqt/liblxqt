@@ -103,13 +103,6 @@ void ConfigDialog::showPage(QWidget* page)
     ui->moduleList->setCurrentRow(index);
 }
 
-bool ConfigDialog::event(QEvent * event)
-{
-    if (QEvent::ThemeChange == event->type())
-        updateIcons();
-    return QDialog::event(event);
-}
-
 void ConfigDialog::closeEvent(QCloseEvent* event)
 {
     emit save();
@@ -129,13 +122,6 @@ void ConfigDialog::dialogButtonsAction(QAbstractButton* button)
     {
         close();
     }
-}
-
-void ConfigDialog::updateIcons()
-{
-    for (int ix = 0; ix < mIcons.size(); ix++)
-        ui->moduleList->item(ix)->setIcon(XdgIcon::fromTheme(mIcons.at(ix)));
-    update();
 }
 
 ConfigDialog::~ConfigDialog()

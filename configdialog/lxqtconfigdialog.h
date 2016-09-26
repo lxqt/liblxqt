@@ -89,7 +89,6 @@ signals:
 
 protected:
     Settings* mSettings;
-    virtual bool event(QEvent * event) override;
     virtual void closeEvent(QCloseEvent* event) override;
 
 private:
@@ -100,7 +99,6 @@ private:
 
 private slots:
     void dialogButtonsAction(QAbstractButton* button);
-    void updateIcons();
 
 };
 
