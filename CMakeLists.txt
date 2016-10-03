@@ -6,6 +6,8 @@ set(LXQT_MAJOR_VERSION 0)
 set(LXQT_MINOR_VERSION 11)
 set(LXQT_PATCH_VERSION 0)
 
+set(QT_MINIMUM_VERSION "5.4.2")
+
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
@@ -133,10 +135,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 find_package(X11 REQUIRED QUIET)
-find_package(Qt5Widgets REQUIRED QUIET)
-find_package(Qt5DBus REQUIRED QUIET)
-find_package(Qt5X11Extras REQUIRED QUIET)
-find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg REQUIRED QUIET)
 find_package(KF5WindowSystem REQUIRED QUIET)
 message(STATUS "Building with Qt ${Qt5Core_VERSION_STRING}")
@@ -154,7 +153,7 @@ QT5_ADD_DBUS_ADAPTOR(SRCS
 set(LXQT_QT_VERSION "5")
 
 # KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
-set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= 1.2.0, Qt5Widgets, Qt5Xml, Qt5DBus, Qt5X11Extras")
+set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= 1.2.0, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
 
 
 # Standard directories for installation

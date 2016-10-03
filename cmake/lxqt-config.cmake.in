@@ -58,10 +58,10 @@ list(APPEND CMAKE_MODULE_PATH
     "${LXQT_CMAKE_FIND_MODULES_DIR}"
 )
 
-find_dependency(Qt5Widgets)
-find_dependency(Qt5DBus)
-find_dependency(Qt5X11Extras)
-find_dependency(Qt5LinguistTools)
+find_dependency(Qt5Widgets @QT_MINIMUM_VERSION@)
+find_dependency(Qt5DBus @QT_MINIMUM_VERSION@)
+find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
+find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
 find_dependency(Qt5Xdg)
 find_dependency(KF5WindowSystem)
 
