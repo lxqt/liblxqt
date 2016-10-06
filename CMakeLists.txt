@@ -8,6 +8,7 @@ set(LXQT_PATCH_VERSION 0)
 
 set(QT_MINIMUM_VERSION "5.4.2")
 set(QTXDG_MINIMUM_VERSION "2.0.0")
+set(LXQTBT_MINIMUM_VERSION "0.1.0")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
@@ -122,8 +123,6 @@ set(FORMS
 # additional cmake files
 list(APPEND CMAKE_MODULE_PATH
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules"
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/find-modules"
 )
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -135,6 +134,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(X11 REQUIRED QUIET)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
