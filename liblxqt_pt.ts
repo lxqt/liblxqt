@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt">
+<TS version="2.1" language="pt">
 <context>
     <name>AddPluginDialog</name>
     <message>
@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Search:</source>
-        <translation>Procurar:</translation>
+        <translation>Pesquisar:</translation>
     </message>
     <message>
         <source>Add Widget</source>
@@ -41,7 +41,7 @@
     <message>
         <source>Advanced, easy-to-use, and fast desktop environment based on Qt technologies.</source>
         <comment>About dialog, &apos;About&apos; tab text</comment>
-        <translation>Ambiente de trabalho rápido, simples e fácil de utilizar baseado na tecnologia Qt.</translation>
+        <translation>Ambiente de trabalho rápido simples e fácil de utilizar, baseado na tecnologia Qt.</translation>
     </message>
     <message>
         <source>LXQt would not have been possible without the &lt;a %1&gt;Razor-qt&lt;/a&gt; project and its many contributors.</source>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo reiniciar o computador? Os trabalhos não gravados serão perdidos...</translation>
+        <translation>Pretende mesmo reiniciar o computador? Os trabalhos não guardados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="182"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="183"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo desligar o computador? Os trabalhos não gravados serão perdidos...</translation>
+        <translation>Pretende mesmo desligar o computador? Os trabalhos não guardados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="192"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="193"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Pretende mesmo terminar a sessão? Os trabalhos não gravados serão perdidos...</translation>
+        <translation>Pretende mesmo terminar a sessão? Os trabalhos não guardados serão perdidos...</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="201"/>
@@ -314,21 +314,21 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="78"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Existem erros na sintaxe nos argumentos xdg-screensaver.</translation>
+        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Existem erros de sintaxe nos argumentos xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="84"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Certifique-se que o xdg-screensaver está instalado e em execução.</translation>
+        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Certifique-se de que xdg-screensaver está instalado e em execução.</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="90"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Erro na ação &apos;activate&apos;. Certifique-se que o xdg-screensaver está instalado e em execução.</translation>
+        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. Erro na ação &apos;activate&apos;. Certifique-se de que xdg-screensaver está instalado e em execução.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver=%1.</source>
-        <translation>Ocorreu um erro ao iniciar a proteção de ecrã. O erro xdg-screensaver=%1 não é conhecido ou documentado.</translation>
+        <translation>Ocorreu um erro ao iniciar a proteção do ecrã. Erro desconhecido - valor de retorno não documentado em xdg-screensaver = %1.</translation>
     </message>
 </context>
 <context>
