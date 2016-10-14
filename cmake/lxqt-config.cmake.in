@@ -57,6 +57,7 @@ find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
 find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
 find_dependency(Qt5Xdg @QTXDG_MINIMUM_VERSION@)
 find_dependency(KF5WindowSystem)
+find_dependency(lxqt-build-tools @LXQTBT_MINIMUM_VERSION@)
 
 if (CMAKE_VERSION VERSION_GREATER 2.8.12)
     cmake_policy(SET CMP0024 OLD)
