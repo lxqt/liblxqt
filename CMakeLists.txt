@@ -2,27 +2,12 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
 project(liblxqt)
 
-set(LXQT_MAJOR_VERSION 0)
-set(LXQT_MINOR_VERSION 11)
-set(LXQT_PATCH_VERSION 0)
-
 set(QT_MINIMUM_VERSION "5.4.2")
 set(QTXDG_MINIMUM_VERSION "2.0.0")
 set(LXQTBT_MINIMUM_VERSION "0.1.0")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
-
-#-----------------------------------------------------------------------------
-# LXQT_DATA_DIR defaults to CMAKE_INSTALL_FULL_DATADIR. It's added to
-#   XDG_DATA_DIRS by the startlxqt script
-# Warning: Setting LXQT_DATA_DIR must be done after including GNUInstallDirs
-#-----------------------------------------------------------------------------
-if (NOT DEFINED LXQT_DATA_DIR)
-    set(LXQT_DATA_DIR "${CMAKE_INSTALL_FULL_DATADIR}" CACHE PATH
-        "LXQt base directory relative to which data files should be searched"
-    )
-endif()
 
 #-----------------------------------------------------------------------------
 # Release is the default build type
@@ -120,13 +105,7 @@ set(FORMS
     configdialog/lxqtconfigdialog.ui
 )
 
-# additional cmake files
-list(APPEND CMAKE_MODULE_PATH
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
-)
-
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-option(WITH_XDG_DIRS_FALLBACK "Use our XDG_CONFIG_DIRS fallback" ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -151,7 +130,6 @@ QT5_ADD_DBUS_ADAPTOR(SRCS
     lxqtsingleapplication.h LXQt::SingleApplication
 )
 
-set(LXQT_QT_VERSION "5")
 
 # KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
 set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
@@ -160,16 +138,8 @@ set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= 
 # Standard directories for installation
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 include(LXQtCreatePkgConfigFile)
-include(cmake/FindInstallConfigPath.cmake) # sets LXQT_ETC_XDG_DIR, if unset
 include(LXQtCreatePortableHeaders)
-
-set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
-set(LXQT_LIBRARY_NAME "lxqt" CACHE STRING "lxqt")
-set(LXQT_RELATIVE_SHARE_DIR "${LXQT_LIBRARY_NAME}")
-set(LXQT_SHARE_DIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/${LXQT_RELATIVE_SHARE_DIR}")
-set(LXQT_RELATIVE_TRANSLATIONS_DIR "${LXQT_LIBRARY_NAME}/translations")
-set(LXQT_TRANSLATIONS_DIR "${LXQT_SHARE_DIR}/translations")
-set(LXQT_GRAPHICS_DIR "${LXQT_SHARE_DIR}/graphics")
+include(LXQtConfigVars)
 
 set(LXQT_INTREE_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include")
 set(LXQT_INTREE_TARGETS_FILE "${CMAKE_BINARY_DIR}/${LXQT_LIBRARY_NAME}-targets.cmake")
@@ -223,9 +193,6 @@ lxqt_create_portable_headers(INTREE_PORTABLE_HEADERS
 # Create in-tree build infrastructure
 #************************************************
 set(CFG_LXQT_TARGETS_FILE   "${LXQT_INTREE_TARGETS_FILE}")
-set(CFG_LXQT_CMAKE_MODULES_DIR "${PROJECT_SOURCE_DIR}/cmake/modules")
-set(CFG_LXQT_CMAKE_FIND_MODULES_DIR "${PROJECT_SOURCE_DIR}/cmake/find-modules")
-
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/lxqt-config.cmake.in"
@@ -237,8 +204,6 @@ configure_package_config_file(
 # Create installable build infrastructure
 #************************************************
 set(CFG_LXQT_TARGETS_FILE "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/${LXQT_LIBRARY_NAME}-targets.cmake")
-set(CFG_LXQT_CMAKE_MODULES_DIR "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/modules")
-set(CFG_LXQT_CMAKE_FIND_MODULES_DIR "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/find-modules")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/lxqt-config.cmake.in"
@@ -262,27 +227,6 @@ install(FILES
 install(EXPORT
     ${LXQT_LIBRARY_NAME}-targets
     DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/${LXQT_LIBRARY_NAME}"
-    COMPONENT Devel
-)
-
-file(GLOB toInstallFindModules
-    "${PROJECT_SOURCE_DIR}/cmake/find-modules/*.cmake"
-)
-
-install(
-    FILES ${toInstallFindModules}
-    DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/find-modules"
-    COMPONENT Devel
-)
-
-file(GLOB toInstallModules
-    "${PROJECT_SOURCE_DIR}/cmake/modules/*.cmake"
-    "${PROJECT_SOURCE_DIR}/cmake/modules/*.in"
-)
-
-install(
-    FILES ${toInstallModules}
-    DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_LIBRARY_NAME}/modules"
     COMPONENT Devel
 )
 
