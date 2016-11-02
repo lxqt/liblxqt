@@ -134,12 +134,12 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Збій менеджера живлення LXQt</translation>
+        <translation>Збій менеджера живлення LXQt</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Не вдалося приспати.</translation>
+        <translation>Не вдалося приспати.</translation>
     </message>
 </context>
 <context>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка зберігача екрану</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="83"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сталася помилка під час запуску зберігача екрану. Невідома помилка - недокументоване значення виводу xdg-screensaver: %1. </translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
