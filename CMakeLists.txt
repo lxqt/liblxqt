@@ -275,7 +275,16 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
     PRIVATE "$<$<CONFIG:Release>:QT_NO_WARNING_OUTPUT>"
 )
 
+if (Qt5Core_VERSION VERSION_LESS "5.9.0")
+    if (NOT DEFINED WITH_XDG_DIRS_FALLBACK)
+        set(WITH_XDG_DIRS_FALLBACK ON)
+    endif ()
+elseif (WITH_XDG_DIRS_FALLBACK)
+    set(WITH_XDG_DIRS_FALLBACK OFF)
+    message(WARNING "Disabling requested WITH_XDG_DIRS_FALLBACK workaround, as proper implementation is in Qt from v5.9.0")
+endif ()
 if (WITH_XDG_DIRS_FALLBACK)
+    message(STATUS "Building with homemade QSettings XDG fallback workaround")
     target_compile_definitions(${LXQT_LIBRARY_NAME}
         PRIVATE "WITH_XDG_DIRS_FALLBACK"
     )
