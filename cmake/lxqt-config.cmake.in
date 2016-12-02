@@ -2,6 +2,10 @@
 
 @PACKAGE_INIT@
 
+if (CMAKE_VERSION VERSION_LESS 3.0.2)
+    message(FATAL_ERROR \"@PROJECT_NAME@ requires at least CMake version 3.0.2\")
+endif()
+
 include(CMakeFindDependencyMacro)
 
 find_dependency(Qt5Widgets @QT_MINIMUM_VERSION@)
@@ -11,10 +15,11 @@ find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
 find_dependency(Qt5Xdg @QTXDG_MINIMUM_VERSION@)
 find_dependency(KF5WindowSystem)
 find_dependency(lxqt-build-tools @LXQTBT_MINIMUM_VERSION@)
-
 include(LXQtConfigVars)
 
-if (CMAKE_VERSION VERSION_GREATER 2.8.12)
-    cmake_policy(SET CMP0024 OLD)
+if (NOT TARGET @LXQT_LIBRARY_NAME@)
+    if (POLICY CMP0024)
+        cmake_policy(SET CMP0024 NEW)
+    endif()
+    include("${CMAKE_CURRENT_LIST_DIR}/lxqt-targets.cmake")
 endif()
-include("${CMAKE_CURRENT_LIST_DIR}/lxqt-targets.cmake")
