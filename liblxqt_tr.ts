@@ -134,12 +134,12 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">LXQt Güç Yöneticisi Hatası</translation>
+        <translation>LXQt Güç Yöneticisi Hatası</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="70"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Uykuya alma başarısız oldu.</translation>
+        <translation>Uykuya alma başarısız oldu.</translation>
     </message>
 </context>
 <context>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="77"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran Koruyucu Hatası</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="83"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran Koruyucu başlarken bir hata oluştur. Bilinmeyen hata - xdg-screensaver=%1 den okunamayan geri dönüş değeri.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
