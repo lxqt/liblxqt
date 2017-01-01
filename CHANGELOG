@@ -1,7 +1,28 @@
 
-liblxqt-0.11.0 / 2016-09-24
+liblxqt-0.11.1 / 2017-01-01
 ===========================
 
+  * Bump needed build tools version (#113)
+  * build: Enable/disable WITH_XDG_DIRS_FALLBACK based on Qt version (#111)
+  * Updates lxqt-build-tools required version
+  * Adds a CMake minimum version requirement to the -config.cmake
+  * Refactors superbuild support
+  * Adds PROJECT_NAME to the build with Qt version message
+  * Pack target_compile_definitions() and target_include_directories()
+  * Adds PROJECT_NAME to the build with Qt version message
+  * Pack target_compile_definitions() and target_include_directories()
+  * Use the LXQtConfigVars module
+  * Make liblxqt depend on lxqt-build-tools
+  * Use the lxqt-build-tools LXQtCreatePortableHeaders
+  * Use the new LXQt Build Tools package
+  * Sets a minimum Qt5Xdg required version
+  * Adds minimum Qt version requirement (5.4.2)
+  * Remove cpack (#107)
+
+0.11.0 / 2016-09-24
+===================
+
+  * Release 0.11.0: Add changelog
   * Bump version ot 0.11.0 (#105)
   * Settings: Make use of reverse_iterator conditional
   * Application: Add <cerrno> include
