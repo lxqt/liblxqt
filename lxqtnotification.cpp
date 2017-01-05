@@ -158,7 +158,8 @@ void NotificationPrivate::setActions(QStringList actions, int defaultAction)
 {
     mActions.clear();
     mDefaultAction = defaultAction;
-    for (int ix = 0; ix < actions.size(); ix++)
+    const int N = actions.size();
+    for (int ix = 0; ix < N; ix++)
     {
         if (ix == defaultAction)
             mActions.append("default");

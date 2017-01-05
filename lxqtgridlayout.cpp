@@ -131,7 +131,8 @@ void GridLayoutPrivate::updateCache()
     mCellMaxSize = QSize(0, 0);
     mVisibleCount = 0;
 
-    for (int i=0; i<mItems.count(); ++i)
+    const int N = mItems.count();
+    for (int i=0; i < N; ++i)
     {
         QLayoutItem *item = mItems.at(i);
         if (!item->widget() || item->widget()->isHidden())
