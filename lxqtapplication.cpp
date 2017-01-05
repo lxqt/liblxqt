@@ -128,7 +128,7 @@ Application::Application(int &argc, char** argv, bool handleQuitSignals)
 
 void Application::updateTheme()
 {
-    QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
+    const QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
     setStyleSheet(lxqtTheme.qss(styleSheetKey));
     emit themeChanged();
 }
@@ -140,7 +140,7 @@ namespace
     public:
         static void signalHandler(int signo)
         {
-            int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
+            const int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
             if (sizeof (int) != ret)
                 qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
         } 

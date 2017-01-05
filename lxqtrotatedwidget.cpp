@@ -90,7 +90,7 @@ void RotatedWidget::adjustContentSize()
 {
     mContent->adjustSize();
 
-    QSize before = size();
+    const QSize before = size();
 
     adjustSize();
 
@@ -147,7 +147,7 @@ void RotatedWidget::paintEvent(QPaintEvent */*event*/)
     if (mOrigin == Qt::TopLeftCorner)
         return;
 
-    QSize sz = mContent->size();
+    const QSize sz = mContent->size();
 
     QPainter painter(this);
 

@@ -40,7 +40,7 @@ AutostartEntry::AutostartEntry(const QString& name):
 {
     foreach (const QString& dir, XdgDirs::autostartDirs())
     {
-        QString path = QString("%1/%2").arg(dir, name);
+        const QString path = QString("%1/%2").arg(dir, name);
         if (QFile(path).exists())
         {
             mSystemFile.load(path);
@@ -49,7 +49,7 @@ AutostartEntry::AutostartEntry(const QString& name):
         }
     }
 
-    QString path = QString("%1/%2").arg(XdgDirs::autostartHome(), name);
+    const QString path = QString("%1/%2").arg(XdgDirs::autostartHome(), name);
     if (QFile(path).exists())
     {
         mLocalFile.load(path);
@@ -59,7 +59,7 @@ AutostartEntry::AutostartEntry(const QString& name):
 
 void AutostartEntry::setFile(const XdgDesktopFile& file)
 {
-    bool local = isLocal();
+    const bool local = isLocal();
     if (mSystem && local && file == mSystemFile)
     {
         removeLocal();

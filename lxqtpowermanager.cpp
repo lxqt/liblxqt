@@ -48,7 +48,7 @@ public:
 
     static QWidget *parentWidget()
     {
-        QWidgetList widgets = QApplication::topLevelWidgets();
+        const QWidgetList widgets = QApplication::topLevelWidgets();
 
         if (widgets.count())
             return widgets.at(0);
@@ -76,7 +76,7 @@ public:
 protected:
     virtual void resizeEvent(QResizeEvent* event)
     {
-        QRect screen = QApplication::desktop()->screenGeometry();
+        const QRect screen = QApplication::desktop()->screenGeometry();
         move((screen.width()  - this->width()) / 2,
              (screen.height() - this->height()) / 2);
 

@@ -85,7 +85,7 @@ void Translator::setTranslationSearchPaths(const QStringList &paths)
  ************************************************/
 bool translate(const QString &name, const QString &owner)
 {
-    QString locale = QLocale::system().name();
+    const QString locale = QLocale::system().name();
     QTranslator *appTranslator = new QTranslator(qApp);
 
     QStringList *paths = getSearchPaths();
@@ -132,7 +132,7 @@ bool translate(const QString &name, const QString &owner)
  ************************************************/
 bool Translator::translateApplication(const QString &applicationName)
 {
-    QString locale = QLocale::system().name();
+    const QString locale = QLocale::system().name();
     QTranslator *qtTranslator = new QTranslator(qApp);
 
     if (qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
@@ -170,7 +170,7 @@ bool Translator::translatePlugin(const QString &pluginName, const QString& type)
 {
     static QSet<QString> loadedPlugins;
 
-    QString fullName = type % QChar('/') % pluginName;
+    const QString fullName = type % QChar('/') % pluginName;
     if (loadedPlugins.contains(fullName))
         return true;
 
