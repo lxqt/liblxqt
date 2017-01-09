@@ -72,12 +72,11 @@ bool PluginInfo::isValid() const
  ************************************************/
 QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
 {
-    QString baseName, path;
-    QFileInfo fi = QFileInfo(fileName());
-    path = fi.canonicalPath();
-    baseName = value("X-LXQt-Library", fi.completeBaseName()).toString();
+    const QFileInfo fi = QFileInfo(fileName());
+    const QString path = fi.canonicalPath();
+    const QString baseName = value("X-LXQt-Library", fi.completeBaseName()).toString();
 
-    QString soPath = QDir(libDir).filePath(QString("lib%2.so").arg(baseName));
+    const QString soPath = QDir(libDir).filePath(QString("lib%2.so").arg(baseName));
     QLibrary* library = new QLibrary(soPath);
 
     if (!library->load())
@@ -87,7 +86,7 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
         return 0;
     }
 
-    QString locale = QLocale::system().name();
+    const QString locale = QLocale::system().name();
     QTranslator* translator = new QTranslator(library);
 
     translator->load(QString("%1/%2/%2_%3.qm").arg(path, baseName, locale));
@@ -107,8 +106,8 @@ PluginInfoList PluginInfo::search(const QStringList& desktopFilesDirs, const QSt
 
     foreach (const QString &desktopFilesDir, desktopFilesDirs)
     {
-        QDir dir(desktopFilesDir);
-        QFileInfoList files = dir.entryInfoList(QStringList(nameFilter), QDir::Files | QDir::Readable);
+        const QDir dir(desktopFilesDir);
+        const QFileInfoList files = dir.entryInfoList(QStringList(nameFilter), QDir::Files | QDir::Readable);
         foreach (const QFileInfo &file, files)
         {
             if (processed.contains(file.fileName()))

@@ -31,17 +31,17 @@ using namespace LXQt;
 
 LXQT_API bool ProgramFinder::programExists(const QString& command)
 {
-    QString program = programName(command);
+    const QString program = programName(command);
     if (program[0] == QChar('/'))
     {
         QFileInfo fi(program);
         return fi.isExecutable() && fi.isFile();
     }
 
-    QString path = qgetenv("PATH");
+    const QString path = qgetenv("PATH");
     foreach (const QString& dirName, path.split(":", QString::SkipEmptyParts))
     {
-        QFileInfo fi(QDir(dirName), program);
+        const QFileInfo fi(QDir(dirName), program);
         if (fi.isExecutable() && fi.isFile())
             return true;
     }
