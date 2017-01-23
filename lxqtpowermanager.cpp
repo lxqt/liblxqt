@@ -41,7 +41,7 @@ namespace LXQt {
 
 class LXQT_API MessageBox: public QMessageBox
 {
-    Q_DECLARE_TR_FUNCTIONS(LXQt::MessageBox);
+    Q_DECLARE_TR_FUNCTIONS(LXQt::MessageBox)
 
 public:
     explicit MessageBox(QWidget *parent = 0): QMessageBox(parent) {}
