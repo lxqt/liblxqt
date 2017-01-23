@@ -124,7 +124,7 @@ static bool GetIntArrayProperty(XID window,
 
 class ScreenSaverPrivate
 {
-    Q_DECLARE_TR_FUNCTIONS(LXQt::ScreenSaver);
+    Q_DECLARE_TR_FUNCTIONS(LXQt::ScreenSaver)
     Q_DECLARE_PUBLIC(ScreenSaver)
     ScreenSaver* const q_ptr;
 
