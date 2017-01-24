@@ -141,6 +141,7 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
 {
     // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
 
+    Q_UNUSED(status)
     Q_Q(ScreenSaver);
     if (err == 0)
         emit q->activated();

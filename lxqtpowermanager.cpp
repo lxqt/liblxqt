@@ -69,6 +69,8 @@ public:
 
     static void warning(const QString& title, const QString& text)
     {
+        Q_UNUSED(title)
+        Q_UNUSED(text)
         QMessageBox::warning(parentWidget(), tr("LXQt Power Manager Error"), tr("Hibernate failed."));
     }
 
@@ -76,6 +78,7 @@ public:
 protected:
     virtual void resizeEvent(QResizeEvent* event)
     {
+        Q_UNUSED(event)
         const QRect screen = QApplication::desktop()->screenGeometry();
         move((screen.width()  - this->width()) / 2,
              (screen.height() - this->height()) / 2);

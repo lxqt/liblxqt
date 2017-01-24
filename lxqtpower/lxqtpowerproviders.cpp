@@ -594,12 +594,14 @@ HalProvider::~HalProvider()
 
 bool HalProvider::canAction(Power::Action action) const
 {
+    Q_UNUSED(action)
     return false;
 }
 
 
 bool HalProvider::doAction(Power::Action action)
 {
+    Q_UNUSED(action)
     return false;
 }
 

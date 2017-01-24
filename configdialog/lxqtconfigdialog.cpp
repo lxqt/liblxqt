@@ -112,6 +112,7 @@ bool ConfigDialog::event(QEvent * event)
 
 void ConfigDialog::closeEvent(QCloseEvent* event)
 {
+    Q_UNUSED(event)
     emit save();
     mSettings->sync();
 }

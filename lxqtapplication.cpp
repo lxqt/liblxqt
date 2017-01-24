@@ -57,6 +57,7 @@ variable LXQT_DEBUG set
 */
 void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QString & msgStr)
 {
+    Q_UNUSED(ctx)
     QByteArray msgBuf = msgStr.toUtf8();
     const char* msg = msgBuf.constData();
     QDir dir(XdgDirs::configHome().toUtf8() + QLatin1String("/lxqt"));
