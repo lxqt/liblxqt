@@ -153,6 +153,6 @@ private:
 #endif
 #define lxqtSingleApp (static_cast<LXQt::SingleApplication *>(qApp))
 
-}; // namespace LXQt
+} // namespace LXQt
 
 #endif // LXQTSINGLEAPPLICATION_H
