@@ -85,12 +85,12 @@ void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QStri
 
     QByteArray dt = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz").toUtf8();
     if (isatty(STDERR_FILENO))
-        fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, qApp, typestr, msg, COLOR_RESET);
+        fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, static_cast<void *>(qApp), typestr, msg, COLOR_RESET);
     else
-        fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, qApp, typestr, msg);
+        fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
 
     FILE *f = fopen(dir.absoluteFilePath("debug.log").toUtf8().constData(), "a+");
-    fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, qApp, typestr, msg);
+    fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
     fclose(f);
 
     if (type == QtFatalMsg)
