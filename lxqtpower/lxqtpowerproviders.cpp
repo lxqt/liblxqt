@@ -107,8 +107,8 @@ static bool dbusCall(const QString &service,
 
     // If the method no returns value, we believe that it was successful.
     return msg.arguments().isEmpty() ||
-           msg.arguments().first().isNull() ||
-           msg.arguments().first().toBool();
+           msg.arguments().constFirst().isNull() ||
+           msg.arguments().constFirst().toBool();
 }
 
 /************************************************
@@ -156,10 +156,10 @@ static bool dbusCallSystemd(const QString &service,
     }
 
     // If the method no returns value, we believe that it was successful.
-    if (msg.arguments().isEmpty() || msg.arguments().first().isNull())
+    if (msg.arguments().isEmpty() || msg.arguments().constFirst().isNull())
         return true;
 
-    QString response = msg.arguments().first().toString();
+    QString response = msg.arguments().constFirst().toString();
     qDebug() << "systemd:" << method << "=" << response;
     return response == "yes" || response == "challenge";
 }
@@ -199,7 +199,7 @@ bool dbusGetProperty(const QString &service,
     }
 
     return !msg.arguments().isEmpty() &&
-            msg.arguments().first().value<QDBusVariant>().variant().toBool();
+            msg.arguments().constFirst().value<QDBusVariant>().variant().toBool();
 }
 
 
