@@ -77,7 +77,6 @@ namespace LXQt {
 
 class LXQT_API SingleApplication : public Application {
     Q_OBJECT
-    Q_ENUMS(StartOptions)
 
 public:
     /*!
@@ -101,6 +100,7 @@ public:
         /** Don't exit if the connection to the D-Bus session bus fails.*/
         NoExitOnDBusFailure
     };
+    Q_ENUM(StartOptions)
 
     /*!
      * \brief Construct a LXQt SingleApplication object.
