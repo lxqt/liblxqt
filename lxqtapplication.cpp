@@ -103,7 +103,7 @@ Application::Application(int &argc, char** argv)
 #ifdef DEBUG
     qInstallMessageHandler(dbgMessageOutput);
 #else
-    if (!qgetenv("LXQT_DEBUG").isNull())
+    if (!qEnvironmentVariableIsSet("LXQT_DEBUG"))
         qInstallMessageHandler(dbgMessageOutput);
 #endif
 
