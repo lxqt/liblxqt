@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
 project(liblxqt)
 
-set(QT_MINIMUM_VERSION "5.4.2")
+set(QT_MINIMUM_VERSION "5.5.0")
 set(QTXDG_MINIMUM_VERSION "2.0.0")
 set(LXQTBT_MINIMUM_VERSION "0.3.1")
 
