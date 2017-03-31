@@ -148,7 +148,7 @@ namespace
 
     public:
         template <class Lambda>
-        SignalHandler(Lambda signalEmitter)
+        SignalHandler(Application * app, Lambda signalEmitter)
             : mSignalSock{-1, -1}
         {
             if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, mSignalSock))
@@ -158,7 +158,7 @@ namespace
             }
 
             mNotifier.reset(new QSocketNotifier(mSignalSock[1], QSocketNotifier::Read));
-            QObject::connect(mNotifier.data(), &QSocketNotifier::activated, [this, signalEmitter] {
+            QObject::connect(mNotifier.data(), &QSocketNotifier::activated, app, [this, signalEmitter] {
                 int signo = 0;
                 int ret = read(mSignalSock[1], &signo, sizeof (int));
                 if (sizeof (int) != ret)
@@ -199,6 +199,6 @@ void Application::listenToUnixSignals(QList<int> const & signoList)
     static QScopedPointer<QSocketNotifier> signal_notifier;
 
     if (SignalHandler::instance.isNull())
-        SignalHandler::instance.reset(new SignalHandler{[this] (int signo) { emit unixSignal(signo); }});
+        SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { emit unixSignal(signo); }});
     SignalHandler::instance->listenToSignals(signoList);
 }
