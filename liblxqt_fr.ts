@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
+    <name>ConfigDialog</name>
+    <message>
+        <location filename="../../configdialog/lxqtconfigdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>Dialogue</translation>
+    </message>
+</context>
+<context>
     <name>LXQt::MessageBox</name>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="72"/>
@@ -154,6 +162,27 @@
         <location filename="../../lxqtscreensaver.cpp" line="168"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
         <translation>Une erreur est survenue lors du démarrage de l&apos;écran de veille. L&apos;action &apos;activate&apos; a échoué. Assurez-vous que screensaver est  installé et actif.</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
+        <source>Power Manager Error</source>
+        <translation>Erreur du gestionnaire d&apos;énergie de LXQt</translation>
+    </message>
+    <message>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <source>QDBusInterface is invalid</source>
+        <translation>L&apos;interface QDBus est invalide</translation>
+    </message>
+    <message>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
+        <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
+        <source>Power Manager Error (D-BUS call)</source>
+        <translation>Erreur du gestionnaire d&apos;énergie de LXQt (appel de D-Bus)</translation>
     </message>
 </context>
 </TS>
