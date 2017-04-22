@@ -80,7 +80,8 @@ public:
                     if (dir.cd(mParent->organizationName()) && dir.exists(file_name))
                     {
                         QSettings system_settings{dir.absoluteFilePath(file_name), QSettings::IniFormat};
-                        for (const QString & key : system_settings.allKeys())
+                        const QStringList keys = system_settings.allKeys();
+                        for (const QString & key : keys)
                         {
                             mParent->setValue(key, system_settings.value(key));
                         }
