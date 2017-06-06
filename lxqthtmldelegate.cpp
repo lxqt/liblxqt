@@ -114,9 +114,14 @@ QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelInd
 
     const QSize iconSize = options.icon.actualSize(mIconSize);
     const QRect iconRect = QRect(8, 8, iconSize.width(), iconSize.height());
+    const QSize optSize = options.rect.size();
 
     QTextDocument doc;
     doc.setHtml(options.text);
-    doc.setTextWidth(options.rect.width() - iconRect.right() - 8);
-    return QSize(options.rect.width(), doc.size().height() + 8);
+
+    if (optSize.width() > 0)
+        doc.setTextWidth(optSize.width() - iconRect.right() - 8);
+    doc.adjustSize();
+    return QSize(0 < optSize.width() ? optSize.width() : iconRect.width() + 8 + qRound(doc.size().width())
+            , qMax(qRound(doc.size().height()), iconSize.height()) + 8);
 }
