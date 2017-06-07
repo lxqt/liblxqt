@@ -6,6 +6,11 @@ set(QT_MINIMUM_VERSION "5.5.0")
 set(QTXDG_MINIMUM_VERSION "2.0.0")
 set(LXQTBT_MINIMUM_VERSION "0.3.1")
 
+set(LXQT_MAJOR_VERSION 0)
+set(LXQT_MINOR_VERSION 11)
+set(LXQT_PATCH_VERSION 1)
+set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
+
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
