@@ -266,7 +266,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="97"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas wywołania wygaszacza ekranu. Nieznany błąd - nieudokumentowana wartość zwrócona przez xdg-screensaver: %1.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
