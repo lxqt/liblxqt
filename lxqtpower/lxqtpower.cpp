@@ -33,15 +33,21 @@
 
 using namespace LXQt;
 
-Power::Power(QObject *parent) :
+Power::Power(bool useLxqtSessionProvider, QObject * parent /*= nullptr*/) :
     QObject(parent)
 {
     mProviders.append(new CustomProvider(this));
+    if (useLxqtSessionProvider)
+        mProviders.append(new LXQtProvider(this));
     mProviders.append(new SystemdProvider(this));
     mProviders.append(new UPowerProvider(this));
     mProviders.append(new ConsoleKitProvider(this));
     mProviders.append(new LxSessionProvider(this));
-    mProviders.append(new LXQtProvider(this));
+}
+
+Power::Power(QObject * parent /*= nullptr*/)
+    : Power(true, parent)
+{
 }
 
 

@@ -56,8 +56,16 @@ public:
         PowerSuspend    /// Suspend the computer
     };
 
-    /// Constructs a Power with parent.
-    explicit Power(QObject *parent = 0);
+    /*!
+     * Constructs the Power object.
+     * \param useLxqtSessionProvider indicates if the DBus methods
+     * provided by lxqt-session should be considered. This is useful to
+     * avoid recursion if the lxqt-session wants to provide some of the
+     * methods by itself with internal use of this object.
+     */
+    explicit Power(bool useLxqtSessionProvider, QObject *parent = nullptr);
+    /// Constructs a Power with using the lxqt-session provider.
+    explicit Power(QObject *parent = nullptr);
 
     /// Destroys the object.
     virtual ~Power();

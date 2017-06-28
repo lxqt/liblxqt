@@ -500,31 +500,45 @@ LXQtProvider::~LXQtProvider()
 
 bool LXQtProvider::canAction(Power::Action action) const
 {
+    QString command;
     switch (action)
     {
         case Power::PowerLogout:
-            // there can be case when razo-session does not run
-            return dbusCall(LXQT_SERVICE, LXQT_PATH, LXQT_SERVICE,
-                            QDBusConnection::sessionBus(), "canLogout",
-                            PowerProvider::DontCheckDBUS);
+            command = "canLogout";
+            break;
+        case Power::PowerReboot:
+            command = "canReboot";
+            break;
+        case Power::PowerShutdown:
+            command = "canPowerOff";
+            break;
         default:
             return false;
     }
+
+    // there can be case when lxqtsession-session does not run
+    return dbusCall(LXQT_SERVICE, LXQT_PATH, LXQT_SERVICE,
+            QDBusConnection::sessionBus(), command,
+            PowerProvider::DontCheckDBUS);
 }
 
 
 bool LXQtProvider::doAction(Power::Action action)
 {
     QString command;
-
     switch (action)
     {
-    case Power::PowerLogout:
-        command = "logout";
-        break;
-
-    default:
-        return false;
+        case Power::PowerLogout:
+            command = "logout";
+            break;
+        case Power::PowerReboot:
+            command = "reboot";
+            break;
+        case Power::PowerShutdown:
+            command = "powerOff";
+            break;
+        default:
+            return false;
     }
 
     return dbusCall(LXQT_SERVICE,
