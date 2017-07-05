@@ -177,6 +177,7 @@ void PowerManager::reboot()
         MessageBox::question(tr("LXQt Session Reboot"),
                              tr("Do you want to really restart your computer? All unsaved work will be lost...")))
     {
+        m_power->logout();
         m_power->reboot();
     }
 }
@@ -187,6 +188,7 @@ void PowerManager::shutdown()
         MessageBox::question(tr("LXQt Session Shutdown"),
                              tr("Do you want to really switch off your computer? All unsaved work will be lost...")))
     {
+        m_power->logout();
         m_power->shutdown();
     }
 }
