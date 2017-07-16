@@ -85,7 +85,7 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="173"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Ar tikrai norite paleisti savo kompiuterį iš naujo? Visas neįrašytas darbas bus prarastas... </translation>
+        <translation>Ar tikrai norite paleisti savo kompiuterį iš naujo? Visas neįrašytas darbas bus prarastas...</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="182"/>
