@@ -147,7 +147,7 @@
     <message>
         <location filename="../../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozwiązanie rezerwowe dla powiadomień</translation>
     </message>
 </context>
 <context>
