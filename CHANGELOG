@@ -1,7 +1,30 @@
 
-liblxqt-0.11.1 / 2017-01-01
+liblxqt-0.12.0 / 2017-10-21
 ===========================
 
+  * Bump minimum qtxdg version to 3.1.0
+  * Don't export github templates
+  * Bump version and needed versions to the final values
+  * lxqtpower: Allow disabling of lxqt-session provider
+  * Drops Qt5Core_VERSION_STRING
+  * HtmlDelegate: Fix sizeHint() computation
+  * Add some comments about the meaning of versions
+  * Move LXQt version back to liblxqt
+  * Fixes (#118)
+  * lxqtapplication: Avoid wrong signal handling
+  * Removes unneeded semicolon in namespace definition
+  * Fix format conversions [-Wformat-pedantic] warnings
+  * Suppress compiler warnings about unused function parameters
+  * Removes extra semicolons in Qt's Q macros
+  * Translator: Prefer XDG_DATA_DIRS over compiled in path
+  * Help the compiler optimizing loops
+  * Use const variables where possible
+  * Update AUTHORS
+
+0.11.1 / 2017-01-01
+===================
+
+  * Release 0.11.1: Update changelog
   * Bump needed build tools version (#113)
   * build: Enable/disable WITH_XDG_DIRS_FALLBACK based on Qt version (#111)
   * Updates lxqt-build-tools required version
