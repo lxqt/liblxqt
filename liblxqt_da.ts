@@ -27,7 +27,7 @@
     <message>
         <location filename="../../lxqtnotification.cpp" line="152"/>
         <source>Notifications Fallback</source>
-        <translation>Alternativ påmindelse</translation>
+        <translation>Reserve for notifikation</translation>
     </message>
 </context>
 <context>
