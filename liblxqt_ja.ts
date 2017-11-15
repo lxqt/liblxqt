@@ -93,7 +93,7 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>休止の失敗</translation>
+        <translation>ハイバーネーションを失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -191,12 +191,12 @@
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>休止の失敗</translation>
+        <translation>ハイバーネーションを失敗しました。</translation>
     </message>
     <message>
         <location filename="../../lxqtpowermanager.cpp" line="211"/>
         <source>Suspend failed.</source>
-        <translation>サスペンドの失敗</translation>
+        <translation>サスペンドを失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -209,7 +209,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>スクリーンセーバーのエラー</translation>
     </message>
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="162"/>
@@ -221,7 +221,7 @@
     <message>
         <location filename="../../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>スクリーンセーバーの起動時にエラーが発生しました。未知のエラー - undocumented return value from xdg-screensaver: %1.</translation>
     </message>
     <message>
         <source>An error occurred starting screensaver. xdg-screensaver cannot be started due its crash.</source>
@@ -267,7 +267,7 @@
         <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDbusInterfaceが無効です。</translation>
+        <translation>QDbusInterfaceが無効です</translation>
     </message>
     <message>
         <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
