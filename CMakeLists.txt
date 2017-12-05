@@ -136,16 +136,18 @@ find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem REQUIRED QUIET)
 message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
-QT5_ADD_DBUS_INTERFACE(SRCS
+QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
     dbus/org.freedesktop.Notifications.xml
     notifications_interface
 )
 
-QT5_ADD_DBUS_ADAPTOR(SRCS
+QT5_ADD_DBUS_ADAPTOR(DBUS_ADAPTOR_SRCS
     dbus/org.lxqt.SingleApplication.xml
     lxqtsingleapplication.h LXQt::SingleApplication
 )
 
+set_property(SOURCE ${DBUS_INTERFACE_SRCS} ${DBUS_ADAPTOR_SRCS} PROPERTY SKIP_AUTOGEN ON)
+list(APPEND SRCS "${DBUS_INTERFACE_SRCS}" "${DBUS_ADAPTOR_SRCS}")
 
 # KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
 set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
