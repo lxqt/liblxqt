@@ -39,7 +39,7 @@ AutostartEntry::AutostartEntry(const QString& name):
     mLocalState(StateNone), mSystem(false)
 {
     const QStringList& dirs = XdgDirs::autostartDirs();
-    foreach (const QString& dir, dirs)
+    for (const QString& dir : dirs)
     {
         const QString path = QString("%1/%2").arg(dir, name);
         if (QFile(path).exists())

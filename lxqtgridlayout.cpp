@@ -641,7 +641,7 @@ void GridLayout::setGeometry(const QRect &geometry)
     if (d->mDirection == LeftToRight)
     {
         int height = itemHeight + (0 < remain_height-- ? 1 : 0);
-        foreach(QLayoutItem *item, d->mItems)
+        for (QLayoutItem *item : static_cast<const QList<QLayoutItem*>&>(d->mItems))
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
@@ -664,7 +664,7 @@ void GridLayout::setGeometry(const QRect &geometry)
     else
     {
         int width = itemWidth + (0 < remain_width-- ? 1 : 0);
-        foreach(QLayoutItem *item, d->mItems)
+        for (QLayoutItem *item : static_cast<const QList<QLayoutItem*>&>(d->mItems))
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;

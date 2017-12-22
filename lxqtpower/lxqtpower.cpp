@@ -58,7 +58,7 @@ Power::~Power()
 
 bool Power::canAction(Power::Action action) const
 {
-    foreach(PowerProvider* provider, mProviders)
+    for(const PowerProvider* provider : static_cast<const QList<PowerProvider*>&>(mProviders))
     {
         if (provider->canAction(action))
             return true;
@@ -70,7 +70,7 @@ bool Power::canAction(Power::Action action) const
 
 bool Power::doAction(Power::Action action)
 {
-    foreach(PowerProvider* provider, mProviders)
+    for(PowerProvider* provider : static_cast<const QList<PowerProvider*>&>(mProviders))
     {
         if (provider->canAction(action) &&
             provider->doAction(action)

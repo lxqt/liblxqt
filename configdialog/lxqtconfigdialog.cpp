@@ -40,14 +40,16 @@ ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* pa
     setWindowTitle(title);
     connect(ui->buttons, SIGNAL(clicked(QAbstractButton*)), SLOT(dialogButtonsAction(QAbstractButton*)));
     ui->moduleList->setVisible(false);
-    foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
+    const QList<QPushButton*> buttons = ui->buttons->findChildren<QPushButton*>();
+    for(QPushButton* button : buttons)
         button->setAutoDefault(false);
 }
 
 void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons)
 {
     ui->buttons->setStandardButtons(buttons);
-    foreach(QPushButton* button, ui->buttons->findChildren<QPushButton*>())
+    const QList<QPushButton*> b = ui->buttons->findChildren<QPushButton*>();
+    for(QPushButton* button : b)
         button->setAutoDefault(false);
 }
 
