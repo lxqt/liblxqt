@@ -39,7 +39,8 @@ LXQT_API bool ProgramFinder::programExists(const QString& command)
     }
 
     const QString path = qgetenv("PATH");
-    foreach (const QString& dirName, path.split(":", QString::SkipEmptyParts))
+    const QStringList dirs = path.split(":", QString::SkipEmptyParts);
+    for (const QString& dirName : dirs)
     {
         const QFileInfo fi(QDir(dirName), program);
         if (fi.isExecutable() && fi.isFile())
@@ -51,7 +52,7 @@ LXQT_API bool ProgramFinder::programExists(const QString& command)
 LXQT_API QStringList ProgramFinder::findPrograms(const QStringList& commands)
 {
     QStringList availPrograms;
-    foreach (const QString& program, commands)
+    for (const QString& program : commands)
         if (programExists(program))
             availPrograms.append(program);
     return availPrograms;
