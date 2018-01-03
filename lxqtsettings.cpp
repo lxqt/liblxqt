@@ -448,7 +448,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
     if (!paths.contains(fallback))
         paths << fallback;
 
-    for(const QString &path : static_cast<const QStringList&>(paths))
+    for(const QString &path : qAsConst(paths))
     {
         QDir dir(QString("%1/lxqt/themes/%2").arg(path, themeName));
         if (dir.isReadable())
@@ -610,7 +610,7 @@ QList<LXQtTheme> LXQtTheme::allThemes()
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
 
-    for(const QString &path : static_cast<const QStringList&>(paths))
+    for(const QString &path : qAsConst(paths))
     {
         QDir dir(QString("%1/lxqt/themes").arg(path));
         const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);
