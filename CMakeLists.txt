@@ -75,6 +75,7 @@ set(PUBLIC_CLASSES
     AutostartEntry
     GridLayout
     RotatedWidget
+    Globals
 )
 
 set(SRCS
