@@ -121,6 +121,8 @@ set(FORMS
     configdialog/lxqtconfigdialog.ui
 )
 
+file(GLOB LXQT_CONFIG_FILES resources/*.conf)
+
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -332,6 +334,11 @@ install(FILES
     ${INTREE_PORTABLE_HEADERS}
     DESTINATION "${LXQT_INSTALL_INCLUDE_DIR}/LXQt"
     COMPONENT Devel
+)
+
+install(FILES ${LXQT_CONFIG_FILES}
+    DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/lxqt"
+    COMPONENT Runtime
 )
 
 #************************************************

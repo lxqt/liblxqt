@@ -53,7 +53,8 @@ public:
         PowerHibernate, /// Hibernate the comupter
         PowerReboot,    /// Reboot the computer
         PowerShutdown,  /// Shutdown the computer
-        PowerSuspend    /// Suspend the computer
+        PowerSuspend,   /// Suspend the computer
+        PowerMonitorOff /// Turn off the monitor(s)
     };
 
     /*!
@@ -88,6 +89,9 @@ public:
     //! This function is provided for convenience. It's equivalent to calling canAction(PowerSuspend).
     bool canSuspend() const;
 
+    //! This function is provided for convenience. It's equivalent to calling canAction(PowerMonitorOff).
+    bool canMonitorOff() const;
+
 public slots:
     /// Performs the requested action.
     bool doAction(Action action);
@@ -106,6 +110,9 @@ public slots:
 
     //! This function is provided for convenience. It's equivalent to calling doAction(PowerSuspend).
     bool suspend();
+
+    //! This function is provided for convenience. It's equivalent to calling doAction(PowerMonitorOff).
+    bool monitorOff();
 
 private:
     QList<PowerProvider*> mProviders;
