@@ -652,6 +652,9 @@ bool CustomProvider::canAction(Power::Action action) const
     case Power::PowerLogout:
         return mSettings.contains("logoutCommand");
 
+    case Power::PowerMonitorOff:
+        return mSettings.contains("monitorOffCommand");
+
     default:
         return false;
     }
@@ -681,6 +684,10 @@ bool CustomProvider::doAction(Power::Action action)
 
     case Power::PowerLogout:
         command = mSettings.value("logoutCommand").toString();
+        break;
+
+    case Power::PowerMonitorOff:
+        command = mSettings.value("monitorOffCommand").toString();
         break;
 
     default:
