@@ -25,6 +25,8 @@ set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSIO
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
+add_subdirectory(lxqtbacklight/linux_backend/driver)
+
 #-----------------------------------------------------------------------------
 # Release is the default build type
 #-----------------------------------------------------------------------------
@@ -54,6 +56,9 @@ set(PUB_HDRS
     lxqtgridlayout.h
     lxqtrotatedwidget.h
     lxqtglobals.h
+    lxqtbacklight.h
+    #lxqtbacklight/virtual_backend.h
+    #lxqtbacklight/linux_backend/linuxbackend.h
 )
 
 set(PUBLIC_CLASSES
@@ -76,6 +81,7 @@ set(PUBLIC_CLASSES
     GridLayout
     RotatedWidget
     Globals
+    Backlight
 )
 
 set(SRCS
@@ -98,6 +104,9 @@ set(SRCS
     lxqtnotification.cpp
     lxqtgridlayout.cpp
     lxqtrotatedwidget.cpp
+    lxqtbacklight.cpp
+    lxqtbacklight/virtual_backend.cpp
+    lxqtbacklight/linux_backend/linuxbackend.cpp
 )
 
 set(MOCS
@@ -106,6 +115,7 @@ set(MOCS
     lxqtsettings.h
     lxqtscreensaver.h
     lxqtapplication.h
+    lxqtbacklight.h
 
     configdialog/lxqtconfigdialog.h
     configdialog/lxqtpageselectwidget.h
@@ -116,11 +126,21 @@ set(MOCS
     lxqtpower/lxqtpowerproviders.h
     lxqtgridlayout.h
     lxqtrotatedwidget.h
+    lxqtbacklight/virtual_backend.h
+    lxqtbacklight/linux_backend/linuxbackend.h
 )
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
 )
+
+set(POLKIT_FILES
+    ${CMAKE_BINARY_DIR}/org.lxqt.backlight.pkexec.policy
+)
+
+# Build Polkit file
+configure_file ( polkit/org.lxqt.backlight.pkexec.policy.in org.lxqt.backlight.pkexec.policy )
+install(FILES ${POLKIT_FILES} DESTINATION /usr/share/polkit-1/actions/)
 
 file(GLOB LXQT_CONFIG_FILES resources/*.conf)
 
