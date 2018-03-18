@@ -27,12 +27,15 @@
  *        /sys/class/backlight/driver/actual_brightness
  *        /sys/class/backlight/driver/brightness
  *        /sys/class/backlight/driver/type
+ *        /sys/class/backlight/driver/bl_power
  *    
  *    The "max_brightness" file contains the maximum value that can be set to the
  *    backlight level.
  *    
  *    In "brightness" file you can write the value of backlight and the Linux 
  *    kernel will set that value.
+ *    
+ *    The "bl_power" controls if backlight is turn on (0) or turn off (>0).
  *    
  *    You must read actual backlight level from "actual_brightness" file. Never
  *    read the backlight level from "brightness" file.
@@ -66,6 +69,7 @@
 
 static int read_backlight(char *driver);
 static int read_max_backlight(char *driver);
+static int read_bl_power(char *driver);
 
 int lxqt_backlight_backend_get()
 {
@@ -87,8 +91,9 @@ int lxqt_backlight_backend_get_max()
         return -1;
     }
     int value = read_max_backlight(driver);
+    int bl_power = read_bl_power(driver);
     free(driver);
-    return value;
+    return bl_power==0 ? value : -1;
 }
 
 FILE *lxqt_backlight_backend_get_write_stream()
@@ -126,6 +131,13 @@ static int read_max_backlight(char *driver)
 {
     char path[1024];
     sprintf(path, "/sys/class/backlight/%s/max_brightness", driver);
+    return read_int(path);
+}
+
+static int read_bl_power(char *driver)
+{
+    char path[1024];
+    sprintf(path, "/sys/class/backlight/%s/bl_power", driver);
     return read_int(path);
 }
 
