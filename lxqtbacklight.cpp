@@ -24,33 +24,38 @@ namespace LXQt {
 
 Backlight::Backlight(QObject *parent):QObject(parent)
 {
-    _backend = (VirtualBackEnd *) new LinuxBackend(this);
-    connect(_backend, SIGNAL(backlightChanged(int)), this, SLOT(backlightChangedSlot(int)));
+    m_backend = (VirtualBackEnd *) new LinuxBackend(this);
+    connect(m_backend, SIGNAL(backlightChanged(int)), this, SLOT(backlightChangedSlot(int)));
 }
 
 Backlight::~Backlight()
 {
-    delete _backend;
+    delete m_backend;
 }
 
 int Backlight::getBacklight()
 {
-    return _backend->getBacklight();
+    return m_backend->getBacklight();
 }
 
 int Backlight::getMaxBacklight()
 {
-    return _backend->getMaxBacklight();
+    return m_backend->getMaxBacklight();
 }
 
 bool Backlight::isBacklightAvailable()
 {
-    return _backend->isBacklightAvailable();
+    return m_backend->isBacklightAvailable();
+}
+
+bool Backlight::isBacklightOff()
+{
+    return m_backend->isBacklightOff();
 }
 
 void Backlight::setBacklight(int value)
 {
-    _backend->setBacklight(value);
+    m_backend->setBacklight(value);
 }
 
 void Backlight::backlightChangedSlot(int value)

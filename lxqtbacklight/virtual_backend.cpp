@@ -29,6 +29,11 @@ bool VirtualBackEnd::isBacklightAvailable()
     return false;
 }
 
+bool VirtualBackEnd::isBacklightOff()
+{
+    return false;
+}
+
 void VirtualBackEnd::setBacklight(int /*value*/)
 {
 }

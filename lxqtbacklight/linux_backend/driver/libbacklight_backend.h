@@ -53,6 +53,11 @@ int lxqt_backlight_backend_get_max();
  */
 FILE *lxqt_backlight_backend_get_write_stream();
 
+/**Returns if backlight power is turned off.
+ * @ return 0 backlight off, bigger then 0 backlight on.
+ */
+int lxqt_backlight_is_backlight_off();
+
 /**Returns the driver. Backlight values are read from /sys/class/backlight/driver/.
  * Example:
  *      char *driver = lxqt_backlight_backend_get_driver();

@@ -102,6 +102,18 @@ FILE *lxqt_backlight_backend_get_write_stream()
     return stream;
 }
 
+int lxqt_backlight_is_backlight_off()
+{
+    char *driver = lxqt_backlight_backend_get_driver();
+    if( driver == NULL ) {
+        fprintf(stderr, "Error: /sys/class/backlight is empty.");
+        return -1;
+    }
+    int bl_power = read_bl_power(driver);
+    free(driver);
+    return bl_power;
+}
+
 static int read_int(char *path)
 {
     FILE *in = fopen(path, "r");

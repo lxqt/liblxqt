@@ -34,6 +34,10 @@ public:
     ~Backlight();
     
     bool isBacklightAvailable();
+    bool isBacklightOff();
+    /**Sets backlight level.
+     * @param value backlight level. Negative values turn off backlight.
+     */
     void setBacklight(int value);
     int getBacklight();
     int getMaxBacklight();
@@ -45,7 +49,7 @@ private slots:
     void backlightChangedSlot(int value);
 
 private:
-    VirtualBackEnd *_backend;
+    VirtualBackEnd *m_backend;
 };
 
 } // namespace LXQt

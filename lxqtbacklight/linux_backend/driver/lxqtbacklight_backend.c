@@ -29,6 +29,24 @@
 #define True 1
 #define False 0
 
+/**bl_power turn off or turn on backlight.
+ * @param driver is the driver to use
+ * @param value 0 turns on backlight, 4 turns off backlight
+ */
+static void set_bl_power(char *driver, int value)
+{
+    char path[1024];
+    sprintf(path, "/sys/class/backlight/%s/bl_power", driver);
+    FILE *out = fopen(path, "w");
+    if( out != NULL ) {
+        fprintf(out, "%d", value);
+        fclose(out);
+    } else {
+        perror("Couldn't open /sys/class/backlight/driver/bl_power");
+    }
+}
+
+
 static void set_backlight(char *driver, int value)
 {
     if(value>0) {
@@ -41,6 +59,10 @@ static void set_backlight(char *driver, int value)
         } else {
             perror("Couldn't open /sys/class/backlight/driver/brightness");
         }
+        if(read_bl_power(driver) > 0)
+            set_bl_power(driver, 0);
+    } else {
+        set_bl_power(driver, 4);
     }
 }
 
