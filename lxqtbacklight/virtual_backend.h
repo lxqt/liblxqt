@@ -32,6 +32,7 @@ public:
     VirtualBackEnd(QObject *parent = 0);
    
     virtual bool isBacklightAvailable();
+    virtual bool isBacklightOff();
     virtual void setBacklight(int value);
     virtual int getBacklight();
     virtual int getMaxBacklight();

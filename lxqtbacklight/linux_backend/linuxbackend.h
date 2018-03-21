@@ -34,6 +34,7 @@ public:
     ~LinuxBackend();
     
     bool isBacklightAvailable();
+    bool isBacklightOff();
     void setBacklight(int value);
     int getBacklight();
     int getMaxBacklight();

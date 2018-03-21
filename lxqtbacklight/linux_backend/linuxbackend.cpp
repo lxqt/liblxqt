@@ -43,6 +43,8 @@ LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
         fileSystemWatcher->addPath(path);
         path = QString("/sys/class/backlight/%1/brightness").arg(driver);
         fileSystemWatcher->addPath(path);
+        path = QString("/sys/class/backlight/%1/bl_power").arg(driver);
+        fileSystemWatcher->addPath(path);
         free(driver);
         actualBacklight = lxqt_backlight_backend_get();
         connect(fileSystemWatcher, SIGNAL(fileChanged(const QString &)),
@@ -69,6 +71,11 @@ int LinuxBackend::getMaxBacklight()
 bool LinuxBackend::isBacklightAvailable()
 {
     return maxBacklight > 0;
+}
+
+bool LinuxBackend::isBacklightOff()
+{
+    return lxqt_backlight_is_backlight_off() > 0;
 }
 
 void LinuxBackend::setBacklight(int value)
