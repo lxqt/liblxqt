@@ -73,7 +73,7 @@ public:
     {
         //! The product name of the server.
         QString name;
-        //! The vendor name. For example, "lxde-qt.org"
+        //! The vendor name. For example, "lxqt.org"
         QString vendor;
         //! The server's version number.
         QString version;
