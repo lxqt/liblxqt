@@ -219,7 +219,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Removes lxqt_translate_desktop() from the _use.cnake
   * Adds Qt5TranslationLoader cmake module
   * Fix HtmlDelegate and move it to its own file. Also get rid of X11 on CMakeLists.txt.
-  * Delete XfitMan class. Fixes lxde/lxde-qt#226
+  * Delete XfitMan class. Fixes lxqt/lxqt#226
   * Don't update (extract) translations by default.
   * Includes all LXQt translation modules
   * Adds automatic translations loaders for LXQt libs and apps
@@ -245,7 +245,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Fixes another QTranslator related memory leak
   * Simplify translate() code
   * Fixes an memory leak that occurs when no translation is found
-  * Fixes lxde/lxde-qt#140 and lxde/lxqt-panel#54
+  * Fixes lxqt/lxqt#140 and lxqt/lxqt-panel#54
   * Stop creating unused QTranslator instances.
   * Fix top-to-bottom layout x-coord calculation
   * Fix broken *.ts files and update to the latest strings.
@@ -278,7 +278,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Detect the path of qmake correctly for Qt5.
   * Fix internal include
   * Fix after merging from master, by removing dupplicated items
-  * Merge branch 'master' of https://github.com/lxde/liblxqt into qt5
+  * Merge branch 'master' of https://github.com/lxqt/liblxqt into qt5
   * Update qt5 porting
   * Update Turkish tranlations
   * Set include dirs properly.
