@@ -25,10 +25,10 @@
 #ifndef LXQTCONFIGDIALOG_H
 #define LXQTCONFIGDIALOG_H
 
-#include "lxqtsettings.h"
 #include <QDialog>
 #include <QAbstractButton>
 #include <QDialogButtonBox>
+#include <QScopedPointer>
 #include "lxqtglobals.h"
 
 namespace Ui {
@@ -37,10 +37,13 @@ class ConfigDialog;
 
 namespace LXQt
 {
+class Settings;
+class ConfigDialogPrivate;
 
 class LXQT_API ConfigDialog : public QDialog
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(ConfigDialog)
 
 public:
     explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = 0);
@@ -93,15 +96,8 @@ protected:
     virtual void closeEvent(QCloseEvent* event) override;
 
 private:
-    SettingsCache* mCache;
-    QList<QStringList> mIcons;
-    QSize mMaxSize;
-    Ui::ConfigDialog* ui;
-
-private slots:
-    void dialogButtonsAction(QAbstractButton* button);
-    void updateIcons();
-
+    Q_DISABLE_COPY(ConfigDialog)
+    QScopedPointer<ConfigDialogPrivate> const d_ptr;
 };
 
 } // namespace LXQt

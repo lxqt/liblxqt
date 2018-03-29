@@ -23,32 +23,82 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "lxqtconfigdialog.h"
+#include "lxqtconfigdialog_p.h"
 #include "ui_lxqtconfigdialog.h"
 
 #include <XdgIcon>
 #include <QPushButton>
 
+#include "lxqtsettings.h"
+
 using namespace LXQt;
 
-ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* parent) :
-    QDialog(parent),
-    mSettings(settings),
-    mCache(new SettingsCache(settings)),
-    ui(new Ui::ConfigDialog)
+ConfigDialogPrivate::ConfigDialogPrivate(ConfigDialog *q, Settings *settings)
+    : q_ptr(q),
+      mCache(new SettingsCache(settings)),
+      ui(new Ui::ConfigDialog)
 {
-    ui->setupUi(this);
-    setWindowTitle(title);
-    connect(ui->buttons, SIGNAL(clicked(QAbstractButton*)), SLOT(dialogButtonsAction(QAbstractButton*)));
+    init();
+}
+
+ConfigDialogPrivate::~ConfigDialogPrivate()
+{
+    delete ui;
+    delete mCache;
+}
+
+void ConfigDialogPrivate::init()
+{
+    Q_Q(ConfigDialog);
+    ui->setupUi(q);
+
+    QObject::connect(ui->buttons, &QDialogButtonBox::clicked,
+                     [=](QAbstractButton* button) { dialogButtonsAction(button); }
+    );
+
     ui->moduleList->setVisible(false);
     const QList<QPushButton*> buttons = ui->buttons->findChildren<QPushButton*>();
     for(QPushButton* button : buttons)
         button->setAutoDefault(false);
 }
 
+void ConfigDialogPrivate::dialogButtonsAction(QAbstractButton* button)
+{
+    Q_Q(ConfigDialog);
+    QDialogButtonBox::StandardButton standardButton = ui->buttons->standardButton(button);
+    emit q->clicked(standardButton);
+    if (standardButton == QDialogButtonBox::Reset)
+    {
+        mCache->loadToSettings();
+        emit q->reset();
+    }
+    else if(standardButton == QDialogButtonBox::Close)
+    {
+        q->close();
+    }
+}
+
+void ConfigDialogPrivate::updateIcons()
+{
+    Q_Q(ConfigDialog);
+    for (int ix = 0; ix < mIcons.size(); ix++)
+        ui->moduleList->item(ix)->setIcon(XdgIcon::fromTheme(mIcons.at(ix)));
+    q->update();
+}
+
+ConfigDialog::ConfigDialog(const QString& title, Settings* settings, QWidget* parent) :
+    QDialog(parent),
+    mSettings(settings),
+    d_ptr(new ConfigDialogPrivate(this, settings))
+{
+    setWindowTitle(title);
+}
+
 void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons)
 {
-    ui->buttons->setStandardButtons(buttons);
-    const QList<QPushButton*> b = ui->buttons->findChildren<QPushButton*>();
+    Q_D(ConfigDialog);
+    d->ui->buttons->setStandardButtons(buttons);
+    const QList<QPushButton*> b = d->ui->buttons->findChildren<QPushButton*>();
     for(QPushButton* button : b)
         button->setAutoDefault(false);
 }
@@ -60,6 +110,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& ic
 
 void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList& iconNames)
 {
+    Q_D(ConfigDialog);
     Q_ASSERT(page);
     if (!page)
     {
@@ -76,39 +127,41 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
     }
 
     QStringList icons = QStringList(iconNames) << "application-x-executable";
-    new QListWidgetItem(XdgIcon::fromTheme(icons), name, ui->moduleList);
-    mIcons.append(icons);
-    ui->stackedWidget->addWidget(page);
-    if(ui->stackedWidget->count() > 1)
+    new QListWidgetItem(XdgIcon::fromTheme(icons), name, d->ui->moduleList);
+    d->mIcons.append(icons);
+    d->ui->stackedWidget->addWidget(page);
+    if(d->ui->stackedWidget->count() > 1)
     {
-        ui->moduleList->setVisible(true);
-        ui->moduleList->setCurrentRow(0);
-        mMaxSize = QSize(qMax(page->geometry().width() + ui->moduleList->geometry().width(),
-                              mMaxSize.width()),
-                         qMax(page->geometry().height() + ui->buttons->geometry().height(),
-                              mMaxSize.height()));
+        d->ui->moduleList->setVisible(true);
+        d->ui->moduleList->setCurrentRow(0);
+        d->mMaxSize = QSize(qMax(page->geometry().width() + d->ui->moduleList->geometry().width(),
+                              d->mMaxSize.width()),
+                         qMax(page->geometry().height() + d->ui->buttons->geometry().height(),
+                              d->mMaxSize.height()));
     }
     else
     {
-        mMaxSize = page->geometry().size();
+        d->mMaxSize = page->geometry().size();
     }
-    resize(mMaxSize);
+    resize(d->mMaxSize);
 }
 
 void ConfigDialog::showPage(QWidget* page)
 {
-    int index = ui->stackedWidget->indexOf(page);
+    Q_D(ConfigDialog);
+    int index = d->ui->stackedWidget->indexOf(page);
     if (index < 0)
         return;
 
-    ui->stackedWidget->setCurrentIndex(index);
-    ui->moduleList->setCurrentRow(index);
+    d->ui->stackedWidget->setCurrentIndex(index);
+    d->ui->moduleList->setCurrentRow(index);
 }
 
 bool ConfigDialog::event(QEvent * event)
 {
+    Q_D(ConfigDialog);
     if (QEvent::ThemeChange == event->type())
-        updateIcons();
+        d->updateIcons();
     return QDialog::event(event);
 }
 
@@ -119,30 +172,6 @@ void ConfigDialog::closeEvent(QCloseEvent* event)
     mSettings->sync();
 }
 
-void ConfigDialog::dialogButtonsAction(QAbstractButton* button)
-{
-    QDialogButtonBox::StandardButton standardButton = ui->buttons->standardButton(button);
-    emit clicked(standardButton);
-    if (standardButton == QDialogButtonBox::Reset)
-    {
-        mCache->loadToSettings();
-        emit reset();
-    }
-    else if(standardButton == QDialogButtonBox::Close)
-    {
-        close();
-    }
-}
-
-void ConfigDialog::updateIcons()
-{
-    for (int ix = 0; ix < mIcons.size(); ix++)
-        ui->moduleList->item(ix)->setIcon(XdgIcon::fromTheme(mIcons.at(ix)));
-    update();
-}
-
 ConfigDialog::~ConfigDialog()
 {
-    delete ui;
-    delete mCache;
 }

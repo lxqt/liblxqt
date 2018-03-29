@@ -108,6 +108,7 @@ set(MOCS
     lxqtapplication.h
 
     configdialog/lxqtconfigdialog.h
+    configdialog/lxqtconfigdialog_p.h
     configdialog/lxqtpageselectwidget.h
 
     lxqtnotification.h
