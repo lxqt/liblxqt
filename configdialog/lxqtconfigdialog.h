@@ -70,7 +70,11 @@ public:
      */
     void showPage(QWidget *page);
 
-
+    /*!
+     * \brief Shows the given page
+     * \param name The page to be shown.
+     */
+    void showPage(const QString &name);
 
 signals:
     /*!

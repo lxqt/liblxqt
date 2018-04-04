@@ -24,6 +24,7 @@
 #ifndef LXQTCONFIGDIALOG_P_H
 #define LXQTCONFIGDIALOG_P_H
 
+#include <QHash>
 #include <QList>
 #include <QSize>
 #include <QStringList>
@@ -57,6 +58,7 @@ public:
     QList<QStringList> mIcons;
     QSize mMaxSize;
     Ui::ConfigDialog* ui;
+    QHash<QString, QWidget*> mPages;
 };
 
 } // namespace LXQt

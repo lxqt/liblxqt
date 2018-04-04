@@ -130,6 +130,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
     new QListWidgetItem(XdgIcon::fromTheme(icons), name, d->ui->moduleList);
     d->mIcons.append(icons);
     d->ui->stackedWidget->addWidget(page);
+    d->mPages[name] = page;
     if(d->ui->stackedWidget->count() > 1)
     {
         d->ui->moduleList->setVisible(true);
@@ -155,6 +156,15 @@ void ConfigDialog::showPage(QWidget* page)
 
     d->ui->stackedWidget->setCurrentIndex(index);
     d->ui->moduleList->setCurrentRow(index);
+}
+
+void ConfigDialog::showPage(const QString &name)
+{
+    Q_D(ConfigDialog);
+    if (d->mPages.contains(name))
+        showPage(d->mPages.value(name));
+    else
+        qWarning("ConfigDialog::showPage: Invalid page name (%s)", name.toLocal8Bit().constData());
 }
 
 bool ConfigDialog::event(QEvent * event)
