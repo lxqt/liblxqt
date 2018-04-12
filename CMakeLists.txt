@@ -46,6 +46,7 @@ set(PUB_HDRS
     lxqtprogramfinder.h
 
     configdialog/lxqtconfigdialog.h
+    configdialog/lxqtconfigdialogcmdlineoptions.h
     configdialog/lxqtpageselectwidget.h
 
     lxqtpower/lxqtpower.h
@@ -68,6 +69,7 @@ set(PUBLIC_CLASSES
     ProgramFinder
 
     ConfigDialog
+    ConfigDialogCmdLineOptions
     PageSelectWidget
 
     Power
@@ -90,6 +92,7 @@ set(SRCS
     lxqtprogramfinder.cpp
 
     configdialog/lxqtconfigdialog.cpp
+    configdialog/lxqtconfigdialogcmdlineoptions.cpp
     configdialog/lxqtpageselectwidget.cpp
 
     lxqtpower/lxqtpower.cpp
