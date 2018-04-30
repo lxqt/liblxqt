@@ -4,7 +4,7 @@ project(liblxqt)
 
 set(QT_MINIMUM_VERSION "5.7.1")
 set(QTXDG_MINIMUM_VERSION "3.1.0")
-set(LXQTBT_MINIMUM_VERSION "0.4.1")
+set(LXQTBT_MINIMUM_VERSION "0.5.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
@@ -181,6 +181,7 @@ set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= 
 
 
 # Standard directories for installation
+include(LXQtPreventInSourceBuilds)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 include(LXQtCreatePkgConfigFile)
 include(LXQtCreatePortableHeaders)
