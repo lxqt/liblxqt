@@ -127,7 +127,6 @@ static void change_blacklight(int value, int percent_ok)
         return;
     }
     int max_value = read_max_backlight(driver);
-    int actual = read_backlight(driver);
     if(percent_ok)
         value = (float)(max_value*value)/100.0;
     if(value<max_value && value>0) {
