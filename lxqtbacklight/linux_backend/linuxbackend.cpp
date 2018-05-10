@@ -88,8 +88,9 @@ void LinuxBackend::setBacklight(int value)
         // Close stream after 60 seconds
         QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
     }
-    if( value<maxBacklight && value>0 )
-        *backlightStream << value << endl;
+    // normalize the value (to work around an issue in QSlider)
+    value = qBound(0, value, maxBacklight);
+    *backlightStream << value << endl;
 }
 
 void LinuxBackend::closeBacklightStream()
