@@ -144,7 +144,7 @@ set(POLKIT_FILES
 
 # Build Polkit file
 configure_file ( polkit/org.lxqt.backlight.pkexec.policy.in "${CMAKE_CURRENT_BINARY_DIR}/org.lxqt.backlight.pkexec.policy" )
-install(FILES ${POLKIT_FILES} DESTINATION /usr/share/polkit-1/actions/)
+install(FILES ${POLKIT_FILES} DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/actions")
 
 file(GLOB LXQT_CONFIG_FILES resources/*.conf)
 
