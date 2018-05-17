@@ -144,7 +144,6 @@ set(POLKIT_FILES
 
 # Build Polkit file
 configure_file ( polkit/org.lxqt.backlight.pkexec.policy.in "${CMAKE_CURRENT_BINARY_DIR}/org.lxqt.backlight.pkexec.policy" )
-install(FILES ${POLKIT_FILES} DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/actions")
 
 file(GLOB LXQT_CONFIG_FILES resources/*.conf)
 
@@ -161,6 +160,7 @@ find_package(X11 REQUIRED QUIET)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem REQUIRED QUIET)
+find_package(PolkitQt5-1 REQUIRED QUIET)
 message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
@@ -366,6 +366,8 @@ install(FILES ${LXQT_CONFIG_FILES}
     DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/lxqt"
     COMPONENT Runtime
 )
+
+install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
 
 #************************************************
 # Create and install pkgconfig file
