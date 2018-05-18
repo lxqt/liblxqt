@@ -156,11 +156,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-find_package(X11 REQUIRED QUIET)
+find_package(X11 REQUIRED)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
-find_package(KF5WindowSystem REQUIRED QUIET)
-find_package(PolkitQt5-1 REQUIRED QUIET)
+find_package(KF5WindowSystem REQUIRED)
+find_package(PolkitQt5-1 REQUIRED)
 message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
