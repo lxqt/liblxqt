@@ -9,10 +9,10 @@ set(LXQTBT_MINIMUM_VERSION "0.5.0")
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 12)
+set(LXQT_MINOR_VERSION 13)
 #
 # Patch Version, belong *only* to the component
-# LXQt is 0.11 - liblxqt is at patch version 1
+# LXQt is 0.13 - liblxqt is at patch version 0
 # The official LXQt version will follow liblxqt.
 #
 # In a perfect world all components would have the same major- and minor- and
