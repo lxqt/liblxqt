@@ -1,7 +1,34 @@
 
-liblxqt-0.12.0 / 2017-10-21
+liblxqt-0.13.0 / 2018-05-21
 ===========================
 
+  * Bump minor version to 13 and fix the comment
+  * Don't find packages quietly
+  * Use PolkitQt5-1 policy files install directory
+  * build: Don't use hardcoded /usr/share path
+  * Normalize backlight value
+  * lxqtbacklight: Remove not used code
+  * CMake: Prevent in-source builds
+  * lxqtbacklight: Fix a FTBFS in superbuild mode
+  * blacklight power control has been added.
+  * Backlight::isBacklightAvailable returns false if the screen is turned off.
+  * Back light control added.
+  * Adds a ConfigDialogCommandLineOptions class
+  * ConfigDialog: Adds the ability to select the shown page by name
+  * ConfigDialog: Use d-pointer design pattern
+  * Fixed project uris to https://lxqt.org
+  * Fixed some mentions of lxde
+  * Make lxqt globals a public header
+  * Adds Qt Strings abbreviations
+  * lxqtpower: Add support for turning monitor(s) off
+  * Use qAsConst()
+  * Drop foreach use
+  * cmake: Handle CMP0071
+
+0.12.0 / 2017-10-21
+===================
+
+  * Release 0.12.0: Update changelog
   * Bump minimum qtxdg version to 3.1.0
   * Don't export github templates
   * Bump version and needed versions to the final values
@@ -219,7 +246,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Removes lxqt_translate_desktop() from the _use.cnake
   * Adds Qt5TranslationLoader cmake module
   * Fix HtmlDelegate and move it to its own file. Also get rid of X11 on CMakeLists.txt.
-  * Delete XfitMan class. Fixes lxqt/lxqt#226
+  * Delete XfitMan class. Fixes lxde/lxde-qt#226
   * Don't update (extract) translations by default.
   * Includes all LXQt translation modules
   * Adds automatic translations loaders for LXQt libs and apps
@@ -245,7 +272,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Fixes another QTranslator related memory leak
   * Simplify translate() code
   * Fixes an memory leak that occurs when no translation is found
-  * Fixes lxqt/lxqt#140 and lxqt/lxqt-panel#54
+  * Fixes lxde/lxde-qt#140 and lxde/lxqt-panel#54
   * Stop creating unused QTranslator instances.
   * Fix top-to-bottom layout x-coord calculation
   * Fix broken *.ts files and update to the latest strings.
@@ -278,7 +305,7 @@ liblxqt-0.12.0 / 2017-10-21
   * Detect the path of qmake correctly for Qt5.
   * Fix internal include
   * Fix after merging from master, by removing dupplicated items
-  * Merge branch 'master' of https://github.com/lxqt/liblxqt into qt5
+  * Merge branch 'master' of https://github.com/lxde/liblxqt into qt5
   * Update qt5 porting
   * Update Turkish tranlations
   * Set include dirs properly.
