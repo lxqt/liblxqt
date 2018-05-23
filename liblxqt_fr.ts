@@ -165,6 +165,14 @@
     </message>
 </context>
 <context>
+    <name>QCoreApplication</name>
+    <message>
+        <location filename="../../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
+        <source>Choose the page to be shown.</source>
+        <translation>Choisir la page à afficher.</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="../../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
