@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Möchten Sie ihren Computer in Bereitschaft versetzen?&lt;p&gt;Dies versetzt ihren Computer in einen Energiesparmodus. Der Systemzustand geht verloren, wenn die Energiezufuhr abbricht.</translation>
+        <translation>Möchten Sie ihren Computer in Bereitschaft versetzen?&lt;p&gt;Der Computer wird in einen Energiesparmodus versetzt. Der Systemzustand geht verloren, wenn die Energiezufuhr abbricht.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
