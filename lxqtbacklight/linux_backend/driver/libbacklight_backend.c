@@ -55,6 +55,7 @@
  *    in order to write in /sys/class/backlight/driver/brightness file.
  *******************************************************************************/
 
+#include <limits.h>
 #include <stdio.h>
 #include <dirent.h>
 #include <errno.h>
@@ -67,6 +68,7 @@
 #define True 1
 #define False 0
 
+static FILE* open_driver_file(const char *path, const char *driver, const char *mode);
 static int read_backlight(char *driver);
 static int read_max_backlight(char *driver);
 static int read_bl_power(char *driver);
@@ -114,13 +116,10 @@ int lxqt_backlight_is_backlight_off()
     return bl_power;
 }
 
-static int read_int(char *path)
+static int read_int(const char *tpl, const char *driver)
 {
-    FILE *in = fopen(path, "r");
+    FILE *in = open_driver_file(tpl, driver, "r");
     if( in == NULL ) {
-        char buffer[1024];
-        sprintf(buffer, "Couldn't open %s", path);
-        perror(buffer);
         return -1;
     }
     int value;
@@ -132,25 +131,40 @@ static int read_int(char *path)
     return value;
 }
 
+static FILE* open_driver_file(const char *tpl, const char *driver, const char *mode)
+{
+    char path[PATH_MAX];
+    int res;
+
+    res = snprintf(path, PATH_MAX, tpl, driver);
+
+    if( res <= 0 || res >= PATH_MAX ) {
+        path[0] = '\0';
+        return NULL;
+    }
+
+    FILE *ret = fopen(path, mode);
+
+    if( ret == NULL ) {
+        fprintf(stderr, "Couldn't open %s: %s\n", path, strerror(errno));
+    }
+
+    return ret;
+}
+
 static int read_backlight(char *driver)
 {
-    char path[1024];
-    sprintf(path, "/sys/class/backlight/%s/actual_brightness", driver);
-    return read_int(path);
+    return read_int("/sys/class/backlight/%s/actual_brightness", driver);
 }
 
 static int read_max_backlight(char *driver)
 {
-    char path[1024];
-    sprintf(path, "/sys/class/backlight/%s/max_brightness", driver);
-    return read_int(path);
+    return read_int("/sys/class/backlight/%s/max_brightness", driver);
 }
 
 static int read_bl_power(char *driver)
 {
-    char path[1024];
-    sprintf(path, "/sys/class/backlight/%s/bl_power", driver);
-    return read_int(path);
+    return read_int("/sys/class/backlight/%s/bl_power", driver);
 }
 
 typedef enum {FIRMWARE, PLATFORM, RAW, OTHER, N_BACKLIGHT} BackligthTypes;
@@ -163,7 +177,7 @@ char *lxqt_backlight_backend_get_driver()
     char *drivers[N_BACKLIGHT];
     char *driver;
     int n;
-    char path[1024], type[1024];
+    char type[1024];
     
     for(n=0;n<N_BACKLIGHT;n++)
         drivers[n] = NULL;
@@ -179,8 +193,7 @@ char *lxqt_backlight_backend_get_driver()
             if( !strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..") )
                 continue;
             driver = dp->d_name;
-            sprintf(path, "/sys/class/backlight/%s/type", driver);
-            FILE *in = fopen(path, "r");
+            FILE *in = open_driver_file("/sys/class/backlight/%s/type", driver, "r");
             if( in == NULL )
                 continue;
             int ok = fscanf(in, "%s", type);
