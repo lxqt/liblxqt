@@ -171,12 +171,12 @@ char *lxqt_backlight_backend_get_driver()
 {
     DIR *dirp;
     struct dirent *dp;
-    
+
     char *drivers[N_BACKLIGHT];
     char *driver;
     int n;
     char type[1024];
-    
+
     for(n=0;n<N_BACKLIGHT;n++)
         drivers[n] = NULL;
 
@@ -217,7 +217,7 @@ char *lxqt_backlight_backend_get_driver()
     if (errno != 0) {
         fprintf(stderr, "Error reading directory %s: %s\n", sysfs_backlight_dir, strerror(errno));
     }
-    
+
     driver = NULL;
     for(n=0;n<N_BACKLIGHT;n++) {
         if( drivers[n] != NULL && driver == NULL )
