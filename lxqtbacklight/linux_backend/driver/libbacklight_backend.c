@@ -69,9 +69,9 @@
 #define False 0
 
 static FILE* open_driver_file(const char *path, const char *driver, const char *mode);
-static int read_backlight(char *driver);
-static int read_max_backlight(char *driver);
-static int read_bl_power(char *driver);
+static int read_backlight(const char *driver);
+static int read_max_backlight(const char *driver);
+static int read_bl_power(const char *driver);
 
 int lxqt_backlight_backend_get()
 {
@@ -152,17 +152,17 @@ static FILE* open_driver_file(const char *tpl, const char *driver, const char *m
     return ret;
 }
 
-static int read_backlight(char *driver)
+static int read_backlight(const char *driver)
 {
     return read_int("/sys/class/backlight/%s/actual_brightness", driver);
 }
 
-static int read_max_backlight(char *driver)
+static int read_max_backlight(const char *driver)
 {
     return read_int("/sys/class/backlight/%s/max_brightness", driver);
 }
 
-static int read_bl_power(char *driver)
+static int read_bl_power(const char *driver)
 {
     return read_int("/sys/class/backlight/%s/bl_power", driver);
 }
