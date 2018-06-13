@@ -72,12 +72,12 @@ static FILE* open_driver_file(const char *path, const char *driver, const char *
 static int read_backlight(const char *driver);
 static int read_max_backlight(const char *driver);
 static int read_bl_power(const char *driver);
+static const char *sysfs_backlight_dir = "/sys/class/backlight";
 
 int lxqt_backlight_backend_get()
 {
     char *driver = lxqt_backlight_backend_get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return -1;
     }
     int value = read_backlight(driver);
@@ -89,7 +89,6 @@ int lxqt_backlight_backend_get_max()
 {
     char *driver = lxqt_backlight_backend_get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return -1;
     }
     int value = read_max_backlight(driver);
@@ -108,7 +107,6 @@ int lxqt_backlight_is_backlight_off()
 {
     char *driver = lxqt_backlight_backend_get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return -1;
     }
     int bl_power = read_bl_power(driver);
@@ -182,8 +180,8 @@ char *lxqt_backlight_backend_get_driver()
     for(n=0;n<N_BACKLIGHT;n++)
         drivers[n] = NULL;
 
-    if ((dirp = opendir("/sys/class/backlight")) == NULL) {
-        perror("Couldn't open /sys/class/backlight");
+    if ((dirp = opendir(sysfs_backlight_dir)) == NULL) {
+        fprintf(stderr, "Couldn't open %s: %s\n", sysfs_backlight_dir, strerror(errno));
         return NULL;
     }
 
@@ -216,8 +214,9 @@ char *lxqt_backlight_backend_get_driver()
 
     closedir(dirp);
 
-    if (errno != 0)
-        perror("Error reading directory");    
+    if (errno != 0) {
+        fprintf(stderr, "Error reading directory %s: %s\n", sysfs_backlight_dir, strerror(errno));
+    }
     
     driver = NULL;
     for(n=0;n<N_BACKLIGHT;n++) {
@@ -225,6 +224,11 @@ char *lxqt_backlight_backend_get_driver()
             driver = drivers[n];
         else
             free(drivers[n]);
+    }
+
+    if( driver == NULL )
+    {
+        fprintf(stderr, "Error: %s is empty (no driver found).\n", sysfs_backlight_dir);
     }
 
     return driver;
