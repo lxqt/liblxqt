@@ -58,40 +58,6 @@ static void set_backlight(char *driver, int value)
     }
 }
 
-
-// static int read_int(char *path)
-// {
-//     FILE *in = fopen(path, "r");
-//     if( in == NULL ) {
-//         char buffer[1024];
-//         sprintf(buffer, "Couldn't open %s", path);
-//         perror(buffer);
-//         return -1;
-//     }
-//     int value;
-//     int ok = fscanf(in, "%d", &value);
-//     fclose(in);
-//     if( ok == EOF ) {
-//         value = 0;
-//     }
-//     return value;
-// }
-
-
-// static int read_backlight(char *driver)
-// {
-//     char path[1024];
-//     sprintf(path, "/sys/class/backlight/%s/actual_brightness", driver);
-//     return read_int(path);
-// }
-
-// static int read_max_backlight(char *driver)
-// {
-//     char path[1024];
-//     sprintf(path, "/sys/class/backlight/%s/max_brightness", driver);
-//     return read_int(path);
-// }
-
 static char *get_driver()
 {
     return lxqt_backlight_backend_get_driver();
