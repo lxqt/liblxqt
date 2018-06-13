@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #include "libbacklight_backend.h"
 #include "libbacklight_backend.c"
@@ -83,9 +84,14 @@ static void change_blacklight(int value, int percent_ok)
         return;
     }
     int max_value = read_max_backlight(driver);
-    if(percent_ok)
+    if(percent_ok) {
         value = (float)(max_value*value)/100.0;
-    if(value<max_value && value>0) {
+        if( value == 0 ) {
+            // avoid switching off backlight but support zero as lowest value
+            value = 1;
+        }
+    }
+    if(value<=max_value && value>0) {
         set_backlight(driver, value);
     }
     free(driver);
@@ -186,10 +192,10 @@ int main(int argc, char *argv[])
         } if( !strcmp(argv[n], "--stdin") ) {
             set_backlight_from_stdin();
             return 0;
-        } else if ( argv[n][0] != '-' ) {
-            value = atoi(argv[1]);
-        } else if ( argv[n][0] != '%' && strlen(argv[n])==1 ) {
+        } else if ( !strcmp(argv[n], "%") ) {
             value_percent_ok = True;
+        } else if ( isdigit(argv[n][0]) ) {
+            value = atoi(argv[n]);
         } else {
             help(argv[0]);
             return 0;
