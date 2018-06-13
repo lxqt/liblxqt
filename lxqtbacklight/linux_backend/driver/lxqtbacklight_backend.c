@@ -68,7 +68,6 @@ static void show_blacklight()
 {
     char *driver = get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return;
     }
     int max_value = read_max_backlight(driver);
@@ -81,7 +80,6 @@ static void change_blacklight(int value, int percent_ok)
 {
     char *driver = get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return;
     }
     int max_value = read_max_backlight(driver);
@@ -97,7 +95,6 @@ static void increases_blacklight()
 {
     char *driver = get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return;
     }
     int max_value = read_max_backlight(driver);
@@ -118,7 +115,6 @@ static void decreases_blacklight()
 {
     char *driver = get_driver();
     if( driver == NULL ) {
-        fprintf(stderr, "Error: /sys/class/backlight is empty.");
         return;
     }
     int max_value = read_max_backlight(driver);
@@ -140,6 +136,9 @@ static void set_backlight_from_stdin()
     char *driver = get_driver();
     int ok = True, value;
     int max_value = read_max_backlight(driver);
+    if( driver == NULL ) {
+        return;
+    }
     while(ok && !feof(stdin)) {
         ok = scanf("%d", &value);
         if( ok != EOF && value > 0 && value <= max_value) {
