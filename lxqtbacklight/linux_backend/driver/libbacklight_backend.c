@@ -196,7 +196,8 @@ char *lxqt_backlight_backend_get_driver()
             FILE *in = open_driver_file("/sys/class/backlight/%s/type", driver, "r");
             if( in == NULL )
                 continue;
-            int ok = fscanf(in, "%s", type);
+            // the maximum field width does not include '\0'!
+            int ok = fscanf(in, "%1023s", type);
             fclose(in);
             if( ok != EOF ) {
                 // firmware control should be preferred to platform control should be preferred to raw control.
