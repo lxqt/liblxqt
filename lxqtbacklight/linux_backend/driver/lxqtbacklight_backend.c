@@ -33,7 +33,7 @@
  * @param driver is the driver to use
  * @param value 0 turns on backlight, 4 turns off backlight
  */
-static void set_bl_power(char *driver, int value)
+static void set_bl_power(const char *driver, int value)
 {
     FILE *out = open_driver_file("/sys/class/backlight/%s/bl_power", driver, "w");
     if( out != NULL ) {
@@ -43,7 +43,7 @@ static void set_bl_power(char *driver, int value)
 }
 
 
-static void set_backlight(char *driver, int value)
+static void set_backlight(const char *driver, int value)
 {
     if(value>0) {
         FILE *out = open_driver_file("/sys/class/backlight/%s/brightness", driver, "w");
