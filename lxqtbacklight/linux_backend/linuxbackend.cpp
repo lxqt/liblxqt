@@ -39,12 +39,9 @@ LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
     if( isBacklightAvailable() ) {
         char *driver = lxqt_backlight_backend_get_driver();
         fileSystemWatcher = new QFileSystemWatcher(this);
-        QString path = QString("/sys/class/backlight/%1/actual_brightness").arg(driver);
-        fileSystemWatcher->addPath(path);
-        path = QString("/sys/class/backlight/%1/brightness").arg(driver);
-        fileSystemWatcher->addPath(path);
-        path = QString("/sys/class/backlight/%1/bl_power").arg(driver);
-        fileSystemWatcher->addPath(path);
+        fileSystemWatcher->addPath(QString::fromLatin1("/sys/class/backlight/%1/actual_brightness").arg(driver));
+        fileSystemWatcher->addPath(QString::fromLatin1("/sys/class/backlight/%1/brightness").arg(driver));
+        fileSystemWatcher->addPath(QString::fromLatin1("/sys/class/backlight/%1/bl_power").arg(driver));
         free(driver);
         actualBacklight = lxqt_backlight_backend_get();
         connect(fileSystemWatcher, SIGNAL(fileChanged(const QString &)),
