@@ -35,14 +35,10 @@
  */
 static void set_bl_power(char *driver, int value)
 {
-    char path[1024];
-    sprintf(path, "/sys/class/backlight/%s/bl_power", driver);
-    FILE *out = fopen(path, "w");
+    FILE *out = open_driver_file("/sys/class/backlight/%s/bl_power", driver, "w");
     if( out != NULL ) {
         fprintf(out, "%d", value);
         fclose(out);
-    } else {
-        perror("Couldn't open /sys/class/backlight/driver/bl_power");
     }
 }
 
@@ -50,14 +46,10 @@ static void set_bl_power(char *driver, int value)
 static void set_backlight(char *driver, int value)
 {
     if(value>0) {
-        char path[1024];
-        sprintf(path, "/sys/class/backlight/%s/brightness", driver);
-        FILE *out = fopen(path, "w");
+        FILE *out = open_driver_file("/sys/class/backlight/%s/brightness", driver, "w");
         if( out != NULL ) {
             fprintf(out, "%d", value);
             fclose(out);
-        } else {
-            perror("Couldn't open /sys/class/backlight/driver/brightness");
         }
         if(read_bl_power(driver) > 0)
             set_bl_power(driver, 0);
