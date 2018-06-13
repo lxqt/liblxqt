@@ -160,7 +160,14 @@ find_package(X11 REQUIRED)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
-find_package(PolkitQt5-1 REQUIRED)
+
+# Optionally include the PolkitQt5-1 module.
+option(BUILD_POLKIT "Install the PolkitQt5-1 files." ON)
+
+if (BUILD_POLKIT)
+    find_package(PolkitQt5-1 REQUIRED)
+endif ()
+
 message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
@@ -359,7 +366,9 @@ install(FILES ${LXQT_CONFIG_FILES}
     COMPONENT Runtime
 )
 
-install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+if (PolkitQt5-1_FOUND)
+    install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+endif ()
 
 #************************************************
 # Create and install pkgconfig file
