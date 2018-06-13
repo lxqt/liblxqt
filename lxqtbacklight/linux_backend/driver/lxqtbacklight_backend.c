@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
             return 0;
         } if( !strcmp(argv[n], "--dec") ) {
             decreases_blacklight();
-            return 0; 
+            return 0;
         } if( !strcmp(argv[n], "--stdin") ) {
             set_backlight_from_stdin();
             return 0;
@@ -195,12 +195,12 @@ int main(int argc, char *argv[])
             return 0;
         }
     }
-    
+
     if( argc == 1 ) {
         help(argv[0]);
         return 0;
     }
-    
+
     change_blacklight(value, value_percent_ok);
 
     return 0;
