@@ -68,7 +68,7 @@
 #define True 1
 #define False 0
 
-static FILE* open_driver_file(const char *path, const char *driver, const char *mode);
+static FILE* open_driver_file(const char *file, const char *driver, const char *mode);
 static int read_backlight(const char *driver);
 static int read_max_backlight(const char *driver);
 static int read_bl_power(const char *driver);
@@ -114,9 +114,9 @@ int lxqt_backlight_is_backlight_off()
     return bl_power;
 }
 
-static int read_int(const char *tpl, const char *driver)
+static int read_int(const char *file, const char *driver)
 {
-    FILE *in = open_driver_file(tpl, driver, "r");
+    FILE *in = open_driver_file(file, driver, "r");
     if( in == NULL ) {
         return -1;
     }
@@ -129,12 +129,12 @@ static int read_int(const char *tpl, const char *driver)
     return value;
 }
 
-static FILE* open_driver_file(const char *tpl, const char *driver, const char *mode)
+static FILE* open_driver_file(const char *file, const char *driver, const char *mode)
 {
     char path[PATH_MAX];
     int res;
 
-    res = snprintf(path, PATH_MAX, tpl, driver);
+    res = snprintf(path, PATH_MAX, "%s/%s/%s", sysfs_backlight_dir, driver, file);
 
     if( res <= 0 || res >= PATH_MAX ) {
         path[0] = '\0';
@@ -152,17 +152,17 @@ static FILE* open_driver_file(const char *tpl, const char *driver, const char *m
 
 static int read_backlight(const char *driver)
 {
-    return read_int("/sys/class/backlight/%s/actual_brightness", driver);
+    return read_int("actual_brightness", driver);
 }
 
 static int read_max_backlight(const char *driver)
 {
-    return read_int("/sys/class/backlight/%s/max_brightness", driver);
+    return read_int("max_brightness", driver);
 }
 
 static int read_bl_power(const char *driver)
 {
-    return read_int("/sys/class/backlight/%s/bl_power", driver);
+    return read_int("bl_power", driver);
 }
 
 typedef enum {FIRMWARE, PLATFORM, RAW, OTHER, N_BACKLIGHT} BackligthTypes;
@@ -191,7 +191,7 @@ char *lxqt_backlight_backend_get_driver()
             if( !strcmp(dp->d_name, ".") || !strcmp(dp->d_name, "..") )
                 continue;
             driver = dp->d_name;
-            FILE *in = open_driver_file("/sys/class/backlight/%s/type", driver, "r");
+            FILE *in = open_driver_file("type", driver, "r");
             if( in == NULL )
                 continue;
             // the maximum field width does not include '\0'!

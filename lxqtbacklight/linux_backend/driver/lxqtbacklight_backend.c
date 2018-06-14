@@ -36,7 +36,7 @@
  */
 static void set_bl_power(const char *driver, int value)
 {
-    FILE *out = open_driver_file("/sys/class/backlight/%s/bl_power", driver, "w");
+    FILE *out = open_driver_file("bl_power", driver, "w");
     if( out != NULL ) {
         fprintf(out, "%d", value);
         fclose(out);
@@ -47,7 +47,7 @@ static void set_bl_power(const char *driver, int value)
 static void set_backlight(const char *driver, int value)
 {
     if(value>0) {
-        FILE *out = open_driver_file("/sys/class/backlight/%s/brightness", driver, "w");
+        FILE *out = open_driver_file("brightness", driver, "w");
         if( out != NULL ) {
             fprintf(out, "%d", value);
             fclose(out);
