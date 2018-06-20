@@ -44,8 +44,8 @@ LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
         fileSystemWatcher->addPath(QString::fromLatin1("/sys/class/backlight/%1/bl_power").arg(driver));
         free(driver);
         actualBacklight = lxqt_backlight_backend_get();
-        connect(fileSystemWatcher, SIGNAL(fileChanged(const QString &)),
-            this, SLOT(fileSystemChanged(const QString &)) );
+        connect(fileSystemWatcher, &QFileSystemWatcher::fileChanged,
+            this, &LinuxBackend::fileSystemChanged);
     }
 }
 

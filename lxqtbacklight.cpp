@@ -25,7 +25,7 @@ namespace LXQt {
 Backlight::Backlight(QObject *parent):QObject(parent)
 {
     m_backend = (VirtualBackEnd *) new LinuxBackend(this);
-    connect(m_backend, SIGNAL(backlightChanged(int)), this, SLOT(backlightChangedSlot(int)));
+    connect(m_backend, &VirtualBackEnd::backlightChanged, this, &Backlight::backlightChangedSlot);
 }
 
 Backlight::~Backlight()
