@@ -59,8 +59,6 @@ public slots:
 
 private:
     ScreenSaverPrivate* const d_ptr;
-
-    Q_PRIVATE_SLOT(d_func(), void _l_xdgProcess_finished(int, QProcess::ExitStatus))
 };
 
 } // namespace LXQt

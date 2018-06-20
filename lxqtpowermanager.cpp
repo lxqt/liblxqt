@@ -115,35 +115,35 @@ QList<QAction*> PowerManager::availableActions()
     if (m_power->canHibernate())
     {
         act = new QAction(XdgIcon::fromTheme("system-suspend-hibernate"), tr("Hibernate"), this);
-        connect(act, SIGNAL(triggered()), this, SLOT(hibernate()));
+        connect(act, &QAction::triggered, this, &PowerManager::hibernate);
         ret.append(act);
     }
 
     if (m_power->canSuspend())
     {
         act = new QAction(XdgIcon::fromTheme("system-suspend"), tr("Suspend"), this);
-        connect(act, SIGNAL(triggered()), this, SLOT(suspend()));
+        connect(act, &QAction::triggered, this, &PowerManager::suspend);
         ret.append(act);
     }
 
     if (m_power->canReboot())
     {
         act = new QAction(XdgIcon::fromTheme("system-reboot"), tr("Reboot"), this);
-        connect(act, SIGNAL(triggered()), this, SLOT(reboot()));
+        connect(act, &QAction::triggered, this, &PowerManager::reboot);
         ret.append(act);
     }
 
     if (m_power->canShutdown())
     {
         act = new QAction(XdgIcon::fromTheme("system-shutdown"), tr("Shutdown"), this);
-        connect(act, SIGNAL(triggered()), this, SLOT(shutdown()));
+        connect(act, &QAction::triggered, this, &PowerManager::shutdown);
         ret.append(act);
     }
 
     if (m_power->canLogout())
     {
         act = new QAction(XdgIcon::fromTheme("system-log-out"), tr("Logout"), this);
-        connect(act, SIGNAL(triggered()), this, SLOT(logout()));
+        connect(act, &QAction::triggered, this, &PowerManager::logout);
         ret.append(act);
     }
 

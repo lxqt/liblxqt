@@ -219,8 +219,8 @@ ScreenSaver::ScreenSaver(QObject * parent)
 {
     Q_D(ScreenSaver);
     d->m_xdgProcess = new QProcess(this);
-    connect(d->m_xdgProcess, SIGNAL(finished(int,QProcess::ExitStatus)),
-            this, SLOT(_l_xdgProcess_finished(int,QProcess::ExitStatus)));
+    connect(d->m_xdgProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+        [=](int exitCode, QProcess::ExitStatus exitStatus){ d->_l_xdgProcess_finished(exitCode, exitStatus); });
 }
 
 ScreenSaver::~ScreenSaver()
@@ -234,7 +234,7 @@ QList<QAction*> ScreenSaver::availableActions()
     QAction * act;
 
     act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
-    connect(act, SIGNAL(triggered()), this, SLOT(lockScreen()));
+    connect(act, &QAction::triggered, this, &ScreenSaver::lockScreen);
     ret.append(act);
 
     return ret;
