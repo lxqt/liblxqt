@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="152"/>
+        <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
         <translation>Zasilna obvestila</translation>
     </message>
