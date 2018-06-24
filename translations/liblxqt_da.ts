@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Vil du virkelig sætte din computer i slumretilstand?&lt;p&gt;Slumretilstand sætter computeren i energispare tilstand. Systemtilstanden mistes hvis strømmen forsvinder.</translation>
+        <translation>Vil du virkelig sætte din computer i slumretilstand?&lt;p&gt;Slumretilstand sætter computeren i energisparetilstand. Systemtilstanden mistes hvis strømmen forsvinder.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Vil du virkelig sætte din computer i dvaletilstand?&lt;p&gt;Dvaletilstand sætter computeren i energispare tilstand. Systemtilstanden bibeholdes hvis strømmen forsvinder.</translation>
+        <translation>Vil du virkelig sætte din computer i dvaletilstand?&lt;p&gt;Dvaletilstand sætter computeren i energisparetilstand. Systemtilstanden bibeholdes hvis strømmen forsvinder.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg siden som skal vises.</translation>
     </message>
 </context>
 <context>
