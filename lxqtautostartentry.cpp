@@ -41,7 +41,7 @@ AutostartEntry::AutostartEntry(const QString& name):
     const QStringList& dirs = XdgDirs::autostartDirs();
     for (const QString& dir : dirs)
     {
-        const QString path = QString("%1/%2").arg(dir, name);
+        const QString path = QString::fromLatin1("%1/%2").arg(dir, name);
         if (QFile(path).exists())
         {
             mSystemFile.load(path);
@@ -50,7 +50,7 @@ AutostartEntry::AutostartEntry(const QString& name):
         }
     }
 
-    const QString path = QString("%1/%2").arg(XdgDirs::autostartHome(), name);
+    const QString path = QString::fromLatin1("%1/%2").arg(XdgDirs::autostartHome(), name);
     if (QFile(path).exists())
     {
         mLocalFile.load(path);
@@ -102,16 +102,16 @@ void AutostartEntry::setEnabled(bool enable)
 {
     XdgDesktopFile f = file();
     if (enable)
-        f.removeEntry("Hidden");
+        f.removeEntry(QL1S("Hidden"));
     else
-        f.setValue("Hidden", true);
+        f.setValue(QL1S("Hidden"), true);
 
     setFile(f);
 }
 
 bool AutostartEntry::isEnabled() const
 {
-    return !isEmpty() && !file().value("Hidden", false).toBool();
+    return !isEmpty() && !file().value(QL1S("Hidden"), false).toBool();
 }
 
 bool AutostartEntry::commit()

@@ -32,14 +32,14 @@ using namespace LXQt;
 LXQT_API bool ProgramFinder::programExists(const QString& command)
 {
     const QString program = programName(command);
-    if (program[0] == QChar('/'))
+    if (program[0] == QL1C('/'))
     {
         QFileInfo fi(program);
         return fi.isExecutable() && fi.isFile();
     }
 
-    const QString path = qgetenv("PATH");
-    const QStringList dirs = path.split(":", QString::SkipEmptyParts);
+    const QString path = QFile::decodeName(qgetenv("PATH"));
+    const QStringList dirs = path.split(QL1C(':'), QString::SkipEmptyParts);
     for (const QString& dirName : dirs)
     {
         const QFileInfo fi(QDir(dirName), program);
@@ -63,6 +63,6 @@ LXQT_API QString ProgramFinder::programName(const QString& command)
     wordexp_t we;
     if (wordexp(command.toLocal8Bit().constData(), &we, WRDE_NOCMD) == 0)
         if (we.we_wordc > 0)
-            return QString(we.we_wordv[0]);
+            return QString::fromLocal8Bit(we.we_wordv[0]);
     return QString();
 }

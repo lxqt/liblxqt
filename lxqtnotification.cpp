@@ -92,7 +92,7 @@ void Notification::setHint(const QString& hintName, const QVariant& value)
 void Notification::setUrgencyHint(Urgency urgency)
 {
     Q_D(Notification);
-    d->mHints.insert("urgency", qvariant_cast<uchar>(urgency));
+    d->mHints.insert(QL1S("urgency"), qvariant_cast<uchar>(urgency));
 }
 
 void Notification::clearHints()
@@ -127,8 +127,8 @@ NotificationPrivate::NotificationPrivate(const QString& summary, Notification* p
     mTimeout(-1),
     q_ptr(parent)
 {
-    mInterface = new OrgFreedesktopNotificationsInterface("org.freedesktop.Notifications",
-                                                          "/org/freedesktop/Notifications",
+    mInterface = new OrgFreedesktopNotificationsInterface(QL1S("org.freedesktop.Notifications"),
+                                                          QL1S("/org/freedesktop/Notifications"),
                                                           QDBusConnection::sessionBus(), this);
     connect(mInterface, &OrgFreedesktopNotificationsInterface::NotificationClosed,
         this, &NotificationPrivate::notificationClosed);
@@ -150,8 +150,8 @@ void NotificationPrivate::update()
     }
     else
     {
-        if (mHints.contains("urgency") && mHints.value("urgency").toInt() != Notification::UrgencyLow)
-            QMessageBox::information(0, tr("Notifications Fallback"), mSummary + " \n\n " + mBody);
+        if (mHints.contains(QL1S("urgency")) && mHints.value(QL1S("urgency")).toInt() != Notification::UrgencyLow)
+            QMessageBox::information(0, tr("Notifications Fallback"), mSummary + QL1S(" \n\n ") + mBody);
     }
 }
 
@@ -164,7 +164,7 @@ void NotificationPrivate::setActions(QStringList actions, int defaultAction)
     for (int ix = 0; ix < N; ix++)
     {
         if (ix == defaultAction)
-            mActions.append("default");
+            mActions.append(QL1S("default"));
         else
             mActions.append(QString::number(ix));
         mActions.append(actions[ix]);
@@ -187,7 +187,7 @@ void NotificationPrivate::handleAction(uint id, QString key)
     qDebug() << "action invoked:" << key;
     bool ok = true;
     int keyId;
-    if (key == "default")
+    if (key == QL1S("default"))
         keyId = mDefaultAction;
     else
         keyId = key.toInt(&ok);

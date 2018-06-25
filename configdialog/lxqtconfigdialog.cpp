@@ -126,7 +126,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
         page->layout()->setMargin(0);
     }
 
-    QStringList icons = QStringList(iconNames) << "application-x-executable";
+    QStringList icons = QStringList(iconNames) << QL1S("application-x-executable");
     new QListWidgetItem(XdgIcon::fromTheme(icons), name, d->ui->moduleList);
     d->mIcons.append(icons);
     d->ui->stackedWidget->addWidget(page);

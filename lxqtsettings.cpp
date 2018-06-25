@@ -54,9 +54,9 @@ public:
     {
         // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
         //       exists to have functional mWatcher
-        if (!mParent->contains("__userfile__"))
+        if (!mParent->contains(QL1S("__userfile__")))
         {
-            mParent->setValue("__userfile__", true);
+            mParent->setValue(QL1S("__userfile__"), true);
 #if defined(WITH_XDG_DIRS_FALLBACK)
             if (useXdgFallback)
             {
@@ -145,7 +145,7 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings("lxqt", module, parent),
+    QSettings(QL1S("lxqt"), module, parent),
     d_ptr(new SettingsPrivate(this, true))
 {
 }
@@ -310,25 +310,25 @@ const GlobalSettings *Settings::globalSettings()
 QString SettingsPrivate::localizedKey(const QString& key) const
 {
 
-    QString lang = getenv("LC_MESSAGES");
+    QString lang = QString::fromLocal8Bit(qgetenv("LC_MESSAGES"));
 
     if (lang.isEmpty())
-        lang = getenv("LC_ALL");
+        lang = QString::fromLocal8Bit(qgetenv("LC_ALL"));
 
     if (lang.isEmpty())
-         lang = getenv("LANG");
+         lang = QString::fromLocal8Bit(qgetenv("LANG"));
 
 
-    QString modifier = lang.section('@', 1);
+    QString modifier = lang.section(QL1C('@'), 1);
     if (!modifier.isEmpty())
         lang.truncate(lang.length() - modifier.length() - 1);
 
-    QString encoding = lang.section('.', 1);
+    QString encoding = lang.section(QL1C('.'), 1);
     if (!encoding.isEmpty())
         lang.truncate(lang.length() - encoding.length() - 1);
 
 
-    QString country = lang.section('_', 1);
+    QString country = lang.section(QL1C('_'), 1);
     if (!country.isEmpty())
         lang.truncate(lang.length() - country.length() - 1);
 
@@ -342,7 +342,7 @@ QString SettingsPrivate::localizedKey(const QString& key) const
 
     if (!modifier.isEmpty() && !country.isEmpty())
     {
-        QString k = QString("%1[%2_%3@%4]").arg(key, lang, country, modifier);
+        QString k = QString::fromLatin1("%1[%2_%3@%4]").arg(key, lang, country, modifier);
         //qDebug() << "\t try " << k << mParent->contains(k);
         if (mParent->contains(k))
             return k;
@@ -350,7 +350,7 @@ QString SettingsPrivate::localizedKey(const QString& key) const
 
     if (!country.isEmpty())
     {
-        QString k = QString("%1[%2_%3]").arg(key, lang, country);
+        QString k = QString::fromLatin1("%1[%2_%3]").arg(key, lang, country);
         //qDebug() << "\t try " << k  << mParent->contains(k);
         if (mParent->contains(k))
             return k;
@@ -358,13 +358,13 @@ QString SettingsPrivate::localizedKey(const QString& key) const
 
     if (!modifier.isEmpty())
     {
-        QString k = QString("%1[%2@%3]").arg(key, lang, modifier);
+        QString k = QString::fromLatin1("%1[%2@%3]").arg(key, lang, modifier);
         //qDebug() << "\t try " << k  << mParent->contains(k);
         if (mParent->contains(k))
             return k;
     }
 
-    QString k = QString("%1[%2]").arg(key, lang);
+    QString k = QString::fromLatin1("%1[%2]").arg(key, lang);
     //qDebug() << "\t try " << k  << mParent->contains(k);
     if (mParent->contains(k))
         return k;
@@ -426,8 +426,8 @@ LXQtTheme::LXQtTheme(const QString &path):
         d->mValid = !(d->mPath.isEmpty());
     }
 
-    if (QDir(path).exists("preview.png"))
-        d->mPreviewImg = path + "/preview.png";
+    if (QDir(path).exists(QL1S("preview.png")))
+        d->mPreviewImg = path + QL1S("/preview.png");
 }
 
 
@@ -450,7 +450,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
 
     for(const QString &path : qAsConst(paths))
     {
-        QDir dir(QString("%1/lxqt/themes/%2").arg(path, themeName));
+        QDir dir(QString::fromLatin1("%1/lxqt/themes/%2").arg(path, themeName));
         if (dir.isReadable())
             return dir.absolutePath();
     }
@@ -541,7 +541,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
         return QString();
     }
 
-    QString qss = f.readAll();
+    QString qss = QString::fromLocal8Bit(f.readAll());
     f.close();
 
     if (qss.isEmpty())
@@ -549,7 +549,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 
     // handle relative paths
     QString qssDir = QFileInfo(qssFile).canonicalPath();
-    qss.replace(QRegExp("url.[ \\t\\s]*", Qt::CaseInsensitive, QRegExp::RegExp2), "url(" + qssDir + "/");
+    qss.replace(QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2), QL1S("url(") + qssDir + QL1C('/'));
 
     return qss;
 }
@@ -560,7 +560,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
  ************************************************/
 QString LXQtTheme::desktopBackground(int screen) const
 {
-    QString wallpaperCfgFileName = QString("%1/wallpaper.cfg").arg(d->mPath);
+    QString wallpaperCfgFileName = QString::fromLatin1("%1/wallpaper.cfg").arg(d->mPath);
 
     if (wallpaperCfgFileName.isEmpty())
         return QString();
@@ -569,15 +569,15 @@ QString LXQtTheme::desktopBackground(int screen) const
     QString themeDir = QFileInfo(wallpaperCfgFileName).absolutePath();
     // There is something strange... If I remove next line the wallpapers array is not found...
     s.childKeys();
-    s.beginReadArray("wallpapers");
+    s.beginReadArray(QL1S("wallpapers"));
 
     s.setArrayIndex(screen - 1);
-    if (s.contains("file"))
-        return QString("%1/%2").arg(themeDir, s.value("file").toString());
+    if (s.contains(QL1S("file")))
+        return QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString());
 
     s.setArrayIndex(0);
-    if (s.contains("file"))
-        return QString("%1/%2").arg(themeDir, s.value("file").toString());
+    if (s.contains(QL1S("file")))
+        return QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString());
 
     return QString();
 }
@@ -589,7 +589,7 @@ QString LXQtTheme::desktopBackground(int screen) const
 const LXQtTheme &LXQtTheme::currentTheme()
 {
     static LXQtTheme theme;
-    QString name = Settings::globalSettings()->value("theme").toString();
+    QString name = Settings::globalSettings()->value(QL1S("theme")).toString();
     if (theme.name() != name)
     {
         theme = LXQtTheme(name);
@@ -612,13 +612,13 @@ QList<LXQtTheme> LXQtTheme::allThemes()
 
     for(const QString &path : qAsConst(paths))
     {
-        QDir dir(QString("%1/lxqt/themes").arg(path));
+        QDir dir(QString::fromLatin1("%1/lxqt/themes").arg(path));
         const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);
 
         for(const QFileInfo &dir : dirs)
         {
             if (!processed.contains(dir.fileName()) &&
-                 QDir(dir.absoluteFilePath()).exists("lxqt-panel.qss"))
+                 QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
             {
                 processed << dir.fileName();
                 ret << LXQtTheme(dir.absoluteFilePath());
@@ -686,10 +686,10 @@ void SettingsCache::loadToSettings()
 
  ************************************************/
 GlobalSettings::GlobalSettings():
-    Settings("lxqt"),
+    Settings(QL1S("lxqt")),
     d_ptr(new GlobalSettingsPrivate(this))
 {
-    if (value("icon_theme").toString().isEmpty())
+    if (value(QL1S("icon_theme")).toString().isEmpty())
     {
         qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
         const QString fallback(QLatin1String("oxygen"));
@@ -697,7 +697,7 @@ GlobalSettings::GlobalSettings():
         const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
         if (dir.exists(fallback))
         {
-            setValue("icon_theme", fallback);
+            setValue(QL1S("icon_theme"), fallback);
             sync();
         }
         else
@@ -724,14 +724,14 @@ void GlobalSettings::fileChanged()
     sync();
 
 
-    QString it = value("icon_theme").toString();
+    QString it = value(QL1S("icon_theme")).toString();
     if (d->mIconTheme != it)
     {
         emit iconThemeChanged();
     }
 
-    QString rt = value("theme").toString();
-    qlonglong themeUpdated = value("__theme_updated__").toLongLong();
+    QString rt = value(QL1S("theme")).toString();
+    qlonglong themeUpdated = value(QL1S("__theme_updated__")).toLongLong();
     if ((d->mLXQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
     {
         d->mLXQtTheme = rt;

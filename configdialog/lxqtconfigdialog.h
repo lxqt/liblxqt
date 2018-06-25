@@ -58,7 +58,7 @@ public:
     /*!
      * Add a page to the configure dialog
      */
-    void addPage(QWidget* page, const QString& name, const QString& iconName="application-x-executable");
+    void addPage(QWidget* page, const QString& name, const QString& iconName = QLatin1String("application-x-executable"));
 
     /*!
      * Add a page to the configure dialog, attempting several alternative icons to find one in the theme

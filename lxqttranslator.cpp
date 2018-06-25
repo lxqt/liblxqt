@@ -51,8 +51,8 @@ QStringList *getSearchPaths()
     if (searchPath == 0)
     {
         searchPath = new QStringList();
-        *searchPath << XdgDirs::dataDirs(QLatin1Char('/') % LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR);
-        *searchPath << QString(LXQT_SHARE_TRANSLATIONS_DIR);
+        *searchPath << XdgDirs::dataDirs(QL1C('/') + QL1S(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR));
+        *searchPath << QL1S(LXQT_SHARE_TRANSLATIONS_DIR);
         searchPath->removeDuplicates();
     }
 
@@ -95,17 +95,17 @@ bool translate(const QString &name, const QString &owner)
 
         if (!owner.isEmpty())
         {
-            subPaths << path % QChar('/') % owner % QChar('/') % name;
+            subPaths << path + QL1C('/') + owner + QL1C('/') + name;
         }
         else
         {
-            subPaths << path % QChar('/') % name;
+            subPaths << path + QL1C('/') + name;
             subPaths << path;
         }
 
         for(const QString &p : qAsConst(subPaths))
         {
-            if (appTranslator->load(name + "_" + locale, p))
+            if (appTranslator->load(name + QL1C('_') + locale, p))
             {
                 QCoreApplication::installTranslator(appTranslator);
                 return true;
@@ -135,7 +135,7 @@ bool Translator::translateApplication(const QString &applicationName)
     const QString locale = QLocale::system().name();
     QTranslator *qtTranslator = new QTranslator(qApp);
 
-    if (qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTranslator->load(QL1S("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
     {
         qApp->installTranslator(qtTranslator);
     }
@@ -170,7 +170,7 @@ bool Translator::translatePlugin(const QString &pluginName, const QString& type)
 {
     static QSet<QString> loadedPlugins;
 
-    const QString fullName = type % QChar('/') % pluginName;
+    const QString fullName = type % QL1C('/') % pluginName;
     if (loadedPlugins.contains(fullName))
         return true;
 

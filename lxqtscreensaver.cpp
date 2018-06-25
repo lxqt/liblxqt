@@ -233,7 +233,7 @@ QList<QAction*> ScreenSaver::availableActions()
     QList<QAction*> ret;
     QAction * act;
 
-    act = new QAction(XdgIcon::fromTheme("system-lock-screen", "lock"), tr("Lock Screen"), this);
+    act = new QAction(XdgIcon::fromTheme(QL1S("system-lock-screen"), QL1S("lock")), tr("Lock Screen"), this);
     connect(act, &QAction::triggered, this, &ScreenSaver::lockScreen);
     ret.append(act);
 
@@ -244,7 +244,7 @@ void ScreenSaver::lockScreen()
 {
     Q_D(ScreenSaver);
     if (!d->isScreenSaverLocked())
-        d->m_xdgProcess->start("xdg-screensaver", QStringList() << "lock");
+        d->m_xdgProcess->start(QL1S("xdg-screensaver"), QStringList() << QL1S("lock"));
 }
 
 } // namespace LXQt
