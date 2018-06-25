@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>Tiefschlaf fehlgeschlagen.</translation>
+        <translation>Ruhezustand fehlgeschlagen.</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Hibernate</source>
-        <translation>Tiefschlaf</translation>
+        <translation>Ruhezustand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt Bereitschaft</translation>
+        <translation>Bereitschaft der LXQT-Sitzung</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -70,17 +70,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt Tiefschlaf</translation>
+        <translation>Ruhezustand der LXQT-Sitzung</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Möchten Sie ihren Computer in Tiefschlaf versetzen?&lt;p&gt;Dies versetzt ihren Computer in einen Energiesparmodus. Der Systemzustand bleibt erhalten, wenn die Energiezufuhr abbricht.</translation>
+        <translation>Möchten Sie ihren Computer in Ruhezustand versetzen?&lt;p&gt;Dies versetzt ihren Computer in einen Energiesparmodus. Der Systemzustand bleibt erhalten, wenn die Energiezufuhr abbricht.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt Neustart</translation>
+        <translation>Neustart der LXQT-Sitzung</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt Herunterfahren</translation>
+        <translation>Herunterfahren der LXQT-Sitzung</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt Abmelden</translation>
+        <translation>Abmelden der LXQT-Sitzung</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>Tiefschlaf fehlgeschlagen.</translation>
+        <translation>Ruhezustand fehlgeschlagen.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
