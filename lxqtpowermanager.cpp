@@ -96,9 +96,9 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
 //    connect(m_power, SIGNAL(monitoring(const QString &)),
 //            this, SLOT(monitoring(const QString&)));
 
-    QString sessionConfig(getenv("LXQT_SESSION_CONFIG"));
-    Settings settings(sessionConfig.isEmpty() ? "session" : sessionConfig);
-    m_skipWarning = settings.value("leave_confirmation").toBool() ? false : true;
+    QString sessionConfig(QFile::decodeName(qgetenv("LXQT_SESSION_CONFIG")));
+    Settings settings(sessionConfig.isEmpty() ? QL1S("session") : sessionConfig);
+    m_skipWarning = settings.value(QL1S("leave_confirmation")).toBool() ? false : true;
 }
 
 PowerManager::~PowerManager()
@@ -114,35 +114,35 @@ QList<QAction*> PowerManager::availableActions()
     // TODO/FIXME: icons
     if (m_power->canHibernate())
     {
-        act = new QAction(XdgIcon::fromTheme("system-suspend-hibernate"), tr("Hibernate"), this);
+        act = new QAction(XdgIcon::fromTheme(QL1S("system-suspend-hibernate")), tr("Hibernate"), this);
         connect(act, &QAction::triggered, this, &PowerManager::hibernate);
         ret.append(act);
     }
 
     if (m_power->canSuspend())
     {
-        act = new QAction(XdgIcon::fromTheme("system-suspend"), tr("Suspend"), this);
+        act = new QAction(XdgIcon::fromTheme(QL1S("system-suspend")), tr("Suspend"), this);
         connect(act, &QAction::triggered, this, &PowerManager::suspend);
         ret.append(act);
     }
 
     if (m_power->canReboot())
     {
-        act = new QAction(XdgIcon::fromTheme("system-reboot"), tr("Reboot"), this);
+        act = new QAction(XdgIcon::fromTheme(QL1S("system-reboot")), tr("Reboot"), this);
         connect(act, &QAction::triggered, this, &PowerManager::reboot);
         ret.append(act);
     }
 
     if (m_power->canShutdown())
     {
-        act = new QAction(XdgIcon::fromTheme("system-shutdown"), tr("Shutdown"), this);
+        act = new QAction(XdgIcon::fromTheme(QL1S("system-shutdown")), tr("Shutdown"), this);
         connect(act, &QAction::triggered, this, &PowerManager::shutdown);
         ret.append(act);
     }
 
     if (m_power->canLogout())
     {
-        act = new QAction(XdgIcon::fromTheme("system-log-out"), tr("Logout"), this);
+        act = new QAction(XdgIcon::fromTheme(QL1S("system-log-out")), tr("Logout"), this);
         connect(act, &QAction::triggered, this, &PowerManager::logout);
         ret.append(act);
     }

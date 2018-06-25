@@ -60,8 +60,8 @@ void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QStri
     Q_UNUSED(ctx)
     QByteArray msgBuf = msgStr.toUtf8();
     const char* msg = msgBuf.constData();
-    QDir dir(XdgDirs::configHome().toUtf8() + QLatin1String("/lxqt"));
-    dir.mkpath(".");
+    QDir dir(XdgDirs::configHome() + QLatin1String("/lxqt"));
+    dir.mkpath(QL1S("."));
 
     const char* typestr;
     const char* color;
@@ -83,13 +83,13 @@ void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QStri
         color = COLOR_CRITICAL;
     }
 
-    QByteArray dt = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz").toUtf8();
+    QByteArray dt = QDateTime::currentDateTime().toString(QL1S("yyyy-MM-dd hh:mm:ss.zzz")).toUtf8();
     if (isatty(STDERR_FILENO))
         fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, static_cast<void *>(qApp), typestr, msg, COLOR_RESET);
     else
         fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
 
-    FILE *f = fopen(dir.absoluteFilePath("debug.log").toUtf8().constData(), "a+");
+    FILE *f = fopen(dir.absoluteFilePath(QL1S("debug.log")).toUtf8().constData(), "a+");
     fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
     fclose(f);
 
@@ -107,7 +107,7 @@ Application::Application(int &argc, char** argv)
         qInstallMessageHandler(dbgMessageOutput);
 #endif
 
-    setWindowIcon(QIcon(QString(LXQT_GRAPHICS_DIR) + "/lxqt_logo.png"));
+    setWindowIcon(QIcon(QFile::decodeName(LXQT_GRAPHICS_DIR) + QL1S("/lxqt_logo.png")));
     connect(Settings::globalSettings(), &GlobalSettings::lxqtThemeChanged, this, &Application::updateTheme);
     updateTheme();
 }
@@ -143,7 +143,7 @@ namespace
         {
             const int ret = write(instance->mSignalSock[0], &signo, sizeof (int));
             if (sizeof (int) != ret)
-                qCritical() << QStringLiteral("unable to write into socketpair, %1").arg(strerror(errno));
+                qCritical("unable to write into socketpair: %s", strerror(errno));
         } 
 
     public:
@@ -153,7 +153,7 @@ namespace
         {
             if (0 != socketpair(AF_UNIX, SOCK_STREAM, 0, mSignalSock))
             {
-                qCritical() << QStringLiteral("unable to create socketpair for correct signal handling: %1)").arg(strerror(errno));
+                qCritical("unable to create socketpair for correct signal handling: %s", strerror(errno));
                 return;
             }
 
@@ -162,7 +162,7 @@ namespace
                 int signo = 0;
                 int ret = read(mSignalSock[1], &signo, sizeof (int));
                 if (sizeof (int) != ret)
-                qCritical() << QStringLiteral("unable to read signal from socketpair, %1").arg(strerror(errno));
+                qCritical("unable to read signal from socketpair, %s", strerror(errno));
                 signalEmitter(signo);
             });
         }
