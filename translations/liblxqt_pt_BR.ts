@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Erro ao gerenciar energia do LXQt</translation>
+        <translation type="unfinished">Erro no gerenciador de energia do LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
