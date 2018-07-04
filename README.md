@@ -29,3 +29,10 @@ as usual.
 
 The library is provided by all major Linux distributions like Arch Linux, Debian,
 Fedora and openSUSE. Just use your package manager to search for string `liblxqt`.
+
+
+### Translation (Weblate)
+
+<a href="https://weblate.lxqt.org/projects/lxqt/liblxqt/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/liblxqt/multi-auto.svg" alt="Translation status" />
+</a>
