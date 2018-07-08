@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Chyba ve správě energie</translation>
+        <translation>Chyba ve správě napájení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>Zazimování (hibernace) se nezdařila.</translation>
+        <translation>Uspání na datové úložiště se nezdařilo.</translation>
     </message>
 </context>
 <context>
@@ -65,17 +65,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Opravdu chcete uspat svůj počítač?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému není při ztrátě energie zachován.</translation>
+        <translation>Opravdu chcete uspat svůj počítač?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému není při ztrátě napájení zachován.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Zazimování sezení LXQtu</translation>
+        <translation>Hibernace LXQt sezení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Opravdu chcete zazimovat svůj počítač?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému je při ztrátě energie zachován.</translation>
+        <translation>Opravdu chcete uspat počítač na datové úložiště?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému je při ztrátě napájení zachován.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Opravdu chcete spustit svůj počítač znovu?&lt;p&gt;Všechna neuložená práce bude ztracena...</translation>
+        <translation>Opravdu chcete spustit svůj počítač znovu?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Opravdu chcete vypnout svůj počítač?&lt;p&gt;Všechna neuložená práce bude ztracena...</translation>
+        <translation>Opravdu chcete vypnout svůj počítač?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Opravdu se chcete odhlásit?&lt;p&gt;Všechna neuložená práce bude ztracena...</translation>
+        <translation>Opravdu se chcete odhlásit?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation>Během spouštění šetřiče obrazovky se vyskytla chyba. Neznámá chyba - nezdokumentovaná vrácená hodnota od xdg-screensaver: %1.</translation>
+        <translation>Během spouštění šetřiče obrazovky se vyskytla chyba. Neznámá chyba – nezdokumentovaná vrácená hodnota od xdg-screensaver: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Ujistěte se, že máte xdg-screensaver nainstalován a že běží.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Ujistěte se, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok &quot;zapnutí&quot; se nezdařil. Ujistěte se, že máte xdg-screensaver nainstalován a že běží.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ujistěte se, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
     </message>
 </context>
 <context>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolte stránku kterou zobrazit.</translation>
     </message>
 </context>
 <context>
