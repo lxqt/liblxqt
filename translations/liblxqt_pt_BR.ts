@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Erro no gerenciador de energia do LXQt</translation>
+        <translation>Erro no Gerenciador de Energia do LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Falha ao hibernar.</translation>
+        <translation>Falha ao hibernar.</translation>
     </message>
 </context>
 <context>
