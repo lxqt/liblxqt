@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Erro no gerenciador de energia do LXQt</translation>
+        <translation>Erro no Gerenciador de Energia do LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Falha ao hibernar.</translation>
+        <translation>Falha ao hibernar.</translation>
     </message>
 </context>
 <context>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro no Protetor de Tela</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="162"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um erro ocorreu ao iniciar o protetor de tela. Erro desconhecido - valor retornado não documentado de xdg-screensaver: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha a página a ser exibida.</translation>
     </message>
 </context>
 <context>
