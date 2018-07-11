@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt-istunnon uudelleenkäynnistys</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
