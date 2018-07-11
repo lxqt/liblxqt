@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>Pozastavení sezení LXQtu</translation>
+        <translation>Pozastavení LXQt sezení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Vypnutí sezení LXQtu</translation>
+        <translation>Vypnutí LXQt sezení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Chyba ve správě energie</translation>
+        <translation>Chyba ve správě napájení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ujistěte se, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ověřte, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
     </message>
 </context>
 <context>
