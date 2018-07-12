@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Chyba ve správě napájení</translation>
+        <translation>Chyba LXQt správy napájení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation>Záloha oznamování</translation>
+        <translation>Náhradní oznamování</translation>
     </message>
 </context>
 <context>
@@ -60,27 +60,27 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>Pozastavení LXQt sezení</translation>
+        <translation>LXQt sezení – uspat</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Opravdu chcete uspat svůj počítač?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému není při ztrátě napájení zachován.</translation>
+        <translation>Opravdu chcete svůj počítač uspat do operační paměti?&lt;p&gt;Uvede ho to do stavu s nízkým odběrem elektrické energie. Při ztrátě napájení nebude stav systému zachován.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Hibernace LXQt sezení</translation>
+        <translation>LXQt sezení – hibernovat</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Opravdu chcete uspat počítač na datové úložiště?&lt;p&gt;Uvede počítač do stavu s nízkým odběrem elektrické energie. Stav systému je při ztrátě napájení zachován.</translation>
+        <translation>Opravdu chcete počítač uspat na datové úložiště?&lt;p&gt;Uvede ho to do stavu s nejnižším odběrem elektrické energie. I při ztrátě napájení bude stav systému zachován.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>Spuštění sezení LXQtu znovu</translation>
+        <translation>LXQt sezení – restartovat</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -90,28 +90,28 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Vypnutí LXQt sezení</translation>
+        <translation>LXQt sezení – vypnutí</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Opravdu chcete vypnout svůj počítač?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
+        <translation>Opravdu chcete svůj počítač vypnout?&lt;p&gt;Jakákoli neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>Odhlášení sezení LXQtu</translation>
+        <translation>LXQt sezení ‒ odhlášení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Opravdu se chcete odhlásit?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
+        <translation>Opravdu se chcete odhlásit?&lt;p&gt;Jakákoli neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Chyba ve správě napájení</translation>
+        <translation>Chyba LXQt správy napájení</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Ujistěte se, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Ověřte, že máte nainstalovaný a spuštěný xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ověřte, že máte xdg-screensaver nainstalován a že je spuštěný.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ověřte, že máte nainstalovaný a spuštěný xdg-screensaver.</translation>
     </message>
 </context>
 <context>
@@ -184,7 +184,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDBusInterface je neplatné</translation>
+        <translation>QDBusInterface není platné</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
