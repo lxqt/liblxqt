@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>Uspání na datové úložiště se nezdařilo.</translation>
+        <translation>Uspání na disk se nezdařilo.</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Opravdu chcete počítač uspat na datové úložiště?&lt;p&gt;Uvede ho to do stavu s nejnižším odběrem elektrické energie. I při ztrátě napájení bude stav systému zachován.</translation>
+        <translation>Opravdu chcete počítač uspat na disk?&lt;p&gt;Uvede ho to do stavu s nejnižším odběrem elektrické energie. I při ztrátě napájení bude stav systému zachován.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Opravdu chcete spustit svůj počítač znovu?&lt;p&gt;Všechna neuložená práce bude ztracena…</translation>
+        <translation>Opravdu chcete svůj počítač restartovat?&lt;p&gt;Jakákoli neuložená práce bude ztracena…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
@@ -141,7 +141,7 @@
         <location filename="../lxqtscreensaver.cpp" line="168"/>
         <location filename="../lxqtscreensaver.cpp" line="175"/>
         <source>Screen Saver Activation Error</source>
-        <translation>Chyba při zapínání šetřiče obrazovky</translation>
+        <translation>Chyba při aktivaci šetřiče obrazovky</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Chybná skladba v argumentech xdg-screensaver.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Chybná syntaxe v argumentech xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „zapnutí“ se nezdařil. Ověřte, že máte nainstalovaný a spuštěný xdg-screensaver.</translation>
+        <translation>Při spouštění šetřiče obrazovky se vyskytla chyba. Krok „activate“ (aktivace) se nezdařil. Ověřte, že máte nainstalovaný a spuštěný xdg-screensaver.</translation>
     </message>
 </context>
 <context>
