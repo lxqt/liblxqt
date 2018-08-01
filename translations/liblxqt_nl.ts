@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation>Reserve-berichtensysteem</translation>
+        <translation>Reserve-meldingensysteem</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt-pauzestand</translation>
+        <translation>LXQt-Sessie-pauzestand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -70,17 +70,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt-slaapstand</translation>
+        <translation>LXQt-Sessie-slaapstand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Wilt u uw computer echt in slaapstand brengen?&lt;p&gt;Slaapstand brengt de computer in een energiespaarstand. De systeemstatus blijft niet behouden wanneer de stroomtoevoer wordt verbroken.</translation>
+        <translation>Wilt u uw computer echt in slaapstand brengen?&lt;p&gt;Slaapstand brengt de computer in een energiespaarstand. De systeemstatus blijft behouden wanneer de stroomtoevoer wordt verbroken.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt-herstarten</translation>
+        <translation>LXQt-Sessie-herstarten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt-afsluiten</translation>
+        <translation>LXQt-Sessie-afsluiten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt-afmelden</translation>
+        <translation>LXQt-Sessie-afmelden</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
