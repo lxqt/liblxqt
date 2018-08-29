@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt电源管理器错误</translation>
+        <translation>LXQt 电源管理器错误</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
