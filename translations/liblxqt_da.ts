@@ -40,7 +40,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
         <source>Suspend</source>
-        <translation>Slumre</translation>
+        <translation>Hvile</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="131"/>
@@ -60,12 +60,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>Slumretilstand af LXQt-session</translation>
+        <translation>Hviletilstand af LXQt-session</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Vil du virkelig sætte din computer i slumretilstand?&lt;p&gt;Slumretilstand sætter computeren i energisparetilstand. Systemtilstanden mistes hvis strømmen forsvinder.</translation>
+        <translation>Vil du virkelig sætte din computer i hviletilstand?&lt;p&gt;Hviletilstand sætter computeren i energisparetilstand. Systemtilstanden mistes hvis strømmen forsvinder.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>Suspend failed.</source>
-        <translation>Slumretilstand mislykkedes.</translation>
+        <translation>Hviletilstand mislykkedes.</translation>
     </message>
 </context>
 <context>
