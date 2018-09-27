@@ -40,6 +40,7 @@
 #include <QProcess>
 #include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
 #include <QX11Info>
+#include <QTimer>
 
 #include <X11/extensions/scrnsaver.h>
 
@@ -143,9 +144,7 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
 
     Q_UNUSED(status)
     Q_Q(ScreenSaver);
-    if (err == 0)
-        emit q->activated();
-    else
+    if (err != 0)
     {
         QMessageBox *box = new QMessageBox;
         box->setAttribute(Qt::WA_DeleteOnClose);
@@ -179,9 +178,25 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
         }
 
         box->exec();
+        emit q->done();
+    } else
+    {
+        // Note: postpone emitting of signals, till the screen is really locked,
+        // but max 5 seconds
+        QTimer * timer = new QTimer;
+        timer->setInterval(250);
+        timer->setSingleShot(false);
+        unsigned remain = 4 * 5; // cca 5 seconds (XXX: hardcoded :( )
+        QObject::connect(timer, &QTimer::timeout, q, [timer, remain, this, q]() mutable {
+                if (--remain == 0 || isScreenSaverLocked())
+                {
+                    delete timer;
+                    emit q->activated();
+                    emit q->done();
+                }
+        });
+        timer->start();
     }
-
-    emit q->done();
 }
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
