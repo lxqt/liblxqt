@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialóg</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Chyba správcu napájania LXQt</translation>
+        <translation>Chyba správcu napájania LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Hibernácia sa nepodarila.</translation>
+        <translation>Hibernácia sa nepodarila.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Náhradné oznámenia</translation>
     </message>
 </context>
 <context>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba šetriča obrazovky</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="162"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Počas spúšťania šetriča obrazovky sa stala chyba - nezdokumentovaná návratová hodnota z xdg-screensaver: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte si stránku na zobrazenie.</translation>
     </message>
 </context>
 <context>
@@ -178,19 +178,19 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba správcu napájania</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>QDBusInterface je nepoužiteľné</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba správcu napájania (volanie D-Bus)</translation>
     </message>
 </context>
 </TS>
