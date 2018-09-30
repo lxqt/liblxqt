@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished">Substituto das Notificações</translation>
+        <translation>Notificações de Contingência</translation>
     </message>
 </context>
 <context>
