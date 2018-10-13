@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
-
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+# CMP0000: Call the cmake_minimum_required() command at the beginning of the top-level
+# CMakeLists.txt file even before calling the project() command.
+# The cmake_minimum_required(VERSION) command implicitly invokes the cmake_policy(VERSION)
+# command to specify that the current project code is written for the given range of CMake
+# versions.
 project(liblxqt)
 
 set(QT_MINIMUM_VERSION "5.7.1")
@@ -26,13 +30,6 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
 add_subdirectory(lxqtbacklight/linux_backend/driver)
-
-#-----------------------------------------------------------------------------
-# Release is the default build type
-#-----------------------------------------------------------------------------
-if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
 
 set(LXQT_PKG_CONFIG_DESCRIPTION "Shared library for LXQt applications")
 
