@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
-
 project(liblxqt)
+# CMP0000 - A minimum required CMake version must be specified.
+# Note that the command invocation must appear in the CMakeLists.txt
+# file itself; a call in an included file is not sufficient.
+cmake_minimum_required(VERSION 3.6.2 FATAL_ERROR)
 
 set(QT_MINIMUM_VERSION "5.7.1")
 set(QTXDG_MINIMUM_VERSION "3.1.0")
@@ -26,13 +28,6 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
 add_subdirectory(lxqtbacklight/linux_backend/driver)
-
-#-----------------------------------------------------------------------------
-# Release is the default build type
-#-----------------------------------------------------------------------------
-if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
 
 set(LXQT_PKG_CONFIG_DESCRIPTION "Shared library for LXQt applications")
 
