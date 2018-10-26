@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQT Greska sa Upravljacem Napajanja</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernacija je neuspesna.</translation>
     </message>
 </context>
 <context>
