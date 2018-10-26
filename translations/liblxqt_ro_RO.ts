@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Hibernarea a eșuat.</translation>
+        <translation>Hibernarea a eșuat.</translation>
     </message>
 </context>
 <context>
