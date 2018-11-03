@@ -44,6 +44,10 @@ public:
     int maxTextWidth() const;
     bool event(QEvent * event) override;
 
+    int getWrappedTextWidth() const {
+        return mWrappedTextWidth;
+    }
+
 protected:
     QSize viewportSizeHint() const override;
     QSize minimumSizeHint() const override;
@@ -53,6 +57,7 @@ protected slots:
 
 private:
     int mMaxTextWidth;
+    int mWrappedTextWidth;
 };
 
 } // namespace LXQt
