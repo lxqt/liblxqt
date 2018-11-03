@@ -61,14 +61,30 @@ PageSelectWidgetItemDelegate::PageSelectWidgetItemDelegate(PageSelectWidget *par
  ************************************************/
 QSize PageSelectWidgetItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    QSize size = QStyledItemDelegate::sizeHint(option, index);
-    //all items should have unified width
-    QStyle * style = option.widget ? option.widget->style() : QApplication::style();
+    QVariant value = index.data(Qt::SizeHintRole);
+    if (value.isValid())
+        return qvariant_cast<QSize>(value);
+
+    QStyleOptionViewItem opt = option;
+    initStyleOption(&opt, index);
+    const QWidget *widget = option.widget;
+    QStyle *style = widget ? widget->style() : QApplication::style();
+    QSize size = style->sizeFromContents(QStyle::CT_ItemViewItem, &opt, QSize(), widget);
+
     //Note: this margin logic follows code in QCommonStylePrivate::viewItemLayout()
     const int margin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, &option, option.widget) + 1;
     //considering the icon size too
     size.setWidth(qMax(mView->maxTextWidth(), option.decorationSize.width()));
     size.rwidth() += 2 * margin;
+
+    // find the extra vertical gaps by subtracting the height of the default wrapped text
+    // (with no constraining rectangle) from the height of the real one (with a specific max. width)
+    const QRect R1 = mView->fontMetrics().boundingRect(QRect(), Qt::AlignLeft | Qt::TextWordWrap, opt.text);
+    const QRect R2 = mView->fontMetrics().boundingRect(QRect(0, 0, mView->getWrappedTextWidth(), 0),
+                                                    Qt::AlignLeft | Qt::TextWordWrap, opt.text);
+    size.rheight() -= R1.height() - R2.height();
+    size.rheight() += margin; // only at the bottom
+
     return size;
 }
 
@@ -81,6 +97,8 @@ PageSelectWidget::PageSelectWidget(QWidget *parent) :
     QListWidget(parent)
     , mMaxTextWidth(0)
 {
+    mWrappedTextWidth = fontMetrics().averageCharWidth() * 13; // max. 13 characters
+
     setSelectionRectVisible(false);
     setViewMode(IconMode);
     setSpacing(2);
@@ -140,7 +158,8 @@ void PageSelectWidget::updateMaxTextWidth()
 {
     for(int i = count() - 1; 0 <= i; --i)
     {
-        const QRect r = fontMetrics().boundingRect(QRect{},  Qt::AlignLeft | Qt::TextWordWrap, item(i)->text());
+        const QRect r = fontMetrics().boundingRect(QRect(0, 0, mWrappedTextWidth, 0),
+                                                    Qt::AlignLeft | Qt::TextWordWrap, item(i)->text());
         mMaxTextWidth = qMax(mMaxTextWidth, r.width());
     }
 }
