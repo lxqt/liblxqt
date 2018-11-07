@@ -65,24 +65,29 @@ QSize PageSelectWidgetItemDelegate::sizeHint(const QStyleOptionViewItem &option,
     if (value.isValid())
         return qvariant_cast<QSize>(value);
 
+    //all items should have unified width
+
     QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
     const QWidget *widget = option.widget;
     QStyle *style = widget ? widget->style() : QApplication::style();
     QSize size = style->sizeFromContents(QStyle::CT_ItemViewItem, &opt, QSize(), widget);
-
-    //Note: this margin logic follows code in QCommonStylePrivate::viewItemLayout()
+    //NOTE: this margin logic follows code in QCommonStylePrivate::viewItemLayout()
     const int margin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, &option, option.widget) + 1;
+
+    // Find the extra vertical gap by subtracting the height of the text when wrapped within
+    // the default size from the height of the text when wrapped within our max. width.
+    const QRect R1 = mView->fontMetrics().boundingRect(QRect(0, 0, size.width() - 2 * margin, 0),
+                                                        Qt::AlignLeft | Qt::TextWordWrap, opt.text);
+    const QRect R2 = mView->fontMetrics().boundingRect(QRect(0, 0, mView->getWrappedTextWidth(), 0),
+                                                        Qt::AlignLeft | Qt::TextWordWrap, opt.text);
+    // compensate for the vertical gap
+    size.rheight() -= qAbs(R1.height() - R2.height());
+
     //considering the icon size too
     size.setWidth(qMax(mView->maxTextWidth(), option.decorationSize.width()));
+    // adding the margin is good but not necessary because it is already added
     size.rwidth() += 2 * margin;
-
-    // find the extra vertical gaps by subtracting the height of the default wrapped text
-    // (with no constraining rectangle) from the height of the real one (with a specific max. width)
-    const QRect R1 = mView->fontMetrics().boundingRect(QRect(), Qt::AlignLeft | Qt::TextWordWrap, opt.text);
-    const QRect R2 = mView->fontMetrics().boundingRect(QRect(0, 0, mView->getWrappedTextWidth(), 0),
-                                                    Qt::AlignLeft | Qt::TextWordWrap, opt.text);
-    size.rheight() -= R1.height() - R2.height();
     size.rheight() += margin; // only at the bottom
 
     return size;
