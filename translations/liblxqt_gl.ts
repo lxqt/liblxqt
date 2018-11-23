@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>Fallou a hibernación.</translation>
+        <translation>Produciuse un fallo na posta en hibernación.</translation>
     </message>
 </context>
 <context>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Confirma que quere suspender o sistema?&lt;p&gt;Suspende o sistema a un estado de baixo consumo. O estado do sistema non se conserva de se esgota a enerxía.</translation>
+        <translation>Confirma que quere suspender o sistema?&lt;p&gt;Suspende o computador a un estado de baixo consumo. O estado do sistema non se conserva se se esgota a enerxía.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Confirma que quere hibernar o computador?&lt;p&gt;Hiberna o computador un estado de baixo consumo. O estado do sistema conservarase aínda que se esgote a enerxía.</translation>
+        <translation>Confirma que quere hibernar o computador?&lt;p&gt;Hiberna o computador a un estado de baixo consumo. O estado do sistema conservarase aínda que se esgote a enerxía.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>Fallou a hibernación.</translation>
+        <translation>Produciuse un fallo na posta en hibernación.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>Suspend failed.</source>
-        <translation>Fallou a suspensión.</translation>
+        <translation>Produciuse un fallo na posta en suspensión.</translation>
     </message>
 </context>
 <context>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation>Produciuse un erro ao iniciar o salva pantallas. Produciuse un erro descoñecido: valor de retorno non documentado desde xdg-screensaver: %1.</translation>
+        <translation>Produciuse un erro ao iniciar o salva pantallas. Erro descoñecido: valor de retorno non documentado desde xdg-screensaver: %1.</translation>
     </message>
 </context>
 <context>
