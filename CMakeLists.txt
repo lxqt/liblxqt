@@ -6,9 +6,11 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 # versions.
 project(liblxqt)
 
+
+set(LXQTBT_MINIMUM_VERSION "0.6.0")
+set(KF5_MINIMUM_VERSION "5.36.0")
 set(QT_MINIMUM_VERSION "5.7.1")
-set(QTXDG_MINIMUM_VERSION "3.1.0")
-set(LXQTBT_MINIMUM_VERSION "0.5.0")
+set(QTXDG_MINIMUM_VERSION "3.3.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
@@ -25,6 +27,23 @@ set(LXQT_MINOR_VERSION 13)
 #
 set(LXQT_PATCH_VERSION 0)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
+
+
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
+find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
+find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
+find_package(PolkitQt5-1 REQUIRED)
+find_package(X11 REQUIRED)
+message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
@@ -143,22 +162,6 @@ set(POLKIT_FILES
 configure_file ( polkit/org.lxqt.backlight.pkexec.policy.in "${CMAKE_CURRENT_BINARY_DIR}/org.lxqt.backlight.pkexec.policy" )
 
 file(GLOB LXQT_CONFIG_FILES resources/*.conf)
-
-option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-
-find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-find_package(X11 REQUIRED)
-find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
-find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
-find_package(KF5WindowSystem REQUIRED)
-find_package(PolkitQt5-1 REQUIRED)
-message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
     dbus/org.freedesktop.Notifications.xml
