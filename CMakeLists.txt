@@ -15,7 +15,7 @@ set(QTXDG_MINIMUM_VERSION "3.3.0")
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 13)
+set(LXQT_MINOR_VERSION 14)
 #
 # Patch Version, belong *only* to the component
 # LXQt is 0.13 - liblxqt is at patch version 0
