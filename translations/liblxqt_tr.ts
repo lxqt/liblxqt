@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation>Bildirimleri geriye al</translation>
+        <translation>Bildirimleri Geriye Al</translation>
     </message>
 </context>
 <context>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Hibernate</source>
-        <translation>Uyku</translation>
+        <translation>Uykuya Al</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
         <source>Suspend</source>
-        <translation>Askıya Al</translation>
+        <translation>Beklemeye Al</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="131"/>
@@ -60,27 +60,27 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt Oturum Askıya Alma</translation>
+        <translation>LXQt Oturumunu Beklemeye Al</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Bilgisayarınızı gerçekten askıya almak istiyor musunuz?&lt;p&gt;Bilgisayarı düşük güç tüketiminde askıya alır. Güç gittiği takdirde sistem durumu saklanmaz.</translation>
+        <translation>Bilgisayarınızı gerçekten beklemeye almak istiyor musunuz?&lt;p&gt;Bilgisayarı düşük güç tüketiminde beklemeye alır. Güç biterse sistem durumu muhafaza edilmez.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt Oturum Uyku Kipi</translation>
+        <translation>LXQt Oturumunu Uykuya Al</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Bilgisayarınızı gerçekten uyku kipine geçirmek istiyor musunuz?&lt;p&gt;Bilgisayarı düşük güç tüketiminde uyku kipine alır. Güç gittiği takdirde sistem durumu korunur.</translation>
+        <translation>Bilgisayarınızı gerçekten uyku kipine geçirmek istiyor musunuz?&lt;p&gt;Bilgisayarı düşük güç tüketiminde uyku kipine alır. Güç biterse sistem durumu muhafaza edilir.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt Oturum Yeniden Başlatma</translation>
+        <translation>LXQt Oturumunu Yeniden Başlat</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt Oturum Kapatma</translation>
+        <translation>LXQt Bilgisayarı Kapat</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -100,12 +100,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt Oturumu Kapatma</translation>
+        <translation>LXQt Oturumundan Çık</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Oturumunuzu gerçekten kapatmak istiyor musunuz? Kaydedilmemiş veriler kaybolacaktır...</translation>
+        <translation>Oturumunuzdan gerçekten çıkmak istiyor musunuz? Kaydedilmemiş veriler kaybolacaktır...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>Suspend failed.</source>
-        <translation>Askıya alma başarısız oldu.</translation>
+        <translation>Beklemeye alma başarısız oldu.</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation>Ekran Koruyucu başlarken bir hata oluştur. Bilinmeyen hata - xdg-screensaver=%1 den okunamayan geri dönüş değeri.</translation>
+        <translation>Ekran Koruyucu başlarken bir hata oluştu. Bilinmeyen hata - xdg-screensaver=%1 den okunamayan geri dönüş değeri.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
