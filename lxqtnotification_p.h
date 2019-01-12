@@ -42,6 +42,7 @@ public:
     void close();
     void setActions(QStringList actions, int defaultAction);
     const Notification::ServerInfo serverInfo();
+    void queryServerInfo(bool async=1);
 
 public Q_SLOTS:
     void handleAction(uint id, QString key);
@@ -58,6 +59,9 @@ private:
     QVariantMap mHints;
     int mDefaultAction;
     int mTimeout;
+
+    static Notification::ServerInfo sServerInfo;
+    static bool sIsServerInfoQuried;
 
     Notification* const q_ptr;
     Q_DECLARE_PUBLIC(Notification)

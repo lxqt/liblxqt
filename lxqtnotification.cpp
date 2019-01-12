@@ -113,6 +113,12 @@ const Notification::ServerInfo Notification::serverInfo()
     return d->serverInfo();
 }
 
+void Notification::queryServerInfo()
+{
+    Q_D(Notification);
+    d->queryServerInfo(/*async=*/true);
+}
+
 void Notification::notify(const QString& summary, const QString& body, const QString& iconName)
 {
     Notification notification(summary);
@@ -120,6 +126,9 @@ void Notification::notify(const QString& summary, const QString& body, const QSt
     notification.setIcon(iconName);
     notification.update();
 }
+
+bool NotificationPrivate::sIsServerInfoQuried = 0;
+Notification::ServerInfo NotificationPrivate::sServerInfo;
 
 NotificationPrivate::NotificationPrivate(const QString& summary, Notification* parent) :
     mId(0),
@@ -173,9 +182,43 @@ void NotificationPrivate::setActions(QStringList actions, int defaultAction)
 
 const Notification::ServerInfo NotificationPrivate::serverInfo()
 {
-    Notification::ServerInfo info;
-    info.name = mInterface->GetServerInformation(info.vendor, info.version, info.specVersion);
-    return info;
+    if (!sIsServerInfoQuried) {
+        queryServerInfo (/*async=*/false);
+    }
+
+    return sServerInfo;
+}
+
+void NotificationPrivate::queryServerInfo(bool async)
+{
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(mInterface->GetServerInformation(), this);
+
+    connect(watcher, &QDBusPendingCallWatcher::finished, [this](QDBusPendingCallWatcher* callWatcher) {
+            Q_Q(Notification);
+            QDBusPendingReply<QString, QString, QString, QString> reply = *callWatcher;
+
+            if (!reply.isError()) {
+                sServerInfo.name         = reply.argumentAt<0>();
+                sServerInfo.vendor       = reply.argumentAt<1>();
+                sServerInfo.version      = reply.argumentAt<2>();
+                sServerInfo.specVersion  = reply.argumentAt<3>();
+            } else {
+                 // server either responds something strange or nothing; assume it's malfunctioning
+                sServerInfo.name.clear();
+                sServerInfo.vendor.clear();
+                sServerInfo.version.clear();
+                sServerInfo.specVersion.clear();
+            }
+            sIsServerInfoQuried = true;
+            Q_EMIT q->serverInfoReady();
+            sender()->deleteLater();
+        });
+
+    if (!async) {
+        QEventLoop loop;
+        connect(watcher, &QDBusPendingCallWatcher::finished, &loop, &QEventLoop::quit);
+        loop.exec();
+    }
 }
 
 void NotificationPrivate::handleAction(uint id, QString key)

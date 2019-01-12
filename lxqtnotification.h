@@ -143,8 +143,20 @@ public:
 
     /*!
      * \brief Returns information about the notifications server
+     * \note This call may block for up to 25s (default dbus timeout) if the notification server
+     *       is not running and the info wasn't previously queried.
+     * \sa queryServerInfo()
      */
     const ServerInfo serverInfo();
+
+    /*!
+     * \brief Performs an asyncronous query of the notifications server information.
+     *        Use serverInfoReady signal to get notified (no pun intended) when the
+     *        info will be received.
+     * \sa serverInfo()
+     * \sa serverInfoReady()
+     */
+    void queryServerInfo();
 
     /*!
      * \brief Convenience function to create and display a notification for the most common
@@ -183,6 +195,12 @@ Q_SIGNALS:
      * \sa setActions()
      */
     void actionActivated(int actionNumber);
+
+    /*!
+     * \brief Emitted when queried server info is received
+     * \sa queryServerInfo()
+     */
+    void serverInfoReady();
 
 private:
     Q_DECLARE_PRIVATE(Notification)
