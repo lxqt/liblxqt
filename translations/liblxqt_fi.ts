@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletko varma, että halua siirtää tietokoneesi virransäästötilaan?&lt;p&gt;Siirtää tietokoneen matalan virrankäytön tilaan. Virtakatkon sattuessa järjestelmän tilaa ei ole tallennettu.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletko varma, että haluat siirtää tietokoneesi lepotilaan?&lt;p&gt;Siirtää tietokoneen matalan virrankäytön tilaan. Virtakatkon sattuessa järjestelmän tila on tallennettu.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytönsäästäjän virhe</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="162"/>
@@ -146,12 +146,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe näytönsäästäjää käynnistettäessä. Tuntematon virhe - dokumentoimaton paluuarvo xdg-screensaver :lta: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe näytönsäästäjää käynnistettäessä. Syntaksivirhe xdg-screensaver :in argumenteissa.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse näytettävä sivu.</translation>
     </message>
 </context>
 <context>
