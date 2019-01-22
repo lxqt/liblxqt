@@ -3,6 +3,7 @@ liblxqt-0.14.0 / 2018-12-01
 ===========================
 
   * Implementation fixed:
+    - Added missing text color of our HTML delegate
     - Use the new signal and slot syntax 
     - Don't use automatic string conversions
     - lxqtbacklight: centralize fopen() and perform path handling with length checks
