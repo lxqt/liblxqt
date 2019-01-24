@@ -178,7 +178,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation>Fehler der Energieverwaltung</translation>
+        <translation>Energieverwaltungsfehler</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
@@ -190,7 +190,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Fehler der Energieverwaltung (D-BUS-Aufruf)</translation>
+        <translation>Energieverwaltungsfehler (D-BUS-Aufruf)</translation>
     </message>
 </context>
 </TS>

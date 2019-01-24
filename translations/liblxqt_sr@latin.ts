@@ -111,12 +111,12 @@
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LXQT Greska sa Upravljacem Napajanja</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hibernacija je neuspesna.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>

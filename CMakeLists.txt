@@ -10,12 +10,12 @@ project(liblxqt)
 set(LXQTBT_MINIMUM_VERSION "0.6.0")
 set(KF5_MINIMUM_VERSION "5.36.0")
 set(QT_MINIMUM_VERSION "5.7.1")
-set(QTXDG_MINIMUM_VERSION "3.2.0")
+set(QTXDG_MINIMUM_VERSION "3.3.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 13)
+set(LXQT_MINOR_VERSION 14)
 #
 # Patch Version, belong *only* to the component
 # LXQt is 0.13 - liblxqt is at patch version 0
