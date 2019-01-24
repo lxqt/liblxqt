@@ -1,4 +1,30 @@
 
+liblxqt-0.14.0 / 2019-01-25
+===========================
+
+  * Implementation fixed:
+    - Added missing text color of our HTML delegate
+    - Use the new signal and slot syntax 
+    - Don't use automatic string conversions
+    - lxqtbacklight: centralize fopen() and perform path handling with length checks
+    - lxqtbacklight: apply maximum string length to fscanf to prevent overflow
+    - lxqtbacklight: removed useless commented out code
+    - lxqtbacklight: constified char *driver, where appropriate
+    - lxqtbacklight: centralized error output on empty backlight dir
+    - lxqtbacklight: fix and improve command line parameter handling
+    - lxqtbacklight: only pass basename into open_driver_file()
+    - lxqt-backlight: Simplify string construction
+    - lxqthtmldelegate: Position, alignment and size fixes for HTML delegate 
+    - lxqtpageselectwidget: Fix config dialog cell height
+    - lxqtpageselectwidget: Fixed config dialog select widget cells
+  * Improved cmake scripting
+    - Set cmake_minimum_required to 3.1.0
+    - Removed locale compile definitons
+  * Moved translations from lxqt-l10n back to liblxqt
+    - Removed obsolete translation fuctionality
+    - Added translation promo in README.md
+   * Translation updates
+
 liblxqt-0.13.0 / 2018-05-21
 ===========================
 
