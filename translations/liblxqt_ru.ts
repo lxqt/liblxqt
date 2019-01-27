@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Перевести компьютер в ждущий режим?&lt;p&gt;Переводит компьютер в режим низкого энергопотрбления. В случае отключения питания состояние системы будет потеряно.</translation>
+        <translation>Перевести компьютер в ждущий режим?&lt;p&gt;Переводит компьютер в режим низкого энергопотребления. В случае отключения питания состояние системы будет потеряно.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Перевести компьютер в спящий режим?&lt;p&gt;Переводит компьютер в режим низкого энергопотрбления. Состояние системы будет сохранено при отключении питания.</translation>
+        <translation>Перевести компьютер в спящий режим?&lt;p&gt;Переводит компьютер в режим низкого энергопотребления. Состояние системы будет сохранено при отключении питания.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
