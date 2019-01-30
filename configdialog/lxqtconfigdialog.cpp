@@ -103,6 +103,13 @@ void ConfigDialog::setButtons(QDialogButtonBox::StandardButtons buttons)
         button->setAutoDefault(false);
 }
 
+void ConfigDialog::enableButton(QDialogButtonBox::StandardButton which, bool enable)
+{
+    Q_D(ConfigDialog);
+    if (QPushButton* pb = d->ui->buttons->button(which))
+        pb->setEnabled(enable);
+}
+
 void ConfigDialog::addPage(QWidget* page, const QString& name, const QString& iconName)
 {
     addPage(page, name, QStringList() << iconName);

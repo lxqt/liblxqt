@@ -56,6 +56,11 @@ public:
     void setButtons(QDialogButtonBox::StandardButtons buttons);
 
     /*!
+     * Enable/disable a standard button if it exists
+     */
+    void enableButton(QDialogButtonBox::StandardButton which, bool enable);
+
+    /*!
      * Add a page to the configure dialog
      */
     void addPage(QWidget* page, const QString& name, const QString& iconName = QLatin1String("application-x-executable"));
