@@ -45,7 +45,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="131"/>
         <source>Reboot</source>
-        <translation>Jalankan Ulang</translation>
+        <translation>Muat ulang</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="138"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Apakah Anda ingin mensuspensi komputer Anda?&lt;p&gt;Suspensi kompeter ke kondisi daya rendah. Kondisi sistem tidak disimpan jika daya hilang.</translation>
+        <translation>Apakah Anda ingin mensuspensi komputer Anda?&lt;p&gt;Suspensi komputer ke kondisi daya rendah. Kondisi sistem tidak disimpan jika daya hilang.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
