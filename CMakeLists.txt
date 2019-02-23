@@ -10,7 +10,7 @@ project(liblxqt)
 set(LXQTBT_MINIMUM_VERSION "0.6.0")
 set(KF5_MINIMUM_VERSION "5.36.0")
 set(QT_MINIMUM_VERSION "5.7.1")
-set(QTXDG_MINIMUM_VERSION "3.3.0")
+set(QTXDG_MINIMUM_VERSION "3.3.1")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
@@ -25,7 +25,7 @@ set(LXQT_MINOR_VERSION 14)
 # patch-version as liblxqt - in real life it will be fine if every component
 # has it's own patch version within a major/minor life cyle.
 #
-set(LXQT_PATCH_VERSION 0)
+set(LXQT_PATCH_VERSION 1)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
 
 
