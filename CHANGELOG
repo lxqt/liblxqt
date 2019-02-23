@@ -1,10 +1,19 @@
+liblxqt-0.14.1 / 2019-02-24
+===========================
+
+  * Bumped version to 0.14.1
+  * Enable/disable a standard button if it exists. This is needed for adding
+    Apply button later because Apply button should be enabled/disabled
+    appropriately.
+  * Updated translations
+  * Note for packagers: liblxqt now depend on libqtxdg 3.3.1
 
 liblxqt-0.14.0 / 2019-01-25
 ===========================
 
   * Implementation fixed:
     - Added missing text color of our HTML delegate
-    - Use the new signal and slot syntax 
+    - Use the new signal and slot syntax
     - Don't use automatic string conversions
     - lxqtbacklight: centralize fopen() and perform path handling with length checks
     - lxqtbacklight: apply maximum string length to fscanf to prevent overflow
@@ -14,7 +23,7 @@ liblxqt-0.14.0 / 2019-01-25
     - lxqtbacklight: fix and improve command line parameter handling
     - lxqtbacklight: only pass basename into open_driver_file()
     - lxqt-backlight: Simplify string construction
-    - lxqthtmldelegate: Position, alignment and size fixes for HTML delegate 
+    - lxqthtmldelegate: Position, alignment and size fixes for HTML delegate
     - lxqtpageselectwidget: Fix config dialog cell height
     - lxqtpageselectwidget: Fixed config dialog select widget cells
   * Improved cmake scripting
