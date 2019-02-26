@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">LXQtin virranhallintavirhe</translation>
+        <translation>LXQt:n virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Lepotilaan siirtyminen epäonnistui.</translation>
+        <translation>Lepotilaan siirtyminen epäonnistui.</translation>
     </message>
 </context>
 <context>
@@ -60,17 +60,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt-istunnon valmiustila</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Oletko varma, että halua siirtää tietokoneesi virransäästötilaan?&lt;p&gt;Siirtää tietokoneen matalan virrankäytön tilaan. Virtakatkon sattuessa järjestelmän tilaa ei ole tallennettu.</translation>
+        <translation>Oletko varma, että halua siirtää tietokoneesi valmiustilaan?&lt;p&gt;Siirtää tietokoneen matalan virrankäytön tilaan. Virtakatkon sattuessa järjestelmän tilaa ei ole tallennettu.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt-istunnon lepotila</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQtin virranhallintavirhe</translation>
+        <translation>LXQt:n virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Näytönsäästäjää käynnistäessä ilmeni virhe. Varmista, että xscreensaver on asennettu ja että se on toiminnassa.</translation>
+        <translation>Virhe näytönsäästäjää käynnistäessä. Varmista, että xscreensaver on asennettu ja että se on toiminnassa.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
