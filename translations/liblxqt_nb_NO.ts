@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation>Sprettoppinforuter nødløsning</translation>
+        <translation>Reserveløsning for varsler</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
         <source>Suspend</source>
-        <translation>Dyp dvale</translation>
+        <translation>Hvile</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="131"/>
@@ -60,17 +60,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt Sesjonen går i dyp dvale</translation>
+        <translation>LXQt-sesjonen hviler</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Vil du virkelig sette maskinen i dyp dvale?&lt;p&gt;Setter maskinen i dyp dvale. Datamaskinens tilstand kan gå tapt hvis strømmen går.</translation>
+        <translation>Vil du virkelig hvile maskinen?&lt;p&gt;Hviler maskinen. Datamaskinens tilstand kan gå tapt hvis strømmen går.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt Sesjonen går i dvale</translation>
+        <translation>LXQt-sesjonen dvaler</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -80,17 +80,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt Sesjonen omstarter</translation>
+        <translation>LXQt-sesjonen omstarter</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Vil du virkelig omstarte datamaskine? Alt arbeid som ikke er lagret vil gå tapt...</translation>
+        <translation>Vil du virkelig omstarte datamaskinen? Alt arbeid som ikke er lagret vil gå tapt...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt Sesjonen slås av</translation>
+        <translation>LXQt-sesjonen slås av</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt Sesjonen logger ut</translation>
+        <translation>LXQt-sesjonen logger ut</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>Dvale feilet.</translation>
+        <translation>Dvale mislyktes.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>Suspend failed.</source>
-        <translation>Dyp dvale feilet.</translation>
+        <translation>Hvile mislyktes.</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="236"/>
         <source>Lock Screen</source>
-        <translation>Låseskjerm</translation>
+        <translation>Lås skjerm</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation>Skjermsparingsfeil</translation>
+        <translation>Skjermsparerfeil</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>En feil oppstod under starten av screensaver. Handlingen &apos;activate&apos; feilet. Pass på at du har xscreensaver installert og kjørende.</translation>
+        <translation>En feil oppstod under starten av skjermspareren. Handlingen &apos;activate&apos; feilet. Pass på at du har xscreensaver installert og kjørende.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation>En feil oppstod da screensaver startet. Ukjent feil - undokumentert verdi tilbake fra xdg-screensaver: %1.</translation>
+        <translation>En feil oppstod da skjermspareren startet. Ukjent feil - udokumentert verdi tilbake fra xdg-screensaver: %1.</translation>
     </message>
 </context>
 <context>
