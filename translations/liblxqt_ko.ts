@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>최대 절전 실패.</translation>
+        <translation>잠자기 실패.</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Hibernate</source>
-        <translation>최대 절전</translation>
+        <translation>잠자기</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
@@ -70,12 +70,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt 세션 최대 절전</translation>
+        <translation>LXQt 세션 잠자기</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>컴퓨터를 최대 절전 상태로 만드실 건가요?&lt;p&gt;컴퓨터를 최대 절전 상태로 진입시킵니다. 전력을 잃으면 시스템 상태는 보존되지 않습니다.</translation>
+        <translation>컴퓨터를 잠자기 상태로 만드실 건가요?&lt;p&gt;컴퓨터를 잠자기 상태로 진입시킵니다. 전력을 잃으면 시스템 상태는 보존되지 않습니다.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>최대 절전 실패.</translation>
+        <translation>잠자기 실패.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
