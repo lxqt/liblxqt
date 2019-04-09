@@ -51,62 +51,10 @@ using namespace LXQt;
 #include <QDateTime>
 #include <QDebug>
 #include <QSocketNotifier>
-/*! \brief Log qDebug input to file
-Used only in pure Debug builds or when is the system environment
-variable LXQT_DEBUG set
-*/
-void dbgMessageOutput(QtMsgType type, const QMessageLogContext &ctx, const QString & msgStr)
-{
-    Q_UNUSED(ctx)
-    QByteArray msgBuf = msgStr.toUtf8();
-    const char* msg = msgBuf.constData();
-    QDir dir(XdgDirs::configHome() + QLatin1String("/lxqt"));
-    dir.mkpath(QL1S("."));
-
-    const char* typestr;
-    const char* color;
-    switch (type) {
-    case QtDebugMsg:
-        typestr = "Debug";
-        color = COLOR_DEBUG;
-        break;
-    case QtWarningMsg:
-        typestr = "Warning";
-        color = COLOR_WARN;
-        break;
-    case QtFatalMsg:
-        typestr = "Fatal";
-        color = COLOR_FATAL;
-        break;
-    default: // QtCriticalMsg
-        typestr = "Critical";
-        color = COLOR_CRITICAL;
-    }
-
-    QByteArray dt = QDateTime::currentDateTime().toString(QL1S("yyyy-MM-dd hh:mm:ss.zzz")).toUtf8();
-    if (isatty(STDERR_FILENO))
-        fprintf(stderr, "%s %s(%p) %s: %s%s\n", color, QAPP_NAME, static_cast<void *>(qApp), typestr, msg, COLOR_RESET);
-    else
-        fprintf(stderr, "%s(%p) %s: %s\n", QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
-
-    FILE *f = fopen(dir.absoluteFilePath(QL1S("debug.log")).toUtf8().constData(), "a+");
-    fprintf(f, "%s %s(%p) %s: %s\n", dt.constData(), QAPP_NAME, static_cast<void *>(qApp), typestr, msg);
-    fclose(f);
-
-    if (type == QtFatalMsg)
-        abort();
-}
 
 Application::Application(int &argc, char** argv)
     : QApplication(argc, argv)
 {
-#ifdef DEBUG
-    qInstallMessageHandler(dbgMessageOutput);
-#else
-    if (!qEnvironmentVariableIsSet("LXQT_DEBUG"))
-        qInstallMessageHandler(dbgMessageOutput);
-#endif
-
     setWindowIcon(QIcon(QFile::decodeName(LXQT_GRAPHICS_DIR) + QL1S("/lxqt_logo.png")));
     connect(Settings::globalSettings(), &GlobalSettings::lxqtThemeChanged, this, &Application::updateTheme);
     updateTheme();
