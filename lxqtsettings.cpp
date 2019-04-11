@@ -107,7 +107,7 @@ private:
 };
 
 
-LXQtTheme* LXQtTheme::mInstance = 0;
+LXQtTheme* LXQtTheme::mInstance = nullptr;
 
 class LXQt::LXQtThemeData: public QSharedData {
 public:
@@ -284,7 +284,7 @@ void Settings::addWatchedFile(QString const & path)
 const GlobalSettings *Settings::globalSettings()
 {
     static QMutex mutex;
-    static GlobalSettings *instance = 0;
+    static GlobalSettings *instance = nullptr;
     if (!instance)
     {
         mutex.lock();

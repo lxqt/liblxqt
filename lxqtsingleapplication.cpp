@@ -38,7 +38,7 @@ using namespace LXQt;
 
 SingleApplication::SingleApplication(int &argc, char **argv, StartOptions options)
     : Application(argc, argv),
-    mActivationWindow(0)
+    mActivationWindow(nullptr)
 {
     QString service =
         QString::fromLatin1("org.lxqt.%1").arg(QApplication::applicationName());

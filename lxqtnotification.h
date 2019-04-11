@@ -47,7 +47,7 @@ public:
      * \brief Notification is an object that represents a single notification.
      * \param summary Summary text briefly describing the notification (required by the spec)
      */
-    Notification(const QString& summary = QString(), QObject* parent = 0);
+    Notification(const QString& summary = QString(), QObject* parent = nullptr);
     ~Notification();
 
     enum CloseReason

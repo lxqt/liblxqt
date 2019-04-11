@@ -30,7 +30,7 @@ class LinuxBackend:public VirtualBackEnd
 Q_OBJECT
 
 public:    
-    LinuxBackend(QObject *parent = 0);
+    LinuxBackend(QObject *parent = nullptr);
     ~LinuxBackend();
     
     bool isBacklightAvailable();

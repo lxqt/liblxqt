@@ -38,7 +38,7 @@ using namespace LXQt;
 class PageSelectWidgetItemDelegate: public QStyledItemDelegate
 {
 public:
-    explicit PageSelectWidgetItemDelegate(PageSelectWidget *parent = 0);
+    explicit PageSelectWidgetItemDelegate(PageSelectWidget *parent = nullptr);
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
 private:

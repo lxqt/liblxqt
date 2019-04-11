@@ -41,7 +41,7 @@ class LXQT_API HtmlDelegate : public QStyledItemDelegate
     Q_OBJECT
 
 public:
-    explicit HtmlDelegate(const QSize iconSize, QObject* parent = 0);
+    explicit HtmlDelegate(const QSize iconSize, QObject* parent = nullptr);
     virtual ~HtmlDelegate();
 
     virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;

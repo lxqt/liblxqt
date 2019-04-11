@@ -58,11 +58,11 @@ public:
             the file.
     \param parent It's no need to delete this class manually if it's set.
     */
-    explicit Settings(const QString& module, QObject* parent = 0);
+    explicit Settings(const QString& module, QObject* parent = nullptr);
     //explicit Settings(QObject* parent=0);
-    explicit Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent=0);
-    explicit Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent=0);
-    Settings(const QString &fileName, QSettings::Format format, QObject *parent = 0);
+    explicit Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent=nullptr);
+    explicit Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent=nullptr);
+    Settings(const QString &fileName, QSettings::Format format, QObject *parent = nullptr);
     ~Settings();
 
     static const GlobalSettings *globalSettings();

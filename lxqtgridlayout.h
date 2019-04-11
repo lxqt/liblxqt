@@ -74,7 +74,7 @@ public:
     The layout has one row and zero column initially, and will
     expand to left when new items are inserted.
     **/
-    explicit GridLayout(QWidget *parent = 0);
+    explicit GridLayout(QWidget *parent = nullptr);
 
     /**
     Destroys the grid layout. The layout's widgets aren't destroyed.

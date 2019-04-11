@@ -46,7 +46,7 @@ class LXQT_API ScreenSaver : public QObject
     Q_DISABLE_COPY(ScreenSaver)
 
 public:
-    ScreenSaver(QObject * parent=0);
+    ScreenSaver(QObject * parent=nullptr);
     ~ScreenSaver();
 
     QList<QAction*> availableActions();

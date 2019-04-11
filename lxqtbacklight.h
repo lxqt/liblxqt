@@ -30,7 +30,7 @@ class LXQT_API Backlight : public QObject
 Q_OBJECT
 
 public:    
-    Backlight(QObject *parent = 0);
+    Backlight(QObject *parent = nullptr);
     ~Backlight();
     
     bool isBacklightAvailable();

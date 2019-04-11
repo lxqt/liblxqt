@@ -83,7 +83,7 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
     {
         qWarning() << QString::fromLatin1("Can't load plugin lib \"%1\"").arg(soPath) << library->errorString();
         delete library;
-        return 0;
+        return nullptr;
     }
 
     const QString locale = QLocale::system().name();

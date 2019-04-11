@@ -44,7 +44,7 @@ class LXQT_API MessageBox: public QMessageBox
     Q_DECLARE_TR_FUNCTIONS(LXQt::MessageBox)
 
 public:
-    explicit MessageBox(QWidget *parent = 0): QMessageBox(parent) {}
+    explicit MessageBox(QWidget *parent = nullptr): QMessageBox(parent) {}
 
     static QWidget *parentWidget()
     {
@@ -53,7 +53,7 @@ public:
         if (widgets.count())
             return widgets.at(0);
         else
-            return 0;
+            return nullptr;
     }
 
     static bool question(const QString& title, const QString& text)
