@@ -569,8 +569,8 @@ QSize GridLayout::sizeHint() const
     if (!d->mIsValid)
         const_cast<GridLayoutPrivate*>(d)->updateCache();
 
-    return QSize(d->cols() * d->mCellSizeHint.width(),
-                 d->rows() * d->mCellSizeHint.height());
+    return {d->cols() * d->mCellSizeHint.width(),
+                 d->rows() * d->mCellSizeHint.height()};
 }
 
 
