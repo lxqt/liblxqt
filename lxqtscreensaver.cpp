@@ -101,7 +101,7 @@ static bool GetIntArrayProperty(XID window,
     Atom type = None;
     int format = 0;  // size in bits of each item in 'property'
     unsigned long num_items = 0;
-    unsigned char* properties = NULL;
+    unsigned char* properties = nullptr;
 
     int result = GetProperty(window, property_name,
                            (~0L), // (all of them)
@@ -186,7 +186,7 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
 {
-    XScreenSaverInfo *info = 0;
+    XScreenSaverInfo *info = nullptr;
     Display *display = QX11Info::display();
     XID window = DefaultRootWindow(display);
     info = XScreenSaverAllocInfo();

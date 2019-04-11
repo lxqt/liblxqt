@@ -29,7 +29,7 @@ class LXQT_API VirtualBackEnd:public QObject
 Q_OBJECT
 
 public:    
-    VirtualBackEnd(QObject *parent = 0);
+    VirtualBackEnd(QObject *parent = nullptr);
    
     virtual bool isBacklightAvailable();
     virtual bool isBacklightOff();

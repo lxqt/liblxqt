@@ -250,7 +250,7 @@ QLayoutItem *GridLayout::itemAt(int index) const
 {
     Q_D(const GridLayout);
     if (index < 0 || index >= d->mItems.count())
-        return 0;
+        return nullptr;
 
     return d->mItems.at(index);
 }
@@ -263,7 +263,7 @@ QLayoutItem *GridLayout::takeAt(int index)
 {
     Q_D(GridLayout);
     if (index < 0 || index >= d->mItems.count())
-        return 0;
+        return nullptr;
 
     QLayoutItem *item = d->mItems.takeAt(index);
     return item;

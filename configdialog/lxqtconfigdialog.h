@@ -46,7 +46,7 @@ class LXQT_API ConfigDialog : public QDialog
     Q_DECLARE_PRIVATE(ConfigDialog)
 
 public:
-    explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = 0);
+    explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = nullptr);
 
     ~ConfigDialog();
 

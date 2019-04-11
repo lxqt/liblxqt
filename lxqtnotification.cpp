@@ -151,7 +151,7 @@ void NotificationPrivate::update()
     else
     {
         if (mHints.contains(QL1S("urgency")) && mHints.value(QL1S("urgency")).toInt() != Notification::UrgencyLow)
-            QMessageBox::information(0, tr("Notifications Fallback"), mSummary + QL1S(" \n\n ") + mBody);
+            QMessageBox::information(nullptr, tr("Notifications Fallback"), mSummary + QL1S(" \n\n ") + mBody);
     }
 }
 

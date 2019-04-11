@@ -48,7 +48,7 @@ public:
         DontCheckDBUS
     };
 
-    explicit PowerProvider(QObject *parent = 0);
+    explicit PowerProvider(QObject *parent = nullptr);
     virtual ~PowerProvider();
 
     /*! Returns true if the Power can perform action.
@@ -66,7 +66,7 @@ class UPowerProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    UPowerProvider(QObject *parent = 0);
+    UPowerProvider(QObject *parent = nullptr);
     ~UPowerProvider();
     bool canAction(Power::Action action) const;
 
@@ -79,7 +79,7 @@ class ConsoleKitProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    ConsoleKitProvider(QObject *parent = 0);
+    ConsoleKitProvider(QObject *parent = nullptr);
     ~ConsoleKitProvider();
     bool canAction(Power::Action action) const;
 
@@ -92,7 +92,7 @@ class SystemdProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    SystemdProvider(QObject *parent = 0);
+    SystemdProvider(QObject *parent = nullptr);
     ~SystemdProvider();
     bool canAction(Power::Action action) const;
 
@@ -105,7 +105,7 @@ class LXQtProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    LXQtProvider(QObject *parent = 0);
+    LXQtProvider(QObject *parent = nullptr);
     ~LXQtProvider();
     bool canAction(Power::Action action) const;
 
@@ -117,7 +117,7 @@ class LxSessionProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    LxSessionProvider(QObject *parent = 0);
+    LxSessionProvider(QObject *parent = nullptr);
     ~LxSessionProvider();
     bool canAction(Power::Action action) const;
 
@@ -131,7 +131,7 @@ class HalProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    HalProvider(QObject *parent = 0);
+    HalProvider(QObject *parent = nullptr);
     ~HalProvider();
     bool canAction(Power::Action action) const;
 
@@ -144,7 +144,7 @@ class CustomProvider: public PowerProvider
 {
     Q_OBJECT
 public:
-    CustomProvider(QObject *parent = 0);
+    CustomProvider(QObject *parent = nullptr);
     ~CustomProvider();
     bool canAction(Power::Action action) const;
 

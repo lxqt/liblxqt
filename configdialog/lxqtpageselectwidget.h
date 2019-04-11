@@ -39,7 +39,7 @@ class LXQT_API PageSelectWidget : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit PageSelectWidget(QWidget *parent = 0);
+    explicit PageSelectWidget(QWidget *parent = nullptr);
     virtual ~PageSelectWidget();
     int maxTextWidth() const;
     bool event(QEvent * event) override;

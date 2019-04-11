@@ -46,9 +46,9 @@ bool translate(const QString &name, const QString &owner = QString());
  ************************************************/
 QStringList *getSearchPaths()
 {
-    static QStringList *searchPath = 0;
+    static QStringList *searchPath = nullptr;
 
-    if (searchPath == 0)
+    if (searchPath == nullptr)
     {
         searchPath = new QStringList();
         *searchPath << XdgDirs::dataDirs(QL1C('/') + QL1S(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR));
