@@ -69,7 +69,7 @@ public:
     explicit Power(QObject *parent = nullptr);
 
     /// Destroys the object.
-    virtual ~Power();
+    ~Power() override;
 
     /// Returns true if the Power can perform action.
     bool canAction(Action action) const;

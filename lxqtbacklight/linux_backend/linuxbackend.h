@@ -31,13 +31,13 @@ Q_OBJECT
 
 public:    
     LinuxBackend(QObject *parent = nullptr);
-    ~LinuxBackend();
+    ~LinuxBackend() override;
     
-    bool isBacklightAvailable();
-    bool isBacklightOff();
-    void setBacklight(int value);
-    int getBacklight();
-    int getMaxBacklight();
+    bool isBacklightAvailable() override;
+    bool isBacklightOff() override;
+    void setBacklight(int value) override;
+    int getBacklight() override;
+    int getMaxBacklight() override;
     
 signals:
     void backlightChanged(int value);

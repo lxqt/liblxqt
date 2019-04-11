@@ -61,8 +61,8 @@ public:
 
     void adjustContentSize();
 
-    virtual QSize minimumSizeHint() const;
-    virtual QSize sizeHint() const;
+    QSize minimumSizeHint() const override;
+    QSize sizeHint() const override;
 
     QSize adjustedSize(QSize) const;
     QPoint adjustedPoint(QPoint) const;
@@ -92,20 +92,20 @@ public:
     void setTransferLeaveEvent(bool value) { mTransferLeaveEvent = value; }
 
 protected:
-    virtual void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) override;
 
     // Transition event handlers
-    virtual void mousePressEvent(QMouseEvent *);
-    virtual void mouseReleaseEvent(QMouseEvent *);
-    virtual void mouseDoubleClickEvent(QMouseEvent *);
-    virtual void mouseMoveEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void mouseDoubleClickEvent(QMouseEvent *) override;
+    void mouseMoveEvent(QMouseEvent *) override;
 #ifndef QT_NO_WHEELEVENT
-    virtual void wheelEvent(QWheelEvent *);
+    void wheelEvent(QWheelEvent *) override;
 #endif
-    virtual void enterEvent(QEvent *);
-    virtual void leaveEvent(QEvent *);
+    void enterEvent(QEvent *) override;
+    void leaveEvent(QEvent *) override;
 
-    virtual void resizeEvent(QResizeEvent *);
+    void resizeEvent(QResizeEvent *) override;
 
 private:
     QWidget *mContent;

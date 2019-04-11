@@ -111,7 +111,7 @@ public:
      * \sa StartOptions.
      */
     SingleApplication(int &argc, char **argv, StartOptions options = ExitOnDBusFailure);
-    virtual ~SingleApplication();
+    ~SingleApplication() override;
 
     /*!
      * \brief Sets the activation window.

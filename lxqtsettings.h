@@ -63,7 +63,7 @@ public:
     explicit Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent=nullptr);
     explicit Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent=nullptr);
     Settings(const QString &fileName, QSettings::Format format, QObject *parent = nullptr);
-    ~Settings();
+    ~Settings() override;
 
     static const GlobalSettings *globalSettings();
 
@@ -91,7 +91,7 @@ signals:
     void settingsChangedByApp();
 
 protected:
-    bool event(QEvent *event);
+    bool event(QEvent *event) override;
 
 protected slots:
     /*! Called when the config file is changed */
@@ -196,7 +196,7 @@ class GlobalSettings: public Settings
     Q_OBJECT
 public:
     GlobalSettings();
-    ~GlobalSettings();
+    ~GlobalSettings() override;
 
 signals:
     /// Signal emitted when the icon theme has changed.
@@ -206,7 +206,7 @@ signals:
     void lxqtThemeChanged();
 
 protected slots:
-    void fileChanged();
+    void fileChanged() override;
 
 private:
     GlobalSettingsPrivate* const d_ptr;

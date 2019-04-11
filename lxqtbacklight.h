@@ -31,7 +31,7 @@ Q_OBJECT
 
 public:    
     Backlight(QObject *parent = nullptr);
-    ~Backlight();
+    ~Backlight() override;
     
     bool isBacklightAvailable();
     bool isBacklightOff();

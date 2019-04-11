@@ -48,7 +48,7 @@ class LXQT_API ConfigDialog : public QDialog
 public:
     explicit ConfigDialog(const QString& title, Settings* settings, QWidget* parent = nullptr);
 
-    ~ConfigDialog();
+    ~ConfigDialog() override;
 
     /*!
      * Sets buttons in button bar
@@ -101,8 +101,8 @@ signals:
 
 protected:
     Settings* mSettings;
-    virtual bool event(QEvent * event) override;
-    virtual void closeEvent(QCloseEvent* event) override;
+    bool event(QEvent * event) override;
+    void closeEvent(QCloseEvent* event) override;
 
 private:
     Q_DISABLE_COPY(ConfigDialog)
