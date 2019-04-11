@@ -133,7 +133,7 @@ QSize HtmlDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelInd
         doc.setTextWidth(static_cast<qreal>(w - (iconRect.right() + 1) - 8)); // 8-px icon-text spacing
     else
         doc.adjustSize();
-    return QSize(w > 0 ? w : iconRect.width() + 8 + qRound(doc.size().width()) + 8,
+    return {w > 0 ? w : iconRect.width() + 8 + qRound(doc.size().width()) + 8,
                  qMax(qRound(doc.size().height() + 8), // 4-px top/bottom text spacing
-                      iconSize.height() + 16));
+                      iconSize.height() + 16)};
 }
