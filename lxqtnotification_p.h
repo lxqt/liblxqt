@@ -36,7 +36,7 @@ class NotificationPrivate : public QObject
     Q_OBJECT
 public:
     NotificationPrivate(const QString& summary, Notification* parent);
-    ~NotificationPrivate();
+    ~NotificationPrivate() override;
 
     void update();
     void close();

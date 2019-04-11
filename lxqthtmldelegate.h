@@ -42,11 +42,11 @@ class LXQT_API HtmlDelegate : public QStyledItemDelegate
 
 public:
     explicit HtmlDelegate(const QSize iconSize, QObject* parent = nullptr);
-    virtual ~HtmlDelegate();
+    ~HtmlDelegate() override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
 private:
     QSize mIconSize;

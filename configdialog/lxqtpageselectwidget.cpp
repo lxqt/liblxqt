@@ -39,7 +39,7 @@ class PageSelectWidgetItemDelegate: public QStyledItemDelegate
 {
 public:
     explicit PageSelectWidgetItemDelegate(PageSelectWidget *parent = nullptr);
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
     PageSelectWidget* mView;

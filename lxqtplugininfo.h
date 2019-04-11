@@ -66,7 +66,7 @@ public:
     explicit PluginInfo();
 
     //! Reimplemented from XdgDesktopFile.
-    virtual bool load(const QString& fileName);
+    bool load(const QString& fileName) override;
 
 
     //! Reimplemented from XdgDesktopFile.

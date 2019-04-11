@@ -47,7 +47,7 @@ class LXQT_API ScreenSaver : public QObject
 
 public:
     ScreenSaver(QObject * parent=nullptr);
-    ~ScreenSaver();
+    ~ScreenSaver() override;
 
     QList<QAction*> availableActions();
 

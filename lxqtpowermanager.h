@@ -44,7 +44,7 @@ class LXQT_API PowerManager : public QObject
 
 public:
     PowerManager(QObject * parent, bool skipWarning = false);
-    ~PowerManager();
+    ~PowerManager() override;
     QList<QAction*> availableActions();
 
 public slots:

@@ -48,7 +48,7 @@ public:
      * \param summary Summary text briefly describing the notification (required by the spec)
      */
     Notification(const QString& summary = QString(), QObject* parent = nullptr);
-    ~Notification();
+    ~Notification() override;
 
     enum CloseReason
     {

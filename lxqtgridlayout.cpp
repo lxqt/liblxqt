@@ -84,7 +84,7 @@ namespace
             setDuration(150);
         }
 
-        void updateCurrentValue(const QVariant &current)
+        void updateCurrentValue(const QVariant &current) override
         {
             mItem->setGeometry(current.toRect());
         }

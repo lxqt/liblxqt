@@ -76,7 +76,7 @@ public:
 
 
 protected:
-    virtual void resizeEvent(QResizeEvent* event)
+    void resizeEvent(QResizeEvent* event) override
     {
         Q_UNUSED(event)
         const QRect screen = QApplication::desktop()->screenGeometry();

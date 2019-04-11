@@ -49,7 +49,7 @@ public:
     };
 
     explicit PowerProvider(QObject *parent = nullptr);
-    virtual ~PowerProvider();
+    ~PowerProvider() override;
 
     /*! Returns true if the Power can perform action.
         This is a pure virtual function, and must be reimplemented in subclasses. */
@@ -67,11 +67,11 @@ class UPowerProvider: public PowerProvider
     Q_OBJECT
 public:
     UPowerProvider(QObject *parent = nullptr);
-    ~UPowerProvider();
-    bool canAction(Power::Action action) const;
+    ~UPowerProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 };
 
 
@@ -80,11 +80,11 @@ class ConsoleKitProvider: public PowerProvider
     Q_OBJECT
 public:
     ConsoleKitProvider(QObject *parent = nullptr);
-    ~ConsoleKitProvider();
-    bool canAction(Power::Action action) const;
+    ~ConsoleKitProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 };
 
 
@@ -93,11 +93,11 @@ class SystemdProvider: public PowerProvider
     Q_OBJECT
 public:
     SystemdProvider(QObject *parent = nullptr);
-    ~SystemdProvider();
-    bool canAction(Power::Action action) const;
+    ~SystemdProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 };
 
 
@@ -106,11 +106,11 @@ class LXQtProvider: public PowerProvider
     Q_OBJECT
 public:
     LXQtProvider(QObject *parent = nullptr);
-    ~LXQtProvider();
-    bool canAction(Power::Action action) const;
+    ~LXQtProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 };
 
 class LxSessionProvider: public PowerProvider
@@ -118,11 +118,11 @@ class LxSessionProvider: public PowerProvider
     Q_OBJECT
 public:
     LxSessionProvider(QObject *parent = nullptr);
-    ~LxSessionProvider();
-    bool canAction(Power::Action action) const;
+    ~LxSessionProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 private:
     Q_PID pid;
 };
@@ -132,11 +132,11 @@ class HalProvider: public PowerProvider
     Q_OBJECT
 public:
     HalProvider(QObject *parent = nullptr);
-    ~HalProvider();
-    bool canAction(Power::Action action) const;
+    ~HalProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 };
 
 
@@ -145,11 +145,11 @@ class CustomProvider: public PowerProvider
     Q_OBJECT
 public:
     CustomProvider(QObject *parent = nullptr);
-    ~CustomProvider();
-    bool canAction(Power::Action action) const;
+    ~CustomProvider() override;
+    bool canAction(Power::Action action) const override;
 
 public slots:
-    bool doAction(Power::Action action);
+    bool doAction(Power::Action action) override;
 
 private:
     Settings mSettings;

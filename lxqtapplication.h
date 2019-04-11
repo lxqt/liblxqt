@@ -59,7 +59,7 @@ public:
      * \param handleQuitSignals flag if signals SIGINT, SIGTERM, SIGHUP should be handled internaly (\sa quit() application)
      */
     Application(int &argc, char **argv, bool handleQuitSignals);
-    virtual ~Application() {}
+    ~Application() override {}
     /*! Install UNIX signal handler for signals defined in \param signalList
      * Upon receiving of any of this signals the \sa unixSignal signal is emitted
      */

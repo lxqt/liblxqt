@@ -79,16 +79,16 @@ public:
     /**
     Destroys the grid layout. The layout's widgets aren't destroyed.
      **/
-    ~GridLayout();
+    ~GridLayout() override;
 
-    void addItem(QLayoutItem *item);
-    QLayoutItem *itemAt(int index) const;
-    QLayoutItem *takeAt(int index);
-    int count() const;
-    void invalidate();
+    void addItem(QLayoutItem *item) override;
+    QLayoutItem *itemAt(int index) const override;
+    QLayoutItem *takeAt(int index) override;
+    int count() const override;
+    void invalidate() override;
 
-    QSize sizeHint() const;
-    void setGeometry(const QRect &geometry);
+    QSize sizeHint() const override;
+    void setGeometry(const QRect &geometry) override;
     QRect occupiedGeometry() const;
 
 
