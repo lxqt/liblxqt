@@ -62,6 +62,7 @@ public:
         msgBox.setWindowTitle(title);
         msgBox.setText(text);
         msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        msgBox.setDefaultButton(QMessageBox::Yes);
 
         return (msgBox.exec() == QMessageBox::Yes);
     }
