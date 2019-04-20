@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Error en Gestion de energia de LXQt</translation>
+        <translation>Error en Gestión de Energía de LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Hibernacion ha fallado.</translation>
+        <translation>Hibernación ha fallado.</translation>
     </message>
 </context>
 <context>
@@ -60,17 +60,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>Suspension del sistema por LXQt</translation>
+        <translation>Sesión LXQt Suspendida</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Quiere usted realmente suspender su computador?&lt;p&gt;Suspendera el computador en un estado de baja energia. El estado del sistema operativo no se preservara ante la perdida o caida de energia.</translation>
+        <translation>Quiere usted realmente suspender su computador?&lt;p&gt;Suspenderá el computador en un estado de baja energía. El estado del sistema operativo no se preservara ante la perdida o caída de energía.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Hibernacion del sistema por LXQt</translation>
+        <translation>Hibernar Sesión LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de Salvapantalla</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="162"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un error a ocurrido iniciando el salvapantalla. Error desconocido - valor de retorno indocumentado desde xdg-screensaver: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elija la página a mostrar.</translation>
     </message>
 </context>
 <context>
