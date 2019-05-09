@@ -222,6 +222,8 @@ GridLayout::GridLayout(QWidget *parent):
     QLayout(parent),
     d_ptr(new GridLayoutPrivate())
 {
+    // no space between items by default
+    setSpacing(0);
 }
 
 
@@ -569,8 +571,12 @@ QSize GridLayout::sizeHint() const
     if (!d->mIsValid)
         const_cast<GridLayoutPrivate*>(d)->updateCache();
 
-    return {d->cols() * d->mCellSizeHint.width(),
-                 d->rows() * d->mCellSizeHint.height()};
+    if (d->mVisibleCount == 0)
+        return {0, 0};
+
+    const int sp = spacing();
+    return {d->cols() * (d->mCellSizeHint.width() + sp) - sp,
+            d->rows() * (d->mCellSizeHint.height() + sp) - sp};
 }
 
 
@@ -605,24 +611,35 @@ void GridLayout::setGeometry(const QRect &geometry)
 
     const bool stretch_h = d->mStretch.testFlag(StretchHorizontal);
     const bool stretch_v = d->mStretch.testFlag(StretchVertical);
+    const int sp = spacing();
 
     const int cols = d->cols();
     int itemWidth = 0;
+    int widthRemain = 0;
     if (stretch_h && 0 < cols)
-        itemWidth = qMin(geometry.width() / cols, d->mCellMaxSize.width());
+    {
+        itemWidth = qMin((geometry.width() + sp) / cols - sp, d->mCellMaxSize.width());
+        widthRemain = (geometry.width() + sp) % cols;
+    }
     else
+    {
         itemWidth = d->mCellSizeHint.width();
+    }
     itemWidth = qBound(qMin(d->mPrefCellMinSize.width(), maxX), itemWidth, d->mPrefCellMaxSize.width());
-    const int widthRemain = stretch_h && 0 < itemWidth ? geometry.width() % itemWidth : 0;
 
     const int rows = d->rows();
     int itemHeight = 0;
+    int heightRemain = 0;
     if (stretch_v && 0 < rows)
-        itemHeight = qMin(geometry.height() / rows, d->mCellMaxSize.height());
+    {
+        itemHeight = qMin((geometry.height() + sp) / rows - sp, d->mCellMaxSize.height());
+        heightRemain = (geometry.height() + sp) % rows;
+    }
     else
+    {
         itemHeight = d->mCellSizeHint.height();
+    }
     itemHeight = qBound(qMin(d->mPrefCellMinSize.height(), maxY), itemHeight, d->mPrefCellMaxSize.height());
-    const int heightRemain = stretch_v && 0 < itemHeight ? geometry.height() % itemHeight : 0;
 
 #if 0
     qDebug() << "** GridLayout::setGeometry *******************************";
@@ -650,7 +667,7 @@ void GridLayout::setGeometry(const QRect &geometry)
             if (x + width > maxX)
             {
                 x = geometry.left();
-                y += height;
+                y += height + sp;
 
                 height = itemHeight + (0 < remain_height-- ? 1 : 0);
                 remain_width = widthRemain;
@@ -658,7 +675,7 @@ void GridLayout::setGeometry(const QRect &geometry)
 
             const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
             d->setItemGeometry(item, QRect(left, y, width, height));
-            x += width;
+            x += width + sp;
         }
     }
     else
@@ -673,14 +690,14 @@ void GridLayout::setGeometry(const QRect &geometry)
             if (y + height > maxY)
             {
                 y = geometry.top();
-                x += width;
+                x += width + sp;
 
                 width = itemWidth + (0 < remain_width-- ? 1 : 0);
                 remain_height = heightRemain;
             }
             const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
             d->setItemGeometry(item, QRect(left, y, width, height));
-            y += height;
+            y += height + sp;
         }
     }
     d->mAnimate = false;
