@@ -170,7 +170,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>表示するページを選択してください。</translation>
     </message>
 </context>
 <context>
