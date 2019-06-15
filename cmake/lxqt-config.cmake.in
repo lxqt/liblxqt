@@ -10,11 +10,13 @@ include(CMakeFindDependencyMacro)
 
 find_dependency(Qt5Widgets @QT_MINIMUM_VERSION@)
 find_dependency(Qt5DBus @QT_MINIMUM_VERSION@)
-find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
 find_dependency(Qt5LinguistTools @QT_MINIMUM_VERSION@)
 find_dependency(Qt5Xdg @QTXDG_MINIMUM_VERSION@)
 find_dependency(KF5WindowSystem)
 find_dependency(lxqt-build-tools @LXQTBT_MINIMUM_VERSION@)
+if (NOT APPLE)
+    find_dependency(Qt5X11Extras @QT_MINIMUM_VERSION@)
+endif (NOT APPLE)
 include(LXQtConfigVars)
 
 
