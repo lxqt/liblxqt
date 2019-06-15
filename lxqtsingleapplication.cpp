@@ -28,7 +28,6 @@
 #include "lxqtsingleapplication.h"
 #include "singleapplicationadaptor.h"
 #include <KWindowSystem/KWindowSystem>
-#include <KWindowSystem/NETWM>
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
@@ -99,7 +98,7 @@ void SingleApplication::activateWindow()
         mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
 
-        KWindowInfo info(window, NET::WMDesktop);
+        KWindowInfo info(window, KWindowSystem::WMDesktop);
         int windowDesktop = info.desktop();
 
         if (windowDesktop != KWindowSystem::currentDesktop())

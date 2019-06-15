@@ -38,11 +38,14 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus X11Extras LinguistTools)
+find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
 find_package(PolkitQt5-1 REQUIRED)
-find_package(X11 REQUIRED)
+if (NOT APPLE)
+    find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED X11Extras)
+    find_package(X11 REQUIRED)
+endif()
 message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 
 include(CMakePackageConfigHelpers)
@@ -57,7 +60,6 @@ set(PUB_HDRS
     lxqtsettings.h
     lxqtplugininfo.h
     lxqtpowermanager.h
-    lxqtscreensaver.h
     lxqtapplication.h
     lxqtsingleapplication.h
     lxqttranslator.h
@@ -78,12 +80,17 @@ set(PUB_HDRS
     #lxqtbacklight/linux_backend/linuxbackend.h
 )
 
+if (NOT APPLE)
+    list (APPEND PUB_HDRS
+        lxqtscreensaver.h
+    )
+endif (NOT APPLE)
+
 set(PUBLIC_CLASSES
     HtmlDelegate
     Settings
     PluginInfo
     PowerManager
-    ScreenSaver
     Application
     SingleApplication
     Translator
@@ -101,13 +108,17 @@ set(PUBLIC_CLASSES
     Globals
     Backlight
 )
+if (NOT APPLE)
+    list (APPEND PUBLIC_CLASSES
+        ScreenSaver
+    )
+endif (NOT APPLE)
 
 set(SRCS
     lxqthtmldelegate.cpp
     lxqtplugininfo.cpp
     lxqtpowermanager.cpp
     lxqtsettings.cpp
-    lxqtscreensaver.cpp
     lxqtapplication.cpp
     lxqtsingleapplication.cpp
     lxqttranslator.cpp
@@ -128,11 +139,16 @@ set(SRCS
     lxqtbacklight/linux_backend/linuxbackend.cpp
 )
 
+if (NOT APPLE)
+    list (APPEND SRCS
+        lxqtscreensaver.cpp
+    )
+endif (NOT APPLE)
+
 set(MOCS
     lxqthtmldelegate.h
     lxqtpowermanager.h
     lxqtsettings.h
-    lxqtscreensaver.h
     lxqtapplication.h
     lxqtbacklight.h
 
@@ -149,6 +165,12 @@ set(MOCS
     lxqtbacklight/virtual_backend.h
     lxqtbacklight/linux_backend/linuxbackend.h
 )
+
+if (NOT APPLE)
+    list (APPEND MOCS
+        lxqtscreensaver.h
+    )
+endif (NOT APPLE)
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
@@ -177,7 +199,11 @@ set_property(SOURCE ${DBUS_INTERFACE_SRCS} ${DBUS_ADAPTOR_SRCS} PROPERTY SKIP_AU
 list(APPEND SRCS "${DBUS_INTERFACE_SRCS}" "${DBUS_ADAPTOR_SRCS}")
 
 # KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
-set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
+set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}")
+
+if (NOT APPLE)
+    set(LXQT_PKG_CONFIG_REQUIRES "${LXQT_PKG_CONFIG_REQUIRES}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
+endif (NOT APPLE)
 
 
 # Standard directories for installation
@@ -282,12 +308,18 @@ target_link_libraries(${LXQT_LIBRARY_NAME}
         KF5::WindowSystem
         Qt5::Widgets
         Qt5::DBus
-        Qt5::X11Extras
         Qt5Xdg
-    PRIVATE
-        ${X11_Xscreensaver_LIB}
-        ${X11_X11_LIB}
 )
+
+if (NOT APPLE)
+    target_link_libraries(${LXQT_LIBRARY_NAME}
+        PUBLIC
+            Qt5::X11Extras
+        PRIVATE
+            ${X11_Xscreensaver_LIB}
+            ${X11_X11_LIB}
+    )
+endif (NOT APPLE)
 
 set_target_properties(${LXQT_LIBRARY_NAME} PROPERTIES
     VERSION   ${LXQT_VERSION}
