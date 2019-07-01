@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt電源管理エラー</translation>
+        <translation>LXQt 電源管理エラー</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="157"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQtセッションのサスペンド</translation>
+        <translation>LXQt セッションのサスペンド</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -70,49 +70,48 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQtセッションの休止</translation>
+        <translation>LXQt セッションの休止</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>本当にコンピュータを休止状態にしますか？&lt;P&gt;コンピュータを
-低消費電力状態で休止します。電源が失われた場合でもシステムの状態は保持されます。</translation>
+        <translation>本当にコンピュータを休止状態にしますか？&lt;P&gt;コンピュータを低消費電力状態で休止します。電源が失われた場合でもシステムの状態は保持されます。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQtセッションの再起動</translation>
+        <translation>LXQt セッションの再起動</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピュータを再起動しますか？保存されていない作業はすべて失われます...</translation>
+        <translation>本当にコンピュータを再起動しますか？ 保存されていない作業はすべて失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQtセッションのシャットダウン</translation>
+        <translation>LXQt セッションのシャットダウン</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピュータをオフにしたいですか？保存されていないすべての作業は失われます...</translation>
+        <translation>本当にコンピュータをオフしますか？ 保存されていないすべての作業は失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQtセッションのログアウト</translation>
+        <translation>LXQt セッションのログアウト</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>本当にログアウトしたいですか？保存されていないすべての作業は失われます...</translation>
+        <translation>本当にログアウトしますか？ 保存されていないすべての作業は失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt電源管理エラー</translation>
+        <translation>LXQt 電源管理エラー</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
@@ -147,22 +146,22 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="176"/>
         <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。未知のエラー - undocumented return value from xdg-screensaver: %1.</translation>
+        <translation>スクリーンセーバーの起動時にエラーが発生しました。未知のエラー - xdg-screensaver からのドキュメントに記載されていない戻り値です: %1.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="157"/>
         <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。xdg-スクリーンセーバーの引数に構文エラーがあります。</translation>
+        <translation>スクリーンセーバーの起動時にエラーが発生しました。xdg-screensaver の引数に構文エラーがあります。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="163"/>
         <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。xscreensaverのインストールと実行を確認してください。</translation>
+        <translation>スクリーンセーバーの起動時にエラーが発生しました。xscreensaver のインストールと実行を確認してください。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="169"/>
         <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>スクリーンセーバーの起動時にエラーが発生しました。&apos;Activate&apos;アクションが失敗しました。xscreensaverのインストールと実行を確認してください。</translation>
+        <translation>スクリーンセーバーの起動時にエラーが発生しました。&apos;Activate&apos; アクションが失敗しました。xscreensaver のインストールと実行を確認してください。</translation>
     </message>
 </context>
 <context>
@@ -185,13 +184,13 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDbusInterfaceが無効です</translation>
+        <translation>QDbusInterface が無効です</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>電源マネージャエラー(D-BUSコール)</translation>
+        <translation>電源管理エラー(D-BUS コール)</translation>
     </message>
 </context>
 </TS>
