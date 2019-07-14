@@ -50,6 +50,7 @@ public:
 
 protected:
     QSize viewportSizeHint() const override;
+    QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
 
 protected slots:
