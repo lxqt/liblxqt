@@ -143,9 +143,23 @@ QSize PageSelectWidget::viewportSizeHint() const
 {
     const int spacing2 = spacing() * 2;
     QSize size{sizeHintForColumn(0) + spacing2, (sizeHintForRow(0) + spacing2) * count()};
-    if (verticalScrollBar()->isVisible())
+    auto vScrollbar = verticalScrollBar();
+    if (vScrollbar
+        && vScrollbar->isVisible()
+        && !vScrollbar->style()->styleHint(QStyle::SH_ScrollBar_Transient, nullptr, vScrollbar))
+    {
         size.rwidth() += verticalScrollBar()->sizeHint().width();
+    }
     return size;
+}
+
+/************************************************
+
+ ************************************************/
+QSize PageSelectWidget::sizeHint() const
+{
+    const int f = 2 * frameWidth();
+    return viewportSizeHint() + QSize(f, f);
 }
 
 /************************************************
