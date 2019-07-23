@@ -18,13 +18,19 @@
 
 #include "lxqtbacklight.h"
 #include "lxqtbacklight/virtual_backend.h"
-#include "lxqtbacklight/linux_backend/linuxbackend.h"
+#ifndef Q_OS_HURD
+    #include "lxqtbacklight/linux_backend/linuxbackend.h"
+#endif
 
 namespace LXQt {
 
 Backlight::Backlight(QObject *parent):QObject(parent)
 {
+#ifndef Q_OS_HURD
     m_backend = (VirtualBackEnd *) new LinuxBackend(this);
+#else
+    m_backend = new VirtualBackEnd(this);
+#endif
     connect(m_backend, &VirtualBackEnd::backlightChanged, this, &Backlight::backlightChangedSlot);
 }
 

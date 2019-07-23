@@ -51,7 +51,9 @@ message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
-add_subdirectory(lxqtbacklight/linux_backend/driver)
+if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+    add_subdirectory(lxqtbacklight/linux_backend/driver)
+endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
 
 set(LXQT_PKG_CONFIG_DESCRIPTION "Shared library for LXQt applications")
 
@@ -136,7 +138,6 @@ set(SRCS
     lxqtrotatedwidget.cpp
     lxqtbacklight.cpp
     lxqtbacklight/virtual_backend.cpp
-    lxqtbacklight/linux_backend/linuxbackend.cpp
 )
 
 if (NOT APPLE)
@@ -144,6 +145,12 @@ if (NOT APPLE)
         lxqtscreensaver.cpp
     )
 endif (NOT APPLE)
+
+if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+    list (APPEND SRCS
+        lxqtbacklight/linux_backend/linuxbackend.cpp
+    )
+endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
 
 set(MOCS
     lxqthtmldelegate.h
@@ -163,7 +170,6 @@ set(MOCS
     lxqtgridlayout.h
     lxqtrotatedwidget.h
     lxqtbacklight/virtual_backend.h
-    lxqtbacklight/linux_backend/linuxbackend.h
 )
 
 if (NOT APPLE)
@@ -171,6 +177,12 @@ if (NOT APPLE)
         lxqtscreensaver.h
     )
 endif (NOT APPLE)
+
+if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+    list (APPEND SRCS
+        lxqtbacklight/linux_backend/linuxbackend.h
+    )
+endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
