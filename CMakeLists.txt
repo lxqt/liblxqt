@@ -30,6 +30,7 @@ set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSIO
 
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(BUILD_BACKLIGHT_LINUX_BACKEND "Build the Linux backend for the backlight" ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -41,7 +42,9 @@ find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
-find_package(PolkitQt5-1 REQUIRED)
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    find_package(PolkitQt5-1 REQUIRED)
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 if (NOT APPLE)
     find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED X11Extras)
     find_package(X11 REQUIRED)
@@ -51,7 +54,10 @@ message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
-add_subdirectory(lxqtbacklight/linux_backend/driver)
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    add_subdirectory(lxqtbacklight/linux_backend/driver)
+    add_definitions(-DUSE_BACKLIGHT_LINUX_BACKEND)
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(LXQT_PKG_CONFIG_DESCRIPTION "Shared library for LXQt applications")
 
@@ -136,7 +142,6 @@ set(SRCS
     lxqtrotatedwidget.cpp
     lxqtbacklight.cpp
     lxqtbacklight/virtual_backend.cpp
-    lxqtbacklight/linux_backend/linuxbackend.cpp
 )
 
 if (NOT APPLE)
@@ -144,6 +149,12 @@ if (NOT APPLE)
         lxqtscreensaver.cpp
     )
 endif (NOT APPLE)
+
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    list (APPEND SRCS
+        lxqtbacklight/linux_backend/linuxbackend.cpp
+    )
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(MOCS
     lxqthtmldelegate.h
@@ -163,7 +174,6 @@ set(MOCS
     lxqtgridlayout.h
     lxqtrotatedwidget.h
     lxqtbacklight/virtual_backend.h
-    lxqtbacklight/linux_backend/linuxbackend.h
 )
 
 if (NOT APPLE)
@@ -171,6 +181,12 @@ if (NOT APPLE)
         lxqtscreensaver.h
     )
 endif (NOT APPLE)
+
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    list (APPEND SRCS
+        lxqtbacklight/linux_backend/linuxbackend.h
+    )
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
@@ -395,7 +411,9 @@ install(FILES ${LXQT_CONFIG_FILES}
     COMPONENT Runtime
 )
 
-install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 #************************************************
 # Create and install pkgconfig file
