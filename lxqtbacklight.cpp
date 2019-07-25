@@ -18,7 +18,7 @@
 
 #include "lxqtbacklight.h"
 #include "lxqtbacklight/virtual_backend.h"
-#ifndef Q_OS_HURD
+#ifdef USE_BACKLIGHT_LINUX_BACKEND
     #include "lxqtbacklight/linux_backend/linuxbackend.h"
 #endif
 
@@ -26,7 +26,7 @@ namespace LXQt {
 
 Backlight::Backlight(QObject *parent):QObject(parent)
 {
-#ifndef Q_OS_HURD
+#ifdef USE_BACKLIGHT_LINUX_BACKEND
     m_backend = (VirtualBackEnd *) new LinuxBackend(this);
 #else
     m_backend = new VirtualBackEnd(this);

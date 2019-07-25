@@ -30,6 +30,7 @@ set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSIO
 
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(BUILD_BACKLIGHT_LINUX_BACKEND "Build the Linux backend for the backlight" ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -51,9 +52,10 @@ message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
 
-if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
     add_subdirectory(lxqtbacklight/linux_backend/driver)
-endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+    add_definitions(-DUSE_BACKLIGHT_LINUX_BACKEND)
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(LXQT_PKG_CONFIG_DESCRIPTION "Shared library for LXQt applications")
 
@@ -146,11 +148,11 @@ if (NOT APPLE)
     )
 endif (NOT APPLE)
 
-if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
     list (APPEND SRCS
         lxqtbacklight/linux_backend/linuxbackend.cpp
     )
-endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(MOCS
     lxqthtmldelegate.h
@@ -178,11 +180,11 @@ if (NOT APPLE)
     )
 endif (NOT APPLE)
 
-if (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
     list (APPEND SRCS
         lxqtbacklight/linux_backend/linuxbackend.h
     )
-endif (NOT (${CMAKE_SYSTEM_NAME} STREQUAL GNU))
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
