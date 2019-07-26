@@ -42,7 +42,9 @@ find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
 find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
-find_package(PolkitQt5-1 REQUIRED)
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    find_package(PolkitQt5-1 REQUIRED)
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 if (NOT APPLE)
     find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED X11Extras)
     find_package(X11 REQUIRED)
@@ -409,7 +411,9 @@ install(FILES ${LXQT_CONFIG_FILES}
     COMPONENT Runtime
 )
 
-install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+if (BUILD_BACKLIGHT_LINUX_BACKEND)
+    install(FILES ${POLKIT_FILES} DESTINATION "${POLKITQT-1_POLICY_FILES_INSTALL_DIR}")
+endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 #************************************************
 # Create and install pkgconfig file
