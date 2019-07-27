@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation>ハイバーネーションを失敗しました。</translation>
+        <translation>ハイバネートを失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Hibernate</source>
-        <translation>休止</translation>
+        <translation>ハイバネート</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="124"/>
@@ -65,17 +65,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>本当にコンピュータをサスペンドしますか？&lt;P&gt;コンピュータを低消費電力状態にサスペンドします。電源が失われた場合にはシステムの状態は保持されません。</translation>
+        <translation>本当にコンピューターをサスペンドしますか？&lt;P&gt;コンピューターを低消費電力状態にサスペンドします。電源が失われた場合にはシステムの状態は保持されません。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt セッションの休止</translation>
+        <translation>LXQt セッションのハイバネート</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>本当にコンピュータを休止状態にしますか？&lt;P&gt;コンピュータを低消費電力状態で休止します。電源が失われた場合でもシステムの状態は保持されます。</translation>
+        <translation>本当にコンピューターをハイバネートにしますか？&lt;P&gt;コンピューターを低消費電力状態で休止します。電源が失われた場合でもシステムの状態は保持されます。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="177"/>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピュータを再起動しますか？ 保存されていない作業はすべて失われます...</translation>
+        <translation>本当にコンピューターを再起動しますか？ 保存されていない作業はすべて失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="187"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピュータをオフしますか？ 保存されていないすべての作業は失われます...</translation>
+        <translation>本当にコンピューターをオフしますか？ 保存されていないすべての作業は失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="206"/>
         <source>Hibernate failed.</source>
-        <translation>ハイバーネーションを失敗しました。</translation>
+        <translation>ハイバネートを失敗しました。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="211"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="236"/>
         <source>Lock Screen</source>
-        <translation>スクリーンをロック</translation>
+        <translation>画面のロック</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
