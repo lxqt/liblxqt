@@ -161,14 +161,14 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
         {
             box->setWindowTitle(tr("Screen Saver Activation Error"));
             box->setText(tr("An error occurred starting screensaver. "
-                           "Ensure you have xscreensaver installed and running."));
+                           "Ensure you have a screensaver supported by xdg-screensaver installed and running."));
         }
         else if (err == 4)
         {
             box->setWindowTitle(tr("Screen Saver Activation Error"));
             box->setText(tr("An error occurred starting screensaver. "
                            "Action 'activate' failed. "
-                           "Ensure you have xscreensaver installed and running."));
+                           "Ensure you have a screensaver supported by xdg-screensaver installed and running."));
         }
         else
         {
