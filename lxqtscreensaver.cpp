@@ -28,6 +28,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include <QProcess>
+#include <QSettings>
 #include "lxqtscreensaver.h"
 #include "lxqttranslator.h"
 
@@ -129,15 +130,37 @@ class ScreenSaverPrivate
     ScreenSaver* const q_ptr;
 
 public:
-    ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {};
+    ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {
+        QSettings settings(QSettings::UserScope, QLatin1String("lxqt"), QLatin1String("lxqt"));
 
-    void _l_xdgProcess_finished(int, QProcess::ExitStatus);
+        settings.beginGroup(QLatin1String("Screensaver"));
+        lock_command = settings.value(QLatin1String("lock_command"), QLatin1String("xdg-screensaver lock")).toString();
+        settings.endGroup();
+    }
+
+    void reportLockProcessError();
+    void _l_lockProcess_finished(int, QProcess::ExitStatus);
+    void _l_lockProcess_errorOccurred(QProcess::ProcessError);
     bool isScreenSaverLocked();
 
-    QPointer<QProcess> m_xdgProcess;
+    QPointer<QProcess> m_lockProcess;
+
+    QString lock_command;
 };
 
-void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus status)
+void ScreenSaverPrivate::reportLockProcessError()
+{
+    QMessageBox *box = new QMessageBox;
+    box->setAttribute(Qt::WA_DeleteOnClose);
+    box->setIcon(QMessageBox::Warning);
+    box->setWindowTitle(tr("Screen Saver Error"));
+    box->setText(tr("Failed to run  \"%1\". "
+                    "Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running."
+                   ).arg(lock_command));
+    box->exec();
+}
+
+void ScreenSaverPrivate::_l_lockProcess_finished(int err, QProcess::ExitStatus status)
 {
     // http://portland.freedesktop.org/xdg-utils-1.1.0-rc1/scripts/xdg-screensaver
 
@@ -147,41 +170,15 @@ void ScreenSaverPrivate::_l_xdgProcess_finished(int err, QProcess::ExitStatus st
         emit q->activated();
     else
     {
-        QMessageBox *box = new QMessageBox;
-        box->setAttribute(Qt::WA_DeleteOnClose);
-        box->setIcon(QMessageBox::Warning);
-
-        if (err == 1)
-        {
-            box->setWindowTitle(tr("Screen Saver Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Syntax error in xdg-screensaver arguments."));
-        }
-        else if (err == 3)
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Ensure you have a screensaver supported by xdg-screensaver installed and running."));
-        }
-        else if (err == 4)
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Action 'activate' failed. "
-                           "Ensure you have a screensaver supported by xdg-screensaver installed and running."));
-        }
-        else
-        {
-            box->setWindowTitle(tr("Screen Saver Activation Error"));
-            box->setText(tr("An error occurred starting screensaver. "
-                           "Unknown error - undocumented return value from xdg-screensaver: %1.")
-                        .arg(err));
-        }
-
-        box->exec();
+        reportLockProcessError();
     }
 
     emit q->done();
+}
+
+void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)
+{
+    reportLockProcessError();
 }
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
@@ -218,9 +215,11 @@ ScreenSaver::ScreenSaver(QObject * parent)
       d_ptr(new ScreenSaverPrivate(this))
 {
     Q_D(ScreenSaver);
-    d->m_xdgProcess = new QProcess(this);
-    connect(d->m_xdgProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-        [=](int exitCode, QProcess::ExitStatus exitStatus){ d->_l_xdgProcess_finished(exitCode, exitStatus); });
+    d->m_lockProcess = new QProcess(this);
+    connect(d->m_lockProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+        [=](int exitCode, QProcess::ExitStatus exitStatus){ d->_l_lockProcess_finished(exitCode, exitStatus); });
+    connect(d->m_lockProcess, &QProcess::errorOccurred,
+        [=](QProcess::ProcessError error) { d->_l_lockProcess_errorOccurred(error); });
 }
 
 ScreenSaver::~ScreenSaver()
@@ -244,7 +243,7 @@ void ScreenSaver::lockScreen()
 {
     Q_D(ScreenSaver);
     if (!d->isScreenSaverLocked())
-        d->m_xdgProcess->start(QL1S("xdg-screensaver"), QStringList() << QL1S("lock"));
+        d->m_lockProcess->start(d->lock_command);
 }
 
 } // namespace LXQt
