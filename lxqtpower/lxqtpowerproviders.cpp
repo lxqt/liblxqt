@@ -517,7 +517,7 @@ bool LXQtProvider::canAction(Power::Action action) const
     }
 
     // there can be case when lxqtsession-session does not run
-    return dbusCall(QL1S(LXQT_SERVICE), QL1S(LXQT_PATH), QL1S(LXQT_SERVICE),
+    return dbusCall(QL1S(LXQT_SERVICE), QL1S(LXQT_PATH), QL1S(LXQT_INTERFACE),
             QDBusConnection::sessionBus(), command,
             PowerProvider::DontCheckDBUS);
 }
