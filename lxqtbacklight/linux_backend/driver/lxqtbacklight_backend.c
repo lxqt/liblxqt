@@ -131,7 +131,7 @@ static void decreases_blacklight()
     int value = actual - decr;
     if( value <= 0 )
         value = 1;
-    if(value<max_value && value>0) {
+    if(value<max_value) {
         set_backlight(driver, value);
     }
     free(driver);
