@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="74"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Hibernatzeak huts egin du.</translation>
+        <translation>Hibernatzeak huts egin du.</translation>
     </message>
 </context>
 <context>
@@ -169,7 +169,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu erakutsi nahi duzun orria.</translation>
     </message>
 </context>
 <context>
