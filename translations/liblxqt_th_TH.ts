@@ -12,12 +12,12 @@
 <context>
     <name>LXQt::MessageBox</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="74"/>
+        <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>LXQt Power Manager Error</source>
         <translation type="unfinished">โปรแกรมจัดการพลังงานของ LXQt ขัดข้อง</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="74"/>
+        <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>Hibernate failed.</source>
         <translation type="unfinished">จำศีลเครื่องล้มเหลว</translation>
     </message>
@@ -33,93 +33,93 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="117"/>
+        <location filename="../lxqtpowermanager.cpp" line="118"/>
         <source>Hibernate</source>
         <translation>จำศีลเครื่อง</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="124"/>
+        <location filename="../lxqtpowermanager.cpp" line="125"/>
         <source>Suspend</source>
         <translation>พักเครื่อง</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="131"/>
+        <location filename="../lxqtpowermanager.cpp" line="132"/>
         <source>Reboot</source>
         <translation>เริ่มระบบใหม่ </translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="138"/>
+        <location filename="../lxqtpowermanager.cpp" line="139"/>
         <source>Shutdown</source>
         <translation>ปิดเครื่อง</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="145"/>
+        <location filename="../lxqtpowermanager.cpp" line="146"/>
         <source>Logout</source>
         <translation>ออกจากระบบ</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="157"/>
+        <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Suspend</source>
         <translation>พักการทำงานของ LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>คุณแน่ใจนะว่า ต้องการพักเครื่อง?&lt;p&gt;การพักเครื่องจะลดการใช้พลังงาน โปรดระวังด้วย หากไฟดับสถานะของระบบจะสูญหาย</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="167"/>
+        <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
         <translation>จำศีลการทำงานของ LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>คุณแน่ใจนะ ว่าต้องการจำศีลเครื่อง?&lt;p&gt;การจำศีลเครื่องจะลดการใช้พลังงาน  ถึงแม้ว่าไฟดับ สถานะของระบบก็จะถูกรักษาไว้</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="177"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Reboot</source>
         <translation> เริ่มการทำงานของ LXQt ใหม่</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>คุณแน่ใจนะ ว่าต้องการเริ่มระบบใหม่? งานที่ไม่ได้บันทึกไว้ทั้งหมดจะสูญหาย</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="187"/>
+        <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Shutdown</source>
         <translation>จบการทำงานของ lxqt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="188"/>
+        <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>คุณแน่ใจนะ ว่าต้องการปิดเครื่อง? งานที่ไม่ได้บันทึกไว้ทั้งหมดจะสูญหาย</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="197"/>
+        <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
         <translation>ออกจากระบบ LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="198"/>
+        <location filename="../lxqtpowermanager.cpp" line="199"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>คุณแน่ใจนะว่า ต้องการออกจากระบบ? งานที่ยังไม่ได้บันทึกทั้งหมดจะสูญหาย..</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <location filename="../lxqtpowermanager.cpp" line="211"/>
+        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>LXQt Power Manager Error</source>
         <translation>โปรแกรมจัดการพลังงานของ LXQt ขัดข้อง</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="206"/>
+        <location filename="../lxqtpowermanager.cpp" line="207"/>
         <source>Hibernate failed.</source>
         <translation>จำศีลเครื่องล้มเหลว</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="211"/>
+        <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>Suspend failed.</source>
         <translation>พักเครื่องล้มเหลว</translation>
     </message>
@@ -127,7 +127,17 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="236"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>ล็อคหน้าจอ</translation>
     </message>
@@ -135,33 +145,6 @@
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="162"/>
-        <location filename="../lxqtscreensaver.cpp" line="168"/>
-        <location filename="../lxqtscreensaver.cpp" line="175"/>
-        <source>Screen Saver Activation Error</source>
-        <translation>การเริ่มงานของโปรแกรมรักษาหน้าจอขัดข้อง</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="176"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="157"/>
-        <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ เกิด syntax error ใน xdg-screensaver อาร์กิวเมนต์ </translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="163"/>
-        <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ ตรวจดูให้แน่ใจว่าคุณได้ติดตั้งและเริ่มงาน xdg-screensaver แล้ว</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="169"/>
-        <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>เกิดการขัดข้องขณะเริ่มงานโปรแกรมรักษาหน้าจอ xdg-screensaver ไม่สามารถเริ่มงานได้</translation>
     </message>
 </context>
 <context>

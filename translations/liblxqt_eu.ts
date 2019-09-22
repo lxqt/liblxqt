@@ -12,12 +12,12 @@
 <context>
     <name>LXQt::MessageBox</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="74"/>
+        <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>LXQt Power Manager Error</source>
         <translation type="unfinished">LXQt energia-kudeatzailearen errorea</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="74"/>
+        <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>Hibernate failed.</source>
         <translation>Hibernatzeak huts egin du.</translation>
     </message>
@@ -33,93 +33,93 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="117"/>
+        <location filename="../lxqtpowermanager.cpp" line="118"/>
         <source>Hibernate</source>
         <translation>Hibernatu</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="124"/>
+        <location filename="../lxqtpowermanager.cpp" line="125"/>
         <source>Suspend</source>
         <translation>Eseki</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="131"/>
+        <location filename="../lxqtpowermanager.cpp" line="132"/>
         <source>Reboot</source>
         <translation>Berrabiarazi</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="138"/>
+        <location filename="../lxqtpowermanager.cpp" line="139"/>
         <source>Shutdown</source>
         <translation>Itzali</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="145"/>
+        <location filename="../lxqtpowermanager.cpp" line="146"/>
         <source>Logout</source>
         <translation>Amaitu saioa</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="157"/>
+        <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Suspend</source>
         <translation>LXQt saioa eseki</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>Ziur zaude ordenagailua eseki nahi duzula?&lt;p&gt;Energia baxuko egoera batetara esekitzen du ordenagailua. Sistemaren egoera ez da mantentzen korrontea eteten bada.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="167"/>
+        <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
         <translation>LXQt saioa hibernatu</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>Ziur zaude ordenagailua hibernatu nahi duzula?&lt;p&gt;Energia baxuko egoera batetara hibernatzen du ordenagailua. Sistemaren egoera mantentzen da korrontea eteten bada.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="177"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Reboot</source>
         <translation>LXQt saioa berrabiarazi</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>Ziur zaude ordenagailua berrabiarazi nahi duzula? Gorde gabeko lan guztiak galduko dira...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="187"/>
+        <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Shutdown</source>
         <translation>LXQt saioa itzali</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="188"/>
+        <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>Ziur zaude ordenagailua itzali nahi duzula? Gorde gabeko lan guztiak galduko dira...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="197"/>
+        <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
         <translation>LXQt saioa amaitu</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="198"/>
+        <location filename="../lxqtpowermanager.cpp" line="199"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>Ziur zaude saioa amaitu nahi duzula? Gorde gabeko lan guztiak galduko dira...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="206"/>
-        <location filename="../lxqtpowermanager.cpp" line="211"/>
+        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>LXQt Power Manager Error</source>
         <translation>LXQt energia-kudeatzailearen errorea</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="206"/>
+        <location filename="../lxqtpowermanager.cpp" line="207"/>
         <source>Hibernate failed.</source>
         <translation>Hibernatzeak huts egin du.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="211"/>
+        <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>Suspend failed.</source>
         <translation>Esekitzeak huts egin du.</translation>
     </message>
@@ -127,7 +127,17 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="236"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>Blokeatu pantaila</translation>
     </message>
@@ -135,33 +145,6 @@
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="162"/>
-        <location filename="../lxqtscreensaver.cpp" line="168"/>
-        <location filename="../lxqtscreensaver.cpp" line="175"/>
-        <source>Screen Saver Activation Error</source>
-        <translation>Pantaila-babeslearen aktibatze-errorea</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="176"/>
-        <source>An error occurred starting screensaver. Unknown error - undocumented return value from xdg-screensaver: %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="157"/>
-        <source>An error occurred starting screensaver. Syntax error in xdg-screensaver arguments.</source>
-        <translation>Errore bat gertatu da pantaila-babeslea abiaraztean. Sintaxi-errore bat dago xdg-screensaver-en argumentuetan.</translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="163"/>
-        <source>An error occurred starting screensaver. Ensure you have xscreensaver installed and running.</source>
-        <translation>Errore bat gertatu da pantaila-babeslea abiaraztean. Ziurtatu xdg-screensaver instalatuta eta martxan dagoela. </translation>
-    </message>
-    <message>
-        <location filename="../lxqtscreensaver.cpp" line="169"/>
-        <source>An error occurred starting screensaver. Action &apos;activate&apos; failed. Ensure you have xscreensaver installed and running.</source>
-        <translation>Errore bat gertatu da pantaila-babeslea abiaraztean. &apos;Aktibatu&apos; ekintzak huts egin du. Ziurtatu xdg-screensaver instalatuta eta martxan dagoela. </translation>
     </message>
 </context>
 <context>
