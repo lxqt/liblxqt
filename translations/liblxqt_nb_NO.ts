@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>Hibernate failed.</source>
-        <translation>Dvale feilet.</translation>
+        <translation>Dvale mislyktes.</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt-sesjonen hviler</translation>
+        <translation>LXQt hvile</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt-sesjonen dvaler</translation>
+        <translation>LXQt dvale</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt-sesjonen omstarter</translation>
+        <translation>LXQt omstart</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt-sesjonen slås av</translation>
+        <translation>LXQt slå av</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt-sesjonen logger ut</translation>
+        <translation>LXQt logg ut</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="199"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mislyktes med å kjøre &quot;%1&quot;. Pass på at du har en skjermlåser/-sparer kompatibel med xdg-screensaver installert som kjører.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mislyktes med å kjøre &quot;%1&quot;. Pass på at den nevnte skjermlåseren/-spareren er installert og kjører.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
