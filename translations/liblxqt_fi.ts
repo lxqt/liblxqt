@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="154"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilmoitusten varavaihtoehto</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Virranhallinan virhe (D-Bus-kutsu)</translation>
+        <translation>Virranhallinan virhe (D-BUS-kutsu)</translation>
     </message>
 </context>
 </TS>
