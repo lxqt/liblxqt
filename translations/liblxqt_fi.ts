@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Ikkuna</translation>
+        <translation>Valintaikkuna</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt:n virranhallintavirhe</translation>
+        <translation>LXQt Virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="75"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="207"/>
         <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt:n virranhallintavirhe</translation>
+        <translation>LXQt Virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="207"/>
@@ -173,7 +173,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Virranhallinan virhe (D-BUS-kutsu)</translation>
+        <translation>Virranhallinnan virhe (D-BUS-kutsu)</translation>
     </message>
 </context>
 </TS>
