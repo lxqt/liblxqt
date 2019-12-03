@@ -354,11 +354,6 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
         "LXQT_INSTALL_PREFIX=\"${CMAKE_INSTALL_PREFIX}\""
         "LXQT_VERSION=\"${LXQT_VERSION}\""
         "COMPILE_LIBLXQT"
-        "QT_USE_QSTRINGBUILDER"
-        "QT_NO_CAST_FROM_ASCII"
-        "QT_NO_CAST_TO_ASCII"
-        "QT_NO_URL_CAST_FROM_STRING"
-        "QT_NO_CAST_FROM_BYTEARRAY"
         "$<$<CONFIG:Release>:QT_NO_DEBUG_OUTPUT>"
         "$<$<CONFIG:Release>:QT_NO_WARNING_OUTPUT>"
 )
