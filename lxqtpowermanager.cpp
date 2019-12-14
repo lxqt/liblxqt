@@ -30,8 +30,8 @@
 #include <QDBusInterface>
 #include <QMessageBox>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QtDebug>
+#include <QScreen>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
 #include "lxqtsettings.h"
@@ -80,7 +80,8 @@ protected:
     void resizeEvent(QResizeEvent* event) override
     {
         Q_UNUSED(event)
-        const QRect screen = QApplication::desktop()->screenGeometry();
+        const QScreen *primaryScreen = QGuiApplication::primaryScreen();
+        const QRect screen = primaryScreen ? primaryScreen->geometry() : QRect();
         move((screen.width()  - this->width()) / 2,
              (screen.height() - this->height()) / 2);
 
