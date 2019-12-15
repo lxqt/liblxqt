@@ -32,6 +32,7 @@
 #include <QApplication>
 #include <QtDebug>
 #include <QScreen>
+#include <QFile>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
 #include "lxqtsettings.h"
