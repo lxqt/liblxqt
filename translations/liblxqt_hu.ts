@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem sikerült futtatni:  &quot;%1&quot;. Győződj meg róla, hogy a megfelelő zároló alkalmazás/képernyővédő telepítve van és fut.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
