@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>Hibernate failed.</source>
-        <translation>Elaltatás sikertelen.</translation>
+        <translation>Hibernálás sikertelen.</translation>
     </message>
 </context>
 <context>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="118"/>
         <source>Hibernate</source>
-        <translation>Elaltatás</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="125"/>
         <source>Suspend</source>
-        <translation>Készültség</translation>
+        <translation>Készenlét</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="132"/>
@@ -65,17 +65,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Készenléti állapotba akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű állapotban feszültségkimaradáskor az újraélesztés nem biztos.</translation>
+        <translation>Készenléti állapotba akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Az LXQT elaltatása</translation>
+        <translation>Az LXQT hibernálása</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Mélykészenléti állapotba akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű alvó állapotban feszültségkimaradáskor az újraélesztés nem biztos.</translation>
+        <translation>Hibernálni akarja a gépet?&lt;p&gt;A kis energiaszükségletű alvó állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="207"/>
         <source>Hibernate failed.</source>
-        <translation>Mélykészenléti állapot sikertelen.</translation>
+        <translation>Hibernálás sikertelen.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="212"/>
