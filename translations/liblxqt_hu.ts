@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="75"/>
         <source>Hibernate failed.</source>
-        <translation>Hibernálás sikertelen.</translation>
+        <translation>Mélykészenlét sikertelen.</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="118"/>
         <source>Hibernate</source>
-        <translation>Hibernálás</translation>
+        <translation>Mélykészenlét</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="125"/>
@@ -70,12 +70,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Az LXQT hibernálása</translation>
+        <translation type="unfinished">Az LXQT mélykészenléte</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Hibernálni akarja a gépet?&lt;p&gt;A kis energiaszükségletű alvó állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
+        <translation>Mélykészenlétbe akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű alvó állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="207"/>
         <source>Hibernate failed.</source>
-        <translation>Hibernálás sikertelen.</translation>
+        <translation>Mélykészenlét sikertelen.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>Suspend failed.</source>
-        <translation>Készenléti állapot sikertelen.</translation>
+        <translation>Készenlét sikertelen.</translation>
     </message>
 </context>
 <context>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
-        <translation>Képernyőzár</translation>
+        <translation>Zárolás</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
