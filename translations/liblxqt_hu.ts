@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Suspend</source>
-        <translation>Az LXQT készenléte</translation>
+        <translation>Készenlét</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt újraindítás</translation>
+        <translation>Újraindítás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt kikapcsolás</translation>
+        <translation>Kikapcsolás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt kijelentkezés</translation>
+        <translation>Kijelentkezés</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="199"/>
