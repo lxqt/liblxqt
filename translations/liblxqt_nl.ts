@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt-Sessie-afmelden</translation>
+        <translation>Meld LXQt-sessie af</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="199"/>
@@ -129,17 +129,17 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mislukt om  &quot;%1&quot; te runnen. Controleer of je een schermbeveiliging hebt die compatibel is met de geïnstalleerde en runnende xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mislukt om  &quot;%1&quot; te runnen. Controleer of de aangegeven schermbeveiliging is geïnstalleerd en runt.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
-        <translation>Scherm vergrendelen</translation>
+        <translation>Vergrendel scherm</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
