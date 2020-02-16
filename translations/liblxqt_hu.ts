@@ -129,7 +129,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished">Nem sikerült elindítani:  &quot;%1&quot;.  Győződjön meg arról, hogy telepítve van és fut az xdg-screensaver kompatibilis zároló/képernyővédő.</translation>
+        <translation>Nem sikerült elindítani:  &quot;%1&quot;.  Győződjön meg arról, hogy telepítve van és fut az xdg-screensaver kompatibilis zároló/képernyővédő.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
