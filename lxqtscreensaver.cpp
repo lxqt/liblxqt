@@ -150,10 +150,10 @@ public:
 
 void ScreenSaverPrivate::reportLockProcessError()
 {
-    QMessageBox *box = new QMessageBox;
-    box->setAttribute(Qt::WA_DeleteOnClose);
-    box->setIcon(QMessageBox::Warning);
-    box->setWindowTitle(tr("Screen Saver Error"));
+    QMessageBox box;
+    box.setAttribute(Qt::WA_DeleteOnClose);
+    box.setIcon(QMessageBox::Warning);
+    box.setWindowTitle(tr("Screen Saver Error"));
     QString message;
     // contains() instead of startsWith() as the command might be "env FOO=bar xdg-screensaver lock"
     // (e.g., overwrite $XDG_CURRENT_DESKTOP for some different behaviors)
@@ -166,8 +166,8 @@ void ScreenSaverPrivate::reportLockProcessError()
                      "Ensure the specified locker/screensaver is installed and running."
                     );
     }
-    box->setText(message.arg(lock_command));
-    box->exec();
+    box.setText(message.arg(lock_command));
+    box.exec();
 }
 
 void ScreenSaverPrivate::_l_lockProcess_finished(int err, QProcess::ExitStatus status)
