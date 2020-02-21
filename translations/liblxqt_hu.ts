@@ -70,7 +70,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Az LXQT mélykészenléte</translation>
+        <translation>Az LXQt mélykészenléte</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
