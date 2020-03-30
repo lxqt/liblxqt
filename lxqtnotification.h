@@ -157,7 +157,7 @@ public:
                 const QString& iconName = QString()
             );
 
-public slots:
+public Q_SLOTS:
     /*!
      * \brief Display the notification or update it if it's already visible
      */
@@ -170,7 +170,7 @@ public slots:
      */
     void close();
 
-signals:
+Q_SIGNALS:
     /*!
      * \brief Emitted when the notification is closed
      * \param reason How notification was closed

@@ -47,7 +47,7 @@ public:
     ~PowerManager() override;
     QList<QAction*> availableActions();
 
-public slots:
+public Q_SLOTS:
     // power management
     void suspend();
     void hibernate();
@@ -63,7 +63,7 @@ private:
     LXQt::Power * m_power;
     bool m_skipWarning;
 
-private slots:
+private Q_SLOTS:
     void hibernateFailed();
     void suspendFailed();
 };

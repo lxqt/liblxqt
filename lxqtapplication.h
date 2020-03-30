@@ -65,10 +65,10 @@ public:
      */
     void listenToUnixSignals(QList<int> const & signolList);
 
-private slots:
+private Q_SLOTS:
     void updateTheme();
 
-signals:
+Q_SIGNALS:
     void themeChanged();
     /*! Signal is emitted upon receival of registered unix signal
      * \param signo the received unix signal number

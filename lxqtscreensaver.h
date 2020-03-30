@@ -51,10 +51,10 @@ public:
 
     QList<QAction*> availableActions();
 
-signals:
+Q_SIGNALS:
     void activated();
     void done();
-public slots:
+public Q_SLOTS:
     void lockScreen();
 
 private:

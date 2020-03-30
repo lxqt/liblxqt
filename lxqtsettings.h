@@ -79,7 +79,7 @@ public:
         overwritten. Otherwise, it overwrites the the un-localized version. */
     void setLocalizedValue(const QString &key, const QVariant &value);
 
-signals:
+Q_SIGNALS:
     /*! /brief signal for backward compatibility (emitted whenever settingsChangedFromExternal() or settingsChangedByApp() is emitted)
      */
     void settingsChanged();
@@ -93,11 +93,11 @@ signals:
 protected:
     bool event(QEvent *event) override;
 
-protected slots:
+protected Q_SLOTS:
     /*! Called when the config file is changed */
     virtual void fileChanged();
 
-private slots:
+private Q_SLOTS:
     void _fileChanged(QString path);
 
 private:
@@ -198,14 +198,14 @@ public:
     GlobalSettings();
     ~GlobalSettings() override;
 
-signals:
+Q_SIGNALS:
     /// Signal emitted when the icon theme has changed.
     void iconThemeChanged();
 
     /// Signal emitted when the lxqt theme has changed.
     void lxqtThemeChanged();
 
-protected slots:
+protected Q_SLOTS:
     void fileChanged() override;
 
 private:

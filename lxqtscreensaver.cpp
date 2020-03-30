@@ -175,13 +175,13 @@ void ScreenSaverPrivate::_l_lockProcess_finished(int err, QProcess::ExitStatus s
     Q_UNUSED(status)
     Q_Q(ScreenSaver);
     if (err == 0)
-        emit q->activated();
+        Q_EMIT q->activated();
     else
     {
         reportLockProcessError();
     }
 
-    emit q->done();
+    Q_EMIT q->done();
 }
 
 void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)

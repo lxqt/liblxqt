@@ -37,7 +37,7 @@ public:
     virtual int getBacklight();
     virtual int getMaxBacklight();
     
-signals:
+Q_SIGNALS:
     void backlightChanged(int value);
 };
 

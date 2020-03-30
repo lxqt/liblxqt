@@ -81,7 +81,7 @@ public:
      */
     void showPage(const QString &name);
 
-signals:
+Q_SIGNALS:
     /*!
      * This signal is emitted when the user pressed the "Reset" button.
      * Settings should be re-read and the widgets should be set accordingly.

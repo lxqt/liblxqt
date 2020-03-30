@@ -219,8 +219,8 @@ bool Settings::event(QEvent *event)
         {
             d_ptr->mAppChangeTimer = 0;
             // do emit the signals
-            emit settingsChangedByApp();
-            emit settingsChanged();
+            Q_EMIT settingsChangedByApp();
+            Q_EMIT settingsChanged();
         } else if (timer == d_ptr->mAddWatchTimer)
         {
             d_ptr->mAddWatchTimer = 0;
@@ -235,8 +235,8 @@ bool Settings::event(QEvent *event)
 void Settings::fileChanged()
 {
     sync();
-    emit settingsChangedFromExternal();
-    emit settingsChanged();
+    Q_EMIT settingsChangedFromExternal();
+    Q_EMIT settingsChanged();
 }
 
 void Settings::_fileChanged(QString path)
@@ -727,7 +727,7 @@ void GlobalSettings::fileChanged()
     QString it = value(QL1S("icon_theme")).toString();
     if (d->mIconTheme != it)
     {
-        emit iconThemeChanged();
+        Q_EMIT iconThemeChanged();
     }
 
     QString rt = value(QL1S("theme")).toString();
@@ -735,10 +735,10 @@ void GlobalSettings::fileChanged()
     if ((d->mLXQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
     {
         d->mLXQtTheme = rt;
-        emit lxqtThemeChanged();
+        Q_EMIT lxqtThemeChanged();
     }
 
-    emit settingsChangedFromExternal();
-    emit settingsChanged();
+    Q_EMIT settingsChangedFromExternal();
+    Q_EMIT settingsChanged();
 }
 

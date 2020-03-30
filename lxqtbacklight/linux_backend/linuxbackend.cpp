@@ -102,7 +102,7 @@ void LinuxBackend::fileSystemChanged(const QString & /*path*/)
 {
     int value = actualBacklight;
     if( value != getBacklight() ) {
-        emit backlightChanged(actualBacklight);
+        Q_EMIT backlightChanged(actualBacklight);
     }
 }
 

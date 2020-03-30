@@ -92,7 +92,7 @@ public:
     //! This function is provided for convenience. It's equivalent to calling canAction(PowerMonitorOff).
     bool canMonitorOff() const;
 
-public slots:
+public Q_SLOTS:
     /// Performs the requested action.
     bool doAction(Action action);
 

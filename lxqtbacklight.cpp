@@ -66,7 +66,7 @@ void Backlight::setBacklight(int value)
 
 void Backlight::backlightChangedSlot(int value)
 {
-    emit backlightChanged(value);
+    Q_EMIT backlightChanged(value);
 }
 
 } // namespace LXQt

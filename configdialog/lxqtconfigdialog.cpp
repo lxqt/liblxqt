@@ -66,11 +66,11 @@ void ConfigDialogPrivate::dialogButtonsAction(QAbstractButton* button)
 {
     Q_Q(ConfigDialog);
     QDialogButtonBox::StandardButton standardButton = ui->buttons->standardButton(button);
-    emit q->clicked(standardButton);
+    Q_EMIT q->clicked(standardButton);
     if (standardButton == QDialogButtonBox::Reset)
     {
         mCache->loadToSettings();
-        emit q->reset();
+        Q_EMIT q->reset();
     }
     else if(standardButton == QDialogButtonBox::Close)
     {
@@ -185,7 +185,7 @@ bool ConfigDialog::event(QEvent * event)
 void ConfigDialog::closeEvent(QCloseEvent* event)
 {
     Q_UNUSED(event)
-    emit save();
+    Q_EMIT save();
     mSettings->sync();
 }
 
