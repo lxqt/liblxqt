@@ -356,6 +356,7 @@ target_compile_definitions(${LXQT_LIBRARY_NAME}
         "COMPILE_LIBLXQT"
         "$<$<CONFIG:Release>:QT_NO_DEBUG_OUTPUT>"
         "$<$<CONFIG:Release>:QT_NO_WARNING_OUTPUT>"
+        "QT_NO_KEYWORDS"
 )
 
 if (Qt5Core_VERSION VERSION_LESS "5.9.0")

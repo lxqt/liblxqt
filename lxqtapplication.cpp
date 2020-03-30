@@ -79,7 +79,7 @@ void Application::updateTheme()
 {
     const QString styleSheetKey = QFileInfo(applicationFilePath()).fileName();
     setStyleSheet(lxqtTheme.qss(styleSheetKey));
-    emit themeChanged();
+    Q_EMIT themeChanged();
 }
 
 namespace
@@ -147,6 +147,6 @@ void Application::listenToUnixSignals(QList<int> const & signoList)
     static QScopedPointer<QSocketNotifier> signal_notifier;
 
     if (SignalHandler::instance.isNull())
-        SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { emit unixSignal(signo); }});
+        SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { Q_EMIT unixSignal(signo); }});
     SignalHandler::instance->listenToSignals(signoList);
 }

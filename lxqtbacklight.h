@@ -42,10 +42,10 @@ public:
     int getBacklight();
     int getMaxBacklight();
     
-signals:
+Q_SIGNALS:
     void backlightChanged(int value);
 
-private slots:
+private Q_SLOTS:
     void backlightChangedSlot(int value);
 
 private:

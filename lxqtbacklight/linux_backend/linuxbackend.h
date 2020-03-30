@@ -39,7 +39,7 @@ public:
     int getBacklight() override;
     int getMaxBacklight() override;
     
-private slots:
+private Q_SLOTS:
     void closeBacklightStream();
     void fileSystemChanged(const QString & path);
 

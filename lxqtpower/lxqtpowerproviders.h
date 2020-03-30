@@ -55,7 +55,7 @@ public:
         This is a pure virtual function, and must be reimplemented in subclasses. */
     virtual bool canAction(Power::Action action) const = 0 ;
 
-public slots:
+public Q_SLOTS:
     /*! Performs the requested action.
         This is a pure virtual function, and must be reimplemented in subclasses. */
     virtual bool doAction(Power::Action action) = 0;
@@ -70,7 +70,7 @@ public:
     ~UPowerProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 };
 
@@ -83,7 +83,7 @@ public:
     ~ConsoleKitProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 };
 
@@ -96,7 +96,7 @@ public:
     ~SystemdProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 };
 
@@ -109,7 +109,7 @@ public:
     ~LXQtProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 };
 
@@ -121,7 +121,7 @@ public:
     ~LxSessionProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 private:
     Q_PID pid;
@@ -135,7 +135,7 @@ public:
     ~HalProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 };
 
@@ -148,7 +148,7 @@ public:
     ~CustomProvider() override;
     bool canAction(Power::Action action) const override;
 
-public slots:
+public Q_SLOTS:
     bool doAction(Power::Action action) override;
 
 private:

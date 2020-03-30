@@ -43,7 +43,7 @@ public:
     void setActions(QStringList actions, int defaultAction);
     const Notification::ServerInfo serverInfo();
 
-public slots:
+public Q_SLOTS:
     void handleAction(uint id, QString key);
     void notificationClosed(uint, uint);
 

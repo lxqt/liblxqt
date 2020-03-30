@@ -53,7 +53,7 @@ protected:
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
 
-protected slots:
+protected Q_SLOTS:
     void updateMaxTextWidth();
 
 private:

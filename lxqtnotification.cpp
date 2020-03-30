@@ -193,7 +193,7 @@ void NotificationPrivate::handleAction(uint id, QString key)
         keyId = key.toInt(&ok);
 
     if (ok && keyId >= 0)
-        emit q->actionActivated(keyId);
+        Q_EMIT q->actionActivated(keyId);
 }
 
 void NotificationPrivate::close()
@@ -209,5 +209,5 @@ void NotificationPrivate::notificationClosed(uint id, uint reason)
     {
         mId = 0;
     }
-    emit q->notificationClosed(Notification::CloseReason(reason));
+    Q_EMIT q->notificationClosed(Notification::CloseReason(reason));
 }
