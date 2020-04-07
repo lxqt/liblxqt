@@ -44,10 +44,10 @@ private Q_SLOTS:
     void fileSystemChanged(const QString & path);
 
 private:
-    QTextStream *backlightStream;
     int maxBacklight;
     int actualBacklight;
     QFileSystemWatcher *fileSystemWatcher;
+    FILE *backlightStream;
 };
 
 } // namespace LXQt

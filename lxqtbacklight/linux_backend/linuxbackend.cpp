@@ -51,7 +51,7 @@ LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
 
 LinuxBackend::~LinuxBackend()
 {
-    delete backlightStream;
+    closeBacklightStream();
 }
 
 int LinuxBackend::getBacklight()
@@ -80,20 +80,24 @@ void LinuxBackend::setBacklight(int value)
     if( ! isBacklightAvailable() )
         return;
     if( backlightStream == NULL ) {
-        FILE *stream = lxqt_backlight_backend_get_write_stream();
-        backlightStream = new QTextStream(stream);
-        // Close stream after 60 seconds
-        QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
+        backlightStream = lxqt_backlight_backend_get_write_stream();
+        if( backlightStream != NULL ) {
+            // Close stream after 60 seconds
+            QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
+        }
     }
-    // normalize the value (to work around an issue in QSlider)
-    value = qBound(0, value, maxBacklight);
-    *backlightStream << value << endl;
+    if( backlightStream != NULL ) {
+        // normalize the value (to work around an issue in QSlider)
+        value = qBound(0, value, maxBacklight);
+        fprintf(backlightStream, "%d\n", value);
+        fflush(backlightStream);
+    }
 }
 
 void LinuxBackend::closeBacklightStream()
 {
     if( backlightStream != NULL ) {
-        delete backlightStream;
+        fclose(backlightStream);
         backlightStream = NULL;
     }
 }
