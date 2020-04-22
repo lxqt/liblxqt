@@ -1,3 +1,25 @@
+liblxqt-0.15.0 / 2020-04-22
+===========================
+  * Bumped version to 0.15.0.
+  * Fixed licenses.
+  * Removed message handler from lxqtapplication.
+  * Set default button to Yes in leave dialogs.
+  * C++11 code updates.
+  * Used braced initializer list in returns.
+  * Allow spacing to be added between items in GridLayout.
+  * Set size hint of selection widget correctly.
+  * Make macOS build possible.
+  * Fixed compilation error on the Hurd.
+  * Fixed error messages for screensavers.
+  * Fixed the wrong arguments in dbusCall.
+  * Allow custom lock command in lxqtscreensaver.
+  * Improved error messages in lxqtscreensaver.
+  * Fixed LinuxBackend backlightChanged signal.
+  * Remove deprecated QDesktopWidget.
+  * Remove (duplicated) string casts definitions.
+  * Don't use Qt keywords "emit", "signal" and "slot" (they may collide with glib).
+  * Fixed memory leak in backlight brightness driver.
+
 liblxqt-0.14.1 / 2019-02-24
 ===========================
 

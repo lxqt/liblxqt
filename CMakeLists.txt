@@ -7,15 +7,15 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 project(liblxqt)
 
 
-set(LXQTBT_MINIMUM_VERSION "0.6.0")
+set(LXQTBT_MINIMUM_VERSION "0.7.0")
 set(KF5_MINIMUM_VERSION "5.36.0")
-set(QT_MINIMUM_VERSION "5.7.1")
-set(QTXDG_MINIMUM_VERSION "3.3.1")
+set(QT_MINIMUM_VERSION "5.10.0")
+set(QTXDG_MINIMUM_VERSION "3.5.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 0)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 14)
+set(LXQT_MINOR_VERSION 15)
 #
 # Patch Version, belong *only* to the component
 # LXQt is 0.13 - liblxqt is at patch version 0
@@ -25,7 +25,7 @@ set(LXQT_MINOR_VERSION 14)
 # patch-version as liblxqt - in real life it will be fine if every component
 # has it's own patch version within a major/minor life cyle.
 #
-set(LXQT_PATCH_VERSION 1)
+set(LXQT_PATCH_VERSION 0)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
 
 
