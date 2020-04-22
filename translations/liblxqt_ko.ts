@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;% 1&quot;을 (를) 실행하지 못했습니다. xdg-screensaver와 호환되는 로커 / 스크린 세이버가 설치되어 실행 중인지 확인하십시오.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;% 1&quot;을 (를) 실행하지 못했습니다. 지정된 사물함 / 스크린 세이버가 설치되어 실행 중인지 확인하십시오.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
