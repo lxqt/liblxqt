@@ -19,6 +19,7 @@ liblxqt-0.15.0 / 2020-04-22
   * Remove (duplicated) string casts definitions.
   * Don't use Qt keywords "emit", "signal" and "slot" (they may collide with glib).
   * Fixed memory leak in backlight brightness driver.
+  * lxqtnotification: async API for querying serverInfo.
 
 liblxqt-0.14.1 / 2019-02-24
 ===========================
