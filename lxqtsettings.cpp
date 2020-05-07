@@ -37,16 +37,13 @@
 #include <QTimerEvent>
 
 #include <XdgDirs>
-#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
-#include <algorithm>
-#endif
 
 using namespace LXQt;
 
 class LXQt::SettingsPrivate
 {
 public:
-    SettingsPrivate(Settings* parent, bool useXdgFallback):
+    SettingsPrivate(Settings* parent):
         mFileChangeTimer(0),
         mAppChangeTimer(0),
         mAddWatchTimer(0),
@@ -57,38 +54,6 @@ public:
         if (!mParent->contains(QL1S("__userfile__")))
         {
             mParent->setValue(QL1S("__userfile__"), true);
-#if defined(WITH_XDG_DIRS_FALLBACK)
-            if (useXdgFallback)
-            {
-                //Note: Qt doesn't support the xdg spec regarding the XDG_CONFIG_DIRS
-                //https://bugreports.qt.io/browse/QTBUG-34919
-                //(Partial) workaround: if the the user specific config file doesn't exist
-                //we try to find some system-wide configuration file and copy all settings into
-                //the user specific file
-                const QString org = mParent->organizationName();
-                const QString file_name = QFileInfo{mParent->fileName()}.fileName();
-                QStringList dirs = XdgDirs::configDirs();
-#if QT_VERSION < QT_VERSION_CHECK(5, 6, 0)
-                std::reverse(dirs.begin(), dirs.end());
-                for (auto dir_i = dirs.begin(), dir_e = dirs.end(); dir_i != dir_e; ++dir_i)
-#else // QT_VERSION
-                for (auto dir_i = dirs.rbegin(), dir_e = dirs.rend(); dir_i != dir_e; ++dir_i)
-#endif
-
-                {
-                    QDir dir{*dir_i};
-                    if (dir.cd(mParent->organizationName()) && dir.exists(file_name))
-                    {
-                        QSettings system_settings{dir.absoluteFilePath(file_name), QSettings::IniFormat};
-                        const QStringList keys = system_settings.allKeys();
-                        for (const QString & key : keys)
-                        {
-                            mParent->setValue(key, system_settings.value(key));
-                        }
-                    }
-                }
-            }
-#endif
             mParent->sync();
         }
         mWatcher.addPath(mParent->fileName());
@@ -146,7 +111,7 @@ public:
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
     QSettings(QL1S("lxqt"), module, parent),
-    d_ptr(new SettingsPrivate(this, true))
+    d_ptr(new SettingsPrivate(this))
 {
 }
 
@@ -156,7 +121,7 @@ Settings::Settings(const QString& module, QObject* parent) :
  ************************************************/
 Settings::Settings(const QString &fileName, QSettings::Format format, QObject *parent):
     QSettings(fileName, format, parent),
-    d_ptr(new SettingsPrivate(this, false))
+    d_ptr(new SettingsPrivate(this))
 {
 }
 
@@ -166,7 +131,7 @@ Settings::Settings(const QString &fileName, QSettings::Format format, QObject *p
  ************************************************/
 Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings->organizationName(), parentSettings->applicationName(), parent),
-    d_ptr(new SettingsPrivate(this, false))
+    d_ptr(new SettingsPrivate(this))
 {
     beginGroup(subGroup);
 }
@@ -177,7 +142,7 @@ Settings::Settings(const QSettings* parentSettings, const QString& subGroup, QOb
  ************************************************/
 Settings::Settings(const QSettings& parentSettings, const QString& subGroup, QObject* parent):
     QSettings(parentSettings.organizationName(), parentSettings.applicationName(), parent),
-    d_ptr(new SettingsPrivate(this, false))
+    d_ptr(new SettingsPrivate(this))
 {
     beginGroup(subGroup);
 }
