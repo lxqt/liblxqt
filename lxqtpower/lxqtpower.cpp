@@ -89,6 +89,7 @@ bool Power::canReboot()    const { return canAction(PowerReboot);    }
 bool Power::canShutdown()  const { return canAction(PowerShutdown);  }
 bool Power::canSuspend()   const { return canAction(PowerSuspend);   }
 bool Power::canMonitorOff() const { return canAction(PowerMonitorOff);   }
+bool Power::canShowLeaveDialog() const { return canAction(PowerShowLeaveDialog);   }
 
 bool Power::logout()       { return doAction(PowerLogout);    }
 bool Power::hibernate()    { return doAction(PowerHibernate); }
@@ -96,3 +97,4 @@ bool Power::reboot()       { return doAction(PowerReboot);    }
 bool Power::shutdown()     { return doAction(PowerShutdown);  }
 bool Power::suspend()      { return doAction(PowerSuspend);   }
 bool Power::monitorOff()   { return doAction(PowerMonitorOff);   }
+bool Power::showLeaveDialog()   { return doAction(PowerShowLeaveDialog);   }

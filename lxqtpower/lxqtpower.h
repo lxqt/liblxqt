@@ -54,7 +54,8 @@ public:
         PowerReboot,    /// Reboot the computer
         PowerShutdown,  /// Shutdown the computer
         PowerSuspend,   /// Suspend the computer
-        PowerMonitorOff /// Turn off the monitor(s)
+        PowerMonitorOff, /// Turn off the monitor(s)
+        PowerShowLeaveDialog /// Show the lxqt-leave dialog
     };
 
     /*!
@@ -92,6 +93,9 @@ public:
     //! This function is provided for convenience. It's equivalent to calling canAction(PowerMonitorOff).
     bool canMonitorOff() const;
 
+    //! This function is provided for convenience. It's equivalent to calling canAction(PowerShowLeaveDialog).
+    bool canShowLeaveDialog() const;
+
 public Q_SLOTS:
     /// Performs the requested action.
     bool doAction(Action action);
@@ -113,6 +117,9 @@ public Q_SLOTS:
 
     //! This function is provided for convenience. It's equivalent to calling doAction(PowerMonitorOff).
     bool monitorOff();
+
+    //! This function is provided for convenience. It's equivalent to calling doAction(PowerShowLeaveDialog).
+    bool showLeaveDialog();
 
 private:
     QList<PowerProvider*> mProviders;

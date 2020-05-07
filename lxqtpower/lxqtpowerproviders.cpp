@@ -655,6 +655,9 @@ bool CustomProvider::canAction(Power::Action action) const
     case Power::PowerMonitorOff:
         return mSettings.contains(QL1S("monitorOffCommand"));
 
+    case Power::PowerShowLeaveDialog:
+        return mSettings.contains(QL1S("showLeaveDialogCommand"));
+
     default:
         return false;
     }
@@ -688,6 +691,10 @@ bool CustomProvider::doAction(Power::Action action)
 
     case Power::PowerMonitorOff:
         command = mSettings.value(QL1S("monitorOffCommand")).toString();
+        break;
+
+    case Power::PowerShowLeaveDialog:
+        command = mSettings.value(QL1S("showLeaveDialogCommand")).toString();
         break;
 
     default:
