@@ -151,7 +151,6 @@ public:
 void ScreenSaverPrivate::reportLockProcessError()
 {
     QMessageBox box;
-    box.setAttribute(Qt::WA_DeleteOnClose);
     box.setIcon(QMessageBox::Warning);
     box.setWindowTitle(tr("Screen Saver Error"));
     QString message;
