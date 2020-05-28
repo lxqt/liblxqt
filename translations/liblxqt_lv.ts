@@ -12,12 +12,12 @@
 <context>
     <name>LXQt::MessageBox</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
         <translation>LXQt Enerģijas Menedžera Kļūda</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
         <translation>Iemidzināšana neizdevās.</translation>
     </message>
@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="154"/>
+        <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
         <translation>Paziņojumu atkāpšanās</translation>
     </message>
@@ -33,93 +33,93 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="118"/>
+        <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
         <translation>Iemidzināt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="125"/>
+        <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
         <translation>Aizturēt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="132"/>
+        <location filename="../lxqtpowermanager.cpp" line="122"/>
         <source>Reboot</source>
         <translation>Pārstartēt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="139"/>
+        <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
         <translation>Izslēgt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="146"/>
+        <location filename="../lxqtpowermanager.cpp" line="136"/>
         <source>Logout</source>
         <translation>Izlogoties</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
         <translation>LXQt Sesijas Aizturēšana</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="159"/>
+        <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>Vai tiešām vēlies aizturēt savu datoru?&lt;p&gt;Aiztur datoru mazas enerģijas patērēšānas režīmā. Sistēmas statuss netiek saglabāts, ja strāva tiek atslēgta.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
         <translation>LXQt Sesijas Iemidzināšana</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="169"/>
+        <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>Vai tiešām vēlies iemidzināt savu datoru?&lt;p&gt;Iemidzina datoru mazas enerģijas patērēšānas režīmā. Sistēmas statuss netiek saglabāts, ja strāva tiek atslēgta.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
         <translation>LXQt Sesijas Pārstartēšana</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="179"/>
+        <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>Vai tiešām vēlies pārstartēt savu datoru? Visas nesaglābātās darbības tiks zaudētas...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="188"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
         <translation>LXQt Sesijas Izslēgšana</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="189"/>
+        <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>Vai tiešām vēlies izslēgt savu datoru? Visas nesaglābātās darbības tiks zaudētas...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="198"/>
+        <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
         <translation>LXQt Sesijas Atslēgšana</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="199"/>
+        <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>Vai tiešām vēlies atslēgties? Visas nesaglābātās darbības tiks zaudētas...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
         <translation>LXQt Enerģijas Menedžera Kļūda</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
         <translation>Iemidzināšana neizdevās.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
         <translation>Aizturēšana neizdevās.</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="242"/>
         <source>Lock Screen</source>
         <translation>Aizslēgt ekrānu</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
         <translation>Ekrānsargātāja Kļūda</translation>
     </message>

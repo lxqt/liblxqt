@@ -12,12 +12,12 @@
 <context>
     <name>LXQt::MessageBox</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
         <translation>Produciuse un erro no xestor de enerxía de LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
         <translation>Produciuse un fallo na posta en hibernación.</translation>
     </message>
@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="154"/>
+        <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
         <translation>Notificacións de retorno</translation>
     </message>
@@ -33,93 +33,93 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="118"/>
+        <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
         <translation>Hibernar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="125"/>
+        <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
         <translation>Suspender</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="132"/>
+        <location filename="../lxqtpowermanager.cpp" line="122"/>
         <source>Reboot</source>
         <translation>Reiniciar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="139"/>
+        <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
         <translation>Apagar</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="146"/>
+        <location filename="../lxqtpowermanager.cpp" line="136"/>
         <source>Logout</source>
         <translation>Pechar a sesión</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
         <translation>Suspender a sesión LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="159"/>
+        <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>Confirma que quere suspender o sistema?&lt;p&gt;Suspende o computador a un estado de baixo consumo. O estado do sistema non se conserva se se esgota a enerxía.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
         <translation>Hibernar a sesión LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="169"/>
+        <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>Confirma que quere hibernar o computador?&lt;p&gt;Hiberna o computador a un estado de baixo consumo. O estado do sistema conservarase aínda que se esgote a enerxía.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
         <translation>Reiniciar a sesión LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="179"/>
+        <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>Confirma que quere reiniciar o seu computador? Perderase todo o traballo que non teña gardado...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="188"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
         <translation>Apagar a sesión LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="189"/>
+        <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>Confirma que quere apagar o seu computador? Perderase todo o traballo que non teña gardado...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="198"/>
+        <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
         <translation>Pechar a sesión de LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="199"/>
+        <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>Confirma que quere pechar a sesión? Perderase todo o traballo que non teña gardado...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
         <translation>Produciuse un erro no xestor de enerxía de LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
         <translation>Produciuse un fallo na posta en hibernación.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
         <translation>Produciuse un fallo na posta en suspensión.</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>Produciuse un fallo ao executar «%1». Asegúrese de ter un bloqueador/salva pantallas compatíbel co xdg-screensaver instalado e en execución.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>Produciuse un fallo ao executar «%1». Asegúrese de que o bloqueador/salva pantallas está instalado e en execución.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="242"/>
         <source>Lock Screen</source>
         <translation>Bloquear a pantalla</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
         <translation>Produciuse un erro no salva pantallas</translation>
     </message>
