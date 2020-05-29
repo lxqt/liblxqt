@@ -30,6 +30,7 @@
 #include <QProcess>
 #include <QSettings>
 #include "lxqtscreensaver.h"
+#include "lxqtsettings.h"
 #include "lxqttranslator.h"
 
 #include <memory>
@@ -131,11 +132,15 @@ class ScreenSaverPrivate
 
 public:
     ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {
-        QSettings settings(QSettings::UserScope, QLatin1String("lxqt"), QLatin1String("lxqt"));
-
-        settings.beginGroup(QLatin1String("Screensaver"));
-        lock_command = settings.value(QLatin1String("lock_command"), QLatin1String("xdg-screensaver lock")).toString();
+        // For backward compatibility
+        Settings settings(QL1S("lxqt"));
+        settings.beginGroup(QL1S("Screensaver"));
+        QString lock_command(settings.value(QL1S("lock_command"), QL1S("xdg-screensaver lock")).toString());
         settings.endGroup();
+
+        QString sessionConfig(QString::fromLocal8Bit(qgetenv("LXQT_SESSION_CONFIG")));
+        Settings sessionSettings(sessionConfig.isEmpty() ? QL1S("session") : sessionConfig);
+        lockCommand = sessionSettings.value(QL1S("lock_command"), lock_command).toString();
     }
 
     void reportLockProcessError();
@@ -145,7 +150,7 @@ public:
 
     QPointer<QProcess> m_lockProcess;
 
-    QString lock_command;
+    QString lockCommand;
 };
 
 void ScreenSaverPrivate::reportLockProcessError()
@@ -156,7 +161,7 @@ void ScreenSaverPrivate::reportLockProcessError()
     QString message;
     // contains() instead of startsWith() as the command might be "env FOO=bar xdg-screensaver lock"
     // (e.g., overwrite $XDG_CURRENT_DESKTOP for some different behaviors)
-    if (lock_command.contains(QLatin1String("xdg-screensaver"))) {
+    if (lockCommand.contains(QL1S("xdg-screensaver"))) {
         message = tr("Failed to run  \"%1\". "
                      "Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running."
                     );
@@ -165,7 +170,7 @@ void ScreenSaverPrivate::reportLockProcessError()
                      "Ensure the specified locker/screensaver is installed and running."
                     );
     }
-    box.setText(message.arg(lock_command));
+    box.setText(message.arg(lockCommand));
     box.exec();
 }
 
@@ -250,7 +255,7 @@ void ScreenSaver::lockScreen()
 {
     Q_D(ScreenSaver);
     if (!d->isScreenSaverLocked())
-        d->m_lockProcess->start(d->lock_command);
+        d->m_lockProcess->start(d->lockCommand);
 }
 
 } // namespace LXQt
