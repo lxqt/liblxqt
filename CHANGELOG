@@ -1,3 +1,11 @@
+liblxqt-0.15.1 / 2020-05-28
+===========================
+  * Bumped version to 0.15.1.
+  * Removed dead codes.
+  * Removed Xdg Dirs Fallback workaround.
+  * Let Qt handle dialog position.
+  * Prevent crash when closing screen saver error message.
+
 liblxqt-0.15.0 / 2020-04-22
 ===========================
   * Bumped version to 0.15.0.

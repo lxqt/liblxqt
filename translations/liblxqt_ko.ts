@@ -12,12 +12,12 @@
 <context>
     <name>LXQt::MessageBox</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
         <translation>LXQt 전력 관리 오류</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="75"/>
+        <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
         <translation>잠자기 실패.</translation>
     </message>
@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="154"/>
+        <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
         <translation>대비책 알림</translation>
     </message>
@@ -33,93 +33,93 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="118"/>
+        <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
         <translation>잠자기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="125"/>
+        <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
         <translation>대기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="132"/>
+        <location filename="../lxqtpowermanager.cpp" line="122"/>
         <source>Reboot</source>
         <translation>다시 시작</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="139"/>
+        <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
         <translation>끄기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="146"/>
+        <location filename="../lxqtpowermanager.cpp" line="136"/>
         <source>Logout</source>
         <translation>로그아웃</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
         <translation>LXQt 세션 대기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="159"/>
+        <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>컴퓨터를 대기 상태로 만드실 건가요?&lt;p&gt;컴퓨터를 저전력 상태로 대기시킵니다. 전력을 잃으면 시스템 상태는 보존되지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
         <translation>LXQt 세션 잠자기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="169"/>
+        <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>컴퓨터를 잠자기 상태로 만드실 건가요?&lt;p&gt;컴퓨터를 잠자기 상태로 진입시킵니다. 전력을 잃으면 시스템 상태는 보존되지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
         <translation>LXQt 세션 다시 시작</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="179"/>
+        <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
         <translation>컴퓨터를 다시 시작하시겠습니다? 저장하지 않은 작업들은 모두 잃게 됩니다...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="188"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
         <translation>LXQt 세션 끄기</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="189"/>
+        <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
         <translation>컴퓨터를 끄시겠습니다? 저장하지 않은 작업들은 모두 잃게 됩니다...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="198"/>
+        <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
         <translation>LXQt 세션 로그아웃</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="199"/>
+        <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
         <translation>로그아웃 하시겠습니다? 저장하지 않은 작업들은 모두 잃게 됩니다...</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
         <translation>LXQt 전력 관리 오류</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="207"/>
+        <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
         <translation>잠자기 실패.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="212"/>
+        <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
         <translation>대기 실패.</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>&quot;% 1&quot;을 (를) 실행하지 못했습니다. xdg-screensaver와 호환되는 로커 / 스크린 세이버가 설치되어 실행 중인지 확인하십시오.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>&quot;% 1&quot;을 (를) 실행하지 못했습니다. 지정된 사물함 / 스크린 세이버가 설치되어 실행 중인지 확인하십시오.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="242"/>
         <source>Lock Screen</source>
         <translation>화면 잠금</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
         <translation>화면 보호기 오류</translation>
     </message>
