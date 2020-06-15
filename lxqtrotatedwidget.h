@@ -52,7 +52,7 @@ class LXQT_API RotatedWidget: public QWidget
     Q_PROPERTY(bool transferLeaveEvent READ transferLeaveEvent WRITE setTransferLeaveEvent)
 
 public:
-    explicit RotatedWidget(QWidget &content, QWidget* parent = nullptr, Qt::WindowFlags f = nullptr);
+    explicit RotatedWidget(QWidget &content, QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
     Qt::Corner origin() const;
     void setOrigin(Qt::Corner);
