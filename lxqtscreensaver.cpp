@@ -41,6 +41,7 @@
 #include <QProcess>
 #include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
 #include <QX11Info>
+#include <QDebug>
 
 #include <X11/extensions/scrnsaver.h>
 
@@ -249,8 +250,19 @@ QList<QAction*> ScreenSaver::availableActions()
 void ScreenSaver::lockScreen()
 {
     Q_D(ScreenSaver);
-    if (!d->isScreenSaverLocked())
+    if (!d->isScreenSaverLocked()) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         d->m_lockProcess->start(d->lock_command);
+#else
+        QStringList args = QProcess::splitCommand(d->lock_command);
+        if (args.isEmpty()) {
+            qWarning() << Q_FUNC_INFO << "Empty screen lock_command";
+            return;
+        }
+        const QString program = args.takeFirst();
+        d->m_lockProcess->start(program, args, QIODevice::ReadWrite);
+#endif
+    }
 }
 
 } // namespace LXQt
