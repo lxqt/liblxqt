@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">LXQt energia-kudeatzailearen errorea</translation>
+        <translation>LXQt energia-kudeatzailearen errorea</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pantaila babeslearen errorea</translation>
     </message>
 </context>
 <context>
