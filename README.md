@@ -36,5 +36,5 @@ Fedora and openSUSE. Just use your package manager to search for string `liblxqt
 Translations can be done in [LXQt_weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/).
 
 <a href="https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/">
-<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/libfm-qt/multi-auto.svg" alt="Stato traduzione" />
+<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/libfm-qt/multi-auto.svg" alt="Translation status" />
 </a>
