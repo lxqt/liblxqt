@@ -31,8 +31,10 @@ The library is provided by all major Linux distributions like Arch Linux, Debian
 Fedora and openSUSE. Just use your package manager to search for string `liblxqt`.
 
 
-### Translation (Weblate)
+### Translation 
 
-<a href="https://weblate.lxqt.org/projects/lxqt/liblxqt/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/liblxqt/multi-auto.svg" alt="Translation status" />
+Translations can be done in [LXQt_weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/).
+
+<a href="https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/libfm-qt/multi-auto.svg" alt="Stato traduzione" />
 </a>
