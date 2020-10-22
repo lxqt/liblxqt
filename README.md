@@ -33,8 +33,8 @@ Fedora and openSUSE. Just use your package manager to search for string `liblxqt
 
 ### Translation 
 
-Translations can be done in [LXQt_weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/).
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/liblxqt/)
 
-<a href="https://translate.lxqt-project.org/projects/lxqt-desktop/libfm-qt/">
-<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/libfm-qt/multi-auto.svg" alt="Translation status" />
+<a href="https://translate.lxqt-project.org/projects/lxqt-desktop/liblxqt/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/liblxqt/multi-auto.svg" alt="Translation status"
 </a>
