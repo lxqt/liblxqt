@@ -204,7 +204,7 @@ void Settings::fileChanged()
     Q_EMIT settingsChanged();
 }
 
-void Settings::_fileChanged(QString path)
+void Settings::_fileChanged(const QString& path)
 {
     // check if the file isn't changed by our logic
     // FIXME: this is poor implementation; should we rather compute some hash of values if changed by external?
