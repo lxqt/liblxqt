@@ -45,7 +45,7 @@ public:
     void queryServerInfo(bool async=1);
 
 public Q_SLOTS:
-    void handleAction(uint id, QString key);
+    void handleAction(uint id, const QString& key);
     void notificationClosed(uint, uint);
 
 private:

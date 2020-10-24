@@ -98,7 +98,7 @@ protected Q_SLOTS:
     virtual void fileChanged();
 
 private Q_SLOTS:
-    void _fileChanged(QString path);
+    void _fileChanged(const QString& path);
 
 private:
     void addWatchedFile(QString const & path);

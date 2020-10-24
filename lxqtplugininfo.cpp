@@ -34,6 +34,7 @@
 #include <QCoreApplication>
 #include <QLibrary>
 #include <QDebug>
+#include <utility>
 
 using namespace LXQt;
 
@@ -150,7 +151,7 @@ QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
  ************************************************/
 QDebug operator<<(QDebug dbg, const LXQt::PluginInfo * const pluginInfo)
 {
-    return operator<<(dbg, *pluginInfo);
+    return operator<<(std::move(dbg), *pluginInfo);
 }
 
 
@@ -175,5 +176,5 @@ QDebug operator<<(QDebug dbg, const PluginInfoList& list)
  ************************************************/
 QDebug operator<<(QDebug dbg, const PluginInfoList* const pluginInfoList)
 {
-    return operator<<(dbg, *pluginInfoList);
+    return operator<<(std::move(dbg), *pluginInfoList);
 }

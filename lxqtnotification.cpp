@@ -221,7 +221,7 @@ void NotificationPrivate::queryServerInfo(bool async)
     }
 }
 
-void NotificationPrivate::handleAction(uint id, QString key)
+void NotificationPrivate::handleAction(uint id, const QString& key)
 {
     if (id != mId)
         return;
