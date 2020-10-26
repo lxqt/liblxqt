@@ -446,7 +446,9 @@ LXQtTheme::~LXQtTheme()
  ************************************************/
 LXQtTheme& LXQtTheme::operator=(const LXQtTheme &other)
 {
-    d = other.d;
+    if (this != &other)
+        d = other.d;
+
     return *this;
 }
 
