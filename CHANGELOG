@@ -1,3 +1,9 @@
+liblxqt-0.16.0 / 2020-11-01
+===========================
+  * Use QFlags default constructor
+  * Added an action for showing LXQt leave dialog (to be used when the power button is pressed).
+  * Don't use deprecated QProcess methods.
+
 liblxqt-0.15.1 / 2020-05-28
 ===========================
   * Bumped version to 0.15.1.
