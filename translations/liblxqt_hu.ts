@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Párbeszédablak</translation>
+        <translation>Párbeszédpanel</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt Energiakezelő hiba</translation>
+        <translation>LXQt energiakezelő hiba</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
-        <translation>Vészhitelesítés</translation>
+        <translation type="unfinished">Tartalék értesítések</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Nem sikerült elindítani:  &quot;%1&quot;.  Győződjön meg arról, hogy telepítve van és fut az xdg-screensaver kompatibilis zároló/képernyővédő.</translation>
+        <translation>Nem sikerült elindítani:  &quot;%1&quot;.  Győződjön meg arról, hogy telepítve van és fut egy xdg-screensaver kompatibilis zároló/képernyővédő.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished">Nem sikerült futtatni:  &quot;%1&quot;. Győződj meg róla, hogy a megfelelő zároló alkalmazás/képernyővédő telepítve van és fut.</translation>
+        <translation>Nem sikerült futtatni:  &quot;%1&quot;. Győződjön meg róla, hogy a megfelelő zároló alkalmazás/képernyővédő telepítve van és fut.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="242"/>
