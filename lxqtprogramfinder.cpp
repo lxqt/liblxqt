@@ -39,7 +39,11 @@ LXQT_API bool ProgramFinder::programExists(const QString& command)
     }
 
     const QString path = QFile::decodeName(qgetenv("PATH"));
+#if (QT_VERSION >= QT_VERSION_CHECK(5,15,0))
+    const QStringList dirs = path.split(QL1C(':'), Qt::SkipEmptyParts);
+#else
     const QStringList dirs = path.split(QL1C(':'), QString::SkipEmptyParts);
+#endif
     for (const QString& dirName : dirs)
     {
         const QFileInfo fi(QDir(dirName), program);
