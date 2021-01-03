@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation>Mélykészenlét sikertelen.</translation>
+        <translation>A hibernálás sikertelen.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished">Tartalék értesítések</translation>
+        <translation>Tartalék értesítések</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
-        <translation>Mélykészenlét</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
-        <translation>Kikapcsolás</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="136"/>
@@ -65,17 +65,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Készenléti állapotba akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
+        <translation>Biztos készenléti állapotba szeretné helyezni a számítógépet?&lt;p&gt;A rendszer állapotát nem lehet megőrizni áramkimaradáskor.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Az LXQt mélykészenléte</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Mélykészenlétbe akarja helyezni a gépet?&lt;p&gt;A kis energiaszükségletű alvó állapotban feszültségkimaradáskor a felébredés nem biztos.</translation>
+        <translation>Biztos hibernálni szeretné a számítógépet?&lt;p&gt;Áramkimaradáskor a rendszer állapota megmarad.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -85,17 +85,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Újra akarja indítani a gépet? Minden mentetlen munka elvész...</translation>
+        <translation>Biztos újra szeretné indítani a számítógépet? Minden mentetlen munka elvész...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Kikapcsolás</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Ki akarja kapcsolni a gépet? Minden mentetlen munka elvész...</translation>
+        <translation>Biztos le szeretné állítani a számítógépet? Minden mentetlen munka elvész...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Kijelentkezik? Minden mentetlen munka elvész...</translation>
+        <translation>Biztos ki szeretne jelentkezni? Minden mentetlen munka elvész...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation>Mélykészenlét sikertelen.</translation>
+        <translation>A hibernálás sikertelen.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>Készenlét sikertelen.</translation>
+        <translation>A készenlét sikertelen.</translation>
     </message>
 </context>
 <context>
