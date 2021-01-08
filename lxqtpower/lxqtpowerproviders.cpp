@@ -141,7 +141,7 @@ static bool dbusCallSystemd(const QString &service,
         return false;
     }
 
-    QDBusMessage msg = dbus.call(method, needBoolArg ? QVariant(true) : QVariant());
+    QDBusMessage msg = needBoolArg ? dbus.call(method, QVariant(true)) : dbus.call(method);
 
     if (!msg.errorName().isEmpty())
     {
