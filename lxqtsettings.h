@@ -191,7 +191,7 @@ private:
 
 class GlobalSettingsPrivate;
 
-class GlobalSettings: public Settings
+class LXQT_API GlobalSettings : public Settings
 {
     Q_OBJECT
 public:
