@@ -139,7 +139,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="242"/>
         <source>Lock Screen</source>
-        <translation>画面のロック</translation>
+        <translation>画面ロック</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="155"/>
