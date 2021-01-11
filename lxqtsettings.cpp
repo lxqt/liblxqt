@@ -30,6 +30,7 @@
 #include <QDebug>
 #include <QEvent>
 #include <QDir>
+#include <QPalette>
 #include <QStringList>
 #include <QMutex>
 #include <QFileSystemWatcher>
@@ -77,6 +78,7 @@ LXQtTheme* LXQtTheme::mInstance = nullptr;
 class LXQt::LXQtThemeData: public QSharedData {
 public:
     LXQtThemeData(): mValid(false) {}
+    QPalette loadPalette(const QString& paletteFile) const;
     QString loadQss(const QString& qssFile) const;
     QString findTheme(const QString &themeName);
 
@@ -491,11 +493,85 @@ QString LXQtTheme::previewImage() const
 /************************************************
 
  ************************************************/
+QPalette LXQtTheme::palette() const
+{
+  return d->loadPalette(QStringLiteral("%1/lxqt-palette.conf").arg(d->mPath));
+}
+
+/************************************************
+
+ ************************************************/
 QString LXQtTheme::qss(const QString& module) const
 {
     return d->loadQss(QStringLiteral("%1/%2.qss").arg(d->mPath, module));
 }
 
+
+/************************************************
+
+ ************************************************/
+QPalette LXQtThemeData::loadPalette(const QString& paletteFile) const
+{
+  QFile f(paletteFile);
+  QPalette palette;
+  if (f.exists()) {
+    const QSettings paletteConfig(paletteFile, QSettings::IniFormat);
+    auto const sectPalette = QStringLiteral("Palette");
+    QColor namedColor; // color from string (e.g. #ffffff)
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("base_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::Base, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("highlight_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::Highlight, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("highlighted_text_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::HighlightedText, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("link_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::Link, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("link_visited_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::LinkVisited, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("text_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::Text, namedColor);
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("window_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::Window, namedColor);
+    }
+
+    namedColor = paletteConfig.value(sectPalette, QStringLiteral("window_text_color")).toString();
+    if (namedColor.isValid()) {
+      palette.setColor(QPalette::WindowText, namedColor);
+    }
+
+    // TODO: some colors are not taken into account yet (e.g. QPalette::AlternateBase for table views)
+  } else {
+    // note: color constants are taken from lxqt-config-appearance
+    //       This is the "current behavior" of LXQt appearance and
+    //       Which always implies a "light" theme (which may be a false assumption)!
+    //       However it doesn't make things worse as this resembles the behavior as of 0.16!
+    QColor winColor      (239, 239, 239); // #efefef
+    QColor highlightColor( 60, 140, 230); // #3c8ce6
+    palette.setColor(QPalette::Window, winColor);
+    // Qt's default highlight color may be different from that of Fusion
+    palette.setColor(QPalette::Highlight, highlightColor);
+  }
+  return palette;
+}
 
 /************************************************
 

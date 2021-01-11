@@ -35,6 +35,7 @@
 #include "lxqtglobals.h"
 
 class QEvent;
+class QPalette;
 
 namespace LXQt
 {
@@ -146,6 +147,12 @@ public:
         relative to full path
     */
     QString qss(const QString& module) const;
+
+    /*! \brief Returns a themes color palette.
+        The palette is loaded from the theme's lxqt-palette.conf file (if exists).
+        A fallback palette (always a light theme) is retuerned if the theme does not provide a palette file.
+    */
+    QPalette palette() const;
 
     /*! \brief A full path to image used as a wallpaper
      \param screen is an ID of the screen like in Qt. -1 means default (any) screen.
