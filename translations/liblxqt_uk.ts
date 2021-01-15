@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося запустити  «%1». Переконайтеся, що встановлено та запущено заставку, сумісну з xdg-заставкою.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося запустити  «%1». Переконайтеся, що вказану заставку встановлено та запущено.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="242"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть сторінку для показу.</translation>
     </message>
 </context>
 <context>
