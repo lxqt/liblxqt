@@ -189,6 +189,4 @@ void ConfigDialog::closeEvent(QCloseEvent* event)
     mSettings->sync();
 }
 
-ConfigDialog::~ConfigDialog()
-{
-}
+ConfigDialog::~ConfigDialog() = default;

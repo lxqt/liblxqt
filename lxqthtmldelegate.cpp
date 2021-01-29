@@ -40,9 +40,7 @@ HtmlDelegate::HtmlDelegate(const QSize iconSize, QObject* parent) :
 {
 }
 
-HtmlDelegate::~HtmlDelegate()
-{
-}
+HtmlDelegate::~HtmlDelegate() = default;
 
 /************************************************
 

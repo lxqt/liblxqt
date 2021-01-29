@@ -36,9 +36,7 @@ ConfigDialogCmdLineOptions::ConfigDialogCmdLineOptions()
 {
 }
 
-ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions()
-{
-}
+ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions() = default;
 
 bool ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser *parser)
 {

@@ -124,9 +124,7 @@ PageSelectWidget::PageSelectWidget(QWidget *parent) :
 /************************************************
 
  ************************************************/
-PageSelectWidget::~PageSelectWidget()
-{
-}
+PageSelectWidget::~PageSelectWidget() = default;
 
 /************************************************
 

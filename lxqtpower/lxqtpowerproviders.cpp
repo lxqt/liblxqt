@@ -214,9 +214,7 @@ PowerProvider::PowerProvider(QObject *parent):
 }
 
 
-PowerProvider::~PowerProvider()
-{
-}
+PowerProvider::~PowerProvider() = default;
 
 
 
@@ -229,9 +227,7 @@ UPowerProvider::UPowerProvider(QObject *parent):
 }
 
 
-UPowerProvider::~UPowerProvider()
-{
-}
+UPowerProvider::~UPowerProvider() = default;
 
 
 bool UPowerProvider::canAction(Power::Action action) const
@@ -313,9 +309,7 @@ ConsoleKitProvider::ConsoleKitProvider(QObject *parent):
 }
 
 
-ConsoleKitProvider::~ConsoleKitProvider()
-{
-}
+ConsoleKitProvider::~ConsoleKitProvider() = default;
 
 
 bool ConsoleKitProvider::canAction(Power::Action action) const
@@ -403,9 +397,7 @@ SystemdProvider::SystemdProvider(QObject *parent):
 }
 
 
-SystemdProvider::~SystemdProvider()
-{
-}
+SystemdProvider::~SystemdProvider() = default;
 
 
 bool SystemdProvider::canAction(Power::Action action) const
@@ -493,9 +485,7 @@ LXQtProvider::LXQtProvider(QObject *parent):
 }
 
 
-LXQtProvider::~LXQtProvider()
-{
-}
+LXQtProvider::~LXQtProvider() = default;
 
 
 bool LXQtProvider::canAction(Power::Action action) const
@@ -559,9 +549,7 @@ LxSessionProvider::LxSessionProvider(QObject *parent):
 }
 
 
-LxSessionProvider::~LxSessionProvider()
-{
-}
+LxSessionProvider::~LxSessionProvider() = default;
 
 
 bool LxSessionProvider::canAction(Power::Action action) const
@@ -601,9 +589,7 @@ HalProvider::HalProvider(QObject *parent):
 }
 
 
-HalProvider::~HalProvider()
-{
-}
+HalProvider::~HalProvider() = default;
 
 
 bool HalProvider::canAction(Power::Action action) const
@@ -629,9 +615,7 @@ CustomProvider::CustomProvider(QObject *parent):
 {
 }
 
-CustomProvider::~CustomProvider()
-{
-}
+CustomProvider::~CustomProvider() = default;
 
 bool CustomProvider::canAction(Power::Action action) const
 {
