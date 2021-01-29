@@ -28,7 +28,7 @@
 
 #include "lxqtgridlayout.h"
 #include <QDebug>
-#include <math.h>
+#include <cmath>
 #include <QWidget>
 #include <QVariantAnimation>
 
