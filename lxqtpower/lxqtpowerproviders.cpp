@@ -32,7 +32,7 @@
 #include <QProcess>
 #include <QDebug>
 #include "lxqtnotification.h"
-#include <signal.h> // for kill()
+#include <csignal> // for kill()
 
 #define UPOWER_SERVICE          "org.freedesktop.UPower"
 #define UPOWER_PATH             "/org/freedesktop/UPower"
