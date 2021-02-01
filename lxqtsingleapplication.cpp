@@ -78,9 +78,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     }
 }
 
-SingleApplication::~SingleApplication()
-{
-}
+SingleApplication::~SingleApplication() = default;
 
 void SingleApplication::setActivationWindow(QWidget *w)
 {

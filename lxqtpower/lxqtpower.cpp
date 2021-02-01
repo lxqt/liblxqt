@@ -51,9 +51,7 @@ Power::Power(QObject * parent /*= nullptr*/)
 }
 
 
-Power::~Power()
-{
-}
+Power::~Power() = default;
 
 
 bool Power::canAction(Power::Action action) const

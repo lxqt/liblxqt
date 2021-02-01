@@ -145,9 +145,7 @@ NotificationPrivate::NotificationPrivate(const QString& summary, Notification* p
         this, &NotificationPrivate::handleAction);
 }
 
-NotificationPrivate::~NotificationPrivate()
-{
-}
+NotificationPrivate::~NotificationPrivate() = default;
 
 void NotificationPrivate::update()
 {
