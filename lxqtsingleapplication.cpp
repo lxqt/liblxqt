@@ -36,7 +36,7 @@
 using namespace LXQt;
 
 SingleApplication::SingleApplication(int &argc, char **argv, StartOptions options)
-    : Application(argc, argv),
+    : Application(argc, argv, true),
     mActivationWindow(nullptr)
 {
     QString service =
