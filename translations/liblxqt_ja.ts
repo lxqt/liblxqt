@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>本当にコンピューターをサスペンドしますか？&lt;P&gt;コンピューターを低消費電力状態にサスペンドします。電源が失われた場合にはシステムの状態は保持されません。</translation>
+        <translation>本当にコンピューターをサスペンドしますか？&lt;P&gt;コンピューターを低消費電力状態にサスペンドします。電源が失われた場合にはシステムの状態が保持されません。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>本当にコンピューターをハイバネートにしますか？&lt;P&gt;コンピューターを低消費電力状態で休止します。電源が失われた場合でもシステムの状態は保持されます。</translation>
+        <translation>本当にコンピューターをハイバネートにしますか？&lt;P&gt;コンピューターを低消費電力状態で休止します。電源が失われた場合でもシステムの状態が保持されます。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
