@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Дійсно приспати комп’ютер?&lt;p&gt;Це переведе його в режим зниженого енергоспоживання. При втраті живлення стан системи збережеться.</translation>
+        <translation>Дійсно приспати комп’ютер?&lt;p&gt;Це переведе його в режим зниженого енергоспоживання. За втрати живлення стан системи збережеться.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
