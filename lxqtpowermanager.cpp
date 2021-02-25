@@ -89,7 +89,7 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
 
     QString sessionConfig(QFile::decodeName(qgetenv("LXQT_SESSION_CONFIG")));
     Settings settings(sessionConfig.isEmpty() ? QL1S("session") : sessionConfig);
-    m_skipWarning = settings.value(QL1S("leave_confirmation")).toBool() ? false : true;
+    m_skipWarning = !settings.value(QL1S("leave_confirmation")).toBool();
 }
 
 PowerManager::~PowerManager()
