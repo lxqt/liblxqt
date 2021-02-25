@@ -209,7 +209,7 @@ bool ScreenSaverPrivate::isScreenSaverLocked()
     XAtom lock_atom = XInternAtom(display, "LOCK", false);
     std::vector<int> atom_properties;
     if (GetIntArrayProperty(window, "_SCREENSAVER_STATUS", &atom_properties) &&
-        atom_properties.size() > 0)
+        !atom_properties.empty())
     {
         if (atom_properties[0] == static_cast<int>(lock_atom))
             return true;
