@@ -60,7 +60,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
         }
     }
 
-    bool registered = (bus.registerService(service) ==
+    bool registered = (static_cast<int>(bus.registerService(service)) ==
                        QDBusConnectionInterface::ServiceRegistered);
     if (registered) { // We are the primary instance
         SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
@@ -92,7 +92,7 @@ QWidget *SingleApplication::activationWindow() const
 
 void SingleApplication::activateWindow()
 {
-    if (mActivationWindow) {
+    if (mActivationWindow != nullptr) {
         mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
 

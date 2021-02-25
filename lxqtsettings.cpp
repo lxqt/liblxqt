@@ -168,7 +168,7 @@ bool Settings::event(QEvent *event)
         // delay the settingsChanged* signal emitting for:
         //  - checking in _fileChanged
         //  - merging emitting the signals
-        if(d_ptr->mAppChangeTimer)
+        if(d_ptr->mAppChangeTimer != 0)
             killTimer(d_ptr->mAppChangeTimer);
         d_ptr->mAppChangeTimer = startTimer(100);
     }
@@ -213,7 +213,7 @@ void Settings::_fileChanged(const QString& path)
         // delay the change notification for 100 ms to avoid
         // unnecessary repeated loading of the same config file if
         // the file is changed for several times rapidly.
-        if(d_ptr->mFileChangeTimer)
+        if(d_ptr->mFileChangeTimer != 0)
             killTimer(d_ptr->mFileChangeTimer);
         d_ptr->mFileChangeTimer = startTimer(1000);
     }
@@ -250,11 +250,11 @@ const GlobalSettings *Settings::globalSettings()
 {
     static QMutex mutex;
     static GlobalSettings *instance = nullptr;
-    if (!instance)
+    if (instance == nullptr)
     {
         mutex.lock();
 
-        if (!instance)
+        if (instance == nullptr)
             instance = new GlobalSettings();
 
         mutex.unlock();

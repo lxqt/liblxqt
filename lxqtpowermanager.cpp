@@ -51,7 +51,7 @@ public:
     {
         const QWidgetList widgets = QApplication::topLevelWidgets();
 
-        if (widgets.count())
+        if (widgets.count() != 0)
             return widgets.at(0);
         else
             return nullptr;

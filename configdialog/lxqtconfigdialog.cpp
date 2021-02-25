@@ -119,7 +119,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
 {
     Q_D(ConfigDialog);
     Q_ASSERT(page);
-    if (!page)
+    if (page == nullptr)
     {
         return;
     }
@@ -128,7 +128,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
      *  only, it aligns buttons with the page. In multi-page it saves a little
      *  bit of space, without clutter.
      */
-    if (page->layout())
+    if (page->layout() != nullptr)
     {
         page->layout()->setMargin(0);
     }
