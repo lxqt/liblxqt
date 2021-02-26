@@ -139,7 +139,7 @@ public:
         settings.endGroup();
     }
 
-    void reportLockProcessError();
+    void reportLockProcessError() const;
     void _l_lockProcess_finished(int, QProcess::ExitStatus);
     void _l_lockProcess_errorOccurred(QProcess::ProcessError);
     bool isScreenSaverLocked();
@@ -149,7 +149,7 @@ public:
     QString lock_command;
 };
 
-void ScreenSaverPrivate::reportLockProcessError()
+void ScreenSaverPrivate::reportLockProcessError() const
 {
     QMessageBox box;
     box.setIcon(QMessageBox::Warning);
