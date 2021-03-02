@@ -84,6 +84,7 @@ set(PUB_HDRS
     lxqtbacklight.h
     #lxqtbacklight/virtual_backend.h
     #lxqtbacklight/linux_backend/linuxbackend.h
+    lxqtplatform.h
 )
 
 if (NOT APPLE)
@@ -142,6 +143,7 @@ set(SRCS
     lxqtrotatedwidget.cpp
     lxqtbacklight.cpp
     lxqtbacklight/virtual_backend.cpp
+    lxqtplatform.cpp
 )
 
 if (NOT APPLE)
