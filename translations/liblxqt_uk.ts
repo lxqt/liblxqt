@@ -144,7 +144,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
-        <translation>Помилка зберігача екрану</translation>
+        <translation>Помилка зберігача екрана</translation>
     </message>
 </context>
 <context>
