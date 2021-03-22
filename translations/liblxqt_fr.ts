@@ -40,7 +40,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation>Suspendre</translation>
+        <translation>Mettre en veille</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
@@ -60,12 +60,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>Suspendre la session LXQt</translation>
+        <translation>Mettre la session LXQt en veille</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Souhaitez-vous vraiment suspendre votre ordinateur ?&lt;p&gt;Votre ordinateur consommera un peu d&apos;énergie. L&apos;état du système ne sera pas préservé en cas de coupure de courant.</translation>
+        <translation>Souhaitez-vous vraiment mettre en veille votre ordinateur ?&lt;p&gt;Votre ordinateur consommera un peu d&apos;énergie. L&apos;état du système ne sera pas préservé en cas de coupure de courant.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>Échec de la suspension.</translation>
+        <translation>Échec de mise en veille.</translation>
     </message>
 </context>
 <context>
