@@ -115,7 +115,7 @@ QSize RotatedWidget::adjustedSize(QSize size) const
     return size;
 }
 
-QPoint RotatedWidget::adjustedPoint(QPoint point) const
+QPointF RotatedWidget::adjustedPoint(QPointF point) const
 {
     switch (mOrigin)
     {
@@ -125,7 +125,7 @@ QPoint RotatedWidget::adjustedPoint(QPoint point) const
 
     case Qt::TopRightCorner:
     case Qt::BottomLeftCorner:
-        point = QPoint(point.y(), point.x());
+        point = QPointF(point.y(), point.x());
         break;
     }
 
@@ -269,7 +269,11 @@ void RotatedWidget::wheelEvent(QWheelEvent *event)
         return;
     cascadeCall = true;
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
+    QWheelEvent contentEvent(adjustedPoint(event->position()), event->globalPosition(), event->pixelDelta(), event->angleDelta(), event->buttons(), event->modifiers(), event->phase(), false);
+#else
     QWheelEvent contentEvent(adjustedPoint(event->pos()), event->globalPos(), event->delta(), event->buttons(), event->modifiers(), event->orientation());
+#endif
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;

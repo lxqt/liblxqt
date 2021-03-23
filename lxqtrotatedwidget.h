@@ -65,7 +65,7 @@ public:
     QSize sizeHint() const override;
 
     QSize adjustedSize(QSize) const;
-    QPoint adjustedPoint(QPoint) const;
+    QPointF adjustedPoint(QPointF) const;
 
 
     bool transferMousePressEvent() const { return mTransferMousePressEvent; }
