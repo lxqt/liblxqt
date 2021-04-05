@@ -1,3 +1,13 @@
+liblxqt-0.17.0 / 2021-04-15
+===========================
+  * Used Qt5.15's Qt::SplitBehavior.
+  * Fixed dbus errors with invalid QVariant data sent over it.
+  * Made GlobalSettings public (exported symbols) in lxqtsettings.
+  * Modernized some headers.
+  * Modernize the trivial destructors.
+  * Used "handle quit signals" constructor in lxqtsingleapplication.
+  * Replaced the deprecated constructor of QWheelEvent.
+
 liblxqt-0.16.0 / 2020-11-01
 ===========================
   * Use QFlags default constructor
