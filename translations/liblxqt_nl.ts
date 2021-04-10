@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialoog</translation>
+        <translation>Dialoogvenster</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Fout van LXQt-Energiebeheerder</translation>
+        <translation>Foutmelding van LXQt-energiebeheer</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
@@ -60,58 +60,58 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt-Sessie-pauzestand</translation>
+        <translation>LXQt-pauzestand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Wilt u uw computer echt in pauzestand brengen?&lt;p&gt;Pauzestand brengt de computer in een energiespaarstand. De systeemstatus blijft niet behouden wanneer de stroomtoevoer wordt verbroken.</translation>
+        <translation>Weet u zeker dat u uw computer in de pauzestand wilt zetten?&lt;p&gt;De pauzestand zet de computer in een energiespaarstand. Geopende programma&apos;s en bestanden worden niet bewaard als de stroomtoevoer wordt onderbroken.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt-Sessie-slaapstand</translation>
+        <translation>LXQt-slaapstand</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Wilt u uw computer echt in slaapstand brengen?&lt;p&gt;Slaapstand brengt de computer in een energiespaarstand. De systeemstatus blijft behouden wanneer de stroomtoevoer wordt verbroken.</translation>
+        <translation>Weet u zeker dat u uw computer in de slaapstand wilt zetten?&lt;p&gt;De slaapstand zet de computer in een energiespaarstand. Geopende programma&apos;s en bestanden worden bewaard als de stroomtoevoer wordt onderbroken.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt-Sessie-herstarten</translation>
+        <translation>LXQt herstarten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Wilt u uw computer echt herstarten? Al uw niet-opgeslagen werk zal verloren gaan...</translation>
+        <translation>Weet u zeker dat u uw computer wilt herstarten? Al uw onopgeslagen werk wordt niet bewaard…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt-Sessie-afsluiten</translation>
+        <translation>LXQt afsluiten</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Wilt u uw computer echt afsluiten? Al uw niet-opgeslagen werk zal verloren gaan...</translation>
+        <translation>Weet u zeker dat u uw computer wilt afsluiten? Al uw onopgeslagen werk wordt niet bewaard…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation>Meld LXQt-sessie af</translation>
+        <translation>LXQt afmelden</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Wilt u zich echt afmelden? Al uw niet-opgeslagen werk zal verloren gaan...</translation>
+        <translation>Weet u zeker dat u wilt afmelden? Al uw onopgeslagen werk wordt niet bewaard…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Fout van LXQt-energiebeheerder</translation>
+        <translation>Foutmelding van LXQt-energiebeheer</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -129,22 +129,22 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Mislukt om  &quot;%1&quot; te runnen. Controleer of je een schermbeveiliging hebt die compatibel is met de geïnstalleerde en runnende xdg-screensaver.</translation>
+        <translation>&apos;%1&apos; kan niet worden uitgevoerd. Zorg dat u over een schermbeveiliging beschikt die compatibel is met xdg-screensaver en dat deze actief is.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Mislukt om  &quot;%1&quot; te runnen. Controleer of de aangegeven schermbeveiliging is geïnstalleerd en runt.</translation>
+        <translation>&apos;%1&quot; kan niet worden uitgevoerd. Zorg dat de opgegeven schermbeveiliging geïnstalleerd en actief is.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="242"/>
         <source>Lock Screen</source>
-        <translation>Vergrendel scherm</translation>
+        <translation>Scherm vergrendelen</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="155"/>
         <source>Screen Saver Error</source>
-        <translation>Fout van schermbeveiliging</translation>
+        <translation>Schermbeveiligingsfout</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
-        <translation>Kies de weer te geven bladzijde.</translation>
+        <translation>Kies de te tonen pagina.</translation>
     </message>
 </context>
 <context>
@@ -161,7 +161,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation>Fout van energiebeheerder</translation>
+        <translation>Energiebeheerfout</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
@@ -173,7 +173,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Fout van energiebeheerder (D-BUS-oproep)</translation>
+        <translation>Energiebeheerfout (D-BUS-aanroep)</translation>
     </message>
 </context>
 </TS>
