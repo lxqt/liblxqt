@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt 電源管理エラー</translation>
+        <translation>LXQt 電源管理のエラー</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation>ハイバネートを失敗しました。</translation>
+        <translation>ハイバネートに失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt セッションのサスペンド</translation>
+        <translation>LXQt セッション サスペンド</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
@@ -70,32 +70,32 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt セッションのハイバネート</translation>
+        <translation>LXQt セッション ハイバネート</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>本当にコンピューターをハイバネートにしますか？&lt;P&gt;コンピューターを低消費電力状態で休止します。電源が失われた場合でもシステムの状態が保持されます。</translation>
+        <translation>本当にコンピューターをハイバネートしますか？&lt;P&gt;コンピューターを低消費電力状態で休止します。電源が失われた場合でもシステムの状態が保持されます。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt セッションの再起動</translation>
+        <translation>LXQt セッション 再起動</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピューターを再起動しますか？ 保存されていない作業はすべて失われます...</translation>
+        <translation>本当にコンピューターを再起動しますか？ 保存されていない作業は全て失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt セッションのシャットダウン</translation>
+        <translation>LXQt セッション シャットダウン</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>本当にコンピューターをオフしますか？ 保存されていないすべての作業は失われます...</translation>
+        <translation>本当にコンピューターの電源をオフしますか？ 保存されていない作業は全て失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>本当にログアウトしますか？ 保存されていないすべての作業は失われます...</translation>
+        <translation>本当にログアウトしますか？ 保存されていない作業は全て失われます...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation>ハイバネートを失敗しました。</translation>
+        <translation>ハイバネートに失敗しました。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>サスペンドを失敗しました。</translation>
+        <translation>サスペンドに失敗しました。</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="160"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>&quot;%1&quot; の実行に失敗しました。 xdg-screensaver 互換のロッカーまたはスクリーンセーバーがインストールされ実行されているか確認して下さい。</translation>
+        <translation>&quot;%1&quot; の実行に失敗しました。 xdg-screensaver 互換のロッカーまたはスクリーンセーバーがインストールされ、実行されているか確認して下さい。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="164"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>&quot;%1&quot; の実行に失敗しました。指定したロッカーまたはスクリーンセーバーがインストールされ実行されているか確認して下さい。</translation>
+        <translation>&quot;%1&quot; の実行に失敗しました。指定したロッカーまたはスクリーンセーバーがインストールされ、実行されているか確認して下さい。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="242"/>
@@ -161,7 +161,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation>電源管理エラー</translation>
+        <translation>電源管理のエラー</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
@@ -173,7 +173,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>電源管理エラー(D-BUS コール)</translation>
+        <translation>電源管理のエラー(D-BUS コール)</translation>
     </message>
 </context>
 </TS>
