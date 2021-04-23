@@ -685,9 +685,6 @@ bool CustomProvider::doAction(Power::Action action)
         return false;
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    return QProcess::startDetached(command);
-#else
     QStringList args = QProcess::splitCommand(command);
     if (args.isEmpty())
         return false;
@@ -696,5 +693,4 @@ bool CustomProvider::doAction(Power::Action action)
     process.setProgram(args.takeFirst());
     process.setArguments(args);
     return process.startDetached();
-#endif
 }
