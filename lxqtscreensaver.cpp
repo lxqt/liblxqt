@@ -262,5 +262,3 @@ void ScreenSaver::lockScreen()
 }
 
 } // namespace LXQt
-
-#include "moc_lxqtscreensaver.cpp"
