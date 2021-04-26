@@ -9,7 +9,7 @@ project(liblxqt)
 
 set(LXQTBT_MINIMUM_VERSION "0.9.0")
 set(KF5_MINIMUM_VERSION "5.36.0")
-set(QT_MINIMUM_VERSION "5.12.0")
+set(QT_MINIMUM_VERSION "5.15.0")
 set(QTXDG_MINIMUM_VERSION "3.7.0")
 
 # Major LXQt Version, belong to all components

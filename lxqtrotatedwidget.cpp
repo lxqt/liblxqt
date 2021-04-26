@@ -269,11 +269,7 @@ void RotatedWidget::wheelEvent(QWheelEvent *event)
         return;
     cascadeCall = true;
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
     QWheelEvent contentEvent(adjustedPoint(event->position()), event->globalPosition(), event->pixelDelta(), event->angleDelta(), event->buttons(), event->modifiers(), event->phase(), false);
-#else
-    QWheelEvent contentEvent(adjustedPoint(event->pos()), event->globalPos(), event->delta(), event->buttons(), event->modifiers(), event->orientation());
-#endif
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;
