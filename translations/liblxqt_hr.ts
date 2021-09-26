@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt sesija za pripravno stanje</translation>
+        <translation>LXQt sesija – pripravno stanje</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt sesija za stanje mirovanja</translation>
+        <translation>LXQt sesija – stanje mirovanja</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Reboot</source>
-        <translation>LXQt sesija za ponovno pokretanje</translation>
+        <translation>LXQt sesija – ponovno pokretanje</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Shutdown</source>
-        <translation>LXQt sesija za isključivanje računala</translation>
+        <translation>LXQt sesija – isključivanje računala</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="198"/>
         <source>LXQt Session Logout</source>
-        <translation>LXQt sesija za odjavu</translation>
+        <translation>LXQt sesija – odjava</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="199"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="207"/>
         <location filename="../lxqtpowermanager.cpp" line="212"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Greška LXQt upravljanja energijom</translation>
+        <translation>LXQt upravljanja energijom – greška</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="207"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>„%1” nije moguće pokrenuti. Zaštita ekrana koja je kompatibilna s xdg-screensaver mora biti instalirana i pokrenuta.</translation>
+        <translation>Nije bilo moguće pokrenuti „%1”. Uvjeri se da je modul za zaključavanje/zaštitu ekrana (kompatibilan s xdg-screensaver) instaliran i pokrenut.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>„%1” nije moguće pokrenuti. Određen modul za zaključavanje/zaštitu ekrana mora biti instaliran i pokrenut.</translation>
+        <translation>Nije bilo moguće pokrenuti „%1”. Uvjeri se da je modul za zaključavanje/zaštitu ekrana instaliran i pokrenut.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="243"/>
@@ -167,7 +167,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDBusInterface je neispravno</translation>
+        <translation>QDBusInterface je neispravan</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
