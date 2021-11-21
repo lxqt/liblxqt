@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>341</height>
+    <width>298</width>
+    <height>342</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,35 +17,14 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="labelAppIcon">
-         <property name="maximumSize">
-          <size>
-           <width>512</width>
-           <height>512</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QLabel" name="labelAppName">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="scaledContents">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+      <widget class="QLabel" name="labelAppName">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QTabWidget" name="tabWidget">
@@ -141,5 +120,22 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonClose</sender>
+   <signal>clicked()</signal>
+   <receiver>AboutDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>318</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
