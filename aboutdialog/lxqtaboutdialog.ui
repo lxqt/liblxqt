@@ -50,7 +50,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <property name="tabBarAutoHide">
         <bool>false</bool>
@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QTextBrowser" name="textBrowser"/>
+          <widget class="QTextBrowser" name="tabTranslatorsTextBrowser"/>
          </item>
         </layout>
        </widget>
@@ -99,7 +99,7 @@ p, li { white-space: pre-wrap; }
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QTextBrowser" name="textBrowser_2"/>
+          <widget class="QTextBrowser" name="tabThanksTextBrowser"/>
          </item>
         </layout>
        </widget>
