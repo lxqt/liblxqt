@@ -538,11 +538,11 @@ QString LXQtTheme::desktopBackground(int screen) const
 
     s.setArrayIndex(screen - 1);
     if (s.contains(QL1S("file")))
-        return QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString());
+        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString()));
 
     s.setArrayIndex(0);
     if (s.contains(QL1S("file")))
-        return QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString());
+        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString()));
 
     return QString();
 }
