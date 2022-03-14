@@ -621,6 +621,7 @@ SettingsCache::SettingsCache(QSettings *settings) :
  ************************************************/
 void SettingsCache::loadFromSettings()
 {
+    mCache.clear();
     const QStringList keys = mSettings.allKeys();
 
     const int N = keys.size();
