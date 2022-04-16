@@ -415,9 +415,16 @@ QString LXQtThemeData::findTheme(const QString &themeName)
 
     for(const QString &path : qAsConst(paths))
     {
-        QDir dir(QString::fromLatin1("%1/lxqt/themes/%2").arg(path, themeName));
-        if (dir.isReadable())
-            return dir.absolutePath();
+        QDir dir(QString::fromLatin1("%1/lxqt/themes").arg(path));
+        const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot, QDir::Name);
+        for(const QFileInfo &dir : dirs)
+        {
+            if (QString::compare(dir.fileName(), themeName, Qt::CaseInsensitive) == 0 &&
+                QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
+            {
+                return dir.absoluteFilePath();
+            }
+        }
     }
 
     return QString();
@@ -555,7 +562,7 @@ const LXQtTheme &LXQtTheme::currentTheme()
 {
     static LXQtTheme theme;
     QString name = Settings::globalSettings()->value(QL1S("theme")).toString();
-    if (theme.name() != name)
+    if (QString::compare(theme.name(), name, Qt::CaseInsensitive) != 0)
     {
         theme = LXQtTheme(name);
     }
@@ -578,14 +585,15 @@ QList<LXQtTheme> LXQtTheme::allThemes()
     for(const QString &path : qAsConst(paths))
     {
         QDir dir(QString::fromLatin1("%1/lxqt/themes").arg(path));
-        const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);
+        const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot, QDir::Name);
 
         for(const QFileInfo &dir : dirs)
         {
-            if (!processed.contains(dir.fileName()) &&
-                 QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
+            auto name = dir.fileName().toLower();
+            if (!processed.contains(name) &&
+                QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
             {
-                processed << dir.fileName();
+                processed << name;
                 ret << LXQtTheme(dir.absoluteFilePath());
             }
 
@@ -698,7 +706,8 @@ void GlobalSettings::fileChanged()
 
     QString rt = value(QL1S("theme")).toString();
     qlonglong themeUpdated = value(QL1S("__theme_updated__")).toLongLong();
-    if ((d->mLXQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
+    if (QString::compare(d->mLXQtTheme, rt, Qt::CaseInsensitive) != 0 ||
+        d->mThemeUpdated != themeUpdated)
     {
         d->mLXQtTheme = rt;
         Q_EMIT lxqtThemeChanged();
