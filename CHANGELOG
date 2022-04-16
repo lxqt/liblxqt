@@ -1,3 +1,9 @@
+liblxqt-1.1.0 / 2022-04-15
+===========================
+ * Added support relative paths in `wallpaper.cfg`.
+ * Updated `README.md`.
+ * Fixed loading of cached settings.
+
 liblxqt-1.0.0 / 2021-11-04
 ===========================
   * Bumped version to 1.0.0 and required Qt 5.15.0.
