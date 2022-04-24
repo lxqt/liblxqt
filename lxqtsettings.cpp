@@ -422,6 +422,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
             if (QString::compare(dir.fileName(), themeName, Qt::CaseInsensitive) == 0 &&
                 QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
             {
+                mName = dir.fileName(); // correct the name too
                 return dir.absoluteFilePath();
             }
         }
