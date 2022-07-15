@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Etkileşim</translation>
+        <translation>İletişim Penceresi</translation>
     </message>
 </context>
 <context>
