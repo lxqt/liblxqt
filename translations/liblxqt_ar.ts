@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>حواريّ</translation>
+        <translation>حوار</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>خطأ في مدير لكسكيوت للطاقة</translation>
+        <translation>خطأ في مدير LXQt للطاقة</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>تعليق جلسة لكسكيوت</translation>
+        <translation>تعليق جلسة LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>إسبات جلسة لكسكيوت</translation>
+        <translation>إسبات جلسة LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation>إعادة إقلاع جلسة لكسكيوت</translation>
+        <translation>إعادة إقلاع جلسة LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation>إطفاء جلسة لكسكيوت</translation>
+        <translation>إطفاء جلسة LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation>الخروج من جلسة لكسكيوت</translation>
+        <translation>الخروج من جلسة LXQt</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation>خطأ في مدير لكسكيوت للطاقة</translation>
+        <translation>خطأ في مدير LXQt للطاقة</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
