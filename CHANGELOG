@@ -1,3 +1,7 @@
+liblxqt-1.2.0 / 2022-11-05
+===========================
+ * Updated translations and bumped version to 1.2.0.
+
 liblxqt-1.1.0 / 2022-04-15
 ===========================
  * Added support relative paths in `wallpaper.cfg`.
