@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="163"/>
+        <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
         <translation>सूचना हेतु अन्य माध्यम</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="160"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>&quot;%1&quot; चलाने में विफल रहा. सुनिश्चित करें कि आपके पास xdg-screensaver के साथ संगत लॉकर/स्क्रीनसेवर स्थापित और चल रहा है.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="164"/>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>&quot;%1&quot; चलाने में विफल रहा. सुनिश्चित करें कि आप के पास निर्धारित लॉकर/स्क्रीनसेवर स्थापित है और चल रहा है.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="242"/>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>स्क्रीन लॉक करें</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="155"/>
+        <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation>स्क्रीन सेवर त्रुटि</translation>
     </message>
@@ -150,7 +150,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
         <translation>दिखाया जाने वाला पृष्ठ चुनें.</translation>
     </message>

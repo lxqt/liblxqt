@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="163"/>
+        <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
         <translation>Náhradné oznámenia</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="160"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>Nepodarilo sa spustiť„%1“. Zaistite, aby bol nainštalovaný nástroj na zamykanie/šetrič  obrazovky, kompatibilný so špecifikáciou xdg-screensaver a bol aj spustený.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="164"/>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>Nepodarilo sa spustiť „%1“.  Zaistite, aby bol nainštalovaný a spustený príslušný nástroj pre zamykanie / šetrič obrazovky.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="242"/>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>Zamknúť obrazovku</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="155"/>
+        <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation>Chyba šetriča obrazovky</translation>
     </message>
@@ -150,7 +150,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
         <translation>Vyberte si stránku na zobrazenie.</translation>
     </message>

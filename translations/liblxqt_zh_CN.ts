@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="163"/>
+        <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
         <translation>缺省消息通知</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="160"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>运行&quot;%1&quot;失败。确保你已经安装并运行着一个与 xdg-screensaver 适配的屏保或锁屏。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="164"/>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>运行  &quot;%1&quot;失败。请确保指定的锁屏或屏保已经安装并正在运行。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="242"/>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>锁屏</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="155"/>
+        <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation>屏幕保护程序错误</translation>
     </message>
@@ -150,7 +150,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
         <translation>选择要显示的页。</translation>
     </message>
