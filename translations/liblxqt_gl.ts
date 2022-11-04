@@ -25,7 +25,7 @@
 <context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="163"/>
+        <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
         <translation>Notificacións de retorno</translation>
     </message>
@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="160"/>
+        <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>Produciuse un fallo ao executar «%1». Asegúrese de ter un bloqueador/salva pantallas compatíbel co xdg-screensaver instalado e en execución.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="164"/>
+        <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>Produciuse un fallo ao executar «%1». Asegúrese de que o bloqueador/salva pantallas está instalado e en execución.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="242"/>
+        <location filename="../lxqtscreensaver.cpp" line="243"/>
         <source>Lock Screen</source>
         <translation>Bloquear a pantalla</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="155"/>
+        <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
         <translation>Produciuse un erro no salva pantallas</translation>
     </message>
@@ -150,7 +150,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
         <translation>Escolla a páxina que amosar.</translation>
     </message>
