@@ -127,7 +127,7 @@ void Notification::notify(const QString& summary, const QString& body, const QSt
     notification.update();
 }
 
-bool NotificationPrivate::sIsServerInfoQuried = 0;
+bool NotificationPrivate::sIsServerInfoQueried = 0;
 Notification::ServerInfo NotificationPrivate::sServerInfo;
 
 NotificationPrivate::NotificationPrivate(const QString& summary, Notification* parent) :
@@ -180,7 +180,7 @@ void NotificationPrivate::setActions(QStringList actions, int defaultAction)
 
 const Notification::ServerInfo NotificationPrivate::serverInfo()
 {
-    if (!sIsServerInfoQuried) {
+    if (!sIsServerInfoQueried) {
         queryServerInfo (/*async=*/false);
     }
 
@@ -207,7 +207,7 @@ void NotificationPrivate::queryServerInfo(bool async)
                 sServerInfo.version.clear();
                 sServerInfo.specVersion.clear();
             }
-            sIsServerInfoQuried = true;
+            sIsServerInfoQueried = true;
             Q_EMIT q->serverInfoReady();
             sender()->deleteLater();
         });

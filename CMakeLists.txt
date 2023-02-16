@@ -23,7 +23,7 @@ set(LXQT_MINOR_VERSION 2)
 #
 # In a perfect world all components would have the same major- and minor- and
 # patch-version as liblxqt - in real life it will be fine if every component
-# has it's own patch version within a major/minor life cyle.
+# has it's own patch version within a major/minor life cycle.
 #
 set(LXQT_PATCH_VERSION 0)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
@@ -276,7 +276,7 @@ set(CFG_LXQT_TARGETS_FILE   "${LXQT_INTREE_TARGETS_FILE}")
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake/lxqt-config.cmake.in"
     "${CMAKE_BINARY_DIR}/${LXQT_LIBRARY_NAME}-config.cmake"
-    INSTALL_DESTINATION "neverland"     # required, altough we don't install it
+    INSTALL_DESTINATION "neverland"     # required, although we don't install it
 )
 
 #************************************************
