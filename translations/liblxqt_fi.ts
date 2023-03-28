@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt-virranhallintavirhe</translation>
+        <translation>LXQt:n virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
