@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fracàs de l’ivernacion.</translation>
     </message>
 </context>
 <context>
