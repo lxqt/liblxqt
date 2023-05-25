@@ -28,6 +28,7 @@
 #include "lxqtsingleapplication.h"
 #include "singleapplicationadaptor.h"
 #include <KWindowSystem/KWindowSystem>
+#include <KWindowSystem/KX11Extras>
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
@@ -95,13 +96,16 @@ void SingleApplication::activateWindow()
     if (mActivationWindow) {
         mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
-
         KWindowInfo info(window, KWindowSystem::WMDesktop);
         int windowDesktop = info.desktop();
 
-        if (windowDesktop != KWindowSystem::currentDesktop())
-            KWindowSystem::setCurrentDesktop(windowDesktop);
-        KWindowSystem::activateWindow(window);
+        if (windowDesktop != KX11Extras::currentDesktop())
+            KX11Extras::setCurrentDesktop(windowDesktop);
+
+        if (QWindow *w = mActivationWindow->windowHandle())
+            KWindowSystem::activateWindow(w);
+         else
+            qDebug() << Q_FUNC_INFO << "Got null windowHandle";
     } else {
         qDebug() << Q_FUNC_INFO << "activationWindow not set or null";
     }
