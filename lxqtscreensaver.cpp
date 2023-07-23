@@ -37,10 +37,9 @@
 #include <XdgIcon>
 #include <QMessageBox>
 #include <QAction>
-#include <QApplication>
 #include <QPointer>
 #include <QProcess>
-#include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
+#include <QGuiApplication> // for Q_DECLARE_TR_FUNCTIONS and platform detect
 #include <QX11Info>
 #include <QDebug>
 
