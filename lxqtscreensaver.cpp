@@ -190,9 +190,8 @@ void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)
 }
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
-
 {
-if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    if (QGuiApplication::platformName() != QStringLiteral("xcb"))
     {
          return false;
     }
