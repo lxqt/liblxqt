@@ -190,9 +190,12 @@ void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)
 }
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
+
 {
-  if (QGuiApplication::platformName() == QStringLiteral("xcb"))
-  {
+if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+    {
+         return false;
+    }
     XScreenSaverInfo *info = nullptr;
     Display *display = QX11Info::display();
     XID window = DefaultRootWindow(display);
@@ -216,7 +219,7 @@ bool ScreenSaverPrivate::isScreenSaverLocked()
         if (atom_properties[0] == static_cast<int>(lock_atom))
             return true;
     }
-  }
+
     return false;
 }
 
