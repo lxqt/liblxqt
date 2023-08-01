@@ -39,7 +39,7 @@
 #include <QAction>
 #include <QPointer>
 #include <QProcess>
-#include <QCoreApplication> // for Q_DECLARE_TR_FUNCTIONS
+#include <QGuiApplication> // for Q_DECLARE_TR_FUNCTIONS and platform detect
 #include <QX11Info>
 #include <QDebug>
 
@@ -191,6 +191,10 @@ void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
 {
+    if (QGuiApplication::platformName() != QStringLiteral("xcb"))
+    {
+         return false;
+    }
     XScreenSaverInfo *info = nullptr;
     Display *display = QX11Info::display();
     XID window = DefaultRootWindow(display);
