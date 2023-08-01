@@ -137,7 +137,7 @@
         <translation>Mislyktes med å kjøre &quot;%1&quot;. Pass på at den nevnte skjermlåseren/-spareren er installert og kjører.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Lås skjerm</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>Неуспешно стартиране на „% 1“. Уверете се, че зададеният скрийнсейвър е инсталиран и работещ.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Заключване на екрана</translation>
     </message>

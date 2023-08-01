@@ -137,7 +137,7 @@
         <translation>Impossibile eseguire  &quot;%1&quot;.  Assicurati che lo salvaschermo impostato sia installato ed in esecuzione.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Blocca schermo</translation>
     </message>

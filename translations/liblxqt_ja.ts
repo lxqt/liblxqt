@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot; の実行に失敗しました。指定したロッカーまたはスクリーンセーバーがインストールされ、実行されているか確認して下さい。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>画面ロック</translation>
     </message>

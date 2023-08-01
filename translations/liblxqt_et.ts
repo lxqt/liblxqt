@@ -137,7 +137,7 @@
         <translation>„%1“ käivitamine ei õnnestunud. Kontrolli, et arvutisse on paigaldatud määratletud ekraanilukustaja/ekraanisäästja ning ta töötab ka.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Lukusta ekraan</translation>
     </message>

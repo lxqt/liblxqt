@@ -137,7 +137,7 @@
         <translation>Error al ejecutar &quot;%1&quot;.  Asegúrese de que el casillero/protector de pantalla especificado esté instalado y funcionando.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bloquear Pantalla</translation>
     </message>

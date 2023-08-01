@@ -137,7 +137,7 @@
         <translation>&apos;%1&quot; kan niet worden uitgevoerd. Zorg dat de opgegeven schermbeveiliging geïnstalleerd en actief is.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Scherm vergrendelen</translation>
     </message>

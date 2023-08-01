@@ -137,7 +137,7 @@
         <translation>Falha ao executar &quot;%1&quot;. Verifique se o bloqueador/protetor de tela especificado está instalado e funcionando.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bloquear tela</translation>
     </message>

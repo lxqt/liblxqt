@@ -137,7 +137,7 @@
         <translation>فشل تشغيل &quot;%1&quot;. تأكد من تثبيت وتشغيل الخزانة / شاشة التوقف المحددة.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>اقفل الشاشة</translation>
     </message>

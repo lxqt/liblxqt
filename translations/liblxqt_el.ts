@@ -137,7 +137,7 @@
         <translation>Αποτυχία εκτέλεσης του «%1». Σιγουρευτείτε ότι η καθορισμένη προστασία/κλείδωμα οθόνης είναι εγκατεστημένη και ενεργή.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Κλείδωμα οθόνης</translation>
     </message>

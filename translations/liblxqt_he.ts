@@ -137,7 +137,7 @@
         <translation>ההרצה של „%1” נכשלה. נא לוודא שנועל/שומר המסך מותקן ופעיל.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>נעילת המסך</translation>
     </message>

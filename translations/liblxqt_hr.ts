@@ -137,7 +137,7 @@
         <translation>Nije bilo moguće pokrenuti „%1”. Uvjeri se da je modul za zaključavanje/zaštitu ekrana instaliran i pokrenut.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Zaključaj ekran</translation>
     </message>

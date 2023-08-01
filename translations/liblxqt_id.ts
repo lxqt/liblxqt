@@ -137,7 +137,7 @@
         <translation>Gagal untuk menjalankan  &quot;%1&quot;. Pastikan pengunci/screensaver yang ditentukan telah terpasang dan bekerja.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Kunci Layar</translation>
     </message>
