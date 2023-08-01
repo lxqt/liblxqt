@@ -137,7 +137,7 @@
         <translation>Falha ao executar &quot;%1&quot;. Certifique-se de que instalou e configurou corretamente um protetor de ecrã.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bloquear ecrã</translation>
     </message>

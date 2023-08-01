@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot;을(를) 실행하지 못했습니다. 지정된 잠금도구/화면 보호기가 설치되어 실행 중인지 확인하십시오.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>화면 잠금</translation>
     </message>

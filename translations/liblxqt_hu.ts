@@ -137,7 +137,7 @@
         <translation>Nem sikerült futtatni:  &quot;%1&quot;. Győződjön meg róla, hogy a megfelelő zároló alkalmazás/képernyővédő telepítve van és fut.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Zárolás</translation>
     </message>

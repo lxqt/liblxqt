@@ -137,7 +137,7 @@
         <translation>No s&apos;ha pogut executar «%1». Assegureu-vos que el bloquejador/estalvi de pantalla especificat està instal·lat i actiu.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bloqueja la pantalla</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot; çalıştırma başarısız. Belirli bir kilitleyicinin/ekran koruyucunun yüklendiğinden ve çalıştığından emin olunuz.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Ekranı Kilitle</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>無法執行「%1」。請確認是否已安裝指定的鎖定程式/螢幕保護程式，並確認其可以執行。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>螢幕上鎖</translation>
     </message>

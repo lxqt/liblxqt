@@ -137,7 +137,7 @@
         <translation>Nepavyko paleisti &quot;%1&quot;. Įsitikinkite, kad nurodytas užrakto įrankis/ekrano užsklanda yra įdiegta ir veikia.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Užrakinti ekraną</translation>
     </message>

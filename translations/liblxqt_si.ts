@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot; ධාවනය කල නොහැකි විය. මෙම අගුල/ස්ක්‍රින්සේවරය ස්ථාපනය කර ක්‍රියාත්මක වන බවට වග බලා ගන්න.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>අගුලු තිරය</translation>
     </message>

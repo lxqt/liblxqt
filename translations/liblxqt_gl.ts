@@ -137,7 +137,7 @@
         <translation>Produciuse un fallo ao executar «%1». Asegúrese de que o bloqueador/salva pantallas está instalado e en execución.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bloquear a pantalla</translation>
     </message>

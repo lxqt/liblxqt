@@ -137,7 +137,7 @@
         <translation>Kunne ikke køre &quot;%1&quot;. Sørg for at den angivne låser/pauseskærm er installeret og kører.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Lås skærm</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation></translation>
     </message>

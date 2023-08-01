@@ -137,7 +137,7 @@
         <translation>Ohjelman &quot;%1&quot; käynnistäminen epäonnistui. Varmista, että valittu näytönsäästäjä/-lukitsija on asennettu sekä käynnissä.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Lukitse näyttö</translation>
     </message>

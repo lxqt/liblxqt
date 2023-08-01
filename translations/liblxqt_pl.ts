@@ -137,7 +137,7 @@
         <translation>Nie udało się uruchomić &quot;%1&quot;. Upewnij się, że określony ekran blokady lub wygaszacz ekranu jest zainstalowany i uruchomiony.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Zablokuj ekran</translation>
     </message>

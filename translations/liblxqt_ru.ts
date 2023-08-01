@@ -137,7 +137,7 @@
         <translation>Не удалось запустить «%1». Убедитесь, что указанный блокировщик/хранитель экрана установлен и корректно запускается.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Заблокировать экран</translation>
     </message>

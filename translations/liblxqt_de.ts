@@ -137,7 +137,7 @@
         <translation>Fehler beim Ausführen von &amp;quot;% 1&amp;quot; Stellen Sie sicher, dass der ausgewählte Locker/Bildschirmschoner installiert ist und läuft..</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Bildschirm sperren</translation>
     </message>
