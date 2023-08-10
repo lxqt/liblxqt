@@ -142,7 +142,7 @@ namespace
     QScopedPointer<SignalHandler> SignalHandler::instance;
 }
 
-void Application::listenToUnixSignals(QList<int> const & signoList)
+void Application::listenToUnixSignals(QList<int> const & signalList)
 {
     static QScopedPointer<QSocketNotifier> signal_notifier;
 
