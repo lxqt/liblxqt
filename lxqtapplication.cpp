@@ -148,5 +148,5 @@ void Application::listenToUnixSignals(QList<int> const & signalList)
 
     if (SignalHandler::instance.isNull())
         SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { Q_EMIT unixSignal(signo); }});
-    SignalHandler::instance->listenToSignals(signoList);
+    SignalHandler::instance->listenToSignals(signalList);
 }
