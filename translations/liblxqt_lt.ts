@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Nepavyko paleisti &quot;%1&quot;. Įsitikinkite, kad esate įdiegę ir paleidę su xdg-screensaver suderinamą užrakto įrankį/ekrano užsklandą.</translation>
+        <translation>Nepavyko paleisti „%1“. Įsitikinkite, kad esate įdiegę ir paleidę su xdg-screensaver suderinamą užrakto įrankį/ekrano užsklandą.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Nepavyko paleisti &quot;%1&quot;. Įsitikinkite, kad nurodytas užrakto įrankis/ekrano užsklanda yra įdiegta ir veikia.</translation>
+        <translation>Nepavyko paleisti „%1“. Įsitikinkite, kad nurodytas užrakto įrankis/ekrano užsklanda yra įdiegta ir veikia.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
