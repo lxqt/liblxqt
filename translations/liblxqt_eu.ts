@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezin izan da &quot;%1&quot; exekutatu. Ziurtatu xdg-pantaila-babeslearekin bateragarria den aldagela/pantaila-babeslea instalatuta eta martxan duzula.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezin izan da &quot;%1&quot; exekutatu. Ziurtatu zehaztutako aldagela/pantaila-babeslea instalatuta eta martxan dagoela.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished">Pantaila babeslearen errorea</translation>
+        <translation>Pantaila babeslearen akatsa</translation>
     </message>
 </context>
 <context>
