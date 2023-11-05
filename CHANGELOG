@@ -1,3 +1,8 @@
+liblxqt-1.4.0 / 2023-11-05
+===========================
+ * Ported deprecated KWindowSystem methods.
+ * Show error on trying to lock screen under Wayland.
+
 liblxqt-1.3.0 / 2023-04-15
 ===========================
  * Updated translations and bumped version to 1.3.0.
