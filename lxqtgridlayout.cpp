@@ -135,7 +135,7 @@ void GridLayoutPrivate::updateCache()
     for (int i=0; i < N; ++i)
     {
         QLayoutItem *item = mItems.at(i);
-        if (!item->widget() || item->widget()->isHidden())
+        if ((item->widget() == nullptr) || item->widget()->isHidden())
             continue;
 
         int h = qBound(item->minimumSize().height(),
@@ -177,10 +177,10 @@ void GridLayoutPrivate::updateCache()
  ************************************************/
 int GridLayoutPrivate::rows() const
 {
-    if (mRowCount)
+    if (mRowCount != 0)
         return mRowCount;
 
-    if (!mColumnCount)
+    if (mColumnCount == 0)
         return 1;
 
     return ceil(mVisibleCount * 1.0 / mColumnCount);
@@ -192,11 +192,11 @@ int GridLayoutPrivate::rows() const
  ************************************************/
 int GridLayoutPrivate::cols() const
 {
-    if (mColumnCount)
+    if (mColumnCount != 0)
         return mColumnCount;
 
     int rows = mRowCount;
-    if (!rows)
+    if (rows == 0)
         rows = 1;
 
     return ceil(mVisibleCount * 1.0 / rows);
@@ -587,7 +587,7 @@ void GridLayout::setGeometry(const QRect &geometry)
 {
     Q_D(GridLayout);
 
-    const bool visual_h_reversed = parentWidget() && parentWidget()->isRightToLeft();
+    const bool visual_h_reversed = (parentWidget() != nullptr) && parentWidget()->isRightToLeft();
 
     QLayout::setGeometry(geometry);
     const QPoint occupied_start = visual_h_reversed ? geometry.topRight() : geometry.topLeft();
@@ -660,7 +660,7 @@ void GridLayout::setGeometry(const QRect &geometry)
         int height = itemHeight + (0 < remain_height-- ? 1 : 0);
         for (QLayoutItem *item : qAsConst(d->mItems))
         {
-            if (!item->widget() || item->widget()->isHidden())
+            if ((item->widget() == nullptr) || item->widget()->isHidden())
                 continue;
             int width = itemWidth + (0 < remain_width-- ? 1 : 0);
 
@@ -683,7 +683,7 @@ void GridLayout::setGeometry(const QRect &geometry)
         int width = itemWidth + (0 < remain_width-- ? 1 : 0);
         for (QLayoutItem *item : qAsConst(d->mItems))
         {
-            if (!item->widget() || item->widget()->isHidden())
+            if ((item->widget() == nullptr) || item->widget()->isHidden())
                 continue;
             int height = itemHeight + (0 < remain_height-- ? 1 : 0);
 

@@ -127,7 +127,7 @@ void Notification::notify(const QString& summary, const QString& body, const QSt
     notification.update();
 }
 
-bool NotificationPrivate::sIsServerInfoQuried = 0;
+bool NotificationPrivate::sIsServerInfoQuried = false;
 Notification::ServerInfo NotificationPrivate::sServerInfo;
 
 NotificationPrivate::NotificationPrivate(const QString& summary, Notification* parent) :

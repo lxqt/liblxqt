@@ -78,7 +78,7 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
 
     // draw the item's panel
     const QWidget* widget = option.widget;
-    QStyle* style = widget ? widget->style() : QApplication::style();
+    QStyle* style = widget != nullptr ? widget->style() : QApplication::style();
     style->drawPrimitive(QStyle::PE_PanelItemViewItem, &options, painter, widget);
 
     // paint icon
@@ -98,8 +98,8 @@ void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, 
 
     // set text colors
     QAbstractTextDocumentLayout::PaintContext ctx;
-    QPalette::ColorGroup colorGroup = (option.state & QStyle::State_Active) ? QPalette::Active : QPalette::Inactive;
-    if (option.state & QStyle::State_Selected) // selected items
+    QPalette::ColorGroup colorGroup = (option.state & QStyle::State_Active) != 0u ? QPalette::Active : QPalette::Inactive;
+    if ((option.state & QStyle::State_Selected) != 0u) // selected items
         ctx.palette.setColor(QPalette::Text, option.palette.color(colorGroup, QPalette::HighlightedText));
     else // ordinary items and those with an alternate base color (there is no alternate text color)
         ctx.palette.setColor(QPalette::Text, option.palette.color(colorGroup, QPalette::Text));

@@ -569,7 +569,7 @@ bool LxSessionProvider::doAction(Power::Action action)
     switch (action)
     {
     case Power::PowerLogout:
-        if(pid)
+        if(pid != 0)
             ::kill(pid, SIGTERM);
         break;
     default:

@@ -70,7 +70,7 @@ QSize PageSelectWidgetItemDelegate::sizeHint(const QStyleOptionViewItem &option,
     QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
     const QWidget *widget = option.widget;
-    QStyle *style = widget ? widget->style() : QApplication::style();
+    QStyle *style = widget != nullptr ? widget->style() : QApplication::style();
     QSize size = style->sizeFromContents(QStyle::CT_ItemViewItem, &opt, QSize(), widget);
     //NOTE: this margin logic follows code in QCommonStylePrivate::viewItemLayout()
     const int margin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, &option, option.widget) + 1;
@@ -109,7 +109,7 @@ PageSelectWidget::PageSelectWidget(QWidget *parent) :
     setSpacing(2);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
     setWordWrap(true);
-    setDragEnabled(NoDragDrop);
+    setDragEnabled(NoDragDrop != 0u);
     setEditTriggers(NoEditTriggers);
     setTextElideMode(Qt::ElideNone);
     setContentsMargins(0, 0, 0, 0);
@@ -142,9 +142,9 @@ QSize PageSelectWidget::viewportSizeHint() const
     const int spacing2 = spacing() * 2;
     QSize size{sizeHintForColumn(0) + spacing2, (sizeHintForRow(0) + spacing2) * count()};
     auto vScrollbar = verticalScrollBar();
-    if (vScrollbar
+    if ((vScrollbar != nullptr)
         && vScrollbar->isVisible()
-        && !vScrollbar->style()->styleHint(QStyle::SH_ScrollBar_Transient, nullptr, vScrollbar))
+        && (vScrollbar->style()->styleHint(QStyle::SH_ScrollBar_Transient, nullptr, vScrollbar) == 0))
     {
         size.rwidth() += verticalScrollBar()->sizeHint().width();
     }

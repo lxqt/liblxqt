@@ -163,7 +163,7 @@ QDebug operator<<(QDebug dbg, const PluginInfoList& list)
     dbg.nospace() << QL1C('(');
     for (int i=0; i<list.size(); ++i)
     {
-        if (i) dbg.nospace() << QL1S(", ");
+        if (i != 0) dbg.nospace() << QL1S(", ");
         dbg << list.at(i);
     }
     dbg << QL1C(')');

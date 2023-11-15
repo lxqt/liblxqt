@@ -41,7 +41,7 @@ ConfigDialogCmdLineOptions::~ConfigDialogCmdLineOptions() = default;
 bool ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser *parser)
 {
     Q_ASSERT(parser);
-    if (!parser)
+    if (parser == nullptr)
         return false;
 
     return parser->addOption(QCommandLineOption{QStringList{QL1S("s"), QL1S("show-page")}, QCoreApplication::tr("Choose the page to be shown."), QL1S("name")});

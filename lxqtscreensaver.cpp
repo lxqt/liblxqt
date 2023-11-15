@@ -80,7 +80,7 @@ static bool GetProperty(XID window, const std::string& property_name, long max_l
                  Atom* type, int* format, unsigned long* num_items,
                  unsigned char** property)
 {
-    Atom property_atom =  XInternAtom(QX11Info::display(), property_name.c_str(), false);
+    Atom property_atom =  XInternAtom(QX11Info::display(), property_name.c_str(), 0);
     unsigned long remaining_bytes = 0;
     return XGetWindowProperty(QX11Info::display(),
                               window,
@@ -93,7 +93,7 @@ static bool GetProperty(XID window, const std::string& property_name, long max_l
                               format,
                               num_items,
                               &remaining_bytes,
-                              property);
+                              property) != 0;
 }
 
 static bool GetIntArrayProperty(XID window,
@@ -105,9 +105,9 @@ static bool GetIntArrayProperty(XID window,
     unsigned long num_items = 0;
     unsigned char* properties = nullptr;
 
-    int result = GetProperty(window, property_name,
+    int result = static_cast<int>(GetProperty(window, property_name,
                            (~0L), // (all of them)
-                           &type, &format, &num_items, &properties);
+                           &type, &format, &num_items, &properties));
     XScopedPtr<unsigned char> scoped_properties(properties);
     if (result != Success)
         return false;
@@ -139,7 +139,7 @@ public:
         settings.endGroup();
     }
 
-    void reportLockProcessError();
+    void reportLockProcessError() const;
     void _l_lockProcess_finished(int, QProcess::ExitStatus);
     void _l_lockProcess_errorOccurred(QProcess::ProcessError);
     bool isScreenSaverLocked();
@@ -149,7 +149,7 @@ public:
     QString lock_command;
 };
 
-void ScreenSaverPrivate::reportLockProcessError()
+void ScreenSaverPrivate::reportLockProcessError() const
 {
     QMessageBox box;
     box.setIcon(QMessageBox::Warning);
@@ -210,10 +210,10 @@ bool ScreenSaverPrivate::isScreenSaverLocked()
     // info.state == ScreenSaverOff or info.state == ScreenSaverDisabled does not
     // necessarily mean that a screensaver is not active, so add a special check
     // for xscreensaver.
-    XAtom lock_atom = XInternAtom(display, "LOCK", false);
+    XAtom lock_atom = XInternAtom(display, "LOCK", 0);
     std::vector<int> atom_properties;
     if (GetIntArrayProperty(window, "_SCREENSAVER_STATUS", &atom_properties) &&
-        atom_properties.size() > 0)
+        !atom_properties.empty())
     {
         if (atom_properties[0] == static_cast<int>(lock_atom))
             return true;
