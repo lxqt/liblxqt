@@ -70,9 +70,13 @@
 
 static FILE* open_driver_file(const char *file, const char *driver, const char *mode);
 static int read_backlight(const char *driver);
+static int read_actual_backlight(const char *driver);
 static int read_max_backlight(const char *driver);
 static int read_bl_power(const char *driver);
+static int read_type(const char *driver);
 static const char *sysfs_backlight_dir = "/sys/class/backlight";
+
+typedef enum {FIRMWARE, PLATFORM, RAW, OTHER, N_BACKLIGHT} BacklightTypes;
 
 int lxqt_backlight_backend_get()
 {
@@ -80,7 +84,12 @@ int lxqt_backlight_backend_get()
     if( driver == NULL ) {
         return -1;
     }
-    int value = read_backlight(driver);
+    int value;
+    if (read_type(driver) == RAW) {
+        value = read_actual_backlight(driver);
+    } else {
+        value = read_backlight(driver);
+    }
     free(driver);
     return value;
 }
@@ -152,6 +161,11 @@ static FILE* open_driver_file(const char *file, const char *driver, const char *
 
 static int read_backlight(const char *driver)
 {
+    return read_int("brightness", driver);
+}
+
+static int read_actual_backlight(const char *driver)
+{
     return read_int("actual_brightness", driver);
 }
 
@@ -165,7 +179,27 @@ static int read_bl_power(const char *driver)
     return read_int("bl_power", driver);
 }
 
-typedef enum {FIRMWARE, PLATFORM, RAW, OTHER, N_BACKLIGHT} BackligthTypes;
+static int read_type(const char *driver)
+{
+    FILE *in = open_driver_file("type", driver, "r");
+    if( in == NULL ) {
+        return -1;
+    }
+    char type[1024];
+    int result = fscanf(in, "%s", type);
+    fclose(in);
+    if( result == EOF ) {
+        return OTHER;
+    }
+    if (!strcmp(type, "firmware"))
+        return FIRMWARE;
+    else if (!strcmp(type, "firmware"))
+        return PLATFORM;
+    else if (!strcmp(type, "raw"))
+        return RAW;
+    else
+        return OTHER;
+}
 
 char *lxqt_backlight_backend_get_driver()
 {

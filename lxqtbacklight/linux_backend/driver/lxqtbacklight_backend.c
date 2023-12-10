@@ -72,7 +72,7 @@ static void show_blacklight()
         return;
     }
     int max_value = read_max_backlight(driver);
-    int actual = read_backlight(driver);
+    int actual = read_actual_backlight(driver);
     printf("%s %d %d\n", driver, max_value, actual);
     free(driver);
 }
