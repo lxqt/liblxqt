@@ -90,7 +90,10 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
     const QString locale = QLocale::system().name();
     QTranslator* translator = new QTranslator(library);
 
-    translator->load(QString::fromLatin1("%1/%2/%2_%3.qm").arg(path, baseName, locale));
+    if(!translator->load(QString::fromLatin1("%1/%2/%2_%3.qm").arg(path, baseName, locale)))
+    {
+        qWarning() << QString::fromLatin1("Can't load translator: ").arg(translator->filePath());
+    }
     qApp->installTranslator(translator);
 
     return library;
