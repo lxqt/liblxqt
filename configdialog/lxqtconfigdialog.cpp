@@ -130,7 +130,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
      */
     if (page->layout())
     {
-        page->layout()->setMargin(0);
+        page->layout()->setContentsMargins(QMargins());
     }
 
     QStringList icons = QStringList(iconNames) << QL1S("application-x-executable");
