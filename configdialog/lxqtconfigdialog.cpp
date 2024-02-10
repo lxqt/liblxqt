@@ -52,8 +52,8 @@ void ConfigDialogPrivate::init()
     Q_Q(ConfigDialog);
     ui->setupUi(q);
 
-    QObject::connect(ui->buttons, &QDialogButtonBox::clicked,
-                     [=](QAbstractButton* button) { dialogButtonsAction(button); }
+    QObject::connect(ui->buttons, &QDialogButtonBox::clicked, q,
+                     [this](QAbstractButton* button) { dialogButtonsAction(button); }
     );
 
     ui->moduleList->setVisible(false);

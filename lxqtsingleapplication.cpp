@@ -58,7 +58,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             return;
         } else {
             qCritical() << Q_FUNC_INFO << errorMessage;
-            QTimer::singleShot(0, [this] { exit(1); });
+            QTimer::singleShot(0, this, [] { SingleApplication::exit(1); });
         }
     }
 
@@ -76,7 +76,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             QStringLiteral("activateWindow"));
         QDBusConnection::sessionBus().send(msg);
 
-        QTimer::singleShot(0, [this] { exit(0); });
+        QTimer::singleShot(0, this, [] { SingleApplication::exit(0); });
     }
 }
 
