@@ -35,6 +35,7 @@
 #include <QFileSystemWatcher>
 #include <QSharedData>
 #include <QTimerEvent>
+#include <QRegularExpression>
 
 #include <XdgDirs>
 
@@ -500,6 +501,10 @@ QString LXQtTheme::qss(const QString& module) const
  ************************************************/
 QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
+    // TODO: original QRegExp, check new syntax and QRegExp::RegExp2 meaning
+    // QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
+    static QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
+
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -514,7 +519,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 
     // handle relative paths
     QString qssDir = QFileInfo(qssFile).canonicalPath();
-    qss.replace(QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2), QL1S("url(") + qssDir + QL1C('/'));
+    qss.replace(urlRegexp, QL1S("url(") + qssDir + QL1C('/'));
 
     return qss;
 }
