@@ -276,7 +276,7 @@ void RotatedWidget::wheelEvent(QWheelEvent *event)
 }
 #endif
 
-void RotatedWidget::enterEvent(QEvent *event)
+void RotatedWidget::enterEvent(QEnterEvent *event)
 {
     if (!mTransferEnterEvent)
     {
