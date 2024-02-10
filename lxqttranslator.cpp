@@ -135,7 +135,7 @@ bool Translator::translateApplication(const QString &applicationName)
     const QString locale = QLocale::system().name();
     QTranslator *qtTranslator = new QTranslator(qApp);
 
-    if (qtTranslator->load(QL1S("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtTranslator->load(QL1S("qt_") + locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
     {
         qApp->installTranslator(qtTranslator);
     }
