@@ -89,7 +89,7 @@ bool translate(const QString &name, const QString &owner)
     QTranslator *appTranslator = new QTranslator(qApp);
 
     QStringList *paths = getSearchPaths();
-    for(const QString &path : qAsConst(*paths))
+    for(const QString &path : std::as_const(*paths))
     {
         QStringList subPaths;
 
@@ -103,7 +103,7 @@ bool translate(const QString &name, const QString &owner)
             subPaths << path;
         }
 
-        for(const QString &p : qAsConst(subPaths))
+        for(const QString &p : std::as_const(subPaths))
         {
             if (appTranslator->load(name + QL1C('_') + locale, p))
             {
