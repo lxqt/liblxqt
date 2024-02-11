@@ -107,10 +107,17 @@ typedef QList<PluginInfo> PluginInfoList;
 
 } // namespace LXQt
 
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo& pi);
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo* const pi);
+LXQT_API QDebug operator<<(QDebug dbg, const LXQt::PluginInfo& pi);
+LXQT_API QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList& list);
 
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList& list);
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList* const pluginInfoList);
+inline QDebug operator<<(QDebug dbg, const LXQt::PluginInfo * const pluginInfo)
+{
+    return operator<<(std::move(dbg), *pluginInfo);
+}
+
+inline QDebug operator<<(QDebug dbg, const LXQt::PluginInfoList* const pluginInfoList)
+{
+    return operator<<(std::move(dbg), *pluginInfoList);
+}
 
 #endif // LXQTPLUGININFO_H

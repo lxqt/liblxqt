@@ -142,7 +142,7 @@ PluginInfoList PluginInfo::search(const QString& desktopFilesDir, const QString&
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
+LXQT_API QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
 {
     dbg.nospace() << QString::fromLatin1("%1").arg(pluginInfo.id());
     return dbg.space();
@@ -152,16 +152,7 @@ QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo * const pluginInfo)
-{
-    return operator<<(std::move(dbg), *pluginInfo);
-}
-
-
-/************************************************
-
- ************************************************/
-QDebug operator<<(QDebug dbg, const PluginInfoList& list)
+LXQT_API QDebug operator<<(QDebug dbg, const PluginInfoList& list)
 {
     dbg.nospace() << QL1C('(');
     for (int i=0; i<list.size(); ++i)
@@ -171,13 +162,4 @@ QDebug operator<<(QDebug dbg, const PluginInfoList& list)
     }
     dbg << QL1C(')');
     return dbg.space();
-}
-
-
-/************************************************
-
- ************************************************/
-QDebug operator<<(QDebug dbg, const PluginInfoList* const pluginInfoList)
-{
-    return operator<<(std::move(dbg), *pluginInfoList);
 }
