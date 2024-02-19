@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Obubaka obuzibizi</translation>
     </message>
 </context>
 <context>
@@ -153,7 +153,7 @@ esaanikira olutimbe esobola okukolagana ne xdg-screensaver.</translation>
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Londa olupapula olunaalagibwa.</translation>
     </message>
 </context>
 <context>
