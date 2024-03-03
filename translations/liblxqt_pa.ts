@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>ਨੋਟੀਫਿਕੇਸ਼ਨ ਫਾਲਬੈਕ</translation>
     </message>
 </context>
 <context>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ਹਾਈਬਰਨੇਟ ਅਸਫ਼ਲ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
