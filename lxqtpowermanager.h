@@ -62,6 +62,7 @@ public:
 private:
     LXQt::Power * m_power;
     bool m_skipWarning;
+    int m_timeoutWarning;
 
 private Q_SLOTS:
     void hibernateFailed();
