@@ -503,7 +503,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
     // TODO: original QRegExp, check new syntax and QRegExp::RegExp2 meaning
     // QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
-    static QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
 
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
