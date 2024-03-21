@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation> เริ่มการทำงานของ LXQt ใหม่</translation>
+        <translation>เริ่มการทำงานของ LXQt ใหม่</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
