@@ -40,7 +40,7 @@
 #include <QPointer>
 #include <QProcess>
 #include <QGuiApplication> // for Q_DECLARE_TR_FUNCTIONS and platform detect
-#include <QX11Info>
+
 #include <QDebug>
 
 #include <X11/extensions/scrnsaver.h>
@@ -80,20 +80,28 @@ static bool GetProperty(XID window, const std::string& property_name, long max_l
                  Atom* type, int* format, unsigned long* num_items,
                  unsigned char** property)
 {
-    Atom property_atom =  XInternAtom(QX11Info::display(), property_name.c_str(), false);
-    unsigned long remaining_bytes = 0;
-    return XGetWindowProperty(QX11Info::display(),
-                              window,
-                              property_atom,
-                              0,          // offset into property data to read
-                              max_length, // max length to get
-                              False,      // deleted
-                              AnyPropertyType,
-                              type,
-                              format,
-                              num_items,
-                              &remaining_bytes,
-                              property);
+    if (auto *x11Application = qGuiApp->nativeInterface<QNativeInterface::QX11Application>())
+    {
+        Atom property_atom =  XInternAtom(x11Application->display(), property_name.c_str(), false);
+        unsigned long remaining_bytes = 0;
+        return XGetWindowProperty(x11Application->display(),
+                                  window,
+                                  property_atom,
+                                  0,          // offset into property data to read
+                                  max_length, // max length to get
+                                  False,      // deleted
+                                  AnyPropertyType,
+                                  type,
+                                  format,
+                                  num_items,
+                                  &remaining_bytes,
+                                  property);
+    }
+    else
+    {
+        qWarning() << "GetProperty() not implemented on Wayland";
+        return false;
+    }
 }
 
 static bool GetIntArrayProperty(XID window,
@@ -191,35 +199,39 @@ void ScreenSaverPrivate::_l_lockProcess_errorOccurred(QProcess::ProcessError)
 
 bool ScreenSaverPrivate::isScreenSaverLocked()
 {
-    if (QGuiApplication::platformName() != QStringLiteral("xcb"))
+    if (auto *x11Application = qGuiApp->nativeInterface<QNativeInterface::QX11Application>())
     {
-         return false;
-    }
-    XScreenSaverInfo *info = nullptr;
-    Display *display = QX11Info::display();
-    XID window = DefaultRootWindow(display);
-    info = XScreenSaverAllocInfo();
+        XScreenSaverInfo *info = nullptr;
+        Display *display = x11Application->display();
+        XID window = DefaultRootWindow(display);
+        info = XScreenSaverAllocInfo();
 
-    XScreenSaverQueryInfo(QX11Info::display(), window, info);
-    const int state = info->state;
-    XFree(info);
-    if (state == ScreenSaverOn)
-        return true;
-
-    // Ironically, xscreensaver does not conform to the XScreenSaver protocol, so
-    // info.state == ScreenSaverOff or info.state == ScreenSaverDisabled does not
-    // necessarily mean that a screensaver is not active, so add a special check
-    // for xscreensaver.
-    XAtom lock_atom = XInternAtom(display, "LOCK", false);
-    std::vector<int> atom_properties;
-    if (GetIntArrayProperty(window, "_SCREENSAVER_STATUS", &atom_properties) &&
-        atom_properties.size() > 0)
-    {
-        if (atom_properties[0] == static_cast<int>(lock_atom))
+        XScreenSaverQueryInfo(display, window, info);
+        const int state = info->state;
+        XFree(info);
+        if (state == ScreenSaverOn)
             return true;
-    }
 
-    return false;
+        // Ironically, xscreensaver does not conform to the XScreenSaver protocol, so
+        // info.state == ScreenSaverOff or info.state == ScreenSaverDisabled does not
+        // necessarily mean that a screensaver is not active, so add a special check
+        // for xscreensaver.
+        XAtom lock_atom = XInternAtom(display, "LOCK", false);
+        std::vector<int> atom_properties;
+        if (GetIntArrayProperty(window, "_SCREENSAVER_STATUS", &atom_properties) &&
+            atom_properties.size() > 0)
+        {
+            if (atom_properties[0] == static_cast<int>(lock_atom))
+                return true;
+        }
+
+        return false;
+    }
+    else
+    {
+        qWarning() << "isScreenSaverLocked() not implemented on Wayland";
+        return false;
+    }
 }
 
 ScreenSaver::ScreenSaver(QObject * parent)

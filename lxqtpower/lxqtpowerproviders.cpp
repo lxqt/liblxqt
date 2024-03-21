@@ -545,7 +545,7 @@ bool LXQtProvider::doAction(Power::Action action)
 LxSessionProvider::LxSessionProvider(QObject *parent):
     PowerProvider(parent)
 {
-    pid = (Q_PID)qgetenv("_LXSESSION_PID").toLong();
+    pid = (qint64)qgetenv("_LXSESSION_PID").toLong();
 }
 
 

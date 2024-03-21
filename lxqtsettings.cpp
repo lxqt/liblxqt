@@ -35,6 +35,7 @@
 #include <QFileSystemWatcher>
 #include <QSharedData>
 #include <QTimerEvent>
+#include <QRegularExpression>
 
 #include <XdgDirs>
 
@@ -413,7 +414,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
     if (!paths.contains(fallback))
         paths << fallback;
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QDir dir(QString::fromLatin1("%1/lxqt/themes/%2").arg(path, themeName));
         if (dir.isReadable())
@@ -500,6 +501,10 @@ QString LXQtTheme::qss(const QString& module) const
  ************************************************/
 QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
+    // TODO: original QRegExp, check new syntax and QRegExp::RegExp2 meaning
+    // QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
+    static const QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
+
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -514,7 +519,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 
     // handle relative paths
     QString qssDir = QFileInfo(qssFile).canonicalPath();
-    qss.replace(QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2), QL1S("url(") + qssDir + QL1C('/'));
+    qss.replace(urlRegexp, QL1S("url(") + qssDir + QL1C('/'));
 
     return qss;
 }
@@ -575,7 +580,7 @@ QList<LXQtTheme> LXQtTheme::allThemes()
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QDir dir(QString::fromLatin1("%1/lxqt/themes").arg(path));
         const QFileInfoList dirs = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot);

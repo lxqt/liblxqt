@@ -192,7 +192,7 @@ void RotatedWidget::mousePressEvent(QMouseEvent *event)
         return;
     cascadeCall = true;
 
-    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPos(), event->button(), event->buttons(), event->modifiers());
+    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPosition(), event->button(), event->buttons(), event->modifiers());
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;
@@ -211,7 +211,7 @@ void RotatedWidget::mouseReleaseEvent(QMouseEvent *event)
         return;
     cascadeCall = true;
 
-    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPos(), event->button(), event->buttons(), event->modifiers());
+    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPosition(), event->button(), event->buttons(), event->modifiers());
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;
@@ -230,7 +230,7 @@ void RotatedWidget::mouseDoubleClickEvent(QMouseEvent *event)
         return;
     cascadeCall = true;
 
-    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPos(), event->button(), event->buttons(), event->modifiers());
+    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPosition(), event->button(), event->buttons(), event->modifiers());
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;
@@ -249,7 +249,7 @@ void RotatedWidget::mouseMoveEvent(QMouseEvent *event)
         return;
     cascadeCall = true;
 
-    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPos(), event->button(), event->buttons(), event->modifiers());
+    QMouseEvent contentEvent(event->type(), adjustedPoint(event->pos()), event->globalPosition(), event->button(), event->buttons(), event->modifiers());
     QApplication::sendEvent(mContent, &contentEvent);
 
     cascadeCall = false;
@@ -276,7 +276,7 @@ void RotatedWidget::wheelEvent(QWheelEvent *event)
 }
 #endif
 
-void RotatedWidget::enterEvent(QEvent *event)
+void RotatedWidget::enterEvent(QEnterEvent *event)
 {
     if (!mTransferEnterEvent)
     {

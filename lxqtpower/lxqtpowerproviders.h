@@ -124,7 +124,7 @@ public:
 public Q_SLOTS:
     bool doAction(Power::Action action) override;
 private:
-    Q_PID pid;
+    qint64 pid;
 };
 
 class HalProvider: public PowerProvider

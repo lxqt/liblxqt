@@ -7,15 +7,15 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 project(liblxqt)
 
 
-set(LXQTBT_MINIMUM_VERSION "0.13.0")
-set(KF5_MINIMUM_VERSION "5.101.0")
-set(QT_MINIMUM_VERSION "5.15.0")
+set(LXQTBT_MINIMUM_VERSION "2.0.0")
+set(KF6_MINIMUM_VERSION "6.0.0")
+set(QT_MINIMUM_VERSION "6.6.0")
 set(QTXDG_MINIMUM_VERSION "3.12.0")
 
 # Major LXQt Version, belong to all components
-set(LXQT_MAJOR_VERSION 1)
+set(LXQT_MAJOR_VERSION 2)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 4)
+set(LXQT_MINOR_VERSION 0)
 #
 # Patch Version, belong *only* to the component
 # LXQt is 0.13 - liblxqt is at patch version 0
@@ -38,18 +38,18 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
-find_package(Qt5Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
-find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6 ${QT_MINIMUM_VERSION} CONFIG REQUIRED Widgets DBus LinguistTools)
+find_package(Qt6Xdg ${QTXDG_MINIMUM_VERSION} REQUIRED)
+find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
+
 if (BUILD_BACKLIGHT_LINUX_BACKEND)
-    find_package(PolkitQt5-1 REQUIRED)
+    find_package(PolkitQt6-1 REQUIRED)
 endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 if (NOT APPLE)
-    find_package(Qt5 ${QT_MINIMUM_VERSION} CONFIG REQUIRED X11Extras)
     find_package(X11 REQUIRED)
 endif()
-message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt5Core_VERSION}")
+message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt6Core_VERSION}")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
@@ -201,12 +201,12 @@ configure_file ( polkit/org.lxqt.backlight.pkexec.policy.in "${CMAKE_CURRENT_BIN
 
 file(GLOB LXQT_CONFIG_FILES resources/*.conf)
 
-QT5_ADD_DBUS_INTERFACE(DBUS_INTERFACE_SRCS
+qt6_add_dbus_interface(DBUS_INTERFACE_SRCS
     dbus/org.freedesktop.Notifications.xml
     notifications_interface
 )
 
-QT5_ADD_DBUS_ADAPTOR(DBUS_ADAPTOR_SRCS
+qt6_add_dbus_adaptor(DBUS_ADAPTOR_SRCS
     dbus/org.lxqt.SingleApplication.xml
     lxqtsingleapplication.h LXQt::SingleApplication
 )
@@ -214,12 +214,8 @@ QT5_ADD_DBUS_ADAPTOR(DBUS_ADAPTOR_SRCS
 set_property(SOURCE ${DBUS_INTERFACE_SRCS} ${DBUS_ADAPTOR_SRCS} PROPERTY SKIP_AUTOGEN ON)
 list(APPEND SRCS "${DBUS_INTERFACE_SRCS}" "${DBUS_ADAPTOR_SRCS}")
 
-# KF5WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file.
-set(LXQT_PKG_CONFIG_REQUIRES "Qt5Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt5Widgets >= ${QT_MINIMUM_VERSION}, Qt5Xml >= ${QT_MINIMUM_VERSION}, Qt5DBus >= ${QT_MINIMUM_VERSION}")
-
-if (NOT APPLE)
-    set(LXQT_PKG_CONFIG_REQUIRES "${LXQT_PKG_CONFIG_REQUIRES}, Qt5X11Extras >= ${QT_MINIMUM_VERSION}")
-endif (NOT APPLE)
+# KF6WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file. TODO: check if things changed in KF6
+set(LXQT_PKG_CONFIG_REQUIRES "Qt6Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt6Widgets >= ${QT_MINIMUM_VERSION}, Qt6Xml >= ${QT_MINIMUM_VERSION}, Qt6DBus >= ${QT_MINIMUM_VERSION}")
 
 
 # Standard directories for installation
@@ -321,16 +317,14 @@ add_library(${LXQT_LIBRARY_NAME}
 
 target_link_libraries(${LXQT_LIBRARY_NAME}
     PUBLIC
-        KF5::WindowSystem
-        Qt5::Widgets
-        Qt5::DBus
-        Qt5Xdg
+        KF6::WindowSystem
+        Qt6::Widgets
+        Qt6::DBus
+        Qt6Xdg
 )
 
 if (NOT APPLE)
     target_link_libraries(${LXQT_LIBRARY_NAME}
-        PUBLIC
-            Qt5::X11Extras
         PRIVATE
             ${X11_Xscreensaver_LIB}
             ${X11_X11_LIB}

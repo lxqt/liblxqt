@@ -29,11 +29,13 @@
 #include <QSize>
 #include <QStringList>
 
+class QWidget;
+class QAbstractButton;
+
 namespace Ui {
 class ConfigDialog;
 }
 
-class QAbstractButton;
 namespace LXQt
 {
 

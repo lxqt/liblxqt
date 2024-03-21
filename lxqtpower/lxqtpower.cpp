@@ -56,7 +56,7 @@ Power::~Power() = default;
 
 bool Power::canAction(Power::Action action) const
 {
-    for(const PowerProvider* provider : qAsConst(mProviders))
+    for(const PowerProvider* provider : std::as_const(mProviders))
     {
         if (provider->canAction(action))
             return true;
@@ -68,7 +68,7 @@ bool Power::canAction(Power::Action action) const
 
 bool Power::doAction(Power::Action action)
 {
-    for(PowerProvider* provider : qAsConst(mProviders))
+    for(PowerProvider* provider : std::as_const(mProviders))
     {
         if (provider->canAction(action) &&
             provider->doAction(action)

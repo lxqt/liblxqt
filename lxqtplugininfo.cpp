@@ -90,7 +90,10 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
     const QString locale = QLocale::system().name();
     QTranslator* translator = new QTranslator(library);
 
-    translator->load(QString::fromLatin1("%1/%2/%2_%3.qm").arg(path, baseName, locale));
+    if(!translator->load(QString::fromLatin1("%1/%2/%2_%3.qm").arg(path, baseName, locale)))
+    {
+        qWarning() << QString::fromLatin1("Can't load translator: ").arg(translator->filePath());
+    }
     qApp->installTranslator(translator);
 
     return library;
@@ -139,7 +142,7 @@ PluginInfoList PluginInfo::search(const QString& desktopFilesDir, const QString&
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
+LXQT_API QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
 {
     dbg.nospace() << QString::fromLatin1("%1").arg(pluginInfo.id());
     return dbg.space();
@@ -149,16 +152,7 @@ QDebug operator<<(QDebug dbg, const LXQt::PluginInfo &pluginInfo)
 /************************************************
 
  ************************************************/
-QDebug operator<<(QDebug dbg, const LXQt::PluginInfo * const pluginInfo)
-{
-    return operator<<(std::move(dbg), *pluginInfo);
-}
-
-
-/************************************************
-
- ************************************************/
-QDebug operator<<(QDebug dbg, const PluginInfoList& list)
+LXQT_API QDebug operator<<(QDebug dbg, const PluginInfoList& list)
 {
     dbg.nospace() << QL1C('(');
     for (int i=0; i<list.size(); ++i)
@@ -168,13 +162,4 @@ QDebug operator<<(QDebug dbg, const PluginInfoList& list)
     }
     dbg << QL1C(')');
     return dbg.space();
-}
-
-
-/************************************************
-
- ************************************************/
-QDebug operator<<(QDebug dbg, const PluginInfoList* const pluginInfoList)
-{
-    return operator<<(std::move(dbg), *pluginInfoList);
 }

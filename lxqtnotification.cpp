@@ -191,7 +191,7 @@ void NotificationPrivate::queryServerInfo(bool async)
 {
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(mInterface->GetServerInformation(), this);
 
-    connect(watcher, &QDBusPendingCallWatcher::finished, [this](QDBusPendingCallWatcher* callWatcher) {
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher* callWatcher) {
             Q_Q(Notification);
             QDBusPendingReply<QString, QString, QString, QString> reply = *callWatcher;
 

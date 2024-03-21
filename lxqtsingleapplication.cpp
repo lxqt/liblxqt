@@ -27,8 +27,9 @@
 
 #include "lxqtsingleapplication.h"
 #include "singleapplicationadaptor.h"
-#include <KWindowSystem/KWindowSystem>
-#include <KWindowSystem/KX11Extras>
+#include <KWindowSystem>
+#include <KWindowInfo>
+#include <KX11Extras>
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
@@ -57,7 +58,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             return;
         } else {
             qCritical() << Q_FUNC_INFO << errorMessage;
-            QTimer::singleShot(0, [this] { exit(1); });
+            QTimer::singleShot(0, this, [] { SingleApplication::exit(1); });
         }
     }
 
@@ -75,7 +76,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             QStringLiteral("activateWindow"));
         QDBusConnection::sessionBus().send(msg);
 
-        QTimer::singleShot(0, [this] { exit(0); });
+        QTimer::singleShot(0, this, [] { SingleApplication::exit(0); });
     }
 }
 
@@ -96,7 +97,7 @@ void SingleApplication::activateWindow()
     if (mActivationWindow) {
         mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
-        KWindowInfo info(window, KWindowSystem::WMDesktop);
+        KWindowInfo info(window, NET::WMDesktop);
         int windowDesktop = info.desktop();
 
         if (windowDesktop != KX11Extras::currentDesktop())
