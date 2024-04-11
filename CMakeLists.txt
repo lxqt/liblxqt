@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 # CMP0000: Call the cmake_minimum_required() command at the beginning of the top-level
 # CMakeLists.txt file even before calling the project() command.
 # The cmake_minimum_required(VERSION) command implicitly invokes the cmake_policy(VERSION)
@@ -10,7 +10,7 @@ project(liblxqt)
 set(LXQTBT_MINIMUM_VERSION "2.0.0")
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
-set(QTXDG_MINIMUM_VERSION "3.12.0")
+set(QTXDG_MINIMUM_VERSION "4.0.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 2)
