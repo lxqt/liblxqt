@@ -1,3 +1,8 @@
+liblxqt-2.0.0 / 2024-04-17
+===========================
+ * Ported to Qt6.
+ * License of backlight is changed to LGPL2+.
+
 liblxqt-1.4.0 / 2023-11-05
 ===========================
  * Ported deprecated KWindowSystem methods.
