@@ -9,7 +9,7 @@ needed by nearly all of its components.
 
 ### Sources
 
-Its runtime dependencies are libxss, KWindowSystem, qtbase, qtx11extras and
+Its runtime dependencies are libxss, KWindowSystem, qtbase, and
 [libqtxdg](https://github.com/lxqt/libqtxdg).
 Additional build dependencies are CMake, [lxqt-build-tools](https://github.com/lxqt/lxqt-build-tools) and optionally Git to pull latest VCS
 checkouts.
@@ -28,7 +28,7 @@ The library is provided by all major Linux distributions like Arch Linux, Debian
 Fedora and openSUSE. Just use your package manager to search for string `liblxqt`.
 
 
-### Translation 
+### Translation
 
 Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/liblxqt/)
 
