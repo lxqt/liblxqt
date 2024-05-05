@@ -85,7 +85,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Наистина ли искате да рестартирате компютъра си? &lt;p&gt; Всичката незапазена информация се загубва...</translation>
+        <translation>Наистина ли искате да рестартирате компютъра си? Незапазените данни ще бъдат загубени...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Наистина ли искате да изключите компютъра си? &lt;p&gt; Всичката незапазена информация се загубва...</translation>
+        <translation>Наистина ли искате да изключите компютъра си? Незапазените данни ще бъдат загубени...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -105,13 +105,13 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Наистина ли искате да напуснете сесията? &lt;p&gt; Всичката незапазена информация се загубва...</translation>
+        <translation>Наистина ли искате да напуснете сесията? Незапазените данни ще бъдат загубени...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Грешка в LXQt Управление на захранването</translation>
+        <translation>Грешка в LXQt управление на захранването</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
