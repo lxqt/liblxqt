@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Meniu alternativ notificari</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-a reusit &quot;%1&quot;. Asigur(a) ca ai un locker/screensaver compatibil cu xdg-screensaver instalat si functional.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-a reusit  &quot;%1&quot;. Asigura ca lockerul/screensaverul specificat este instalat si functioneaza.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare Screen Saver</translation>
     </message>
 </context>
 <context>
