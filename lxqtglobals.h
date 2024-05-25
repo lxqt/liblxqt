@@ -37,7 +37,7 @@
 #endif
 
 #ifndef QL1S
-#define QL1S(x) QLatin1String(x)
+#define QL1S(x) QLatin1StringView(x)
 #endif
 
 #ifndef QL1C

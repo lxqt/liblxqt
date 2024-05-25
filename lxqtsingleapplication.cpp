@@ -47,8 +47,8 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     QDBusConnection bus = QDBusConnection::sessionBus();
 
     if (!bus.isConnected()) {
-        QLatin1String errorMessage("Can't connect to the D-Bus session bus\n"
-                                   "Make sure the D-Bus daemon is running");
+        QLatin1StringView errorMessage("Can't connect to the D-Bus session bus\n"
+                                       "Make sure the D-Bus daemon is running");
 
         /* ExitOnDBusFailure is the default. Any value other than
            NoExitOnDBusFailure will be taken as ExitOnDBusFailure (the default).
@@ -66,7 +66,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
                        QDBusConnectionInterface::ServiceRegistered);
     if (registered) { // We are the primary instance
         SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
-        QLatin1String objectPath("/");
+        QLatin1StringView objectPath("/");
         bus.registerObject(objectPath, mAdaptor,
             QDBusConnection::ExportAllSlots);
     } else { // We are the second outstance

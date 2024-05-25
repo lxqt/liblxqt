@@ -111,7 +111,7 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings(QL1S("lxqt"), module, parent),
+    QSettings(QStringLiteral("lxqt"), module, parent),
     d_ptr(new SettingsPrivate(this))
 {
 }
@@ -392,7 +392,7 @@ LXQtTheme::LXQtTheme(const QString &path):
         d->mValid = !(d->mPath.isEmpty());
     }
 
-    if (QDir(path).exists(QL1S("preview.png")))
+    if (QDir(path).exists(QStringLiteral("preview.png")))
         d->mPreviewImg = path + QL1S("/preview.png");
 }
 
@@ -406,7 +406,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
         return QString();
 
     QStringList paths;
-    QLatin1String fallback(LXQT_INSTALL_PREFIX);
+    QLatin1StringView fallback(LXQT_INSTALL_PREFIX);
 
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
@@ -503,7 +503,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
     // TODO: original QRegExp, check new syntax and QRegExp::RegExp2 meaning
     // QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
-    static const QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
+    static const QRegularExpression urlRegexp(QStringLiteral("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
 
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -588,7 +588,7 @@ QList<LXQtTheme> LXQtTheme::allThemes()
         for(const QFileInfo &dir : dirs)
         {
             if (!processed.contains(dir.fileName()) &&
-                 QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
+                 QDir(dir.absoluteFilePath()).exists(QStringLiteral("lxqt-panel.qss")))
             {
                 processed << dir.fileName();
                 ret << LXQtTheme(dir.absoluteFilePath());
@@ -657,15 +657,15 @@ void SettingsCache::loadToSettings()
 
  ************************************************/
 GlobalSettings::GlobalSettings():
-    Settings(QL1S("lxqt")),
+    Settings(QStringLiteral("lxqt")),
     d_ptr(new GlobalSettingsPrivate(this))
 {
     if (value(QL1S("icon_theme")).toString().isEmpty())
     {
         qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
-        const QString fallback(QLatin1String("oxygen"));
+        const QString fallback(QL1S("oxygen"));
 
-        const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
+        const QDir dir(QStringLiteral(LXQT_DATA_DIR) + QStringLiteral("/icons"));
         if (dir.exists(fallback))
         {
             setValue(QL1S("icon_theme"), fallback);

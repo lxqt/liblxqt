@@ -140,10 +140,10 @@ class ScreenSaverPrivate
 
 public:
     ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {
-        QSettings settings(QSettings::UserScope, QLatin1String("lxqt"), QLatin1String("lxqt"));
+        QSettings settings(QSettings::UserScope, QStringLiteral("lxqt"), QStringLiteral("lxqt"));
 
-        settings.beginGroup(QLatin1String("Screensaver"));
-        lock_command = settings.value(QLatin1String("lock_command"), QLatin1String("xdg-screensaver lock")).toString();
+        settings.beginGroup(QL1S("Screensaver"));
+        lock_command = settings.value(QL1S("lock_command"), QL1S("xdg-screensaver lock")).toString();
         settings.endGroup();
     }
 
@@ -165,7 +165,7 @@ void ScreenSaverPrivate::reportLockProcessError()
     QString message;
     // contains() instead of startsWith() as the command might be "env FOO=bar xdg-screensaver lock"
     // (e.g., overwrite $XDG_CURRENT_DESKTOP for some different behaviors)
-    if (lock_command.contains(QLatin1String("xdg-screensaver"))) {
+    if (lock_command.contains(QL1S("xdg-screensaver"))) {
         message = tr("Failed to run  \"%1\". "
                      "Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running."
                     );

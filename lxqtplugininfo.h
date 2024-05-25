@@ -94,10 +94,10 @@ public:
 
       If the same filename is located under multiple directories only the first file should be used.
     */
-    static QList<PluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter = QLatin1String("*"));
+    static QList<PluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter = QL1S("*"));
 
     /// This function is provided for convenience. It's equivalent to new calling search(QString(desktopFilesDir), serviceType, nameFilter)
-    static QList<PluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter = QLatin1String("*"));
+    static QList<PluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter = QL1S("*"));
 
 private:
     QString mId;

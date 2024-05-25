@@ -110,8 +110,8 @@ bool translate(const QString &name, const QString &owner)
                 QCoreApplication::installTranslator(appTranslator);
                 return true;
             }
-            else if (locale == QLatin1String("C") ||
-                        locale.startsWith(QLatin1String("en")))
+            else if (locale == QL1S("C") ||
+                        locale.startsWith(QL1S("en")))
             {
                 // English is the default. Even if there isn't an translation
                 // file, we return true. It's translated anyway.
@@ -180,7 +180,7 @@ bool Translator::translatePlugin(const QString &pluginName, const QString& type)
 
 static void loadSelfTranslation()
 {
-    Translator::translateLibrary(QLatin1String("liblxqt"));
+    Translator::translateLibrary(QStringLiteral("liblxqt"));
 }
 
 Q_COREAPP_STARTUP_FUNCTION(loadSelfTranslation)
