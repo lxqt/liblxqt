@@ -102,16 +102,16 @@ void AutostartEntry::setEnabled(bool enable)
 {
     XdgDesktopFile f = file();
     if (enable)
-        f.removeEntry(QL1S("Hidden"));
+        f.removeEntry(QL1SV("Hidden"));
     else
-        f.setValue(QL1S("Hidden"), true);
+        f.setValue(QL1SV("Hidden"), true);
 
     setFile(f);
 }
 
 bool AutostartEntry::isEnabled() const
 {
-    return !isEmpty() && !file().value(QL1S("Hidden"), false).toBool();
+    return !isEmpty() && !file().value(QL1SV("Hidden"), false).toBool();
 }
 
 bool AutostartEntry::commit()

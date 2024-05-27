@@ -44,13 +44,13 @@ bool ConfigDialogCmdLineOptions::setCommandLine(QCommandLineParser *parser)
     if (!parser)
         return false;
 
-    return parser->addOption(QCommandLineOption{QStringList{QL1S("s"), QL1S("show-page")}, QCoreApplication::tr("Choose the page to be shown."), QL1S("name")});
+    return parser->addOption(QCommandLineOption{QStringList{QL1SV("s"), QL1SV("show-page")}, QCoreApplication::tr("Choose the page to be shown."), QL1SV("name")});
 }
 
 void ConfigDialogCmdLineOptions::process(QCommandLineParser &parser)
 {
-    if (parser.isSet(QL1S("show-page"))) {
-        d->mPage = parser.value(QL1S("show-page"));
+    if (parser.isSet(QL1SV("show-page"))) {
+        d->mPage = parser.value(QL1SV("show-page"));
     }
 }
 

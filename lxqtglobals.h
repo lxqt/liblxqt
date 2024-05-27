@@ -40,6 +40,10 @@
 #define QL1S(x) QLatin1StringView(x)
 #endif
 
+#ifndef QL1SV
+#define QL1SV(x) QLatin1StringView(x)
+#endif
+
 #ifndef QL1C
 #define QL1C(x) QLatin1Char(x)
 #endif
