@@ -51,8 +51,8 @@ QStringList *getSearchPaths()
     if (searchPath == nullptr)
     {
         searchPath = new QStringList();
-        *searchPath << XdgDirs::dataDirs(QL1C('/') + QL1S(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR));
-        *searchPath << QL1S(LXQT_SHARE_TRANSLATIONS_DIR);
+        *searchPath << XdgDirs::dataDirs(QL1C('/') + QL1SV(LXQT_RELATIVE_SHARE_TRANSLATIONS_DIR));
+        *searchPath << QL1SV(LXQT_SHARE_TRANSLATIONS_DIR);
         searchPath->removeDuplicates();
     }
 
@@ -110,8 +110,8 @@ bool translate(const QString &name, const QString &owner)
                 QCoreApplication::installTranslator(appTranslator);
                 return true;
             }
-            else if (locale == QL1S("C") ||
-                        locale.startsWith(QL1S("en")))
+            else if (locale == QL1SV("C") ||
+                        locale.startsWith(QL1SV("en")))
             {
                 // English is the default. Even if there isn't an translation
                 // file, we return true. It's translated anyway.
@@ -135,7 +135,7 @@ bool Translator::translateApplication(const QString &applicationName)
     const QString locale = QLocale::system().name();
     QTranslator *qtTranslator = new QTranslator(qApp);
 
-    if (qtTranslator->load(QL1S("qt_") + locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
+    if (qtTranslator->load(QL1SV("qt_") + locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
     {
         qApp->installTranslator(qtTranslator);
     }

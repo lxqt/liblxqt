@@ -55,7 +55,7 @@ using namespace LXQt;
 Application::Application(int &argc, char** argv)
     : QApplication(argc, argv)
 {
-    setWindowIcon(QIcon(QFile::decodeName(LXQT_GRAPHICS_DIR) + QL1S("/lxqt_logo.png")));
+    setWindowIcon(QIcon(QFile::decodeName(LXQT_GRAPHICS_DIR) + QL1SV("/lxqt_logo.png")));
     connect(Settings::globalSettings(), &GlobalSettings::lxqtThemeChanged, this, &Application::updateTheme);
     updateTheme();
 }

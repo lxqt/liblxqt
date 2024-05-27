@@ -133,7 +133,7 @@ void ConfigDialog::addPage(QWidget* page, const QString& name, const QStringList
         page->layout()->setContentsMargins(QMargins());
     }
 
-    QStringList icons = QStringList(iconNames) << QL1S("application-x-executable");
+    QStringList icons = QStringList(iconNames) << QL1SV("application-x-executable");
     new QListWidgetItem(XdgIcon::fromTheme(icons), name, d->ui->moduleList);
     d->mIcons.append(icons);
     d->ui->stackedWidget->addWidget(page);
