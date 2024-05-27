@@ -30,6 +30,7 @@
 #include <QProcess>
 #include <QSettings>
 #include "lxqtscreensaver.h"
+#include "lxqtsettings.h"
 #include "lxqttranslator.h"
 
 #include <memory>
@@ -140,11 +141,25 @@ class ScreenSaverPrivate
 
 public:
     ScreenSaverPrivate(ScreenSaver *q) : q_ptr(q) {
-        QSettings settings(QSettings::UserScope, QStringLiteral("lxqt"), QStringLiteral("lxqt"));
+        if (QGuiApplication::platformName() == QStringLiteral("xcb")) {
+            Settings settings(QStringLiteral("lxqt"));
+            settings.beginGroup(QL1SV("Screensaver"));
+            QString lockCommand(settings.value(QL1SV("lock_command"), QL1SV("xdg-screensaver lock")).toString());
+            settings.endGroup();
 
-        settings.beginGroup(QL1SV("Screensaver"));
-        lock_command = settings.value(QL1SV("lock_command"), QL1SV("xdg-screensaver lock")).toString();
-        settings.endGroup();
+            QString sessionConfig(QString::fromLocal8Bit(qgetenv("LXQT_SESSION_CONFIG")));
+            Settings sessionSettings(sessionConfig.isEmpty() ? QStringLiteral("session") : sessionConfig);
+            lock_command = sessionSettings.value(QL1SV("lock_command"), lockCommand).toString();
+       } else if (QGuiApplication::platformName() == QStringLiteral("wayland")) {
+            Settings settings(QStringLiteral("lxqt"));
+            settings.beginGroup(QL1SV("Screensaver"));
+            QString lockCommand(settings.value(QL1SV("lock_command_wayland")).toString());
+            settings.endGroup();
+
+            QString sessionConfig(QString::fromLocal8Bit(qgetenv("LXQT_SESSION_CONFIG")));
+            Settings sessionSettings(sessionConfig.isEmpty() ? QStringLiteral("session") : sessionConfig);
+            lock_command = sessionSettings.value(QL1SV("lock_command_wayland"), lockCommand).toString();
+        }
     }
 
     void reportLockProcessError();
