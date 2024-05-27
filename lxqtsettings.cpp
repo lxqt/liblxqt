@@ -52,9 +52,9 @@ public:
     {
         // HACK: we need to ensure that the user (~/.config/lxqt/<module>.conf)
         //       exists to have functional mWatcher
-        if (!mParent->contains(QL1S("__userfile__")))
+        if (!mParent->contains(QL1SV("__userfile__")))
         {
-            mParent->setValue(QL1S("__userfile__"), true);
+            mParent->setValue(QL1SV("__userfile__"), true);
             mParent->sync();
         }
         mWatcher.addPath(mParent->fileName());
@@ -111,7 +111,7 @@ public:
 
  ************************************************/
 Settings::Settings(const QString& module, QObject* parent) :
-    QSettings(QL1S("lxqt"), module, parent),
+    QSettings(QStringLiteral("lxqt"), module, parent),
     d_ptr(new SettingsPrivate(this))
 {
 }
@@ -392,8 +392,8 @@ LXQtTheme::LXQtTheme(const QString &path):
         d->mValid = !(d->mPath.isEmpty());
     }
 
-    if (QDir(path).exists(QL1S("preview.png")))
-        d->mPreviewImg = path + QL1S("/preview.png");
+    if (QDir(path).exists(QStringLiteral("preview.png")))
+        d->mPreviewImg = path + QL1SV("/preview.png");
 }
 
 
@@ -406,7 +406,7 @@ QString LXQtThemeData::findTheme(const QString &themeName)
         return QString();
 
     QStringList paths;
-    QLatin1String fallback(LXQT_INSTALL_PREFIX);
+    QLatin1StringView fallback(LXQT_INSTALL_PREFIX);
 
     paths << XdgDirs::dataHome(false);
     paths << XdgDirs::dataDirs();
@@ -502,8 +502,8 @@ QString LXQtTheme::qss(const QString& module) const
 QString LXQtThemeData::loadQss(const QString& qssFile) const
 {
     // TODO: original QRegExp, check new syntax and QRegExp::RegExp2 meaning
-    // QRegExp(QL1S("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
-    static const QRegularExpression urlRegexp(QLatin1String("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
+    // QRegExp(QL1SV("url.[ \\t\\s]*"), Qt::CaseInsensitive, QRegExp::RegExp2);
+    static const QRegularExpression urlRegexp(QStringLiteral("url.[ \\t\\s]*"), QRegularExpression::CaseInsensitiveOption);
 
     QFile f(qssFile);
     if (! f.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -519,7 +519,7 @@ QString LXQtThemeData::loadQss(const QString& qssFile) const
 
     // handle relative paths
     QString qssDir = QFileInfo(qssFile).canonicalPath();
-    qss.replace(urlRegexp, QL1S("url(") + qssDir + QL1C('/'));
+    qss.replace(urlRegexp, QL1SV("url(") + qssDir + QL1C('/'));
 
     return qss;
 }
@@ -539,15 +539,15 @@ QString LXQtTheme::desktopBackground(int screen) const
     QString themeDir = QFileInfo(wallpaperCfgFileName).absolutePath();
     // There is something strange... If I remove next line the wallpapers array is not found...
     s.childKeys();
-    s.beginReadArray(QL1S("wallpapers"));
+    s.beginReadArray(QL1SV("wallpapers"));
 
     s.setArrayIndex(screen - 1);
-    if (s.contains(QL1S("file")))
-        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString()));
+    if (s.contains(QL1SV("file")))
+        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1SV("file")).toString()));
 
     s.setArrayIndex(0);
-    if (s.contains(QL1S("file")))
-        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1S("file")).toString()));
+    if (s.contains(QL1SV("file")))
+        return QDir::cleanPath(QString::fromLatin1("%1/%2").arg(themeDir, s.value(QL1SV("file")).toString()));
 
     return QString();
 }
@@ -559,7 +559,7 @@ QString LXQtTheme::desktopBackground(int screen) const
 const LXQtTheme &LXQtTheme::currentTheme()
 {
     static LXQtTheme theme;
-    QString name = Settings::globalSettings()->value(QL1S("theme")).toString();
+    QString name = Settings::globalSettings()->value(QL1SV("theme")).toString();
     if (theme.name() != name)
     {
         theme = LXQtTheme(name);
@@ -588,7 +588,7 @@ QList<LXQtTheme> LXQtTheme::allThemes()
         for(const QFileInfo &dir : dirs)
         {
             if (!processed.contains(dir.fileName()) &&
-                 QDir(dir.absoluteFilePath()).exists(QL1S("lxqt-panel.qss")))
+                 QDir(dir.absoluteFilePath()).exists(QStringLiteral("lxqt-panel.qss")))
             {
                 processed << dir.fileName();
                 ret << LXQtTheme(dir.absoluteFilePath());
@@ -657,18 +657,18 @@ void SettingsCache::loadToSettings()
 
  ************************************************/
 GlobalSettings::GlobalSettings():
-    Settings(QL1S("lxqt")),
+    Settings(QStringLiteral("lxqt")),
     d_ptr(new GlobalSettingsPrivate(this))
 {
-    if (value(QL1S("icon_theme")).toString().isEmpty())
+    if (value(QL1SV("icon_theme")).toString().isEmpty())
     {
         qWarning() << QString::fromLatin1("Icon Theme not set. Fallbacking to Oxygen, if installed");
-        const QString fallback(QLatin1String("oxygen"));
+        const QString fallback(QL1SV("oxygen"));
 
-        const QDir dir(QLatin1String(LXQT_DATA_DIR) + QLatin1String("/icons"));
+        const QDir dir(QStringLiteral(LXQT_DATA_DIR) + QStringLiteral("/icons"));
         if (dir.exists(fallback))
         {
-            setValue(QL1S("icon_theme"), fallback);
+            setValue(QL1SV("icon_theme"), fallback);
             sync();
         }
         else
@@ -695,14 +695,14 @@ void GlobalSettings::fileChanged()
     sync();
 
 
-    QString it = value(QL1S("icon_theme")).toString();
+    QString it = value(QL1SV("icon_theme")).toString();
     if (d->mIconTheme != it)
     {
         Q_EMIT iconThemeChanged();
     }
 
-    QString rt = value(QL1S("theme")).toString();
-    qlonglong themeUpdated = value(QL1S("__theme_updated__")).toLongLong();
+    QString rt = value(QL1SV("theme")).toString();
+    qlonglong themeUpdated = value(QL1SV("__theme_updated__")).toLongLong();
     if ((d->mLXQtTheme != rt) || (d->mThemeUpdated != themeUpdated))
     {
         d->mLXQtTheme = rt;

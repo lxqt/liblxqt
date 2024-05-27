@@ -75,7 +75,7 @@ QLibrary* PluginInfo::loadLibrary(const QString& libDir) const
 {
     const QFileInfo fi = QFileInfo(fileName());
     const QString path = fi.canonicalPath();
-    const QString baseName = value(QL1S("X-LXQt-Library"), fi.completeBaseName()).toString();
+    const QString baseName = value(QL1SV("X-LXQt-Library"), fi.completeBaseName()).toString();
 
     const QString soPath = QDir(libDir).filePath(QString::fromLatin1("lib%2.so").arg(baseName));
     QLibrary* library = new QLibrary(soPath);
@@ -157,7 +157,7 @@ LXQT_API QDebug operator<<(QDebug dbg, const PluginInfoList& list)
     dbg.nospace() << QL1C('(');
     for (int i=0; i<list.size(); ++i)
     {
-        if (i) dbg.nospace() << QL1S(", ");
+        if (i) dbg.nospace() << QL1SV(", ");
         dbg << list.at(i);
     }
     dbg << QL1C(')');

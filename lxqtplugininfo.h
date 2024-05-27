@@ -77,7 +77,7 @@ public:
     QString id() const { return mId; }
 
     //! This function is provided for convenience. It's equivalent to calling value("ServiceTypes").toString().
-    QString serviceType() const  { return value(QL1S("ServiceTypes")).toString(); }
+    QString serviceType() const  { return value(QL1SV("ServiceTypes")).toString(); }
 
     //! Reimplemented from XdgDesktopFile.
     virtual bool isValid() const;
@@ -94,10 +94,10 @@ public:
 
       If the same filename is located under multiple directories only the first file should be used.
     */
-    static QList<PluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter = QLatin1String("*"));
+    static QList<PluginInfo> search(const QStringList& desktopFilesDirs, const QString& serviceType, const QString& nameFilter = QL1SV("*"));
 
     /// This function is provided for convenience. It's equivalent to new calling search(QString(desktopFilesDir), serviceType, nameFilter)
-    static QList<PluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter = QLatin1String("*"));
+    static QList<PluginInfo> search(const QString& desktopFilesDir, const QString& serviceType, const QString& nameFilter = QL1SV("*"));
 
 private:
     QString mId;
