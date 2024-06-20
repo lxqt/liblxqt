@@ -237,7 +237,7 @@ void Settings::addWatchedFile(QString const & path)
     // Luckily, I found a workaround: If the file path no longer exists
     // in the watcher's files(), this file is deleted.
     if(!d_ptr->mWatcher.files().contains(path))
-        // in some situations adding fails because of non-existing file (e.g. editting file in external program)
+        // in some situations adding fails because of non-existing file (e.g. editing file in external program)
         if (!d_ptr->mWatcher.addPath(path) && 0 == d_ptr->mAddWatchTimer)
             d_ptr->mAddWatchTimer = startTimer(100);
 
