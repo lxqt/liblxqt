@@ -615,11 +615,9 @@ void GridLayout::setGeometry(const QRect &geometry)
 
     const int cols = d->cols();
     int itemWidth = 0;
-    int widthRemain = 0;
     if (stretch_h && 0 < cols)
     {
-        itemWidth = qMin((geometry.width() + sp) / cols - sp, d->mCellMaxSize.width());
-        widthRemain = (geometry.width() + sp) % cols;
+        itemWidth = qMin((geometry.width() - (cols - 1) * sp) / cols, d->mCellMaxSize.width());
     }
     else
     {
@@ -629,11 +627,9 @@ void GridLayout::setGeometry(const QRect &geometry)
 
     const int rows = d->rows();
     int itemHeight = 0;
-    int heightRemain = 0;
     if (stretch_v && 0 < rows)
     {
-        itemHeight = qMin((geometry.height() + sp) / rows - sp, d->mCellMaxSize.height());
-        heightRemain = (geometry.height() + sp) % rows;
+        itemHeight = qMin((geometry.height() - (rows - 1) * sp) / rows - sp, d->mCellMaxSize.height());
     }
     else
     {
@@ -653,51 +649,39 @@ void GridLayout::setGeometry(const QRect &geometry)
     qDebug() << "Item:" << "h:" << itemHeight << " w:" << itemWidth;
 #endif
 
-    int remain_height = heightRemain;
-    int remain_width = widthRemain;
     if (d->mDirection == LeftToRight)
     {
-        int height = itemHeight + (0 < remain_height-- ? 1 : 0);
         for (QLayoutItem *item : std::as_const(d->mItems))
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
-            int width = itemWidth + (0 < remain_width-- ? 1 : 0);
 
-            if (x + width > maxX)
+            if (x + itemWidth > maxX)
             {
                 x = geometry.left();
-                y += height + sp;
-
-                height = itemHeight + (0 < remain_height-- ? 1 : 0);
-                remain_width = widthRemain;
+                y += itemHeight + sp;
             }
 
-            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
-            d->setItemGeometry(item, QRect(left, y, width, height));
-            x += width + sp;
+            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - itemWidth + 1 : x;
+            d->setItemGeometry(item, QRect(left, y, itemWidth, itemHeight));
+            x += itemWidth + sp;
         }
     }
     else
     {
-        int width = itemWidth + (0 < remain_width-- ? 1 : 0);
         for (QLayoutItem *item : std::as_const(d->mItems))
         {
             if (!item->widget() || item->widget()->isHidden())
                 continue;
-            int height = itemHeight + (0 < remain_height-- ? 1 : 0);
 
-            if (y + height > maxY)
+            if (y + itemHeight > maxY)
             {
                 y = geometry.top();
-                x += width + sp;
-
-                width = itemWidth + (0 < remain_width-- ? 1 : 0);
-                remain_height = heightRemain;
+                x += itemWidth + sp;
             }
-            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - width + 1 : x;
-            d->setItemGeometry(item, QRect(left, y, width, height));
-            y += height + sp;
+            const int left = visual_h_reversed ? geometry.left() + geometry.right() - x - itemWidth + 1 : x;
+            d->setItemGeometry(item, QRect(left, y, itemWidth, itemHeight));
+            y += itemHeight + sp;
         }
     }
     d->mAnimate = false;
