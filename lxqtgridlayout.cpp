@@ -45,6 +45,8 @@ public:
     int mColumnCount;
     GridLayout::Direction mDirection;
 
+    GridLayout::ItemAppendingLocation mItemAppendingLocation;
+
     bool mIsValid;
     QSize mCellSizeHint;
     QSize mCellMaxSize;
@@ -104,6 +106,7 @@ GridLayoutPrivate::GridLayoutPrivate()
     mColumnCount = 0;
     mRowCount = 0;
     mDirection = GridLayout::LeftToRight;
+    mItemAppendingLocation = GridLayout::AfterLastOfList;
     mIsValid = false;
     mVisibleCount = 0;
     mStretch = GridLayout::StretchHorizontal | GridLayout::StretchVertical;
@@ -241,7 +244,14 @@ GridLayout::~GridLayout()
  ************************************************/
 void GridLayout::addItem(QLayoutItem *item)
 {
-    d_ptr->mItems.append(item);
+    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::BeforeFirstOfList){
+        d_ptr->mItems.prepend(item);
+        return;
+    }
+    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::AfterLastOfList){
+        d_ptr->mItems.append(item);
+        return;
+    }
 }
 
 
@@ -363,7 +373,29 @@ void GridLayout::setDirection(GridLayout::Direction value)
         invalidate();
     }
 }
+ 
+/************************************************
 
+************************************************/
+GridLayout::ItemAppendingLocation  GridLayout::itemAppendingLocation() const
+{
+    Q_D(const GridLayout);
+    return d->mItemAppendingLocation;
+}
+
+
+/************************************************
+
+************************************************/
+void GridLayout::setItemAppendingLocation(GridLayout::ItemAppendingLocation value)
+{
+    Q_D(GridLayout);
+     if (d->mItemAppendingLocation != value)
+     {
+         d->mItemAppendingLocation = value;
+         invalidate();
+     }
+}
 /************************************************
 
  ************************************************/
