@@ -67,6 +67,17 @@ public:
     };
     Q_DECLARE_FLAGS(Stretch, StretchFlag)
 
+     /**
+       This enum type is used to describe the location of the newly added item.
+      **/
+     enum ItemAppendingLocation
+     {
+         BeforeFirstOfList,    ///< The new Item is inserted before the first of the list.
+         AfterLastOfList     ///< The new item is inserted after the last of the list.
+     };
+ 
+
+
 
 
     /**
@@ -139,6 +150,22 @@ public:
     \sa  GridLayout::Direction
     **/
     void setDirection(Direction value);
+
+     /**
+     Returns the way we insert new items.
+ 
+     \sa  GridLayout::ItemAppendingLocation
+     **/
+     ItemAppendingLocation itemAppendingLocation() const;
+ 
+     /**
+      Sets the way we insert new items for this grid.
+ 
+     \sa  GridLayout::ItemAppendingLocation
+     **/
+     void setItemAppendingLocation(ItemAppendingLocation value);
+ 
+
 
     /**
     Returns the stretch flags of this grid.
