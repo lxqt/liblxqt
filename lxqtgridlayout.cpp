@@ -244,11 +244,13 @@ GridLayout::~GridLayout()
  ************************************************/
 void GridLayout::addItem(QLayoutItem *item)
 {
-    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::BeforeFirstOfList){
+    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::BeforeFirstOfList)
+    {
         d_ptr->mItems.prepend(item);
         return;
     }
-    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::AfterLastOfList){
+    if(d_ptr->mItemAppendingLocation == GridLayout::ItemAppendingLocation::AfterLastOfList)
+    {
         d_ptr->mItems.append(item);
         return;
     }
