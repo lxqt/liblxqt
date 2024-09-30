@@ -67,6 +67,15 @@ public:
     };
     Q_DECLARE_FLAGS(Stretch, StretchFlag)
 
+    /**
+      This enum type is used to describe the order of items.
+     **/
+    enum ItemsOrder
+    {
+        FirstToLast,   ///< The newest item comes last
+        LastToFirst    ///< The newest item comes first
+    };
+
 
 
     /**
@@ -139,6 +148,22 @@ public:
     \sa  GridLayout::Direction
     **/
     void setDirection(Direction value);
+
+
+     /**
+     Returns the order of items.
+
+     \sa  GridLayout::ItemsOrder
+     **/
+     ItemsOrder itemsOrder() const;
+
+     /**
+      Sets the the order of items.
+
+     \sa  GridLayout::ItemsOrder
+     **/
+     void setItemsOrder(ItemsOrder value);
+
 
     /**
     Returns the stretch flags of this grid.

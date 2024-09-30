@@ -44,6 +44,7 @@ public:
     int mRowCount;
     int mColumnCount;
     GridLayout::Direction mDirection;
+    GridLayout::ItemsOrder mItemsOrder;
 
     bool mIsValid;
     QSize mCellSizeHint;
@@ -104,6 +105,7 @@ GridLayoutPrivate::GridLayoutPrivate()
     mColumnCount = 0;
     mRowCount = 0;
     mDirection = GridLayout::LeftToRight;
+    mItemsOrder = GridLayout::FirstToLast;
     mIsValid = false;
     mVisibleCount = 0;
     mStretch = GridLayout::StretchHorizontal | GridLayout::StretchVertical;
@@ -241,7 +243,14 @@ GridLayout::~GridLayout()
  ************************************************/
 void GridLayout::addItem(QLayoutItem *item)
 {
-    d_ptr->mItems.append(item);
+    if (d_ptr->mItemsOrder == GridLayout::ItemsOrder::FirstToLast)
+    {
+        d_ptr->mItems.append(item);
+    }
+    else
+    {
+        d_ptr->mItems.prepend(item);
+    }
 }
 
 
@@ -382,6 +391,31 @@ void GridLayout::setStretch(Stretch value)
     if (d->mStretch != value)
     {
         d->mStretch = value;
+        invalidate();
+    }
+}
+
+
+/************************************************
+
+ ************************************************/
+GridLayout::ItemsOrder  GridLayout::itemsOrder() const
+{
+    Q_D(const GridLayout);
+    return d->mItemsOrder;
+}
+
+
+/************************************************
+
+ ************************************************/
+void GridLayout::setItemsOrder(GridLayout::ItemsOrder value)
+{
+    Q_D(GridLayout);
+    if (d->mItemsOrder != value)
+    {
+        d->mItemsOrder = value;
+        std::reverse(d->mItems.begin(), d->mItems.end());
         invalidate();
     }
 }
