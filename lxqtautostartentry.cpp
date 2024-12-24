@@ -100,18 +100,25 @@ QString AutostartEntry::name() const
 
 void AutostartEntry::setEnabled(bool enable)
 {
+    // Disabling is done only for LXQt, for respecting other DEs,
+    // while enabling of global entries can only be done for all DEs.
     XdgDesktopFile f = file();
     if (enable)
+    {
         f.removeEntry(QL1SV("Hidden"));
+        f.removeEntry(QL1SV("X-LXQt-Autostart-disabled"));
+    }
     else
-        f.setValue(QL1SV("Hidden"), true);
+        f.setValue(QL1SV("X-LXQt-Autostart-disabled"), true);
 
     setFile(f);
 }
 
 bool AutostartEntry::isEnabled() const
 {
-    return !isEmpty() && !file().value(QL1SV("Hidden"), false).toBool();
+    return !isEmpty()
+           && !file().value(QL1SV("Hidden"), false).toBool()
+           && !file().value(QL1SV("X-LXQt-Autostart-disabled"), false).toBool();
 }
 
 bool AutostartEntry::commit()
