@@ -150,7 +150,7 @@ public:
     const ServerInfo serverInfo();
 
     /*!
-     * \brief Performs an asyncronous query of the notifications server information.
+     * \brief Performs an asynchronous query of the notifications server information.
      *        Use serverInfoReady signal to get notified (no pun intended) when the
      *        info will be received.
      * \sa serverInfo()
