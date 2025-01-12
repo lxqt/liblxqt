@@ -95,7 +95,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Выключить компьютер? Все несохранённые изменения в документах будут потеряны...</translation>
+        <translation>Выключить компьютер? Вся несохранённая работа будет потеряна…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -137,9 +137,9 @@
         <translation>Не удалось запустить «%1». Убедитесь, что указанный блокировщик/хранитель экрана установлен и корректно запускается.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
-        <translation>Заблокировать экран</translation>
+        <translation>Блокировка экрана</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>

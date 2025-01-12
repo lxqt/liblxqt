@@ -92,7 +92,7 @@ void Notification::setHint(const QString& hintName, const QVariant& value)
 void Notification::setUrgencyHint(Urgency urgency)
 {
     Q_D(Notification);
-    d->mHints.insert(QL1S("urgency"), qvariant_cast<uchar>(urgency));
+    d->mHints.insert(QL1SV("urgency"), qvariant_cast<uchar>(urgency));
 }
 
 void Notification::clearHints()
@@ -136,8 +136,8 @@ NotificationPrivate::NotificationPrivate(const QString& summary, Notification* p
     mTimeout(-1),
     q_ptr(parent)
 {
-    mInterface = new OrgFreedesktopNotificationsInterface(QL1S("org.freedesktop.Notifications"),
-                                                          QL1S("/org/freedesktop/Notifications"),
+    mInterface = new OrgFreedesktopNotificationsInterface(QL1SV("org.freedesktop.Notifications"),
+                                                          QL1SV("/org/freedesktop/Notifications"),
                                                           QDBusConnection::sessionBus(), this);
     connect(mInterface, &OrgFreedesktopNotificationsInterface::NotificationClosed,
         this, &NotificationPrivate::notificationClosed);
@@ -157,8 +157,8 @@ void NotificationPrivate::update()
     }
     else
     {
-        if (mHints.contains(QL1S("urgency")) && mHints.value(QL1S("urgency")).toInt() != Notification::UrgencyLow)
-            QMessageBox::information(nullptr, tr("Notifications Fallback"), mSummary + QL1S(" \n\n ") + mBody);
+        if (mHints.contains(QL1SV("urgency")) && mHints.value(QL1SV("urgency")).toInt() != Notification::UrgencyLow)
+            QMessageBox::information(nullptr, tr("Notifications Fallback"), mSummary + QL1SV(" \n\n ") + mBody);
     }
 }
 
@@ -171,7 +171,7 @@ void NotificationPrivate::setActions(QStringList actions, int defaultAction)
     for (int ix = 0; ix < N; ix++)
     {
         if (ix == defaultAction)
-            mActions.append(QL1S("default"));
+            mActions.append(QL1SV("default"));
         else
             mActions.append(QString::number(ix));
         mActions.append(actions[ix]);
@@ -191,7 +191,7 @@ void NotificationPrivate::queryServerInfo(bool async)
 {
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(mInterface->GetServerInformation(), this);
 
-    connect(watcher, &QDBusPendingCallWatcher::finished, [this](QDBusPendingCallWatcher* callWatcher) {
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher* callWatcher) {
             Q_Q(Notification);
             QDBusPendingReply<QString, QString, QString, QString> reply = *callWatcher;
 
@@ -228,7 +228,7 @@ void NotificationPrivate::handleAction(uint id, const QString& key)
     qDebug() << "action invoked:" << key;
     bool ok = true;
     int keyId;
-    if (key == QL1S("default"))
+    if (key == QL1SV("default"))
         keyId = mDefaultAction;
     else
         keyId = key.toInt(&ok);

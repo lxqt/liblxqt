@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot; चलाने में विफल रहा. सुनिश्चित करें कि आप के पास निर्धारित लॉकर/स्क्रीनसेवर स्थापित है और चल रहा है.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>स्क्रीन लॉक करें</translation>
     </message>

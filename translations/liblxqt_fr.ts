@@ -137,7 +137,7 @@
         <translation>Erreur lors du démarrage de &quot;%1&quot;. Vérifiez que le verouillage/écran de veille est installé et démarré.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Verrouiller l&apos;écran</translation>
     </message>

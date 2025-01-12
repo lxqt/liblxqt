@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_GB">
+<TS version="2.1" language="pa">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation></translation>
+        <translation>ਡਾਈਲਾਗ</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation></translation>
+        <translation>LXQt ਪਾਵਰ ਮੈਨੇਜਰ ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation></translation>
+        <translation>ਹਾਈਬਰਨੇਟ ਫੇਲ੍ਹ ਹੈ।</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation></translation>
+        <translation>ਨੋਟੀਫਿਕੇਸ਼ਨ ਫਾਲਬੈਕ</translation>
     </message>
 </context>
 <context>
@@ -35,93 +35,93 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
-        <translation></translation>
+        <translation>ਹਾਈਬਰਨੇਟ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation></translation>
+        <translation>ਸਸਪੈਂਡ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
         <source>Reboot</source>
-        <translation></translation>
+        <translation>ਮੁੜ-ਚਾਲੂ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
-        <translation></translation>
+        <translation>ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="136"/>
         <source>Logout</source>
-        <translation></translation>
+        <translation>ਲਾਗ ਆਉਟ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation></translation>
+        <translation>LXQt ਸ਼ੈਸ਼ਨ ਸਸਪੈਂਡ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation></translation>
+        <translation>ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ ਸਸਪੈਂਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?&lt;p&gt;ਕੰਪਿਊਟਰ ਨੂੰ ਸਸਪੈਂਡ ਕਰਨ ਨਾਲ ਇਹ ਘੱਟ ਪਾਵਰ ਵਰਤਦਾ ਹੈ। ਜੇ ਪਾਵਰ ਖਤਮ ਹੋ ਗਈ ਤਾਂ ਸਿਸਟਮ ਦੀ ਸਥਿਤੀ ਬਹਾਲ ਨਹੀਂ ਹੁੰਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation></translation>
+        <translation>LXQt ਸ਼ੈਸ਼ਨ ਹਾਈਬਰਨੇਟ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation></translation>
+        <translation>ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ ਹਾਈਬਰਨੇਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?&lt;p&gt;ਕੰਪਿਊਟਰ ਨੂੰ ਹਾਈਬਰਨੇਟ ਕਰਨ ਨਾਲ ਇਹ ਘੱਟ ਪਾਵਰ ਵਰਤਦਾ ਹੈ। ਜੇ ਪਾਵਰ ਖਤਮ ਹੋ ਗਈ ਤਾਂ ਸਿਸਟਮ ਦੀ ਸਥਿਤੀ ਬਹਾਲ ਨਹੀਂ ਹੁੰਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation></translation>
+        <translation>LXQt ਸ਼ੈਸ਼ਨ ਮੁੜ-ਚਾਲੂ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation></translation>
+        <translation>ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਸਾਰਾ ਨਾ-ਸੰਭਾਲਿਆ ਗਿਆ ਕੰਮ ਖਤਮ ਹੋ ਜਾਵੇਗਾ...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation></translation>
+        <translation>LXQt ਸ਼ੈਸ਼ਨ ਬੰਦ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation></translation>
+        <translation>ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਸਾਰਾ ਨਾ-ਸੰਭਾਲਿਆ ਗਿਆ ਕੰਮ ਖਤਮ ਹੋ ਜਾਵੇਗਾ...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation></translation>
+        <translation>LXQt ਸ਼ੈਸ਼ਨ ਲਾਗ ਆਉਟ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation></translation>
+        <translation>ਕੀ ਤੁਸੀਂ ਲਾਗ ਆਉਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਸਾਰਾ ਨਾ-ਸੰਭਾਲਿਆ ਗਿਆ ਕੰਮ ਖਤਮ ਹੋ ਜਾਵੇਗਾ...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation></translation>
+        <translation>LXQt ਪਾਵਰ ਮੈਨੇਜਰ ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation></translation>
+        <translation>ਹਾਈਬਰਨੇਟ ਅਸਫ਼ਲ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation></translation>
+        <translation>ਸਸਪੈਂਡ ਫੇਲ੍ਹ ਹੈ।</translation>
     </message>
 </context>
 <context>
@@ -129,22 +129,22 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
-        <translation></translation>
+        <translation>ਸਕਰੀਨ ਲਾਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
         <source>Screen Saver Error</source>
-        <translation></translation>
+        <translation>ਸਕਰੀਨ ਸੇਵਰ ਗਲਤੀ</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
-        <translation></translation>
+        <translation>ਵੇਖਾਉਣ ਲਈ ਸਫ਼ਾ ਚੁਣੋ।</translation>
     </message>
 </context>
 <context>
@@ -161,19 +161,19 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation></translation>
+        <translation>ਪਾਵਰ ਮੈਨੇਜਰ ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation></translation>
+        <translation>ਪਾਵਰ ਮੈਨੇਰ ਗਲਗੀ (ਡੀ-ਬੱਸ ਕਾਲ)</translation>
     </message>
 </context>
 </TS>

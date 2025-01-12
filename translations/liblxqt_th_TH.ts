@@ -80,7 +80,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation> เริ่มการทำงานของ LXQt ใหม่</translation>
+        <translation>เริ่มการทำงานของ LXQt ใหม่</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
@@ -137,7 +137,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>ล็อคหน้าจอ</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>Nepodařilo se spustit „%1“. Zajistěte, aby byl nainstalovaný zadaný nástroj pro zamykání / šetřič obrazovky a byl spuštěný.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Zamknout obrazovku</translation>
     </message>

@@ -1,3 +1,24 @@
+liblxqt-2.1.0 / 2024-11-05
+===========================
+ * Replaced `QLatin1String` with `QLatin1StringView`.
+ * Enable custom screenlockers on X11 and wayland.
+ * Fixed setting of item geometries in grid layout.
+ * Support reversing the order of items in LXQt's grid layout.
+
+liblxqt-2.0.0 / 2024-04-17
+===========================
+ * Ported to Qt6.
+ * License of backlight is changed to LGPL2+.
+
+liblxqt-1.4.0 / 2023-11-05
+===========================
+ * Ported deprecated KWindowSystem methods.
+ * Show error on trying to lock screen under Wayland.
+
+liblxqt-1.3.0 / 2023-04-15
+===========================
+ * Updated translations and bumped version to 1.3.0.
+
 liblxqt-1.2.0 / 2022-11-05
 ===========================
  * Updated translations and bumped version to 1.2.0.

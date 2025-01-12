@@ -137,7 +137,7 @@
         <translation>Не вдалося запустити  «%1». Переконайтеся, що вказану заставку встановлено та запущено.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Заблокувати екран</translation>
     </message>

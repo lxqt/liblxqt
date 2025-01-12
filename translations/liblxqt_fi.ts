@@ -14,7 +14,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt-virranhallintavirhe</translation>
+        <translation>LXQt:n virranhallintavirhe</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
@@ -134,10 +134,10 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Ohjelman &quot;%1&quot; käynnistäminen epäonnistui. Varmista, että valittu näytönsäästäjä/näytönlukitsija on asennettu sekä käynnissä.</translation>
+        <translation>Ohjelman &quot;%1&quot; käynnistäminen epäonnistui. Varmista, että valittu näytönsäästäjä/-lukitsija on asennettu sekä käynnissä.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Lukitse näyttö</translation>
     </message>

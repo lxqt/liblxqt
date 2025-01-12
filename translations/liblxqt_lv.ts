@@ -137,7 +137,7 @@
         <translation>Neizdevās palaist &quot;%1&quot;. Pārliecinieties, ka norādītā ekrānbloķētājs/ekrānsaudzētājs ir uzstādīts un palaists.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Slēgt ekrānu</translation>
     </message>

@@ -137,7 +137,7 @@
         <translation>Napaka pri zaganjanju &quot;%1&quot;. Preverite, če je ohranjevalnik zaslona nameščen in zagnan.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Zakleni zaslon</translation>
     </message>

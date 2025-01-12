@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>İletişim Penceresi</translation>
+        <translation>Diyalog</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
         <translation>&quot;%1&quot; çalıştırma başarısız. Belirli bir kilitleyicinin/ekran koruyucunun yüklendiğinden ve çalıştığından emin olunuz.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Ekranı Kilitle</translation>
     </message>

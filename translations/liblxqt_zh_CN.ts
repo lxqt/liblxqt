@@ -137,7 +137,7 @@
         <translation>运行  &quot;%1&quot;失败。请确保指定的锁屏或屏保已经安装并正在运行。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>锁屏</translation>
     </message>

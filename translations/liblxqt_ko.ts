@@ -19,7 +19,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation>최대 절전모드 실패.</translation>
+        <translation>최대 절전모드에 실패했습니다.</translation>
     </message>
 </context>
 <context>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
-        <translation>최대 절전모드</translation>
+        <translation>최대 절전</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation>절전모드</translation>
+        <translation>절전</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
@@ -60,22 +60,22 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>LXQt 세션 절전모드</translation>
+        <translation>LXQt 세션 절전</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>컴퓨터를 절전 모드로 전환하시겠습니까??&lt;p&gt;컴퓨터를 저전력 상태인 절전 모드로 전환합니다. 전원이 꺼지면 시스템 상태가 유지되지 않습니다.</translation>
+        <translation>컴퓨터를 절전모드로 전환하시겠습니까??&lt;p&gt;컴퓨터를 저전력 상태인 절전모드로 전환합니다. 전원이 꺼지면 시스템 상태가 유지되지 않습니다.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>LXQt 세션 최대 절전모드</translation>
+        <translation>LXQt 세션 최대 절전</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>컴퓨터를 최대 절전 모드로 전환하시겠습니까?&lt;p&gt;컴퓨터를 저전력 상태인 최대 절전 모드로 전환합니다. 전원이 꺼지면 시스템 상태가 유지되지 않습니다.</translation>
+        <translation>컴퓨터를 최대 절전모드로 전환하시겠습니까?&lt;p&gt;컴퓨터를 저전력 상태인 최대 절전모드로 전환합니다. 전원이 꺼지면 시스템 상태가 유지되지 않습니다.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation>최대 절전모드 실패.</translation>
+        <translation>최대 절전모드에 실패했습니다.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>절전모드 실패.</translation>
+        <translation>절전모드에 실패했습니다.</translation>
     </message>
 </context>
 <context>
@@ -129,15 +129,15 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>&quot;%1&quot;을(를) 실행하지 못했습니다. xdg-screensaver와 호환되는 잠금도구/화면 보호기가 설치되어 실행 중인지 확인하십시오.</translation>
+        <translation>&quot;%1&quot;을(를) 실행하지 못했습니다. xdg-screensaver와 호환되는 잠금도구/화면 보호기가 설치되어 실행 중인지 확인하세요.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>&quot;%1&quot;을(를) 실행하지 못했습니다. 지정된 잠금도구/화면 보호기가 설치되어 실행 중인지 확인하십시오.</translation>
+        <translation>&quot;%1&quot;을(를) 실행하지 못했습니다. 지정된 잠금도구/화면 보호기가 설치되어 실행 중인지 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>화면 잠금</translation>
     </message>

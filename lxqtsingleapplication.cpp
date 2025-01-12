@@ -27,7 +27,9 @@
 
 #include "lxqtsingleapplication.h"
 #include "singleapplicationadaptor.h"
-#include <KWindowSystem/KWindowSystem>
+#include <KWindowSystem>
+#include <KWindowInfo>
+#include <KX11Extras>
 #include <QDBusMessage>
 #include <QWidget>
 #include <QDebug>
@@ -45,8 +47,8 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
     QDBusConnection bus = QDBusConnection::sessionBus();
 
     if (!bus.isConnected()) {
-        QLatin1String errorMessage("Can't connect to the D-Bus session bus\n"
-                                   "Make sure the D-Bus daemon is running");
+        QLatin1StringView errorMessage("Can't connect to the D-Bus session bus\n"
+                                       "Make sure the D-Bus daemon is running");
 
         /* ExitOnDBusFailure is the default. Any value other than
            NoExitOnDBusFailure will be taken as ExitOnDBusFailure (the default).
@@ -56,7 +58,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             return;
         } else {
             qCritical() << Q_FUNC_INFO << errorMessage;
-            QTimer::singleShot(0, [this] { exit(1); });
+            QTimer::singleShot(0, this, [] { SingleApplication::exit(1); });
         }
     }
 
@@ -64,7 +66,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
                        QDBusConnectionInterface::ServiceRegistered);
     if (registered) { // We are the primary instance
         SingleApplicationAdaptor *mAdaptor = new SingleApplicationAdaptor(this);
-        QLatin1String objectPath("/");
+        QLatin1StringView objectPath("/");
         bus.registerObject(objectPath, mAdaptor,
             QDBusConnection::ExportAllSlots);
     } else { // We are the second outstance
@@ -74,7 +76,7 @@ SingleApplication::SingleApplication(int &argc, char **argv, StartOptions option
             QStringLiteral("activateWindow"));
         QDBusConnection::sessionBus().send(msg);
 
-        QTimer::singleShot(0, [this] { exit(0); });
+        QTimer::singleShot(0, this, [] { SingleApplication::exit(0); });
     }
 }
 
@@ -95,13 +97,16 @@ void SingleApplication::activateWindow()
     if (mActivationWindow) {
         mActivationWindow->show();
         WId window = mActivationWindow->effectiveWinId();
-
-        KWindowInfo info(window, KWindowSystem::WMDesktop);
+        KWindowInfo info(window, NET::WMDesktop);
         int windowDesktop = info.desktop();
 
-        if (windowDesktop != KWindowSystem::currentDesktop())
-            KWindowSystem::setCurrentDesktop(windowDesktop);
-        KWindowSystem::activateWindow(window);
+        if (windowDesktop != KX11Extras::currentDesktop())
+            KX11Extras::setCurrentDesktop(windowDesktop);
+
+        if (QWindow *w = mActivationWindow->windowHandle())
+            KWindowSystem::activateWindow(w);
+         else
+            qDebug() << Q_FUNC_INFO << "Got null windowHandle";
     } else {
         qDebug() << Q_FUNC_INFO << "activationWindow not set or null";
     }

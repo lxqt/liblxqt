@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Energiadministrilo Eraro</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Pasivumigo fiaskis.</translation>
+        <translation>Pasivumigo fiaskis.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Sciigoj Retropaŝoj</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation>Prokrasti</translation>
+        <translation>Halteti</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
-        <translation>Elŝalti</translation>
+        <translation>Malŝalti</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="136"/>
@@ -60,58 +60,58 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Seanco Halteto</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉu vi volas vere halteti vian komputilon?&lt;p&gt;Halteti la komputilo en energiŝparigan staton. Sistema stato ne estas konervata se la kurento estas perdita.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Seanco Pasivumigo</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉu vi volas vere pasivumigi vian komputilon?&lt;p&gt;Pasivumigi la komputilo en energiŝparigan staton. Sistema stato ne estas konervata se la kurento estas perdita.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Seanco Restartigo</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉu vi volas vere restartigi vian komputilon? Ĉiuj nekonservitaj laboroj estos perditaj...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Seanco Malŝalto</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉu vi volas vere malŝalti vian komputilon? Ĉiuj nekonservitaj laboroj estos perditaj...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Seanco Elsaluto</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉu vi volas vere elsaluti vian seancon? Ĉiuj nekonservitaj laboroj estos perditaj...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt Energiadministrilo Eraro</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>Prokrasto fiaskis.</translation>
+        <translation>Halteto fiaskis.</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="243"/>
+        <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
         <translation>Ŝlosi ekranon</translation>
     </message>
