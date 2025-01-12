@@ -142,11 +142,11 @@ namespace
     QScopedPointer<SignalHandler> SignalHandler::instance;
 }
 
-void Application::listenToUnixSignals(QList<int> const & signoList)
+void Application::listenToUnixSignals(QList<int> const & signalList)
 {
     static QScopedPointer<QSocketNotifier> signal_notifier;
 
     if (SignalHandler::instance.isNull())
         SignalHandler::instance.reset(new SignalHandler{this, [this] (int signo) { Q_EMIT unixSignal(signo); }});
-    SignalHandler::instance->listenToSignals(signoList);
+    SignalHandler::instance->listenToSignals(signalList);
 }
