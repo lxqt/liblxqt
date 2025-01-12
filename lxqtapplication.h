@@ -60,10 +60,10 @@ public:
      */
     Application(int &argc, char **argv, bool handleQuitSignals);
     ~Application() override {}
-    /*! Install UNIX signal handler for signals defined in \param signoList
+    /*! Install UNIX signal handler for signals defined in \param signalList
      * Upon receiving of any of this signals the \sa unixSignal signal is emitted
      */
-    void listenToUnixSignals(QList<int> const & signoList);
+    void listenToUnixSignals(QList<int> const & signalList);
 
 private Q_SLOTS:
     void updateTheme();
