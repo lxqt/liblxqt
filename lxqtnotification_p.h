@@ -61,7 +61,7 @@ private:
     int mTimeout;
 
     static Notification::ServerInfo sServerInfo;
-    static bool sIsServerInfoQueried;
+    static bool sIsServerInfoQuried;
 
     Notification* const q_ptr;
     Q_DECLARE_PUBLIC(Notification)
