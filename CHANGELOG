@@ -110,9 +110,9 @@ liblxqt-0.14.0 / 2019-01-25
     - lxqtpageselectwidget: Fixed config dialog select widget cells
   * Improved cmake scripting
     - Set cmake_minimum_required to 3.1.0
-    - Removed locale compile definitons
+    - Removed locale compile definitions
   * Moved translations from lxqt-l10n back to liblxqt
-    - Removed obsolete translation fuctionality
+    - Removed obsolete translation functionality
     - Added translation promo in README.md
    * Translation updates
 
@@ -190,7 +190,7 @@ liblxqt-0.13.0 / 2018-05-21
 ===================
 
   * Release 0.11.0: Add changelog
-  * Bump version ot 0.11.0 (#105)
+  * Bump version to 0.11.0 (#105)
   * Settings: Make use of reverse_iterator conditional
   * Application: Add <cerrno> include
   * Settings: Add "homemade" XDG_CONFIG_DIRS support
@@ -308,7 +308,7 @@ liblxqt-0.13.0 / 2018-05-21
   * Updates translations
   * Moves the about dialog to lxqt-about
   * debug: showing qDebug()/qWarning() only in "debug" build
-  * LxQtTheme: removed superfluous warning (can't occure)
+  * LxQtTheme: removed superfluous warning (can't occur)
   * debug: strip debug messages in "release" build
   * Remove AddPluginDialog as it is no longer used
   * Hungarian translation update
@@ -351,7 +351,7 @@ liblxqt-0.13.0 / 2018-05-21
   * remove not needed whitespaces
   * Adds StartOptions to the SingleApplication class
   * Adds the LxQt::SingleApplication class.
-  * CMakeLists.txt maintenaince
+  * CMakeLists.txt maintenance
   * Fixes yet another translations install dir mistake
   * Get rid of USE_QT5 in lxqt-config.cmake
   * Fixes translations install dir
@@ -394,7 +394,7 @@ liblxqt-0.13.0 / 2018-05-21
   * Fix top-to-bottom layout x-coord calculation
   * Fix broken *.ts files and update to the latest strings.
   * Replace LXDE-Qt with LXQt.
-  * Add -locations absolute option to lupdate so our *.ts files can contain informations about the source lines.
+  * Add -locations absolute option to lupdate so our *.ts files can contain information about the source lines.
   * Fix incorrect namespace in the *.ts files.
   * Add code to update the *.ts files when the UPDATE_TRANSLATIONS option is turned on.
   * Fix context names which uses C++ namespaces in all of the *.ts files.
@@ -421,10 +421,10 @@ liblxqt-0.13.0 / 2018-05-21
   * Use newer version of cmake 2.8.9
   * Detect the path of qmake correctly for Qt5.
   * Fix internal include
-  * Fix after merging from master, by removing dupplicated items
+  * Fix after merging from master, by removing duplicated items
   * Merge branch 'master' of https://github.com/lxde/liblxqt into qt5
   * Update qt5 porting
-  * Update Turkish tranlations
+  * Update Turkish translations
   * Set include dirs properly.
   * Install pkgconfig file to /usr/local/libdata/pkgconfig when FreeBSD is detected.
   * Set link directories properly
@@ -590,7 +590,7 @@ liblxqt-0.13.0 / 2018-05-21
   * Small improvement to dialog icon sizing
   * Don't reset when pressing Enter
   * reduce error messages when there is no session running in razor-power
-  * QDbusError canot be print out on Ubuntu version of qt
+  * QDbusError cannot be print out on Ubuntu version of qt
   * notification client library uses a QMessageBox failback message when it's not able to send a dbus message
   * fixed #147 razorpower: things to implement - notifications
   * default arguments for notification client lib
@@ -598,7 +598,7 @@ liblxqt-0.13.0 / 2018-05-21
   * GUI for change razor theme.
   * Moving qtservice to libraries
   * Stylesheets are not always applied.
-  * Typos in code. Thanks Aaron Lewis.   *  In razor-runner , providers item:  title() was typed as tile()   *  For RazorSettings class , settingsChanged() was typed as settigsChanged()
+  * Typos in code. Thanks Aaron Lewis.   *  In razor-runner , providers item:  title() was typed as tile()   *  For RazorSettings class , settingsChanged() was typed as settingsChanged()
   * RazorSettings not read global settings.
   * Changing notification ui. Adding default notitifaction icon. Embedding icons in notification
   * Proper default values
@@ -615,7 +615,7 @@ liblxqt-0.13.0 / 2018-05-21
   * fix for theme loading when there is no theme specified in config
   * Added localizedValue() in RazorSettings
   * Fix: wrong path for debug log
-  * Config coresponds XDG directory specification
+  * Config corresponds XDG directory specification
   * Transifex desktop: sr_BA.ts should be a local
   * strongly enhances debugging
   * Transifex desktop: local translations
@@ -639,7 +639,7 @@ liblxqt-0.13.0 / 2018-05-21
   * Env variables for plugins dirs   RAZORQT_DESKTOP_PLUGINS_DIR & RAZORQT_DESKTOP_PLUGINS_SO_DIR   RAZORQT_PANEL_PLUGINS_DIR & RAZORQT_PANEL_PLUGINS_SO_DIR
   * Create a "standardized" configuration dialog
   * Relicense razorqtlib
-  * XdgAutoStart rewriten (lgpl2+)
+  * XdgAutoStart rewritten (lgpl2+)
   * Fix gmail.ru -> gmail.com
   * Issue#147 add return value to provide a valuable feedback to user
   * menus are adopted to the new backends; old code removed; check for running razor-session to allow/disallow "logout" item
@@ -668,7 +668,7 @@ liblxqt-0.13.0 / 2018-05-21
   * New doxygen ifrastructure
   * power manager: list actions only if is user allowed to call it
   * fixed warning: The Free Software Foundation address in this file seems to be outdated
-  * devel-docs generated in CMAKE_BINARY_DIR/docs includig dummy index.html
+  * devel-docs generated in CMAKE_BINARY_DIR/docs including dummy index.html
   * missing translations in CMakeLists
   * XdgDesktopFile is implicitly shared
   * huge refactoring of the libraries build organization

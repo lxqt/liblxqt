@@ -56,7 +56,7 @@ public:
     /*! Construct a LXQt application object.
      * \param argc standard argc as in QApplication
      * \param argv standard argv as in QApplication
-     * \param handleQuitSignals flag if signals SIGINT, SIGTERM, SIGHUP should be handled internaly (\sa quit() application)
+     * \param handleQuitSignals flag if signals SIGINT, SIGTERM, SIGHUP should be handled internally (\sa quit() application)
      */
     Application(int &argc, char **argv, bool handleQuitSignals);
     ~Application() override {}
