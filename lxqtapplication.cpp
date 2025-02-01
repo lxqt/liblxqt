@@ -121,13 +121,13 @@ namespace
             close(mSignalSock[1]);
         }
 
-        void listenToSignals(QList<int> const & signoList)
+        void listenToSignals(QList<int> const & signalList)
         {
             struct sigaction sa;
             sa.sa_handler = signalHandler;
             sigemptyset(&sa.sa_mask);
             sa.sa_flags = 0;
-            for (auto const & signo : signoList)
+            for (auto const & signo : signalList)
                 sigaction(signo, &sa, nullptr);
         }
 
