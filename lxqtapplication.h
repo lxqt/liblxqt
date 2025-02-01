@@ -63,7 +63,7 @@ public:
     /*! Install UNIX signal handler for signals defined in \param signalList
      * Upon receiving of any of this signals the \sa unixSignal signal is emitted
      */
-    void listenToUnixSignals(QList<int> const & signalList);
+    void listenToUnixSignals(QList<int> const & signolList);
 
 private Q_SLOTS:
     void updateTheme();
