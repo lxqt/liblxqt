@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation>後備通知</translation>
+        <translation>後援通知</translation>
     </message>
 </context>
 <context>
@@ -60,7 +60,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>暫停LXQt會話</translation>
+        <translation>LXQt 工作階段暫停</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>休眠LXQt會話</translation>
+        <translation>LXQt 工作階段休眠</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
@@ -80,12 +80,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation>重新啟動LXQt會話</translation>
+        <translation>LXQt 工作階段重新啟動</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>您確定要重新啟動您的電腦嗎？所有未儲存工作將會遺失……</translation>
+        <translation>確定要重新啟動您的電腦嗎？全部尚未儲存工作將會遺失……</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -95,17 +95,17 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>您確定要關閉您的電腦嗎？所有未儲存工作將會遺失……</translation>
+        <translation>確定要關閉您的電腦嗎？全部尚未儲存工作將會遺失……</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation>登出LXQt會話</translation>
+        <translation>LXQt 工作階段登出</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>您確定要登出嗎？所有未儲存工作將會遺失……</translation>
+        <translation>確定要登出嗎？全部尚未儲存工作將會遺失……</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -173,7 +173,7 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>電源管理錯誤(DBus通知)</translation>
+        <translation>電源管理器錯誤 (D-Bus 呼叫)</translation>
     </message>
 </context>
 </TS>
