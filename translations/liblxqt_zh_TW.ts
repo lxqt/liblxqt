@@ -65,7 +65,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>你確定要讓您的電腦進入暫停模式嗎？&lt;p&gt;暫停主機可以節省耗能。切斷電源後系統狀況也將遺失。</translation>
+        <translation>確定要讓電腦進入暫停嗎？&lt;p&gt;暫停電腦將進入低功耗狀態。如果電源切斷，系統狀態不會被保存。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>您確定要讓電腦進入休眠模式嗎？&lt;p&gt;休眠主機可以節省耗能。切斷電源後系統狀況也將遺失。</translation>
+        <translation>確定要讓電腦進入休眠嗎？&lt;p&gt;休眠電腦即進入低功耗狀態。如果電源切斷，系統狀態將會被保存。</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
@@ -111,7 +111,7 @@
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation>LXQt電源管理員錯誤</translation>
+        <translation>LXQt 電源管理器錯誤</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -129,17 +129,17 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="161"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>無法執行「%1」。請確認是否有安裝與 xdg-screensaver 相容的鎖定程式/螢幕保護程式，並確認其可以執行。</translation>
+        <translation>無法執行  &quot;%1&quot;。要確定與 xdg-screensaver 相容的鎖定程式/螢幕保護程式已經安裝並在執行中。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>無法執行「%1」。請確認是否已安裝指定的鎖定程式/螢幕保護程式，並確認其可以執行。</translation>
+        <translation>執行失敗  &quot;%1&quot;。確定指定的鎖定程式/螢幕保護程式已有安裝並在執行中。</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
         <source>Lock Screen</source>
-        <translation>螢幕上鎖</translation>
+        <translation>螢幕鎖定</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="156"/>
@@ -161,13 +161,13 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
         <source>Power Manager Error</source>
-        <translation>電源管理錯誤</translation>
+        <translation>電源管理器錯誤</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDBus介面無效</translation>
+        <translation>QDBusInterface 無效</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
