@@ -1,3 +1,8 @@
+liblxqt-2.2.0 / 2025-04-17
+===========================
+ * Limit disabling of autostart entries to LXQt (used in lxqt-session).
+ * Fixed some typos in comments and changelog.
+
 liblxqt-2.1.0 / 2024-11-05
 ===========================
  * Replaced `QLatin1String` with `QLatin1StringView`.
