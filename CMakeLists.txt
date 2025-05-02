@@ -75,6 +75,8 @@ set(PUB_HDRS
     configdialog/lxqtconfigdialogcmdlineoptions.h
     configdialog/lxqtpageselectwidget.h
 
+    aboutdialog/lxqtaboutdialog.h
+
     lxqtpower/lxqtpower.h
     lxqtnotification.h
     lxqtautostartentry.h
@@ -106,6 +108,8 @@ set(PUBLIC_CLASSES
     ConfigDialogCmdLineOptions
     PageSelectWidget
 
+    AboutDialog
+
     Power
     Notification
     AutostartEntry
@@ -133,6 +137,8 @@ set(SRCS
     configdialog/lxqtconfigdialog.cpp
     configdialog/lxqtconfigdialogcmdlineoptions.cpp
     configdialog/lxqtpageselectwidget.cpp
+
+    aboutdialog/lxqtaboutdialog.cpp
 
     lxqtpower/lxqtpower.cpp
     lxqtpower/lxqtpowerproviders.cpp
@@ -167,6 +173,8 @@ set(MOCS
     configdialog/lxqtconfigdialog_p.h
     configdialog/lxqtpageselectwidget.h
 
+    aboutdialog/lxqtaboutdialog.h
+
     lxqtnotification.h
     lxqtnotification_p.h
     lxqtpower/lxqtpower.h
@@ -190,6 +198,7 @@ endif (BUILD_BACKLIGHT_LINUX_BACKEND)
 
 set(FORMS
     configdialog/lxqtconfigdialog.ui
+    aboutdialog/lxqtaboutdialog.ui
 )
 
 set(POLKIT_FILES
