@@ -30,6 +30,7 @@
 #include "lxqtpowerproviders.h"
 #include <QDBusInterface>
 #include <QProcess>
+#include <QGuiApplication>
 #include <QDebug>
 #include "lxqtnotification.h"
 #include <csignal> // for kill()
@@ -637,7 +638,12 @@ bool CustomProvider::canAction(Power::Action action) const
         return mSettings.contains(QL1SV("logoutCommand"));
 
     case Power::PowerMonitorOff:
-        return mSettings.contains(QL1SV("monitorOffCommand"));
+        if (QGuiApplication::platformName() == QStringLiteral("xcb"))
+            return mSettings.contains(QL1SV("monitorOffCommand"));
+        else if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+            return mSettings.contains(QL1SV("monitorOffCommand_wayland"));
+        else
+            return false;
 
     case Power::PowerShowLeaveDialog:
         return mSettings.contains(QL1SV("showLeaveDialogCommand"));
@@ -674,7 +680,10 @@ bool CustomProvider::doAction(Power::Action action)
         break;
 
     case Power::PowerMonitorOff:
-        command = mSettings.value(QL1SV("monitorOffCommand")).toString();
+        if (QGuiApplication::platformName() == QStringLiteral("xcb"))
+            command = mSettings.value(QL1SV("monitorOffCommand")).toString();
+        else if (QGuiApplication::platformName() == QStringLiteral("wayland"))
+            command = mSettings.value(QL1SV("monitorOffCommand_wayland")).toString();
         break;
 
     case Power::PowerShowLeaveDialog:
