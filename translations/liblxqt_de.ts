@@ -134,7 +134,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="165"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Fehler beim Ausführen von &amp;quot;% 1&amp;quot; Stellen Sie sicher, dass der ausgewählte Locker/Bildschirmschoner installiert ist und läuft..</translation>
+        <translation>Fehler beim Ausführen von &quot;%1&quot;. Stellen Sie sicher, dass der ausgewählte Locker/Bildschirmschoner installiert ist und läuft.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="247"/>
