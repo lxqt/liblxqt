@@ -85,7 +85,35 @@ static void show_blacklight()
     printf("%s %d %d\n", driver, max_value, actual);
     free(driver);
 }
-
+static void show_max()
+{
+    char *driver = get_driver();
+    if( driver == NULL ) {
+        return;
+    }
+    int max_value = read_max_backlight(driver);
+    printf("%d\n", max_value);
+    free(driver);
+}
+static void show_val()
+{
+    char *driver = get_driver();
+    if( driver == NULL ) {
+        return;
+    }
+    int actual = read_backlight(driver);
+    printf("%d\n", actual);
+    free(driver);
+}
+static void show_driver()
+{
+    char *driver = get_driver();
+    if( driver == NULL ) {
+        return;
+    }
+    printf("%s\n", driver);
+    free(driver);
+}
 static void change_blacklight(int value, int percent_ok)
 {
     char *driver = get_driver();
@@ -168,6 +196,9 @@ static void help(char *argv0)
     printf("%s [backlight-level [ %% ]] [--help]\n"
         "--help             Shows this message.\n"
         "--show             Shows actual brightness level.\n"
+        "--show-max         Shows maximum brightness level.\n"
+        "--show-value       Shows value of brightness level.\n"
+        "--show-driver      Shows driver in use.\n"
         "--inc              Increases actual brightness level.\n"
         "--dec              Decreases actual brightness level.\n"
         "--stdin            Read backlight value from stdin\n"
@@ -191,6 +222,15 @@ int main(int argc, char *argv[])
             return 0;
         } if( !strcmp(argv[n], "--show") ) {
             show_blacklight();
+            return 0;
+        } if( !strcmp(argv[n], "--show-max") ) {
+            show_max();
+            return 0;
+        } if( !strcmp(argv[n], "--show-value") ) {
+            show_val();
+            return 0;
+        } if( !strcmp(argv[n], "--show-driver") ) {
+            show_driver();
             return 0;
         } if( !strcmp(argv[n], "--inc") ) {
             increases_blacklight();
