@@ -50,7 +50,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
-        <translation>Apaga</translation>
+        <translation>Atura</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="136"/>
