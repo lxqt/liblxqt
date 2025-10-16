@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>运行&quot;%1&quot;失败。确保你已经安装并运行着一个与 xdg-screensaver 适配的屏保或锁屏。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>运行  &quot;%1&quot;失败。请确保指定的锁屏或屏保已经安装并正在运行。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="247"/>
+        <location filename="../lxqtscreensaver.cpp" line="274"/>
         <source>Lock Screen</source>
         <translation>锁屏</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="179"/>
         <source>Screen Saver Error</source>
         <translation>屏幕保护程序错误</translation>
     </message>
@@ -158,20 +158,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>Power Manager Error</source>
         <translation>电源管理错误</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
         <source>QDBusInterface is invalid</source>
         <translation>QDBusInterface 不正确</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>电源管理错误 (D-BUS 调用)</translation>
     </message>
