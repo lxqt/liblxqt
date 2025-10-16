@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>Nu s-a reusit &quot;%1&quot;. Asigur(a) ca ai un locker/screensaver compatibil cu xdg-screensaver instalat si functional.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>Nu s-a reusit  &quot;%1&quot;. Asigura ca lockerul/screensaverul specificat este instalat si functioneaza.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="247"/>
+        <location filename="../lxqtscreensaver.cpp" line="274"/>
         <source>Lock Screen</source>
         <translation>Blochează ecranul</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="179"/>
         <source>Screen Saver Error</source>
         <translation>Eroare Screen Saver</translation>
     </message>
@@ -158,20 +158,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>Power Manager Error</source>
         <translation>Eroare gestiune alimentare</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
         <source>QDBusInterface is invalid</source>
         <translation>QDBusInterface este incorect</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>Eroare gestiune alimentare (apel D-Bus)</translation>
     </message>

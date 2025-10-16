@@ -127,22 +127,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="161"/>
+        <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>Не вдалося запустити  «%1». Переконайтеся, що встановлено та запущено заставку, сумісну з xdg-заставкою.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="165"/>
+        <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>Не вдалося запустити  «%1». Переконайтеся, що вказану заставку встановлено та запущено.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="247"/>
+        <location filename="../lxqtscreensaver.cpp" line="274"/>
         <source>Lock Screen</source>
         <translation>Заблокувати екран</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="156"/>
+        <location filename="../lxqtscreensaver.cpp" line="179"/>
         <source>Screen Saver Error</source>
         <translation>Помилка зберігача екрана</translation>
     </message>
@@ -158,20 +158,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="87"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="137"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>Power Manager Error</source>
         <translation>Збій менеджера живлення</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
         <source>QDBusInterface is invalid</source>
         <translation>QDBusInterface недійсний</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="102"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="152"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>Збій менеджера живлення (виклик D-BUS)</translation>
     </message>
