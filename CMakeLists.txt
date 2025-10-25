@@ -7,15 +7,15 @@ cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
 project(liblxqt)
 
 
-set(LXQTBT_MINIMUM_VERSION "2.2.0")
+set(LXQTBT_MINIMUM_VERSION "2.3.0")
 set(KF6_MINIMUM_VERSION "6.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
-set(QTXDG_MINIMUM_VERSION "4.2.0")
+set(QTXDG_MINIMUM_VERSION "4.3.0")
 
 # Major LXQt Version, belong to all components
 set(LXQT_MAJOR_VERSION 2)
 # Minor LXQt Version, belong to all components
-set(LXQT_MINOR_VERSION 2)
+set(LXQT_MINOR_VERSION 3)
 #
 # Patch Version, belong *only* to the component
 # LXQt is 0.13 - liblxqt is at patch version 0
