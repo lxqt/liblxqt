@@ -1,3 +1,7 @@
+liblxqt-2.3.0 / 2025-11-05
+===========================
+ * Added a separate key for turning off monitor on Wayland.
+
 liblxqt-2.2.0 / 2025-04-17
 ===========================
  * Limit disabling of autostart entries to LXQt (used in lxqt-session).
