@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Неуспешно стартиране на „% 1“. Уверете се, че имате инсталиран и работещ скрийнсейвър, съвместим с xdg-screensaver.</translation>
+        <translation>Неуспешно стартиране на „%1“. Уверете се, че имате инсталиран и работещ скрийнсейвър, съвместим с xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Неуспешно стартиране на „% 1“. Уверете се, че зададеният скрийнсейвър е инсталиран и работещ.</translation>
+        <translation>Неуспешно стартиране на „%1“. Уверете се, че зададеният скрийнсейвър е инсталиран и работещ.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="274"/>

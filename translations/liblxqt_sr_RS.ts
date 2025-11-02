@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished">Грешка Рејзоровог менаџера напајања</translation>
+        <translation>Грешка LXQt менаџера напајања</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished">Хибернација није успела.</translation>
+        <translation>Хибернација није успела.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Резервна обавештења</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу да покренем  „%1“. Уверите се да имате инсталиран и покренут закључавач/чувар екрана компатибилан са xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу да покренем  „%1“. Уверите се да је наведени закључавач/чувар екрана инсталиран и да ради.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="274"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="179"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка чувара екрана</translation>
     </message>
 </context>
 <context>
