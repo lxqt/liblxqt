@@ -30,6 +30,7 @@
 #include "lxqtpowerproviders.h"
 #include <QDBusInterface>
 #include <QProcess>
+#include <QProcessEnvironment>
 #include <QGuiApplication>
 #include <QDebug>
 #include "lxqtnotification.h"
@@ -75,7 +76,8 @@ static bool dbusCall(const QString &service,
               const QString &interface,
               const QDBusConnection &connection,
               const QString & method,
-              PowerProvider::DbusErrorCheck errorCheck = PowerProvider::CheckDBUS
+              PowerProvider::DbusErrorCheck errorCheck = PowerProvider::CheckDBUS,
+              const QVariantList &args = QVariantList()
               )
 {
     QDBusInterface dbus(service, path, interface, connection);
@@ -92,7 +94,7 @@ static bool dbusCall(const QString &service,
         return false;
     }
 
-    QDBusMessage msg = dbus.call(method);
+    QDBusMessage msg = !args.isEmpty() ? dbus.callWithArgumentList(QDBus::Block, method, args) : dbus.call(method);
 
     if (!msg.errorName().isEmpty())
     {
@@ -403,6 +405,19 @@ SystemdProvider::~SystemdProvider() = default;
 
 bool SystemdProvider::canAction(Power::Action action) const
 {
+    if (action == Power::PowerLogout)
+    {
+        const QByteArray sessionId = qgetenv("XDG_SESSION_ID");
+        if (sessionId.isEmpty())
+            return false;
+
+        QDBusInterface dbus(QL1SV(SYSTEMD_SERVICE),
+                            QL1SV(SYSTEMD_PATH),
+                            QL1SV(SYSTEMD_INTERFACE),
+                            QDBusConnection::systemBus());
+        return dbus.isValid();
+    }
+
     QString command;
 
     switch (action)
@@ -443,6 +458,21 @@ bool SystemdProvider::canAction(Power::Action action) const
 
 bool SystemdProvider::doAction(Power::Action action)
 {
+    if (action == Power::PowerLogout)
+    {
+        const QByteArray sessionId = qgetenv("XDG_SESSION_ID");
+        if (sessionId.isEmpty())
+            return false;
+
+        return dbusCall(QL1SV(SYSTEMD_SERVICE),
+                        QL1SV(SYSTEMD_PATH),
+                        QL1SV(SYSTEMD_INTERFACE),
+                        QDBusConnection::systemBus(),
+                        QL1SV("TerminateSession"),
+                        PowerProvider::CheckDBUS,
+                        QVariantList() << QString::fromLocal8Bit(sessionId));
+    }
+
     QString command;
 
     switch (action)
