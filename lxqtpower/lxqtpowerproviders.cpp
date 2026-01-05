@@ -405,7 +405,11 @@ SystemdProvider::~SystemdProvider() = default;
 
 bool SystemdProvider::canAction(Power::Action action) const
 {
-    if (action == Power::PowerLogout)
+    QString command;
+
+    switch (action)
+    {
+    case Power::PowerLogout:
     {
         const QByteArray sessionId = qgetenv("XDG_SESSION_ID");
         if (sessionId.isEmpty())
@@ -418,10 +422,6 @@ bool SystemdProvider::canAction(Power::Action action) const
         return dbus.isValid();
     }
 
-    QString command;
-
-    switch (action)
-    {
     case Power::PowerReboot:
         command = QL1SV("CanReboot");
         break;
@@ -458,7 +458,11 @@ bool SystemdProvider::canAction(Power::Action action) const
 
 bool SystemdProvider::doAction(Power::Action action)
 {
-    if (action == Power::PowerLogout)
+    QString command;
+
+    switch (action)
+    {
+    case Power::PowerLogout:
     {
         const QByteArray sessionId = qgetenv("XDG_SESSION_ID");
         if (sessionId.isEmpty())
@@ -473,10 +477,6 @@ bool SystemdProvider::doAction(Power::Action action)
                         QVariantList() << QString::fromLocal8Bit(sessionId));
     }
 
-    QString command;
-
-    switch (action)
-    {
     case Power::PowerReboot:
         command = QL1SV("Reboot");
         break;
