@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt қуатты басқарушы қатесі</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гибернация сәтсіз аяқталды.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../lxqtnotification.cpp" line="161"/>
         <source>Notifications Fallback</source>
-        <translation type="unfinished"></translation>
+        <translation>Хабарландырулардың резервтік нұсқасы</translation>
     </message>
 </context>
 <context>
@@ -35,93 +35,93 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Гибернация</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Күту режимі</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Қайта жүктеу</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="129"/>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Сөндіру</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="136"/>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Шығу</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt сессиясын күту режиміне өткізу</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютерді шынымен күту режиміне өткізгіңіз келе ме?&lt;p&gt;Компьютерді аз қуат тұтыну күйіне өткізеді. Қуат жоғалса, жүйе күйі сақталмайды.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt сессиясын гибернациялау</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютерді шынымен гибернация режиміне өткізгіңіз келе ме?&lt;p&gt;Компьютерді аз қуат тұтыну күйіне өткізеді. Қуат жоғалса, жүйе күйі сақталады.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt сессиясын қайта жүктеу</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютерді шынымен қайта жүктегіңіз келе ме? Барлық сақталмаған жұмыстар жоғалады...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt сессиясын сөндіру</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютерді шынымен сөндіргіңіз келе ме? Барлық сақталмаған жұмыстар жоғалады...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt сессиясынан шығу</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation type="unfinished"></translation>
+        <translation>Шынымен шыққыңыз келе ме? Барлық сақталмаған жұмыстар жоғалады...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>LXQt қуатты басқарушы қатесі</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гибернация сәтсіз аяқталды.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Күту режиміне өту сәтсіз аяқталды.</translation>
     </message>
 </context>
 <context>
@@ -129,22 +129,22 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; іске қосу сәтсіз аяқталды. xdg-screensaver бағдарламасымен үйлесімді экран құлыптаушысы немесе экран сақтағышы орнатылғанына және жұмыс істеп тұрғанына көз жеткізіңіз.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; іске қосу сәтсіз аяқталды. Көрсетілген экран құлыптаушысы немесе экран сақтағышы орнатылғанына және жұмыс істеп тұрғанына көз жеткізіңіз.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="274"/>
         <source>Lock Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Экранды құлыптау</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="179"/>
         <source>Screen Saver Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Экран сақтағышының қатесі</translation>
     </message>
 </context>
 <context>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
         <source>Choose the page to be shown.</source>
-        <translation type="unfinished"></translation>
+        <translation>Көрсетілетін бетті таңдаңыз.</translation>
     </message>
 </context>
 <context>
@@ -161,19 +161,19 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>Power Manager Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Қуат менеджерінің қатесі</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
         <source>QDBusInterface is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>QDBusInterface жарамсыз</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation type="unfinished"></translation>
+        <translation>Қуат менеджерінің қатесі (D-BUS шақыруы)</translation>
     </message>
 </context>
 </TS>
