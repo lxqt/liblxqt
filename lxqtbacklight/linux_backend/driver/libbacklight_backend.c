@@ -26,10 +26,10 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 /********************************************************************************
- *    This library uses Linux /sys/class/backlight files to read and change the 
+ *    This library uses Linux /sys/class/backlight files to read and change the
  *    backlight level.
- *    
- *    If screen backlight can be controlled, the Linux kernel will show inside 
+ *
+ *    If screen backlight can be controlled, the Linux kernel will show inside
  *    /sys/class/backlight directory one or more directories. Each directory has
  *    got the following files:
  *        /sys/class/backlight/driver/max_brightness
@@ -37,30 +37,30 @@
  *        /sys/class/backlight/driver/brightness
  *        /sys/class/backlight/driver/type
  *        /sys/class/backlight/driver/bl_power
- *    
+ *
  *    The "max_brightness" file contains the maximum value that can be set to the
  *    backlight level.
- *    
- *    In "brightness" file you can write the value of backlight and the Linux 
+ *
+ *    In "brightness" file you can write the value of backlight and the Linux
  *    kernel will set that value.
- *    
+ *
  *    The "bl_power" controls if backlight is turn on (0) or turn off (>0).
- *    
+ *
  *    You must read actual backlight level from "actual_brightness" file. Never
  *    read the backlight level from "brightness" file.
- *    
+ *
  *    The "type" file is the type of control and it can be:
  *        firmware
- *        platform 
+ *        platform
  *        raw
  *    The firmware control should be preferred to platform control. The platform
- *    control should be preferred to raw control.        
+ *    control should be preferred to raw control.
  *    If there are several directories in /sys/class/backlight/, you should use
  *    the directory which its "type" file has got the "firmware" value.
- *    
+ *
  *    In order to write in /sys/class/backlight/driver/brightness file root
- *    permissions are needed. This library calls to a command line tool called 
- *    "lxqtbacklight_backend". "lxqtbacklight_backend" has a policy in Polkit 
+ *    permissions are needed. This library calls to a command line tool called
+ *    "lxqtbacklight_backend". "lxqtbacklight_backend" has a policy in Polkit
  *    in order to write in /sys/class/backlight/driver/brightness file.
  *******************************************************************************/
 
@@ -159,9 +159,19 @@ static FILE* open_driver_file(const char *file, const char *driver, const char *
     return ret;
 }
 
+static int is_amdgpu(const char *driver)
+{
+    return strstr(driver, "amdgpu") != NULL;
+}
+
 static int read_backlight(const char *driver)
 {
-    return read_int("actual_brightness", driver);
+    if (is_amdgpu(driver)) {
+        // AMDGPU: read from "brightness" to get needed value
+        return read_int("brightness", driver);
+    } else {
+        return read_int("actual_brightness", driver);
+    }
 }
 
 static int read_max_backlight(const char *driver)
