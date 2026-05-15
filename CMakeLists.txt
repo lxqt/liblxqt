@@ -53,6 +53,11 @@ message(STATUS "Building ${PROJECT_NAME} with Qt ${Qt6Core_VERSION}")
 
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs) # Standard directories for installation
+include(LXQtPreventInSourceBuilds)
+include(LXQtCompilerSettings NO_POLICY_SCOPE)
+include(LXQtCreatePkgConfigFile)
+include(LXQtCreatePortableHeaders)
+include(LXQtConfigVars)
 
 if (BUILD_BACKLIGHT_LINUX_BACKEND)
     add_subdirectory(lxqtbacklight/linux_backend/driver)
@@ -216,14 +221,6 @@ list(APPEND SRCS "${DBUS_INTERFACE_SRCS}" "${DBUS_ADAPTOR_SRCS}")
 
 # KF6WindowSystem is missing here. KF5WindowSystem doesn't provide an .pc file. TODO: check if things changed in KF6
 set(LXQT_PKG_CONFIG_REQUIRES "Qt6Xdg >= ${QTXDG_MINIMUM_VERSION}, Qt6Widgets >= ${QT_MINIMUM_VERSION}, Qt6Xml >= ${QT_MINIMUM_VERSION}, Qt6DBus >= ${QT_MINIMUM_VERSION}")
-
-
-# Standard directories for installation
-include(LXQtPreventInSourceBuilds)
-include(LXQtCompilerSettings NO_POLICY_SCOPE)
-include(LXQtCreatePkgConfigFile)
-include(LXQtCreatePortableHeaders)
-include(LXQtConfigVars)
 
 set(LXQT_INTREE_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include")
 

@@ -25,6 +25,8 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <dirent.h>
 #include <errno.h>
