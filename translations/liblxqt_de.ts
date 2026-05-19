@@ -85,7 +85,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Möchten Sie ihren Computer wirklich neustarten? Alle ungespeicherten Arbeiten gehen verloren…</translation>
+        <translation>Möchten Sie ihren Computer wirklich neu starten? Alle ungesicherten Arbeiten gehen verloren …</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Möchten Sie ihren Computer wirklich herunterfahren? Alle ungespeicherten Arbeiten gehen verloren…</translation>
+        <translation>Möchten Sie ihren Computer wirklich herunterfahren? Alle ungesicherten Arbeiten gehen verloren…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
@@ -105,7 +105,7 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Möchten Sie sich wirklich abmelden? Alle ungespeicherten Arbeiten gehen verloren…</translation>
+        <translation>Möchten Sie sich wirklich abmelden? Alle ungesicherten Arbeiten gehen verloren…</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Fehler beim Ausführen von &quot;%1&quot;. Stellen Sie sicher, dass Sie einen mit xdg-screensaver kompatiblen Locker/Bildschirmschoner installiert haben.</translation>
+        <translation>Fehler beim Ausführen von »%1«. Stellen Sie sicher, dass Sie einen mit xdg-screensaver kompatiblen Locker/Bildschirmschoner installiert haben.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Fehler beim Ausführen von &quot;%1&quot;. Stellen Sie sicher, dass der ausgewählte Locker/Bildschirmschoner installiert ist und läuft.</translation>
+        <translation>Fehler beim Ausführen von »%1«. Stellen Sie sicher, dass der ausgewählte Locker/Bildschirmschoner installiert ist und läuft.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="274"/>
