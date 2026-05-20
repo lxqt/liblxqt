@@ -6,7 +6,7 @@
     <message>
         <location filename="../configdialog/lxqtconfigdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Дијалог</translation>
+        <translation>Прозорче</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Грешка LXQt менаџера напајања</translation>
+        <translation>Грешка LxQt управника напајања</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="76"/>
         <source>Hibernate failed.</source>
-        <translation>Хибернација није успела.</translation>
+        <translation>Замрзавање није успело.</translation>
     </message>
 </context>
 <context>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="108"/>
         <source>Hibernate</source>
-        <translation>Хибернирај</translation>
+        <translation>Замрзни</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="115"/>
         <source>Suspend</source>
-        <translation>Суспендуј</translation>
+        <translation>Обустави</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="122"/>
@@ -60,68 +60,68 @@
     <message>
         <location filename="../lxqtpowermanager.cpp" line="148"/>
         <source>LXQt Session Suspend</source>
-        <translation>Суспендовање Рејзорове сесије</translation>
+        <translation>Обустава LxQt сесије</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
         <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
-        <translation>Желите ли заиста да суспендујете ваш рачунар?&lt;p&gt;Ово поставља ваш рачунар у стање смањене потрошње енергије. Стање система није очувано ако дође до нестанка струје.</translation>
+        <translation>Да ли заиста желите да обуставите рачунар?&lt;p&gt;Обустава поставља рачунар у стање ниске потрошње енергије. Стање система се не чува ако дође до губитка напајања.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="158"/>
         <source>LXQt Session Hibernate</source>
-        <translation>Хибернација Рејзорове сесије</translation>
+        <translation>Замрзавање сесије LxQt-a</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
         <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
-        <translation>Желите ли заиста да хибернирате ваш рачунар?&lt;p&gt;Ово поставља ваш рачунар у стање смањене потрошње енергије. Стање система је очувано ако дође до нестанка струје.</translation>
+        <translation>Да ли заиста желите да замрзнете рачунар?&lt;p&gt;Замрзавање поставља рачунар у стање ниске потрошње енергије. Стање система се чува ако дође до губитка напајања.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="168"/>
         <source>LXQt Session Reboot</source>
-        <translation>Поновно покретање Рејзорове сесије</translation>
+        <translation>Поновно покретање сесије LxQt-a</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
         <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
-        <translation>Желите ли заиста да поново покренете ваш рачунар? Несачуван рад ће бити изгубљен...</translation>
+        <translation>Да ли заиста желите да поново покренете рачунар? Сав несачуван рад ће бити изгубљен...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>LXQt Session Shutdown</source>
-        <translation>Гашење Рејзорове сесије</translation>
+        <translation>Гашење сесије ЛиксКјута</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
         <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
-        <translation>Желите ли заиста да угасите ваш рачунар? Несачуван рад ће бити изгубљен...</translation>
+        <translation>Да ли заиста желите да угасите рачунар? Сав несачуван рад ће бити изгубљен...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="188"/>
         <source>LXQt Session Logout</source>
-        <translation>Одјава Рејзорове сесије</translation>
+        <translation>Одјава сесије ЛиксКјута</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
         <source>Do you want to really logout? All unsaved work will be lost...</source>
-        <translation>Желите ли заиста да се одјавите? Несачуван рад ће бити изгубљен...</translation>
+        <translation>Да ли заиста желите да се одјавите? Сав несачуван рад ће бити изгубљен...</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>LXQt Power Manager Error</source>
-        <translation>Грешка Рејзоровог менаџера напајања</translation>
+        <translation>Грешка ЛиксКјутовог управника напајања</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="197"/>
         <source>Hibernate failed.</source>
-        <translation>Хибернација није успела.</translation>
+        <translation>Замрзавање није успело.</translation>
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="202"/>
         <source>Suspend failed.</source>
-        <translation>Суспендовање није успело.</translation>
+        <translation>Обустава није успела.</translation>
     </message>
 </context>
 <context>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../lxqtscreensaver.cpp" line="184"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
-        <translation>Не могу да покренем  „%1“. Уверите се да имате инсталиран и покренут закључавач/чувар екрана компатибилан са xdg-screensaver.</translation>
+        <translation>Покретање  „%1“ није успело. Уверите се да имате инсталиран и покренут закључавач/чувар екрана усаглашеног са xdg-screensaver.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="188"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
-        <translation>Не могу да покренем  „%1“. Уверите се да је наведени закључавач/чувар екрана инсталиран и да ради.</translation>
+        <translation>Покретање  „%1“ није успело. Уверите се да је наведени закључавач/чувар екрана инсталиран и покренут.</translation>
     </message>
     <message>
         <location filename="../lxqtscreensaver.cpp" line="274"/>
@@ -161,19 +161,19 @@
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
         <source>Power Manager Error</source>
-        <translation>Грешка менаџера напајања</translation>
+        <translation>Грешка управљача напајања</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
         <source>QDBusInterface is invalid</source>
-        <translation>QDBusInterface је не важећи</translation>
+        <translation>QDBusInterface је неважећи</translation>
     </message>
     <message>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
         <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
         <source>Power Manager Error (D-BUS call)</source>
-        <translation>Грешка менаџера напајања (D-BUS call)</translation>
+        <translation>Грешка управника напајања (позив Д-сабирнице)</translation>
     </message>
 </context>
 </TS>
