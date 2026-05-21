@@ -18,7 +18,6 @@ set(LXQT_MAJOR_VERSION 2)
 set(LXQT_MINOR_VERSION 4)
 #
 # Patch Version, belong *only* to the component
-# LXQt is 0.13 - liblxqt is at patch version 0
 # The official LXQt version will follow liblxqt.
 #
 # In a perfect world all components would have the same major- and minor- and
