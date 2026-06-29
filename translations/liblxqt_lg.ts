@@ -64,7 +64,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
-        <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
+        <source>Do you really want to suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>Ddala oyagala okulindisa kompyuta?&lt;p&gt;Kino kiteeka kompyuta mu mbeera ekozesa masanyalaze matono nyo. Naye bwe gavaako kompyuta y&apos;erabira by&apos;ebadde ekola, by&apos;otokazizza ne bitadda.</translation>
     </message>
     <message>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
-        <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
+        <source>Do you really want to hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>Ddala oyagala okwebasa kompyuta?&lt;p&gt;Kino kiteeka kompyuta mu mbeera ekozesa masanyalaze matono nyo. Ne bwe gavaako kompyuta ejjukira by&apos;ebadde ekola, bwe gadda n&apos;etandikira we yakomye.</translation>
     </message>
     <message>
@@ -84,7 +84,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
-        <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to restart your computer? All unsaved work will be lost...</source>
         <translation>Ddala oyagala kuddamu okukoleeza kompyuta? Tewerabira okuleka nga okaziza by&apos;obadde okolako, bireme okukufa...</translation>
     </message>
     <message>
@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
-        <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to power off your computer? All unsaved work will be lost...</source>
         <translation>Ddala oyagala kugyako kompyuta? Tewerabira okuleka nga okaziza by&apos;obadde okolako, bireme okukufa...</translation>
     </message>
     <message>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
-        <source>Do you want to really logout? All unsaved work will be lost...</source>
+        <source>Do you really want to logout? All unsaved work will be lost...</source>
         <translation>Ddala oyagala okukomya olutuula luno? Tewerabira okuleka nga okaziza by&apos;obadde okola ko, bireme okukufa...</translation>
     </message>
     <message>

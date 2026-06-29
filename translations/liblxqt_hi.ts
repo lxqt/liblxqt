@@ -64,7 +64,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
-        <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
+        <source>Do you really want to suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>क्या आप वाकई अपने कंप्यूटर को निलंबित करना चाहते हैं?&lt;p&gt;कंप्यूटर को कम पावर की स्थिति में निलंबित कर देता है. यदि बिजली चली जाती है तो सिस्टम स्थिति संरक्षित नहीं होती है.</translation>
     </message>
     <message>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
-        <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
+        <source>Do you really want to hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>क्या आप वाकई अपने कंप्यूटर को हाइबरनेट करना चाहते हैं?&lt;p&gt;कंप्यूटर को कम पावर की स्थिति में हाइबरनेट करता है. यदि बिजली चली जाती है तो सिस्टम की स्थिति संरक्षित रहती है.</translation>
     </message>
     <message>
@@ -84,7 +84,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
-        <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to restart your computer? All unsaved work will be lost...</source>
         <translation>क्या आप वाकई अपने कंप्यूटर को पुनरारंभ करना चाहते हैं? सभी नहीं सहेजे गए कार्य खो जाएंगे...</translation>
     </message>
     <message>
@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
-        <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to power off your computer? All unsaved work will be lost...</source>
         <translation>क्या आप वाकई अपना कंप्यूटर बंद करना चाहते हैं? सभी नहीं सहेजे गए कार्य खो जाएंगे...</translation>
     </message>
     <message>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
-        <source>Do you want to really logout? All unsaved work will be lost...</source>
+        <source>Do you really want to logout? All unsaved work will be lost...</source>
         <translation>क्या आप वाकई लॉगआउट करना चाहते हैं? सभी नहीं सहेजे गए कार्य खो जाएंगे...</translation>
     </message>
     <message>
