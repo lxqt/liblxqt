@@ -146,7 +146,7 @@ void PowerManager::suspend()
 {
      if (m_skipWarning ||
          MessageBox::question(tr("LXQt Session Suspend"),
-                              tr("Do you want to really suspend your computer?<p>Suspends the computer into a low power state. System state is not preserved if the power is lost.")))
+                              tr("Do you really want to suspend your computer?<p>Suspends the computer into a low power state. System state is not preserved if the power is lost.")))
     {
         m_power->suspend();
     }
@@ -156,7 +156,7 @@ void PowerManager::hibernate()
 {
     if (m_skipWarning ||
         MessageBox::question(tr("LXQt Session Hibernate"),
-                             tr("Do you want to really hibernate your computer?<p>Hibernates the computer into a low power state. System state is preserved if the power is lost.")))
+                             tr("Do you really want to hibernate your computer?<p>Hibernates the computer into a low power state. System state is preserved if the power is lost.")))
     {
         m_power->hibernate();
     }
@@ -166,7 +166,7 @@ void PowerManager::reboot()
 {
     if (m_skipWarning ||
         MessageBox::question(tr("LXQt Session Reboot"),
-                             tr("Do you want to really restart your computer? All unsaved work will be lost...")))
+                             tr("Do you really want to restart your computer? All unsaved work will be lost...")))
     {
         m_power->reboot();
     }
@@ -176,7 +176,7 @@ void PowerManager::shutdown()
 {
     if (m_skipWarning ||
         MessageBox::question(tr("LXQt Session Shutdown"),
-                             tr("Do you want to really switch off your computer? All unsaved work will be lost...")))
+                             tr("Do you really want to power off your computer? All unsaved work will be lost...")))
     {
         m_power->shutdown();
     }
@@ -186,7 +186,7 @@ void PowerManager::logout()
 {
     if (m_skipWarning ||
         MessageBox::question(tr("LXQt Session Logout"),
-                             tr("Do you want to really logout? All unsaved work will be lost...")))
+                             tr("Do you really want to logout? All unsaved work will be lost...")))
     {
         m_power->logout();
     }
