@@ -64,7 +64,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="149"/>
-        <source>Do you want to really suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
+        <source>Do you really want to suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>D tidet tebɣiḍ ad tḥebseḍ di leɛḍil aselkim-ik·im?&lt;p&gt;Aseḥbes di leɛḍil n uselkim ɣer waddad n tezmert yudren. Addad n unagraw ur yettwaḥrez ara ma tella tazmert tegzem.</translation>
     </message>
     <message>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="159"/>
-        <source>Do you want to really hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
+        <source>Do you really want to hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>D tidet tebɣiḍ asgen n uselkim-ik·im?&lt;p&gt; Asgen n uselkim ɣer waddad n tezmert yudren. Addad n unagraw yettwaḥrez ma tella tezmart tegzem.</translation>
     </message>
     <message>
@@ -84,7 +84,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="169"/>
-        <source>Do you want to really restart your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to restart your computer? All unsaved work will be lost...</source>
         <translation>D tidet tebɣiḍ ad talseḍ asenker n uselkim-ik·im? Amahil akk ur yettwaskelsen ara ad iṛuḥ…</translation>
     </message>
     <message>
@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="179"/>
-        <source>Do you want to really switch off your computer? All unsaved work will be lost...</source>
+        <source>Do you really want to power off your computer? All unsaved work will be lost...</source>
         <translation>Tebɣiḍ s tidet ad tessexsiḍ aselkim-ik·im? Akk amahil ur yettwaskelsen ara ad iṛuḥ...</translation>
     </message>
     <message>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <location filename="../lxqtpowermanager.cpp" line="189"/>
-        <source>Do you want to really logout? All unsaved work will be lost...</source>
+        <source>Do you really want to logout? All unsaved work will be lost...</source>
         <translation>D tidet tebɣiḍ ad teffɣeḍ? Amahil akk ur yettwaskelsen ara ad iṛuḥ..</translation>
     </message>
     <message>
