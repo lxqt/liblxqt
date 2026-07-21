@@ -27,15 +27,14 @@
 
 #include "lxqtpowermanager.h"
 #include "lxqtpower/lxqtpower.h"
-#include <QDBusInterface>
-#include <QMessageBox>
-#include <QApplication>
-#include <QtDebug>
-#include <QScreen>
-#include <QFile>
 #include "lxqttranslator.h"
 #include "lxqtglobals.h"
 #include "lxqtsettings.h"
+#include <QDBusInterface>
+#include <QMessageBox>
+#include <QApplication>
+#include <QScreen>
+#include <QFile>
 #include <XdgIcon>
 
 namespace LXQt {
@@ -71,9 +70,7 @@ public:
 
     static void warning(const QString& title, const QString& text)
     {
-        Q_UNUSED(title)
-        Q_UNUSED(text)
-        QMessageBox::warning(parentWidget(), tr("LXQt Power Manager Error"), tr("Hibernate failed."));
+        QMessageBox::warning(parentWidget(), title, text);
     }
 };
 
@@ -82,10 +79,9 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
         m_skipWarning(skipWarning)
 {
     m_power = new Power(this);
-//    connect(m_power, SIGNAL(suspendFail()), this, SLOT(suspendFailed()));
-//    connect(m_power, SIGNAL(hibernateFail()), this, SLOT(hibernateFailed()));
-//    connect(m_power, SIGNAL(monitoring(const QString &)),
-//            this, SLOT(monitoring(const QString&)));
+//    connect(m_power, Power::suspendFail, this, PowerManager::suspendFailed);
+//    connect(m_power, Power::hibernateFail, this, PowerManager::hibernateFailed);
+//    connect(m_power, SIGNAL(monitoring(const QString &)), this, SLOT(monitoring(const QString&)));
 
     QString sessionConfig(QFile::decodeName(qgetenv("LXQT_SESSION_CONFIG")));
     Settings settings(sessionConfig.isEmpty() ? QL1SV("session") : sessionConfig);
@@ -145,8 +141,9 @@ QList<QAction*> PowerManager::availableActions()
 void PowerManager::suspend()
 {
      if (m_skipWarning ||
-         MessageBox::question(tr("LXQt Session Suspend"),
-                              tr("Do you really want to suspend your computer?<p>Suspends the computer into a low power state. System state is not preserved if the power is lost.")))
+         MessageBox::question(
+            tr("LXQt Session Suspend"),
+            tr("Do you really want to suspend your computer?<p>Suspends the computer into a low power state. System state is not preserved if the power is lost.")))
     {
         m_power->suspend();
     }
@@ -155,8 +152,9 @@ void PowerManager::suspend()
 void PowerManager::hibernate()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("LXQt Session Hibernate"),
-                             tr("Do you really want to hibernate your computer?<p>Hibernates the computer into a low power state. System state is preserved if the power is lost.")))
+        MessageBox::question(
+            tr("LXQt Session Hibernate"),
+            tr("Do you really want to hibernate your computer?<p>Hibernates the computer into a low power state. System state is preserved if the power is lost.")))
     {
         m_power->hibernate();
     }
@@ -165,8 +163,9 @@ void PowerManager::hibernate()
 void PowerManager::reboot()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("LXQt Session Reboot"),
-                             tr("Do you really want to restart your computer? All unsaved work will be lost...")))
+        MessageBox::question(
+            tr("LXQt Session Reboot"),
+            tr("Do you really want to restart your computer? All unsaved work will be lost...")))
     {
         m_power->reboot();
     }
@@ -175,8 +174,9 @@ void PowerManager::reboot()
 void PowerManager::shutdown()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("LXQt Session Shutdown"),
-                             tr("Do you really want to power off your computer? All unsaved work will be lost...")))
+        MessageBox::question(
+            tr("LXQt Session Shutdown"),
+            tr("Do you really want to power off your computer? All unsaved work will be lost...")))
     {
         m_power->shutdown();
     }
@@ -185,8 +185,9 @@ void PowerManager::shutdown()
 void PowerManager::logout()
 {
     if (m_skipWarning ||
-        MessageBox::question(tr("LXQt Session Logout"),
-                             tr("Do you really want to logout? All unsaved work will be lost...")))
+        MessageBox::question(
+            tr("LXQt Session Logout"),
+            tr("Do you really want to logout? All unsaved work will be lost...")))
     {
         m_power->logout();
     }
