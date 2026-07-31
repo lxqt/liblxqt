@@ -79,9 +79,6 @@ PowerManager::PowerManager(QObject * parent, bool skipWarning)
         m_skipWarning(skipWarning)
 {
     m_power = new Power(this);
-//    connect(m_power, Power::suspendFail, this, PowerManager::suspendFailed);
-//    connect(m_power, Power::hibernateFail, this, PowerManager::hibernateFailed);
-//    connect(m_power, SIGNAL(monitoring(const QString &)), this, SLOT(monitoring(const QString&)));
 
     QString sessionConfig(QFile::decodeName(qgetenv("LXQT_SESSION_CONFIG")));
     Settings settings(sessionConfig.isEmpty() ? QL1SV("session") : sessionConfig);
