@@ -8,19 +8,20 @@
  * Authors:
  *   P.L. Lucas <selairi@gmail.com>
  *
- * This program or library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation; either version 2.1 of the License,
- * or (at your option) any later version.
+ * This program or library is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+
+ * You should have received a copy of the GNU Lesser General
+ * Public License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
@@ -35,11 +36,11 @@ extern "C" {
 #endif
 
 #include "linuxbackend.h"
+#include <QLatin1StringView>
 #include <QProcess>
 #include <QTextStream>
 #include <QTimer>
 #include <QDebug>
-#include <QLatin1StringView>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -104,25 +105,32 @@ void LinuxBackend::setBacklight(int value)
         // with QProcess so that closing/reaping it never blocks the main
         // (GUI) thread in a synchronous waitpid(), which is what used to
         // freeze the panel completely.
-        backlightProcess = new QProcess(this);
-        backlightProcess->setProcessChannelMode(QProcess::ForwardedChannels);
-        connect(backlightProcess, &QProcess::errorOccurred, this,
+        QProcess *const process = new QProcess(this);
+        process->setProcessChannelMode(QProcess::ForwardedChannels);
+        connect(process, &QProcess::errorOccurred, this,
             [this](QProcess::ProcessError error) {
                 if( error == QProcess::FailedToStart )
                     qWarning() << "Linux backlight: lxqt-backlight_backend failed to start";
             });
-        connect(backlightProcess, &QProcess::finished, this,
-            [this](int, QProcess::ExitStatus) {
-                backlightProcess->deleteLater();
-                backlightProcess = nullptr;
+        connect(process, &QProcess::finished, this,
+            [this, proc = process](int, QProcess::ExitStatus) {
+                if( backlightProcess == proc ) {
+                    proc->deleteLater();
+                    backlightProcess = nullptr;
+                }
             });
+        backlightProcess = process;
         backlightProcess->start(QStringLiteral("pkexec"),
             QStringList() << QStringLiteral("lxqt-backlight_backend") << QStringLiteral("--stdin"));
         // Close stream after 60 seconds
         QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
     }
-    if( backlightProcess != nullptr && backlightProcess->state() == QProcess::ProcessState::Running ) {
-        // Normalise the value (to work around a QSlider issue)
+    // Qt buffers input written while the process is still starting up (the
+    // input pipe exists from start()), so the first value is delivered too.
+    const QProcess::ProcessState state =
+        backlightProcess ? backlightProcess->state() : QProcess::NotRunning;
+    if( state == QProcess::ProcessState::Running || state == QProcess::ProcessState::Starting ) {
+        // normalize the value (to work around an issue in QSlider)
         value = qBound(0, value, maxBacklight);
         QTextStream out(backlightProcess);
         out << value << '\n';
