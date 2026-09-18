@@ -37,6 +37,8 @@ extern "C" {
 
 #include "linuxbackend.h"
 #include <QLatin1StringView>
+#include <QProcess>
+#include <QTextStream>
 #include <QTimer>
 #include <QDebug>
 
@@ -47,7 +49,7 @@ namespace LXQt {
 LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
 {
     maxBacklight = lxqt_backlight_backend_get_max();
-    backlightStream = NULL;
+    backlightProcess = nullptr;
     if( isBacklightAvailable() ) {
         char *driver = lxqt_backlight_backend_get_driver();
         fileSystemWatcher = new QFileSystemWatcher(this);
@@ -64,6 +66,12 @@ LinuxBackend::LinuxBackend(QObject *parent):VirtualBackEnd(parent)
 LinuxBackend::~LinuxBackend()
 {
     closeBacklightStream();
+    // Reap deterministically at teardown without ever blocking unboundedly on
+    // the main thread (a bounded wait is acceptable at panel shutdown).
+    if( backlightProcess != nullptr ) {
+        backlightProcess->kill();
+        backlightProcess->waitForFinished(1000);
+    }
 }
 
 int LinuxBackend::getBacklight()
@@ -91,26 +99,60 @@ void LinuxBackend::setBacklight(int value)
 {
     if( ! isBacklightAvailable() )
         return;
-    if( backlightStream == NULL ) {
-        backlightStream = lxqt_backlight_backend_get_write_stream();
-        if( backlightStream != NULL ) {
-            // Close stream after 60 seconds
-            QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
-        }
+    if( backlightProcess == nullptr || backlightProcess->state() != QProcess::ProcessState::Running ) {
+        // (Re)start the privileged helper. It is started via pkexec so that
+        // only the helper - not this process - runs as root, and is managed
+        // with QProcess so that closing/reaping it never blocks the main
+        // (GUI) thread in a synchronous waitpid(), which is what used to
+        // freeze the panel completely.
+        QProcess *const process = new QProcess(this);
+        process->setProcessChannelMode(QProcess::ForwardedChannels);
+        connect(process, &QProcess::errorOccurred, this,
+            [this](QProcess::ProcessError error) {
+                if( error == QProcess::FailedToStart )
+                    qWarning() << "Linux backlight: lxqt-backlight_backend failed to start";
+            });
+        connect(process, &QProcess::finished, this,
+            [this, proc = process](int, QProcess::ExitStatus) {
+                if( backlightProcess == proc ) {
+                    proc->deleteLater();
+                    backlightProcess = nullptr;
+                }
+            });
+        backlightProcess = process;
+        backlightProcess->start(QStringLiteral("pkexec"),
+            QStringList() << QStringLiteral("lxqt-backlight_backend") << QStringLiteral("--stdin"));
+        // Close stream after 60 seconds
+        QTimer::singleShot(60000, this, SLOT(closeBacklightStream()));
     }
-    if( backlightStream != NULL ) {
+    // Qt buffers input written while the process is still starting up (the
+    // input pipe exists from start()), so the first value is delivered too.
+    const QProcess::ProcessState state =
+        backlightProcess ? backlightProcess->state() : QProcess::NotRunning;
+    if( state == QProcess::ProcessState::Running || state == QProcess::ProcessState::Starting ) {
         // normalize the value (to work around an issue in QSlider)
         value = qBound(0, value, maxBacklight);
-        fprintf(backlightStream, "%d\n", value);
-        fflush(backlightStream);
+        QTextStream out(backlightProcess);
+        out << value << '\n';
+        out.flush();
     }
 }
 
 void LinuxBackend::closeBacklightStream()
 {
-    if( backlightStream != NULL ) {
-        fclose(backlightStream);
-        backlightStream = NULL;
+    if( backlightProcess != nullptr ) {
+        // Signal end of input to the helper and ask it to exit. Neither call
+        // below waits on the main thread for the helper to actually finish:
+        // QProcess reaps the child with the event loop, and the finished()
+        // slot connected in setBacklight() releases the object.
+        backlightProcess->closeWriteChannel();
+        backlightProcess->terminate();
+        // Safety net: force the helper to close if it is still alive a moment
+        // later (non-blocking).
+        QTimer::singleShot(2000, this, [this]() {
+            if( backlightProcess != nullptr )
+                backlightProcess->kill();
+        });
     }
 }
 
