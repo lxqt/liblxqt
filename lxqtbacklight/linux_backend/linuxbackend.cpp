@@ -105,7 +105,7 @@ void LinuxBackend::setBacklight(int value)
         // (GUI) thread in a synchronous waitpid(), which is what used to
         // freeze the panel completely.
         backlightProcess = new QProcess(this);
-        backlightProcess->setProcessChannelMode(QProcess::ForwardedErrorOutput);
+        backlightProcess->setProcessChannelMode(QProcess::ForwardedChannels);
         connect(backlightProcess, &QProcess::errorOccurred, this,
             [this](QProcess::ProcessError error) {
                 if( error == QProcess::FailedToStart )
