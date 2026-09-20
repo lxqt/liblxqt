@@ -39,6 +39,7 @@ extern "C" {
 #include <QLatin1StringView>
 #include <QTimer>
 #include <QDebug>
+#include <thread>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -109,8 +110,9 @@ void LinuxBackend::setBacklight(int value)
 void LinuxBackend::closeBacklightStream()
 {
     if( backlightStream != NULL ) {
-        fclose(backlightStream);
+        FILE *const stream = backlightStream;
         backlightStream = NULL;
+        std::thread([stream] { pclose(stream); }).detach();
     }
 }
 
