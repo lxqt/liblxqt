@@ -1,3 +1,11 @@
+liblxqt-2.5.0 / 2026-11-05
+===========================
+ * Read brightness instead of actual brightness with AMD GPU.
+ * CMake maintenance.
+ * Updated string handling.
+ * Cleaned up `lxqtpowermanager.cpp`.
+ * Updated the address of Free Software Foundation.
+
 liblxqt-2.4.0 / 2026-04-20
 ===========================
  * Support logout from SystemdProvider.
