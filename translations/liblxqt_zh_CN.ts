@@ -10,22 +10,9 @@
     </message>
 </context>
 <context>
-    <name>LXQt::MessageBox</name>
-    <message>
-        <location filename="../lxqtpowermanager.cpp" line="76"/>
-        <source>LXQt Power Manager Error</source>
-        <translation>LXQt 电源管理器错误</translation>
-    </message>
-    <message>
-        <location filename="../lxqtpowermanager.cpp" line="76"/>
-        <source>Hibernate failed.</source>
-        <translation>休眠失败。</translation>
-    </message>
-</context>
-<context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="161"/>
+        <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
         <translation>缺省消息通知</translation>
     </message>
@@ -33,67 +20,67 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="108"/>
+        <location filename="../lxqtpowermanager.cpp" line="103"/>
         <source>Hibernate</source>
         <translation>休眠</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="115"/>
+        <location filename="../lxqtpowermanager.cpp" line="110"/>
         <source>Suspend</source>
         <translation>挂起</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="122"/>
+        <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Reboot</source>
         <translation>重启</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="129"/>
+        <location filename="../lxqtpowermanager.cpp" line="124"/>
         <source>Shutdown</source>
         <translation>关机</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="136"/>
+        <location filename="../lxqtpowermanager.cpp" line="131"/>
         <source>Logout</source>
         <translation>注销</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="148"/>
+        <location filename="../lxqtpowermanager.cpp" line="144"/>
         <source>LXQt Session Suspend</source>
         <translation>挂起LXQt会话</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="149"/>
+        <location filename="../lxqtpowermanager.cpp" line="145"/>
         <source>Do you really want to suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>你真的要挂起你的计算机吗？&lt;p&gt;挂起的计算机将进入低功耗状态。 电源丢失后系统状态不会被保存。</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="155"/>
         <source>LXQt Session Hibernate</source>
         <translation>休眠LXQt会话</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="159"/>
+        <location filename="../lxqtpowermanager.cpp" line="156"/>
         <source>Do you really want to hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>你真的要将你的计算机休眠吗？&lt;p&gt;休眠的计算机将进入低功耗状态。 电源丢失后系统状态不会被保存。</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="166"/>
         <source>LXQt Session Reboot</source>
         <translation>重启LXQt会话</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="169"/>
+        <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>Do you really want to restart your computer? All unsaved work will be lost...</source>
         <translation>你真的想要重启你的计算机吗？ 所有未保存的任务都将丢失……</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Shutdown</source>
         <translation>关闭电源</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="179"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you really want to power off your computer? All unsaved work will be lost...</source>
         <translation>你真的想要关闭你的计算机吗？ 所有未保存的任务都将丢失……</translation>
     </message>
@@ -127,22 +114,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="184"/>
+        <location filename="../lxqtscreensaver.cpp" line="187"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>运行&quot;%1&quot;失败。确保你已经安装并运行着一个与 xdg-screensaver 适配的屏保或锁屏。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="188"/>
+        <location filename="../lxqtscreensaver.cpp" line="191"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>运行  &quot;%1&quot;失败。请确保指定的锁屏或屏保已经安装并正在运行。</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="274"/>
+        <location filename="../lxqtscreensaver.cpp" line="277"/>
         <source>Lock Screen</source>
         <translation>锁屏</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="179"/>
+        <location filename="../lxqtscreensaver.cpp" line="182"/>
         <source>Screen Saver Error</source>
         <translation>屏幕保护程序错误</translation>
     </message>
@@ -150,7 +137,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
         <translation>选择要显示的页。</translation>
     </message>
@@ -158,20 +145,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="92"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="142"/>
         <source>Power Manager Error</source>
         <translation>电源管理错误</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="93"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="143"/>
         <source>QDBusInterface is invalid</source>
         <translation>QDBusInterface 不正确</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="107"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="157"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>电源管理错误 (D-BUS 调用)</translation>
     </message>
