@@ -10,22 +10,9 @@
     </message>
 </context>
 <context>
-    <name>LXQt::MessageBox</name>
-    <message>
-        <location filename="../lxqtpowermanager.cpp" line="76"/>
-        <source>LXQt Power Manager Error</source>
-        <translation>שגיאה במנהל צריכת החשמל של LXQt</translation>
-    </message>
-    <message>
-        <location filename="../lxqtpowermanager.cpp" line="76"/>
-        <source>Hibernate failed.</source>
-        <translation>התרדמת נכשלה.</translation>
-    </message>
-</context>
-<context>
     <name>LXQt::NotificationPrivate</name>
     <message>
-        <location filename="../lxqtnotification.cpp" line="161"/>
+        <location filename="../lxqtnotification.cpp" line="163"/>
         <source>Notifications Fallback</source>
         <translation>עתודת התראות</translation>
     </message>
@@ -33,67 +20,67 @@
 <context>
     <name>LXQt::PowerManager</name>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="108"/>
+        <location filename="../lxqtpowermanager.cpp" line="103"/>
         <source>Hibernate</source>
         <translation>תרדמת</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="115"/>
+        <location filename="../lxqtpowermanager.cpp" line="110"/>
         <source>Suspend</source>
         <translation>השהיה</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="122"/>
+        <location filename="../lxqtpowermanager.cpp" line="117"/>
         <source>Reboot</source>
         <translation>הפעלה מחדש</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="129"/>
+        <location filename="../lxqtpowermanager.cpp" line="124"/>
         <source>Shutdown</source>
         <translation>כיבוי</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="136"/>
+        <location filename="../lxqtpowermanager.cpp" line="131"/>
         <source>Logout</source>
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="148"/>
+        <location filename="../lxqtpowermanager.cpp" line="144"/>
         <source>LXQt Session Suspend</source>
         <translation>השהיית הפעלת LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="149"/>
+        <location filename="../lxqtpowermanager.cpp" line="145"/>
         <source>Do you really want to suspend your computer?&lt;p&gt;Suspends the computer into a low power state. System state is not preserved if the power is lost.</source>
         <translation>להשהות את המחשב שלך?&lt;p&gt;המחשב יושהה למצב חסכוני בחשמל. מצב המערכת לא נשמר אם החשמל מנותק.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="158"/>
+        <location filename="../lxqtpowermanager.cpp" line="155"/>
         <source>LXQt Session Hibernate</source>
         <translation>הרדמת הפעלה של LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="159"/>
+        <location filename="../lxqtpowermanager.cpp" line="156"/>
         <source>Do you really want to hibernate your computer?&lt;p&gt;Hibernates the computer into a low power state. System state is preserved if the power is lost.</source>
         <translation>להרדים את המחשב שלך?&lt;p&gt;המחשב יירדם למצב חסכוני בחשמל. מצב המערכת נשמר גם אם החשמל מנותק.</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="168"/>
+        <location filename="../lxqtpowermanager.cpp" line="166"/>
         <source>LXQt Session Reboot</source>
         <translation>הפעלה מחדש של LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="169"/>
+        <location filename="../lxqtpowermanager.cpp" line="167"/>
         <source>Do you really want to restart your computer? All unsaved work will be lost...</source>
         <translation>להפעיל מחדש את המחשב? כל העבודה שלא שמרת תלך לאיבוד…</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="178"/>
+        <location filename="../lxqtpowermanager.cpp" line="177"/>
         <source>LXQt Session Shutdown</source>
         <translation>כיבוי של LXQt</translation>
     </message>
     <message>
-        <location filename="../lxqtpowermanager.cpp" line="179"/>
+        <location filename="../lxqtpowermanager.cpp" line="178"/>
         <source>Do you really want to power off your computer? All unsaved work will be lost...</source>
         <translation>לכבות את המחשב? כל העבודה שלא שמרת תלך לאיבוד…</translation>
     </message>
@@ -127,22 +114,22 @@
 <context>
     <name>LXQt::ScreenSaver</name>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="184"/>
+        <location filename="../lxqtscreensaver.cpp" line="187"/>
         <source>Failed to run  &quot;%1&quot;. Ensure you have a locker/screensaver compatible with xdg-screensaver installed and running.</source>
         <translation>ההרצה של „%1” נכשלה. נא לוודא שמותקן ומופעל במחשב נועל/שומר המסך תואם ל־xdg-screensaver.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="188"/>
+        <location filename="../lxqtscreensaver.cpp" line="191"/>
         <source>Failed to run  &quot;%1&quot;. Ensure the specified locker/screensaver is installed and running.</source>
         <translation>ההרצה של „%1” נכשלה. נא לוודא שנועל/שומר המסך מותקן ופעיל.</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="274"/>
+        <location filename="../lxqtscreensaver.cpp" line="277"/>
         <source>Lock Screen</source>
         <translation>נעילת המסך</translation>
     </message>
     <message>
-        <location filename="../lxqtscreensaver.cpp" line="179"/>
+        <location filename="../lxqtscreensaver.cpp" line="182"/>
         <source>Screen Saver Error</source>
         <translation>שגיאת שומר מסך</translation>
     </message>
@@ -150,7 +137,7 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="47"/>
+        <location filename="../configdialog/lxqtconfigdialogcmdlineoptions.cpp" line="49"/>
         <source>Choose the page to be shown.</source>
         <translation>נא לבחור את העמוד להצגה.</translation>
     </message>
@@ -158,20 +145,20 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="88"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="138"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="92"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="142"/>
         <source>Power Manager Error</source>
         <translation>שגיאה במנהל צריכת חשמל</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="89"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="139"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="93"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="143"/>
         <source>QDBusInterface is invalid</source>
         <translation>QDBusInterface שגוי</translation>
     </message>
     <message>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="103"/>
-        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="153"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="107"/>
+        <location filename="../lxqtpower/lxqtpowerproviders.cpp" line="157"/>
         <source>Power Manager Error (D-BUS call)</source>
         <translation>שגיאת מנהל צריכת חשמל (קריאת D-BUS)</translation>
     </message>
