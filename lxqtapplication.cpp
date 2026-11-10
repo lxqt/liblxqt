@@ -68,11 +68,10 @@ Application::Application(int &argc, char** argv, bool handleQuitSignals)
     if (handleQuitSignals)
     {
         QList<int> signo_list = {SIGINT, SIGTERM, SIGHUP};
-        connect(this, &Application::unixSignal, [this, signo_list] (int signo)
-            {
-                if (signo_list.contains(signo))
-                    quit();
-            });
+        connect(this, &Application::unixSignal, [signo_list] (int signo) {
+            if (signo_list.contains(signo))
+                quit();
+        });
         listenToUnixSignals(signo_list);
     }
 }
