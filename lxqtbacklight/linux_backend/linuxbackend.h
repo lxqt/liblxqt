@@ -32,6 +32,8 @@
 #include <QFileSystemWatcher>
 #include <QTextStream>
 
+class QProcess;
+
 namespace LXQt
 {
 
@@ -57,7 +59,7 @@ private:
     int maxBacklight;
     int actualBacklight;
     QFileSystemWatcher *fileSystemWatcher;
-    FILE *backlightStream;
+    QProcess *backlightProcess = nullptr;
 };
 
 } // namespace LXQt
