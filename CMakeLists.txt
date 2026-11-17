@@ -24,7 +24,7 @@ set(LXQT_MINOR_VERSION 5)
 # patch-version as liblxqt - in real life it will be fine if every component
 # has it's own patch version within a major/minor life cycle.
 #
-set(LXQT_PATCH_VERSION 0)
+set(LXQT_PATCH_VERSION 1)
 set(LXQT_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_PATCH_VERSION})
 
 
