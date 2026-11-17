@@ -108,7 +108,7 @@ int lxqt_backlight_backend_get_max()
 
 FILE *lxqt_backlight_backend_get_write_stream()
 {
-    FILE *stream = popen("pkexec lxqt-backlight_backend --stdin", "w");
+    FILE *stream = popen("pkexec lxqt-backlight_backend --stdin", "we"); // "e": O_CLOEXEC, so apps the panel launches cannot inherit the pipe and keep the helper alive
     return stream;
 }
 
